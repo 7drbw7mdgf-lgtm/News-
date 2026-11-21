@@ -26,7 +26,6 @@ for (const file of files) {
     assert(edition.TOPICS.some(topic => topic.id === story.topic), story.id);
     if (story.location) {
       const { label, lat, lng } = story.location;
-      assert.equal(story.topic, 'world', 'Map location requires a World story: ' + story.id);
       assert(typeof label === 'string' && label.trim(), 'Missing map label: ' + story.id);
       assert(Number.isFinite(lat) && Math.abs(lat) <= 85, 'Invalid latitude: ' + story.id);
       assert(Number.isFinite(lng) && Math.abs(lng) <= 180, 'Invalid longitude: ' + story.id);

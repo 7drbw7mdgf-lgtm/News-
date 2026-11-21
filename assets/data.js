@@ -42,7 +42,13 @@ window.DAYBREAK = {
    ],
    "publishedLabel": "20 Nov 2026",
    "image": "assets/images/uk-westminster.jpg",
-   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight"
+   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight",
+   "location": {
+    "label": "Brussels, Belgium",
+    "shortLabel": "Brussels",
+    "lat": 50.8503,
+    "lng": 4.3517
+   }
   },
   {
    "id": "lhcb-rare-particle-decay",
@@ -59,7 +65,13 @@ window.DAYBREAK = {
    ],
    "publishedLabel": "20 Nov 2026",
    "image": "assets/images/science-cern-detector.jpg",
-   "imageAlt": "Particle physics detector cavern with precision steel frames and cabling"
+   "imageAlt": "Particle physics detector cavern with precision steel frames and cabling",
+   "location": {
+    "label": "CERN, Geneva, Switzerland",
+    "shortLabel": "Geneva",
+    "lat": 46.233,
+    "lng": 6.0557
+   }
   },
   {
    "id": "apple-mac-ai-agent",
@@ -76,7 +88,13 @@ window.DAYBREAK = {
    ],
    "publishedLabel": "19 Nov 2026",
    "image": "assets/images/tech-mac-desk.jpg",
-   "imageAlt": "Silver aluminum laptop open on a wooden desk in morning light"
+   "imageAlt": "Silver aluminum laptop open on a wooden desk in morning light",
+   "location": {
+    "label": "Cupertino, California, USA",
+    "shortLabel": "Cupertino",
+    "lat": 37.3346,
+    "lng": -122.009
+   }
   },
   {
    "id": "uk-october-borrowing",
@@ -93,7 +111,13 @@ window.DAYBREAK = {
    ],
    "publishedLabel": "20 Nov 2026",
    "image": "assets/images/finance-city-london.jpg",
-   "imageAlt": "Neoclassical facade of the Bank of England and City of London skyline"
+   "imageAlt": "Neoclassical facade of the Bank of England and City of London skyline",
+   "location": {
+    "label": "Westminster, London, UK",
+    "shortLabel": "Westminster",
+    "lat": 51.501,
+    "lng": -0.141
+   }
   },
   {
    "id": "icj-rohingya-judgment",
@@ -111,6 +135,7 @@ window.DAYBREAK = {
    "publishedLabel": "19 Nov 2026",
    "location": {
     "label": "The Hague, Netherlands",
+    "shortLabel": "The Hague",
     "lat": 52.08,
     "lng": 4.31
    },
@@ -130,7 +155,13 @@ window.DAYBREAK = {
     "Differences in tooth and brain development point to more than one hominin species around Sterkfontein in South Africa.",
     "Swings between wetter and drier climates probably split and reconnected early human relatives. Gabriele Macho of Vrije Universiteit Brussel led the team."
    ],
-   "publishedLabel": "19 Nov 2026"
+   "publishedLabel": "19 Nov 2026",
+   "location": {
+    "label": "Sterkfontein, South Africa",
+    "shortLabel": "Sterkfontein",
+    "lat": -26.0158,
+    "lng": 27.7347
+   }
   },
   {
    "id": "cairncross-departure",
@@ -173,7 +204,13 @@ window.DAYBREAK = {
       }
      ]
     }
-   ]
+   ],
+   "location": {
+    "label": "Washington, D.C., USA",
+    "shortLabel": "Washington",
+    "lat": 38.8977,
+    "lng": -77.0365
+   }
   },
   {
    "id": "bailey-interest-rates",
@@ -188,7 +225,13 @@ window.DAYBREAK = {
     "He pointed to a firming labour market that could support household spending.",
     "The Bank raised rates to 4% in early November; its mid-December decision will depend on how war costs feed through to prices."
    ],
-   "publishedLabel": "18 Nov 2026"
+   "publishedLabel": "18 Nov 2026",
+   "location": {
+    "label": "City of London, UK",
+    "shortLabel": "City of London",
+    "lat": 51.5142,
+    "lng": -0.0886
+   }
   },
   {
    "id": "poland-chmielek-airspace",
@@ -206,6 +249,7 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026",
    "location": {
     "label": "Lublin region, Poland",
+    "shortLabel": "Lublin",
     "lat": 51.25,
     "lng": 22.57
    }
@@ -223,7 +267,13 @@ window.DAYBREAK = {
     "The bricks are more porous and weaker than binder-based versions, so they are not yet fit for load-bearing structures.",
     "Using only local material could cut what must be shipped from Earth; the effects of low gravity and vacuum still need testing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "location": {
+    "label": "Fayetteville, Arkansas, USA",
+    "shortLabel": "Arkansas",
+    "lat": 36.0687,
+    "lng": -94.1748
+   }
   },
   {
    "id": "uber-child-rides-pilot",
@@ -238,7 +288,13 @@ window.DAYBREAK = {
     "Parents must book every ride and be there at pickup; only invited, highly rated drivers who complete training can take part, and trips are streamed on live video.",
     "Drivers earn $7 extra per trip plus a $20 bonus after their first ride."
    ],
-   "publishedLabel": "19 Nov 2026"
+   "publishedLabel": "19 Nov 2026",
+   "location": {
+    "label": "Austin, Texas, USA",
+    "shortLabel": "Austin",
+    "lat": 30.2672,
+    "lng": -97.7431
+   }
   },
   {
    "id": "bae-job-cuts",
@@ -255,7 +311,13 @@ window.DAYBREAK = {
    ],
    "publishedLabel": "18 Nov 2026",
    "image": "assets/images/business-aerospace.jpg",
-   "imageAlt": "Aerospace manufacturing hangar with aircraft tail assembly at dawn"
+   "imageAlt": "Aerospace manufacturing hangar with aircraft tail assembly at dawn",
+   "location": {
+    "label": "Farnborough, Hampshire, UK",
+    "shortLabel": "Farnborough",
+    "lat": 51.2944,
+    "lng": -0.7557
+   }
   },
   {
    "id": "northern-ireland-doctors-strike",
@@ -270,7 +332,13 @@ window.DAYBREAK = {
     "Specialist and consultant doctors will also strike on Monday 23 November.",
     "The health minister says he backs the recommended 3.5% pay award but cannot implement it without an agreed departmental budget."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "location": {
+    "label": "Belfast, Northern Ireland",
+    "shortLabel": "Belfast",
+    "lat": 54.5973,
+    "lng": -5.9301
+   }
   },
   {
    "id": "milky-way-stellar-winds",
@@ -285,7 +353,13 @@ window.DAYBREAK = {
     "The likely source is IRS 16SW, a tight pair of massive stars whose colliding winds squeeze gas into clumps that drift inward.",
     "About one Earth mass of gas every ten years could sustain the black hole’s current activity. A team led by the Max Planck Institute for Extraterrestrial Physics did the work."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "location": {
+    "label": "Garching, Munich, Germany",
+    "shortLabel": "Munich",
+    "lat": 48.2615,
+    "lng": 11.6716
+   }
   },
   {
    "id": "spacex-rooftop-towers",
@@ -300,7 +374,13 @@ window.DAYBREAK = {
     "Musk said production should start in 2027 but avoided a firm timeline.",
     "The towers could be bundled with Starlink terminals; Musk said he does not expect carriers like AT&T and Verizon to disappear."
    ],
-   "publishedLabel": "19 Nov 2026"
+   "publishedLabel": "19 Nov 2026",
+   "location": {
+    "label": "Hawthorne, California, USA",
+    "shortLabel": "Hawthorne",
+    "lat": 33.9207,
+    "lng": -118.328
+   }
   },
   {
    "id": "poundland-administration-risk",
@@ -315,7 +395,13 @@ window.DAYBREAK = {
     "US owner Gordon Brothers reportedly controls £60m in sales receipts and has released only £20m.",
     "Its notice of intent to appoint administrators expires next week, so the chain may collapse without a rescue deal or more funding."
    ],
-   "publishedLabel": "19 Nov 2026"
+   "publishedLabel": "19 Nov 2026",
+   "location": {
+    "label": "Brierley Hill, West Midlands, UK",
+    "shortLabel": "West Midlands",
+    "lat": 52.481,
+    "lng": -2.123
+   }
   }
  ],
  "CATS": {

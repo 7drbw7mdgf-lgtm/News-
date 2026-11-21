@@ -8,14 +8,24 @@
 
   var STORE_KEY = 'daybreak:v2';
   var worldMap;
+  var worldMarkerLayer;
+  var mapPinById = Object.create(null);
   var route = new URLSearchParams(location.search);
   var SEG_ORDER = ['L', 'LL', 'C', 'LR', 'R', 'S'];
   var labelOf = {};
   D.TOPICS.forEach(function (t) { labelOf[t.id] = t.label; });
 
+  var MAP_REGIONS = {
+    global: { label: 'Global', bounds: [[-32, -130], [59, 32]], maxZoom: 3 },
+    uk: { label: 'UK & Ireland', bounds: [[49.8, -8.2], [55.8, 2.0]], maxZoom: 7 },
+    europe: { label: 'Europe', bounds: [[44.8, -6.5], [55.8, 24.5]], maxZoom: 6 },
+    americas: { label: 'North America', bounds: [[27.5, -125.5], [42.5, -72.5]], maxZoom: 5 },
+    africa: { label: 'Africa', bounds: [[-31.0, 18.0], [-20.0, 36.0]], maxZoom: 6 }
+  };
+
   /* ---------- state (saved choices persist in this browser) ---------- */
   var state = {
-    view: 'briefing', topic: 'all', reading: null, paper: null,
+    view: 'briefing', topic: 'all', mapTopic: 'all', reading: null, paper: null,
     settingsOpen: false, searchOpen: false, srcQuery: '', query: '',
     saved: {}, added: {}
   };
@@ -239,17 +249,219 @@
       '</article>';
   }
 
-  function renderWorldMap(stories) {
-    var located = stories.filter(function (story) { return story.location; });
-    if (!located.length) return '';
+  function getMapStories() {
+    return CURRENT.filter(function (s) {
+      if (!s.location) return false;
+      if (state.mapTopic !== 'all' && s.topic !== state.mapTopic) return false;
+      return matchesQuery(s);
+    });
+  }
+
+  function renderWorldMapListHtml(stories) {
+    if (!stories.length) {
+      return '<li style="grid-column:1/-1"><span class="small">No geotagged stories in this map area. Zoom out or click Global to reset.</span></li>';
+    }
+    return stories.map(function (story) {
+      return '<li>' +
+        '<div class="world-loc-main">' +
+        '<span class="world-loc-meta"><span class="tdot tdot-' + esc(story.topic) + '"></span>' +
+        esc(labelOf[story.topic]) + ' · ' + esc(story.location.label) + '</span>' +
+        compareLink(story, 'world-loc-link', story.headline) +
+        '</div>' +
+        '<button type="button" class="world-loc-pinbtn" data-act="focuspin" data-id="' + esc(story.id) + '">Locate</button>' +
+        '</li>';
+    }).join('');
+  }
+
+  function renderWorldMap() {
+    var allLocated = CURRENT.filter(function (s) { return s.location && matchesQuery(s); });
+    if (!allLocated.length) return '';
+    var activeStories = getMapStories();
+
+    var topicPills = [{ id: 'all', label: 'All topics' }].concat(D.TOPICS).map(function (t) {
+      var count = t.id === 'all'
+        ? allLocated.length
+        : allLocated.filter(function (s) { return s.topic === t.id; }).length;
+      if (t.id !== 'all' && count === 0) return '';
+      var on = state.mapTopic === t.id;
+      return '<button type="button" class="map-pill' + (on ? ' on' : '') + '" data-act="maptopic" data-id="' + esc(t.id) + '" aria-pressed="' + on + '">' +
+        (t.id !== 'all' ? '<span class="tdot tdot-' + esc(t.id) + '"></span>' : '') +
+        esc(t.label) + ' (' + count + ')</button>';
+    }).join('');
+
+    var regionBtns = Object.keys(MAP_REGIONS).map(function (key) {
+      return '<button type="button" class="map-region-btn" data-act="mapregion" data-id="' + esc(key) + '">' + esc(MAP_REGIONS[key].label) + '</button>';
+    }).join('');
+
     return '<section class="world-panel" aria-labelledby="world-map-title">' +
-      '<div class="world-panel-head"><h2 id="world-map-title">World stories on the map</h2>' +
-      '<span class="small">' + esc(plural(located.length, 'mapped location', 'mapped locations')) + '</span></div>' +
-      '<div id="world-map" class="world-map" role="region" aria-label="Interactive World story map" hidden></div>' +
-      '<ul class="world-locations">' + located.map(function (story) {
-        return '<li><span>' + esc(story.location.label) + '</span>' +
-          compareLink(story, 'textlink', story.headline + ' →') + '</li>';
-      }).join('') + '</ul></section>';
+      '<div class="world-panel-head"><div>' +
+      '<h1 id="world-map-title">Global coverage map</h1>' +
+      '<p class="world-sub">All topics geotagged across today’s edition. Zoom into any region or click a cluster to reveal individual tags.</p>' +
+      '</div></div>' +
+      '<div class="map-toolbar">' +
+      '<div class="map-row">' +
+      '<div class="map-pills" role="group" aria-label="Filter map by topic">' + topicPills + '</div>' +
+      '<div class="map-pills" role="group" aria-label="Zoom to region">' + regionBtns + '</div>' +
+      '</div></div>' +
+      '<div id="world-map" class="world-map" role="region" aria-label="Interactive geotagged story map" hidden></div>' +
+      '<div class="map-status-bar">' +
+      '<span id="world-map-status">Showing ' + esc(plural(activeStories.length, 'geotagged story', 'geotagged stories')) + '</span>' +
+      '<button type="button" class="map-region-btn" data-act="mapregion" data-id="global">Reset global view</button>' +
+      '</div>' +
+      '<ul id="world-map-list" class="world-locations">' + renderWorldMapListHtml(activeStories) + '</ul>' +
+      '</section>';
+  }
+
+  function clusterRadiusForZoom(zoom) {
+    if (zoom <= 2) return 76;
+    if (zoom === 3) return 62;
+    if (zoom <= 5) return 46;
+    if (zoom <= 8) return 32;
+    return 0;
+  }
+
+  function buildPopupNode(story) {
+    var box = document.createElement('div');
+    box.className = 'map-popup';
+    box.innerHTML =
+      '<div class="map-popup-kicker">' + esc(labelOf[story.topic]) + ' · ' + esc(story.location.label) + '</div>' +
+      '<h3 class="map-popup-title">' + esc(story.headline) + '</h3>' +
+      covBar(story.cov) +
+      '<div class="map-popup-meta">' + esc(story.source + ' · ' + story.cov.count) + '</div>';
+    var link = document.createElement('a');
+    link.className = 'textlink';
+    link.href = storyHref(story.id);
+    link.textContent = 'Compare coverage →';
+    link.addEventListener('click', function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      ev.preventDefault();
+      changeStory(story.id);
+      state.settingsOpen = false;
+      render({ scrollReader: true });
+    });
+    box.appendChild(link);
+    return box;
+  }
+
+  function refreshWorldMapMarkers() {
+    if (!worldMap || !worldMarkerLayer || !window.L) return;
+    var L = window.L;
+    worldMarkerLayer.clearLayers();
+    mapPinById = Object.create(null);
+
+    var stories = getMapStories();
+    var zoom = worldMap.getZoom();
+    var radius = clusterRadiusForZoom(zoom);
+
+    var projected = stories.map(function (s) {
+      var pt = worldMap.latLngToContainerPoint([s.location.lat, s.location.lng]);
+      return { story: s, x: pt.x, y: pt.y };
+    });
+
+    var clusters = [];
+    if (radius > 0) {
+      var used = new Array(projected.length);
+      for (var i = 0; i < projected.length; i++) {
+        if (used[i]) continue;
+        used[i] = true;
+        var members = [projected[i]];
+        var sumX = projected[i].x;
+        var sumY = projected[i].y;
+        for (var j = i + 1; j < projected.length; j++) {
+          if (used[j]) continue;
+          var cx = sumX / members.length;
+          var cy = sumY / members.length;
+          var dx = projected[j].x - cx;
+          var dy = projected[j].y - cy;
+          if (Math.hypot(dx, dy) <= radius) {
+            used[j] = true;
+            members.push(projected[j]);
+            sumX += projected[j].x;
+            sumY += projected[j].y;
+          }
+        }
+        clusters.push(members.map(function (m) { return m.story; }));
+      }
+    } else {
+      clusters = stories.map(function (s) { return [s]; });
+    }
+
+    var placedSinglePoints = [];
+    clusters.forEach(function (group) {
+      if (group.length > 1) {
+        var avgLat = group.reduce(function (acc, s) { return acc + s.location.lat; }, 0) / group.length;
+        var avgLng = group.reduce(function (acc, s) { return acc + s.location.lng; }, 0) / group.length;
+        var uniqueTopics = [];
+        group.forEach(function (s) {
+          if (uniqueTopics.indexOf(s.topic) === -1) uniqueTopics.push(s.topic);
+        });
+        var dotsHtml = uniqueTopics.slice(0, 5).map(function (tid) {
+          return '<span class="tdot tdot-' + esc(tid) + '"></span>';
+        }).join('');
+        var html = '<div class="geo-cluster" title="Click to zoom in and view all ' + group.length + ' tags">' +
+          '<span class="geo-cluster-dots">' + dotsHtml + '</span>' +
+          '<span>' + group.length + ' tags</span>' +
+          '<span class="geo-cluster-hint">+</span></div>';
+        var marker = L.marker([avgLat, avgLng], {
+          icon: L.divIcon({ className: 'geo-marker-wrap', html: html, iconSize: [0, 0], iconAnchor: [0, 0] }),
+          zIndexOffset: 200
+        }).addTo(worldMarkerLayer);
+
+        marker.on('click', function () {
+          var bounds = L.latLngBounds(group.map(function (s) { return [s.location.lat, s.location.lng]; }));
+          var span = Math.max(
+            Math.abs(bounds.getNorth() - bounds.getSouth()),
+            Math.abs(bounds.getEast() - bounds.getWest())
+          );
+          if (span < 0.08) {
+            worldMap.setView([avgLat, avgLng], Math.min(13, Math.max(zoom + 3, 11)), { animate: true });
+          } else {
+            worldMap.fitBounds(bounds, { padding: [70, 70], maxZoom: Math.min(11, zoom + 4), animate: true });
+          }
+        });
+      } else {
+        var s = group[0];
+        var place = s.location.shortLabel || s.location.label.split(',')[0];
+        var pt = worldMap.latLngToContainerPoint([s.location.lat, s.location.lng]);
+        var offsetY = 0;
+        for (var k = 0; k < placedSinglePoints.length; k++) {
+          if (Math.abs(placedSinglePoints[k].x - pt.x) < 110 && Math.abs(placedSinglePoints[k].y - (pt.y + offsetY)) < 26) {
+            offsetY += 28;
+          }
+        }
+        placedSinglePoints.push({ x: pt.x, y: pt.y + offsetY });
+        var tagHtml = '<div class="geo-tag geo-tag-' + esc(s.topic) + '" style="margin-top:' + offsetY + 'px">' +
+          '<span>' + esc(labelOf[s.topic]) + '</span>' +
+          '<span class="geo-tag-city">· ' + esc(place) + '</span></div>';
+        var single = L.marker([s.location.lat, s.location.lng], {
+          title: labelOf[s.topic] + ' — ' + s.location.label + ': ' + s.headline,
+          alt: s.headline,
+          icon: L.divIcon({ className: 'geo-marker-wrap', html: tagHtml, iconSize: [0, 0], iconAnchor: [0, 0] })
+        }).addTo(worldMarkerLayer).bindPopup(buildPopupNode(s), { maxWidth: 300 });
+        mapPinById[s.id] = single;
+      }
+    });
+
+    updateVisibleMapList(stories);
+  }
+
+  function updateVisibleMapList(allActiveStories) {
+    if (!worldMap) return;
+    var stories = allActiveStories || getMapStories();
+    var bounds = worldMap.getBounds();
+    var visible = stories.filter(function (s) {
+      return bounds.contains([s.location.lat, s.location.lng]);
+    });
+    var statusEl = document.getElementById('world-map-status');
+    var listEl = document.getElementById('world-map-list');
+    var zoom = worldMap.getZoom();
+    if (statusEl) {
+      statusEl.textContent = 'Zoom ' + zoom + ' · ' + visible.length + ' of ' + stories.length +
+        ' geotagged ' + (stories.length === 1 ? 'story' : 'stories') + ' in view · Zoom in or click a cluster to expand tags';
+    }
+    if (listEl) {
+      listEl.innerHTML = renderWorldMapListHtml(visible);
+    }
   }
 
   function mountWorldMap() {
@@ -258,28 +470,26 @@
     if (!canvas || !window.L) return;
     var L = window.L;
     canvas.hidden = false;
-    worldMap = L.map(canvas, { scrollWheelZoom: false, minZoom: 2, maxZoom: 17 });
+    worldMap = L.map(canvas, { scrollWheelZoom: true, minZoom: 2, maxZoom: 15, worldCopyJump: true });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       maxZoom: 17
     }).addTo(worldMap);
-    var markers = CURRENT.filter(function (s) {
-      return s.topic === 'world' && s.location && matchesQuery(s);
-    }).map(function (s) {
-      var popup = document.createElement('div');
-      var location = document.createElement('strong');
-      location.textContent = s.location.label;
-      popup.append(location);
-      popup.insertAdjacentHTML('beforeend', '<br>' + compareLink(s, 'textlink', s.headline));
-      return L.marker([s.location.lat, s.location.lng], {
-        title: s.location.label,
-        alt: s.headline,
-        icon: L.divIcon({ className: 'world-pin', iconSize: [24, 24], iconAnchor: [12, 12] })
-      }).addTo(worldMap).bindPopup(popup);
-    });
-    if (markers.length) {
-      worldMap.fitBounds(L.featureGroup(markers).getBounds(), { padding: [32, 32], maxZoom: 6 });
+    worldMarkerLayer = L.layerGroup().addTo(worldMap);
+
+    var stories = getMapStories();
+    if (stories.length > 1) {
+      var bounds = L.latLngBounds(stories.map(function (s) { return [s.location.lat, s.location.lng]; }));
+      worldMap.fitBounds(bounds, { padding: [44, 44], maxZoom: 3 });
+    } else if (stories.length === 1) {
+      worldMap.setView([stories[0].location.lat, stories[0].location.lng], 5);
+    } else {
+      worldMap.fitBounds(MAP_REGIONS.global.bounds, { maxZoom: 3 });
     }
+
+    refreshWorldMapMarkers();
+    worldMap.on('zoomend', refreshWorldMapMarkers);
+    worldMap.on('moveend', function () { updateVisibleMapList(); });
   }
 
   function renderEditorialBand() {
@@ -333,7 +543,7 @@
         '<div class="hero-side">' + side.map(renderSideItem).join('') + '</div></section>'
       : '<section aria-label="Featured story">' + renderLead(lead) + '</section>';
 
-    var mapHtml = !isSaved && state.topic === 'world' ? renderWorldMap(list) : '';
+    var mapHtml = !isSaved && state.topic === 'world' ? renderWorldMap() : '';
 
     var restHtml = rest.length
       ? '<div class="section-rule"><h2>More in ' + esc(isSaved ? 'saved' : (state.topic === 'all' ? 'today’s briefing' : labelOf[state.topic])) + '</h2>' +
@@ -341,7 +551,7 @@
         '<section class="edition-grid" aria-label="More stories">' + rest.map(renderGridItem).join('') + '</section>'
       : '';
 
-    return headerHtml + heroHtml + mapHtml + restHtml + renderEditorialBand();
+    return headerHtml + mapHtml + heroHtml + restHtml + renderEditorialBand();
   }
 
   /* ---------- Newspapers View ---------- */
@@ -457,7 +667,7 @@
   }
 
   function render(opts) {
-    if (worldMap) { worldMap.remove(); worldMap = null; }
+    if (worldMap) { worldMap.remove(); worldMap = null; worldMarkerLayer = null; mapPinById = Object.create(null); }
     var reading = state.reading ? byId[state.reading] : null;
     var main;
     if (reading) main = renderReader(reading);
@@ -495,6 +705,44 @@
         state.view = 'briefing'; state.topic = id;
         if (state.reading) changeStory(null);
         render(); break;
+      case 'maptopic':
+        state.mapTopic = id;
+        if (worldMap) {
+          var pills = app.querySelectorAll('[data-act="maptopic"]');
+          pills.forEach(function (el) {
+            var active = el.getAttribute('data-id') === id;
+            el.classList.toggle('on', active);
+            el.setAttribute('aria-pressed', String(active));
+          });
+          var filtered = getMapStories();
+          if (filtered.length > 1) {
+            worldMap.fitBounds(window.L.latLngBounds(filtered.map(function (s) { return [s.location.lat, s.location.lng]; })), { padding: [50, 50], maxZoom: 6, animate: true });
+          } else if (filtered.length === 1) {
+            worldMap.setView([filtered[0].location.lat, filtered[0].location.lng], 6, { animate: true });
+          }
+          refreshWorldMapMarkers();
+        } else {
+          render();
+        }
+        break;
+      case 'mapregion':
+        if (worldMap && MAP_REGIONS[id]) {
+          var reg = MAP_REGIONS[id];
+          worldMap.fitBounds(reg.bounds, { padding: [36, 36], maxZoom: reg.maxZoom, animate: true });
+        }
+        break;
+      case 'focuspin':
+        if (worldMap && byId[id] && byId[id].location) {
+          var loc = byId[id].location;
+          worldMap.once('moveend', function () {
+            refreshWorldMapMarkers();
+            if (mapPinById[id]) mapPinById[id].openPopup();
+          });
+          worldMap.setView([loc.lat, loc.lng], 11, { animate: true });
+          var mapEl = document.getElementById('world-map');
+          if (mapEl && mapEl.scrollIntoView) mapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        break;
       case 'view':
         state.view = t.getAttribute('data-view');
         if (state.reading) changeStory(null);
