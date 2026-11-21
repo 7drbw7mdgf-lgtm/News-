@@ -27,7 +27,23 @@ def digest(data):
 
 
 def connect(password):
-    ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=30)
+    try:
+        return _connect(password, 'utf-8')
+    except ftplib.error_perm as error:
+        # A password with characters such as £ is sent as different bytes in
+        # UTF-8 and Latin-1; servers differ in which they expect. Try both.
+        if str(error).startswith('530') and not password.isascii():
+            print('Login refused with UTF-8; retrying with Latin-1 encoding.', flush=True)
+            try:
+                return _connect(password, 'latin-1')
+            except ftplib.error_perm as second:
+                error = second
+        code = str(error)[:3]
+        raise ValueError('FTPS master-account login failed (reply ' + (code if code.isdigit() else '?') + ').') from None
+
+
+def _connect(password, encoding):
+    ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=30, encoding=encoding)
     stage = 'connection'
     try:
         ftp.connect(HOST, PORT)
@@ -35,6 +51,11 @@ def connect(password):
         ftp.login(USERNAME, password)
         stage = 'encrypted data setup'
         ftp.prot_p()  # encrypt file transfers, not just the login
+    except ftplib.error_perm:
+        ftp.close()
+        if stage == 'master-account login':
+            raise  # let connect() decide whether to retry with another encoding
+        raise ValueError('FTPS ' + stage + ' failed.') from None
     except ftplib.Error as error:
         ftp.close()
         code = str(error)[:3]
