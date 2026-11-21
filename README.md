@@ -15,33 +15,19 @@ To preview locally, open `index.html` in a browser.
 
 ## Deploying to Fasthosts
 
-Every push to `main` uploads the site to Fasthosts over FTP using the workflow in `.github/workflows/deploy.yml`. You can also run it by hand from the **Actions** tab ("Deploy to Fasthosts" → "Run workflow").
+Deployment works the same way as Sparkboard's. Every push to `main` runs `.github/workflows/deploy-website.yml`; you can also run it by hand from the **Actions** tab ("Deploy website to Fasthosts" → "Run workflow").
+
+- **Connection:** explicit FTPS to `ftp.fasthosts.co.uk:21` as the FTP master user `pheme24.online`, with certificate checks and encrypted file transfers.
+- **Destination:** the FTP login directory. If that directory turns out to contain an `htdocs` folder, the deploy stops without changing anything; set the repository variable `FTP_SERVER_DIR` to `htdocs` and re-run.
+- **Safety:** each file is uploaded under a temporary name, read back and checked by SHA-256, then renamed into place. Nothing on the server is deleted. The previous homepage is backed up to `_daybreak/`, and `index.html` is published last.
+- **Check:** after upload, the workflow confirms https://pheme24.online serves the new commit (via the `daybreak-build` meta tag). While DNS or the SSL certificate is still pending, this shows a warning rather than failing.
 
 ### One-time setup
 
-In the GitHub repo, go to **Settings → Secrets and variables → Actions**.
+1. In the repo: **Settings → Environments → New environment**, name it `fasthosts-production`. (Optionally restrict deployment branches to `main`.)
+2. In that environment, add the secret `FASTHOSTS_FTP_PASSWORD`: the FTP master password for `pheme24.online`.
 
-Under **Secrets**, add:
-
-| Secret | What to put |
-| --- | --- |
-| `FTP_SERVER` | Your Fasthosts FTP host, e.g. `ftp.yourdomain.co.uk`, or the server IP shown in the Fasthosts control panel |
-| `FTP_USERNAME` | Your FTP username from the Fasthosts control panel |
-| `FTP_PASSWORD` | Your FTP password |
-
-Optional, under **Variables**:
-
-| Variable | Default | When to change it |
-| --- | --- | --- |
-| `FTP_SERVER_DIR` | `htdocs/` | If your site's web root is a different folder. Keep the trailing slash. |
-| `FTP_PROTOCOL` | `ftp` | Set to `ftps` if your plan supports FTP over TLS, so the password isn't sent in plain text. |
-
-The FTP details are only ever read from these secrets; they are not stored in the code.
-
-### Notes
-
-- The first deploy uploads everything. Later deploys upload only changed files (the action keeps a small `.ftp-deploy-sync-state.json` file on the server to track this).
-- `README.md` and the `.github` folder are not uploaded.
+The password is only read from that secret; it is never in the code or logs.
 
 ## Updating the stories
 

@@ -1,0 +1,65 @@
+name: Deploy website to Fasthosts
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fasthosts-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: fasthosts-production
+      url: https://pheme24.online/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check
+        run: |
+          node --check assets/app.js
+          node --check assets/data.js
+          python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py
+      - name: Build the public site
+        run: |
+          rm -rf build/site
+          mkdir -p build/site
+          cp index.html build/site/
+          cp -R assets build/site/
+          sed -i "s|<meta name=\"daybreak-build\" content=\"dev\">|<meta name=\"daybreak-build\" content=\"$GITHUB_SHA\">|" build/site/index.html
+          grep -q "content=\"$GITHUB_SHA\"" build/site/index.html
+          find build/site -type f | sort
+      - name: Skip superseded commits
+        id: current
+        shell: bash
+        run: |
+          latest="$(git ls-remote origin refs/heads/main | cut -f1)"
+          if [ "$latest" = "$GITHUB_SHA" ]; then
+            echo 'deploy=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'A newer commit is already on main; skipping this deployment.'
+          fi
+      - name: Upload and publish
+        if: steps.current.outputs.deploy == 'true'
+        env:
+          FASTHOSTS_FTP_PASSWORD: ${{ secrets.FASTHOSTS_FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ vars.FTP_SERVER_DIR }}
+        run: python3 scripts/deploy-website.py
+      - name: Verify the public website
+        if: steps.current.outputs.deploy == 'true'
+        env:
+          EXPECTED_REVISION: ${{ github.sha }}
+        run: python3 scripts/verify-website.py
