@@ -40,7 +40,9 @@ window.DAYBREAK = {
     "The EU wants fees for its students at UK universities cut to home-student levels; that question was deferred for six months.",
     "Earlier on Friday, ITV News reported the fees row could stop the deal from coming into effect."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "image": "assets/images/uk-westminster.jpg",
+   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight"
   },
   {
    "id": "lhcb-rare-particle-decay",
@@ -55,7 +57,9 @@ window.DAYBREAK = {
     "The result is at 3.2 sigma: enough to count as evidence, but short of the 5 sigma needed to claim a discovery.",
     "It matches the Standard Model for now. The roughly 1,900-strong collaboration includes the University of Manchester, which built key detector technology."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "image": "assets/images/science-cern-detector.jpg",
+   "imageAlt": "Particle physics detector cavern with precision steel frames and cabling"
   },
   {
    "id": "apple-mac-ai-agent",
@@ -70,7 +74,9 @@ window.DAYBREAK = {
     "Such an agent could work apps, browse the web and write code for users.",
     "At the same time, upcoming macOS warnings will make it harder for third-party agents to take full control of a Mac."
    ],
-   "publishedLabel": "19 Nov 2026"
+   "publishedLabel": "19 Nov 2026",
+   "image": "assets/images/tech-mac-desk.jpg",
+   "imageAlt": "Silver aluminum laptop open on a wooden desk in morning light"
   },
   {
    "id": "uk-october-borrowing",
@@ -85,7 +91,9 @@ window.DAYBREAK = {
     "Debt interest jumped to £11.2bn, the highest October on record and £2.8bn more than a year earlier.",
     "Borrowing so far this financial year is £111.3bn, 6.1% lower than last year; total debt stands at £3.1tn, or 95.8% of GDP."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "image": "assets/images/finance-city-london.jpg",
+   "imageAlt": "Neoclassical facade of the Bank of England and City of London skyline"
   },
   {
    "id": "icj-rohingya-judgment",
@@ -105,7 +113,9 @@ window.DAYBREAK = {
     "label": "The Hague, Netherlands",
     "lat": 52.08,
     "lng": 4.31
-   }
+   },
+   "image": "assets/images/world-peace-palace.jpg",
+   "imageAlt": "The Peace Palace in The Hague, seat of the International Court of Justice"
   },
   {
    "id": "taung-child-hominin-branches",
@@ -243,7 +253,9 @@ window.DAYBREAK = {
     "Production-line staff and aircraft maintenance crews are reportedly not affected.",
     "The cuts follow a raised sales forecast after a strong first half, when orders grew by £3.2bn to £16.4bn."
    ],
-   "publishedLabel": "18 Nov 2026"
+   "publishedLabel": "18 Nov 2026",
+   "image": "assets/images/business-aerospace.jpg",
+   "imageAlt": "Aerospace manufacturing hangar with aircraft tail assembly at dawn"
   },
   {
    "id": "northern-ireland-doctors-strike",
