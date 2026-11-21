@@ -1,0 +1,879 @@
+/* Daybreak news data. Generated from the Daybreak dashboard; replace this file to refresh the stories. */
+window.DAYBREAK = {
+ "TOPICS": [
+  {
+   "id": "world",
+   "label": "UK & World"
+  },
+  {
+   "id": "science",
+   "label": "Science & Microbiology"
+  },
+  {
+   "id": "tech",
+   "label": "Tech & AI"
+  },
+  {
+   "id": "business",
+   "label": "Business & Markets"
+  }
+ ],
+ "STORIES": [
+  {
+   "id": "w1",
+   "topic": "world",
+   "source": "RTÉ News",
+   "time": "20 Nov",
+   "url": "https://www.rte.ie/news/uk/2026/1120/1599944-uk-eu-summit/",
+   "headline": "UK and EU seal reset deal but put off tuition fees row",
+   "summary": "The Brussels summit agreed food checks, youth mobility and emissions trading, while a deal on cutting fees for EU students was pushed back six months.",
+   "points": [
+    "The summit produced agreements on food checks, a youth mobility scheme and emissions trading.",
+    "The EU wants fees for its students at UK universities cut to home-student levels; that question was deferred for six months.",
+    "Earlier on Friday, ITV News reported the fees row could stop the deal from coming into effect."
+   ]
+  },
+  {
+   "id": "s1",
+   "topic": "science",
+   "source": "ScienceDaily",
+   "time": "20 Nov",
+   "url": "https://www.sciencedaily.com/releases/2026/11/261119194530.htm",
+   "headline": "CERN finds first evidence of an ultra-rare particle decay",
+   "summary": "The decay is expected only about once in 10 billion beauty-particle decays, and took around 40 years to detect. LHCb first announced it on 3 November.",
+   "points": [
+    "The upgraded LHCb experiment found the first evidence of a beauty particle decaying into two muons, expected about once in every 10 billion beauty particles.",
+    "The result is at 3.2 sigma: enough to count as evidence, but short of the 5 sigma needed to claim a discovery.",
+    "It matches the Standard Model for now. The roughly 1,900-strong collaboration includes the University of Manchester, which built key detector technology."
+   ]
+  },
+  {
+   "id": "t1",
+   "topic": "tech",
+   "source": "TechCrunch",
+   "time": "19 Nov",
+   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+   "headline": "Apple reportedly building an AI agent that can run your Mac",
+   "summary": "The agent in development could operate a Mac on the user’s behalf, according to reports.",
+   "points": [
+    "Bloomberg first reported the project, based on an Apple job listing for a senior engineering manager to lead an AI agent team.",
+    "Such an agent could work apps, browse the web and write code for users.",
+    "At the same time, upcoming macOS warnings will make it harder for third-party agents to take full control of a Mac."
+   ]
+  },
+  {
+   "id": "b1",
+   "topic": "business",
+   "source": "ITV News",
+   "time": "20 Nov",
+   "url": "https://www.itv.com/news/2026-11-20/ballooning-debt-interest-costs-push-up-government-borrowing-to-17bn-ons",
+   "headline": "Debt interest pushes UK borrowing to £17bn in October",
+   "summary": "ONS figures show interest costs of £11.2bn, a record for October, though borrowing came in slightly below forecasts.",
+   "points": [
+    "Borrowing reached £17bn in October, slightly below the £18bn economists expected.",
+    "Debt interest jumped to £11.2bn, the highest October on record and £2.8bn more than a year earlier.",
+    "Borrowing so far this financial year is £111.3bn, 6.1% lower than last year; total debt stands at £3.1tn, or 95.8% of GDP."
+   ]
+  },
+  {
+   "id": "w2",
+   "topic": "world",
+   "source": "Al Jazeera English",
+   "time": "19 Nov",
+   "url": "https://www.aljazeera.com/news/2026/11/19/un-top-court-finds-myanmar-killed-10000-rohingya-as-it-rules-on-genocide",
+   "headline": "UN top court rules Myanmar committed genocide against the Rohingya",
+   "summary": "The International Court of Justice found Myanmar responsible for genocide in a landmark judgment.",
+   "points": [
+    "Judges ruled 9–6, the first time the court has found a state responsible for genocide.",
+    "The court found Myanmar’s forces killed at least 10,000 Rohingya and carried out widespread sexual violence in northern Rakhine state.",
+    "Myanmar must pay reparations and help Rohingya return safely; it was also found to have failed to prevent genocide."
+   ]
+  },
+  {
+   "id": "s2",
+   "topic": "science",
+   "source": "ScienceDaily",
+   "time": "19 Nov",
+   "url": "https://www.sciencedaily.com/releases/2026/11/261118065531.htm",
+   "headline": "Taung Child fossil complicates the human family tree",
+   "summary": "A new study suggests several ancestral species may represent separate branches rather than a single line.",
+   "points": [
+    "The Taung Child is roughly 3 million years old, and fossils long grouped with it may belong to several separate branches.",
+    "Differences in tooth and brain development point to more than one hominin species around Sterkfontein in South Africa.",
+    "Swings between wetter and drier climates probably split and reconnected early human relatives. Gabriele Macho of Vrije Universiteit Brussel led the team."
+   ]
+  },
+  {
+   "id": "t2",
+   "topic": "tech",
+   "source": "TechCrunch",
+   "time": "20 Nov",
+   "url": "https://techcrunch.com/2026/11/20/the-u-s-national-cyber-director-is-stepping-down/",
+   "headline": "White House cyber director Sean Cairncross is out",
+   "summary": "Axios first reported his exit; outlets differ on whether he left willingly or was pushed.",
+   "points": [
+    "Axios and TechCrunch described the split as amicable, timed so a successor can be confirmed before Democrats take control of Congress in January.",
+    "Axios also reported that new chief of staff Stephen Miller pushed for the change; CBS News, citing multiple sources, reported he was fired.",
+    "Pentagon CIO Kirsten Davies has been named to replace him; CNBC says she will serve as acting director."
+   ]
+  },
+  {
+   "id": "b2",
+   "topic": "business",
+   "source": "City AM",
+   "time": "18 Nov",
+   "url": "https://www.cityam.com/bailey-hints-at-higher-interest-rates-amid-firming-in-the-labour-market/",
+   "headline": "Bailey signals interest rates could rise again",
+   "summary": "The Bank of England governor said high energy prices and a firmer jobs market could mean more increases after November’s rise to 4%.",
+   "points": [
+    "Andrew Bailey said rates may need to rise further if the Middle East conflict keeps energy prices high.",
+    "He pointed to a firming labour market that could support household spending.",
+    "The Bank raised rates to 4% in early November; its mid-December decision will depend on how war costs feed through to prices."
+   ]
+  },
+  {
+   "id": "w3",
+   "topic": "world",
+   "source": "Euronews",
+   "time": "20 Nov",
+   "url": "https://www.euronews.com/2026/11/20/unidentified-object-falls-in-eastern-poland-amid-major-russian-attack-on-ukraine",
+   "headline": "Object falls in eastern Poland during major Russian attack on Ukraine",
+   "summary": "Poland’s military reported a suspected airspace violation as Russia launched a large overnight strike on its neighbour.",
+   "points": [
+    "The object came down near Chmielek in the Lublin region and caught fire; police reported no injuries.",
+    "The military said the airspace violation may be linked to the overnight Russian strike on Ukraine.",
+    "Prime Minister Donald Tusk called a meeting of ministers, military and intelligence chiefs, and jets and air defences were deployed as a precaution."
+   ]
+  },
+  {
+   "id": "s3",
+   "topic": "science",
+   "source": "ScienceDaily",
+   "time": "20 Nov",
+   "url": "https://www.sciencedaily.com/releases/2026/11/261119194525.htm",
+   "headline": "Moon dust 3D-printed into brick-like blocks for lunar bases",
+   "summary": "The blocks still need strengthening, but point to building on the Moon with local material.",
+   "points": [
+    "University of Arkansas researchers used laser 3D printing to fuse simulated lunar dust into interlocking bricks, with no binder.",
+    "The bricks are more porous and weaker than binder-based versions, so they are not yet fit for load-bearing structures.",
+    "Using only local material could cut what must be shipped from Earth; the effects of low gravity and vacuum still need testing."
+   ]
+  },
+  {
+   "id": "t3",
+   "topic": "tech",
+   "source": "TechCrunch",
+   "time": "19 Nov",
+   "url": "https://techcrunch.com/2026/11/19/uber-tests-rides-for-kids-as-young-as-10-with-extra-pay-for-drivers/",
+   "headline": "Uber trials rides for children as young as 10",
+   "summary": "The pilot extends Uber’s teen programme to younger children in three US cities.",
+   "points": [
+    "The pilot runs in Austin, Nashville and Madison and may not expand beyond them.",
+    "Parents must book every ride and be there at pickup; only invited, highly rated drivers who complete training can take part, and trips are streamed on live video.",
+    "Drivers earn $7 extra per trip plus a $20 bonus after their first ride."
+   ]
+  },
+  {
+   "id": "b3",
+   "topic": "business",
+   "source": "City AM",
+   "time": "18 Nov",
+   "url": "https://www.cityam.com/ftse-100-defence-giant-bae-to-cut-over-1000-jobs/",
+   "headline": "BAE Systems to cut about 1,070 jobs",
+   "summary": "Roles at its headquarters and aerospace division will go; production-line staff are reportedly spared.",
+   "points": [
+    "BAE plans to cut 1,070 roles to become more nimble and competitive.",
+    "Production-line staff and aircraft maintenance crews are reportedly not affected.",
+    "The cuts follow a raised sales forecast after a strong first half, when orders grew by £3.2bn to £16.4bn."
+   ]
+  },
+  {
+   "id": "w4",
+   "topic": "world",
+   "source": "ITV News",
+   "time": "20 Nov",
+   "url": "https://www.itv.com/news/utv/2026-11-20/resident-doctors-staging-24-hour-strike-over-pay",
+   "headline": "Northern Ireland’s resident doctors stage 24-hour strike over pay",
+   "summary": "The walkout hits hospitals and GP surgeries from 7am Friday to 7am Saturday.",
+   "points": [
+    "It is the second strike over pay restoration, after a walkout in June.",
+    "Specialist and consultant doctors will also strike on Monday 23 November.",
+    "The health minister says he backs the recommended 3.5% pay award but cannot implement it without an agreed departmental budget."
+   ]
+  },
+  {
+   "id": "s4",
+   "topic": "science",
+   "source": "ScienceDaily",
+   "time": "20 Nov",
+   "url": "https://www.sciencedaily.com/releases/2026/11/261119194605.htm",
+   "headline": "Two massive stars may be feeding the Milky Way’s black hole",
+   "summary": "Astronomers link gas clouds near the galactic centre to colliding winds from a pair of massive stars. The study was first reported in April 2026.",
+   "points": [
+    "Three gas clouds, G1, G2 and G2t, follow almost identical orbits around the central black hole, Sagittarius A*, suggesting a shared origin.",
+    "The likely source is IRS 16SW, a tight pair of massive stars whose colliding winds squeeze gas into clumps that drift inward.",
+    "About one Earth mass of gas every ten years could sustain the black hole’s current activity. A team led by the Max Planck Institute for Extraterrestrial Physics did the work."
+   ]
+  },
+  {
+   "id": "t4",
+   "topic": "tech",
+   "source": "TechCrunch",
+   "time": "19 Nov",
+   "url": "https://techcrunch.com/2026/11/19/elon-musk-says-spacex-has-a-plan-to-eliminate-cell-phone-dead-zones/",
+   "headline": "Musk says SpaceX rooftop towers could end indoor dead zones",
+   "summary": "SpaceX has designed a small rooftop cell tower for places where satellite signals struggle to reach indoors.",
+   "points": [
+    "The device targets buildings such as those with metal roofs, where Starlink phone signals are weak.",
+    "Musk said production should start in 2027 but avoided a firm timeline.",
+    "The towers could be bundled with Starlink terminals; Musk said he does not expect carriers like AT&T and Verizon to disappear."
+   ]
+  },
+  {
+   "id": "b4",
+   "topic": "business",
+   "source": "ITV News",
+   "time": "19 Nov",
+   "url": "https://www.itv.com/news/2026-11-19/time-running-out-to-save-poundland-from-collapse-as-shortages-appear-on-shelves",
+   "headline": "Poundland at risk of administration as shelves run short",
+   "summary": "Sales have fallen short and a funding dispute has left stores across the UK low on stock.",
+   "points": [
+    "Sales are well below expectations, and shelves are running short across the country.",
+    "US owner Gordon Brothers reportedly controls £60m in sales receipts and has released only £20m.",
+    "Its notice of intent to appoint administrators expires next week, so the chain may collapse without a rescue deal or more funding."
+   ]
+  }
+ ],
+ "CATS": {
+  "uk": {
+   "label": "UK news",
+   "topic": "world"
+  },
+  "world": {
+   "label": "World news",
+   "topic": "world"
+  },
+  "science": {
+   "label": "Science",
+   "topic": "science"
+  },
+  "tech": {
+   "label": "Tech",
+   "topic": "tech"
+  },
+  "business": {
+   "label": "Business",
+   "topic": "business"
+  }
+ },
+ "CATALOG": [
+  [
+   "telegraph",
+   "The Telegraph",
+   "uk",
+   true
+  ],
+  [
+   "bbc",
+   "BBC News",
+   "uk",
+   false
+  ],
+  [
+   "guardian",
+   "The Guardian",
+   "uk",
+   false
+  ],
+  [
+   "times",
+   "The Times",
+   "uk",
+   true
+  ],
+  [
+   "independent",
+   "The Independent",
+   "uk",
+   false
+  ],
+  [
+   "sky",
+   "Sky News",
+   "uk",
+   false
+  ],
+  [
+   "reuters",
+   "Reuters",
+   "world",
+   false
+  ],
+  [
+   "ap",
+   "Associated Press",
+   "world",
+   false
+  ],
+  [
+   "nyt",
+   "The New York Times",
+   "world",
+   true
+  ],
+  [
+   "politico",
+   "Politico Europe",
+   "world",
+   false
+  ],
+  [
+   "economist",
+   "The Economist",
+   "business",
+   true
+  ],
+  [
+   "ft",
+   "Financial Times",
+   "business",
+   true
+  ],
+  [
+   "bloomberg",
+   "Bloomberg",
+   "business",
+   true
+  ],
+  [
+   "wsj",
+   "The Wall Street Journal",
+   "business",
+   true
+  ],
+  [
+   "newscientist",
+   "New Scientist",
+   "science",
+   true
+  ],
+  [
+   "naturenews",
+   "Nature News",
+   "science",
+   false
+  ],
+  [
+   "stat",
+   "STAT",
+   "science",
+   false
+  ],
+  [
+   "ars",
+   "Ars Technica",
+   "tech",
+   false
+  ],
+  [
+   "verge",
+   "The Verge",
+   "tech",
+   false
+  ],
+  [
+   "wired",
+   "Wired",
+   "tech",
+   true
+  ]
+ ],
+ "LEAN": {
+  "L": [
+   "Left",
+   "Left"
+  ],
+  "LL": [
+   "Lean left",
+   "Left-Center"
+  ],
+  "C": [
+   "Centre",
+   "Least Biased"
+  ],
+  "LR": [
+   "Lean right",
+   "Right-Center"
+  ],
+  "R": [
+   "Right",
+   "Right"
+  ],
+  "S": [
+   "Science",
+   "Pro-Science (not rated left–right)"
+  ],
+  "P": [
+   "Primary",
+   "Primary source, not a news outlet"
+  ],
+  "NR": [
+   "Unrated",
+   "No Media Bias/Fact Check rating found"
+  ],
+  "NC": [
+   "Unchecked",
+   "Rating not looked up yet"
+  ]
+ },
+ "OUTLETS": {
+  "ITV News": "LR",
+  "RTÉ News": "C",
+  "Euronews": "LL",
+  "Times Higher Education": "NR",
+  "ScienceDaily": "S",
+  "EconoTimes": "NC",
+  "LHCb paper (arXiv)": "P",
+  "Bloomberg": "LL",
+  "TechCrunch": "LL",
+  "Latin Times": "LL",
+  "The Tech Portal": "NC",
+  "IBTimes UK": "LL",
+  "ONS (official statistics)": "P",
+  "Al Jazeera English": "LL",
+  "CNN": "LL",
+  "CBC News": "LL",
+  "PBS NewsHour": "LL",
+  "Truthout": "L",
+  "Gizmodo": "L",
+  "Archaeology Magazine": "NC",
+  "Sci.News": "NC",
+  "Axios": "LL",
+  "Reuters": "C",
+  "CBS News": "LR",
+  "CNBC": "C",
+  "The Daily Beast": "L",
+  "Townhall": "R",
+  "City AM": "NR",
+  "Central Banking": "NC",
+  "Bank of England (speech)": "P",
+  "Ukrainska Pravda": "LL",
+  "TVP World": "NR",
+  "Euromaidan Press": "NC",
+  "Popular Science": "S",
+  "New Atlas": "S",
+  "SciTechDaily": "S",
+  "Quartz": "LL",
+  "Daily Voice": "NC",
+  "Portsmouth News": "NC",
+  "BusinessCloud": "NC",
+  "The Irish News": "LL",
+  "BMA (union statement)": "P",
+  "Phys.org": "S",
+  "Sky & Telescope": "S",
+  "IntoMobile": "NC",
+  "Tesla North": "NC",
+  "NewsBytes": "NC",
+  "Express & Star": "NR"
+ },
+ "COVERAGE": {
+  "w1": [
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/uk/2026/1120/1599944-uk-eu-summit/"
+   ],
+   [
+    "ITV News",
+    "20 Nov",
+    "https://www.itv.com/news/2026-11-20/university-fees-row-puts-implementation-of-burnhams-eu-deal-in-jeopardy"
+   ],
+   [
+    "Euronews",
+    "20 Nov",
+    "https://www.euronews.com/2026/11/20/furious-farage-accuses-burnham-of-betraying-brexit-as-eu-uk-summit-gets-underway"
+   ],
+   [
+    "Times Higher Education",
+    "11 Nov",
+    "https://www.timeshighereducation.com/node/745998"
+   ]
+  ],
+  "s1": [
+   [
+    "ScienceDaily",
+    "20 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261119194530.htm"
+   ],
+   [
+    "EconoTimes",
+    "5 Nov",
+    "https://econotimes.com/CERN-s-LHCb-Finds-Evidence-of-Neutral-B-Decay-Predicted-Once-in-10-Billion-1771465"
+   ],
+   [
+    "LHCb paper (arXiv)",
+    "2 Nov",
+    "https://arxiv.org/html/2611.00230"
+   ]
+  ],
+  "t1": [
+   [
+    "Bloomberg",
+    "19 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-19/apple-is-working-on-ai-agent-for-device-control-apps-browsing-and-coding"
+   ],
+   [
+    "TechCrunch",
+    "19 Nov",
+    "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/"
+   ],
+   [
+    "Latin Times",
+    "20 Nov",
+    "https://www.latintimes.com/apple-building-ai-agent-that-can-use-your-mac-way-person-would-docs-show-601620"
+   ],
+   [
+    "The Tech Portal",
+    "20 Nov",
+    "https://thetechportal.com/2026/11/20/apple-building-its-own-ai-agent-to-operate-your-mac-while-macos-27-3-makes-rival-agents-harder-to-enable/"
+   ]
+  ],
+  "b1": [
+   [
+    "ITV News",
+    "20 Nov",
+    "https://www.itv.com/news/2026-11-20/ballooning-debt-interest-costs-push-up-government-borrowing-to-17bn-ons"
+   ],
+   [
+    "IBTimes UK",
+    "20 Nov",
+    "https://www.ibtimes.co.uk/uk-debt-interest-october-record-borrowing-rises-1833620"
+   ],
+   [
+    "ONS (official statistics)",
+    "20 Nov",
+    "https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/bulletins/publicsectorfinances/october2026"
+   ]
+  ],
+  "w2": [
+   [
+    "Al Jazeera English",
+    "19 Nov",
+    "https://www.aljazeera.com/news/2026/11/19/un-top-court-finds-myanmar-killed-10000-rohingya-as-it-rules-on-genocide"
+   ],
+   [
+    "CNN",
+    "19 Nov",
+    "https://www.cnn.com/2026/11/19/asia/icj-myanmar-genocide-rohingya-ruling-intl-hnk"
+   ],
+   [
+    "CBC News",
+    "19 Nov",
+    "https://www.cbc.ca/news/world/hague-icj-court-myanmar-rohingya-ruling-9.7427764"
+   ],
+   [
+    "PBS NewsHour",
+    "19 Nov",
+    "https://www.pbs.org/newshour/show/international-court-of-justice-finds-myanmar-guilty-of-genocide-against-rohingya"
+   ],
+   [
+    "Truthout",
+    "19 Nov",
+    "https://truthout.org/articles/icj-finds-myanmar-guilty-of-committing-genocide-against-rohingya-muslims/"
+   ]
+  ],
+  "s2": [
+   [
+    "ScienceDaily",
+    "19 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261118065531.htm"
+   ],
+   [
+    "Gizmodo",
+    "Nov",
+    "https://gizmodo.com/a-3-million-year-old-toddler-skull-is-shaking-up-human-evolution-again-2000841728"
+   ],
+   [
+    "Archaeology Magazine",
+    "12 Nov",
+    "https://archaeologymag.com/2026/11/taung-child-dated-to-3-million-years-old/"
+   ],
+   [
+    "Sci.News",
+    "9 Nov",
+    "https://www.sci.news/othersciences/anthropology/taung-child-15185.html"
+   ]
+  ],
+  "t2": [
+   [
+    "Axios",
+    "19 Nov",
+    "https://www.axios.com/2026/11/19/trump-national-cyber-director-sean-cairncross-leaving"
+   ],
+   [
+    "Reuters",
+    "19 Nov",
+    "https://www.usnews.com/news/top-news/articles/2026-11-19/white-house-national-cyber-director-cairncross-leaving-his-post-axios-reports"
+   ],
+   [
+    "The Daily Beast",
+    "19 Nov",
+    "https://www.thedailybeast.com/top-trump-cybersecurity-official-sean-cairncross-abruptly-ditches-white-house"
+   ],
+   [
+    "TechCrunch",
+    "20 Nov",
+    "https://techcrunch.com/2026/11/20/the-u-s-national-cyber-director-is-stepping-down/"
+   ],
+   [
+    "CBS News",
+    "20 Nov",
+    "https://www.cbsnews.com/news/white-house-national-cyber-director-sean-cairncross-leaving/"
+   ],
+   [
+    "CNBC",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/sean-cairncross-white-house-cyber-director.html"
+   ],
+   [
+    "Townhall",
+    "20 Nov",
+    "https://townhall.com/news/mattvespa/2026/11/20/why-trumps-us-national-cyber-director-is-stepping-down-n2686787"
+   ]
+  ],
+  "b2": [
+   [
+    "City AM",
+    "18 Nov",
+    "https://www.cityam.com/bailey-hints-at-higher-interest-rates-amid-firming-in-the-labour-market/"
+   ],
+   [
+    "Bloomberg",
+    "18 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-18/boe-s-bailey-says-more-rate-hikes-needed-if-iran-conflict-lasts"
+   ],
+   [
+    "Central Banking",
+    "19 Nov",
+    "https://www.centralbanking.com/central-banks/monetary-policy/7978022/more-rate-hikes-needed-if-iran-war-continues-boe-governor"
+   ],
+   [
+    "Bank of England (speech)",
+    "18 Nov",
+    "https://www.bankofengland.co.uk/speech/2026/november/andrew-bailey-speech-at-the-annual-institute-of-economic-development-conference-london"
+   ]
+  ],
+  "w3": [
+   [
+    "Euronews",
+    "20 Nov",
+    "https://www.euronews.com/2026/11/20/unidentified-object-falls-in-eastern-poland-amid-major-russian-attack-on-ukraine"
+   ],
+   [
+    "Bloomberg",
+    "20 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-20/poland-probes-blast-near-ukraine-border-after-airspace-violation"
+   ],
+   [
+    "Ukrainska Pravda",
+    "20 Nov",
+    "https://www.pravda.com.ua/eng/news/2026/11/20/8063749/"
+   ],
+   [
+    "TVP World",
+    "20 Nov",
+    "https://tvpworld.com/96583029/poland-probes-possible-fall-of-unknown-object-near-ukraine-border"
+   ],
+   [
+    "Euromaidan Press",
+    "20 Nov",
+    "https://euromaidanpress.com/2026/11/20/a-farmyard-camera-caught-the-flash-russias-missile-barrage-on-ukraine-reached-a-polish-village/"
+   ]
+  ],
+  "s3": [
+   [
+    "ScienceDaily",
+    "20 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261119194525.htm"
+   ],
+   [
+    "Popular Science",
+    "Nov",
+    "https://www.popsci.com/science/3d-printed-lunar-lego-bricks/"
+   ],
+   [
+    "New Atlas",
+    "Nov",
+    "https://newatlas.com/materials/3d-printed-moon-lego-bricks/"
+   ],
+   [
+    "SciTechDaily",
+    "Nov",
+    "https://scitechdaily.com/?p=537692"
+   ]
+  ],
+  "t3": [
+   [
+    "TechCrunch",
+    "19 Nov",
+    "https://techcrunch.com/2026/11/19/uber-tests-rides-for-kids-as-young-as-10-with-extra-pay-for-drivers/"
+   ],
+   [
+    "Quartz",
+    "19 Nov",
+    "https://qz.com/uber-kids-pilot-rides-children-ages-10-12-111926"
+   ],
+   [
+    "Daily Voice",
+    "20 Nov",
+    "https://dailyvoice.com/article/uber-testing-rides-for-kids-10-12-without-parents-how-it-works/"
+   ]
+  ],
+  "b3": [
+   [
+    "City AM",
+    "18 Nov",
+    "https://www.cityam.com/ftse-100-defence-giant-bae-to-cut-over-1000-jobs/"
+   ],
+   [
+    "Reuters",
+    "18 Nov",
+    "https://capital.com/en-gb/news/uk-s-bae-systems-to-cut-1-000-jobs-from-head-office"
+   ],
+   [
+    "Portsmouth News",
+    "Nov",
+    "https://www.portsmouth.co.uk/news/defence/bae-systems-plans-to-cut-up-to-1070-jobs-9360083"
+   ],
+   [
+    "BusinessCloud",
+    "Nov",
+    "https://businesscloud.co.uk/?p=273874"
+   ]
+  ],
+  "w4": [
+   [
+    "ITV News",
+    "20 Nov",
+    "https://www.itv.com/news/utv/2026-11-20/resident-doctors-staging-24-hour-strike-over-pay"
+   ],
+   [
+    "The Irish News",
+    "Nov",
+    "https://www.irishnews.com/news/northern-ireland/northern-ireland-doctors-strike-when-is-it-and-will-it-impact-my-appointment-N64UU4236JFXTPUAEQC6JB3ATE/"
+   ],
+   [
+    "BMA (union statement)",
+    "15 Oct",
+    "https://www.bma.org.uk/bma-media-centre/northern-ireland-hospital-doctors-announce-new-strike-dates"
+   ]
+  ],
+  "s4": [
+   [
+    "ScienceDaily",
+    "20 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261119194605.htm"
+   ],
+   [
+    "Phys.org",
+    "Apr",
+    "https://phys.org/news/2026-04-mysterious-gas-clouds-milky-black.html"
+   ],
+   [
+    "Sky & Telescope",
+    "May",
+    "https://skyandtelescope.org/astronomy-news/whats-feeding-our-supermassive-black-hole/"
+   ],
+   [
+    "SciTechDaily",
+    "May",
+    "https://scitechdaily.com/scientists-uncover-the-surprising-source-of-strange-clouds-near-the-milky-ways-supermassive-black-hole/"
+   ]
+  ],
+  "t4": [
+   [
+    "TechCrunch",
+    "19 Nov",
+    "https://techcrunch.com/2026/11/19/elon-musk-says-spacex-has-a-plan-to-eliminate-cell-phone-dead-zones/"
+   ],
+   [
+    "IntoMobile",
+    "19 Nov",
+    "https://www.intomobile.com/2026/11/19/musk-says-a-starlink-mini-cell-tower-will-kill-dead-zones-sure-in-2027/"
+   ],
+   [
+    "Tesla North",
+    "19 Nov",
+    "https://teslanorth.com/2026/11/19/starlink-rooftop-microcells-indoor-phone-coverage/"
+   ],
+   [
+    "NewsBytes",
+    "20 Nov",
+    "https://www.newsbytesapp.com/news/science/spacex-to-develop-mini-cell-towers-to-eliminate-dead-zones/story"
+   ]
+  ],
+  "b4": [
+   [
+    "ITV News",
+    "19 Nov",
+    "https://www.itv.com/news/2026-11-19/time-running-out-to-save-poundland-from-collapse-as-shortages-appear-on-shelves"
+   ],
+   [
+    "Express & Star",
+    "20 Nov",
+    "https://www.expressandstar.com/news/empty-shelves-at-brierley-hills-poundland-store-spark-fears-for-future-of-beloved-discount-chain-9364239"
+   ],
+   [
+    "City AM",
+    "Nov",
+    "https://www.cityam.com/?p=2478396"
+   ]
+  ]
+ },
+ "FOLLOWED": [
+  {
+   "name": "ITV News",
+   "topic": "world"
+  },
+  {
+   "name": "RTÉ News",
+   "topic": "world"
+  },
+  {
+   "name": "Al Jazeera English",
+   "topic": "world"
+  },
+  {
+   "name": "Euronews",
+   "topic": "world"
+  },
+  {
+   "name": "ScienceDaily",
+   "topic": "science"
+  },
+  {
+   "name": "TechCrunch",
+   "topic": "tech"
+  },
+  {
+   "name": "City AM",
+   "topic": "business"
+  }
+ ],
+ "META": {
+  "dateLabel": "Saturday 21 November 2026",
+  "range": "18–20 Nov",
+  "rangeLong": "18–20 November 2026",
+  "lastRun": "21 Nov 2026, 01:55",
+  "digest": [
+   "The UK and EU seal a reset deal but put off the tuition fees question.",
+   "UK borrowing rose to £17bn in October as debt interest hit a record.",
+   "CERN reports a particle decay so rare it took 40 years to spot.",
+   "Apple is reportedly building an AI agent to run your Mac."
+  ],
+  "defaultSaved": [
+   "s2",
+   "t1"
+  ]
+ }
+};
