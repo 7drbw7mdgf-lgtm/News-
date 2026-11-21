@@ -1,4 +1,4 @@
-/* Daybreak — standalone news dashboard. No build step, no dependencies. */
+/* Pheme — standalone news dashboard. No build step, no dependencies. */
 (function () {
   'use strict';
 
@@ -167,7 +167,7 @@
   /* ---------- views ---------- */
   function renderHeader() {
     return '<header class="topbar">' +
-      '<div class="brand">' + ICON.logo + '<span class="brand-name">Daybreak</span></div>' +
+      '<div class="brand">' + ICON.logo + '<span class="brand-name">Pheme</span></div>' +
       '<form class="search" role="search" data-form="search">' + ICON.search +
       '<label for="q" class="sr-only">Search stories, topics and sources</label>' +
       '<input id="q" type="search" placeholder="Search stories, topics and sources" value="' + esc(state.query) + '" autocomplete="off"></form>' +
@@ -302,7 +302,7 @@
         '<p class="small" style="padding-top:16px;border-top:1px solid #EEECE6;font-size:13px">' + esc(plural(stories.length, 'story', 'stories')) + ' in today’s edition</p></div>';
     } else {
       inner = '<div class="empty"><p class="serif" style="margin:0;font-size:24px;font-weight:600">No featured stories from this outlet</p>' +
-        '<p style="margin:0;max-width:46ch;font-size:15px;line-height:1.55;color:#3A3E48">When Daybreak features a story from this outlet, it will appear here.</p>' +
+        '<p style="margin:0;max-width:46ch;font-size:15px;line-height:1.55;color:#3A3E48">When Pheme features a story from this outlet, it will appear here.</p>' +
         (meta.paywall ? '<p style="margin:0;font-size:13px;font-weight:600;color:#6B4A00">Full articles need a subscription to this paper.</p>' : '') + '</div>';
     }
     return '<div><h1 class="title">Newspapers</h1><p class="sub">' + esc(plural(papers.length, 'newspaper', 'newspapers')) + ' you follow · pick one to read today’s edition</p></div>' +
@@ -343,7 +343,7 @@
         return '<li>' + leanBadge(r.name) + '<span class="name">' + esc(r.name) + '</span><span class="small">' + esc(r.date) + '</span>' +
           '<a href="' + esc(safeUrl(r.url)) + '" target="_blank" rel="noopener noreferrer" aria-label="Open ' + esc(r.name) + ' article in a new tab">Open ↗</a></li>';
       }).join('') + '</ul></section>' +
-      '<div class="rfoot"><p class="small" style="font-size:13px;line-height:1.5;max-width:46ch">Summary written for Daybreak from ' + esc(s.source) + '’s report. The full article is on their site.</p>' +
+      '<div class="rfoot"><p class="small" style="font-size:13px;line-height:1.5;max-width:46ch">Summary written for Pheme from ' + esc(s.source) + '’s report. The full article is on their site.</p>' +
       '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">' + saveBtn(s) +
       '<a class="darkbtn" style="font-size:13px;padding:0 16px;border-radius:8px" href="' + esc(safeUrl(s.url)) + '" target="_blank" rel="noopener noreferrer">Original at ' + esc(s.source) + ' ↗</a></div></div>' +
       (more.length ? '<section class="rsection more" style="gap:4px"><h2 style="margin-bottom:6px">More from ' + esc(s.source) + '</h2><div class="papers-list">' +
@@ -361,7 +361,7 @@
     return '<aside class="rail" aria-label="Your digest and sources">' +
       '<section class="panel dark"><h2>Your 60-second digest</h2><ul>' + D.META.digest.map(function (d) { return '<li>' + esc(d) + '</li>'; }).join('') + '</ul></section>' +
       '<section class="panel" aria-labelledby="algo-title"><h2 id="algo-title">How coverage works</h2><ol class="algo">' +
-      '<li>Daybreak groups reporting about the same event.</li>' +
+      '<li>Pheme groups reporting about the same event.</li>' +
       '<li>Links can include original reporting, follow-up coverage and primary sources.</li>' +
       '<li>Where available, Media Bias/Fact Check labels describe publishers.</li>' +
       '<li>The bar describes the outlets in the displayed sample.</li></ol>' +
@@ -412,7 +412,7 @@
     app.innerHTML = renderHeader() +
       '<div class="shell">' + renderNav() +
       '<div class="content"><main class="main" id="main">' + main + '</main>' + renderRail() + '</div></div>' +
-      '<footer class="footer">Story summaries are written for Daybreak from each outlet’s reporting; follow the links for the full articles. Leaning ratings from Media Bias/Fact Check.</footer>' +
+      '<footer class="footer">Story summaries are written for Pheme from each outlet’s reporting; follow the links for the full articles. Leaning ratings from Media Bias/Fact Check.</footer>' +
       renderSettings();
     mountWorldMap();
     if (opts && opts.focus) {

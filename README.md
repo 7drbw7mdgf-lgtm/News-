@@ -1,6 +1,6 @@
-# Daybreak
+# Pheme
 
-A news briefing across UK & world, science, tech and business. Each story shows coverage from several outlets, with each outlet's political leaning (ratings from Media Bias/Fact Check).
+A news briefing across UK, world, science, tech, business and finance. Each story shows coverage from several outlets, with each outlet's political leaning (ratings from Media Bias/Fact Check).
 
 It's a plain static site: no build step, no server code.
 

@@ -1,4 +1,4 @@
-/* Daybreak — standalone styles */
+/* Pheme — standalone styles */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #F6F5F1; color: #15171C; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; line-height: 1.4; }
