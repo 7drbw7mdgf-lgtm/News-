@@ -7,7 +7,8 @@
   if (!D || !app) return;
 
   var ACCENT = '#1E46C8';
-  var STORE_KEY = 'daybreak:v1';
+  var STORE_KEY = 'daybreak:v2';
+  var route = new URLSearchParams(location.search);
   var SEG_ORDER = ['L', 'LL', 'C', 'LR', 'R', 'S'];
   var labelOf = {};
   D.TOPICS.forEach(function (t) { labelOf[t.id] = t.label; });
@@ -16,21 +17,28 @@
   var state = {
     view: 'briefing', topic: 'all', reading: null, paper: null,
     settingsOpen: false, srcQuery: '', query: '',
-    saved: {}, added: {}, digestOn: true, edition: 'United Kingdom'
+    saved: {}, added: {}
   };
-  (D.META.defaultSaved || []).forEach(function (id) { state.saved[id] = true; });
   try {
     var stored = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
+    if (!stored) {
+      var legacy = JSON.parse(localStorage.getItem('daybreak:v1') || 'null');
+      if (legacy) {
+        var migrated = {};
+        Object.keys(D.LEGACY_IDS || {}).forEach(function (id) {
+          if (legacy.saved && legacy.saved[id]) migrated[D.LEGACY_IDS[id]] = true;
+        });
+        stored = { saved: migrated, added: legacy.added };
+      }
+    }
     if (stored) {
       if (stored.saved) state.saved = stored.saved;
       if (stored.added) state.added = stored.added;
-      if (typeof stored.digestOn === 'boolean') state.digestOn = stored.digestOn;
-      if (stored.edition) state.edition = stored.edition;
     }
   } catch (e) { /* storage unavailable: keep defaults */ }
   function persist() {
     try {
-      localStorage.setItem(STORE_KEY, JSON.stringify({ saved: state.saved, added: state.added, digestOn: state.digestOn, edition: state.edition }));
+      localStorage.setItem(STORE_KEY, JSON.stringify({ saved: state.saved, added: state.added }));
     } catch (e) { /* ignore */ }
   }
 
@@ -54,8 +62,8 @@
   };
 
   /* ---------- coverage ---------- */
-  function buildCoverage(id) {
-    var rows = (D.COVERAGE[id] || []).map(function (r) {
+  function buildCoverage(id, archived) {
+    var rows = (archived || D.COVERAGE[id] || []).map(function (r) {
       var code = D.OUTLETS[r[0]] || 'NC';
       return { name: r[0], date: r[1], url: r[2], code: code };
     });
@@ -70,7 +78,7 @@
     var centre = counts.C || 0;
     var rated = left + right + centre;
     var note;
-    if ((counts.S || 0) >= rows.length / 2) note = 'Mostly science outlets, which aren’t rated left–right.';
+    if (rows.length && (counts.S || 0) > rows.length / 2) note = 'Mostly science outlets, which aren’t rated left–right.';
     else if (rated < 2) note = 'Too few rated outlets to judge the spread.';
     else if (right === 0 && left > 0) note = 'No right-leaning outlets in this sample.';
     else if (left === 0 && right > 0) note = 'No left-leaning outlets in this sample.';
@@ -81,13 +89,38 @@
       aria: 'Coverage mix: ' + legend.map(function (l) { return l.n + ' ' + l.label.toLowerCase(); }).join(', ')
     };
   }
-  var STORIES = D.STORIES.map(function (s) {
+  var CURRENT = D.STORIES.map(function (s) {
     var o = Object.assign({}, s);
     o.cov = buildCoverage(s.id);
     return o;
   });
-  var byId = {};
+  var STORIES = CURRENT.concat((window.DAYBREAK_ARCHIVE || []).map(function (s) {
+    return Object.assign({}, s, { cov: buildCoverage(s.id, s.coverage) });
+  })).filter(function (s, i, all) {
+    return all.findIndex(function (item) { return item.id === s.id; }) === i;
+  });
+  var byId = Object.create(null);
   STORIES.forEach(function (s) { byId[s.id] = s; });
+
+  state.reading = byId[route.get('story')] ? route.get('story') : null;
+  if (route.has('q')) state.query = route.get('q');
+
+  function storyHref(id) {
+    return '?story=' + encodeURIComponent(id);
+  }
+  function compareLink(s, cls, label) {
+    return '<a class="' + cls + '" href="' + storyHref(s.id) +
+      '" data-act="open" data-id="' + esc(s.id) + '">' + esc(label) + '</a>';
+  }
+  function changeStory(id) {
+    state.reading = id;
+    history.pushState(null, '', id ? storyHref(id) : location.pathname);
+  }
+  window.addEventListener('popstate', function () {
+    var id = new URLSearchParams(location.search).get('story');
+    state.reading = byId[id] ? id : null;
+    render();
+  });
 
   function covBar(cov, large) {
     return '<div class="covbar' + (large ? ' lg' : '') + '" role="img" aria-label="' + esc(cov.aria) + '">' +
@@ -149,13 +182,12 @@
     var savedCount = STORIES.filter(function (s) { return state.saved[s.id]; }).length;
     var topics = D.TOPICS.map(function (t) {
       var on = !isPapers && !state.reading && state.topic === t.id;
-      var n = STORIES.filter(function (s) { return s.topic === t.id; }).length;
+      var n = CURRENT.filter(function (s) { return s.topic === t.id; }).length;
       return '<button class="navbtn' + (on ? ' on' : '') + '" data-act="topic" data-id="' + esc(t.id) + '" aria-pressed="' + on + '">' +
         '<span class="dot dot-' + esc(t.id) + '"></span><span class="grow">' + esc(t.label) + '</span><span class="count">' + n + '</span></button>';
     }).join('');
     return '<nav class="sidenav" aria-label="Sections"><div class="navgroup">' +
       '<button class="navbtn' + (!isPapers && state.view !== 'saved' ? ' on' : '') + '" data-act="view" data-view="briefing">' + ICON.list + 'Briefing</button>' +
-      '<button class="navbtn" data-act="settings">' + ICON.bell + 'Alerts</button>' +
       '<button class="navbtn' + (state.view === 'saved' ? ' on' : '') + '" data-act="view" data-view="saved">' + ICON.bookmark + '<span class="grow">Saved</span><span class="count">' + savedCount + '</span></button>' +
       '<button class="navbtn' + (isPapers ? ' on' : '') + '" data-act="view" data-view="papers">' + ICON.paper + 'Newspapers</button>' +
       '</div><div class="navgroup"><h2 class="navhead">Topics</h2>' + topics + '</div></nav>';
@@ -168,7 +200,7 @@
       '<h2 class="hl"><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h2>' +
       '<p class="summary">' + esc(s.summary) + '</p>' +
       '<div class="cov">' + covBar(s.cov) + '<span class="covtext">' + esc(s.cov.count + ' · ' + s.cov.note) + '</span></div>' +
-      '<div class="cardfoot"><button class="textbtn" data-act="open" data-id="' + esc(s.id) + '">Read story →</button>' + saveBtn(s) + '</div>' +
+      '<div class="cardfoot">' + compareLink(s, "textbtn", "Compare coverage →") + saveBtn(s) + '</div>' +
       '</article>';
   }
   function renderCard(s) {
@@ -176,19 +208,19 @@
       '<h3 class="hl"><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h3>' +
       '<p class="summary">' + esc(s.summary) + '</p>' +
       '<div class="cov">' + covBar(s.cov) + '<span class="covtext">' + esc(s.cov.count + ' · ' + s.cov.note) + '</span></div>' +
-      '<div class="cardfoot"><button class="textbtn sm" data-act="open" data-id="' + esc(s.id) + '">Read story →</button>' + saveBtn(s) + '</div>' +
+      '<div class="cardfoot">' + compareLink(s, "textbtn", "Compare coverage →") + saveBtn(s) + '</div>' +
       '</article>';
   }
 
   function renderBriefing() {
     var saved = state.view === 'saved';
-    var list = STORIES.filter(function (s) {
+    var list = (saved ? STORIES : CURRENT).filter(function (s) {
       if (saved) return state.saved[s.id];
       return state.topic === 'all' || s.topic === state.topic;
     }).filter(matchesQuery);
     var title = saved ? 'Saved stories' : (state.topic === 'all' ? 'Your briefing' : labelOf[state.topic]);
     var sub = saved ? plural(list.length, 'saved story', 'saved stories') :
-      plural(list.length, 'story', 'stories') + ' · ' + (state.topic === 'all' ? '4 topics · headlines from ' + D.META.rangeLong : 'newest and most-covered first');
+      plural(list.length, 'story', 'stories') + ' · ' + (state.topic === 'all' ? '4 topics · headlines from ' + D.META.rangeLong : 'editor’s selection');
     if (state.query.trim()) sub = plural(list.length, 'story', 'stories') + ' matching “' + state.query.trim() + '”';
     var chips = saved ? '' : '<div class="chips" role="group" aria-label="Filter by topic">' +
       [{ id: 'all', label: 'All topics' }].concat(D.TOPICS).map(function (t) {
@@ -208,7 +240,7 @@
     var papers = followed();
     var name = state.paper && papers.some(function (p) { return p.name === state.paper; }) ? state.paper : papers[0].name;
     var meta = papers.filter(function (p) { return p.name === name; })[0] || {};
-    var stories = STORIES.filter(function (s) { return s.source === name; });
+    var stories = CURRENT.filter(function (s) { return s.source === name; });
     var tabs = papers.map(function (p) {
       var on = p.name === name;
       return '<button class="chip' + (on ? ' on' : '') + '" data-act="paper" data-name="' + esc(p.name) + '" aria-pressed="' + on + '">' + esc(p.name) + '</button>';
@@ -228,14 +260,26 @@
         }).join('') + '</div>' : '') +
         '<p class="small" style="padding-top:16px;border-top:1px solid #EEECE6;font-size:13px">' + esc(plural(stories.length, 'story', 'stories')) + ' in today’s edition</p></div>';
     } else {
-      inner = '<div class="empty"><p class="serif" style="margin:0;font-size:24px;font-weight:600">Today’s edition isn’t connected yet</p>' +
-        '<p style="margin:0;max-width:46ch;font-size:15px;line-height:1.55;color:#3A3E48">Once this paper’s feed is connected, its front page and latest stories will appear here.</p>' +
+      inner = '<div class="empty"><p class="serif" style="margin:0;font-size:24px;font-weight:600">No featured stories from this outlet</p>' +
+        '<p style="margin:0;max-width:46ch;font-size:15px;line-height:1.55;color:#3A3E48">When Daybreak features a story from this outlet, it will appear here.</p>' +
         (meta.paywall ? '<p style="margin:0;font-size:13px;font-weight:600;color:#6B4A00">Full articles need a subscription to this paper.</p>' : '') + '</div>';
     }
     return '<div><h1 class="title">Newspapers</h1><p class="sub">' + esc(plural(papers.length, 'newspaper', 'newspapers')) + ' you follow · pick one to read today’s edition</p></div>' +
       '<div class="chips" role="group" aria-label="Choose a newspaper">' + tabs + '</div>' +
       '<article class="paper" aria-labelledby="paper-name"><header class="masthead"><h2 id="paper-name">' + esc(name) + '</h2>' +
       '<span class="dateline">Latest stories · ' + esc(D.META.rangeLong) + '</span></header>' + inner + '</article>';
+  }
+
+  function renderComparison(s) {
+    return (s.comparison || []).map(function (group) {
+      return '<section class="rsection"><h2>' + esc(group.label) + '</h2><ul class="points">' +
+        group.points.map(function (point) {
+          return '<li>' + esc(point.text) + ' ' + point.sources.map(function (name) {
+            var row = s.cov.rows.find(function (item) { return item.name === name; });
+            return row ? '<a href="' + esc(safeUrl(row.url)) + '" target="_blank" rel="noopener noreferrer">' + esc(name) + '</a>' : '';
+          }).join(' · ') + '</li>';
+        }).join('') + '</ul></section>';
+    }).join('');
   }
 
   function renderReader(s) {
@@ -245,10 +289,10 @@
     return '<article class="reader" id="reader" aria-labelledby="reader-title">' +
       '<button class="backbtn" data-act="back">← ' + esc(back) + '</button>' +
       '<div class="meta"><span class="tag tag-' + esc(s.topic) + '">' + esc(labelOf[s.topic]) + '</span>' +
-      '<span style="font-weight:600;color:#15171C">' + esc(s.source) + '</span><span aria-hidden="true">·</span><span>' + esc(s.time) + ' 2026</span></div>' +
+      '<span style="font-weight:600;color:#15171C">' + esc(s.source) + '</span><span aria-hidden="true">·</span><span>' + esc(s.publishedLabel || s.time) + '</span></div>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
-      '<section class="rsection"><h2>Key points</h2><ul class="points">' + (s.points || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></section>' +
+      renderComparison(s) + '<section class="rsection"><h2>Key points</h2><ul class="points">' + (s.points || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></section>' +
       '<section class="rsection" aria-labelledby="cov-title" style="gap:12px">' +
       '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><h2 id="cov-title">Full coverage · ' + esc(cov.count) + '</h2>' +
       '<span class="small">Leaning ratings: Media Bias/Fact Check</span></div>' + covBar(cov, true) +
@@ -276,10 +320,10 @@
     return '<aside class="rail" aria-label="Your digest and sources">' +
       '<section class="panel dark"><h2>Your 60-second digest</h2><ul>' + D.META.digest.map(function (d) { return '<li>' + esc(d) + '</li>'; }).join('') + '</ul></section>' +
       '<section class="panel" aria-labelledby="algo-title"><h2 id="algo-title">How coverage works</h2><ol class="algo">' +
-      '<li>Each new story from a paper you follow is searched by its key names, places and dates.</li>' +
-      '<li>Articles on the same event from other outlets are kept; older or unrelated ones are dropped.</li>' +
-      '<li>Each outlet’s leaning is looked up in Media Bias/Fact Check. Outlets it doesn’t rate stay marked as unrated.</li>' +
-      '<li>The bar shows the mix, and a note flags when one side is missing from the sample.</li></ol>' +
+      '<li>Daybreak groups reporting about the same event.</li>' +
+      '<li>Links can include original reporting, follow-up coverage and primary sources.</li>' +
+      '<li>Where available, Media Bias/Fact Check labels describe publishers.</li>' +
+      '<li>The bar describes the outlets in the displayed sample.</li></ol>' +
       '<div class="legend">' + swatches + '</div>' +
       '<p class="small">Last updated: ' + esc(D.META.lastRun) + '.</p></section>' +
       '<section class="panel"><h2>Newspapers you follow</h2><div class="papers-list">' + papers + '</div>' +
@@ -307,16 +351,10 @@
 
   function renderSettings() {
     if (!state.settingsOpen) return '';
-    var editions = ['United Kingdom', 'International', 'Europe', 'United States'].map(function (e) {
-      return '<option' + (e === state.edition ? ' selected' : '') + '>' + esc(e) + '</option>';
-    }).join('');
     return '<div class="settings" role="dialog" aria-modal="false" aria-labelledby="settings-title">' +
       '<div class="settings-head"><h2 id="settings-title">Settings</h2><button class="iconbtn" style="border:0" data-act="close" aria-label="Close settings">' + ICON.close + '</button></div>' +
       '<div class="settings-body">' +
-      '<section><h3>General</h3>' +
-      '<div class="row"><label for="edition">Edition</label><select id="edition" data-field="edition">' + editions + '</select></div>' +
-      '<label class="row" for="digest">Morning digest at 7:00<input id="digest" type="checkbox" data-field="digest"' + (state.digestOn ? ' checked' : '') + '></label></section>' +
-      '<section><h3>Newspapers</h3><p style="margin:0;font-size:14px;color:#3A3E48">Add newspapers to your feed, then read each one from Newspapers in the menu.</p>' +
+      '<section><h3>Newspapers</h3><p style="margin:0;font-size:14px;color:#3A3E48">Pin newspapers for quick access to any stories featured in the briefing.</p>' +
       '<div class="search" style="max-width:none;flex:none">' + ICON.search + '<label for="src-q" class="sr-only">Search newspapers</label>' +
       '<input id="src-q" type="search" placeholder="Search newspapers, e.g. Telegraph" value="' + esc(state.srcQuery) + '" autocomplete="off"></div>' +
       '<div id="src-list">' + sourceListHtml() + '</div></section>' +
@@ -336,7 +374,7 @@
       renderSettings();
     if (opts && opts.focus) {
       var el = document.getElementById(opts.focus);
-      if (el) { el.focus(); if (el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
+      if (el) { el.focus(); if (el.type === 'text' && el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
     }
     if (opts && opts.scrollReader) {
       var r = document.getElementById('reader');
@@ -351,11 +389,11 @@
     var act = t.getAttribute('data-act');
     var id = t.getAttribute('data-id');
     switch (act) {
-      case 'topic': state.view = 'briefing'; state.topic = id; state.reading = null; render(); break;
-      case 'view': state.view = t.getAttribute('data-view'); state.reading = null; if (state.view === 'briefing') state.topic = state.topic || 'all'; render(); break;
-      case 'paper': state.view = 'papers'; state.paper = t.getAttribute('data-name'); state.reading = null; state.settingsOpen = false; render(); break;
-      case 'open': state.reading = id; state.settingsOpen = false; render({ scrollReader: true }); break;
-      case 'back': state.reading = null; render(); break;
+      case 'topic': state.view = 'briefing'; state.topic = id; if (state.reading) changeStory(null); render(); break;
+      case 'view': state.view = t.getAttribute('data-view'); if (state.reading) changeStory(null); if (state.view === 'briefing') state.topic = state.topic || 'all'; render(); break;
+      case 'paper': state.view = 'papers'; state.paper = t.getAttribute('data-name'); if (state.reading) changeStory(null); state.settingsOpen = false; render(); break;
+      case 'open': if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; e.preventDefault(); changeStory(id); state.settingsOpen = false; render({ scrollReader: true }); break;
+      case 'back': changeStory(null); render(); break;
       case 'save': state.saved[id] = !state.saved[id]; persist(); render(); break;
       case 'settings': state.settingsOpen = true; render({ focus: 'src-q' }); break;
       case 'close': state.settingsOpen = false; render(); break;
@@ -374,15 +412,10 @@
       if (box) box.innerHTML = sourceListHtml();
     } else if (e.target.id === 'q') {
       state.query = e.target.value;
-      state.reading = null;
+      if (state.reading) changeStory(null);
       if (state.view === 'papers') state.view = 'briefing';
       render({ focus: 'q' });
     }
-  });
-  app.addEventListener('change', function (e) {
-    var f = e.target.getAttribute('data-field');
-    if (f === 'edition') { state.edition = e.target.value; persist(); }
-    if (f === 'digest') { state.digestOn = e.target.checked; persist(); }
   });
   app.addEventListener('submit', function (e) { e.preventDefault(); });
   document.addEventListener('keydown', function (e) {

@@ -17,6 +17,11 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
+      - name: Validate edition and JavaScript
+        run: |
+          node scripts/build-editions.mjs --check
+          node --check assets/app.js
+
       - name: Check FTP secrets are set
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
@@ -38,10 +43,12 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ${{ vars.FTP_PROTOCOL || 'ftp' }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
           server-dir: ${{ vars.FTP_SERVER_DIR || 'htdocs/' }}
           exclude: |
             **/.git*
             **/.git*/**
             .github/**
             README.md
+            scripts/**
+            editions/**

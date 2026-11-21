@@ -174,3 +174,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   .masthead h2 { font-size: 36px; }
   .settings { position: fixed; top: 12px; right: 12px; left: 12px; width: auto; max-width: none; max-height: calc(100vh - 24px); }
 }
+
+a.textbtn { display: inline-flex; align-items: center; text-decoration: none; }
+a.textbtn:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .card .cov { display: none; }
+}

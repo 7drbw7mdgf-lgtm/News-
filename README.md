@@ -15,7 +15,7 @@ To preview locally, open `index.html` in a browser.
 
 ## Deploying to Fasthosts
 
-Every push to `main` uploads the site to Fasthosts over FTP using the workflow in `.github/workflows/deploy.yml`. You can also run it by hand from the **Actions** tab ("Deploy to Fasthosts" → "Run workflow").
+Every push to `main` uploads the site to Fasthosts over FTPS using the workflow in `.github/workflows/deploy.yml`. You can also run it by hand from the **Actions** tab ("Deploy to Fasthosts" → "Run workflow").
 
 ### One-time setup
 
@@ -34,7 +34,7 @@ Optional, under **Variables**:
 | Variable | Default | When to change it |
 | --- | --- | --- |
 | `FTP_SERVER_DIR` | `htdocs/` | If your site's web root is a different folder. Keep the trailing slash. |
-| `FTP_PROTOCOL` | `ftp` | Set to `ftps` if your plan supports FTP over TLS, so the password isn't sent in plain text. |
+| `FTP_PROTOCOL` | `ftps` | Override only if your hosting configuration requires a different TLS mode. |
 
 The FTP details are only ever read from these secrets; they are not stored in the code.
 
@@ -45,4 +45,10 @@ The FTP details are only ever read from these secrets; they are not stored in th
 
 ## Updating the stories
 
-All content lives in `assets/data.js`. Replace that file with a new edition (same structure) and push; the site redeploys automatically.
+The daily GitHub Actions workflow collects candidate articles from five RSS feeds at 06:15 UK time. Download its `daybreak-candidates` artifact and review the results. Identical normalised headlines are grouped automatically. The editor checks related headlines, verifies links, chooses the lead and writes source-linked comparisons where reporting meaningfully differs. Feed failures leave the current public edition available.
+
+1. Copy the latest file in `editions/` to a new `YYYY-MM-DD.json` and update its edition metadata and stories. Keep each event’s existing ID when updating coverage, and use a new ID for a different event.
+2. Run `node scripts/build-editions.mjs`. This checks story IDs, URL structure, coverage and comparison references and generates the current edition and archive in `assets/data.js`.
+3. Commit the edition and the generated data together. Deployment validates the generated file before uploading.
+
+Stories can be shared using `?story=EVENT-ID`. Keep old edition files so those links and bookmarks continue to resolve.
