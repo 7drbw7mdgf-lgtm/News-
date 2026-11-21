@@ -1,0 +1,24 @@
+name: Collect Daybreak candidates
+
+on:
+  schedule:
+    - cron: '15 6 * * *'
+      timezone: Europe/London
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect feeds
+        run: python3 scripts/collect-feeds.py > candidates.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daybreak-candidates
+          path: candidates.json
+          retention-days: 7

@@ -30,9 +30,10 @@ jobs:
           python-version: '3.12'
       - name: Check
         run: |
+          node scripts/build-editions.mjs --check
           node --check assets/app.js
           node --check assets/data.js
-          python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py
+          python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py scripts/collect-feeds.py
       - name: Build the public site
         run: |
           rm -rf build/site
