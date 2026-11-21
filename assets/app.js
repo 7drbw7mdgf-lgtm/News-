@@ -70,6 +70,9 @@
     bookmark: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
     bookmarkFilled: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
     search: '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>',
+    compare: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="1.5"></rect><rect x="14" y="4" width="7" height="16" rx="1.5"></rect><path d="M5.5 8h2M5.5 11h2M16.5 8h2M16.5 11h2"></path></svg>',
+    bookmarkLg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
+    bookmarkLgFilled: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
     close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>'
   };
 
@@ -151,6 +154,20 @@
       (on ? ICON.bookmarkFilled : ICON.bookmark) + (on ? 'Saved' : 'Save') + '</button>';
   }
 
+  /* Icon toolbar for story cards: compare coverage + save */
+  function storyTools(s, saveOnly) {
+    var on = !!state.saved[s.id];
+    var n = s.cov.rows.length;
+    var compareLabel = 'Compare coverage (' + plural(n, 'source', 'sources') + ')';
+    var saveLabel = on ? 'Remove from saved' : 'Save story';
+    return '<div class="story-tools" role="toolbar" aria-label="Story actions">' +
+      (saveOnly ? '' : '<a class="tool-btn" href="' + storyHref(s.id) + '" data-act="open" data-id="' + esc(s.id) + '" aria-label="' + esc(compareLabel) + '" title="' + esc(compareLabel) + '">' +
+        ICON.compare + '<span class="tool-count" aria-hidden="true">' + n + '</span></a>') +
+      '<button class="tool-btn' + (on ? ' on' : '') + '" data-act="save" data-id="' + esc(s.id) + '" aria-pressed="' + on + '" aria-label="' + saveLabel + '" title="' + saveLabel + '">' +
+        (on ? ICON.bookmarkLgFilled : ICON.bookmarkLg) + '</button>' +
+      '</div>';
+  }
+
   /* ---------- followed papers & catalogue ---------- */
   function catalogue() {
     var base = {};
@@ -229,7 +246,7 @@
       '<h1 class="lead-hl"><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h1>' +
       '<p class="lead-summary">' + esc(s.summary) + '</p>' +
       '<div class="lead-cov">' + covBar(s.cov) + '<span class="covtext">' + esc(s.cov.count + ' · ' + s.cov.note) + '</span></div>' +
-      '<div class="hero-actions">' + compareLink(s, 'compare-btn', 'Compare coverage') + saveBtn(s) + '</div>' +
+      '<div class="hero-actions">' + compareLink(s, 'compare-btn', 'Compare coverage') + storyTools(s, true) + '</div>' +
       '</article>';
   }
 
@@ -238,7 +255,7 @@
       '<p class="kicker">' + esc(labelOf[s.topic]) + '</p>' +
       '<h2 class="side-hl"><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h2>' +
       '<p class="side-summary">' + esc(s.summary) + '</p>' +
-      '<div class="inline-foot">' + compareLink(s, 'textlink', 'Compare coverage (' + s.cov.rows.length + ') →') + saveBtn(s) + '</div>' +
+      storyTools(s) +
       '</article>';
   }
 
@@ -248,7 +265,7 @@
       '<h3 class="grid-hl"><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h3>' +
       '<p class="grid-summary">' + esc(s.summary) + '</p>' +
       '<div class="grid-cov">' + covBar(s.cov) + '<span class="covtext">' + esc(s.cov.count + ' · ' + s.cov.note) + '</span></div>' +
-      '<div class="inline-foot">' + compareLink(s, 'textlink', 'Compare coverage →') + saveBtn(s) + '</div>' +
+      storyTools(s) +
       '</article>';
   }
 
