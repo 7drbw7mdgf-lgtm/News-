@@ -8,6 +8,7 @@
 
   var ACCENT = '#1E46C8';
   var STORE_KEY = 'daybreak:v2';
+  var worldMap;
   var route = new URLSearchParams(location.search);
   var SEG_ORDER = ['L', 'LL', 'C', 'LR', 'R', 'S'];
   var labelOf = {};
@@ -220,7 +221,7 @@
     }).filter(matchesQuery);
     var title = saved ? 'Saved stories' : (state.topic === 'all' ? 'Your briefing' : labelOf[state.topic]);
     var sub = saved ? plural(list.length, 'saved story', 'saved stories') :
-      plural(list.length, 'story', 'stories') + ' · ' + (state.topic === 'all' ? '4 topics · headlines from ' + D.META.rangeLong : 'editor’s selection');
+      plural(list.length, 'story', 'stories') + ' · ' + (state.topic === 'all' ? D.TOPICS.length + ' topics · headlines from ' + D.META.rangeLong : 'editor’s selection');
     if (state.query.trim()) sub = plural(list.length, 'story', 'stories') + ' matching “' + state.query.trim() + '”';
     var chips = saved ? '' : '<div class="chips" role="group" aria-label="Filter by topic">' +
       [{ id: 'all', label: 'All topics' }].concat(D.TOPICS).map(function (t) {
@@ -233,7 +234,47 @@
     } else {
       body = renderLead(list[0]) + (list.length > 1 ? '<div class="grid">' + list.slice(1).map(renderCard).join('') + '</div>' : '');
     }
-    return '<div><h1 class="title">' + esc(title) + '</h1><p class="sub">' + esc(sub) + '</p></div>' + chips + body;
+    return '<div><h1 class="title">' + esc(title) + '</h1><p class="sub">' + esc(sub) + '</p></div>' + chips + (!saved && state.topic === 'world' ? renderWorldMap(list) : '') + body;
+  }
+
+  function renderWorldMap(stories) {
+    var located = stories.filter(function (story) { return story.location; });
+    if (!located.length) return '';
+    return '<section class="world-panel" aria-labelledby="world-map-title">' +
+      '<h2 id="world-map-title">World stories on the map</h2>' +
+      '<div id="world-map" class="world-map" role="region" aria-label="Interactive World story map" hidden></div>' +
+      '<ul class="world-locations">' + located.map(function (story) {
+        return '<li><span>' + esc(story.location.label) + '</span>' +
+          compareLink(story, 'textbtn', story.headline) + '</li>';
+      }).join('') + '</ul></section>';
+  }
+
+  function mountWorldMap() {
+    if (worldMap) return;
+    var canvas = document.getElementById('world-map');
+    if (!canvas || !window.L) return;
+    var L = window.L;
+    canvas.hidden = false;
+    worldMap = L.map(canvas, { scrollWheelZoom: false, minZoom: 2, maxZoom: 17 });
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 17
+    }).addTo(worldMap);
+    var markers = CURRENT.filter(function (s) {
+      return s.topic === 'world' && s.location && matchesQuery(s);
+    }).map(function (s) {
+      var popup = document.createElement('div');
+      var location = document.createElement('strong');
+      location.textContent = s.location.label;
+      popup.append(location);
+      popup.insertAdjacentHTML('beforeend', compareLink(s, 'textbtn', s.headline));
+      return L.marker([s.location.lat, s.location.lng], {
+        title: s.location.label,
+        alt: s.headline,
+        icon: L.divIcon({ className: 'world-pin', iconSize: [28, 28], iconAnchor: [14, 14] })
+      }).addTo(worldMap).bindPopup(popup);
+    });
+    worldMap.fitBounds(L.featureGroup(markers).getBounds(), { padding: [32, 32], maxZoom: 6 });
   }
 
   function renderPapers() {
@@ -362,6 +403,7 @@
   }
 
   function render(opts) {
+    if (worldMap) { worldMap.remove(); worldMap = null; }
     var reading = state.reading ? byId[state.reading] : null;
     var main;
     if (reading) main = renderReader(reading);
@@ -372,6 +414,7 @@
       '<div class="content"><main class="main" id="main">' + main + '</main>' + renderRail() + '</div></div>' +
       '<footer class="footer">Story summaries are written for Daybreak from each outlet’s reporting; follow the links for the full articles. Leaning ratings from Media Bias/Fact Check.</footer>' +
       renderSettings();
+    mountWorldMap();
     if (opts && opts.focus) {
       var el = document.getElementById(opts.focus);
       if (el) { el.focus(); if (el.type === 'text' && el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
@@ -422,5 +465,6 @@
     if (e.key === 'Escape' && state.settingsOpen) { state.settingsOpen = false; render(); }
   });
 
+  document.getElementById('world-map-library')?.addEventListener('load', mountWorldMap);
   render();
 })();

@@ -2,26 +2,34 @@
 window.DAYBREAK = {
  "TOPICS": [
   {
+   "id": "uk",
+   "label": "UK"
+  },
+  {
    "id": "world",
-   "label": "UK & World"
+   "label": "World"
   },
   {
    "id": "science",
-   "label": "Science & Microbiology"
+   "label": "Science"
   },
   {
    "id": "tech",
-   "label": "Tech & AI"
+   "label": "Tech"
   },
   {
    "id": "business",
-   "label": "Business & Markets"
+   "label": "Business"
+  },
+  {
+   "id": "finance",
+   "label": "Finance"
   }
  ],
  "STORIES": [
   {
    "id": "uk-eu-reset-tuition-fees",
-   "topic": "world",
+   "topic": "uk",
    "source": "RTÉ News",
    "time": "20 Nov",
    "url": "https://www.rte.ie/news/uk/2026/1120/1599944-uk-eu-summit/",
@@ -66,7 +74,7 @@ window.DAYBREAK = {
   },
   {
    "id": "uk-october-borrowing",
-   "topic": "business",
+   "topic": "finance",
    "source": "ITV News",
    "time": "20 Nov",
    "url": "https://www.itv.com/news/2026-11-20/ballooning-debt-interest-costs-push-up-government-borrowing-to-17bn-ons",
@@ -92,7 +100,12 @@ window.DAYBREAK = {
     "The court found Myanmar’s forces killed at least 10,000 Rohingya and carried out widespread sexual violence in northern Rakhine state.",
     "Myanmar must pay reparations and help Rohingya return safely; it was also found to have failed to prevent genocide."
    ],
-   "publishedLabel": "19 Nov 2026"
+   "publishedLabel": "19 Nov 2026",
+   "location": {
+    "label": "The Hague, Netherlands",
+    "lat": 52.08,
+    "lng": 4.31
+   }
   },
   {
    "id": "taung-child-hominin-branches",
@@ -154,7 +167,7 @@ window.DAYBREAK = {
   },
   {
    "id": "bailey-interest-rates",
-   "topic": "business",
+   "topic": "finance",
    "source": "City AM",
    "time": "18 Nov",
    "url": "https://www.cityam.com/bailey-hints-at-higher-interest-rates-amid-firming-in-the-labour-market/",
@@ -180,7 +193,12 @@ window.DAYBREAK = {
     "The military said the airspace violation may be linked to the overnight Russian strike on Ukraine.",
     "Prime Minister Donald Tusk called a meeting of ministers, military and intelligence chiefs, and jets and air defences were deployed as a precaution."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "location": {
+    "label": "Lublin region, Poland",
+    "lat": 51.25,
+    "lng": 22.57
+   }
   },
   {
    "id": "lunar-dust-bricks",
@@ -229,7 +247,7 @@ window.DAYBREAK = {
   },
   {
    "id": "northern-ireland-doctors-strike",
-   "topic": "world",
+   "topic": "uk",
    "source": "ITV News",
    "time": "20 Nov",
    "url": "https://www.itv.com/news/utv/2026-11-20/resident-doctors-staging-24-hour-strike-over-pay",
@@ -291,7 +309,7 @@ window.DAYBREAK = {
  "CATS": {
   "uk": {
    "label": "UK news",
-   "topic": "world"
+   "topic": "uk"
   },
   "world": {
    "label": "World news",

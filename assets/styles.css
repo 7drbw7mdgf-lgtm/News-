@@ -180,3 +180,17 @@ a.textbtn:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .card .cov { display: none; }
 }
+
+.tag-uk { background: #e9e8fa; color: #373280; }
+.dot-uk { background: #6059aa; }
+.tag-finance { background: #e1ede2; color: #245b3b; }
+.dot-finance { background: #327c51; }
+.world-panel { padding: clamp(14px, 3vw, 24px); border: 1px solid #e3e1da; border-radius: 14px; background: #fff; }
+.world-panel h2 { margin: 0 0 14px; font: 600 26px 'Newsreader', Georgia, serif; }
+.world-map { height: clamp(260px, 46vw, 440px); border-radius: 8px; background: #e1ebf0; z-index: 0; }
+.world-map[hidden] { display: none; }
+.world-pin { border: 3px solid white; border-radius: 50%; background: #1e46c8; box-shadow: 0 1px 6px #15171c66; }
+.world-locations { margin: 10px 0 0; padding: 0; list-style: none; }
+.world-locations li { display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; padding: 5px 0; }
+.world-locations li + li { border-top: 1px solid #e3e1da; }
+.world-locations span { font-size: 13px; color: #5a5f6b; }
