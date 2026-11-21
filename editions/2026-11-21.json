@@ -96,6 +96,426 @@
    }
   },
   {
+   "id": "mexico-el-chapo-isidro-capture",
+   "topic": "world",
+   "source": "The New York Times",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.nytimes.com/2026/11/21/world/americas/mexico-el-chapo-isidro-captured-drugs.html",
+   "headline": "Mexican military captures FBI Most Wanted cartel boss ‘El Chapo Isidro’",
+   "summary": "Special forces detained Fausto Isidro Meza Flores in Sinaloa after more than a decade on the run, setting off violent clashes in northwest Mexico.",
+   "points": [
+    "Fausto Isidro Meza Flores, known as ‘El Chapo Isidro’, was listed among the FBI’s Ten Most Wanted fugitives.",
+    "The operation took place in Guasave, Sinaloa, sparking gun battles and security alerts across the region.",
+    "US outlets highlighted US intelligence cooperation alongside Mexico’s elite military units."
+   ],
+   "location": {
+    "label": "Guasave, Sinaloa, Mexico",
+    "shortLabel": "Sinaloa",
+    "lat": 25.5747,
+    "lng": -108.4718
+   }
+  },
+  {
+   "id": "anthropic-ipo-ai-tech-selloff",
+   "topic": "finance",
+   "source": "The Telegraph",
+   "time": "20 Nov",
+   "publishedLabel": "20 Nov 2026",
+   "url": "https://www.telegraph.co.uk/business/2026/11/20/ai-tech-sell-off-anthropic-claude-nasdaq-ftse-100-markets/",
+   "headline": "Anthropic shares slide as AI tech sell-off drags Wall Street into correction",
+   "summary": "The Nasdaq erased its 2026 gains as investors questioned massive data-centre spending following Anthropic’s $81bn IPO debut.",
+   "points": [
+    "The S&P 500 and Dow Jones Industrial Average slipped into correction territory amid a broader tech sell-off.",
+    "Anthropic’s second day of public trading fell sharply as markets weighed heavy AI infrastructure outlays.",
+    "CNBC noted companies are shifting from share buybacks toward new stock issuance, testing investor appetite."
+   ],
+   "location": {
+    "label": "Wall Street, New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7074,
+    "lng": -74.0113
+   }
+  },
+  {
+   "id": "riemann-hypothesis-ai-proof-claim",
+   "topic": "science",
+   "source": "Nature News",
+   "time": "20 Nov",
+   "publishedLabel": "20 Nov 2026",
+   "url": "https://www.nature.com/articles/d41586-026-03812-7",
+   "headline": "Mathematicians react with awe and scrutiny to claimed AI-assisted Riemann proof",
+   "summary": "An Anthropic mathematician says six weeks of work with Claude yielded a proof of the 167-year-old Riemann hypothesis, sparking rapid independent checks.",
+   "points": [
+    "Researcher Levent Alpöge claimed he solved the landmark 19th-century number-theory problem with the help of Claude.",
+    "The Guardian reported two research groups are reviewing and checking elements of the claimed proof.",
+    "DW News and New Scientist emphasised that formal, peer-reviewed verification is still required before consensus."
+   ],
+   "location": {
+    "label": "San Francisco, California, USA",
+    "shortLabel": "San Francisco",
+    "lat": 37.7749,
+    "lng": -122.4194
+   }
+  },
+  {
+   "id": "gulf-of-finland-drone-ship-attack",
+   "topic": "world",
+   "source": "BBC News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss",
+   "headline": "Drone strike sets Russian cargo ship ablaze in Gulf of Finland",
+   "summary": "A US-sanctioned Russian vessel caught fire in the Baltic Sea and drifted into Finnish waters, followed by a suspected Russian helicopter airspace incursion.",
+   "points": [
+    "Finnish defence forces said Ukraine was likely behind Saturday’s drone strike on the sanctioned vessel.",
+    "The Finnish coast guard reported the cargo ship had known links to Russia’s armed forces.",
+    "DW News reported Finland’s Defence Ministry suspects a subsequent Russian helicopter incursion is connected to the attack."
+   ],
+   "location": {
+    "label": "Gulf of Finland, Helsinki",
+    "shortLabel": "Gulf of Finland",
+    "lat": 60.1699,
+    "lng": 24.9384
+   }
+  },
+  {
+   "id": "un-autonomous-weapons-talks-stalled",
+   "topic": "tech",
+   "source": "The Verge",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots",
+   "headline": "UN talks in Geneva fail to agree binding rules on ‘killer robots’",
+   "summary": "Efforts to regulate lethal autonomous weapons stalled and were pushed back to 2028 after resistance from major military powers.",
+   "points": [
+    "Diplomats in Geneva ended talks Saturday without binding limits on AI-powered weapons and autonomous drones.",
+    "The New York Times and New Scientist reported strong opposition from major military powers including the US and Russia.",
+    "Politico Europe noted negotiations have been extended for another two years despite warnings from humanitarian groups."
+   ],
+   "location": {
+    "label": "Palais des Nations, Geneva, Switzerland",
+    "shortLabel": "UN Geneva",
+    "lat": 46.2266,
+    "lng": 6.1404
+   }
+  },
+  {
+   "id": "cop31-climate-talks-deadlock",
+   "topic": "world",
+   "source": "BBC News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss",
+   "headline": "COP31 climate talks in Turkey stall in deadlock over fossil fuels",
+   "summary": "Negotiations among nearly 200 nations went into overtime on Saturday amid sharp divisions over fossil-fuel phaseouts and climate finance.",
+   "points": [
+    "Talks in Turkey failed to produce consensus on transitioning away from fossil fuels and funding developing countries.",
+    "The Guardian reported delegates weighing a confrontation with Saudi Arabia as the summit risked unravelling.",
+    "France 24 noted the absence of an official US delegation and mounting frustration over procedural delays."
+   ],
+   "location": {
+    "label": "Antalya, Turkey",
+    "shortLabel": "Turkey",
+    "lat": 36.8969,
+    "lng": 30.7133
+   }
+  },
+  {
+   "id": "catherine-bbc-cancer-film",
+   "topic": "uk",
+   "source": "BBC News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.bbc.co.uk/news/articles/c85y14zvexz9o?at_medium=RSS&at_campaign=rss",
+   "headline": "Princess of Wales speaks about how cancer changed her in BBC documentary",
+   "summary": "Catherine, who is in remission, reflects on recovery and speaks with other patients in a new BBC film set for release this month.",
+   "points": [
+    "In preview clips, Catherine says there is a ‘much, much deeper part to what a cancer diagnosis shifts in you’.",
+    "The Daily Mail highlighted scenes showing the Princess climbing Britain’s three highest peaks during filming.",
+    "The New York Times and CBS News covered the trailer ahead of the documentary’s broadcast later this month."
+   ],
+   "location": {
+    "label": "Windsor, Berkshire, UK",
+    "shortLabel": "Windsor",
+    "lat": 51.4839,
+    "lng": -0.6044
+   }
+  },
+  {
+   "id": "bepicolombo-reaches-mercury",
+   "topic": "science",
+   "source": "Nature News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.nature.com/articles/d41586-026-03803-8",
+   "headline": "BepiColombo spacecraft reaches Mercury after an eight-year voyage",
+   "summary": "The joint European–Japanese mission has arrived to enter orbit around the solar system’s innermost planet, with its X-ray telescope already returning first observations.",
+   "points": [
+    "After an eight-year, 10-billion-kilometre journey toward the Sun, BepiColombo is entering orbit around Mercury.",
+    "ScienceDaily reported the mission’s X-ray telescope has already captured its first cosmic observations.",
+    "New Scientist noted the dual-orbiter mission will investigate Mercury’s unusually large iron core and magnetic field."
+   ],
+   "location": {
+    "label": "ESA Operations, Darmstadt, Germany",
+    "shortLabel": "Darmstadt",
+    "lat": 49.8717,
+    "lng": 8.6227
+   }
+  },
+  {
+   "id": "eu-digital-tax-budget-proposal",
+   "topic": "finance",
+   "source": "Financial Times",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.ft.com/content/2e9c54a8-e2c5-4334-8141-9791267ae3c3?syn-25a6b1a6=1",
+   "headline": "EU revives 3% Big Tech digital tax in revised seven-year budget plan",
+   "summary": "European Council President António Costa trimmed the 2028–2034 budget proposal by €44bn while proposing a new levy on major digital firms.",
+   "points": [
+    "The trimmed seven-year budget cuts €44bn from earlier drafts while still raising overall bloc spending by roughly a quarter.",
+    "DW News reported the proposed 3% tax on major digital firms is aimed at easing national member-state contributions.",
+    "Politico Europe said Brussels expects the Big Tech levy to raise billions across the next budget cycle."
+   ],
+   "location": {
+    "label": "EU Quarter, Brussels, Belgium",
+    "shortLabel": "EU Quarter",
+    "lat": 50.8428,
+    "lng": 4.3826
+   }
+  },
+  {
+   "id": "zelensky-hometown-strike-crimean-bridge",
+   "topic": "world",
+   "source": "France 24",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.france24.com/en/europe/20261121-russia-attacks-zelensky-s-hometown-ukraine-reaffirms-wish-to-join-nato",
+   "headline": "Russian missile strike hits Zelenskyy’s hometown as Kyiv defends Crimean Bridge attacks",
+   "summary": "A ballistic missile strike on Kryvyi Rih killed two and wounded dozens after Ukraine’s president called strikes on the Kerch Bridge a ‘fair response’.",
+   "points": [
+    "France 24 and DW News reported two deaths and dozens injured in Saturday’s ballistic missile attack on Kryvyi Rih.",
+    "BBC News reported Zelenskyy told UK ministers Kyiv acted after 109 separate Russian aerial attacks on Ukrainian bridges.",
+    "The Daily Mail focused on Zelenskyy rebuking Donald Trump for calling Vladimir Putin his ‘friend’."
+   ],
+   "location": {
+    "label": "Kryvyi Rih, Ukraine",
+    "shortLabel": "Kryvyi Rih",
+    "lat": 47.9105,
+    "lng": 33.3918
+   }
+  },
+  {
+   "id": "shenzhen-apec-trump-xi-putin",
+   "topic": "world",
+   "source": "NPR",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.npr.org/2026/11/21/nx-s1-6048741/what-did-xi-jinping-get-from-the-bear-hug-with-trump-at-the-shenzhen-summit",
+   "headline": "Trade and Taiwan tensions remain unresolved after Shenzhen summit with Trump, Xi and Putin",
+   "summary": "Analysts say high-profile APEC meetings in Shenzhen delivered major optics for Beijing but few concrete breakthroughs on trade, Taiwan or Ukraine.",
+   "points": [
+    "Donald Trump, Xi Jinping and Vladimir Putin held rare meetings around the APEC summit in Shenzhen.",
+    "CNBC reported trade, Taiwan and technology tensions remained largely unresolved as Trump returned to Washington.",
+    "NPR and CBS News noted the summit produced prominent diplomatic optics for Xi but few concrete agreements."
+   ],
+   "location": {
+    "label": "Shenzhen, China",
+    "shortLabel": "Shenzhen",
+    "lat": 22.5431,
+    "lng": 114.0579
+   }
+  },
+  {
+   "id": "fbi-criminal-database-hack",
+   "topic": "tech",
+   "source": "BBC News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss",
+   "headline": "FBI investigates reported hack of US national criminal database",
+   "summary": "Federal investigators are probing an apparent cyberattack on the National Crime Information Center, alongside a separate reported breach at the USDA.",
+   "points": [
+    "The National Crime Information Center (NCIC) is used by federal and local US law enforcement agencies to share sensitive records.",
+    "France 24 described the incident as a major reported cyberattack on core law-enforcement infrastructure.",
+    "The Verge noted the breach was reported alongside a separate hack at the US Department of Agriculture."
+   ],
+   "location": {
+    "label": "FBI HQ, Washington, D.C., USA",
+    "shortLabel": "FBI HQ",
+    "lat": 38.8952,
+    "lng": -77.0249
+   }
+  },
+  {
+   "id": "nvidia-china-chip-fallout",
+   "topic": "business",
+   "source": "Financial Times",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.ft.com/content/f3ad8a81-3890-4a8a-8853-ff0a94b08ba9?syn-25a6b1a6=1",
+   "headline": "Fallout widens over former Nvidia chief Jensen Huang’s ties to China chip trade",
+   "summary": "Financial Times reporting links a Chinese executive connected to Huang to illicit AI chip channels, as investors weigh Nvidia’s earnings against leadership turmoil.",
+   "points": [
+    "The Financial Times detailed alleged links between Alice Huang and lucrative channels moving advanced chips into China.",
+    "CBS News examined how China continues to obtain US AI chips following Jensen Huang’s resignation.",
+    "TechCrunch contrasted Nvidia’s strong financial results with growing calls from tech executives for leadership clarity."
+   ],
+   "location": {
+    "label": "Santa Clara, California, USA",
+    "shortLabel": "Santa Clara",
+    "lat": 37.3541,
+    "lng": -121.9552
+   }
+  },
+  {
+   "id": "eu-indonesia-trade-deal",
+   "topic": "business",
+   "source": "DW News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.dw.com/en/eu-and-indonesia-sign-trade-deal/a-80010099?maca=en-rss-en-world-4025-xml-mrss",
+   "headline": "EU and Indonesia sign sweeping trade deal covering 730 million people",
+   "summary": "Brussels and Jakarta formally signed an accord to slash tariffs and expand investment access, with entry into force targeted for early next year.",
+   "points": [
+    "The agreement links the European Union and Southeast Asia’s largest economy in a market of 730 million people.",
+    "DW News said the pact aims to cut tariffs and diversify Europe’s supply chains amid global trade friction.",
+    "The South China Morning Post noted the formal signing took place in Brussels on Saturday."
+   ],
+   "location": {
+    "label": "Jakarta, Indonesia",
+    "shortLabel": "Jakarta",
+    "lat": -6.2088,
+    "lng": 106.8456
+   }
+  },
+  {
+   "id": "brazil-bolsonaro-hospitalised",
+   "topic": "world",
+   "source": "Al Jazeera English",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.aljazeera.com/news/2026/11/21/brazils-jair-bolsonaro-in-intensive-care-with-bowel-obstruction?traffic_source=rss",
+   "headline": "Former Brazilian president Jair Bolsonaro in intensive care in Brasília",
+   "summary": "Doctors say the 71-year-old former leader, who is serving a sentence over a coup plot, is stable after being admitted with an intestinal obstruction.",
+   "points": [
+    "Bolsonaro was admitted to hospital in Brasília on Friday with severe abdominal pain and distension.",
+    "Al Jazeera reported hospital staff described him as stable and breathing on his own in intensive care.",
+    "DW News and MercoPress noted his son Carlos said the former president is receiving pain medication under observation."
+   ],
+   "location": {
+    "label": "Brasília, Brazil",
+    "shortLabel": "Brasília",
+    "lat": -15.7975,
+    "lng": -47.8919
+   }
+  },
+  {
+   "id": "bahrain-iran-industrial-strike",
+   "topic": "world",
+   "source": "Al Jazeera English",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility?traffic_source=rss",
+   "headline": "Bahrain reports fire at industrial site after Iranian strike as mediators push for talks",
+   "summary": "Bahrain reported no injuries after Iran’s IRGC said it targeted US positions near al-Riffa and Awali, while Qatari mediators continue diplomatic contacts.",
+   "points": [
+    "Bahraini authorities said the strike ignited a fire at an industrial facility without causing casualties.",
+    "Iran’s IRGC claimed it targeted US military positions at two bases in al-Riffa and Awali.",
+    "CBS News reported Donald Trump said he wants a ‘permanent’ deal with Iran even as Gulf tensions remain high."
+   ],
+   "location": {
+    "label": "Al-Riffa, Bahrain",
+    "shortLabel": "Bahrain",
+    "lat": 26.13,
+    "lng": 50.555
+   }
+  },
+  {
+   "id": "bradford-councillor-stabbing-charge",
+   "topic": "uk",
+   "source": "Sky News",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://news.sky.com/story/man-charged-with-attempted-murder-after-councillor-stabbed-in-bradford-13614648",
+   "headline": "Man charged with attempted murder after Bradford councillor stabbed",
+   "summary": "Arfan Ali, 31, appeared before magistrates charged over Thursday’s attack on local councillor Ibrar Ali while out door-knocking.",
+   "points": [
+    "Police charged Arfan Ali with attempted murder following Thursday’s stabbing in Bradford.",
+    "The Guardian reported he also faces charges of assault and possession of an offensive weapon in a public place.",
+    "BBC News reported the accused appeared before magistrates on Saturday morning."
+   ],
+   "location": {
+    "label": "Bradford, West Yorkshire, UK",
+    "shortLabel": "Bradford",
+    "lat": 53.796,
+    "lng": -1.7594
+   }
+  },
+  {
+   "id": "uk-eu-rejoin-debate",
+   "topic": "uk",
+   "source": "The Guardian",
+   "time": "21 Nov",
+   "publishedLabel": "21 Nov 2026",
+   "url": "https://www.theguardian.com/politics/2026/nov/21/rejoining-eu-uk-trade-youth-deals-ed-miliband",
+   "headline": "Rejoining EU ‘on the table’ after Brussels reset, while Blair warns on tech",
+   "summary": "Ed Miliband suggested future options remain open after Friday’s summit, while Tony Blair warned the UK should only rejoin if the EU improves on technology innovation.",
+   "points": [
+    "The Guardian reported Ed Miliband said all options remain open in future informal talks following the UK–EU reset.",
+    "BBC News quoted former prime minister Tony Blair arguing the EU is ‘probably moving in the wrong direction’ on tech.",
+    "City AM noted both rejoin and leave advocates will need fresh arguments rather than 2016 talking points."
+   ],
+   "location": {
+    "label": "Whitehall, London, UK",
+    "shortLabel": "Whitehall",
+    "lat": 51.5045,
+    "lng": -0.1262
+   }
+  },
+  {
+   "id": "gta-6-record-launch",
+   "topic": "business",
+   "source": "BBC News",
+   "time": "20 Nov",
+   "publishedLabel": "20 Nov 2026",
+   "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
+   "headline": "GTA 6 hits $3.8bn in single-day sales, setting entertainment launch record",
+   "summary": "Rockstar’s long-awaited sequel shattered every previous video game release and single-day cinema box-office record.",
+   "points": [
+    "BBC News reported Grand Theft Auto 6 generated $3.8bn in sales within 24 hours of launch.",
+    "The opening-day haul surpassed all prior records across both video games and theatrical film releases.",
+    "The Daily Mail profiled British co-founders Sam and Dan Houser following the historic release."
+   ],
+   "location": {
+    "label": "Edinburgh, Scotland, UK",
+    "shortLabel": "Edinburgh",
+    "lat": 55.9533,
+    "lng": -3.1883
+   }
+  },
+  {
+   "id": "china-bond-yields-diverge",
+   "topic": "finance",
+   "source": "The Economist",
+   "time": "19 Nov",
+   "publishedLabel": "19 Nov 2026",
+   "url": "https://www.economist.com/finance-and-economics/2026/11/19/bond-yields-are-rising-everywhere-except-china",
+   "headline": "Global bond yields climb everywhere except China as Beijing cuts rates",
+   "summary": "While Western central banks weigh further tightening against persistent inflation, falling Chinese bond yields spark fresh debate over deflation risks.",
+   "points": [
+    "The Economist noted China’s central bank has been pushed into cutting interest rates even as yields rise across major peers.",
+    "The South China Morning Post argued China’s economic challenges differ from Japan’s 1990s deflationary stagnation.",
+    "The divergence widens rate differentials with the US Federal Reserve and the Bank of England."
+   ],
+   "location": {
+    "label": "Beijing, China",
+    "shortLabel": "Beijing",
+    "lat": 39.9042,
+    "lng": 116.4074
+   }
+  },
+  {
    "id": "uk-october-borrowing",
    "topic": "finance",
    "source": "ITV News",
@@ -633,7 +1053,30 @@
   "IntoMobile": "NC",
   "Tesla North": "NC",
   "NewsBytes": "NC",
-  "Express & Star": "NR"
+  "Express & Star": "NR",
+  "BBC News": "LL",
+  "The Guardian": "LL",
+  "Sky News": "C",
+  "The Telegraph": "LR",
+  "Daily Mail": "R",
+  "Financial Times": "C",
+  "The Economist": "C",
+  "France 24": "C",
+  "DW News": "LL",
+  "Politico Europe": "LL",
+  "NPR": "LL",
+  "The New York Times": "LL",
+  "Fox News": "R",
+  "South China Morning Post": "LL",
+  "Times of India": "LR",
+  "MercoPress": "C",
+  "Nature News": "S",
+  "New Scientist": "S",
+  "The Verge": "LL",
+  "Ars Technica": "C",
+  "Wired": "LL",
+  "MarketWatch": "LR",
+  "ABC News Australia": "LL"
  },
  "COVERAGE": {
   "uk-eu-reset-tuition-fees": [
@@ -656,6 +1099,21 @@
     "Times Higher Education",
     "11 Nov",
     "https://www.timeshighereducation.com/node/745998"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/c6jreyqgw4e9o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/politics/2026/nov/21/rejoining-eu-uk-trade-youth-deals-ed-miliband"
+   ],
+   [
+    "Politico Europe",
+    "20 Nov",
+    "https://www.politico.eu/article/the-winners-and-losers-of-the-eu-uk-summit-deals/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
    ]
   ],
   "lhcb-rare-particle-decay": [
@@ -987,15 +1445,443 @@
     "Nov",
     "https://www.cityam.com/?p=2478396"
    ]
+  ],
+  "mexico-el-chapo-isidro-capture": [
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/2026/11/21/world/americas/mexico-el-chapo-isidro-captured-drugs.html"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/ckz749ey0r75o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/world/2026/nov/21/alleged-mexican-drug-cartel-boss-el-chapo-isidro-meza-flores-arrested"
+   ],
+   [
+    "NPR",
+    "21 Nov",
+    "https://www.npr.org/2026/11/21/nx-s1-6049672/cartel-boss-el-chapo-isidro-detained"
+   ],
+   [
+    "CBS News",
+    "21 Nov",
+    "https://www.cbsnews.com/news/mexico-drug-kingpin-arrest-fausto-isidro-meza-flores-sinaloa/"
+   ],
+   [
+    "Fox News",
+    "21 Nov",
+    "https://www.foxnews.com/world/fbi-ten-most-wanted-cartel-leader-chapo-isidro-captured-mexicos-elite-military-forces-us-help"
+   ]
+  ],
+  "anthropic-ipo-ai-tech-selloff": [
+   [
+    "The Telegraph",
+    "20 Nov",
+    "https://www.telegraph.co.uk/business/2026/11/20/ai-tech-sell-off-anthropic-claude-nasdaq-ftse-100-markets/"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off"
+   ],
+   [
+    "CNBC",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/equity-issuance-bull-market-problem.html"
+   ]
+  ],
+  "riemann-hypothesis-ai-proof-claim": [
+   [
+    "Nature News",
+    "20 Nov",
+    "https://www.nature.com/articles/d41586-026-03812-7"
+   ],
+   [
+    "New Scientist",
+    "20 Nov",
+    "https://www.newscientist.com/article/2600235-mathematicians-are-amazed-by-holy-grail-proof-of-riemann-hypothesis/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai"
+   ],
+   [
+    "NPR",
+    "21 Nov",
+    "https://www.npr.org/2026/11/21/g-s1-154922/anthropic-worker-claims-to-have-solved-a-holy-grail-of-math-problems-with-the-help-of-ai"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/anthropic-researcher-uses-ai-to-solve-math-s-greatest-riddle/a-80008428?maca=en-rss-en-world-4025-xml-mrss"
+   ]
+  ],
+  "gulf-of-finland-drone-ship-attack": [
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/drone-attack-sets-russian-cargo-ship-ablaze-in-gulf-of-finland"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/russian-helicopter-suspected-of-violating-finnish-airspace/a-80010133?maca=en-rss-en-world-4025-xml-mrss"
+   ],
+   [
+    "Politico Europe",
+    "21 Nov",
+    "https://www.politico.eu/article/russian-ship-damaged-drone-attack-gulf-finland-helsinki-moscow-say/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+   ],
+   [
+    "Times of India",
+    "21 Nov",
+    "https://timesofindia.indiatimes.com/world/europe/drones-hit-russian-cargo-ship-in-baltic-finland-tightens-security/articleshow/136065032.cms"
+   ]
+  ],
+  "un-autonomous-weapons-talks-stalled": [
+   [
+    "The Verge",
+    "21 Nov",
+    "https://www.theverge.com/tech/1039554/un-regulations-killer-robots"
+   ],
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/2026/11/21/world/europe/un-lethal-autonomous-weapons.html"
+   ],
+   [
+    "Politico Europe",
+    "21 Nov",
+    "https://www.politico.eu/article/effort-regulate-killer-robots-delayed-until-2028-ai-un/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+   ],
+   [
+    "NPR",
+    "21 Nov",
+    "https://www.npr.org/2026/11/21/nx-s1-6047916/killer-robots-un-drones"
+   ],
+   [
+    "New Scientist",
+    "20 Nov",
+    "https://www.newscientist.com/article/2599904-us-russia-and-china-look-set-to-block-ban-on-autonomous-weapons/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS"
+   ]
+  ],
+  "cop31-climate-talks-deadlock": [
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/environment/2026/nov/21/climate-talks-stall-countries-mull-showdown-saudi-arabia-over-fossil-fuels"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/cop31-deep-divisions-persist-over-energy-finance-and-science"
+   ]
+  ],
+  "catherine-bbc-cancer-film": [
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/c85y14zvexz9o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16311113/Cancer-Kate-disease-new-BBC-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/2026/11/21/world/europe/princess-kate-bbc-cancer-film.html"
+   ],
+   [
+    "CBS News",
+    "21 Nov",
+    "https://www.cbsnews.com/news/catherine-princess-of-wales-heal-documentary-cancer-healing/"
+   ]
+  ],
+  "bepicolombo-reaches-mercury": [
+   [
+    "Nature News",
+    "21 Nov",
+    "https://www.nature.com/articles/d41586-026-03803-8"
+   ],
+   [
+    "New Scientist",
+    "20 Nov",
+    "https://www.newscientist.com/article/2599799-the-bepicolombo-spacecraft-is-finally-entering-orbit-around-mercury/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS"
+   ],
+   [
+    "ScienceDaily",
+    "20 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261120075547.htm"
+   ]
+  ],
+  "eu-digital-tax-budget-proposal": [
+   [
+    "Financial Times",
+    "21 Nov",
+    "https://www.ft.com/content/2e9c54a8-e2c5-4334-8141-9791267ae3c3?syn-25a6b1a6=1"
+   ],
+   [
+    "Politico Europe",
+    "21 Nov",
+    "https://www.politico.eu/article/costa-cuts-proposed-eu-budget-by-44billion-euros/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/new-eu-budget-proposal-aims-at-tax-gobal-tech-giants/a-80009255?maca=en-rss-en-world-4025-xml-mrss"
+   ]
+  ],
+  "zelensky-hometown-strike-crimean-bridge": [
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/europe/20261121-russia-attacks-zelensky-s-hometown-ukraine-reaffirms-wish-to-join-nato"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/c6wy0qj7w5zqo?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/russia-strikes-zelenskyy-s-hometown-killing-2/a-80009458?maca=en-rss-en-world-4025-xml-mrss"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16311045/killer-Zelensky-Trump-Putin-friend-Russian-strikes-Ukraine.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ]
+  ],
+  "shenzhen-apec-trump-xi-putin": [
+   [
+    "NPR",
+    "21 Nov",
+    "https://www.npr.org/2026/11/21/nx-s1-6048741/what-did-xi-jinping-get-from-the-bear-hug-with-trump-at-the-shenzhen-summit"
+   ],
+   [
+    "CNBC",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/apec-summit-trump-xi-china-trade-taiwan.html"
+   ],
+   [
+    "CBS News",
+    "21 Nov",
+    "https://www.cbsnews.com/video/trump-defends-putin-after-trilateral-with-xi/"
+   ]
+  ],
+  "fbi-criminal-database-hack": [
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/fbi-criminal-database-hacked"
+   ],
+   [
+    "The Verge",
+    "21 Nov",
+    "https://www.theverge.com/tech/1039543/fbi-usda-hacked"
+   ]
+  ],
+  "nvidia-china-chip-fallout": [
+   [
+    "Financial Times",
+    "21 Nov",
+    "https://www.ft.com/content/f3ad8a81-3890-4a8a-8853-ff0a94b08ba9?syn-25a6b1a6=1"
+   ],
+   [
+    "TechCrunch",
+    "21 Nov",
+    "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/"
+   ],
+   [
+    "CBS News",
+    "21 Nov",
+    "https://www.cbsnews.com/video/how-china-gets-access-to-american-ai-chips/"
+   ]
+  ],
+  "eu-indonesia-trade-deal": [
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/eu-and-indonesia-sign-trade-deal/a-80010099?maca=en-rss-en-world-4025-xml-mrss"
+   ],
+   [
+    "South China Morning Post",
+    "21 Nov",
+    "https://www.scmp.com/news/asia/southeast-asia/article/3375341/indonesia-eu-sign-ambitious-trade-deal"
+   ]
+  ],
+  "brazil-bolsonaro-hospitalised": [
+   [
+    "Al Jazeera English",
+    "21 Nov",
+    "https://www.aljazeera.com/news/2026/11/21/brazils-jair-bolsonaro-in-intensive-care-with-bowel-obstruction?traffic_source=rss"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/brazil-ex-president-jair-bolsonaro-taken-to-hospital-over-abdominal-pain/a-80007648?maca=en-rss-en-world-4025-xml-mrss"
+   ],
+   [
+    "MercoPress",
+    "21 Nov",
+    "https://en.mercopress.com/2026/11/21/former-brazilian-president-jair-bolsonaro-hospitalised-in-brasilia-with-abdominal-pain?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+   ]
+  ],
+  "bahrain-iran-industrial-strike": [
+   [
+    "Al Jazeera English",
+    "21 Nov",
+    "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility?traffic_source=rss"
+   ],
+   [
+    "CBS News",
+    "21 Nov",
+    "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/"
+   ]
+  ],
+  "bradford-councillor-stabbing-charge": [
+   [
+    "Sky News",
+    "21 Nov",
+    "https://news.sky.com/story/man-charged-with-attempted-murder-after-councillor-stabbed-in-bradford-13614648"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cmkgv2nlpy8ko?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/uk-news/2026/nov/21/man-charged-with-attempted-after-councillor-stabbed-in-bradford"
+   ]
+  ],
+  "uk-eu-rejoin-debate": [
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/politics/2026/nov/21/rejoining-eu-uk-trade-youth-deals-ed-miliband"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/c893r4923wngo?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "City AM",
+    "20 Nov",
+    "https://www.cityam.com/brexit-rejoin-leave-campaigns-yesterdays-arguments/"
+   ]
+  ],
+  "gta-6-record-launch": [
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16311189/Sam-Dan-Houser-Grand-Theft-Auto.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ]
+  ],
+  "china-bond-yields-diverge": [
+   [
+    "The Economist",
+    "19 Nov",
+    "https://www.economist.com/finance-and-economics/2026/11/19/bond-yields-are-rising-everywhere-except-china"
+   ],
+   [
+    "South China Morning Post",
+    "21 Nov",
+    "https://www.scmp.com/opinion/china-opinion/article/3374957/china-has-real-economic-troubles-japanification-not-among-them"
+   ]
   ]
  },
  "FOLLOWED": [
   {
+   "name": "BBC News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Guardian",
+   "topic": "uk"
+  },
+  {
+   "name": "Sky News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Telegraph",
+   "topic": "uk"
+  },
+  {
+   "name": "Daily Mail",
+   "topic": "uk"
+  },
+  {
    "name": "ITV News",
-   "topic": "world"
+   "topic": "uk"
   },
   {
    "name": "RTÉ News",
+   "topic": "uk"
+  },
+  {
+   "name": "Financial Times",
+   "topic": "finance"
+  },
+  {
+   "name": "The Economist",
+   "topic": "finance"
+  },
+  {
+   "name": "CNBC",
+   "topic": "finance"
+  },
+  {
+   "name": "City AM",
+   "topic": "finance"
+  },
+  {
+   "name": "The New York Times",
+   "topic": "world"
+  },
+  {
+   "name": "NPR",
+   "topic": "world"
+  },
+  {
+   "name": "Fox News",
    "topic": "world"
   },
   {
@@ -1003,8 +1889,32 @@
    "topic": "world"
   },
   {
+   "name": "France 24",
+   "topic": "world"
+  },
+  {
+   "name": "DW News",
+   "topic": "world"
+  },
+  {
+   "name": "Politico Europe",
+   "topic": "world"
+  },
+  {
    "name": "Euronews",
    "topic": "world"
+  },
+  {
+   "name": "South China Morning Post",
+   "topic": "world"
+  },
+  {
+   "name": "Nature News",
+   "topic": "science"
+  },
+  {
+   "name": "New Scientist",
+   "topic": "science"
   },
   {
    "name": "ScienceDaily",
@@ -1015,21 +1925,25 @@
    "topic": "tech"
   },
   {
-   "name": "City AM",
-   "topic": "business"
+   "name": "The Verge",
+   "topic": "tech"
+  },
+  {
+   "name": "Ars Technica",
+   "topic": "tech"
   }
  ],
  "META": {
   "editionId": "2026-11-21",
   "dateLabel": "Saturday 21 November 2026",
-  "range": "18–20 Nov",
-  "rangeLong": "18–20 November 2026",
-  "lastRun": "21 Nov 2026, 01:55",
+  "range": "18–21 Nov",
+  "rangeLong": "18–21 November 2026",
+  "lastRun": "21 Nov 2026, 23:50",
   "digest": [
-   "The UK and EU seal a reset deal but put off the tuition fees question.",
-   "UK borrowing rose to £17bn in October as debt interest hit a record.",
-   "CERN reports a particle decay so rare it took 40 years to spot.",
-   "Apple is reportedly building an AI agent to run your Mac."
+   "The UK and EU seal a reset deal as ministers and Tony Blair debate closer future ties.",
+   "Wall Street slips into correction as Anthropic’s post-IPO slide drags down AI stocks.",
+   "Mexico captures FBI Most Wanted boss ‘El Chapo Isidro’ while drones hit a Russian ship in the Gulf of Finland.",
+   "BepiColombo arrives at Mercury as mathematicians scrutinise a claimed AI-assisted Riemann proof."
   ]
  },
  "LEGACY_IDS": {

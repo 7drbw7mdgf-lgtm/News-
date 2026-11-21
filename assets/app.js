@@ -16,10 +16,13 @@
   D.TOPICS.forEach(function (t) { labelOf[t.id] = t.label; });
 
   var MAP_REGIONS = {
-    global: { label: 'Global', bounds: [[-32, -130], [59, 32]], maxZoom: 3 },
-    uk: { label: 'UK & Ireland', bounds: [[49.8, -8.2], [55.8, 2.0]], maxZoom: 7 },
-    europe: { label: 'Europe', bounds: [[44.8, -6.5], [55.8, 24.5]], maxZoom: 6 },
-    americas: { label: 'North America', bounds: [[27.5, -125.5], [42.5, -72.5]], maxZoom: 5 },
+    global: { label: 'Global', bounds: [[-28, -128], [62, 122]], maxZoom: 2 },
+    uk: { label: 'UK & Ireland', bounds: [[49.8, -8.2], [56.5, 2.0]], maxZoom: 7 },
+    europe: { label: 'Europe', bounds: [[44.8, -6.5], [61.2, 34.5]], maxZoom: 5 },
+    mideast: { label: 'Middle East', bounds: [[22.0, 28.0], [39.5, 55.0]], maxZoom: 5 },
+    asia: { label: 'Asia-Pacific', bounds: [[-10.0, 98.0], [42.0, 124.0]], maxZoom: 4 },
+    americas: { label: 'North America', bounds: [[24.0, -125.5], [43.0, -72.0]], maxZoom: 4 },
+    latam: { label: 'Latin America', bounds: [[-22.0, -112.0], [28.0, -42.0]], maxZoom: 4 },
     africa: { label: 'Africa', bounds: [[-31.0, 18.0], [-20.0, 36.0]], maxZoom: 6 }
   };
 
