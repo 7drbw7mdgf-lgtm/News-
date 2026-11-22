@@ -1,0 +1,2502 @@
+[
+ {
+  "outlet": "The Telegraph",
+  "topic": "uk",
+  "url": "https://www.telegraph.co.uk/rss.xml"
+ },
+ {
+  "outlet": "Daily Mail",
+  "topic": "uk",
+  "url": "https://www.dailymail.co.uk/news/index.rss"
+ },
+ {
+  "outlet": "Sky News",
+  "topic": "uk",
+  "url": "https://feeds.skynews.com/feeds/rss/uk.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/uk/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/uk-news/rss"
+ },
+ {
+  "outlet": "The Sun",
+  "topic": "uk",
+  "url": "https://www.thesun.co.uk/news/feed/"
+ },
+ {
+  "outlet": "The Journal",
+  "topic": "uk",
+  "url": "https://www.thejournal.ie/feed/"
+ },
+ {
+  "outlet": "Evening Standard",
+  "topic": "uk",
+  "url": "https://www.standard.co.uk/rss"
+ },
+ {
+  "outlet": "Metro",
+  "topic": "uk",
+  "url": "https://metro.co.uk/feed/"
+ },
+ {
+  "outlet": "Liverpool Echo",
+  "topic": "uk",
+  "url": "https://www.liverpoolecho.co.uk/news/?service=rss"
+ },
+ {
+  "outlet": "GOV.UK",
+  "topic": "uk",
+  "url": "https://www.gov.uk/search/news-and-communications.atom"
+ },
+ {
+  "outlet": "Daily Mirror",
+  "topic": "uk",
+  "url": "https://www.mirror.co.uk/news/?service=rss"
+ },
+ {
+  "outlet": "Belfast Telegraph",
+  "topic": "uk",
+  "url": "https://www.belfasttelegraph.co.uk/rss/"
+ },
+ {
+  "outlet": "The Scotsman",
+  "topic": "uk",
+  "url": "https://www.scotsman.com/rss"
+ },
+ {
+  "outlet": "Manchester Evening News",
+  "topic": "uk",
+  "url": "https://www.manchestereveningnews.co.uk/news/?service=rss"
+ },
+ {
+  "outlet": "Wales Online",
+  "topic": "uk",
+  "url": "https://www.walesonline.co.uk/news/?service=rss"
+ },
+ {
+  "outlet": "Birmingham Mail",
+  "topic": "uk",
+  "url": "https://www.birminghammail.co.uk/news/?service=rss"
+ },
+ {
+  "outlet": "Irish Independent",
+  "topic": "uk",
+  "url": "https://www.independent.ie/rss/"
+ },
+ {
+  "outlet": "GB News",
+  "topic": "uk",
+  "url": "https://www.gbnews.com/feeds/news.rss"
+ },
+ {
+  "outlet": "RTÉ News",
+  "topic": "uk",
+  "url": "https://www.rte.ie/feeds/rss/?index=/news/"
+ },
+ {
+  "outlet": "Yorkshire Post",
+  "topic": "uk",
+  "url": "https://www.yorkshirepost.co.uk/rss"
+ },
+ {
+  "outlet": "Irish Examiner",
+  "topic": "uk",
+  "url": "https://www.irishexaminer.com/feed/35-top_news.xml"
+ },
+ {
+  "outlet": "Daily Express",
+  "topic": "uk",
+  "url": "https://www.express.co.uk/posts/rss/1/news"
+ },
+ {
+  "outlet": "Channel 4 News",
+  "topic": "uk",
+  "url": "https://www.channel4.com/news/feed"
+ },
+ {
+  "outlet": "MyLondon",
+  "topic": "uk",
+  "url": "https://www.mylondon.news/news/?service=rss"
+ },
+ {
+  "outlet": "HuffPost UK",
+  "topic": "uk",
+  "url": "https://www.huffingtonpost.co.uk/feeds/index.xml"
+ },
+ {
+  "outlet": "New Statesman",
+  "topic": "uk",
+  "url": "https://www.newstatesman.com/feed"
+ },
+ {
+  "outlet": "The Conversation UK",
+  "topic": "uk",
+  "url": "https://theconversation.com/uk/articles.atom"
+ },
+ {
+  "outlet": "Bristol Post",
+  "topic": "uk",
+  "url": "https://www.bristolpost.co.uk/news/?service=rss"
+ },
+ {
+  "outlet": "i News",
+  "topic": "uk",
+  "url": "https://inews.co.uk/feed"
+ },
+ {
+  "outlet": "The Herald",
+  "topic": "uk",
+  "url": "https://www.heraldscotland.com/news/rss/"
+ },
+ {
+  "outlet": "The Critic",
+  "topic": "uk",
+  "url": "https://thecritic.co.uk/feed/"
+ },
+ {
+  "outlet": "Politics.co.uk",
+  "topic": "uk",
+  "url": "https://www.politics.co.uk/feed/"
+ },
+ {
+  "outlet": "Guido Fawkes",
+  "topic": "uk",
+  "url": "https://order-order.com/feed/"
+ },
+ {
+  "outlet": "The Week UK",
+  "topic": "uk",
+  "url": "https://theweek.com/uk/feed.xml"
+ },
+ {
+  "outlet": "Wonkhe",
+  "topic": "uk",
+  "url": "https://wonkhe.com/feed/"
+ },
+ {
+  "outlet": "UnHerd",
+  "topic": "uk",
+  "url": "https://unherd.com/feed/"
+ },
+ {
+  "outlet": "NHS England",
+  "topic": "uk",
+  "url": "https://www.england.nhs.uk/feed/"
+ },
+ {
+  "outlet": "Full Fact",
+  "topic": "uk",
+  "url": "https://fullfact.org/feed/"
+ },
+ {
+  "outlet": "Nursing Times",
+  "topic": "uk",
+  "url": "https://www.nursingtimes.net/feed/"
+ },
+ {
+  "outlet": "Institute for Government",
+  "topic": "uk",
+  "url": "https://www.instituteforgovernment.org.uk/rss.xml"
+ },
+ {
+  "outlet": "ConservativeHome",
+  "topic": "uk",
+  "url": "https://conservativehome.com/feed/"
+ },
+ {
+  "outlet": "Pulse",
+  "topic": "uk",
+  "url": "https://www.pulsetoday.co.uk/feed/"
+ },
+ {
+  "outlet": "Byline Times",
+  "topic": "uk",
+  "url": "https://bylinetimes.com/feed/"
+ },
+ {
+  "outlet": "BBC News - Home",
+  "topic": "uk",
+  "url": "http://feeds.bbci.co.uk/news/rss.xml"
+ },
+ {
+  "outlet": "Home | Mail Online",
+  "topic": "uk",
+  "url": "https://www.dailymail.co.uk/home/index.rss"
+ },
+ {
+  "outlet": "The42",
+  "topic": "uk",
+  "url": "https://www.the42.ie/feed/"
+ },
+ {
+  "outlet": "Irish Mirror - Home",
+  "topic": "uk",
+  "url": "https://www.irishmirror.ie/?service=rss"
+ },
+ {
+  "outlet": "IrishExaminer.com",
+  "topic": "uk",
+  "url": "https://feeds.feedburner.com/ietopstories"
+ },
+ {
+  "outlet": "IrishCentral.com",
+  "topic": "uk",
+  "url": "https://feeds.feedburner.com/IrishCentral"
+ },
+ {
+  "outlet": "Sky News",
+  "topic": "uk",
+  "url": "https://feeds.skynews.com/feeds/rss/home.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/scotland/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/uk/media/rss"
+ },
+ {
+  "outlet": "Daily Mirror",
+  "topic": "uk",
+  "url": "https://www.mirror.co.uk/news/politics/?service=rss"
+ },
+ {
+  "outlet": "Daily Express",
+  "topic": "uk",
+  "url": "https://www.express.co.uk/posts/rss/139/politics"
+ },
+ {
+  "outlet": "i News",
+  "topic": "uk",
+  "url": "https://inews.co.uk/news/politics/feed"
+ },
+ {
+  "outlet": "Sky News",
+  "topic": "uk",
+  "url": "https://feeds.skynews.com/feeds/rss/politics.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/northern_ireland/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/society/rss"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/england/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/politics/rss"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/wales/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/education/rss"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/health/rss.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/politics/rss.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/education/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "business",
+  "url": "https://www.theguardian.com/uk/business/rss"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "business",
+  "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "business",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147"
+ },
+ {
+  "outlet": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/finance-and-economics/rss.xml"
+ },
+ {
+  "outlet": "South China Morning Post",
+  "topic": "business",
+  "url": "https://www.scmp.com/rss/92/feed"
+ },
+ {
+  "outlet": "Oilprice.com",
+  "topic": "business",
+  "url": "https://oilprice.com/rss/main"
+ },
+ {
+  "outlet": "Financial Times",
+  "topic": "business",
+  "url": "https://www.ft.com/companies?format=rss"
+ },
+ {
+  "outlet": "Livemint",
+  "topic": "business",
+  "url": "https://www.livemint.com/rss/companies"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "business",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml"
+ },
+ {
+  "outlet": "Bloomberg",
+  "topic": "business",
+  "url": "https://feeds.bloomberg.com/business/news.rss"
+ },
+ {
+  "outlet": "Forbes",
+  "topic": "business",
+  "url": "https://www.forbes.com/business/feed/"
+ },
+ {
+  "outlet": "Fortune",
+  "topic": "business",
+  "url": "https://fortune.com/feed/"
+ },
+ {
+  "outlet": "PBS NewsHour",
+  "topic": "business",
+  "url": "https://www.pbs.org/newshour/feeds/rss/economy"
+ },
+ {
+  "outlet": "Washington Post",
+  "topic": "business",
+  "url": "https://feeds.washingtonpost.com/rss/business"
+ },
+ {
+  "outlet": "Economic Times",
+  "topic": "business",
+  "url": "https://economictimes.indiatimes.com/rssfeedstopstories.cms"
+ },
+ {
+  "outlet": "Business Insider",
+  "topic": "business",
+  "url": "https://feeds.businessinsider.com/custom/all"
+ },
+ {
+  "outlet": "Fox Business",
+  "topic": "business",
+  "url": "https://moxie.foxbusiness.com/google-publisher/latest.xml"
+ },
+ {
+  "outlet": "The Globe and Mail",
+  "topic": "business",
+  "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/business/"
+ },
+ {
+  "outlet": "Euronews",
+  "topic": "business",
+  "url": "https://www.euronews.com/rss?level=vertical&name=business"
+ },
+ {
+  "outlet": "The Wall Street Journal",
+  "topic": "business",
+  "url": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness"
+ },
+ {
+  "outlet": "Freightwaves",
+  "topic": "business",
+  "url": "https://www.freightwaves.com/news/feed"
+ },
+ {
+  "outlet": "NPR",
+  "topic": "business",
+  "url": "https://feeds.npr.org/1006/rss.xml"
+ },
+ {
+  "outlet": "Sky News",
+  "topic": "business",
+  "url": "https://feeds.skynews.com/feeds/rss/business.xml"
+ },
+ {
+  "outlet": "City AM",
+  "topic": "business",
+  "url": "https://www.cityam.com/category/business/feed/"
+ },
+ {
+  "outlet": "Modern Retail",
+  "topic": "business",
+  "url": "https://www.modernretail.co/feed/"
+ },
+ {
+  "outlet": "The Telegraph",
+  "topic": "business",
+  "url": "https://www.telegraph.co.uk/business/rss.xml"
+ },
+ {
+  "outlet": "Supply Chain Dive",
+  "topic": "business",
+  "url": "https://www.supplychaindive.com/feeds/news/"
+ },
+ {
+  "outlet": "Retail Dive",
+  "topic": "business",
+  "url": "https://www.retaildive.com/feeds/news/"
+ },
+ {
+  "outlet": "Press Gazette",
+  "topic": "business",
+  "url": "https://pressgazette.co.uk/feed/"
+ },
+ {
+  "outlet": "DW News",
+  "topic": "business",
+  "url": "https://rss.dw.com/xml/rss-en-bus"
+ },
+ {
+  "outlet": "France 24",
+  "topic": "business",
+  "url": "https://www.france24.com/en/business-tech/rss"
+ },
+ {
+  "outlet": "Construction News",
+  "topic": "business",
+  "url": "https://www.constructionnews.co.uk/feed/"
+ },
+ {
+  "outlet": "Retail Gazette",
+  "topic": "business",
+  "url": "https://www.retailgazette.co.uk/feed/"
+ },
+ {
+  "outlet": "The Conversation",
+  "topic": "business",
+  "url": "https://theconversation.com/uk/business/articles.atom"
+ },
+ {
+  "outlet": "Bloomberg Originals",
+  "topic": "business",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=Bloomberg"
+ },
+ {
+  "outlet": "US Top News and Analysis",
+  "topic": "business",
+  "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+ },
+ {
+  "outlet": "The Blog of Author Tim Ferriss",
+  "topic": "business",
+  "url": "https://tim.blog/feed/"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "business",
+  "url": "https://www.theguardian.com/business/economics/rss"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "business",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001054"
+ },
+ {
+  "outlet": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/business/rss.xml"
+ },
+ {
+  "outlet": "Financial Times",
+  "topic": "business",
+  "url": "https://www.ft.com/world?format=rss"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "business",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml"
+ },
+ {
+  "outlet": "Bloomberg",
+  "topic": "business",
+  "url": "https://feeds.bloomberg.com/economics/news.rss"
+ },
+ {
+  "outlet": "Economic Times",
+  "topic": "business",
+  "url": "https://economictimes.indiatimes.com/rssfeedsdefault.cms"
+ },
+ {
+  "outlet": "Business Insider",
+  "topic": "business",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=businessinsider"
+ },
+ {
+  "outlet": "Fox Business",
+  "topic": "business",
+  "url": "https://moxie.foxbusiness.com/google-publisher/markets.xml"
+ },
+ {
+  "outlet": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/briefing/rss.xml"
+ },
+ {
+  "outlet": "Financial Times",
+  "topic": "business",
+  "url": "https://www.ft.com/global-economy?format=rss"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "business",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/DealBook.xml"
+ },
+ {
+  "outlet": "Bloomberg",
+  "topic": "business",
+  "url": "https://feeds.bloomberg.com/industries/news.rss"
+ },
+ {
+  "outlet": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/leaders/rss.xml"
+ },
+ {
+  "outlet": "MarketWatch",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+ },
+ {
+  "outlet": "Financial Times",
+  "topic": "finance",
+  "url": "https://www.ft.com/rss/home/uk"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "finance",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664"
+ },
+ {
+  "outlet": "City AM",
+  "topic": "finance",
+  "url": "https://www.cityam.com/feed/"
+ },
+ {
+  "outlet": "Finextra",
+  "topic": "finance",
+  "url": "https://www.finextra.com/rss/headlines.aspx"
+ },
+ {
+  "outlet": "Zero Hedge",
+  "topic": "finance",
+  "url": "https://feeds.feedburner.com/zerohedge/feed"
+ },
+ {
+  "outlet": "Investing.com",
+  "topic": "finance",
+  "url": "https://www.investing.com/rss/news.rss"
+ },
+ {
+  "outlet": "Seeking Alpha",
+  "topic": "finance",
+  "url": "https://seekingalpha.com/feed.xml"
+ },
+ {
+  "outlet": "The Block",
+  "topic": "finance",
+  "url": "https://www.theblock.co/rss.xml"
+ },
+ {
+  "outlet": "The Wall Street Journal",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"
+ },
+ {
+  "outlet": "CBS News",
+  "topic": "finance",
+  "url": "https://www.cbsnews.com/latest/rss/moneywatch"
+ },
+ {
+  "outlet": "CoinDesk",
+  "topic": "finance",
+  "url": "https://www.coindesk.com/arc/outboundfeeds/rss/"
+ },
+ {
+  "outlet": "Decrypt",
+  "topic": "finance",
+  "url": "https://decrypt.co/feed"
+ },
+ {
+  "outlet": "Bloomberg",
+  "topic": "finance",
+  "url": "https://feeds.bloomberg.com/markets/news.rss"
+ },
+ {
+  "outlet": "Daily Mail",
+  "topic": "finance",
+  "url": "https://www.dailymail.co.uk/money/index.rss"
+ },
+ {
+  "outlet": "This is Money",
+  "topic": "finance",
+  "url": "https://www.thisismoney.co.uk/money/index.rss"
+ },
+ {
+  "outlet": "Marginal Revolution",
+  "topic": "finance",
+  "url": "https://marginalrevolution.com/feed"
+ },
+ {
+  "outlet": "Kiplinger",
+  "topic": "finance",
+  "url": "https://www.kiplinger.com/feeds/all"
+ },
+ {
+  "outlet": "Motley Fool UK",
+  "topic": "finance",
+  "url": "https://www.fool.co.uk/feed/"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "finance",
+  "url": "https://www.theguardian.com/uk/money/rss"
+ },
+ {
+  "outlet": "Naked Capitalism",
+  "topic": "finance",
+  "url": "https://www.nakedcapitalism.com/feed"
+ },
+ {
+  "outlet": "Cointelegraph",
+  "topic": "finance",
+  "url": "https://cointelegraph.com/rss"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "finance",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/YourMoney.xml"
+ },
+ {
+  "outlet": "MoneyWeek",
+  "topic": "finance",
+  "url": "https://moneyweek.com/feeds/all"
+ },
+ {
+  "outlet": "Wolf Street",
+  "topic": "finance",
+  "url": "https://wolfstreet.com/feed/"
+ },
+ {
+  "outlet": "Federal Reserve",
+  "topic": "finance",
+  "url": "https://www.federalreserve.gov/feeds/press_all.xml"
+ },
+ {
+  "outlet": "Banking Dive",
+  "topic": "finance",
+  "url": "https://www.bankingdive.com/feeds/news/"
+ },
+ {
+  "outlet": "Resolution Foundation",
+  "topic": "finance",
+  "url": "https://www.resolutionfoundation.org/feed/"
+ },
+ {
+  "outlet": "Bank of England",
+  "topic": "finance",
+  "url": "https://www.bankofengland.co.uk/rss/publications"
+ },
+ {
+  "outlet": "ONS",
+  "topic": "finance",
+  "url": "https://www.ons.gov.uk/releasecalendar?rss"
+ },
+ {
+  "outlet": "European Central Bank",
+  "topic": "finance",
+  "url": "https://www.ecb.europa.eu/rss/press.html"
+ },
+ {
+  "outlet": "Money Crashers",
+  "topic": "finance",
+  "url": "https://www.moneycrashers.com/feed/"
+ },
+ {
+  "outlet": "SavingAdvice.com Blog",
+  "topic": "finance",
+  "url": "https://www.savingadvice.com/feed/"
+ },
+ {
+  "outlet": "CryptoNinjas",
+  "topic": "finance",
+  "url": "https://www.cryptoninjas.net/feed/"
+ },
+ {
+  "outlet": "Bitcoin News",
+  "topic": "finance",
+  "url": "https://news.bitcoin.com/feed/"
+ },
+ {
+  "outlet": "CryptoPotato",
+  "topic": "finance",
+  "url": "https://cryptopotato.com/feed/"
+ },
+ {
+  "outlet": "Money Saving Mom®",
+  "topic": "finance",
+  "url": "https://moneysavingmom.com/feed/"
+ },
+ {
+  "outlet": "News - Cryptonews",
+  "topic": "finance",
+  "url": "https://cryptonews.com/news/feed"
+ },
+ {
+  "outlet": "The College Investor",
+  "topic": "finance",
+  "url": "https://thecollegeinvestor.com/feed/"
+ },
+ {
+  "outlet": "Bitcoin Audible",
+  "topic": "finance",
+  "url": "https://bitcoinaudible.com/feed/"
+ },
+ {
+  "outlet": "DailyCoin",
+  "topic": "finance",
+  "url": "https://dailycoin.com/feed/"
+ },
+ {
+  "outlet": "Afford Anything®",
+  "topic": "finance",
+  "url": "https://affordanything.com/feed/"
+ },
+ {
+  "outlet": "Money Under 30",
+  "topic": "finance",
+  "url": "https://www.moneyunder30.com/feed"
+ },
+ {
+  "outlet": "NerdWallet",
+  "topic": "finance",
+  "url": "https://www.nerdwallet.com/blog/feed/"
+ },
+ {
+  "outlet": "Nerd's Eye View | Kitces.com",
+  "topic": "finance",
+  "url": "http://feeds.feedblitz.com/kitcesnerdseyeview&x=1"
+ },
+ {
+  "outlet": "Kraken Blog",
+  "topic": "finance",
+  "url": "https://blog.kraken.com/feed/"
+ },
+ {
+  "outlet": "NewsBTC",
+  "topic": "finance",
+  "url": "https://www.newsbtc.com/feed/"
+ },
+ {
+  "outlet": "Financial Samurai",
+  "topic": "finance",
+  "url": "https://www.financialsamurai.com/feed/"
+ },
+ {
+  "outlet": "CryptoCurrency – Finance Magnates | Financial and business news",
+  "topic": "finance",
+  "url": "https://www.financemagnates.com/cryptocurrency/feed/"
+ },
+ {
+  "outlet": "MyWifeQuitHerJob.com",
+  "topic": "finance",
+  "url": "https://mywifequitherjob.com/feed/"
+ },
+ {
+  "outlet": "Wise Bread",
+  "topic": "finance",
+  "url": "http://feeds.killeraces.com/wisebread"
+ },
+ {
+  "outlet": "cryptocurrency | TechCrunch",
+  "topic": "finance",
+  "url": "https://techcrunch.com/tag/cryptocurrency/feed"
+ },
+ {
+  "outlet": "Making Sense Of Cents",
+  "topic": "finance",
+  "url": "https://www.makingsenseofcents.com/feed"
+ },
+ {
+  "outlet": "MoneyNing",
+  "topic": "finance",
+  "url": "http://feeds.feedburner.com/MoneyNing"
+ },
+ {
+  "outlet": "MarketWatch",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/mw_bulletins"
+ },
+ {
+  "outlet": "Financial Times",
+  "topic": "finance",
+  "url": "https://www.ft.com/markets?format=rss"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "finance",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258"
+ },
+ {
+  "outlet": "Investing.com",
+  "topic": "finance",
+  "url": "https://www.investing.com/rss/news_25.rss"
+ },
+ {
+  "outlet": "Seeking Alpha",
+  "topic": "finance",
+  "url": "https://seekingalpha.com/market_currents.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "finance",
+  "url": "https://www.theguardian.com/business/stock-markets/rss"
+ },
+ {
+  "outlet": "Bank of England",
+  "topic": "finance",
+  "url": "https://www.bankofengland.co.uk/rss/news"
+ },
+ {
+  "outlet": "Afford Anything®",
+  "topic": "finance",
+  "url": "https://feeds.feedburner.com/AffordAnythingFeed"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "finance",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069"
+ },
+ {
+  "outlet": "Investing.com",
+  "topic": "finance",
+  "url": "https://www.investing.com/rss/news_14.rss"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/"
+ },
+ {
+  "outlet": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/top/science.xml"
+ },
+ {
+  "outlet": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nature.rss"
+ },
+ {
+  "outlet": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/feed/home/"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "science",
+  "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/environment/rss"
+ },
+ {
+  "outlet": "NPR",
+  "topic": "science",
+  "url": "https://feeds.npr.org/1128/rss.xml"
+ },
+ {
+  "outlet": "Medical Xpress",
+  "topic": "science",
+  "url": "https://medicalxpress.com/rss-feed/"
+ },
+ {
+  "outlet": "Daily Mail",
+  "topic": "science",
+  "url": "https://www.dailymail.co.uk/sciencetech/index.rss"
+ },
+ {
+  "outlet": "Eos",
+  "topic": "science",
+  "url": "https://eos.org/feed"
+ },
+ {
+  "outlet": "Nautilus",
+  "topic": "science",
+  "url": "https://nautil.us/feed/"
+ },
+ {
+  "outlet": "Space.com",
+  "topic": "science",
+  "url": "https://www.space.com/feeds/all"
+ },
+ {
+  "outlet": "Live Science",
+  "topic": "science",
+  "url": "https://www.livescience.com/feeds/all"
+ },
+ {
+  "outlet": "Grist",
+  "topic": "science",
+  "url": "https://grist.org/feed/"
+ },
+ {
+  "outlet": "Fox News",
+  "topic": "science",
+  "url": "https://moxie.foxnews.com/google-publisher/health.xml"
+ },
+ {
+  "outlet": "Scientific American",
+  "topic": "science",
+  "url": "https://www.scientificamerican.com/platform/syndication/rss/"
+ },
+ {
+  "outlet": "Science News",
+  "topic": "science",
+  "url": "https://www.sciencenews.org/feed"
+ },
+ {
+  "outlet": "Ars Technica",
+  "topic": "science",
+  "url": "https://feeds.arstechnica.com/arstechnica/science"
+ },
+ {
+  "outlet": "STAT",
+  "topic": "science",
+  "url": "https://www.statnews.com/feed/"
+ },
+ {
+  "outlet": "Wired",
+  "topic": "science",
+  "url": "https://www.wired.com/feed/category/science/latest/rss"
+ },
+ {
+  "outlet": "Universe Today",
+  "topic": "science",
+  "url": "https://www.universetoday.com/feed/"
+ },
+ {
+  "outlet": "Inside Climate News",
+  "topic": "science",
+  "url": "https://insideclimatenews.org/feed/"
+ },
+ {
+  "outlet": "Mongabay",
+  "topic": "science",
+  "url": "https://news.mongabay.com/feed/"
+ },
+ {
+  "outlet": "NASA",
+  "topic": "science",
+  "url": "https://www.nasa.gov/news-release/feed/"
+ },
+ {
+  "outlet": "PBS NewsHour",
+  "topic": "science",
+  "url": "https://www.pbs.org/newshour/feeds/rss/science"
+ },
+ {
+  "outlet": "The Lancet",
+  "topic": "science",
+  "url": "https://www.thelancet.com/rssfeed/lancet_current.xml"
+ },
+ {
+  "outlet": "The Economist",
+  "topic": "science",
+  "url": "https://www.economist.com/science-and-technology/rss.xml"
+ },
+ {
+  "outlet": "Smithsonian Magazine",
+  "topic": "science",
+  "url": "https://www.smithsonianmag.com/rss/science-nature/"
+ },
+ {
+  "outlet": "DW News",
+  "topic": "science",
+  "url": "https://rss.dw.com/xml/rss_en_environment"
+ },
+ {
+  "outlet": "The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/uk/health/articles.atom"
+ },
+ {
+  "outlet": "UKHSA",
+  "topic": "science",
+  "url": "https://www.gov.uk/government/organisations/uk-health-security-agency.atom"
+ },
+ {
+  "outlet": "Big Think",
+  "topic": "science",
+  "url": "https://bigthink.com/feed/"
+ },
+ {
+  "outlet": "Physics World",
+  "topic": "science",
+  "url": "https://physicsworld.com/feed/"
+ },
+ {
+  "outlet": "Quanta Magazine",
+  "topic": "science",
+  "url": "https://www.quantamagazine.org/feed/"
+ },
+ {
+  "outlet": "PLOS Pathogens",
+  "topic": "science",
+  "url": "https://journals.plos.org/plospathogens/feed/atom"
+ },
+ {
+  "outlet": "PLOS Biology",
+  "topic": "science",
+  "url": "https://journals.plos.org/plosbiology/feed/atom"
+ },
+ {
+  "outlet": "eLife",
+  "topic": "science",
+  "url": "https://elifesciences.org/rss/recent.xml"
+ },
+ {
+  "outlet": "Knowable Magazine",
+  "topic": "science",
+  "url": "https://knowablemagazine.org/rss"
+ },
+ {
+  "outlet": "Science",
+  "topic": "science",
+  "url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science"
+ },
+ {
+  "outlet": "CBS News",
+  "topic": "science",
+  "url": "https://www.cbsnews.com/latest/rss/science"
+ },
+ {
+  "outlet": "ECDC",
+  "topic": "science",
+  "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1307/feed"
+ },
+ {
+  "outlet": "LA Times",
+  "topic": "science",
+  "url": "https://www.latimes.com/science/rss2.0.xml"
+ },
+ {
+  "outlet": "Carbon Brief",
+  "topic": "science",
+  "url": "https://www.carbonbrief.org/feed/"
+ },
+ {
+  "outlet": "Our World in Data",
+  "topic": "science",
+  "url": "https://ourworldindata.org/atom.xml"
+ },
+ {
+  "outlet": "National Geographic",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpVm7bg6pXKo1Pr6k5kxG9A"
+ },
+ {
+  "outlet": "Good Good Good",
+  "topic": "science",
+  "url": "https://www.goodgoodgood.co/articles/rss.xml"
+ },
+ {
+  "outlet": "BBC Earth",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCwmZiChSryoWQCZMIQezgTg"
+ },
+ {
+  "outlet": "Conservation International",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCam5sCp6mzGBcn8ZBB2RBJg"
+ },
+ {
+  "outlet": "Popular Science",
+  "topic": "science",
+  "url": "https://www.popsci.com/arcio/rss/"
+ },
+ {
+  "outlet": "nature video",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC7c8mE90qCtu11z47U0KErg"
+ },
+ {
+  "outlet": "Latest Science News -- ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/all.xml"
+ },
+ {
+  "outlet": "Reflections of the Natural World",
+  "topic": "science",
+  "url": "https://reflectionsofthenaturalworld.com/feed/"
+ },
+ {
+  "outlet": "NPR Topics: Environment",
+  "topic": "science",
+  "url": "https://feeds.npr.org/1025/rss.xml"
+ },
+ {
+  "outlet": "Scientific American Content: Global",
+  "topic": "science",
+  "url": "http://rss.sciam.com/ScientificAmerican-Global"
+ },
+ {
+  "outlet": "Environment + Energy – The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/au/environment/articles.atom"
+ },
+ {
+  "outlet": "BLOG POSTS – Mark Avery",
+  "topic": "science",
+  "url": "https://markavery.info/blog/feed/"
+ },
+ {
+  "outlet": "Environment News, Earth News, Global Warming, Wild Life, Carbon Trading, Climate Business, Climate Change & Pollution News",
+  "topic": "science",
+  "url": "https://timesofindia.indiatimes.com/rssfeeds/2647163.cms"
+ },
+ {
+  "outlet": "Nature on PBS",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCcBp_9YPyma4c3HTadmRJ3Q"
+ },
+ {
+  "outlet": "FlowingData",
+  "topic": "science",
+  "url": "https://flowingdata.com/feed"
+ },
+ {
+  "outlet": "Radiolab",
+  "topic": "science",
+  "url": "http://feeds.wnyc.org/radiolab"
+ },
+ {
+  "outlet": "Space | The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/science/space/rss"
+ },
+ {
+  "outlet": "Explore Oceans",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSyg9cb3Iq-NtlbxqNB9wGw"
+ },
+ {
+  "outlet": "Stories Archives - Nature Canada",
+  "topic": "science",
+  "url": "https://naturecanada.ca/category/news/blog/feed/"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/biology-news/"
+ },
+ {
+  "outlet": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/space_time.xml"
+ },
+ {
+  "outlet": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/ncomms.rss"
+ },
+ {
+  "outlet": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/physics/feed/"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/science/rss"
+ },
+ {
+  "outlet": "NPR",
+  "topic": "science",
+  "url": "https://feeds.npr.org/1007/rss.xml"
+ },
+ {
+  "outlet": "Medical Xpress",
+  "topic": "science",
+  "url": "https://medicalxpress.com/rss-feed/infectious-diseases-news/"
+ },
+ {
+  "outlet": "NASA",
+  "topic": "science",
+  "url": "https://www.nasa.gov/feed/"
+ },
+ {
+  "outlet": "The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/global/articles.atom"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/chemistry-news/"
+ },
+ {
+  "outlet": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/top/environment.xml"
+ },
+ {
+  "outlet": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nmicrobiol.rss"
+ },
+ {
+  "outlet": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/environment/feed/"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml"
+ },
+ {
+  "outlet": "The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/uk/environment/articles.atom"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/earth-news/"
+ },
+ {
+  "outlet": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/plants_animals/microbiology.xml"
+ },
+ {
+  "outlet": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nrmicro.rss"
+ },
+ {
+  "outlet": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/space/feed/"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/space-news/"
+ },
+ {
+  "outlet": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/health_medicine/infectious_diseases.xml"
+ },
+ {
+  "outlet": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nm.rss"
+ },
+ {
+  "outlet": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/life/feed/"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/physics-news/"
+ },
+ {
+  "outlet": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nclimate.rss"
+ },
+ {
+  "outlet": "Ars Technica",
+  "topic": "tech",
+  "url": "https://feeds.arstechnica.com/arstechnica/index"
+ },
+ {
+  "outlet": "The Verge",
+  "topic": "tech",
+  "url": "https://www.theverge.com/rss/index.xml"
+ },
+ {
+  "outlet": "TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/feed/"
+ },
+ {
+  "outlet": "Wired",
+  "topic": "tech",
+  "url": "https://www.wired.com/feed/rss"
+ },
+ {
+  "outlet": "TechRadar",
+  "topic": "tech",
+  "url": "https://www.techradar.com/rss"
+ },
+ {
+  "outlet": "Android Police",
+  "topic": "tech",
+  "url": "https://www.androidpolice.com/feed/"
+ },
+ {
+  "outlet": "Electrek",
+  "topic": "tech",
+  "url": "https://electrek.co/feed/"
+ },
+ {
+  "outlet": "Engadget",
+  "topic": "tech",
+  "url": "https://www.engadget.com/rss.xml"
+ },
+ {
+  "outlet": "Hacker News",
+  "topic": "tech",
+  "url": "https://hnrss.org/frontpage"
+ },
+ {
+  "outlet": "Slashdot",
+  "topic": "tech",
+  "url": "https://rss.slashdot.org/Slashdot/slashdotMain"
+ },
+ {
+  "outlet": "BleepingComputer",
+  "topic": "tech",
+  "url": "https://www.bleepingcomputer.com/feed/"
+ },
+ {
+  "outlet": "9to5Mac",
+  "topic": "tech",
+  "url": "https://9to5mac.com/feed/"
+ },
+ {
+  "outlet": "NPR",
+  "topic": "tech",
+  "url": "https://feeds.npr.org/1019/rss.xml"
+ },
+ {
+  "outlet": "SiliconANGLE",
+  "topic": "tech",
+  "url": "https://siliconangle.com/feed/"
+ },
+ {
+  "outlet": "Digital Trends",
+  "topic": "tech",
+  "url": "https://www.digitaltrends.com/feed/"
+ },
+ {
+  "outlet": "9to5Google",
+  "topic": "tech",
+  "url": "https://9to5google.com/feed/"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "tech",
+  "url": "https://www.theguardian.com/uk/technology/rss"
+ },
+ {
+  "outlet": "Tom's Hardware",
+  "topic": "tech",
+  "url": "https://www.tomshardware.com/feeds/all"
+ },
+ {
+  "outlet": "Techmeme",
+  "topic": "tech",
+  "url": "https://www.techmeme.com/feed.xml"
+ },
+ {
+  "outlet": "The Next Web",
+  "topic": "tech",
+  "url": "https://thenextweb.com/feed"
+ },
+ {
+  "outlet": "Mashable",
+  "topic": "tech",
+  "url": "https://mashable.com/feeds/rss/all"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "tech",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
+ },
+ {
+  "outlet": "Phys.org",
+  "topic": "tech",
+  "url": "https://phys.org/rss-feed/technology-news/"
+ },
+ {
+  "outlet": "InsideEVs",
+  "topic": "tech",
+  "url": "https://insideevs.com/rss/news/all/"
+ },
+ {
+  "outlet": "Bloomberg",
+  "topic": "tech",
+  "url": "https://feeds.bloomberg.com/technology/news.rss"
+ },
+ {
+  "outlet": "The Information",
+  "topic": "tech",
+  "url": "https://www.theinformation.com/feed"
+ },
+ {
+  "outlet": "Lifehacker",
+  "topic": "tech",
+  "url": "https://lifehacker.com/feed/rss"
+ },
+ {
+  "outlet": "GeekWire",
+  "topic": "tech",
+  "url": "https://www.geekwire.com/feed/"
+ },
+ {
+  "outlet": "Financial Times",
+  "topic": "tech",
+  "url": "https://www.ft.com/technology?format=rss"
+ },
+ {
+  "outlet": "MacRumors",
+  "topic": "tech",
+  "url": "https://feeds.macrumors.com/MacRumors-All"
+ },
+ {
+  "outlet": "PCWorld",
+  "topic": "tech",
+  "url": "https://www.pcworld.com/feed"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "tech",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
+ },
+ {
+  "outlet": "The Decoder",
+  "topic": "tech",
+  "url": "https://the-decoder.com/feed/"
+ },
+ {
+  "outlet": "The Wall Street Journal",
+  "topic": "tech",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSWSJD"
+ },
+ {
+  "outlet": "CBS News",
+  "topic": "tech",
+  "url": "https://www.cbsnews.com/latest/rss/technology"
+ },
+ {
+  "outlet": "The Register",
+  "topic": "tech",
+  "url": "https://www.theregister.com/headlines.atom"
+ },
+ {
+  "outlet": "Android Authority",
+  "topic": "tech",
+  "url": "https://www.androidauthority.com/feed/"
+ },
+ {
+  "outlet": "SecurityWeek",
+  "topic": "tech",
+  "url": "https://www.securityweek.com/feed/"
+ },
+ {
+  "outlet": "Fox News",
+  "topic": "tech",
+  "url": "https://moxie.foxnews.com/google-publisher/tech.xml"
+ },
+ {
+  "outlet": "404 Media",
+  "topic": "tech",
+  "url": "https://www.404media.co/rss/"
+ },
+ {
+  "outlet": "The Hacker News",
+  "topic": "tech",
+  "url": "https://feeds.feedburner.com/TheHackersNews"
+ },
+ {
+  "outlet": "CNET",
+  "topic": "tech",
+  "url": "https://www.cnet.com/rss/news/"
+ },
+ {
+  "outlet": "Washington Post",
+  "topic": "tech",
+  "url": "https://feeds.washingtonpost.com/rss/business/technology"
+ },
+ {
+  "outlet": "Fast Company",
+  "topic": "tech",
+  "url": "https://www.fastcompany.com/technology/rss"
+ },
+ {
+  "outlet": "South China Morning Post",
+  "topic": "tech",
+  "url": "https://www.scmp.com/rss/36/feed"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "tech",
+  "url": "https://feeds.bbci.co.uk/news/technology/rss.xml"
+ },
+ {
+  "outlet": "BBC Click / Tech",
+  "topic": "tech",
+  "url": "https://feeds.bbci.co.uk/news/technology/rss.xml?edition=int"
+ },
+ {
+  "outlet": "Krebs on Security",
+  "topic": "tech",
+  "url": "https://krebsonsecurity.com/feed/"
+ },
+ {
+  "outlet": "The Record",
+  "topic": "tech",
+  "url": "https://therecord.media/feed"
+ },
+ {
+  "outlet": "Dark Reading",
+  "topic": "tech",
+  "url": "https://www.darkreading.com/rss.xml"
+ },
+ {
+  "outlet": "Simon Willison",
+  "topic": "tech",
+  "url": "https://simonwillison.net/atom/everything/"
+ },
+ {
+  "outlet": "MIT Technology Review",
+  "topic": "tech",
+  "url": "https://www.technologyreview.com/feed/"
+ },
+ {
+  "outlet": "ZDNET",
+  "topic": "tech",
+  "url": "https://www.zdnet.com/news/rss.xml"
+ },
+ {
+  "outlet": "Sifted",
+  "topic": "tech",
+  "url": "https://sifted.eu/feed"
+ },
+ {
+  "outlet": "New Scientist",
+  "topic": "tech",
+  "url": "https://www.newscientist.com/subject/technology/feed/"
+ },
+ {
+  "outlet": "IEEE Spectrum",
+  "topic": "tech",
+  "url": "https://spectrum.ieee.org/feeds/feed.rss"
+ },
+ {
+  "outlet": "Sky News",
+  "topic": "tech",
+  "url": "https://feeds.skynews.com/feeds/rss/technology.xml"
+ },
+ {
+  "outlet": "Computer Weekly",
+  "topic": "tech",
+  "url": "https://www.computerweekly.com/rss/All-Computer-Weekly-content.xml"
+ },
+ {
+  "outlet": "UKTN",
+  "topic": "tech",
+  "url": "https://www.uktech.news/feed"
+ },
+ {
+  "outlet": "Rest of World",
+  "topic": "tech",
+  "url": "https://restofworld.org/feed/latest/"
+ },
+ {
+  "outlet": "Product Hunt — The best new products, every day",
+  "topic": "tech",
+  "url": "https://www.producthunt.com/feed"
+ },
+ {
+  "outlet": "GSMArena.com",
+  "topic": "tech",
+  "url": "https://www.gsmarena.com/rss-news-reviews.php3"
+ },
+ {
+  "outlet": "Unbox Therapy",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=unboxtherapy"
+ },
+ {
+  "outlet": "Linus Tech Tips",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=LinusTechTips"
+ },
+ {
+  "outlet": "GaryVee",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=GaryVaynerchuk"
+ },
+ {
+  "outlet": "VentureBeat",
+  "topic": "tech",
+  "url": "https://feeds.feedburner.com/venturebeat/SZYF"
+ },
+ {
+  "outlet": "OS X Daily",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/osxdaily"
+ },
+ {
+  "outlet": "Daring Fireball",
+  "topic": "tech",
+  "url": "https://daringfireball.net/feeds/main"
+ },
+ {
+  "outlet": "Inc.com",
+  "topic": "tech",
+  "url": "https://www.inc.com/rss/"
+ },
+ {
+  "outlet": "Small Business Trends",
+  "topic": "tech",
+  "url": "https://feeds2.feedburner.com/SmallBusinessTrends"
+ },
+ {
+  "outlet": "Droid Life – Opinionated Android news.",
+  "topic": "tech",
+  "url": "https://www.droid-life.com/feed"
+ },
+ {
+  "outlet": "TalkAndroid",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/AndroidNewsGoogleAndroidForums"
+ },
+ {
+  "outlet": "Security Affairs",
+  "topic": "tech",
+  "url": "http://securityaffairs.co/wordpress/feed"
+ },
+ {
+  "outlet": "Entrepreneur",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/entrepreneur/latest"
+ },
+ {
+  "outlet": "Cult of Mac",
+  "topic": "tech",
+  "url": "https://www.cultofmac.com/feed"
+ },
+ {
+  "outlet": "Macworld",
+  "topic": "tech",
+  "url": "https://www.macworld.com/index.rss"
+ },
+ {
+  "outlet": "Apple",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=Apple"
+ },
+ {
+  "outlet": "ReadWrite",
+  "topic": "tech",
+  "url": "https://readwrite.com/feed/"
+ },
+ {
+  "outlet": "AppleInsider News",
+  "topic": "tech",
+  "url": "https://appleinsider.com/rss/news/"
+ },
+ {
+  "outlet": "Latest from Android Central",
+  "topic": "tech",
+  "url": "http://feeds.androidcentral.com/androidcentral"
+ },
+ {
+  "outlet": "Phandroid",
+  "topic": "tech",
+  "url": "http://feeds2.feedburner.com/AndroidPhoneFans"
+ },
+ {
+  "outlet": "Schneier on Security",
+  "topic": "tech",
+  "url": "http://www.schneier.com/blog/index.rdf"
+ },
+ {
+  "outlet": "Marques Brownlee",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=marquesbrownlee"
+ },
+ {
+  "outlet": "MacStories",
+  "topic": "tech",
+  "url": "https://www.macstories.net/feed"
+ },
+ {
+  "outlet": "Stratechery by Ben Thompson",
+  "topic": "tech",
+  "url": "http://stratechery.com/feed/"
+ },
+ {
+  "outlet": "The Keyword",
+  "topic": "tech",
+  "url": "https://www.blog.google/rss/"
+ },
+ {
+  "outlet": "cybersecurity | TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/tag/cybersecurity/feed/"
+ },
+ {
+  "outlet": "The Loop",
+  "topic": "tech",
+  "url": "https://www.loopinsight.com/feed"
+ },
+ {
+  "outlet": "Darknet – Hacking Tools, Hacker News & Cyber Security",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/darknethackers"
+ },
+ {
+  "outlet": "Apple Newsroom",
+  "topic": "tech",
+  "url": "https://www.apple.com/newsroom/rss-feed.rss"
+ },
+ {
+  "outlet": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+ },
+ {
+  "outlet": "South China Morning Post",
+  "topic": "world",
+  "url": "https://www.scmp.com/rss/3/feed"
+ },
+ {
+  "outlet": "Al Jazeera English",
+  "topic": "world",
+  "url": "https://www.aljazeera.com/xml/rss/all.xml"
+ },
+ {
+  "outlet": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/rss.xml"
+ },
+ {
+  "outlet": "Times of India",
+  "topic": "world",
+  "url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+ },
+ {
+  "outlet": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/rss"
+ },
+ {
+  "outlet": "CBS News",
+  "topic": "world",
+  "url": "https://www.cbsnews.com/latest/rss/world"
+ },
+ {
+  "outlet": "NPR",
+  "topic": "world",
+  "url": "https://feeds.npr.org/1004/rss.xml"
+ },
+ {
+  "outlet": "ABC News Australia",
+  "topic": "world",
+  "url": "https://www.abc.net.au/news/feed/2942460/rss.xml"
+ },
+ {
+  "outlet": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/rss"
+ },
+ {
+  "outlet": "Fox News",
+  "topic": "world",
+  "url": "https://moxie.foxnews.com/google-publisher/world.xml"
+ },
+ {
+  "outlet": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-world"
+ },
+ {
+  "outlet": "Politico Europe",
+  "topic": "world",
+  "url": "https://www.politico.eu/feed/"
+ },
+ {
+  "outlet": "MercoPress",
+  "topic": "world",
+  "url": "https://en.mercopress.com/rss/"
+ },
+ {
+  "outlet": "Philippine Daily Inquirer",
+  "topic": "world",
+  "url": "https://newsinfo.inquirer.net/feed"
+ },
+ {
+  "outlet": "Newsweek",
+  "topic": "world",
+  "url": "https://www.newsweek.com/rss"
+ },
+ {
+  "outlet": "New York Post",
+  "topic": "world",
+  "url": "https://nypost.com/feed/"
+ },
+ {
+  "outlet": "The Jerusalem Post",
+  "topic": "world",
+  "url": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx"
+ },
+ {
+  "outlet": "Middle East Eye",
+  "topic": "world",
+  "url": "https://www.middleeasteye.net/rss"
+ },
+ {
+  "outlet": "The Korea Times",
+  "topic": "world",
+  "url": "https://www.koreatimes.co.kr/www/rss/nation.xml"
+ },
+ {
+  "outlet": "Sydney Morning Herald",
+  "topic": "world",
+  "url": "https://www.smh.com.au/rss/feed.xml"
+ },
+ {
+  "outlet": "The Age",
+  "topic": "world",
+  "url": "https://www.theage.com.au/rss/feed.xml"
+ },
+ {
+  "outlet": "NBC News",
+  "topic": "world",
+  "url": "https://feeds.nbcnews.com/nbcnews/public/news"
+ },
+ {
+  "outlet": "Taipei Times",
+  "topic": "world",
+  "url": "https://www.taipeitimes.com/xml/index.rss"
+ },
+ {
+  "outlet": "The Straits Times",
+  "topic": "world",
+  "url": "https://www.straitstimes.com/news/world/rss.xml"
+ },
+ {
+  "outlet": "CNA",
+  "topic": "world",
+  "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
+ },
+ {
+  "outlet": "Rappler",
+  "topic": "world",
+  "url": "https://www.rappler.com/feed/"
+ },
+ {
+  "outlet": "The Hindu",
+  "topic": "world",
+  "url": "https://www.thehindu.com/news/international/feeder/default.rss"
+ },
+ {
+  "outlet": "Hindustan Times",
+  "topic": "world",
+  "url": "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml"
+ },
+ {
+  "outlet": "RNZ",
+  "topic": "world",
+  "url": "https://www.rnz.co.nz/rss/national.xml"
+ },
+ {
+  "outlet": "NZ Herald",
+  "topic": "world",
+  "url": "https://www.nzherald.co.nz/arc/outboundfeeds/rss/curated/78/?outputType=xml"
+ },
+ {
+  "outlet": "Washington Examiner",
+  "topic": "world",
+  "url": "https://www.washingtonexaminer.com/feed/"
+ },
+ {
+  "outlet": "Al-Monitor",
+  "topic": "world",
+  "url": "https://www.al-monitor.com/rss"
+ },
+ {
+  "outlet": "Global News",
+  "topic": "world",
+  "url": "https://globalnews.ca/feed/"
+ },
+ {
+  "outlet": "Euronews",
+  "topic": "world",
+  "url": "https://www.euronews.com/rss?level=theme&name=news"
+ },
+ {
+  "outlet": "PBS NewsHour",
+  "topic": "world",
+  "url": "https://www.pbs.org/newshour/feeds/rss/headlines"
+ },
+ {
+  "outlet": "The Hill",
+  "topic": "world",
+  "url": "https://thehill.com/feed/"
+ },
+ {
+  "outlet": "Defense One",
+  "topic": "world",
+  "url": "https://www.defenseone.com/rss/all/"
+ },
+ {
+  "outlet": "The Globe and Mail",
+  "topic": "world",
+  "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/"
+ },
+ {
+  "outlet": "Japan Times",
+  "topic": "world",
+  "url": "https://www.japantimes.co.jp/feed/"
+ },
+ {
+  "outlet": "Bangkok Post",
+  "topic": "world",
+  "url": "https://www.bangkokpost.com/rss/data/topstories.xml"
+ },
+ {
+  "outlet": "VnExpress International",
+  "topic": "world",
+  "url": "https://e.vnexpress.net/rss/news.rss"
+ },
+ {
+  "outlet": "The Federalist",
+  "topic": "world",
+  "url": "https://thefederalist.com/feed/"
+ },
+ {
+  "outlet": "Christian Science Monitor",
+  "topic": "world",
+  "url": "https://rss.csmonitor.com/feeds/world"
+ },
+ {
+  "outlet": "Premium Times",
+  "topic": "world",
+  "url": "https://www.premiumtimesng.com/feed"
+ },
+ {
+  "outlet": "Washington Post",
+  "topic": "world",
+  "url": "https://feeds.washingtonpost.com/rss/world"
+ },
+ {
+  "outlet": "CNBC",
+  "topic": "world",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114"
+ },
+ {
+  "outlet": "ABC News (US)",
+  "topic": "world",
+  "url": "https://abcnews.go.com/abcnews/internationalheadlines"
+ },
+ {
+  "outlet": "Daily Maverick",
+  "topic": "world",
+  "url": "https://www.dailymaverick.co.za/dmrss/"
+ },
+ {
+  "outlet": "Mexico News Daily",
+  "topic": "world",
+  "url": "https://mexiconewsdaily.com/feed/"
+ },
+ {
+  "outlet": "Bloomberg",
+  "topic": "world",
+  "url": "https://feeds.bloomberg.com/politics/news.rss"
+ },
+ {
+  "outlet": "Breitbart",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/breitbart"
+ },
+ {
+  "outlet": "Haaretz",
+  "topic": "world",
+  "url": "https://www.haaretz.com/srv/haaretz-latest-headlines"
+ },
+ {
+  "outlet": "NDTV",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/ndtvnews-world-news"
+ },
+ {
+  "outlet": "Sky News",
+  "topic": "world",
+  "url": "https://feeds.skynews.com/feeds/rss/world.xml"
+ },
+ {
+  "outlet": "Dawn",
+  "topic": "world",
+  "url": "https://www.dawn.com/feeds/home"
+ },
+ {
+  "outlet": "The Atlantic",
+  "topic": "world",
+  "url": "https://www.theatlantic.com/feed/all/"
+ },
+ {
+  "outlet": "The Wall Street Journal",
+  "topic": "world",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews"
+ },
+ {
+  "outlet": "Daily Express",
+  "topic": "world",
+  "url": "https://www.express.co.uk/posts/rss/78/world"
+ },
+ {
+  "outlet": "Iran International",
+  "topic": "world",
+  "url": "https://www.iranintl.com/en/feed"
+ },
+ {
+  "outlet": "The Rio Times",
+  "topic": "world",
+  "url": "https://www.riotimesonline.com/feed/"
+ },
+ {
+  "outlet": "Jacobin",
+  "topic": "world",
+  "url": "https://jacobin.com/feed/"
+ },
+ {
+  "outlet": "Ukrainska Pravda",
+  "topic": "world",
+  "url": "https://www.pravda.com.ua/eng/rss/"
+ },
+ {
+  "outlet": "Mother Jones",
+  "topic": "world",
+  "url": "https://www.motherjones.com/feed/"
+ },
+ {
+  "outlet": "Reason",
+  "topic": "world",
+  "url": "https://reason.com/feed/"
+ },
+ {
+  "outlet": "The Guardian US",
+  "topic": "world",
+  "url": "https://www.theguardian.com/us-news/us-politics/rss"
+ },
+ {
+  "outlet": "Breaking Defense",
+  "topic": "world",
+  "url": "https://breakingdefense.com/feed/"
+ },
+ {
+  "outlet": "Global Voices",
+  "topic": "world",
+  "url": "https://globalvoices.org/feed/"
+ },
+ {
+  "outlet": "Nation (Kenya)",
+  "topic": "world",
+  "url": "https://nation.africa/kenya/rss.xml"
+ },
+ {
+  "outlet": "The National (UAE)",
+  "topic": "world",
+  "url": "https://www.thenationalnews.com/arc/outboundfeeds/rss/?outputType=xml"
+ },
+ {
+  "outlet": "Politico",
+  "topic": "world",
+  "url": "https://rss.politico.com/congress.xml"
+ },
+ {
+  "outlet": "The New Yorker",
+  "topic": "world",
+  "url": "https://www.newyorker.com/feed/news"
+ },
+ {
+  "outlet": "Slate",
+  "topic": "world",
+  "url": "https://slate.com/feeds/all.rss"
+ },
+ {
+  "outlet": "Axios",
+  "topic": "world",
+  "url": "https://api.axios.com/feed/"
+ },
+ {
+  "outlet": "Euractiv",
+  "topic": "world",
+  "url": "https://www.euractiv.com/feed/"
+ },
+ {
+  "outlet": "Scroll.in",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/ScrollinArticles.rss"
+ },
+ {
+  "outlet": "The Express Tribune",
+  "topic": "world",
+  "url": "https://tribune.com.pk/feed/home"
+ },
+ {
+  "outlet": "Daily Sabah",
+  "topic": "world",
+  "url": "https://www.dailysabah.com/rssFeed/turkey"
+ },
+ {
+  "outlet": "allAfrica",
+  "topic": "world",
+  "url": "https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf"
+ },
+ {
+  "outlet": "Time",
+  "topic": "world",
+  "url": "https://time.com/feed/"
+ },
+ {
+  "outlet": "The Local France",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/fr"
+ },
+ {
+  "outlet": "LA Times",
+  "topic": "world",
+  "url": "https://www.latimes.com/world-nation/rss2.0.xml"
+ },
+ {
+  "outlet": "The Dispatch",
+  "topic": "world",
+  "url": "https://thedispatch.com/feed/"
+ },
+ {
+  "outlet": "The Local Germany",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/de"
+ },
+ {
+  "outlet": "The Local Sweden",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/se"
+ },
+ {
+  "outlet": "The American Conservative",
+  "topic": "world",
+  "url": "https://www.theamericanconservative.com/feed/"
+ },
+ {
+  "outlet": "Daily Mail",
+  "topic": "world",
+  "url": "https://www.dailymail.co.uk/news/worldnews/index.rss"
+ },
+ {
+  "outlet": "Yonhap",
+  "topic": "world",
+  "url": "https://en.yna.co.kr/RSS/news.xml"
+ },
+ {
+  "outlet": "The Moscow Times",
+  "topic": "world",
+  "url": "https://www.themoscowtimes.com/rss/news"
+ },
+ {
+  "outlet": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/united-states/rss.xml"
+ },
+ {
+  "outlet": "National Review",
+  "topic": "world",
+  "url": "https://www.nationalreview.com/feed/"
+ },
+ {
+  "outlet": "The Free Press",
+  "topic": "world",
+  "url": "https://www.thefp.com/feed"
+ },
+ {
+  "outlet": "Buenos Aires Times",
+  "topic": "world",
+  "url": "https://www.batimes.com.ar/feed"
+ },
+ {
+  "outlet": "The Nation",
+  "topic": "world",
+  "url": "https://www.thenation.com/feed/?post_type=article"
+ },
+ {
+  "outlet": "Hong Kong Free Press",
+  "topic": "world",
+  "url": "https://hongkongfp.com/feed/"
+ },
+ {
+  "outlet": "ProPublica",
+  "topic": "world",
+  "url": "https://feeds.propublica.org/propublica/main"
+ },
+ {
+  "outlet": "Asia Times",
+  "topic": "world",
+  "url": "https://asiatimes.com/feed/"
+ },
+ {
+  "outlet": "Responsible Statecraft",
+  "topic": "world",
+  "url": "https://responsiblestatecraft.org/feed/"
+ },
+ {
+  "outlet": "Vox",
+  "topic": "world",
+  "url": "https://www.vox.com/rss/index.xml"
+ },
+ {
+  "outlet": "Malay Mail",
+  "topic": "world",
+  "url": "https://www.malaymail.com/feed/rss/malaysia"
+ },
+ {
+  "outlet": "Meduza",
+  "topic": "world",
+  "url": "https://meduza.io/rss/en/all"
+ },
+ {
+  "outlet": "Foreign Policy",
+  "topic": "world",
+  "url": "https://foreignpolicy.com/feed/"
+ },
+ {
+  "outlet": "Notes from Poland",
+  "topic": "world",
+  "url": "https://notesfrompoland.com/feed/"
+ },
+ {
+  "outlet": "The Diplomat",
+  "topic": "world",
+  "url": "https://thediplomat.com/feed/"
+ },
+ {
+  "outlet": "Balkan Insight",
+  "topic": "world",
+  "url": "https://balkaninsight.com/feed/"
+ },
+ {
+  "outlet": "Common Dreams",
+  "topic": "world",
+  "url": "https://www.commondreams.org/feeds/feed.rss"
+ },
+ {
+  "outlet": "War on the Rocks",
+  "topic": "world",
+  "url": "https://warontherocks.com/feed/"
+ },
+ {
+  "outlet": "InSight Crime",
+  "topic": "world",
+  "url": "https://insightcrime.org/feed/"
+ },
+ {
+  "outlet": "The New Humanitarian",
+  "topic": "world",
+  "url": "https://www.thenewhumanitarian.org/rss/all.xml"
+ },
+ {
+  "outlet": "Novaya Gazeta Europe",
+  "topic": "world",
+  "url": "https://novayagazeta.eu/feed/rss/en"
+ },
+ {
+  "outlet": "HuffPost",
+  "topic": "world",
+  "url": "https://www.huffpost.com/section/world-news/feed"
+ },
+ {
+  "outlet": "Foreign Affairs",
+  "topic": "world",
+  "url": "https://www.foreignaffairs.com/rss.xml"
+ },
+ {
+  "outlet": "Brisbane Times",
+  "topic": "world",
+  "url": "https://www.brisbanetimes.com.au/rss/feed.xml"
+ },
+ {
+  "outlet": "PravdaReport",
+  "topic": "world",
+  "url": "https://www.pravdareport.com/export.xml"
+ },
+ {
+  "outlet": "The South African",
+  "topic": "world",
+  "url": "https://www.thesouthafrican.com/feed/"
+ },
+ {
+  "outlet": "India Today",
+  "topic": "world",
+  "url": "https://www.indiatoday.in/rss/home"
+ },
+ {
+  "outlet": "Deutsche Welle",
+  "topic": "world",
+  "url": "https://rss.dw.com/rdf/rss-en-all"
+ },
+ {
+  "outlet": "Euro Weekly News Spain",
+  "topic": "world",
+  "url": "https://www.euroweeklynews.com/feed/"
+ },
+ {
+  "outlet": "PerthNow",
+  "topic": "world",
+  "url": "https://www.perthnow.com.au/news/feed"
+ },
+ {
+  "outlet": "INQUIRER.net",
+  "topic": "world",
+  "url": "https://www.inquirer.net/fullfeed"
+ },
+ {
+  "outlet": "The Hindu - Home",
+  "topic": "world",
+  "url": "https://www.thehindu.com/feeder/default.rss"
+ },
+ {
+  "outlet": "Milan News",
+  "topic": "world",
+  "url": "https://www.milannews.it/rss/"
+ },
+ {
+  "outlet": "TASS",
+  "topic": "world",
+  "url": "http://tass.com/rss/v2.xml"
+ },
+ {
+  "outlet": "Tribune Online",
+  "topic": "world",
+  "url": "http://tribuneonlineng.com/feed/"
+ },
+ {
+  "outlet": "GMA News Online / News",
+  "topic": "world",
+  "url": "https://data.gmanews.tv/gno/rss/news/feed.xml"
+ },
+ {
+  "outlet": "Free Press Journal",
+  "topic": "world",
+  "url": "https://www.freepressjournal.in/stories.rss"
+ },
+ {
+  "outlet": "Top stories - Google News",
+  "topic": "world",
+  "url": "https://news.google.com/rss"
+ },
+ {
+  "outlet": "Ottawa Citizen",
+  "topic": "world",
+  "url": "https://ottawacitizen.com/feed/"
+ },
+ {
+  "outlet": "Toronto Sun",
+  "topic": "world",
+  "url": "https://torontosun.com/category/news/feed"
+ },
+ {
+  "outlet": "Japan Today",
+  "topic": "world",
+  "url": "https://japantoday.com/feed"
+ },
+ {
+  "outlet": "Daily Post Nigeria",
+  "topic": "world",
+  "url": "https://dailypost.ng/feed"
+ },
+ {
+  "outlet": "RT - Daily news",
+  "topic": "world",
+  "url": "https://www.rt.com/rss/"
+ },
+ {
+  "outlet": "Franceinfo - Les Titres",
+  "topic": "world",
+  "url": "https://www.francetvinfo.fr/titres.rss"
+ },
+ {
+  "outlet": "RSS di   - ANSA.it",
+  "topic": "world",
+  "url": "https://www.ansa.it/sito/ansait_rss.xml"
+ },
+ {
+  "outlet": "Il Mattino Web",
+  "topic": "world",
+  "url": "https://www.ilmattino.it/?sez=XML&args&p=search&args[box]=Home&limit=20&layout=rss"
+ },
+ {
+  "outlet": "Legit.ng",
+  "topic": "world",
+  "url": "https://www.legit.ng/rss/all.rss"
+ },
+ {
+  "outlet": "The Province",
+  "topic": "world",
+  "url": "https://theprovince.com/feed/"
+ },
+ {
+  "outlet": "The Canberra Times - Local News",
+  "topic": "world",
+  "url": "https://www.canberratimes.com.au/rss.xml"
+ },
+ {
+  "outlet": "The Citizen",
+  "topic": "world",
+  "url": "https://citizen.co.za/feed/"
+ }
+]

@@ -1,4 +1,4 @@
-"""Collect RSS/Atom candidates for an editor across UK, World, Science, Tech, Business and Finance.
+"""Collect RSS/Atom candidates for an editor from the 500 feeds in feeds/feeds.json, across UK, World, Science, Tech, Business and Finance.
 Output never replaces the public edition automatically.
 """
 
@@ -11,50 +11,11 @@ import sys
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
-FEEDS = [
-    # UK
-    ("BBC News", "uk", "https://feeds.bbci.co.uk/news/uk/rss.xml"),
-    ("The Guardian", "uk", "https://www.theguardian.com/uk-news/rss"),
-    ("Sky News", "uk", "https://feeds.skynews.com/feeds/rss/uk.xml"),
-    ("The Telegraph", "uk", "https://www.telegraph.co.uk/rss.xml"),
-    ("Daily Mail", "uk", "https://www.dailymail.co.uk/news/index.rss"),
-    # World (global + multi-spectrum)
-    ("BBC News", "world", "https://feeds.bbci.co.uk/news/world/rss.xml"),
-    ("The Guardian", "world", "https://www.theguardian.com/world/rss"),
-    ("Al Jazeera English", "world", "https://www.aljazeera.com/xml/rss/all.xml"),
-    ("France 24", "world", "https://www.france24.com/en/rss"),
-    ("DW News", "world", "https://rss.dw.com/xml/rss-en-world"),
-    ("Politico Europe", "world", "https://www.politico.eu/feed/"),
-    ("NPR", "world", "https://feeds.npr.org/1004/rss.xml"),
-    ("The New York Times", "world", "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"),
-    ("CBS News", "world", "https://www.cbsnews.com/latest/rss/world"),
-    ("Fox News", "world", "https://moxie.foxnews.com/google-publisher/world.xml"),
-    ("South China Morning Post", "world", "https://www.scmp.com/rss/3/feed"),
-    ("ABC News Australia", "world", "https://www.abc.net.au/news/feed/2942460/rss.xml"),
-    ("Times of India", "world", "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"),
-    ("MercoPress", "world", "https://en.mercopress.com/rss/"),
-    # Science
-    ("ScienceDaily", "science", "https://www.sciencedaily.com/rss/top/science.xml"),
-    ("Nature News", "science", "https://www.nature.com/nature.rss"),
-    ("Phys.org", "science", "https://phys.org/rss-feed/"),
-    ("New Scientist", "science", "https://www.newscientist.com/feed/home/"),
-    # Tech
-    ("Ars Technica", "tech", "https://feeds.arstechnica.com/arstechnica/index"),
-    ("The Verge", "tech", "https://www.theverge.com/rss/index.xml"),
-    ("TechCrunch", "tech", "https://techcrunch.com/feed/"),
-    ("Wired", "tech", "https://www.wired.com/feed/rss"),
-    # Business
-    ("BBC News", "business", "https://feeds.bbci.co.uk/news/business/rss.xml"),
-    ("The Guardian", "business", "https://www.theguardian.com/uk/business/rss"),
-    ("CNBC", "business", "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147"),
-    ("The Economist", "business", "https://www.economist.com/finance-and-economics/rss.xml"),
-    # Finance
-    ("CNBC", "finance", "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664"),
-    ("Financial Times", "finance", "https://www.ft.com/rss/home/uk"),
-    ("City AM", "finance", "https://www.cityam.com/feed/"),
-    ("MarketWatch", "finance", "https://feeds.content.dowjones.io/public/rss/mw_topstories"),
-]
+FEEDS_FILE = Path(__file__).resolve().parent.parent / "feeds" / "feeds.json"
+# 500 tested feeds; see feeds/candidates.json and the "Check candidate feeds" workflow.
+FEEDS = [(f["outlet"], f["topic"], f["url"]) for f in json.loads(FEEDS_FILE.read_text())]
 
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 RSS1_NS = "{http://purl.org/rss/1.0/}"
@@ -141,7 +102,7 @@ def main():
     groups = {}
     errors = []
     urls = set()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as pool:
         jobs = [(feed, pool.submit(collect, feed, cutoff)) for feed in FEEDS]
         for feed, job in jobs:
             try:
@@ -151,7 +112,7 @@ def main():
                     urls.add(item["url"])
                     key = " ".join(re.findall(r"\w+", item["title"].casefold()))
                     groups.setdefault(key, []).append(item)
-            except (OSError, ValueError, ET.ParseError) as error:
+            except (OSError, ValueError, ET.ParseError, UnicodeError) as error:
                 errors.append({"outlet": feed[0], "url": feed[2], "error": str(error)})
     candidates = sorted(
         groups.values(),
