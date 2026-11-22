@@ -50,7 +50,11 @@ The market strip uses native SVG sparklines for the FTSE 100, S&P 500 and Shangh
 
 `scripts/update-markets.py` fetches and validates public historical quotes, excludes the current incomplete trading day, and keeps the last valid series if an individual refresh fails. `.github/workflows/markets.yml` checks every six hours and publishes changed data through the existing Fasthosts deployment. The deployment also validates the checked-in dataset offline.
 
-Headlines, comparison citations and coverage links open Pheme’s native reader. An outlet selection can be shared using `?story=EVENT-ID&source=OUTLET-NAME`. The reader identifies the selected publisher and displays Pheme’s own briefing rather than presenting it as a copy of the publisher’s full article.
+Headlines, comparison citations and coverage links open Pheme’s native reader. An outlet selection can be shared using `?story=EVENT-ID&source=OUTLET-NAME`. Publisher article links use the native reader to show the publisher page when it can be extracted, while Pheme’s own briefing remains clearly identified as Pheme’s work.
+
+### Publisher pages in the native reader
+
+`api/indian-express.php` fetches public Indian Express article pages for Pheme’s reader. It accepts only HTTPS article URLs present in the current `assets/data.js` edition, follows up to three HTTPS redirects on the same host, caps responses at 8 MiB and caches successful pages for 15 minutes. The endpoint requires PHP cURL on Fasthosts. Mozilla Readability extracts the page in the browser and Pheme sanitizes the extracted HTML before rendering it. The reader sends no login cookies and does not bypass subscriber restrictions; if a page is unavailable, Pheme shows the available RSS excerpt and a publisher link.
 
 ## Article content
 
