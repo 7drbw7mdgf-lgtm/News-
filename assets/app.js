@@ -1608,6 +1608,29 @@
     return !!(choice && choice.paywall);
   }
 
+  function fetchPublisherPage(entry, url) {
+    if (entry.name === 'Indian Express') {
+      var api = '/api/indian-express.php?url=' + encodeURIComponent(url);
+      return fetch(api, { credentials: 'same-origin', referrerPolicy: 'no-referrer', headers: { Accept: 'application/json' } })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Publisher reader backend unavailable');
+          return response.json();
+        })
+        .then(function (data) {
+          var finalUrl = safeExternalUrl(data && data.url);
+          if (!finalUrl || typeof data.html !== 'string') throw new Error('Publisher page unavailable');
+          return { markup: data.html, url: finalUrl };
+        });
+    }
+    return fetch(url, { mode: 'cors', credentials: 'omit', redirect: 'follow', referrerPolicy: 'no-referrer' })
+      .then(function (response) {
+        if (!response.ok || !/text\/html/i.test(response.headers.get('content-type') || '')) throw new Error('Publisher page unavailable');
+        var finalUrl = safeExternalUrl(response.url);
+        if (!finalUrl) throw new Error('Publisher page unavailable');
+        return response.text().then(function (markup) { return { markup: markup, url: finalUrl }; });
+      });
+  }
+
   function sanitizedReaderContent(html, sourceUrl) {
     var parsed = new DOMParser().parseFromString(String(html || ''), 'text/html');
     var allowed = { p: 1, h2: 1, h3: 1, h4: 1, blockquote: 1, ul: 1, ol: 1, li: 1, pre: 1, figure: 1, figcaption: 1, br: 1, strong: 1, em: 1, b: 1, i: 1, code: 1, hr: 1 };
@@ -1645,13 +1668,7 @@
       return;
     }
     var result = publisherReaderCache[url] = { status: 'loading' };
-    fetch(url, { mode: 'cors', credentials: 'omit', redirect: 'follow', referrerPolicy: 'no-referrer' })
-      .then(function (response) {
-        if (!response.ok || !/text\/html/i.test(response.headers.get('content-type') || '')) throw new Error('Publisher page unavailable');
-        var finalUrl = safeExternalUrl(response.url);
-        if (!finalUrl) throw new Error('Publisher page unavailable');
-        return response.text().then(function (markup) { return { markup: markup, url: finalUrl }; });
-      })
+    fetchPublisherPage(entry, url)
       .then(function (page) {
         if (page.markup.length > 8000000 || !window.Readability || !window.isProbablyReaderable) throw new Error('Reader extraction unavailable');
         var sourceDocument = new DOMParser().parseFromString(page.markup, 'text/html');
@@ -1714,8 +1731,8 @@
       (image ? '<figure class="source-reader-photo"><img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure>' : '') +
       '<div class="source-reader-body">' +
       (extracted ? '<div class="source-reader-content">' + extraction.content + '</div>' : (summary ? '<p class="source-reader-summary">' + esc(summary) + '</p>' : '<p class="notice">This publisher has not supplied an RSS excerpt for this article. Open it at the publisher to read the full story.</p>')) +
-      (extracted ? '<p class="source-reader-note">Readability cleaned article text the publisher made available to this browser. Restricted or paywalled text is not retrieved.</p>' :
-        '<p class="source-reader-note">' + (extraction && extraction.status === 'unavailable' ? 'Pheme could not extract the publisher page in this browser. The publisher may block browser access or require a subscription.' + (summary ? ' The available RSS excerpt is shown above.' : ' No RSS excerpt is available.') : 'Pheme is checking whether the publisher page allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) + '</p>') +
+      (extracted ? '<p class="source-reader-note">Readability cleaned the publicly available article page. Restricted or paywalled text is not retrieved.</p>' :
+        '<p class="source-reader-note">' + (extraction && extraction.status === 'unavailable' ? 'Pheme could not extract the publisher page. The publisher may block automated access or require a subscription.' + (summary ? ' The available RSS excerpt is shown above.' : ' No RSS excerpt is available.') : 'Pheme is checking whether the publisher page allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) + '</p>') +
       (publisherRequiresSubscription(entry.name) ? '<p class="source-reader-access">The publisher may require a subscription for the full article.</p>' : '') +
       '</div>' +
       '<div class="source-reader-actions">' + (safe ? originalArticleLink(safe, entry.name, 'Continue to ' + entry.name + ' ↗', 'darkbtn') : '') +
