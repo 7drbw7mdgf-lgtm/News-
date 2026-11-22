@@ -8,6 +8,8 @@
 
   var STORE_KEY = 'daybreak:v2';
   var worldMap;
+  var publisherMap;
+  var publisherMapLayer;
   var worldMarkerLayer;
   var mapPinById = Object.create(null);
   var MARKETS = [
@@ -774,6 +776,7 @@
       '<div class="world-panel-head"><div>' +
       '<h1 id="world-map-title">Global coverage map</h1>' +
       '<p class="world-sub">All topics geotagged across today’s edition. Zoom into any region or click a cluster to reveal individual tags.</p>' +
+      '<button class="map-region-btn" type="button" data-act="publishermapview">Explore publisher RSS map</button>' +
       '</div></div>' +
       '<div class="map-toolbar">' +
       '<div class="map-row">' +
@@ -1031,6 +1034,88 @@
   var publisherFeedLoading = false;
   var publisherFeedError = false;
 
+  function allPublisherChoices() {
+    var choices = followed().slice();
+    if (publisherFeed && publisherFeed.publishers) {
+      Object.keys(publisherFeed.publishers).forEach(function (name) {
+        if (!choices.some(function (p) { return p.name === name; })) choices.push({ name: name, topic: 'world' });
+      });
+    }
+    return choices;
+  }
+
+  function publisherLocationGroups() {
+    if (!publisherFeed || !publisherFeed.publishers) return [];
+    var groups = Object.create(null);
+    Object.keys(publisherFeed.publishers).forEach(function (name) {
+      var entry = publisherFeed.publishers[name];
+      var loc = entry && entry.location;
+      if (!loc || !Number.isFinite(loc.lat) || !Number.isFinite(loc.lng)) return;
+      var key = loc.city + '|' + loc.country;
+      if (!groups[key]) groups[key] = { location: loc, names: [] };
+      groups[key].names.push(name);
+    });
+    return Object.keys(groups).map(function (key) { return groups[key]; });
+  }
+
+  function updatePublisherMapStatus() {
+    var label = app.querySelector('#publisher-map-status');
+    if (!label) return;
+    if (!publisherFeed) {
+      label.textContent = publisherFeedError ? 'Publisher map temporarily unavailable' : 'Loading publisher locations…';
+      return;
+    }
+    var groups = publisherLocationGroups();
+    var counts = Object.keys(publisherFeed.publishers).length;
+    label.textContent = counts + ' publishers · ' + groups.length + ' editorial cities · locations show publisher bases, not story locations';
+  }
+
+  function mountPublisherMap() {
+    var canvas = app.querySelector('#publisher-world-map');
+    if (!canvas || !window.L) return;
+    if (publisherMap) return;
+    var L = window.L;
+    publisherMap = L.map(canvas, { scrollWheelZoom: false, minZoom: 2, maxZoom: 12, worldCopyJump: true });
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 17
+    }).addTo(publisherMap);
+    publisherMapLayer = L.layerGroup().addTo(publisherMap);
+    publisherMap.fitBounds(MAP_REGIONS.global.bounds, { maxZoom: 2 });
+    refreshPublisherMap();
+  }
+
+  function refreshPublisherMap() {
+    updatePublisherMapStatus();
+    if (!publisherMap || !publisherMapLayer || !window.L) return;
+    var L = window.L;
+    publisherMapLayer.clearLayers();
+    var groups = publisherLocationGroups();
+    groups.forEach(function (group) {
+      var location = group.location;
+      var html = '<div class="publisher-map-popup">' +
+        '<strong>' + esc(location.city) + ', ' + esc(location.country) + '</strong>' +
+        '<p>Publisher editorial bases · ' + group.names.length + '</p>' +
+        '<div class="publisher-map-links">' +
+        group.names.map(function (name) {
+          var entry = publisherDetails(name);
+          var count = entry && Array.isArray(entry.articles) ? entry.articles.length : 0;
+          return '<button type="button" data-act="paper" data-name="' + esc(name) + '">' +
+            esc(name) + ' <span>' + count + ' articles</span></button>';
+        }).join('') + '</div></div>';
+      L.circleMarker([location.lat, location.lng], {
+        radius: Math.min(20, 6 + Math.sqrt(group.names.length) * 3),
+        color: '#234c40', weight: 2, fillColor: '#417b69', fillOpacity: 0.8
+      }).addTo(publisherMapLayer).bindPopup(html, { maxWidth: 310 });
+    });
+    if (groups.length > 1) {
+      publisherMap.fitBounds(L.latLngBounds(groups.map(function (group) {
+        return [group.location.lat, group.location.lng];
+      })), { padding: [22, 22], maxZoom: 3 });
+    }
+    setTimeout(function () { if (publisherMap) publisherMap.invalidateSize(); }, 0);
+  }
+
   function loadPublisherFeeds() {
     if (publisherFeedLoading) return;
     publisherFeedLoading = true;
@@ -1059,6 +1144,7 @@
             selectPaperInPlace(state.paper || followed()[0].name);
           } else render();
         }
+        refreshPublisherMap();
       });
   }
 
@@ -1114,7 +1200,7 @@
   }
 
   function selectPaperInPlace(name) {
-    var papers = followed();
+    var papers = allPublisherChoices();
     if (!papers.some(function (p) { return p.name === name; })) return;
     var section = app.querySelector('.paper-sheet');
     var feed = app.querySelector('#paper-article-content');
@@ -1198,7 +1284,7 @@
 
   function renderPapers() {
     var featuredOrder = ['BBC News', 'The Guardian', 'Sky News', 'Al Jazeera English', 'Financial Times', 'The Economist'];
-    var papers = followed().sort(function (a, b) {
+    var papers = allPublisherChoices().sort(function (a, b) {
       var ai = featuredOrder.indexOf(a.name), bi = featuredOrder.indexOf(b.name);
       return (ai === -1 ? featuredOrder.length : ai) - (bi === -1 ? featuredOrder.length : bi);
     });
@@ -1229,6 +1315,12 @@
       '<button type="button" class="paper-carousel-arrow" data-act="paperscroll" data-dir="1" aria-label="Scroll publishers right">›</button>' +
       '</div></div>' +
       '<div class="paper-provider-track" id="paper-provider-track" role="tablist" aria-label="Choose newspaper">' + tabs + '</div></section>' +
+      '<section class="publisher-map-section" aria-labelledby="publisher-map-heading">' +
+      '<div class="publisher-map-heading"><div><h2 id="publisher-map-heading">Publishers around the world</h2>' +
+      '<p>Markers show where news organisations are based. They do not geolocate article events.</p></div>' +
+      '<button class="map-region-btn" type="button" data-act="publishermapreset">Global view</button></div>' +
+      '<div id="publisher-world-map" class="publisher-world-map" role="region" aria-label="Interactive map of global news publisher editorial bases"></div>' +
+      '<p id="publisher-map-status" class="publisher-map-status" role="status">Loading publisher locations…</p></section>' +
       '<section class="paper-sheet" aria-labelledby="paper-name">' +
       '<header class="paper-masthead"><div class="paper-masthead-text"><h2 id="paper-name">' + esc(name) + '</h2>' +
       '<span class="paper-dateline">Edition coverage · ' + esc(D.META.rangeLong) + '</span></div>' +
@@ -1571,6 +1663,7 @@
     var settingsScroll = app.querySelector('.settings-body');
     var previousSettingsScroll = settingsScroll ? settingsScroll.scrollTop : 0;
     if (worldMap) { worldMap.remove(); worldMap = null; worldMarkerLayer = null; mapPinById = Object.create(null); }
+    if (publisherMap) { publisherMap.remove(); publisherMap = null; publisherMapLayer = null; }
     var reading = state.reading ? byId[state.reading] : null;
     syncBodyReaderClasses();
     var main;
@@ -1591,6 +1684,7 @@
     updateClocks();
 
     mountWorldMap();
+    mountPublisherMap();
     updateReadProgress();
     updateSiteScrollTone();
     if (opts && opts.focus) {
@@ -1704,6 +1798,14 @@
         if (state.reading) changeStory(null);
         if (state.view === 'briefing') state.topic = state.topic || 'all';
         render(); break;
+      case 'publishermapreset':
+        if (publisherMap) publisherMap.fitBounds(MAP_REGIONS.global.bounds, { padding: [20, 20], maxZoom: 2, animate: true });
+        break;
+      case 'publishermapview':
+        state.view = 'papers'; state.paper = null; changeStory(null); render();
+        var publisherMapEl = app.querySelector('#publisher-map-heading');
+        if (publisherMapEl) publisherMapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        break;
       case 'paperscroll':
         var providerTrack = app.querySelector('#paper-provider-track');
         if (providerTrack) providerTrack.scrollBy({ left: (Number(t.getAttribute('data-dir')) || 1) * Math.max(240, providerTrack.clientWidth * 0.72), behavior: 'smooth' });
@@ -1931,7 +2033,10 @@
     }
   });
 
-  document.getElementById('world-map-library')?.addEventListener('load', mountWorldMap);
+  document.getElementById('world-map-library')?.addEventListener('load', function () {
+    mountWorldMap();
+    mountPublisherMap();
+  });
   render();
   loadMarketData();
   loadPublisherFeeds();
