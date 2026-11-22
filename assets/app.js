@@ -17,7 +17,8 @@
   var MARKETS = [
     { id: 'london', city: 'London', index: 'FTSE 100', zone: 'Europe/London', url: 'https://finance.yahoo.com/quote/%5EFTSE/history/' },
     { id: 'newyork', city: 'New York', index: 'S&P 500', zone: 'America/New_York', url: 'https://finance.yahoo.com/quote/%5EGSPC/history/' },
-    { id: 'shanghai', city: 'Shanghai', index: 'Shanghai Composite', zone: 'Asia/Shanghai', url: 'https://finance.yahoo.com/quote/000001.SS/history/' }
+    { id: 'shanghai', city: 'Shanghai', index: 'Shanghai Composite', zone: 'Asia/Shanghai', url: 'https://finance.yahoo.com/quote/000001.SS/history/' },
+    { id: 'india', city: 'Mumbai', index: 'NIFTY 50', zone: 'Asia/Kolkata', url: 'https://finance.yahoo.com/quote/%5ENSEI/history/' }
   ];
   var clockFormats = Object.create(null);
   var clockPartsFormats = Object.create(null);
@@ -623,12 +624,18 @@
       return response.json();
     }).then(function (data) {
       if (!data || !data.markets) throw new Error('Invalid market data');
-      MARKETS.forEach(function (m) {
-        var series = data.markets[m.id] && data.markets[m.id].points;
+      ['london', 'newyork', 'shanghai'].forEach(function (id) {
+        var series = data.markets[id] && data.markets[id].points;
         if (!Array.isArray(series) || series.length < 2 || !series.every(function (p, i) {
           return /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(p.close) && p.close > 0 && (!i || p.date > series[i - 1].date);
         })) throw new Error('Invalid market series');
       });
+      if (data.markets.india && (!Array.isArray(data.markets.india.points) ||
+          data.markets.india.points.length < 2 ||
+          !data.markets.india.points.every(function (p, i, a) {
+            return /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(p.close) && p.close > 0 &&
+              (!i || p.date > a[i - 1].date);
+          }))) throw new Error('Invalid NIFTY 50 series');
       marketData = data;
       render();
     }).catch(function () { marketLoadFailed = true; render(); });
@@ -1087,7 +1094,7 @@
     { name: 'Hong Kong Exchanges', city: 'Hong Kong', region: 'Asia', lat: 22.285, lng: 114.158 },
     { name: 'Deutsche Börse', city: 'Frankfurt', region: 'Europe', lat: 50.1155, lng: 8.677 },
     { name: 'Euronext Paris', city: 'Paris', region: 'Europe', lat: 48.872, lng: 2.341 },
-    { name: 'National Stock Exchange of India', city: 'Mumbai', region: 'Asia', lat: 19.06, lng: 72.859 },
+    { name: 'National Stock Exchange of India', city: 'Mumbai', region: 'Asia', lat: 19.06, lng: 72.859, id: 'india' },
     { name: 'Australian Securities Exchange', city: 'Sydney', region: 'Oceania', lat: -33.868, lng: 151.209 },
     { name: 'B3', city: 'São Paulo', region: 'South America', lat: -23.546, lng: -46.634 },
     { name: 'Johannesburg Stock Exchange', city: 'Johannesburg', region: 'Africa', lat: -26.107, lng: 28.055 }
@@ -1298,7 +1305,7 @@
         esc(place.city) + ' · ' + esc(place.region) + '</span>' +
         (market ? '<p>' + esc(market.index) + (last ? ' · ' + marketNumber(last.close) + ' (' + marketDate(last.date) + ')' : ' · data unavailable') + '</p>' +
           '<button type="button" data-act="exchangefocus" data-id="' + market.id + '">View price chart</button>' :
-          '<p>Location only · no market quote feed connected</p>') + '</div>';
+          '<p>Location marker · no index series connected</p>') + '</div>';
       L.circleMarker([place.lat, place.lng], {
         radius: market ? 9 : 6, weight: 2, color: '#204D3D', fillColor: market ? '#2F5D50' : '#C2A77A', fillOpacity: .9
       }).addTo(exchangeMapLayer).bindPopup(content, { maxWidth: 290 });
