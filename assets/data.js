@@ -316,43 +316,43 @@ window.DAYBREAK = {
  ],
  "STORIES": [
   {
+   "id": "mexico-el-chapo-isidro-capture",
+   "topic": "world",
+   "source": "RTÉ News",
+   "time": "21 Nov",
+   "url": "https://www.rte.ie/news/world/2026/1121/1600134-mexico-drugs-fbi/",
+   "headline": "Mexico captures top drug lord 'El Chapo Isidro'",
+   "summary": "Reported by 41 outlets, including Hindustan Times, Citizen Free Press and NDTV.",
+   "points": [
+    "First reported by Hindustan Times on 21 Nov.",
+    "Coverage: 16 left-leaning, 7 centre, 18 right-leaning.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
    "id": "fbi-criminal-database-hack",
    "topic": "world",
-   "source": "End Time Headlines",
-   "time": "21 Nov",
-   "url": "https://endtimeheadlines.org/2026/11/fbi-has-been-hacked-again-this-time-the-breach-has-targeted-its-crime-database/",
-   "headline": "FBI has been hacked again, this time the breach has targeted its crime database",
-   "summary": "Reported by 39 outlets, including Techmeme, Political Wire and Hindustan Times.",
+   "source": "BBC News",
+   "time": "22 Nov",
+   "url": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss",
+   "headline": "FBI reportedly investigating apparent hack of its criminal database",
+   "summary": "Reported by 39 outlets, including Techmeme, End Time Headlines and Political Wire.",
    "points": [
     "First reported by Techmeme on 21 Nov.",
     "Coverage: 8 left-leaning, 21 centre, 9 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
-  },
-  {
-   "id": "mexico-el-chapo-isidro-capture",
-   "topic": "world",
-   "source": "Citizen Free Press",
-   "time": "21 Nov",
-   "url": "https://citizenfreepress.com/breaking/fbi-most-wanted-cartel-leader-captured/",
-   "headline": "FBI most wanted cartel leader captured.",
-   "summary": "Reported by 28 outlets, including Fox News, MyNorthwest and Sky News.",
-   "points": [
-    "First reported by Citizen Free Press on 21 Nov.",
-    "Coverage: 12 left-leaning, 5 centre, 11 right-leaning.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "22 Nov 2026"
   },
   {
    "id": "riemann-hypothesis-ai-proof-claim",
    "topic": "tech",
-   "source": "Scientific American",
+   "source": "New Scientist",
    "time": "20 Nov",
-   "url": "https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/",
-   "headline": "Anthropic mathematician proves Riemann hypothesis, most famous problem in all of math",
-   "summary": "Reported by 28 outlets, including New Scientist, Tom's Hardware and Simon Willison.",
+   "url": "https://www.newscientist.com/article/2600134-anthropic-mathematician-claims-ai-assisted-proof-of-the-riemann-hypothesis/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
+   "headline": "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis",
+   "summary": "Reported by 28 outlets, including Scientific American, Tom's Hardware and Simon Willison.",
    "points": [
     "First reported by Scientific American on 20 Nov.",
     "Coverage: 8 left-leaning, 4 centre, 6 right-leaning, 10 other or unrated.",
@@ -363,11 +363,11 @@ window.DAYBREAK = {
   {
    "id": "catherine-bbc-cancer-film",
    "topic": "world",
-   "source": "BBC News",
+   "source": "The Guardian",
    "time": "21 Nov",
-   "url": "https://www.bbc.co.uk/news/articles/c85y14zvexz9o?at_medium=RSS&at_campaign=rss",
-   "headline": "Catherine talks openly about how cancer changed her in documentary on BBC",
-   "summary": "Reported by 24 outlets, including Nottinghamshire Post, Wales Online and The West Australian.",
+   "url": "https://www.theguardian.com/uk-news/2026/nov/21/princess-of-wales-impact-cancer-diagnosis-bbc-film-heal",
+   "headline": "Princess of Wales speaks about impact of cancer diagnosis in BBC film Heal",
+   "summary": "Reported by 24 outlets, including BBC News, Nottinghamshire Post and Wales Online.",
    "points": [
     "First reported by BBC News on 21 Nov.",
     "Coverage: 7 left-leaning, 10 centre, 7 right-leaning.",
@@ -378,29 +378,44 @@ window.DAYBREAK = {
   {
    "id": "jonathan-rinderknecht-found-guilty-palisades-fire-arson",
    "topic": "world",
-   "source": "KTTV - Fox 11 - Los Angeles",
-   "time": "20 Nov",
-   "url": "https://www.foxla.com/news/palisades-fire-verdict-retrial-jonathan-rinderknecht",
-   "headline": "Jonathan Rinderknecht found guilty in Palisades Fire arson retrial",
-   "summary": "Reported by 23 outlets, including NBC News, Bloomberg and KTLA.",
+   "source": "France 24",
+   "time": "21 Nov",
+   "url": "https://www.france24.com/en/man-convicted-of-starting-palisades-fire",
+   "headline": "Man convicted of starting palisades fire",
+   "summary": "Reported by 23 outlets, including KTTV - Fox 11 - Los Angeles, NBC News and Bloomberg.",
    "points": [
     "First reported by KTTV - Fox 11 - Los Angeles on 20 Nov.",
     "Coverage: 8 left-leaning, 9 centre, 6 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
+   "id": "climate-money-africa-europe-use-whats-already",
+   "topic": "science",
+   "source": "France 24",
+   "time": "21 Nov",
+   "url": "https://www.france24.com/en/countries-race-to-secure-cop31-deal",
+   "headline": "Countries race to secure Cop31 deal",
+   "summary": "Reported by 21 outlets, including BBC News, Euractiv and Phys.org.",
+   "points": [
+    "First reported by BBC News on 20 Nov.",
+    "Coverage: 9 left-leaning, 6 centre, 4 right-leaning, 2 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
   },
   {
    "id": "love-carjackings-video-game",
-   "topic": "world",
-   "source": "The New York Times",
+   "topic": "tech",
+   "source": "Financial Times",
    "time": "20 Nov",
-   "url": "https://www.nytimes.com/2026/11/19/world/gta-anthropic-shenzhen-summit.html",
-   "headline": "Love and Carjackings in a Video Game",
-   "summary": "Reported by 29 outlets, including ABC News (US), Wired and Breitbart.",
+   "url": "https://www.ft.com/content/6648bce8-41fc-4542-8f24-ab37f8acd5d7?syn-25a6b1a6=1",
+   "headline": "Grand Theft Auto VI smashes records with $3.8bn in sales",
+   "summary": "Reported by 28 outlets, including The New York Times, ABC News (US) and Wired.",
    "points": [
     "First reported by The New York Times on 20 Nov.",
-    "Coverage: 8 left-leaning, 9 centre, 9 right-leaning, 3 other or unrated.",
+    "Coverage: 8 left-leaning, 9 centre, 8 right-leaning, 3 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
@@ -408,14 +423,14 @@ window.DAYBREAK = {
   {
    "id": "trump-china-trip-iran-ukraine-peace-declaration",
    "topic": "world",
-   "source": "ABC News (US)",
+   "source": "Euronews",
    "time": "20 Nov",
-   "url": "https://abcnews.com/Politics/trump-china-trip-iran-ukraine-peace-declaration-takeaways/story?id=138292154",
-   "headline": "Trump China trip: Iran and Ukraine not in 'peace declaration' and more takeaways",
-   "summary": "Reported by 22 outlets, including CBS News, Axios and Armstrong Economics.",
+   "url": "https://www.euronews.com/2026/11/20/trump-accuses-iran-of-dishonesty-while-defending-putin-ties",
+   "headline": "Trump defends Putin ties and accuses Iran of dishonesty in negotiations",
+   "summary": "Reported by 23 outlets, including ABC News (US), CBS News and Axios.",
    "points": [
     "First reported by ABC News (US) on 20 Nov.",
-    "Coverage: 8 left-leaning, 5 centre, 7 right-leaning, 2 other or unrated.",
+    "Coverage: 9 left-leaning, 5 centre, 7 right-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
@@ -423,11 +438,11 @@ window.DAYBREAK = {
   {
    "id": "gulf-of-finland-drone-ship-attack",
    "topic": "world",
-   "source": "Ukrainska Pravda",
+   "source": "France 24",
    "time": "21 Nov",
-   "url": "https://www.pravda.com.ua/eng/news/2026/11/21/8063939/",
-   "headline": "Cargo ship bound for Russia’s Kaliningrad attacked by drones in Gulf of Finland",
-   "summary": "Reported by 19 outlets, including GB News, Bloomberg and The Straits Times.",
+   "url": "https://www.france24.com/en/europe/20261121-drone-attack-sets-russian-cargo-ship-ablaze-in-gulf-of-finland",
+   "headline": "Drone attack sets Russian cargo ship ablaze in Gulf of Finland",
+   "summary": "Reported by 19 outlets, including GB News, Ukrainska Pravda and Bloomberg.",
    "points": [
     "First reported by GB News on 21 Nov.",
     "Coverage: 10 left-leaning, 3 centre, 6 right-leaning.",
@@ -436,61 +451,76 @@ window.DAYBREAK = {
    "publishedLabel": "21 Nov 2026"
   },
   {
+   "id": "eight-killed-massive-russian-attacks-ukraine",
+   "topic": "world",
+   "source": "France 24",
+   "time": "21 Nov",
+   "url": "https://www.france24.com/en/russia-launches-ballistic-missile-attack-on-zelensky-s-hometown-in-central-ukraine",
+   "headline": "Russia launches ballistic missile attack on Zelensky's hometown in central Ukraine",
+   "summary": "Reported by 18 outlets, including RTÉ News, BBC News and CityNews Edmonton.",
+   "points": [
+    "First reported by RTÉ News on 20 Nov.",
+    "Coverage: 6 left-leaning, 7 centre, 4 right-leaning, 1 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
+   "id": "nvidia-growth-outlook-bofa-expert-jensen-huang",
+   "topic": "tech",
+   "source": "The New York Times",
+   "time": "21 Nov",
+   "url": "https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html",
+   "headline": "How Jensen Huang Made Humiliation Routine at Nvidia",
+   "summary": "Reported by 17 outlets, including Livemint, MoneyWeek and Naked Capitalism.",
+   "points": [
+    "First reported by Livemint on 20 Nov.",
+    "Coverage: 8 left-leaning, 4 centre, 4 right-leaning, 1 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
+   "id": "trump-threatens-tax-overseas-data-centres",
+   "topic": "world",
+   "source": "RTÉ News",
+   "time": "20 Nov",
+   "url": "https://www.rte.ie/news/us/2026/1120/1600079-trump-data-centers-punish/",
+   "headline": "Trump threatens tax for overseas US data centres",
+   "summary": "Reported by 19 outlets, including US Top News and Analysis, The Post Millennial and WFLA - Tampa Bay.",
+   "points": [
+    "First reported by US Top News and Analysis on 20 Nov.",
+    "Coverage: 9 left-leaning, 4 centre, 3 right-leaning, 3 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "20 Nov 2026"
+  },
+  {
    "id": "poland-condemns-russian-airspace-provocation",
    "topic": "world",
    "source": "RTÉ News",
    "time": "20 Nov",
    "url": "https://www.rte.ie/news/europe/2026/1120/1600008-poland-russia-airspace-violations/",
    "headline": "Poland condemns Russian airspace 'provocation'",
-   "summary": "Reported by 18 outlets, including SOFREP, The Citizen and Euractiv.",
+   "summary": "Reported by 16 outlets, including SOFREP, The Citizen and Euractiv.",
    "points": [
     "First reported by RTÉ News on 20 Nov.",
-    "Coverage: 3 left-leaning, 5 centre, 10 right-leaning.",
+    "Coverage: 3 left-leaning, 5 centre, 8 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
   },
   {
-   "id": "climate-money-africa-europe-use-whats-already",
-   "topic": "world",
-   "source": "BBC News",
+   "id": "uk-eu-reset-tuition-fees",
+   "topic": "uk",
+   "source": "The New York Times",
    "time": "20 Nov",
-   "url": "https://www.bbc.co.uk/news/articles/c6074k5jjrzko?at_medium=RSS&at_campaign=rss",
-   "headline": "More climate money for Africa? Europe says use what's already pledged",
-   "summary": "Reported by 17 outlets, including Phys.org, The New York Times and Euronews.",
-   "points": [
-    "First reported by BBC News on 20 Nov.",
-    "Coverage: 7 left-leaning, 4 centre, 4 right-leaning, 2 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "eight-killed-massive-russian-attacks-ukraine",
-   "topic": "world",
-   "source": "RTÉ News",
-   "time": "20 Nov",
-   "url": "https://www.rte.ie/news/ukraine/2026/1120/1599948-ukraine-russia/",
-   "headline": "Eight killed in 'massive' Russian attacks on Ukraine",
-   "summary": "Reported by 18 outlets, including BBC News, CityNews Edmonton and CityNews Halifax.",
+   "url": "https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html",
+   "headline": "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know",
+   "summary": "Reported by 17 outlets, including RTÉ News, Sky News and The Guardian.",
    "points": [
     "First reported by RTÉ News on 20 Nov.",
-    "Coverage: 6 left-leaning, 7 centre, 4 right-leaning, 1 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "nvidia-growth-outlook-bofa-expert-jensen-huang",
-   "topic": "world",
-   "source": "Livemint",
-   "time": "20 Nov",
-   "url": "https://www.livemint.com/companies/news/nvidia-growth-outlook-bofa-expert-says-jensen-huang-singular-but-company-more-than-one-person-demand-remains-strong-11795155375951.html",
-   "headline": "Nvidia growth outlook: BofA expert says Jensen Huang ‘singular’, but company more than one person, demand remains strong",
-   "summary": "Reported by 17 outlets, including MoneyWeek, Naked Capitalism and TechCrunch.",
-   "points": [
-    "First reported by Livemint on 20 Nov.",
-    "Coverage: 8 left-leaning, 4 centre, 4 right-leaning, 1 other or unrated.",
+    "Coverage: 8 left-leaning, 2 centre, 5 right-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
@@ -511,28 +541,73 @@ window.DAYBREAK = {
    "publishedLabel": "21 Nov 2026"
   },
   {
-   "id": "signal-restrict-screenshots-ai-agent-concerns-again",
-   "topic": "tech",
-   "source": "ZDNET",
+   "id": "fiona-hippo-dies-swallowing-visitors-hat",
+   "topic": "world",
+   "source": "Euronews",
    "time": "20 Nov",
-   "url": "https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/",
-   "headline": "Signal to restrict screenshots over AI agent concerns – again",
-   "summary": "Reported by 11 outlets, including Android Authority, 9to5Mac and Inc.com.",
+   "url": "https://www.euronews.com/2026/11/20/fiona-the-hippo-dies-after-swallowing-a-visitors-hat",
+   "headline": "Fiona the hippo dies after swallowing a visitor's hat",
+   "summary": "Reported by 15 outlets, including Toronto Sun, Wired and 7NEWS.",
    "points": [
-    "First reported by Android Authority on 20 Nov.",
-    "Coverage: 1 left-leaning, 3 centre, 1 right-leaning, 6 other or unrated.",
+    "First reported by Toronto Sun on 20 Nov.",
+    "Coverage: 5 left-leaning, 5 centre, 4 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
   },
   {
+   "id": "tech-stock-sell-off-drags-markets-down",
+   "topic": "finance",
+   "source": "BBC News",
+   "time": "20 Nov",
+   "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
+   "headline": "Tech stock sell-off drags markets down as Anthropic shares slide",
+   "summary": "Reported by 18 outlets, including France 24, The Wall Street Journal and Daily Mail.",
+   "points": [
+    "First reported by France 24 on 20 Nov.",
+    "Coverage: 7 left-leaning, 6 centre, 5 right-leaning.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "20 Nov 2026"
+  },
+  {
+   "id": "strait-hormuz-athlete-swims-through-war-zone",
+   "topic": "world",
+   "source": "Euronews",
+   "time": "21 Nov",
+   "url": "https://www.euronews.com/video/2026/11/21/strait-of-hormuz-athlete-swims-through-war-zone-to-expose-wars-environmental-toll",
+   "headline": "Strait of Hormuz: Athlete swims through war zone to expose war's environmental toll",
+   "summary": "Reported by 14 outlets, including Evening Standard, GB News and Haaretz.",
+   "points": [
+    "First reported by Euronews on 21 Nov.",
+    "Coverage: 7 left-leaning, 2 centre, 5 right-leaning.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
+   "id": "signal-restrict-screenshots-ai-agent-concerns-again",
+   "topic": "tech",
+   "source": "TechCrunch",
+   "time": "21 Nov",
+   "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+   "headline": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
+   "summary": "Reported by 11 outlets, including Android Authority, 9to5Mac and ZDNET.",
+   "points": [
+    "First reported by Android Authority on 20 Nov.",
+    "Coverage: 1 left-leaning, 3 centre, 1 right-leaning, 6 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
    "id": "village-uproar-plans-house-nearly-1-000",
    "topic": "uk",
-   "source": "Daily Express",
+   "source": "BBC News",
    "time": "21 Nov",
-   "url": "https://www.express.co.uk/news/uk/2268115/uk-village-uproar-plans-house",
-   "headline": "UK village in uproar over plans to house nearly 1,000 asylum seekers at RAF Barnham",
-   "summary": "Reported by 11 outlets, including GB News, Daily Mirror and Belfast Live.",
+   "url": "https://www.bbc.co.uk/news/articles/cvze71y6g85yo?at_medium=RSS&at_campaign=rss",
+   "headline": "Village votes to 'leave UK' over migrant plan",
+   "summary": "Reported by 11 outlets, including Daily Express, GB News and Daily Mirror.",
    "points": [
     "First reported by Daily Express on 21 Nov.",
     "Coverage: 4 left-leaning, 2 centre, 5 right-leaning.",
@@ -541,28 +616,13 @@ window.DAYBREAK = {
    "publishedLabel": "21 Nov 2026"
   },
   {
-   "id": "watch-newcastle-arsenal-tv-channel-stream-premier",
-   "topic": "uk",
-   "source": "Evening Standard",
-   "time": "21 Nov",
-   "url": "https://www.standard.co.uk/sport/football/how-to-watch-newcastle-vs-arsenal-tv-channel-live-stream-premier-league-today-b1305794.html",
-   "headline": "How to watch Newcastle vs Arsenal: TV channel and live stream for Premier League today",
-   "summary": "Reported by 10 outlets, including The West Australian, Irish Independent and Belfast Telegraph.",
-   "points": [
-    "First reported by Evening Standard on 21 Nov.",
-    "Coverage: 3 left-leaning, 1 centre, 5 right-leaning, 1 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "21 Nov 2026"
-  },
-  {
    "id": "tuition-fees-talks-delay-adoption-eu-deal",
    "topic": "uk",
-   "source": "Euractiv",
+   "source": "Financial Times",
    "time": "20 Nov",
-   "url": "https://www.rapporteur.com/news/tuition-fees-talks-delay-adoption-of-eu-uk-deal/",
-   "headline": "Tuition fees talks delay adoption of EU-UK deal",
-   "summary": "Reported by 9 outlets, including Financial Times, Guido Fawkes and The Guardian.",
+   "url": "https://www.ft.com/content/8515b514-2067-43eb-a7f5-b5aa20ec4cc3",
+   "headline": "UK and EU agree Brexit ‘reset’ but delivery rests on tuition fees",
+   "summary": "Reported by 9 outlets, including Euractiv, Guido Fawkes and The Guardian.",
    "points": [
     "First reported by Euractiv on 20 Nov.",
     "Coverage: 5 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
@@ -571,28 +631,13 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
-   "id": "uk-eu-reset-tuition-fees",
-   "topic": "uk",
-   "source": "RTÉ News",
-   "time": "20 Nov",
-   "url": "https://www.rte.ie/news/uk/2026/1120/1599944-uk-eu-summit/",
-   "headline": "EU and UK hail 'landmark' deal at Brussels summit",
-   "summary": "Reported by 9 outlets, including Sky News, The Guardian and BBC News.",
-   "points": [
-    "First reported by RTÉ News on 20 Nov.",
-    "Coverage: 5 left-leaning, 2 centre, 2 right-leaning.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
    "id": "hotel-chocolat-issues-urgent-alert-christmas-boxes",
    "topic": "uk",
-   "source": "Daily Mirror",
+   "source": "Sky News",
    "time": "21 Nov",
-   "url": "https://www.mirror.co.uk/news/uk-news/hotel-chocolat-salmonella-recall-chocolate-37902565",
-   "headline": "Hotel Chocolat issues urgent alert for Christmas boxes over salmonella infection warning",
-   "summary": "Reported by 8 outlets, including Evening Standard, Belfast Telegraph and Manchester Evening News.",
+   "url": "https://news.sky.com/story/hotel-chocolat-recalls-several-christmas-boxes-over-potential-salmonella-risk-13615043",
+   "headline": "Hotel Chocolat recalls several Christmas boxes over potential salmonella risk",
+   "summary": "Reported by 8 outlets, including Daily Mirror, Evening Standard and Belfast Telegraph.",
    "points": [
     "First reported by Daily Mirror on 21 Nov.",
     "Coverage: 3 left-leaning, 1 centre, 3 right-leaning, 1 other or unrated.",
@@ -603,29 +648,14 @@ window.DAYBREAK = {
   {
    "id": "bradford-councillor-stabbing-charge",
    "topic": "uk",
-   "source": "Yorkshire Post",
-   "time": "20 Nov",
-   "url": "https://www.yorkshirepost.co.uk/news/opinion/stabbed-councillor-bradford-10-years-after-we-lost-jo-cox-this-is-a-stark-reminder-9364376",
-   "headline": "Stabbed councillor, Bradford: 10 years after we lost Jo Cox, this is a stark reminder",
-   "summary": "Reported by 8 outlets, including Sky News, GB News and BBC News.",
+   "source": "Sky News",
+   "time": "21 Nov",
+   "url": "https://news.sky.com/story/man-charged-with-attempted-murder-after-councillor-stabbed-in-bradford-13614648",
+   "headline": "Man charged with attempted murder after councillor stabbed in Bradford",
+   "summary": "Reported by 8 outlets, including Yorkshire Post, GB News and BBC News.",
    "points": [
     "First reported by Yorkshire Post on 20 Nov.",
     "Coverage: 4 left-leaning, 2 centre, 2 right-leaning.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "strictly-come-dancing-start-time-tonight-blackpool",
-   "topic": "uk",
-   "source": "Belfast Live",
-   "time": "21 Nov",
-   "url": "https://www.belfastlive.co.uk/news/tv/strictly-come-dancing-start-time-34947757",
-   "headline": "Strictly Come Dancing start time tonight and Blackpool Week dances as star returns",
-   "summary": "Reported by 7 outlets, including Hello Magazine, Manchester Evening News and Evening Standard.",
-   "points": [
-    "First reported by Belfast Live on 21 Nov.",
-    "Coverage: 3 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "21 Nov 2026"
@@ -633,11 +663,11 @@ window.DAYBREAK = {
   {
    "id": "robert-pattinsons-james-bond-casting-marks-hollywoods",
    "topic": "uk",
-   "source": "The Week UK",
+   "source": "Daily Mail",
    "time": "20 Nov",
-   "url": "https://theweek.com/culture-life/film/robert-pattinson-james-bond-hollywood-pivot",
-   "headline": "Robert Pattinson’s James Bond casting marks Hollywood’s generational pivot",
-   "summary": "Reported by 8 outlets, including City AM, HuffPost UK and Daily Mail.",
+   "url": "https://www.dailymail.com/sciencetech/article-16308443/handsome-James-Bond-actors-according-science.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+   "headline": "Revealed: The most handsome James Bond actors, according to science - with Robert Pattinson fifth on the list",
+   "summary": "Reported by 8 outlets, including City AM, The Week UK and HuffPost UK.",
    "points": [
     "First reported by City AM on 20 Nov.",
     "Coverage: 4 left-leaning, 1 right-leaning, 3 other or unrated.",
@@ -646,13 +676,43 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
+   "id": "custom-mri-tool-show-within-weeks-if",
+   "topic": "science",
+   "source": "RTÉ News",
+   "time": "20 Nov",
+   "url": "https://www.rte.ie/news/health/2026/1120/1600064-pill-for-advanced-pancreatic-cancer-shows-promise/",
+   "headline": "Pill for advanced pancreatic cancer shows promise",
+   "summary": "Reported by 8 outlets, including Derbyshire Live, The Guardian and Medical Xpress.",
+   "points": [
+    "First reported by Derbyshire Live on 20 Nov.",
+    "Coverage: 1 left-leaning, 3 centre, 3 right-leaning, 1 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "20 Nov 2026"
+  },
+  {
+   "id": "cold-gives-way-rain-parts-weather-warning",
+   "topic": "uk",
+   "source": "The Guardian",
+   "time": "21 Nov",
+   "url": "https://www.theguardian.com/uk-news/2026/nov/21/uk-weather-cold-rain-warning-south-west-england",
+   "headline": "Cold gives way to rain in parts of UK as weather warning issued for south-west England",
+   "summary": "Reported by 8 outlets, including DublinLive, The Journal and WITI - FOX 6 - Milwaukee.",
+   "points": [
+    "First reported by DublinLive on 20 Nov.",
+    "Coverage: 3 left-leaning, 5 centre.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
    "id": "bayers-7-25bn-settlement-cancer-cases-approved",
    "topic": "business",
-   "source": "Financial Times",
+   "source": "The Guardian",
    "time": "20 Nov",
-   "url": "https://www.ft.com/content/e7d36416-9eb7-4479-a217-d593545499df?syn-25a6b1a6=1",
-   "headline": "Bayer’s $7.25bn settlement over cancer cases approved by US judge",
-   "summary": "Reported by 7 outlets, including The Guardian, The Hill and The New York Times.",
+   "url": "https://www.theguardian.com/business/2026/nov/20/bayer-roundup-cancer-litigation",
+   "headline": "Judge approves $7.25bn Bayer payout to settle claims that Roundup causes cancer",
+   "summary": "Reported by 7 outlets, including Financial Times, The Hill and The New York Times.",
    "points": [
     "First reported by Financial Times on 20 Nov.",
     "Coverage: 5 left-leaning, 2 centre.",
@@ -661,12 +721,27 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
+   "id": "veteran-journalist-david-mckittrick-dies-aged-77",
+   "topic": "uk",
+   "source": "RTÉ News",
+   "time": "21 Nov",
+   "url": "https://www.rte.ie/news/ireland/2026/1121/1600142-veteran-journalist-david-mckittrick-dies-aged-77/",
+   "headline": "Veteran journalist David McKittrick dies aged 77",
+   "summary": "Reported by 6 outlets, including BBC News, Evening Standard and Belfast Telegraph.",
+   "points": [
+    "First reported by BBC News on 21 Nov.",
+    "Coverage: 2 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
    "id": "iphone-duo-livestream-many-folds-apples-phone",
    "topic": "tech",
    "source": "CNET",
    "time": "20 Nov",
-   "url": "https://www.youtube.com/watch?v=zYa9JFF67-k",
-   "headline": "iPhone Duo Livestream: How Many Folds Can Apple’s Phone Take? Day 21",
+   "url": "https://www.youtube.com/watch?v=9wqAjlxfnL0",
+   "headline": "iPhone Duo Livestream: How Many Folds Can Apple’s Phone Take? Day 22",
    "summary": "Reported by 6 outlets, including Livemint, 9to5Mac and MacRumors.",
    "points": [
     "First reported by CNET on 20 Nov.",
@@ -676,28 +751,13 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
-   "id": "army-delays-planned-detonation-unstable-explosives-soil",
-   "topic": "science",
-   "source": "Daily Mail",
-   "time": "20 Nov",
-   "url": "https://www.dailymail.com/sciencetech/article-16305875/us-army-detonate-explosives-iowa-lead-plume.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-   "headline": "Army delays planned detonation of unstable explosives on US soil after locals were urged to leave ahead of toxic cloud",
-   "summary": "Reported by 6 outlets, including The Guardian, The New American and Inside Climate News.",
-   "points": [
-    "First reported by Daily Mail on 20 Nov.",
-    "Coverage: 3 left-leaning, 3 right-leaning.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
    "id": "anthropics-ipo-triumph",
    "topic": "tech",
-   "source": "The Information",
+   "source": "Euronews",
    "time": "20 Nov",
-   "url": "https://www.theinformation.com/articles/anthropics-ipo-triumph",
-   "headline": "Anthropic’s IPO Triumph",
-   "summary": "Reported by 10 outlets, including New York Observer, The Guardian and The Hindu.",
+   "url": "https://www.euronews.com/2026/11/20/stocks-gold-and-silver-fall-after-blockbuster-anthropic-ipo",
+   "headline": "Stocks, gold and silver fall after blockbuster Anthropic IPO",
+   "summary": "Reported by 10 outlets, including The Information, New York Observer and The Guardian.",
    "points": [
     "First reported by The Information on 20 Nov.",
     "Coverage: 5 left-leaning, 2 centre, 2 right-leaning, 1 other or unrated.",
@@ -708,11 +768,11 @@ window.DAYBREAK = {
   {
    "id": "bepicolombo-reaches-mercury",
    "topic": "science",
-   "source": "BBC News",
+   "source": "New Scientist",
    "time": "20 Nov",
-   "url": "https://www.bbc.co.uk/news/articles/c39w9l4v1p9ro?at_medium=RSS&at_campaign=rss",
-   "headline": "Mysterious Mercury is about to get a visitor - after spacecraft's eight-year epic voyage",
-   "summary": "Reported by 6 outlets, including New Scientist, Scientific American and Nature News.",
+   "url": "https://www.newscientist.com/article/2599799-the-bepicolombo-spacecraft-is-finally-entering-orbit-around-mercury/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
+   "headline": "The BepiColombo spacecraft is finally entering orbit around Mercury",
+   "summary": "Reported by 6 outlets, including BBC News, Scientific American and Nature News.",
    "points": [
     "First reported by BBC News on 20 Nov.",
     "Coverage: 1 left-leaning, 5 other or unrated.",
@@ -721,113 +781,38 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
-   "id": "approved-sale-nvidia-amd-chips-chinese-companies",
-   "topic": "tech",
-   "source": "Financial Times",
-   "time": "20 Nov",
-   "url": "https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1",
-   "headline": "US approved sale of Nvidia and AMD chips to Chinese companies",
-   "summary": "Reported by 6 outlets, including CNBC, The New York Times and Washington Post.",
-   "points": [
-    "First reported by Financial Times on 20 Nov.",
-    "Coverage: 3 left-leaning, 2 centre, 1 right-leaning.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "seeing-recognizing-intelligent-ultraviolet-image-sensor-developed",
-   "topic": "tech",
-   "source": "Phys.org",
-   "time": "20 Nov",
-   "url": "https://techxplore.com/news/2026-11-intelligent-ultraviolet-image-sensor-afterimages.html",
-   "headline": "From 'seeing' to 'recognizing': Intelligent ultraviolet image sensor developed with reduced afterimages",
-   "summary": "Reported by 5 outlets, including Android Authority, 9to5Google and 9to5Mac.",
-   "points": [
-    "First reported by Android Authority on 20 Nov.",
-    "Coverage: 1 centre, 4 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "britain-caught-china-trap-net-zero-blamed",
-   "topic": "business",
-   "source": "Daily Express",
-   "time": "21 Nov",
-   "url": "https://www.express.co.uk/news/politics/2268174/britain-caught-china-trap-net",
-   "headline": "Britain caught in 'China trap' as net zero blamed for fuelling dependence on superpower",
-   "summary": "Reported by 4 outlets, including City AM, MoneyWeek and Oilprice.com.",
-   "points": [
-    "First reported by City AM on 20 Nov.",
-    "Coverage: 1 centre, 1 right-leaning, 2 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "21 Nov 2026"
-  },
-  {
-   "id": "custom-mri-tool-show-within-weeks-if",
+   "id": "early-alzheimers-disease-warning-sign-seen-body",
    "topic": "science",
-   "source": "Medical Xpress",
-   "time": "20 Nov",
-   "url": "https://medicalxpress.com/news/2026-11-custom-mri-tool-weeks-pancreatic.html",
-   "headline": "Custom MRI tool could show within weeks if pancreatic cancer treatment is working",
-   "summary": "Reported by 4 outlets, including Fox News, NewsNation and WFLA - Tampa Bay.",
-   "points": [
-    "First reported by Medical Xpress on 20 Nov.",
-    "Coverage: 1 centre, 2 right-leaning, 1 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "thing-thanksgiving-travelers-thankful-lower-gas-prices",
-   "topic": "finance",
-   "source": "MarketWatch",
+   "source": "Daily Mirror",
    "time": "21 Nov",
-   "url": "https://www.marketwatch.com/bulletins/redirect/go?g=6bb78ea4-00af-4916-8720-0d396222d337&mod=mw_rss_bulletins",
-   "headline": "One thing Thanksgiving travelers can be thankful for: lower gas prices",
-   "summary": "Reported by 3 outlets, including Breitbart and Oilprice.com.",
+   "url": "https://www.mirror.co.uk/news/health/early-alzheimers-disease-warning-sign-37895815",
+   "headline": "Early Alzheimer's disease warning sign may be seen on body",
+   "summary": "Reported by 4 outlets, including Latest Science News -- ScienceDaily, Wales Online and ABC7 New York.",
    "points": [
-    "First reported by MarketWatch on 21 Nov.",
-    "Coverage: 1 centre, 2 right-leaning.",
+    "First reported by Latest Science News -- ScienceDaily on 20 Nov.",
+    "Coverage: 2 left-leaning, 1 centre, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "21 Nov 2026"
   },
   {
-   "id": "manchester-united-xi-liverpool-confirmed-team-predicted",
-   "topic": "business",
-   "source": "Evening Standard",
-   "time": "21 Nov",
-   "url": "https://www.standard.co.uk/sport/football/man-utd-xi-vs-liverpool-fc-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1305631.html",
-   "headline": "Manchester United XI vs Liverpool: Confirmed team news, predicted lineup, injury latest for Premier League",
-   "summary": "Reported by 3 outlets, including City AM and Al Jazeera English.",
+   "id": "bitcoins-regulation-bull-case-played-drive-crypto",
+   "topic": "finance",
+   "source": "CNBC",
+   "time": "20 Nov",
+   "url": "https://www.cnbc.com/2026/11/20/bitcoin-price-catalysts-tokenization-regulation.html",
+   "headline": "Bitcoin's regulation bull case is played out. What could drive crypto gains moving forward",
+   "summary": "Reported by 3 outlets, including Cointelegraph and Citizen Free Press.",
    "points": [
-    "First reported by City AM on 20 Nov.",
+    "First reported by CNBC on 20 Nov.",
     "Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "21 Nov 2026"
-  },
-  {
-   "id": "apples-rare-samsung-memory-plan-solve-problem",
-   "topic": "finance",
-   "source": "MarketBeat",
-   "time": "20 Nov",
-   "url": "https://www.marketbeat.com/articles/apples-rare-samsung-memory-plan-could-solve-one-problem-and-create-another/",
-   "headline": "Apple's Rare Samsung Memory Plan Could Solve One Problem and Create Another",
-   "summary": "Reported by 3 outlets, including Livemint and The Next Web.",
-   "points": [
-    "First reported by MarketBeat on 20 Nov.",
-    "Coverage: 1 left-leaning, 2 centre.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
   },
   {
    "id": "dow-p-500-close-correction-nasdaq-slides",
-   "topic": "business",
+   "topic": "finance",
    "source": "MarketWatch",
    "time": "20 Nov",
    "url": "https://www.marketwatch.com/bulletins/redirect/go?g=7584d1dd-3ec7-43fa-8e57-63eae6a76eed&mod=mw_rss_bulletins",
@@ -841,31 +826,46 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
-   "id": "economy-doing-better-think-everyone",
+   "id": "tiktok-launches-tool-detect-use-deepfakes-globally",
    "topic": "business",
-   "source": "The Hill",
+   "source": "RTÉ News",
    "time": "20 Nov",
-   "url": "https://thehill.com/opinion/finance/6231352-us-economy-outlook-2026/",
-   "headline": "The economy is doing better than you think — just not for everyone",
-   "summary": "Reported by 3 outlets, including Bloomberg and The New York Times.",
+   "url": "https://www.rte.ie/news/business/2026/1120/1599945-tiktok-deep-fakes/",
+   "headline": "TikTok launches tool to detect use of deepfakes globally",
+   "summary": "Reported by 3 outlets, including Euractiv and Forbes.",
    "points": [
-    "First reported by The Hill on 20 Nov.",
-    "Coverage: 2 left-leaning, 1 centre.",
+    "First reported by RTÉ News on 20 Nov.",
+    "Coverage: 1 left-leaning, 2 centre.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "20 Nov 2026"
   },
   {
-   "id": "kemi-badenochs-conservatives-take-second-place-daily",
-   "topic": "finance",
-   "source": "Daily Mail",
+   "id": "economy-doing-better-think-everyone",
+   "topic": "business",
+   "source": "The New York Times",
    "time": "21 Nov",
-   "url": "https://www.dailymail.com/news/article-16310189/Badenoch-Conservatives-second-place-Daily-Mail-poll.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-   "headline": "Kemi Badenoch's Conservatives take second place in Daily Mail's poll of polls",
-   "summary": "Reported by 3 outlets, including MoneyWeek and The Rio Times.",
+   "url": "https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html",
+   "headline": "How the U.S. Economy Is Tied to A.I.",
+   "summary": "Reported by 3 outlets, including The Hill and Bloomberg.",
    "points": [
-    "First reported by MoneyWeek on 20 Nov.",
-    "Coverage: 2 right-leaning, 1 other or unrated.",
+    "First reported by The Hill on 20 Nov.",
+    "Coverage: 2 left-leaning, 1 centre.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "21 Nov 2026"
+  },
+  {
+   "id": "tentative-deal-averts-strike-threat-busiest-u",
+   "topic": "business",
+   "source": "The Wall Street Journal",
+   "time": "21 Nov",
+   "url": "https://www.wsj.com/logistics-report/tentative-deal-averts-strike-threat-at-busiest-u-s-ports-6f9a60d1?mod=pls_whats_news_us_business_f",
+   "headline": "Tentative Deal Averts Strike Threat at Busiest U.S. Ports",
+   "summary": "Reported by 3 outlets, including Bloomberg and Freightwaves.",
+   "points": [
+    "First reported by Bloomberg on 21 Nov.",
+    "Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
    "publishedLabel": "21 Nov 2026"
@@ -901,49 +901,49 @@ window.DAYBREAK = {
    "publishedLabel": "20 Nov 2026"
   },
   {
+   "id": "government-stockpiling-push-helps-boost-retail-sales",
+   "topic": "business",
+   "source": "City AM",
+   "time": "20 Nov",
+   "url": "https://www.cityam.com/retail-sales-beat-expectations-as-brits-follow-stockpiling-advice/",
+   "headline": "Government stockpiling push helps boost retail sales",
+   "summary": "Reported by 6 outlets, including ONS, Sky News and Retail Gazette.",
+   "points": [
+    "First reported by ONS on 20 Nov.",
+    "Coverage: 2 left-leaning, 1 centre, 3 other or unrated.",
+    "Open each outlet’s report below to compare their headlines and framing."
+   ],
+   "publishedLabel": "20 Nov 2026"
+  },
+  {
    "id": "physician-explains-glp-1s-biggest-potential-side",
    "topic": "science",
-   "source": "Nautilus",
-   "time": "20 Nov",
-   "url": "https://nautil.us/a-physician-explains-glp-1s-biggest-potential-side-effect-a-rare-but-serious-eye-condition-1286851/",
-   "headline": "A Physician Explains GLP-1s’ Biggest Potential Side Effect: A Rare But Serious Eye Condition",
-   "summary": "Reported by 3 outlets, including Medical Xpress and Inc.com.",
+   "source": "Inc.com",
+   "time": "21 Nov",
+   "url": "https://www.inc.com/avery-miles/a-massive-study-of-250000-patients-just-revealed-a-surprising-new-use-for-glp-1s/91436392",
+   "headline": "A Massive Study of 250,000 Patients Just Revealed a Surprising New Use for GLP-1s",
+   "summary": "Reported by 3 outlets, including Nautilus and Medical Xpress.",
    "points": [
     "First reported by Nautilus on 20 Nov.",
     "Coverage: 1 centre, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "21 Nov 2026"
   },
   {
    "id": "james-webb-telescope-spots-giant-star-swallowing",
    "topic": "science",
-   "source": "Live Science",
-   "time": "20 Nov",
-   "url": "https://www.livescience.com/space/astronomers-spot-giant-star-swallowing-its-companion-in-first-ever-observations-of-a-stellar-merger",
-   "headline": "James Webb telescope spots giant star swallowing its companion in first-ever observations of a stellar merger",
-   "summary": "Reported by 3 outlets, including Ars Technica and ScienceDaily.",
+   "source": "ScienceDaily",
+   "time": "21 Nov",
+   "url": "https://www.sciencedaily.com/releases/2026/11/261120075556.htm",
+   "headline": "A giant star swallowed another star. James Webb reveals the aftermath",
+   "summary": "Reported by 3 outlets, including Live Science and Ars Technica.",
    "points": [
     "First reported by Live Science on 20 Nov.",
     "Coverage: 1 centre, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
-  },
-  {
-   "id": "black-hole-information-paradox",
-   "topic": "science",
-   "source": "Big Think",
-   "time": "20 Nov",
-   "url": "https://bigthink.com/series/full-interview/black-holes-greene/",
-   "headline": "The black hole information paradox",
-   "summary": "Reported by 3 outlets, including Space.com and Citizen Free Press.",
-   "points": [
-    "First reported by Big Think on 20 Nov.",
-    "Coverage: 1 centre, 1 right-leaning, 1 other or unrated.",
-    "Open each outlet’s report below to compare their headlines and framing."
-   ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "21 Nov 2026"
   }
  ],
  "OUTLETS": {
@@ -1161,7 +1161,33 @@ window.DAYBREAK = {
   "CoinDesk": "NR",
   "The Block": "NR",
   "Nautilus": "S",
-  "Big Think": "C"
+  "Big Think": "C",
+  "Toledo Blade": "LR",
+  "Mexico News Daily": "LL",
+  "New York Post": "LR",
+  "The Jerusalem Post": "LR",
+  "Mongabay": "LL",
+  "RNZ": "C",
+  "US Top News and Analysis": "LL",
+  "Institute for Government": "P",
+  "Toronto Sun": "R",
+  "This is Money": "LR",
+  "Benzinga": "C",
+  "Kiplinger": "C",
+  "Haaretz": "L",
+  "Derbyshire Live": "C",
+  "DublinLive": "C",
+  "WITI - FOX 6 - Milwaukee": "C",
+  "Bristol Post": "C",
+  "WOFL Fox 35 Orlando": "C",
+  "PlymouthLive": "C",
+  "Latest Science News -- ScienceDaily": "S",
+  "ABC7 New York": "C",
+  "Cointelegraph": "NR",
+  "Forbes": "C",
+  "Freightwaves": "NR",
+  "ONS": "P",
+  "Retail Gazette": "NR"
  },
  "QUESTIONABLE": [
   "Breitbart",
@@ -1171,1520 +1197,728 @@ window.DAYBREAK = {
   "NDTV"
  ],
  "COVERAGE": {
-  "jonathan-rinderknecht-found-guilty-palisades-fire-arson": [
+  "trump-threatens-tax-overseas-data-centres": [
    [
-    "KTTV - Fox 11 - Los Angeles",
+    "US Top News and Analysis",
     "20 Nov",
-    "https://www.foxla.com/news/palisades-fire-verdict-retrial-jonathan-rinderknecht"
+    "https://www.cnbc.com/2026/11/20/data-center-construction-costs-soar-13-percent-in-2026.html"
+   ],
+   [
+    "The Post Millennial",
+    "20 Nov",
+    "https://thepostmillennial.com/news/breaking-trump-will-not-allow-us-companies-to-build-overseas-data-centers"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "20 Nov",
+    "https://www.wfla.com/news/national/ap-trump-says-he-plans-to-penalize-us-tech-companies-that-build-ai-data-centers-in-other-countries/"
+   ],
+   [
+    "ABC News (US)",
+    "20 Nov",
+    "https://abcnews.com/Technology/wireStory/trump-plans-penalize-us-tech-companies-build-ai-138323831"
+   ],
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/homenews/administration/6233765-trump-threatens-data-center-tax-overseas/"
    ],
    [
     "NBC News",
     "20 Nov",
-    "https://www.nbcnews.com/news/us-news/pacific-palisades-fire-retrial-jonathan-rinderknecht-rcna610336"
+    "https://www.nbcnews.com/business/corporations/trump-data-centers-overseas-penalties-rcna610445"
    ],
-   [
-    "Bloomberg",
-    "20 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-20/man-is-found-guilty-of-setting-2025-pacific-palisades-fires"
-   ],
-   [
-    "KTLA",
-    "20 Nov",
-    "https://ktla.com/news/local-news/palisades-fire-trial-verdict-jonathan-rinderknecht/"
-   ],
-   [
-    "WFLA - Tampa Bay",
-    "20 Nov",
-    "https://www.wfla.com/news/jury-convicts-florida-man-of-starting-2025-palisades-fire-that-killed-12/"
-   ],
-   [
-    "Citizen Free Press",
-    "20 Nov",
-    "https://citizenfreepress.com/breaking/palisades-arsonist-found-guilty-on-all-counts/"
-   ],
-   [
-    "RTÉ News",
-    "21 Nov",
-    "https://www.rte.ie/news/world/2026/1121/1600087-suspect-in-deadly-palisades-fire-in-la-convicted-of-arson/"
-   ],
-   [
-    "PBS NewsHour",
-    "21 Nov",
-    "https://www.pbs.org/newshour/nation/federal-jury-convicts-man-of-starting-deadly-2025-palisades-fire-in-los-angeles"
-   ],
-   [
-    "Hindustan Times",
-    "21 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/jonathan-rinderknecht-found-guilty-of-starting-deadly-palisades-fire-that-killed-12-101795218622963.html"
-   ],
-   [
-    "KTVU Fox 2",
-    "21 Nov",
-    "https://www.ktvu.com/news/palisade-fire-retrial-jonathan-rinderknecht-guilty"
-   ],
-   [
-    "The Post Millennial",
-    "21 Nov",
-    "https://thepostmillennial.com/news/man-who-started-deadly-palisades-fire-found-guilty-in-retrial"
-   ],
-   [
-    "WGN News",
-    "21 Nov",
-    "https://wgntv.com/news/national/jonathan-rinderknecht-found-guilty-of-sparking-blaze-that-became-deadly-palisades-fire/"
-   ],
-   [
-    "The Hill",
-    "21 Nov",
-    "https://thehill.com/homenews/state-watch/6234829-uber-driver-palisades-fire-conviction/"
-   ],
-   [
-    "BBC News",
-    "21 Nov",
-    "https://www.bbc.co.uk/news/articles/c64gn0gy8rj3o?at_medium=RSS&at_campaign=rss"
-   ],
-   [
-    "KABC - Los Angeles News",
-    "21 Nov",
-    "https://abc7.com/post/jonathan-rinderknecht-found-guilty-setting-blaze-became-palisades-fire-during-retrial/20060892/"
-   ],
-   [
-    "GB News",
-    "21 Nov",
-    "https://www.gbnews.com/news/us/palisades-fire-former-uber-driver-found-guilty"
-   ],
-   [
-    "DW News",
-    "21 Nov",
-    "https://www.dw.com/en/man-convicted-of-arson-over-deadly-2025-palisades-fire-in-los-angeles/a-80007933?maca=en-rss-en-world-4025-xml-mrss"
-   ],
-   [
-    "The Journal",
-    "21 Nov",
-    "https://www.thejournal.ie/jonathan-rinderknecht-conviction-palisades-fire-7233309-Nov2026/"
-   ],
-   [
-    "American Wire News",
-    "21 Nov",
-    "https://americanwirenews.com/former-uber-driver-guilty-of-starting-palisades-fire-that-killed-12/"
-   ],
-   [
-    "BizPac Review",
-    "21 Nov",
-    "https://www.bizpacreview.com/2026/11/21/former-uber-driver-guilty-of-starting-palisades-fire-that-killed-12-1668477/"
-   ],
-   [
-    "France 24",
-    "21 Nov",
-    "https://www.france24.com/en/man-convicted-of-starting-palisades-fire"
-   ],
-   [
-    "Taipei Times",
-    "22 Nov",
-    "https://www.taipeitimes.com/News/world/archives/2026/11/22/2003868192"
-   ],
-   [
-    "Legal Insurrection",
-    "22 Nov",
-    "https://legalinsurrection.com/2026/11/jury-convicts-jonathan-rinderknecht-in-palisades-fire-retrial/?utm_source=rss&utm_medium=rss&utm_campaign=jury-convicts-jonathan-rinderknecht-in-palisades-fire-retrial"
-   ]
-  ],
-  "love-carjackings-video-game": [
    [
     "The New York Times",
     "20 Nov",
-    "https://www.nytimes.com/2026/11/19/world/gta-anthropic-shenzhen-summit.html"
-   ],
-   [
-    "ABC News (US)",
-    "20 Nov",
-    "https://abcnews.com/video/138313101/"
-   ],
-   [
-    "Wired",
-    "20 Nov",
-    "https://www.wired.com/story/gta-vi-is-finally-out-dont-rush-it/"
-   ],
-   [
-    "Breitbart",
-    "20 Nov",
-    "https://www.breitbart.com/europe/2026/11/20/italy-two-minors-vandalize-depot-steal-bus-to-imitate-grand-theft-auto-vi/"
-   ],
-   [
-    "Daily Mail",
-    "20 Nov",
-    "https://www.dailymail.com/sciencetech/article-16308353/bonkers-moments-grand-theft-auto-6.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "Fast Company",
-    "20 Nov",
-    "https://www.fastcompany.com/91646100/i-voiced-a-character-in-grand-theft-auto-i-never-expected-her-to-follow-me-for-17-years?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss"
-   ],
-   [
-    "The Conversation UK",
-    "20 Nov",
-    "https://theconversation.com/grand-theft-auto-represented-a-satirical-vision-of-america-the-absurdity-of-reality-has-tipped-the-game-into-empathy-297076"
-   ],
-   [
-    "France 24",
-    "20 Nov",
-    "https://www.france24.com/en/tv-shows/scoop/20261120-gta-vi-when-the-biggest-ever-entertainment-release-becomes-the-biggest-headline"
-   ],
-   [
-    "The Hill",
-    "20 Nov",
-    "https://thehill.com/homenews/house/6232789-gop-rep-warns-parents-gta-6/"
-   ],
-   [
-    "CBS News",
-    "20 Nov",
-    "https://www.cbsnews.com/video/grand-theft-auto-vi-on-track-to-shatter-records-as-game-launches-to-rave-reviews/"
-   ],
-   [
-    "HuffPost UK",
-    "20 Nov",
-    "https://www.huffingtonpost.co.uk/entry/gta-vi-sales-figures-more-money-odyssey_uk_6b006d88e4b0976dc4a309be"
-   ],
-   [
-    "Investors Business Daily",
-    "20 Nov",
-    "https://www.investors.com/news/technology/ttwo-stock-gta-6-smashes-sales-records/"
-   ],
-   [
-    "The Guardian",
-    "20 Nov",
-    "https://www.theguardian.com/games/2026/nov/20/grand-theft-auto-vi-players-review"
-   ],
-   [
-    "Inc.com",
-    "20 Nov",
-    "https://www.inc.com/alexis-franzese/the-grand-theft-auto-vi-launch-is-the-perfect-lesson-in-workplace-trade-offs/91440366"
-   ],
-   [
-    "WFLA - Tampa Bay",
-    "20 Nov",
-    "https://www.wfla.com/entertainment-news/ap-entertainment/grand-theft-auto-vi-sets-record-with-3-79b-in-first-day-retail-sales-video-game-maker-rockstar-games-reports/"
-   ],
-   [
-    "Phys.org",
-    "20 Nov",
-    "https://techxplore.com/news/2026-11-grand-theft-auto-vi-billion.html"
-   ],
-   [
-    "The Globe and Mail",
-    "20 Nov",
-    "https://www.theglobeandmail.com/business/article-grand-theft-auto-vi-record-379-billion-first-day-retail-sales/"
-   ],
-   [
-    "The Wall Street Journal",
-    "20 Nov",
-    "https://www.wsj.com/business/media/take-twos-grand-theft-auto-vi-hits-nearly-4-billion-in-sales-on-launch-day-a1e35d15?mod=rss_Technology"
-   ],
-   [
-    "Slate",
-    "20 Nov",
-    "https://slate.com/culture/2026/11/gta-6-vi-lucia-jason-tomas-twist-grand-theft-auto.html?via=rss"
-   ],
-   [
-    "WGN News",
-    "20 Nov",
-    "https://wgntv.com/business/ap-sales-of-grand-theft-auto-vi-skyrocket-as-the-series-makes-its-return-after-13-year-absence/"
-   ],
-   [
-    "Financial Times",
-    "20 Nov",
-    "https://www.ft.com/content/6648bce8-41fc-4542-8f24-ab37f8acd5d7?syn-25a6b1a6=1"
-   ],
-   [
-    "BBC News",
-    "20 Nov",
-    "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss"
-   ],
-   [
-    "Slashdot",
-    "21 Nov",
-    "https://games.slashdot.org/story/26/11/20/2320231/gta-6-hits-massive-379-billion-in-first-day-sales?utm_source=rss1.0mainlinkanon&utm_medium=feed"
-   ],
-   [
-    "Hindustan Times",
-    "21 Nov",
-    "https://www.hindustantimes.com/world-news/gta-vi-makes-3-79-billion-in-24-hours-becomes-biggest-entertainment-launch-ever-101795219549482.html"
-   ],
-   [
-    "E! News",
-    "21 Nov",
-    "https://www.eonline.com/news/1438298/grand-theft-auto-6-alex-consani-debuts-seatbelt-dress-at-launch-party?cmpid=rss-syndicate-genericrss-us-top_stories"
-   ],
-   [
-    "Citizen Free Press",
-    "21 Nov",
-    "https://citizenfreepress.com/breaking/dont-waste-money-on-grand-theft-auto/"
-   ],
-   [
-    "Digital Trends",
-    "21 Nov",
-    "https://www.digitaltrends.com/gaming/gta-vi-just-outsold-every-movie-album-and-game-launch-ever/"
-   ],
-   [
-    "Fox Business",
-    "21 Nov",
-    "https://www.foxbusiness.com/entertainment/grand-theft-auto-vi-shatters-entertainment-records-staggering-3-79b-debut"
-   ],
-   [
-    "The Citizen",
-    "21 Nov",
-    "https://www.citizen.co.za/lifestyle/technology/grand-theft-auto-vi-biggest-entertainment-launch-history/"
-   ]
-  ],
-  "trump-china-trip-iran-ukraine-peace-declaration": [
-   [
-    "ABC News (US)",
-    "20 Nov",
-    "https://abcnews.com/Politics/trump-china-trip-iran-ukraine-peace-declaration-takeaways/story?id=138292154"
-   ],
-   [
-    "CBS News",
-    "20 Nov",
-    "https://www.cbsnews.com/video/trump-calls-putin-his-friend-at-summit-prompting-backlash-from-some-world-leaders/"
+    "https://www.nytimes.com/2026/11/20/us/politics/trump-data-centers-ban.html"
    ],
    [
     "Axios",
     "20 Nov",
-    "https://www.axios.com/2026/11/20/trump-pushes-putin-ukraine-war-deal"
+    "https://www.axios.com/2026/11/20/us-ai-trump-data-centers-overseas"
    ],
    [
-    "Armstrong Economics",
+    "The Globe and Mail",
     "20 Nov",
-    "https://www.armstrongeconomics.com/international-news/politics/trump-putin-and-xi-meet-as-the-old-world-order-begins-to-crumble/"
+    "https://www.theglobeandmail.com/world/us-politics/article-trump-threatens-tax-us-tech-companies-build-ai-data-centres-abroad/"
    ],
    [
-    "HuffPost UK",
+    "Financial Times",
     "20 Nov",
-    "https://www.huffingtonpost.co.uk/entry/putin-strikes-ukraine-trump-peac_uk_6b000729e4b03f9a657c936c"
-   ],
-   [
-    "Yorkshire Post",
-    "20 Nov",
-    "https://www.yorkshirepost.co.uk/news/opinion/columnists/bridges-loom-large-in-war-and-peace-as-trump-cosies-up-to-putin-and-xi-patrick-mercer-9363312"
-   ],
-   [
-    "The New York Times",
-    "20 Nov",
-    "https://www.nytimes.com/2026/11/20/world/europe/putin-trump-xi-summit-apec.html"
-   ],
-   [
-    "The Hill",
-    "20 Nov",
-    "https://thehill.com/policy/international/6232720-john-bolton-trump-putin-xi-trilateral-meeting/"
-   ],
-   [
-    "NPR",
-    "20 Nov",
-    "https://www.npr.org/2026/11/20/nx-s1-6047594/trump-asia-trip-xi-putin-press-conference"
-   ],
-   [
-    "Fox News",
-    "20 Nov",
-    "https://www.foxnews.com/world/putin-launches-ukraine-barrage-hours-after-trump-meeting-amid-alleged-russian-missile-breach-nato-airspace"
-   ],
-   [
-    "Conservative Review",
-    "20 Nov",
-    "https://www.conservativereview.com/here-s-what-trump-xi-and-putin-agreed-to-in-china-2678471705.html"
-   ],
-   [
-    "WGN News",
-    "20 Nov",
-    "https://wgntv.com/politics-3/live-trump-briefs-on-asia-trip-after-xi-putin-summit/"
-   ],
-   [
-    "WFLD - Fox 32 - Chicago",
-    "20 Nov",
-    "https://www.fox32chicago.com/news/live-trump-speaks-after-talks-chinas-xi-jinping-russias-putin"
-   ],
-   [
-    "Euronews",
-    "20 Nov",
-    "https://www.euronews.com/2026/11/20/trump-accuses-iran-of-dishonesty-while-defending-putin-ties"
-   ],
-   [
-    "Channel 4 News",
-    "20 Nov",
-    "https://www.channel4.com/news/trump-putin-would-love-to-end-war-in-ukraine"
-   ],
-   [
-    "Al-Monitor",
-    "20 Nov",
-    "https://www.al-monitor.com/originals/2026/11/trump-cites-good-talks-putin-ukraine-holds-back-security-guarantees"
-   ],
-   [
-    "Hindustan Times",
-    "20 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/trump-says-good-chance-of-russia-ukraine-deal-but-hatred-between-putin-and-zelensky-making-it-tough-101795209254883.html"
-   ],
-   [
-    "Daily Mail",
-    "21 Nov",
-    "https://www.dailymail.com/news/article-16310089/trump-putin-ukraine-invasion-claims.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "The Hindu",
-    "21 Nov",
-    "https://www.thehindu.com/opinion/editorial/three-to-tango-on-trump-xi-putin-trilateral-summit/article71725845.ece"
-   ],
-   [
-    "NDTV",
-    "21 Nov",
-    "https://www.ndtv.com/world-news/trump-calls-putin-his-friend-says-not-sure-if-he-is-to-america-apec-summit-12356727#publisher=newsstand"
-   ],
-   [
-    "Military.com",
-    "21 Nov",
-    "https://www.military.com/trump-defends-calling-putin-a-friend-but-says-he-cant-speak-to-whether-hes-a-friend-to-the-us"
-   ],
-   [
-    "Washington Examiner",
-    "21 Nov",
-    "https://www.washingtonexaminer.com/in_focus/4810832/lame-duck-trump-what-xi-putin-wanted/"
-   ]
-  ],
-  "poland-condemns-russian-airspace-provocation": [
-   [
-    "RTÉ News",
-    "20 Nov",
-    "https://www.rte.ie/news/europe/2026/1120/1600008-poland-russia-airspace-violations/"
-   ],
-   [
-    "SOFREP",
-    "20 Nov",
-    "https://sofrep.com/news/russian-missiles-and-drone-breach-polish-airspace-as-nato-jets-scramble-and-hold-fire/"
-   ],
-   [
-    "The Citizen",
-    "20 Nov",
-    "https://www.citizen.co.za/news/news-world/russia-pummels-ukraine-missile-hits-poland-after-putin-threat/"
-   ],
-   [
-    "Euractiv",
-    "20 Nov",
-    "https://www.rapporteur.com/news/poland-seeks-more-nato-support-after-russian-missile-incursion/"
-   ],
-   [
-    "End Time Headlines",
-    "20 Nov",
-    "https://endtimeheadlines.org/2026/11/poland-requesting-nato-support-after-being-struck-by-russian-missile-and-drone/"
-   ],
-   [
-    "The Hill",
-    "20 Nov",
-    "https://thehill.com/policy/international/6233039-poland-accuses-russia-missile-drone-incursion/"
-   ],
-   [
-    "Legal Insurrection",
-    "20 Nov",
-    "https://legalinsurrection.com/2026/11/russian-missiles-drone-crash-in-poland-near-ukraines-border/?utm_source=rss&utm_medium=rss&utm_campaign=russian-missiles-drone-crash-in-poland-near-ukraines-border"
-   ],
-   [
-    "Military.com",
-    "20 Nov",
-    "https://www.military.com/ukraine-reports-russian-missile-blitz-after-putin-met-with-trump"
-   ],
-   [
-    "CBS News",
-    "20 Nov",
-    "https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/"
-   ],
-   [
-    "The New York Times",
-    "20 Nov",
-    "https://www.nytimes.com/2026/11/20/world/europe/poland-russia-airspace-missile.html"
-   ],
-   [
-    "Daily Mail",
-    "21 Nov",
-    "https://www.dailymail.com/news/article-16310391/Trump-Ukraine-peace-deal-January.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "Defense One",
-    "21 Nov",
-    "https://www.defenseone.com/threats/2026/11/europeans-ukraines-help-brace-more-russian-attacks/417389/"
-   ],
-   [
-    "Breitbart",
-    "21 Nov",
-    "https://www.breitbart.com/europe/2026/11/21/russian-missiles-land-in-poland-amid-european-military-drills/"
-   ],
-   [
-    "The Straits Times",
-    "21 Nov",
-    "https://www.straitstimes.com/world/europe/nato-will-defend-every-inch-of-polish-territory-rutte-says"
-   ],
-   [
-    "Washington Post",
-    "21 Nov",
-    "https://www.washingtonpost.com/world/2026/11/21/poland-says-russian-missiles-hit-its-territory-trump-calls-it-mistake/"
-   ],
-   [
-    "Political Wire",
-    "21 Nov",
-    "https://politicalwire.com/2026/11/21/poland-says-russian-missiles-hit-its-territory/"
-   ],
-   [
-    "The Sun",
-    "21 Nov",
-    "https://www.thesun.co.uk/news/41103052/russian-missile-ukraine-building-poland-border/"
-   ],
-   [
-    "The US Sun",
-    "21 Nov",
-    "https://www.the-sun.com/news/17339624/russian-missile-ukraine-building-poland-border/"
-   ]
-  ],
-  "climate-money-africa-europe-use-whats-already": [
-   [
-    "BBC News",
-    "20 Nov",
-    "https://www.bbc.co.uk/news/articles/c6074k5jjrzko?at_medium=RSS&at_campaign=rss"
-   ],
-   [
-    "Phys.org",
-    "20 Nov",
-    "https://phys.org/news/2026-11-climate-crunch-sight.html"
-   ],
-   [
-    "The New York Times",
-    "20 Nov",
-    "https://www.nytimes.com/2026/11/19/climate/cop31-turkey-event-scene.html"
-   ],
-   [
-    "Euronews",
-    "20 Nov",
-    "https://www.euronews.com/video/2026/11/20/turkey-activists-chant-shame-as-cop31-negotiations-falter"
-   ],
-   [
-    "The Guardian",
-    "20 Nov",
-    "https://www.theguardian.com/world/live/2026/nov/20/cop31-climate-crisis-talks-turkey-latest-news-updates"
-   ],
-   [
-    "DW News",
-    "20 Nov",
-    "https://www.dw.com/en/cop31-no-agreement-on-climate-science-disinformation-spreading/a-80004894?maca=en-rss_en_environment-22607-xml-mrss"
-   ],
-   [
-    "RTÉ News",
-    "21 Nov",
-    "https://www.rte.ie/news/environment/2026/1121/1600094-cop31-turkey/"
-   ],
-   [
-    "The Express Tribune",
-    "21 Nov",
-    "https://tribune.com.pk/story/2641551/cop31-climate-summit-risks-failure-as-talks-go-deep-into-overtime"
-   ],
-   [
-    "Irish Independent",
-    "21 Nov",
-    "https://www.independent.ie/world-news/cop31-climate-summit-risks-failure-as-talks-go-deep-into-overtime/a/164903083.html"
-   ],
-   [
-    "The Straits Times",
-    "21 Nov",
-    "https://www.straitstimes.com/world/europe/cop31-climate-summit-risks-failure-as-talks-go-deep-into-overtime"
-   ],
-   [
-    "Al-Monitor",
-    "21 Nov",
-    "https://www.al-monitor.com/originals/2026/11/cop31-climate-summit-risks-failure-talks-go-deep-overtime"
-   ],
-   [
-    "Rappler",
-    "21 Nov",
-    "https://www.rappler.com/world/global-affairs/cop31-risks-failure-november-21-2026/"
-   ],
-   [
-    "France 24",
-    "21 Nov",
-    "https://www.france24.com/en/countries-race-to-secure-cop31-deal"
-   ],
-   [
-    "Channel 4 News",
-    "21 Nov",
-    "https://www.channel4.com/news/cop31-climate-talks-in-deadlock-over-new-deal"
-   ],
-   [
-    "KFGO - 790 AM - Fargo",
-    "21 Nov",
-    "https://kfgo.com/2026/11/21/cop31-climate-talks-close-to-final-deal-says-summit-president/"
-   ],
-   [
-    "Investing.com",
-    "21 Nov",
-    "https://www.investing.com/news/commodities-news/cop31-climate-talks-close-to-final-deal-says-summit-president-5043619"
-   ],
-   [
-    "The West Australian",
-    "21 Nov",
-    "https://thewest.com.au/business/cop31-climate-talks-edging-close-to-final-deal-c-23196283"
-   ]
-  ],
-  "eight-killed-massive-russian-attacks-ukraine": [
-   [
-    "RTÉ News",
-    "20 Nov",
-    "https://www.rte.ie/news/ukraine/2026/1120/1599948-ukraine-russia/"
-   ],
-   [
-    "BBC News",
-    "20 Nov",
-    "https://www.bbc.co.uk/news/videos/c65y19wy3xl8o?at_medium=RSS&at_campaign=rss"
-   ],
-   [
-    "CityNews Edmonton",
-    "21 Nov",
-    "https://edmonton.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
-   ],
-   [
-    "CityNews Halifax",
-    "21 Nov",
-    "https://halifax.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
-   ],
-   [
-    "CityNews - Winnipeg",
-    "21 Nov",
-    "https://winnipeg.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
-   ],
-   [
-    "CityNews Ottawa",
-    "21 Nov",
-    "https://ottawa.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
-   ],
-   [
-    "CityNews Calgary",
-    "21 Nov",
-    "https://calgary.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
-   ],
-   [
-    "The West Australian",
-    "21 Nov",
-    "https://thewest.com.au/news/conflict/missile-attack-on-zelenskiys-hometown-kills-two-c-23195123"
-   ],
-   [
-    "NDTV",
-    "21 Nov",
-    "https://www.ndtv.com/world-news/russian-strike-on-ukraine-president-zelenskys-hometown-kills-2-injures-60-12358740#publisher=newsstand"
-   ],
-   [
-    "Hindustan Times",
-    "21 Nov",
-    "https://www.hindustantimes.com/world-news/ballistic-russian-missile-attack-on-zelenskys-hometown-in-central-ukraine-kills-2-101795265428031.html"
-   ],
-   [
-    "Daily Mirror",
-    "21 Nov",
-    "https://www.mirror.co.uk/news/world-news/zelensky-brands-putin-killer-russian-37901996"
-   ],
-   [
-    "DW News",
-    "21 Nov",
-    "https://www.dw.com/en/russia-strikes-zelenskyy-s-hometown-killing-2/a-80009458?maca=en-rss-en-world-4025-xml-mrss"
-   ],
-   [
-    "Breitbart",
-    "21 Nov",
-    "https://www.breitbart.com/europe/2026/11/21/russian-missile-attack-on-zelenskys-hometown-in-central-ukraine-kills-two-wounds-dozens/"
-   ],
-   [
-    "The Hindu",
-    "21 Nov",
-    "https://www.thehindu.com/news/international/ballistic-missile-attack-on-zelenskyys-hometown-kills-2/article71729235.ece"
-   ],
-   [
-    "Al Jazeera English",
-    "21 Nov",
-    "https://www.aljazeera.com/news/2026/11/21/russian-strike-kills-two-wounds-60-in-zelenskyys-hometown?traffic_source=rss"
-   ],
-   [
-    "Channel 4 News",
-    "21 Nov",
-    "https://www.channel4.com/news/at-least-two-killed-in-russian-strikes-across-ukraine"
-   ],
-   [
-    "Off The Press",
-    "21 Nov",
-    "https://offthepress.com/r/183035?c=rss"
-   ],
-   [
-    "France 24",
-    "21 Nov",
-    "https://www.france24.com/en/russia-launches-ballistic-missile-attack-on-zelensky-s-hometown-in-central-ukraine"
-   ]
-  ],
-  "nvidia-growth-outlook-bofa-expert-jensen-huang": [
-   [
-    "Livemint",
-    "20 Nov",
-    "https://www.livemint.com/companies/news/nvidia-growth-outlook-bofa-expert-says-jensen-huang-singular-but-company-more-than-one-person-demand-remains-strong-11795155375951.html"
-   ],
-   [
-    "MoneyWeek",
-    "20 Nov",
-    "https://moneyweek.com/investments/tech-stocks/why-nvidia-can-thrive-without-jensen-huang"
-   ],
-   [
-    "Naked Capitalism",
-    "20 Nov",
-    "https://www.nakedcapitalism.com/2026/11/nvidia-chased-500-billion-chip-funding-scheme-with-wall-street-heavyweights-who-demanded-more-backing-than-jensen-would-give.html"
-   ],
-   [
-    "TechCrunch",
-    "20 Nov",
-    "https://techcrunch.com/2026/11/20/behind-jensen-huangs-exit-questions-about-a-management-style-reportedly-built-on-fear/"
-   ],
-   [
-    "Wired",
-    "20 Nov",
-    "https://www.wired.com/story/dont-bring-jensen-back/"
-   ],
-   [
-    "Investors Business Daily",
-    "20 Nov",
-    "https://www.investors.com/news/technology/nvidia-stock-could-jensen-huang-land-at-intel/"
-   ],
-   [
-    "The Hill",
-    "20 Nov",
-    "https://thehill.com/policy/technology/6233257-bessent-denies-huang-apec-talks/"
-   ],
-   [
-    "The Post Millennial",
-    "20 Nov",
-    "https://thepostmillennial.com/news/breaking-trump-says-if-nvidia-is-smart-they-d-take-jensen-huang-back"
-   ],
-   [
-    "Jacobin",
-    "20 Nov",
-    "https://jacobin.com/2026/11/huang-scandal-tech-ai-china-hawks"
+    "https://www.ft.com/content/ae564e09-eb0d-42c6-b61f-50a4e61d0240?syn-25a6b1a6=1"
    ],
    [
     "CNBC",
     "20 Nov",
-    "https://www.cnbc.com/2026/11/20/jensen-huang-nvidia-senate-testimony.html"
+    "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html"
    ],
    [
-    "Hindustan Times",
+    "BBC News",
     "20 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/he-is-a-good-man-trump-backs-jensen-huang-s-return-as-nvidia-ceo-asks-him-to-make-a-big-apology-101795203021126.html"
+    "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko?at_medium=RSS&at_campaign=rss"
    ],
    [
-    "Washington Post",
+    "The Guardian",
     "20 Nov",
-    "https://www.washingtonpost.com/politics/2026/11/20/trump-defends-jensen-huang-after-alleged-chinese-spy-affair/"
+    "https://www.theguardian.com/us-news/2026/nov/20/trump-datacenters-white-house"
    ],
    [
-    "Political Wire",
+    "RTÉ News",
     "20 Nov",
-    "https://politicalwire.com/2026/11/20/trump-says-jensen-huang-should-return-as-nvidia-ceo/"
-   ],
-   [
-    "Citizen Free Press",
-    "20 Nov",
-    "https://citizenfreepress.com/breaking/trump-i-want-to-see-jensen-huang-back-running-nvidia/"
-   ],
-   [
-    "The New York Times",
-    "21 Nov",
-    "https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html"
-   ],
-   [
-    "The Information",
-    "21 Nov",
-    "https://www.theinformation.com/articles/can-jensen-return"
-   ],
-   [
-    "Hot Air",
-    "21 Nov",
-    "https://hotair.com/headlines/2026/11/21/the-real-winners-of-the-jensen-huang-affair-n3821192"
-   ]
-  ],
-  "signal-restrict-screenshots-ai-agent-concerns-again": [
-   [
-    "Android Authority",
-    "20 Nov",
-    "https://www.androidauthority.com/signal-blocks-gemini-siri-ai-private-messages-3737647/"
-   ],
-   [
-    "9to5Mac",
-    "20 Nov",
-    "https://9to5mac.com/2026/11/20/signal-now-blocks-screenshots-on-iphone-to-stop-siri-ai-from-seeing-chats/"
-   ],
-   [
-    "ZDNET",
-    "20 Nov",
-    "https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/"
-   ],
-   [
-    "Inc.com",
-    "20 Nov",
-    "https://www.inc.com/aaron-mok/signal-blocks-screenshots-ai-agents-privacy/91440348"
-   ],
-   [
-    "CNET",
-    "20 Nov",
-    "https://www.cnet.com/tech/services-and-software/signal-text-message-screenshots/"
-   ],
-   [
-    "The Decoder",
-    "20 Nov",
-    "https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/"
-   ],
-   [
-    "BizPac Review",
-    "20 Nov",
-    "https://www.bizpacreview.com/2026/11/20/signal-moves-to-block-big-techs-ai-agents-from-reading-users-private-chats-1668404/"
+    "https://www.rte.ie/news/us/2026/1120/1600079-trump-data-centers-punish/"
    ],
    [
     "Slashdot",
     "20 Nov",
-    "https://yro.slashdot.org/story/26/11/20/2231247/signal-restricts-screenshots-to-block-ai-agents-from-reading-messages?utm_source=rss1.0mainlinkanon&utm_medium=feed"
+    "https://news.slashdot.org/story/26/11/20/2223202/trump-vows-to-stop-us-companies-from-building-data-centers-abroad?utm_source=rss1.0mainlinkanon&utm_medium=feed"
    ],
    [
-    "The Hacker News",
+    "SiliconANGLE",
     "21 Nov",
-    "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html"
-   ],
-   [
-    "Decrypt",
-    "21 Nov",
-    "https://decrypt.co/383750/signal-os-level-ai-existential-threat-blocks-screenshots"
-   ],
-   [
-    "TechCrunch",
-    "21 Nov",
-    "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
-   ]
-  ],
-  "village-uproar-plans-house-nearly-1-000": [
-   [
-    "Daily Express",
-    "21 Nov",
-    "https://www.express.co.uk/news/uk/2268115/uk-village-uproar-plans-house"
-   ],
-   [
-    "GB News",
-    "21 Nov",
-    "https://www.gbnews.com/news/migrant-crisis-barnham-villagers-vote-asylum-camp"
-   ],
-   [
-    "Daily Mirror",
-    "21 Nov",
-    "https://www.mirror.co.uk/news/uk-news/barnham-village-votes-leave-uk-37902426"
-   ],
-   [
-    "Belfast Live",
-    "21 Nov",
-    "https://www.belfastlive.co.uk/news/uk-world-news/village-votes-leave-uk-symbolic-34948299"
-   ],
-   [
-    "Evening Standard",
-    "21 Nov",
-    "https://www.standard.co.uk/news/politics/barnham-suffolk-uk-migrants-housing-raf-base-b1305842.html"
-   ],
-   [
-    "The Guardian",
-    "21 Nov",
-    "https://www.theguardian.com/uk-news/2026/nov/21/suffolk-village-votes-to-leave-the-uk-over-plans-to-house-asylum-seekers-nearby"
-   ],
-   [
-    "Times of Malta",
-    "21 Nov",
-    "https://timesofmalta.com/article/english-village-votes-leave-uk-migrant-camp-plan.1137483"
+    "https://siliconangle.com/2026/11/20/trump-announces-plan-to-tax-us-companies-that-build-data-centers-abroad/"
    ],
    [
     "Breitbart",
     "21 Nov",
-    "https://www.breitbart.com/europe/2026/11/21/second-british-village-votes-to-secede-from-uk-over-migrant-camp-scheme/"
+    "https://www.breitbart.com/politics/2026/11/20/trump-tax-companies-build-data-centers-overseas/"
    ],
    [
-    "BBC News",
+    "Tom's Hardware",
     "21 Nov",
-    "https://www.bbc.co.uk/news/articles/cvze71y6g85yo?at_medium=RSS&at_campaign=rss"
+    "https://www.tomshardware.com/tech-industry/data-centers/trump-wants-to-ban-us-companies-from-building-overseas-data-centers-as-bans-slow-development-also-considers-putting-a-tremendous-tax-in-lieu-of-prohibition"
    ],
    [
-    "Daily Mail",
+    "Bloomberg",
     "21 Nov",
-    "https://www.dailymail.com/news/article-16311515/Barnham-votes-leave-UK-RAF-asylum-seeker-camp.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "Metro",
-    "21 Nov",
-    "https://metro.co.uk/2026/11/21/suffolk-village-votes-leave-uk-plans-asylum-camp-raf-base-29809314/"
+    "https://www.bloomberg.com/news/audio/2026-11-21/trump-threatens-tremendous-tax-on-data-centers-russia-attacks"
    ]
   ],
-  "watch-newcastle-arsenal-tv-channel-stream-premier": [
+  "fiona-hippo-dies-swallowing-visitors-hat": [
    [
-    "Evening Standard",
-    "21 Nov",
-    "https://www.standard.co.uk/sport/football/how-to-watch-newcastle-vs-arsenal-tv-channel-live-stream-premier-league-today-b1305794.html"
-   ],
-   [
-    "The West Australian",
-    "21 Nov",
-    "https://thewest.com.au/sport/soccer/man-city-held-again-as-bournemouth-move-fourth-c-23195702"
-   ],
-   [
-    "Irish Independent",
-    "21 Nov",
-    "https://www.independent.ie/sport/soccer/premier-league/noni-madueke-rescues-champions-arsenal-a-point-at-newcastle/a/164910468.html"
-   ],
-   [
-    "Belfast Telegraph",
-    "21 Nov",
-    "https://www.belfasttelegraph.co.uk/sport/football/premier-league/noni-madueke-rescues-champions-arsenal-a-point-at-newcastle/a/164910464.html"
-   ],
-   [
-    "CNA",
-    "21 Nov",
-    "https://www.channelnewsasia.com/sport/arsenal-held-2-2-draw-newcastle-6572096"
-   ],
-   [
-    "Metro",
-    "21 Nov",
-    "https://metro.co.uk/2026/11/21/jamie-redknapp-names-arsenal-star-not-level-needed-mikel-arteta-29809349/"
-   ],
-   [
-    "Al Jazeera English",
-    "21 Nov",
-    "https://www.aljazeera.com/sports/2026/11/21/noni-madueke-salvages-draw-for-arsenal-at-newcastle-united-as-raya-injured?traffic_source=rss"
-   ],
-   [
-    "The Journal",
-    "21 Nov",
-    "https://www.thejournal.ie/newcastle-arsenal-report-4-2-7233954-Nov2026/"
-   ],
-   [
-    "The Sun - Nigeria",
-    "21 Nov",
-    "https://thesun.ng/epl-arsenal-held-2-2-by-newcastle-raya-suffers-injury/"
-   ],
-   [
-    "The Citizen",
-    "21 Nov",
-    "https://www.citizen.co.za/sport/soccer/world-soccer/arsenal-held-newcastle-man-city-stumble-again-fulham-draw/"
-   ]
-  ],
-  "tuition-fees-talks-delay-adoption-eu-deal": [
-   [
-    "Euractiv",
+    "Toronto Sun",
     "20 Nov",
-    "https://www.rapporteur.com/news/tuition-fees-talks-delay-adoption-of-eu-uk-deal/"
+    "https://torontosun.com/news/world/fiona-the-hippo-dies-after-swallowing-hat-that-fell-into-her-enclosure"
    ],
    [
-    "Financial Times",
+    "Wired",
     "20 Nov",
-    "https://www.ft.com/content/8515b514-2067-43eb-a7f5-b5aa20ec4cc3"
+    "https://www.wired.com/story/fiona-the-hippo-died-after-eating-a-hat-but-how-does-a-hat-kill-a-hippo/"
    ],
    [
-    "Guido Fawkes",
+    "7NEWS",
     "20 Nov",
-    "https://order-order.com/2026/11/20/burnham-hands-eu-100000-visas-as-tuition-fee-row-continues/"
+    "https://7news.com.au/news/animals/witnesses-shed-new-light-on-death-of-beloved-hippo-fiona-at-cincinnati-zoo-c-23191941"
    ],
    [
-    "The Guardian",
+    "Phys.org",
     "20 Nov",
-    "https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates"
-   ],
-   [
-    "i News",
-    "20 Nov",
-    "https://inews.co.uk/news/politics/burnham-cut-tuition-fees-eu-students-brexit-deal-collapse-4914711"
-   ],
-   [
-    "Channel 4 News",
-    "20 Nov",
-    "https://www.channel4.com/news/government-committed-to-finding-agreement-with-eu-over-tuition-fees-says-minister"
-   ],
-   [
-    "BBC News",
-    "21 Nov",
-    "https://www.bbc.co.uk/news/articles/cm9w9p4geke8o?at_medium=RSS&at_campaign=rss"
-   ],
-   [
-    "Daily Mirror",
-    "21 Nov",
-    "https://www.mirror.co.uk/news/politics/cabinet-minister-clashes-bbc-host-37901597"
-   ],
-   [
-    "The Conversation UK",
-    "21 Nov",
-    "https://theconversation.com/what-does-the-uk-eu-reset-deal-mean-for-immigration-and-tuition-fees-297086"
-   ]
-  ],
-  "hotel-chocolat-issues-urgent-alert-christmas-boxes": [
-   [
-    "Daily Mirror",
-    "21 Nov",
-    "https://www.mirror.co.uk/news/uk-news/hotel-chocolat-salmonella-recall-chocolate-37902565"
-   ],
-   [
-    "Evening Standard",
-    "21 Nov",
-    "https://www.standard.co.uk/news/health/hotel-chocolat-food-standards-agency-british-press-association-b1305847.html"
-   ],
-   [
-    "Belfast Telegraph",
-    "21 Nov",
-    "https://www.belfasttelegraph.co.uk/news/uk/hotel-chocolat-recalls-some-christmas-boxes-over-salmonella-risk/a/164909421.html"
-   ],
-   [
-    "Manchester Evening News",
-    "21 Nov",
-    "https://www.manchestereveningnews.co.uk/news/uk-news/hotel-chocolat-recalls-christmas-item-34948602"
-   ],
-   [
-    "The Sun",
-    "21 Nov",
-    "https://www.thesun.co.uk/news/41102676/hotel-chocolat-urgently-recalls-christmas-boxes-salmonella-warning/"
-   ],
-   [
-    "Sky News",
-    "21 Nov",
-    "https://news.sky.com/story/hotel-chocolat-recalls-several-christmas-boxes-over-potential-salmonella-risk-13615043"
-   ],
-   [
-    "Metro",
-    "21 Nov",
-    "https://metro.co.uk/2026/11/21/hotel-chocolat-recalls-several-christmas-products-salmonella-warning-29809373/"
-   ],
-   [
-    "Daily Mail",
-    "21 Nov",
-    "https://www.dailymail.com/news/article-16311955/Hotel-Chocolat-issues-urgent-recall-Christmas-boxes-salmonella-risk-pistachio-paste.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ]
-  ],
-  "strictly-come-dancing-start-time-tonight-blackpool": [
-   [
-    "Belfast Live",
-    "21 Nov",
-    "https://www.belfastlive.co.uk/news/tv/strictly-come-dancing-start-time-34947757"
-   ],
-   [
-    "Hello Magazine",
-    "21 Nov",
-    "https://www.hellomagazine.com/celebrities/936432/strictly-dani-dyer-life-danny-dyer-father-children/"
-   ],
-   [
-    "Manchester Evening News",
-    "21 Nov",
-    "https://www.manchestereveningnews.co.uk/news/tv/strictly-come-dancing-fans-issue-34948609"
-   ],
-   [
-    "Evening Standard",
-    "21 Nov",
-    "https://www.standard.co.uk/showbiz/celebrity-news/bbc-one-emma-willis-stars-blackpool-delta-goodrem-b1305850.html"
-   ],
-   [
-    "Belfast Telegraph",
-    "21 Nov",
-    "https://www.belfasttelegraph.co.uk/entertainment/news/stars-make-strictly-history-after-all-eight-couples-top-leaderboard/a/164910663.html"
-   ],
-   [
-    "Birmingham Mail",
-    "21 Nov",
-    "https://www.birminghammail.co.uk/news/showbiz-tv/police-called-strictly-come-dancing-34949034"
-   ],
-   [
-    "The Guardian",
-    "21 Nov",
-    "https://www.theguardian.com/tv-and-radio/2026/nov/21/police-called-strictly-come-dancing-after-disruption-during-live-show"
-   ]
-  ],
-  "robert-pattinsons-james-bond-casting-marks-hollywoods": [
-   [
-    "City AM",
-    "20 Nov",
-    "https://www.cityam.com/james-bond-amazon-pattinson-keeping-us-wanting-more/"
-   ],
-   [
-    "The Week UK",
-    "20 Nov",
-    "https://theweek.com/culture-life/film/robert-pattinson-james-bond-hollywood-pivot"
-   ],
-   [
-    "HuffPost UK",
-    "20 Nov",
-    "https://www.huffingtonpost.co.uk/entry/george-lazenby-robert-pattinson-james-bond_uk_6afff8eee4b0db04454910bf"
-   ],
-   [
-    "Daily Mail",
-    "20 Nov",
-    "https://www.dailymail.com/sciencetech/article-16308443/handsome-James-Bond-actors-according-science.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "9to5Google",
-    "20 Nov",
-    "https://9to5google.com/2026/11/20/google-search-easter-egg-robert-pattinson-james-bond/"
-   ],
-   [
-    "The Guardian",
-    "20 Nov",
-    "https://www.theguardian.com/film/2026/nov/20/robert-pattinson-batman-james-bond-third-movie-delays-dc"
-   ],
-   [
-    "BBC News",
-    "21 Nov",
-    "https://www.bbc.co.uk/news/articles/cr4g1l7x52jno?at_medium=RSS&at_campaign=rss"
-   ],
-   [
-    "Taipei Times",
-    "22 Nov",
-    "https://www.taipeitimes.com/News/editorials/archives/2026/11/22/2003868162"
-   ]
-  ],
-  "bayers-7-25bn-settlement-cancer-cases-approved": [
-   [
-    "Financial Times",
-    "20 Nov",
-    "https://www.ft.com/content/e7d36416-9eb7-4479-a217-d593545499df?syn-25a6b1a6=1"
-   ],
-   [
-    "The Guardian",
-    "20 Nov",
-    "https://www.theguardian.com/business/2026/nov/20/bayer-roundup-cancer-litigation"
-   ],
-   [
-    "The Hill",
-    "21 Nov",
-    "https://thehill.com/policy/energy-environment/6234796-judge-approves-roundup-settlement/"
-   ],
-   [
-    "The New York Times",
-    "21 Nov",
-    "https://www.nytimes.com/2026/11/20/business/bayer-settlement-roundup-cancer.html"
-   ],
-   [
-    "Mother Jones",
-    "21 Nov",
-    "https://www.motherjones.com/politics/2026/11/it-just-got-harder-to-sue-over-glyphosate/"
-   ],
-   [
-    "Washington Post",
-    "21 Nov",
-    "https://www.washingtonpost.com/climate-environment/2026/11/21/judge-approves-725-billion-roundup-cancer-settlement/"
-   ],
-   [
-    "NPR",
-    "21 Nov",
-    "https://www.npr.org/2026/11/21/nx-s1-6049684/roundup-bayer-hodgkins-settlement"
-   ]
-  ],
-  "iphone-duo-livestream-many-folds-apples-phone": [
-   [
-    "CNET",
-    "20 Nov",
-    "https://www.youtube.com/watch?v=zYa9JFF67-k"
-   ],
-   [
-    "Livemint",
-    "20 Nov",
-    "https://www.livemint.com/companies/people/who-is-jon-mccormack-the-apple-executive-who-helped-shape-your-iphone-camera-and-draws-the-line-on-ai-photography-11795176101442.html"
-   ],
-   [
-    "9to5Mac",
-    "20 Nov",
-    "https://9to5mac.com/2026/11/20/iphone-air-2-dual-camera-system/"
-   ],
-   [
-    "MacRumors",
-    "20 Nov",
-    "https://www.macrumors.com/2026/11/20/iphone-air-2-and-iphone-18-dummy-models/"
-   ],
-   [
-    "Digital Trends",
-    "21 Nov",
-    "https://www.digitaltrends.com/photography/dummies-give-us-an-early-look-at-the-upcoming-iphone-air-2-and-iphone-18/"
-   ],
-   [
-    "India Today",
-    "22 Nov",
-    "https://www.indiatoday.in/visualstories/technology/iphone-16-gets-huge-discount-price-drops-by-rs-9910-287566-17-11-2026?utm_source=rss"
-   ]
-  ],
-  "army-delays-planned-detonation-unstable-explosives-soil": [
-   [
-    "Daily Mail",
-    "20 Nov",
-    "https://www.dailymail.com/sciencetech/article-16305875/us-army-detonate-explosives-iowa-lead-plume.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "The Guardian",
-    "20 Nov",
-    "https://www.theguardian.com/us-news/2026/nov/19/iowa-lead-bomb-dust"
-   ],
-   [
-    "The New American",
-    "20 Nov",
-    "https://thenewamerican.com/us/army-to-detonate-toxic-explosives-in-iowa/"
-   ],
-   [
-    "Inside Climate News",
-    "20 Nov",
-    "https://insideclimatenews.org/news/20112026/iowa-toxic-lead-explosives-detonation-delayed/"
-   ],
-   [
-    "Hindustan Times",
-    "21 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/why-us-armys-plan-to-detonate-9-500-pounds-of-explosives-containing-lead-azide-in-middletown-iowa-has-sparked-contamination-worries-101795240327618.html"
-   ],
-   [
-    "Citizen Free Press",
-    "21 Nov",
-    "https://citizenfreepress.com/breaking/u-s-army-plans-to-detonate-toxic-lead-bomb-material-in-iowa-judge-halts-for-now/"
-   ]
-  ],
-  "anthropics-ipo-triumph": [
-   [
-    "The Information",
-    "20 Nov",
-    "https://www.theinformation.com/articles/anthropics-ipo-triumph"
-   ],
-   [
-    "New York Observer",
-    "20 Nov",
-    "https://observer.com/2026/11/dario-amodei-takes-anthropic-to-wall-street-in-record-81-billion-ipo/"
-   ],
-   [
-    "The Guardian",
-    "20 Nov",
-    "https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai"
-   ],
-   [
-    "The Hindu",
-    "20 Nov",
-    "https://www.thehindu.com/business/markets/ai-firm-anthropic-shares-wall-streets-nasdaq-debut/article71721723.ece"
-   ],
-   [
-    "CNBC",
-    "20 Nov",
-    "https://www.cnbc.com/2026/11/20/anthropic-ipo-stocks-market.html"
-   ],
-   [
-    "Financial Times",
-    "20 Nov",
-    "https://www.ft.com/content/017044a9-76dc-4cb4-9259-a844a96f2757"
+    "https://phys.org/news/2026-11-fiona-hippo-dies-effort-swallowed.html"
    ],
    [
     "Euronews",
     "20 Nov",
-    "https://www.euronews.com/2026/11/20/stocks-gold-and-silver-fall-after-blockbuster-anthropic-ipo"
-   ],
-   [
-    "South China Morning Post",
-    "20 Nov",
-    "https://www.scmp.com/business/china-business/article/3375169/anthropics-us81b-ipo-gold-price-drops-5-figures-investors-are-watching-week"
-   ],
-   [
-    "Investors Business Daily",
-    "20 Nov",
-    "https://www.investors.com/news/technology/anthropic-stock-ipo-ai-falls/"
-   ],
-   [
-    "Phys.org",
-    "20 Nov",
-    "https://techxplore.com/news/2026-11-anthropic-falls-day-ipo.html"
-   ]
-  ],
-  "approved-sale-nvidia-amd-chips-chinese-companies": [
-   [
-    "Financial Times",
-    "20 Nov",
-    "https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1"
-   ],
-   [
-    "CNBC",
-    "20 Nov",
-    "https://www.cnbc.com/2026/11/19/nvidia-amd-china-chip-sales-congress.html"
-   ],
-   [
-    "The New York Times",
-    "20 Nov",
-    "https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html"
-   ],
-   [
-    "Washington Post",
-    "20 Nov",
-    "https://www.washingtonpost.com/technology/2026/11/20/officials-approved-sale-580000-nvidia-chips-chinese-companies/"
-   ],
-   [
-    "BizPac Review",
-    "20 Nov",
-    "https://www.bizpacreview.com/2026/11/20/commerce-approved-nearly-880000-nvidia-and-amd-ai-chips-for-chinese-firms-records-show-1668400/"
-   ],
-   [
-    "Political Wire",
-    "21 Nov",
-    "https://politicalwire.com/2026/11/20/officials-approved-sale-of-580000-nvidia-chips-to-china/"
-   ]
-  ],
-  "seeing-recognizing-intelligent-ultraviolet-image-sensor-developed": [
-   [
-    "Android Authority",
-    "20 Nov",
-    "https://www.androidauthority.com/leaked-pixel-11-pro-xl-temperature-sensor-hilight-3737610/"
-   ],
-   [
-    "9to5Google",
-    "20 Nov",
-    "https://9to5google.com/2026/11/20/alleged-pixel-11-pro-prototype-had-hilight-and-a-temperature-sensor/"
-   ],
-   [
-    "Phys.org",
-    "20 Nov",
-    "https://techxplore.com/news/2026-11-intelligent-ultraviolet-image-sensor-afterimages.html"
-   ],
-   [
-    "9to5Mac",
-    "20 Nov",
-    "https://9to5mac.com/2026/11/20/lafaers-5-in-1-presence-sensor-fixes-the-most-annoying-automation-in-apple-home/"
-   ],
-   [
-    "How-To Geek",
-    "21 Nov",
-    "https://www.howtogeek.com/tested-motion-sensors-and-presence-sensors-in-the-same-room/"
-   ]
-  ],
-  "britain-caught-china-trap-net-zero-blamed": [
-   [
-    "City AM",
-    "20 Nov",
-    "https://www.cityam.com/net-zero-is-an-egregiously-bad-deal-for-the-uk/"
-   ],
-   [
-    "MoneyWeek",
-    "21 Nov",
-    "https://moneyweek.com/economy/uk-economy/the-uk-retreats-from-net-zero-commitments"
-   ],
-   [
-    "Daily Express",
-    "21 Nov",
-    "https://www.express.co.uk/news/politics/2268174/britain-caught-china-trap-net"
-   ],
-   [
-    "Oilprice.com",
-    "21 Nov",
-    "https://oilprice.com/Energy/Energy-General/Britains-Net-Zero-Revolution-Has-a-China-Problem.html"
-   ]
-  ],
-  "custom-mri-tool-show-within-weeks-if": [
-   [
-    "Medical Xpress",
-    "20 Nov",
-    "https://medicalxpress.com/news/2026-11-custom-mri-tool-weeks-pancreatic.html"
-   ],
-   [
-    "Fox News",
-    "21 Nov",
-    "https://www.foxnews.com/health/new-drug-combo-shrinks-tumors-most-patients-aggressive-cancer-type"
-   ],
-   [
-    "NewsNation",
-    "21 Nov",
-    "https://www.newsnationnow.com/health/pancreatic-cancer-drug-stops-tumor-growth/"
+    "https://www.euronews.com/2026/11/20/fiona-the-hippo-dies-after-swallowing-a-visitors-hat"
    ],
    [
     "WFLA - Tampa Bay",
-    "21 Nov",
-    "https://www.wfla.com/news/national/new-pancreatic-cancer-drug-stops-tumor-growth-study/"
-   ]
-  ],
-  "thing-thanksgiving-travelers-thankful-lower-gas-prices": [
-   [
-    "MarketWatch",
-    "21 Nov",
-    "https://www.marketwatch.com/bulletins/redirect/go?g=6bb78ea4-00af-4916-8720-0d396222d337&mod=mw_rss_bulletins"
-   ],
-   [
-    "Breitbart",
-    "21 Nov",
-    "https://www.breitbart.com/economy/2026/11/20/aaa-gas-prices-continue-dropping-demand-increasing/"
-   ],
-   [
-    "Oilprice.com",
-    "21 Nov",
-    "https://oilprice.com/Latest-Energy-News/World-News/Thanksgiving-Gas-Prices-Could-Break-a-Record-Despite-Recent-Plunge.html"
-   ]
-  ],
-  "manchester-united-xi-liverpool-confirmed-team-predicted": [
-   [
-    "City AM",
     "20 Nov",
-    "https://www.cityam.com/manchester-united-drone-youtuber-apologises/"
+    "https://www.wfla.com/news/national/fans-near-and-far-mourn-fiona-the-hippo-after-her-death-at-the-cincinnati-zoo/"
    ],
-   [
-    "Evening Standard",
-    "21 Nov",
-    "https://www.standard.co.uk/sport/football/man-utd-xi-vs-liverpool-fc-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1305631.html"
-   ],
-   [
-    "Al Jazeera English",
-    "21 Nov",
-    "https://www.aljazeera.com/sports/2026/11/21/liverpool-vs-manchester-united-premier-league-teams-prediction-lineups?traffic_source=rss"
-   ]
-  ],
-  "apples-rare-samsung-memory-plan-solve-problem": [
-   [
-    "MarketBeat",
-    "20 Nov",
-    "https://www.marketbeat.com/articles/apples-rare-samsung-memory-plan-could-solve-one-problem-and-create-another/"
-   ],
-   [
-    "Livemint",
-    "21 Nov",
-    "https://www.livemint.com/companies/samsung-reshuffles-top-leadership-for-2027-appoints-new-memory-and-smartphone-business-heads-11795249463352.html"
-   ],
-   [
-    "The Next Web",
-    "21 Nov",
-    "https://thenextweb.com/news/samsung-leadership-hwang-memory-choi-mobile-china-shipments"
-   ]
-  ],
-  "dow-p-500-close-correction-nasdaq-slides": [
-   [
-    "MarketWatch",
-    "20 Nov",
-    "https://www.marketwatch.com/bulletins/redirect/go?g=7584d1dd-3ec7-43fa-8e57-63eae6a76eed&mod=mw_rss_bulletins"
-   ],
-   [
-    "Bloomberg",
-    "21 Nov",
-    "https://www.bloomberg.com/news/audio/2026-11-21/stocks-close-lower-on-ai-selloff-anthropic-gives-up-gains-more"
-   ],
-   [
-    "Fox Business",
-    "21 Nov",
-    "https://www.foxbusiness.com/markets/wall-street-suffers-historic-losses-dow-sp-500-plunge-correction-territory"
-   ],
-   [
-    "Dawn",
-    "21 Nov",
-    "https://www.dawn.com/news/2046101/wall-street-ends-sharply-lower-on-ai-selloff-sampp-500-dow-in-correction"
-   ]
-  ],
-  "economy-doing-better-think-everyone": [
    [
     "The Hill",
     "20 Nov",
-    "https://thehill.com/opinion/finance/6231352-us-economy-outlook-2026/"
+    "https://thehill.com/homenews/senate/6234147-senate-honors-fiona-hippo/"
    ],
    [
-    "Bloomberg",
-    "21 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-21/world-economy-latest-japan-s-economy-slips-as-weather-dents-spending"
-   ],
-   [
-    "The New York Times",
-    "21 Nov",
-    "https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html"
-   ]
-  ],
-  "kemi-badenochs-conservatives-take-second-place-daily": [
-   [
-    "MoneyWeek",
+    "WGN News",
     "20 Nov",
-    "https://moneyweek.com/personal-finance/tax/poll-is-the-60-tax-trap-fair"
+    "https://wgntv.com/news/national/cincinnati-zoo-reveals-why-fiona-could-not-be-saved-after-eating-hat/"
+   ],
+   [
+    "Hindustan Times",
+    "21 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/exam-shows-that-the-hat-fiona-the-hippo-ate-was-deep-in-her-small-intestine-101795234664903.html"
    ],
    [
     "Daily Mail",
     "21 Nov",
-    "https://www.dailymail.com/news/article-16310189/Badenoch-Conservatives-second-place-Daily-Mail-poll.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+    "https://www.dailymail.com/news/article-16310091/fiona-hippo-cincinnati-zoo-death-swallowed-knitted-hat.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
    ],
    [
-    "The Rio Times",
+    "The Journal",
     "21 Nov",
-    "https://www.riotimesonline.com/spain-pp-leads-polls-ahead-of-nov-29-election/"
+    "https://www.thejournal.ie/mourners-fiona-the-hippo-7233497-Nov2026/"
+   ],
+   [
+    "American Wire News",
+    "21 Nov",
+    "https://americanwirenews.com/autopsy-findings-explain-why-fiona-the-hippo-could-not-be-saved/"
+   ],
+   [
+    "BizPac Review",
+    "21 Nov",
+    "https://www.bizpacreview.com/2026/11/21/autopsy-findings-explain-why-fiona-the-hippo-could-not-be-saved-1668527/"
+   ],
+   [
+    "CityNews Toronto",
+    "21 Nov",
+    "https://toronto.citynews.ca/2026/11/21/toronto-zoo-reviews-enclosures-and-policies-following-fiona-the-hippos-death/"
+   ],
+   [
+    "Global News",
+    "21 Nov",
+    "https://globalnews.ca/news/12161094/toronto-zoo-revies-following-fiona-death/"
    ]
   ],
-  "administration-tries-intervene-kalshi-threatened-restraining-order": [
+  "tech-stock-sell-off-drags-markets-down": [
    [
-    "CoinDesk",
+    "France 24",
     "20 Nov",
-    "https://www.coindesk.com/policy/2026/11/20/kalshi-races-to-get-ahead-of-new-york-order-that-could-shut-down-exchange"
+    "https://www.france24.com/en/business/20261120-anthropic-shares-slide-on-second-day-of-trading-as-ai-jitters-fuel-tech-sell-off"
    ],
    [
-    "ABC News (US)",
-    "21 Nov",
-    "https://abcnews.com/US/kalshi-prediction-market-crippled-judge-grants-restraining-order/story?id=138329957"
+    "The Wall Street Journal",
+    "20 Nov",
+    "https://www.wsj.com/finance/stocks/nikkei-falls-2-9-dragged-by-chip-metals-stocks-0601645e?mod=rss_markets_main"
    ],
    [
-    "The Block",
+    "Daily Mail",
+    "20 Nov",
+    "https://www.dailymail.com/money/markets/article-16308725/Tech-stocks-slide-Anthropic-debut-fails-ease-investors-concerns-AI-spending-spree.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "This is Money",
+    "20 Nov",
+    "https://www.thisismoney.co.uk/money/markets/article-16308725/Tech-stocks-slide-Anthropic-debut-fails-ease-investors-concerns-AI-spending-spree.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "Investors Business Daily",
+    "20 Nov",
+    "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-anthropic-stock-ant/"
+   ],
+   [
+    "Sky News",
+    "20 Nov",
+    "https://news.sky.com/story/anthropic-among-big-fallers-in-global-stock-market-rout-13614361"
+   ],
+   [
+    "Financial Times",
+    "20 Nov",
+    "https://www.ft.com/content/23fa83d8-e078-4853-959e-bd1f19d14ff5?syn-25a6b1a6=1"
+   ],
+   [
+    "NBC News",
+    "20 Nov",
+    "https://www.nbcnews.com/business/markets/anthropic-shares-markets-selloff-nasdaq-rcna610394"
+   ],
+   [
+    "CBS News",
+    "20 Nov",
+    "https://www.cbsnews.com/news/dow-tumbles-wall-street-ai-fears/"
+   ],
+   [
+    "Benzinga",
+    "20 Nov",
+    "https://www.benzinga.com/markets/equities/26/11/63480090/nasdaq-100-stocks-bear-market-black-friday-nvidia-qqq"
+   ],
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/opinion/international/6231063-xi-economic-plans-failing/"
+   ],
+   [
+    "US Top News and Analysis",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/sp-500-8000-kalshi-odds-ai-selloff.html"
+   ],
+   [
+    "Kiplinger",
+    "20 Nov",
+    "https://www.kiplinger.com/investing/stocks/nasdaq-dives-1-261-points-as-anthropic-ai-stocks-sink-stock-market-today"
+   ],
+   [
+    "NPR",
+    "20 Nov",
+    "https://www.npr.org/2026/11/20/nx-s1-6048645/tech-stocks-end-the-week-on-a-down-note-despite-anthropics-mega-ipo"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Hindustan Times",
     "21 Nov",
-    "https://www.theblock.co/news/regulation/2026-11-21-kalshi-faces-monday-hearing-on-new-york-order-it-says-would-shut-down-its-exchange-nationwide-444813"
+    "https://www.hindustantimes.com/world-news/us-news/nvidia-stock-crash-record-wipeout-in-market-cap-deepens-global-tech-selloff-101795219446825.html"
+   ],
+   [
+    "Washington Post",
+    "21 Nov",
+    "https://www.washingtonpost.com/business/2026/11/21/sudden-reversal-stock-market-what-comes-next/"
+   ],
+   [
+    "CNBC",
+    "21 Nov",
+    "https://www.cnbc.com/2026/11/20/anthropic-ipo-ai-stock-market-selloff.html"
    ]
   ],
-  "japan-core-inflation-soars-highest-energy-subsidy": [
+  "strait-hormuz-athlete-swims-through-war-zone": [
+   [
+    "Euronews",
+    "21 Nov",
+    "https://www.euronews.com/video/2026/11/21/strait-of-hormuz-athlete-swims-through-war-zone-to-expose-wars-environmental-toll"
+   ],
+   [
+    "Evening Standard",
+    "21 Nov",
+    "https://www.standard.co.uk/news/uk/strait-of-hormuz-briton-ed-miliband-british-israel-b1305815.html"
+   ],
+   [
+    "GB News",
+    "21 Nov",
+    "https://www.gbnews.com/news/lewis-pugh-strait-of-hormuz-swim-iran-war"
+   ],
+   [
+    "Haaretz",
+    "21 Nov",
+    "https://www.haaretz.com/middle-east-news/iran/2026-11-21/ty-article/two-oil-tankers-hit-by-unidentified-projectiles-near-strait-of-hormuz/000001a1-fe7c-dad7-a9fd-fe7f22a00000"
+   ],
+   [
+    "NDTV",
+    "21 Nov",
+    "https://www.ndtv.com/world-news/2-tankers-struck-in-strait-of-hormuz-iran-says-oil-vessel-on-fire-12359557#publisher=newsstand"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/endurance-athlete-swims-in-hormuz-strait"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/c95y1gr27xplo?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Al-Monitor",
+    "21 Nov",
+    "https://www.al-monitor.com/originals/2026/11/uk-man-swims-strait-hormuz-highlight-environmental-damage"
+   ],
+   [
+    "The Journal",
+    "21 Nov",
+    "https://www.thejournal.ie/lewis-pugh-swim-strait-of-hormuz-7233679-Nov2026/"
+   ],
+   [
+    "The Straits Times",
+    "21 Nov",
+    "https://www.straitstimes.com/world/middle-east/british-man-swims-in-strait-of-hormuz-to-highlight-environmental-damage"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16311299/British-ocean-campaigner-swim-Strait-Hormuz.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "Sydney Morning Herald",
+    "21 Nov",
+    "https://www.smh.com.au/world/middle-east/endurance-swimmer-tackles-strait-of-hormuz-20261122-p61g8h.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+   ],
+   [
+    "The Age",
+    "21 Nov",
+    "https://www.theage.com.au/world/middle-east/endurance-swimmer-tackles-strait-of-hormuz-20261122-p61g8h.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+   ],
+   [
+    "7NEWS",
+    "22 Nov",
+    "https://7news.com.au/sport/swimming/endurance-athlete-lewis-pugh-recalls-panic-minutes-into-swim-through-war-torn-strait-of-hormuz-two-booms-c-23196294"
+   ]
+  ],
+  "cold-gives-way-rain-parts-weather-warning": [
+   [
+    "DublinLive",
+    "20 Nov",
+    "https://www.dublinlive.ie/news/dublin-news/ireland-weather-met-eireann-issues-34942531"
+   ],
+   [
+    "The Journal",
+    "21 Nov",
+    "https://www.thejournal.ie/rain-warning-cork-kerry-waterford-7233361-Nov2026/"
+   ],
+   [
+    "WITI - FOX 6 - Milwaukee",
+    "21 Nov",
+    "https://www.fox6now.com/weather/milwaukee-weather-forecast-today-112126"
+   ],
+   [
+    "Wales Online",
+    "21 Nov",
+    "https://www.walesonline.co.uk/news/uk-news/uk-weather-warning-issued-heavy-34947304"
+   ],
+   [
+    "Bristol Post",
+    "21 Nov",
+    "https://www.bristolpost.co.uk/news/uk-world-news/heavy-rain-warning-south-west-11250730"
+   ],
+   [
+    "WOFL Fox 35 Orlando",
+    "21 Nov",
+    "https://www.fox35orlando.com/weather/orlando-weather-heavy-rain-moves-out-river-flooding-moves"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/uk-news/2026/nov/21/uk-weather-cold-rain-warning-south-west-england"
+   ],
+   [
+    "PlymouthLive",
+    "21 Nov",
+    "https://www.plymouthherald.co.uk/news/plymouth-news/plymouth-issued-17-hour-wall-11250901"
+   ]
+  ],
+  "veteran-journalist-david-mckittrick-dies-aged-77": [
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cmkgd515jp47o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "RTÉ News",
+    "21 Nov",
+    "https://www.rte.ie/news/ireland/2026/1121/1600142-veteran-journalist-david-mckittrick-dies-aged-77/"
+   ],
+   [
+    "Evening Standard",
+    "21 Nov",
+    "https://www.standard.co.uk/news/uk/irish-times-northern-ireland-belfast-independent-the-economist-b1305843.html"
+   ],
+   [
+    "Belfast Telegraph",
+    "21 Nov",
+    "https://www.belfasttelegraph.co.uk/news/northern-ireland/renowned-troubles-journalist-david-mckittrick-dies-aged-77/a/164908255.html"
+   ],
+   [
+    "The Journal",
+    "21 Nov",
+    "https://www.thejournal.ie/david-mckittrick-death-7233862-Nov2026/"
+   ],
+   [
+    "Belfast Live",
+    "21 Nov",
+    "https://www.belfastlive.co.uk/news/northern-ireland/renowned-troubles-journalist-david-mckittrick-34948658"
+   ]
+  ],
+  "early-alzheimers-disease-warning-sign-seen-body": [
+   [
+    "Latest Science News -- ScienceDaily",
+    "20 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261118065536.htm"
+   ],
+   [
+    "Wales Online",
+    "21 Nov",
+    "https://www.walesonline.co.uk/news/health/body-symptom-linked-alzheimers-disease-34937749"
+   ],
+   [
+    "Daily Mirror",
+    "21 Nov",
+    "https://www.mirror.co.uk/news/health/early-alzheimers-disease-warning-sign-37895815"
+   ],
+   [
+    "ABC7 New York",
+    "21 Nov",
+    "https://abc7ny.com/post/bill-ritter-sits-down-gail-washington-talk-healthy-habits-fighting-alzheimers-disease/20060340/"
+   ]
+  ],
+  "bitcoins-regulation-bull-case-played-drive-crypto": [
    [
     "CNBC",
     "20 Nov",
-    "https://www.cnbc.com/2026/11/20/japan-inflation-cpi-october.html"
+    "https://www.cnbc.com/2026/11/20/bitcoin-price-catalysts-tokenization-regulation.html"
    ],
    [
-    "Jacobin",
+    "Cointelegraph",
     "21 Nov",
-    "https://jacobin.com/2026/11/inflation-austerity-oil-class-sweden"
-   ],
-   [
-    "Bloomberg",
-    "21 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-21/us-consumers-are-holding-up-against-inflation-going-into-holiday-season"
-   ]
-  ],
-  "physician-explains-glp-1s-biggest-potential-side": [
-   [
-    "Nautilus",
-    "20 Nov",
-    "https://nautil.us/a-physician-explains-glp-1s-biggest-potential-side-effect-a-rare-but-serious-eye-condition-1286851/"
-   ],
-   [
-    "Medical Xpress",
-    "21 Nov",
-    "https://medicalxpress.com/news/2026-11-soaring-demand-glp-1s-eligible.html"
-   ],
-   [
-    "Inc.com",
-    "21 Nov",
-    "https://www.inc.com/avery-miles/a-massive-study-of-250000-patients-just-revealed-a-surprising-new-use-for-glp-1s/91436392"
-   ]
-  ],
-  "james-webb-telescope-spots-giant-star-swallowing": [
-   [
-    "Live Science",
-    "20 Nov",
-    "https://www.livescience.com/space/astronomers-spot-giant-star-swallowing-its-companion-in-first-ever-observations-of-a-stellar-merger"
-   ],
-   [
-    "Ars Technica",
-    "20 Nov",
-    "https://arstechnica.com/science/2026/11/astronomers-watched-a-star-spiral-to-its-death-inside-a-giant-companion/"
-   ],
-   [
-    "ScienceDaily",
-    "21 Nov",
-    "https://www.sciencedaily.com/releases/2026/11/261120075556.htm"
-   ]
-  ],
-  "black-hole-information-paradox": [
-   [
-    "Big Think",
-    "20 Nov",
-    "https://bigthink.com/series/full-interview/black-holes-greene/"
-   ],
-   [
-    "Space.com",
-    "20 Nov",
-    "https://www.space.com/astronomy/black-holes/einstein-was-right-scientists-verify-1st-image-of-a-black-hole-ever-captured"
+    "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
    ],
    [
     "Citizen Free Press",
     "21 Nov",
-    "https://citizenfreepress.com/breaking/scientists-verify-first-image-of-black-hole-einstein-was-correct/"
+    "https://citizenfreepress.com/breaking/investors-are-giving-up-on-crypto/"
+   ]
+  ],
+  "tiktok-launches-tool-detect-use-deepfakes-globally": [
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/business/2026/1120/1599945-tiktok-deep-fakes/"
+   ],
+   [
+    "Euractiv",
+    "20 Nov",
+    "https://www.rapporteur.com/news/germany-pitches-a-european-tiktok/"
+   ],
+   [
+    "Forbes",
+    "21 Nov",
+    "https://www.forbes.com/sites/catherineerdly/2026/11/21/tiktok-live-is-driving-sales-and-footfall-for-brick-and-mortar-stores/"
+   ]
+  ],
+  "tentative-deal-averts-strike-threat-busiest-u": [
+   [
+    "Bloomberg",
+    "21 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-21/los-angeles-port-strike-threat-resolved-with-tentative-agreement"
+   ],
+   [
+    "The Wall Street Journal",
+    "21 Nov",
+    "https://www.wsj.com/logistics-report/tentative-deal-averts-strike-threat-at-busiest-u-s-ports-6f9a60d1?mod=pls_whats_news_us_business_f"
+   ],
+   [
+    "Freightwaves",
+    "21 Nov",
+    "https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach"
+   ]
+  ],
+  "government-stockpiling-push-helps-boost-retail-sales": [
+   [
+    "ONS",
+    "20 Nov",
+    "https://www.ons.gov.uk/releases/retailsalesgreatbritainoctober2026"
+   ],
+   [
+    "Sky News",
+    "20 Nov",
+    "https://news.sky.com/story/emergency-items-give-surprise-lift-to-retail-sales-13614254"
+   ],
+   [
+    "City AM",
+    "20 Nov",
+    "https://www.cityam.com/retail-sales-beat-expectations-as-brits-follow-stockpiling-advice/"
+   ],
+   [
+    "Retail Gazette",
+    "20 Nov",
+    "https://www.retailgazette.co.uk/blog/2026/11/retail-sales-bounce-back-as-shoppers-stock-up-on-emergency-supplies/"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/ck053mzy2qqeo?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring"
+   ]
+  ],
+  "mexico-el-chapo-isidro-capture": [
+   [
+    "Hindustan Times",
+    "21 Nov",
+    "https://www.hindustantimes.com/world-news/el-chapo-isidro-arrest-cartel-and-security-forces-clash-in-mexicos-guasave-region-watch-videos-fausto-isidro-meza-flores-101795241163082.html"
+   ],
+   [
+    "Citizen Free Press",
+    "21 Nov",
+    "https://citizenfreepress.com/breaking/fbi-most-wanted-cartel-leader-captured/"
+   ],
+   [
+    "NDTV",
+    "21 Nov",
+    "https://www.ndtv.com/world-news/el-chapo-isidro-meza-flores-video-black-hawk-choppers-rain-fire-in-dramatic-capture-of-mexican-drug-lord-12358558#publisher=newsstand"
+   ],
+   [
+    "The Express Tribune",
+    "21 Nov",
+    "https://tribune.com.pk/story/2641555/mexico-captures-top-drug-lord-el-chapo-isidro-latest-in-string-of-arrests"
+   ],
+   [
+    "Fox News",
+    "21 Nov",
+    "https://www.foxnews.com/world/fbi-ten-most-wanted-cartel-leader-chapo-isidro-captured-mexicos-elite-military-forces-us-help"
+   ],
+   [
+    "India Today",
+    "21 Nov",
+    "https://www.indiatoday.in/world/story/el-chapo-isidro-arrest-how-fbi-fugitive-captured-in-mexico-chaotic-military-operation-3044004-2026-11-21?utm_source=rss"
+   ],
+   [
+    "MyNorthwest",
+    "21 Nov",
+    "https://mynorthwest.com/world/mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives/4303074"
+   ],
+   [
+    "Sky News",
+    "21 Nov",
+    "https://news.sky.com/story/suspected-cartel-leader-el-chapo-isidro-from-fbi-most-wanted-list-captured-in-mexico-13614689"
+   ],
+   [
+    "Toledo Blade",
+    "21 Nov",
+    "https://www.toledoblade.com/news/World/2026/11/21/mexico-detains-top-cartel-boss-el-chapo-isidro/stories/20261121079"
+   ],
+   [
+    "Euronews",
+    "21 Nov",
+    "https://www.euronews.com/2026/11/21/mexico-captures-fbis-most-wanted-cartel-boss-el-chapo-isidro-triggering-violence"
+   ],
+   [
+    "The Straits Times",
+    "21 Nov",
+    "https://www.straitstimes.com/world/mexico-captures-top-drug-lord-el-chapo-isidro-latest-in-string-of-captures"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/americas/20261121-mexico-captures-drug-cartel-boss-el-chapo-isidro-after-deadly-firefight"
+   ],
+   [
+    "RTÉ News",
+    "21 Nov",
+    "https://www.rte.ie/news/world/2026/1121/1600134-mexico-drugs-fbi/"
+   ],
+   [
+    "Bloomberg",
+    "21 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-21/mexico-arrests-sinaloa-drug-kingpin-on-fbi-s-most-wanted-list"
+   ],
+   [
+    "The Journal",
+    "21 Nov",
+    "https://www.thejournal.ie/chapo-isidro-capture-sinaloa-cartel-mexico-7233526-Nov2026/"
+   ],
+   [
+    "Washington Post",
+    "21 Nov",
+    "https://www.washingtonpost.com/world/2026/11/21/mexico-seizes-cartel-boss-el-chapo-isidro-among-fbis-most-wanted/"
+   ],
+   [
+    "Al Jazeera English",
+    "21 Nov",
+    "https://www.aljazeera.com/news/2026/11/21/who-is-el-chapo-isidro-the-alleged-cartel-boss-arrested-in-mexico?traffic_source=rss"
+   ],
+   [
+    "RedState",
+    "21 Nov",
+    "https://redstate.com/joesquire/2026/11/21/mexico-captures-fbi-top-10-fugitive-chapo-isidro-n2209653"
+   ],
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/2026/11/21/world/americas/mexico-el-chapo-isidro-drug-kingpin.html"
+   ],
+   [
+    "Mexico News Daily",
+    "21 Nov",
+    "https://mexiconewsdaily.com/news/chapo-isidro-capture-sinaloa/"
+   ],
+   [
+    "Washington Examiner",
+    "21 Nov",
+    "https://www.washingtonexaminer.com/news/crime/4811249/mexico-capture-cartel-leader-top-10-wanted/"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/world/2026/nov/21/alleged-mexican-drug-cartel-boss-el-chapo-isidro-meza-flores-arrested"
+   ],
+   [
+    "Breitbart",
+    "21 Nov",
+    "https://www.breitbart.com/border/2026/11/21/mexico-arrest-sinaloa-kingpin-after-fierce-gun-battle/"
+   ],
+   [
+    "NPR",
+    "21 Nov",
+    "https://www.npr.org/2026/11/21/nx-s1-6049672/cartel-boss-el-chapo-isidro-detained"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16311215/drug-cartel-fbi-wanted-mexico-chapo-isidro.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "PBS NewsHour",
+    "21 Nov",
+    "https://www.pbs.org/newshour/world/mexico-detains-top-cartel-boss-el-chapo-isidro-setting-off-a-burst-of-violence-in-sinaloa"
+   ],
+   [
+    "The West Australian",
+    "21 Nov",
+    "https://thewest.com.au/news/crime/mexico-nabs-top-cartel-boss-one-of-fbi-10-most-wanted-c-23195744"
+   ],
+   [
+    "The Hindu",
+    "21 Nov",
+    "https://www.thehindu.com/news/international/11-killed-in-burst-of-violence-in-northern-mexico-after-capture-of-cartel-leader-meza-flores/article71729468.ece"
+   ],
+   [
+    "Global News",
+    "21 Nov",
+    "https://globalnews.ca/news/12161000/mexico-cartel-leader-captured/"
+   ],
+   [
+    "Financial Times",
+    "21 Nov",
+    "https://www.ft.com/content/90a8d0bd-32c8-471a-8696-e95555e41b78?syn-25a6b1a6=1"
+   ],
+   [
+    "Hot Air",
+    "21 Nov",
+    "https://hotair.com/john-s-2/2026/11/21/mexico-captures-cartel-leader-on-the-fbis-most-wanted-list-n3821236"
+   ],
+   [
+    "ABC News (US)",
+    "21 Nov",
+    "https://abcnews.com/International/mexican-cartel-leader-fbis-10-wanted-fugitive-list/story?id=138346100"
+   ],
+   [
+    "CNBC",
+    "21 Nov",
+    "https://www.cnbc.com/2026/11/21/mexico-drug-lord-el-chapo-isidro.html"
+   ],
+   [
+    "CBS News",
+    "21 Nov",
+    "https://www.cbsnews.com/news/mexico-drug-kingpin-arrest-fausto-isidro-meza-flores-sinaloa/"
+   ],
+   [
+    "New York Post",
+    "21 Nov",
+    "https://nypost.com/2026/11/21/us-news/mexican-drug-lord-chapo-isidro-captured-in-deadly-raid-that-killed-11-including-4-soldiers/"
+   ],
+   [
+    "Off The Press",
+    "21 Nov",
+    "https://offthepress.com/r/183084?c=rss"
+   ],
+   [
+    "NBC News",
+    "21 Nov",
+    "https://www.nbcnews.com/nightly-news/video/deadly-raid-captures-top-cartel-boss-in-mexico-273965637918"
+   ],
+   [
+    "KTLA",
+    "22 Nov",
+    "https://ktla.com/news/nationworld/ap-mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives/"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "22 Nov",
+    "https://wtop.com/world/2026/11/mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives-in-overnight-raid/"
+   ],
+   [
+    "NewsNation",
+    "22 Nov",
+    "https://www.newsnationnow.com/world/ap-mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives/"
+   ],
+   [
+    "The Jerusalem Post",
+    "22 Nov",
+    "https://www.jpost.com/international/article-915658"
    ]
   ],
   "fbi-criminal-database-hack": [
@@ -2882,148 +2116,6 @@ window.DAYBREAK = {
     "BBC News",
     "22 Nov",
     "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss"
-   ]
-  ],
-  "mexico-el-chapo-isidro-capture": [
-   [
-    "Citizen Free Press",
-    "21 Nov",
-    "https://citizenfreepress.com/breaking/fbi-most-wanted-cartel-leader-captured/"
-   ],
-   [
-    "Fox News",
-    "21 Nov",
-    "https://www.foxnews.com/world/fbi-ten-most-wanted-cartel-leader-chapo-isidro-captured-mexicos-elite-military-forces-us-help"
-   ],
-   [
-    "MyNorthwest",
-    "21 Nov",
-    "https://mynorthwest.com/world/mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives/4303074"
-   ],
-   [
-    "Sky News",
-    "21 Nov",
-    "https://news.sky.com/story/suspected-cartel-leader-el-chapo-isidro-from-fbi-most-wanted-list-captured-in-mexico-13614689"
-   ],
-   [
-    "Euronews",
-    "21 Nov",
-    "https://www.euronews.com/2026/11/21/mexico-captures-fbis-most-wanted-cartel-boss-el-chapo-isidro-triggering-violence"
-   ],
-   [
-    "France 24",
-    "21 Nov",
-    "https://www.france24.com/en/americas/20261121-mexico-captures-drug-cartel-boss-el-chapo-isidro-after-deadly-firefight"
-   ],
-   [
-    "The Journal",
-    "21 Nov",
-    "https://www.thejournal.ie/chapo-isidro-capture-sinaloa-cartel-mexico-7233526-Nov2026/"
-   ],
-   [
-    "Washington Post",
-    "21 Nov",
-    "https://www.washingtonpost.com/world/2026/11/21/mexico-seizes-cartel-boss-el-chapo-isidro-among-fbis-most-wanted/"
-   ],
-   [
-    "Al Jazeera English",
-    "21 Nov",
-    "https://www.aljazeera.com/news/2026/11/21/who-is-el-chapo-isidro-the-alleged-cartel-boss-arrested-in-mexico?traffic_source=rss"
-   ],
-   [
-    "RedState",
-    "21 Nov",
-    "https://redstate.com/joesquire/2026/11/21/mexico-captures-fbi-top-10-fugitive-chapo-isidro-n2209653"
-   ],
-   [
-    "Washington Examiner",
-    "21 Nov",
-    "https://www.washingtonexaminer.com/news/crime/4811249/mexico-capture-cartel-leader-top-10-wanted/"
-   ],
-   [
-    "Breitbart",
-    "21 Nov",
-    "https://www.breitbart.com/border/2026/11/21/mexico-arrest-sinaloa-kingpin-after-fierce-gun-battle/"
-   ],
-   [
-    "NPR",
-    "21 Nov",
-    "https://www.npr.org/2026/11/21/nx-s1-6049672/cartel-boss-el-chapo-isidro-detained"
-   ],
-   [
-    "Daily Mail",
-    "21 Nov",
-    "https://www.dailymail.com/news/article-16311215/drug-cartel-fbi-wanted-mexico-chapo-isidro.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-   ],
-   [
-    "PBS NewsHour",
-    "21 Nov",
-    "https://www.pbs.org/newshour/world/mexico-detains-top-cartel-boss-el-chapo-isidro-setting-off-a-burst-of-violence-in-sinaloa"
-   ],
-   [
-    "Hindustan Times",
-    "21 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/11-killed-in-burst-of-violence-in-northern-mexico-after-capture-of-cartel-leader-101795289073478.html"
-   ],
-   [
-    "The West Australian",
-    "21 Nov",
-    "https://thewest.com.au/news/crime/mexico-nabs-top-cartel-boss-one-of-fbi-10-most-wanted-c-23195744"
-   ],
-   [
-    "The Hindu",
-    "21 Nov",
-    "https://www.thehindu.com/news/international/11-killed-in-burst-of-violence-in-northern-mexico-after-capture-of-cartel-leader-meza-flores/article71729468.ece"
-   ],
-   [
-    "Global News",
-    "21 Nov",
-    "https://globalnews.ca/news/12161000/mexico-cartel-leader-captured/"
-   ],
-   [
-    "Financial Times",
-    "21 Nov",
-    "https://www.ft.com/content/90a8d0bd-32c8-471a-8696-e95555e41b78?syn-25a6b1a6=1"
-   ],
-   [
-    "Hot Air",
-    "21 Nov",
-    "https://hotair.com/john-s-2/2026/11/21/mexico-captures-cartel-leader-on-the-fbis-most-wanted-list-n3821236"
-   ],
-   [
-    "ABC News (US)",
-    "21 Nov",
-    "https://abcnews.com/International/mexican-cartel-leader-fbis-10-wanted-fugitive-list/story?id=138346100"
-   ],
-   [
-    "CBS News",
-    "21 Nov",
-    "https://www.cbsnews.com/news/mexico-drug-kingpin-arrest-fausto-isidro-meza-flores-sinaloa/"
-   ],
-   [
-    "NBC News",
-    "21 Nov",
-    "https://www.nbcnews.com/nightly-news/video/deadly-raid-captures-top-cartel-boss-in-mexico-273965637918"
-   ],
-   [
-    "The New York Times",
-    "22 Nov",
-    "https://www.nytimes.com/2026/11/21/world/americas/mexico-captures-drug-kingpin.html"
-   ],
-   [
-    "KTLA",
-    "22 Nov",
-    "https://ktla.com/news/nationworld/ap-mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives/"
-   ],
-   [
-    "Washington's Top News (WTOP)",
-    "22 Nov",
-    "https://wtop.com/world/2026/11/mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives-in-overnight-raid/"
-   ],
-   [
-    "NewsNation",
-    "22 Nov",
-    "https://www.newsnationnow.com/world/ap-mexico-detains-top-cartel-boss-el-chapo-isidro-one-of-fbis-10-most-wanted-fugitives/"
    ]
   ],
   "riemann-hypothesis-ai-proof-claim": [
@@ -3290,6 +2382,489 @@ window.DAYBREAK = {
     "https://www.dailymail.com/news/article-16311113/Cancer-Kate-disease-new-BBC-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
    ]
   ],
+  "jonathan-rinderknecht-found-guilty-palisades-fire-arson": [
+   [
+    "KTTV - Fox 11 - Los Angeles",
+    "20 Nov",
+    "https://www.foxla.com/news/palisades-fire-verdict-retrial-jonathan-rinderknecht"
+   ],
+   [
+    "NBC News",
+    "20 Nov",
+    "https://www.nbcnews.com/news/us-news/pacific-palisades-fire-retrial-jonathan-rinderknecht-rcna610336"
+   ],
+   [
+    "Bloomberg",
+    "20 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-20/man-is-found-guilty-of-setting-2025-pacific-palisades-fires"
+   ],
+   [
+    "KTLA",
+    "20 Nov",
+    "https://ktla.com/news/local-news/palisades-fire-trial-verdict-jonathan-rinderknecht/"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "20 Nov",
+    "https://www.wfla.com/news/jury-convicts-florida-man-of-starting-2025-palisades-fire-that-killed-12/"
+   ],
+   [
+    "Citizen Free Press",
+    "20 Nov",
+    "https://citizenfreepress.com/breaking/palisades-arsonist-found-guilty-on-all-counts/"
+   ],
+   [
+    "RTÉ News",
+    "21 Nov",
+    "https://www.rte.ie/news/world/2026/1121/1600087-suspect-in-deadly-palisades-fire-in-la-convicted-of-arson/"
+   ],
+   [
+    "PBS NewsHour",
+    "21 Nov",
+    "https://www.pbs.org/newshour/nation/federal-jury-convicts-man-of-starting-deadly-2025-palisades-fire-in-los-angeles"
+   ],
+   [
+    "Hindustan Times",
+    "21 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/jonathan-rinderknecht-found-guilty-of-starting-deadly-palisades-fire-that-killed-12-101795218622963.html"
+   ],
+   [
+    "KTVU Fox 2",
+    "21 Nov",
+    "https://www.ktvu.com/news/palisade-fire-retrial-jonathan-rinderknecht-guilty"
+   ],
+   [
+    "The Post Millennial",
+    "21 Nov",
+    "https://thepostmillennial.com/news/man-who-started-deadly-palisades-fire-found-guilty-in-retrial"
+   ],
+   [
+    "WGN News",
+    "21 Nov",
+    "https://wgntv.com/news/national/jonathan-rinderknecht-found-guilty-of-sparking-blaze-that-became-deadly-palisades-fire/"
+   ],
+   [
+    "The Hill",
+    "21 Nov",
+    "https://thehill.com/homenews/state-watch/6234829-uber-driver-palisades-fire-conviction/"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/c64gn0gy8rj3o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "21 Nov",
+    "https://abc7.com/post/jonathan-rinderknecht-found-guilty-setting-blaze-became-palisades-fire-during-retrial/20060892/"
+   ],
+   [
+    "GB News",
+    "21 Nov",
+    "https://www.gbnews.com/news/us/palisades-fire-former-uber-driver-found-guilty"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/man-convicted-of-arson-over-deadly-2025-palisades-fire-in-los-angeles/a-80007933?maca=en-rss-en-world-4025-xml-mrss"
+   ],
+   [
+    "The Journal",
+    "21 Nov",
+    "https://www.thejournal.ie/jonathan-rinderknecht-conviction-palisades-fire-7233309-Nov2026/"
+   ],
+   [
+    "American Wire News",
+    "21 Nov",
+    "https://americanwirenews.com/former-uber-driver-guilty-of-starting-palisades-fire-that-killed-12/"
+   ],
+   [
+    "BizPac Review",
+    "21 Nov",
+    "https://www.bizpacreview.com/2026/11/21/former-uber-driver-guilty-of-starting-palisades-fire-that-killed-12-1668477/"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/man-convicted-of-starting-palisades-fire"
+   ],
+   [
+    "Taipei Times",
+    "22 Nov",
+    "https://www.taipeitimes.com/News/world/archives/2026/11/22/2003868192"
+   ],
+   [
+    "Legal Insurrection",
+    "22 Nov",
+    "https://legalinsurrection.com/2026/11/jury-convicts-jonathan-rinderknecht-in-palisades-fire-retrial/?utm_source=rss&utm_medium=rss&utm_campaign=jury-convicts-jonathan-rinderknecht-in-palisades-fire-retrial"
+   ]
+  ],
+  "climate-money-africa-europe-use-whats-already": [
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/c6074k5jjrzko?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Euractiv",
+    "20 Nov",
+    "https://www.rapporteur.com/news/voltage-cop31-to-drop-fossil-fuel-exit/"
+   ],
+   [
+    "Phys.org",
+    "20 Nov",
+    "https://phys.org/news/2026-11-climate-crunch-sight.html"
+   ],
+   [
+    "Financial Times",
+    "20 Nov",
+    "https://www.ft.com/content/134dcef4-9453-48bd-bcbd-4180818d3aca?syn-25a6b1a6=1"
+   ],
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/world/2026/1120/1599970-cop31-turkey/"
+   ],
+   [
+    "Mongabay",
+    "20 Nov",
+    "https://news.mongabay.com/2026/11/fossil-fuels-role-in-africas-energy-transition-contested-as-un-climate-conference-closes/"
+   ],
+   [
+    "The New York Times",
+    "20 Nov",
+    "https://www.nytimes.com/2026/11/19/climate/cop31-turkey-event-scene.html"
+   ],
+   [
+    "Euronews",
+    "20 Nov",
+    "https://www.euronews.com/video/2026/11/20/turkey-activists-chant-shame-as-cop31-negotiations-falter"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/world/live/2026/nov/20/cop31-climate-crisis-talks-turkey-latest-news-updates"
+   ],
+   [
+    "DW News",
+    "20 Nov",
+    "https://www.dw.com/en/cop31-no-agreement-on-climate-science-disinformation-spreading/a-80004894?maca=en-rss_en_environment-22607-xml-mrss"
+   ],
+   [
+    "RNZ",
+    "20 Nov",
+    "https://www.rnz.co.nz/news/pacific/2709824/stark-warning-over-fossil-fuels-from-pacific-at-cop31"
+   ],
+   [
+    "The Straits Times",
+    "21 Nov",
+    "https://www.straitstimes.com/world/nations-row-over-fossil-fuels-as-cop31-goes-into-overtime"
+   ],
+   [
+    "The Express Tribune",
+    "21 Nov",
+    "https://tribune.com.pk/story/2641551/cop31-climate-summit-risks-failure-as-talks-go-deep-into-overtime"
+   ],
+   [
+    "Irish Independent",
+    "21 Nov",
+    "https://www.independent.ie/world-news/cop31-climate-summit-risks-failure-as-talks-go-deep-into-overtime/a/164903083.html"
+   ],
+   [
+    "Al-Monitor",
+    "21 Nov",
+    "https://www.al-monitor.com/originals/2026/11/cop31-climate-summit-risks-failure-talks-go-deep-overtime"
+   ],
+   [
+    "Rappler",
+    "21 Nov",
+    "https://www.rappler.com/world/global-affairs/cop31-risks-failure-november-21-2026/"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/countries-race-to-secure-cop31-deal"
+   ],
+   [
+    "Channel 4 News",
+    "21 Nov",
+    "https://www.channel4.com/news/cop31-climate-talks-in-deadlock-over-new-deal"
+   ],
+   [
+    "KFGO - 790 AM - Fargo",
+    "21 Nov",
+    "https://kfgo.com/2026/11/21/cop31-climate-talks-close-to-final-deal-says-summit-president/"
+   ],
+   [
+    "Investing.com",
+    "21 Nov",
+    "https://www.investing.com/news/commodities-news/cop31-climate-talks-close-to-final-deal-says-summit-president-5043619"
+   ],
+   [
+    "The West Australian",
+    "21 Nov",
+    "https://thewest.com.au/business/cop31-climate-talks-edging-close-to-final-deal-c-23196283"
+   ]
+  ],
+  "love-carjackings-video-game": [
+   [
+    "The New York Times",
+    "20 Nov",
+    "https://www.nytimes.com/2026/11/19/world/gta-anthropic-shenzhen-summit.html"
+   ],
+   [
+    "ABC News (US)",
+    "20 Nov",
+    "https://abcnews.com/video/138313101/"
+   ],
+   [
+    "Wired",
+    "20 Nov",
+    "https://www.wired.com/story/gta-vi-is-finally-out-dont-rush-it/"
+   ],
+   [
+    "Daily Mail",
+    "20 Nov",
+    "https://www.dailymail.com/sciencetech/article-16308353/bonkers-moments-grand-theft-auto-6.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "Fast Company",
+    "20 Nov",
+    "https://www.fastcompany.com/91646100/i-voiced-a-character-in-grand-theft-auto-i-never-expected-her-to-follow-me-for-17-years?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss"
+   ],
+   [
+    "The Conversation UK",
+    "20 Nov",
+    "https://theconversation.com/grand-theft-auto-represented-a-satirical-vision-of-america-the-absurdity-of-reality-has-tipped-the-game-into-empathy-297076"
+   ],
+   [
+    "France 24",
+    "20 Nov",
+    "https://www.france24.com/en/tv-shows/scoop/20261120-gta-vi-when-the-biggest-ever-entertainment-release-becomes-the-biggest-headline"
+   ],
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/homenews/house/6232789-gop-rep-warns-parents-gta-6/"
+   ],
+   [
+    "CBS News",
+    "20 Nov",
+    "https://www.cbsnews.com/video/grand-theft-auto-vi-on-track-to-shatter-records-as-game-launches-to-rave-reviews/"
+   ],
+   [
+    "HuffPost UK",
+    "20 Nov",
+    "https://www.huffingtonpost.co.uk/entry/gta-vi-sales-figures-more-money-odyssey_uk_6b006d88e4b0976dc4a309be"
+   ],
+   [
+    "Investors Business Daily",
+    "20 Nov",
+    "https://www.investors.com/news/technology/ttwo-stock-gta-6-smashes-sales-records/"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/games/2026/nov/20/grand-theft-auto-vi-players-review"
+   ],
+   [
+    "Inc.com",
+    "20 Nov",
+    "https://www.inc.com/alexis-franzese/the-grand-theft-auto-vi-launch-is-the-perfect-lesson-in-workplace-trade-offs/91440366"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "20 Nov",
+    "https://www.wfla.com/entertainment-news/ap-entertainment/grand-theft-auto-vi-sets-record-with-3-79b-in-first-day-retail-sales-video-game-maker-rockstar-games-reports/"
+   ],
+   [
+    "Phys.org",
+    "20 Nov",
+    "https://techxplore.com/news/2026-11-grand-theft-auto-vi-billion.html"
+   ],
+   [
+    "The Globe and Mail",
+    "20 Nov",
+    "https://www.theglobeandmail.com/business/article-grand-theft-auto-vi-record-379-billion-first-day-retail-sales/"
+   ],
+   [
+    "The Wall Street Journal",
+    "20 Nov",
+    "https://www.wsj.com/business/media/take-twos-grand-theft-auto-vi-hits-nearly-4-billion-in-sales-on-launch-day-a1e35d15?mod=rss_Technology"
+   ],
+   [
+    "Slate",
+    "20 Nov",
+    "https://slate.com/culture/2026/11/gta-6-vi-lucia-jason-tomas-twist-grand-theft-auto.html?via=rss"
+   ],
+   [
+    "WGN News",
+    "20 Nov",
+    "https://wgntv.com/business/ap-sales-of-grand-theft-auto-vi-skyrocket-as-the-series-makes-its-return-after-13-year-absence/"
+   ],
+   [
+    "Financial Times",
+    "20 Nov",
+    "https://www.ft.com/content/6648bce8-41fc-4542-8f24-ab37f8acd5d7?syn-25a6b1a6=1"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Slashdot",
+    "21 Nov",
+    "https://games.slashdot.org/story/26/11/20/2320231/gta-6-hits-massive-379-billion-in-first-day-sales?utm_source=rss1.0mainlinkanon&utm_medium=feed"
+   ],
+   [
+    "Hindustan Times",
+    "21 Nov",
+    "https://www.hindustantimes.com/world-news/gta-vi-makes-3-79-billion-in-24-hours-becomes-biggest-entertainment-launch-ever-101795219549482.html"
+   ],
+   [
+    "E! News",
+    "21 Nov",
+    "https://www.eonline.com/news/1438298/grand-theft-auto-6-alex-consani-debuts-seatbelt-dress-at-launch-party?cmpid=rss-syndicate-genericrss-us-top_stories"
+   ],
+   [
+    "Citizen Free Press",
+    "21 Nov",
+    "https://citizenfreepress.com/breaking/dont-waste-money-on-grand-theft-auto/"
+   ],
+   [
+    "Digital Trends",
+    "21 Nov",
+    "https://www.digitaltrends.com/gaming/gta-vi-just-outsold-every-movie-album-and-game-launch-ever/"
+   ],
+   [
+    "Fox Business",
+    "21 Nov",
+    "https://www.foxbusiness.com/entertainment/grand-theft-auto-vi-shatters-entertainment-records-staggering-3-79b-debut"
+   ],
+   [
+    "The Citizen",
+    "21 Nov",
+    "https://www.citizen.co.za/lifestyle/technology/grand-theft-auto-vi-biggest-entertainment-launch-history/"
+   ]
+  ],
+  "trump-china-trip-iran-ukraine-peace-declaration": [
+   [
+    "ABC News (US)",
+    "20 Nov",
+    "https://abcnews.com/Politics/trump-china-trip-iran-ukraine-peace-declaration-takeaways/story?id=138292154"
+   ],
+   [
+    "CBS News",
+    "20 Nov",
+    "https://www.cbsnews.com/video/trump-calls-putin-his-friend-at-summit-prompting-backlash-from-some-world-leaders/"
+   ],
+   [
+    "Axios",
+    "20 Nov",
+    "https://www.axios.com/2026/11/20/trump-pushes-putin-ukraine-war-deal"
+   ],
+   [
+    "Armstrong Economics",
+    "20 Nov",
+    "https://www.armstrongeconomics.com/international-news/politics/trump-putin-and-xi-meet-as-the-old-world-order-begins-to-crumble/"
+   ],
+   [
+    "HuffPost UK",
+    "20 Nov",
+    "https://www.huffingtonpost.co.uk/entry/putin-strikes-ukraine-trump-peac_uk_6b000729e4b03f9a657c936c"
+   ],
+   [
+    "Yorkshire Post",
+    "20 Nov",
+    "https://www.yorkshirepost.co.uk/news/opinion/columnists/bridges-loom-large-in-war-and-peace-as-trump-cosies-up-to-putin-and-xi-patrick-mercer-9363312"
+   ],
+   [
+    "The New York Times",
+    "20 Nov",
+    "https://www.nytimes.com/2026/11/20/world/europe/putin-trump-xi-summit-apec.html"
+   ],
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/policy/international/6232720-john-bolton-trump-putin-xi-trilateral-meeting/"
+   ],
+   [
+    "NPR",
+    "20 Nov",
+    "https://www.npr.org/2026/11/20/nx-s1-6047594/trump-asia-trip-xi-putin-press-conference"
+   ],
+   [
+    "Fox News",
+    "20 Nov",
+    "https://www.foxnews.com/world/putin-launches-ukraine-barrage-hours-after-trump-meeting-amid-alleged-russian-missile-breach-nato-airspace"
+   ],
+   [
+    "Conservative Review",
+    "20 Nov",
+    "https://www.conservativereview.com/here-s-what-trump-xi-and-putin-agreed-to-in-china-2678471705.html"
+   ],
+   [
+    "WGN News",
+    "20 Nov",
+    "https://wgntv.com/politics-3/live-trump-briefs-on-asia-trip-after-xi-putin-summit/"
+   ],
+   [
+    "WFLD - Fox 32 - Chicago",
+    "20 Nov",
+    "https://www.fox32chicago.com/news/live-trump-speaks-after-talks-chinas-xi-jinping-russias-putin"
+   ],
+   [
+    "Euronews",
+    "20 Nov",
+    "https://www.euronews.com/2026/11/20/trump-accuses-iran-of-dishonesty-while-defending-putin-ties"
+   ],
+   [
+    "Channel 4 News",
+    "20 Nov",
+    "https://www.channel4.com/news/trump-putin-would-love-to-end-war-in-ukraine"
+   ],
+   [
+    "Al-Monitor",
+    "20 Nov",
+    "https://www.al-monitor.com/originals/2026/11/trump-cites-good-talks-putin-ukraine-holds-back-security-guarantees"
+   ],
+   [
+    "Hindustan Times",
+    "20 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/trump-says-good-chance-of-russia-ukraine-deal-but-hatred-between-putin-and-zelensky-making-it-tough-101795209254883.html"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16310089/trump-putin-ukraine-invasion-claims.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "The Hindu",
+    "21 Nov",
+    "https://www.thehindu.com/opinion/editorial/three-to-tango-on-trump-xi-putin-trilateral-summit/article71725845.ece"
+   ],
+   [
+    "NDTV",
+    "21 Nov",
+    "https://www.ndtv.com/world-news/trump-calls-putin-his-friend-says-not-sure-if-he-is-to-america-apec-summit-12356727#publisher=newsstand"
+   ],
+   [
+    "Military.com",
+    "21 Nov",
+    "https://www.military.com/trump-defends-calling-putin-a-friend-but-says-he-cant-speak-to-whether-hes-a-friend-to-the-us"
+   ],
+   [
+    "Bloomberg",
+    "21 Nov",
+    "https://www.bloomberg.com/news/videos/2026-11-21/trump-s-putin-ties-draw-focus-after-summit-video"
+   ],
+   [
+    "Washington Examiner",
+    "21 Nov",
+    "https://www.washingtonexaminer.com/in_focus/4810832/lame-duck-trump-what-xi-putin-wanted/"
+   ]
+  ],
   "gulf-of-finland-drone-ship-attack": [
    [
     "GB News",
@@ -3387,6 +2962,354 @@ window.DAYBREAK = {
     "https://timesofindia.indiatimes.com/world/europe/drones-hit-russian-cargo-ship-in-baltic-finland-tightens-security/articleshow/136065032.cms"
    ]
   ],
+  "eight-killed-massive-russian-attacks-ukraine": [
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/ukraine/2026/1120/1599948-ukraine-russia/"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/videos/c65y19wy3xl8o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "CityNews Edmonton",
+    "21 Nov",
+    "https://edmonton.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
+   ],
+   [
+    "CityNews Halifax",
+    "21 Nov",
+    "https://halifax.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
+   ],
+   [
+    "CityNews - Winnipeg",
+    "21 Nov",
+    "https://winnipeg.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
+   ],
+   [
+    "CityNews Ottawa",
+    "21 Nov",
+    "https://ottawa.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
+   ],
+   [
+    "CityNews Calgary",
+    "21 Nov",
+    "https://calgary.citynews.ca/2026/11/21/ballistic-missile-attack-on-zelenskyys-hometown-in-central-ukraine-kills-2-and-wounds-scores/"
+   ],
+   [
+    "The West Australian",
+    "21 Nov",
+    "https://thewest.com.au/news/conflict/missile-attack-on-zelenskiys-hometown-kills-two-c-23195123"
+   ],
+   [
+    "NDTV",
+    "21 Nov",
+    "https://www.ndtv.com/world-news/russian-strike-on-ukraine-president-zelenskys-hometown-kills-2-injures-60-12358740#publisher=newsstand"
+   ],
+   [
+    "Hindustan Times",
+    "21 Nov",
+    "https://www.hindustantimes.com/world-news/ballistic-russian-missile-attack-on-zelenskys-hometown-in-central-ukraine-kills-2-101795265428031.html"
+   ],
+   [
+    "Daily Mirror",
+    "21 Nov",
+    "https://www.mirror.co.uk/news/world-news/zelensky-brands-putin-killer-russian-37901996"
+   ],
+   [
+    "DW News",
+    "21 Nov",
+    "https://www.dw.com/en/russia-strikes-zelenskyy-s-hometown-killing-2/a-80009458?maca=en-rss-en-world-4025-xml-mrss"
+   ],
+   [
+    "Breitbart",
+    "21 Nov",
+    "https://www.breitbart.com/europe/2026/11/21/russian-missile-attack-on-zelenskys-hometown-in-central-ukraine-kills-two-wounds-dozens/"
+   ],
+   [
+    "The Hindu",
+    "21 Nov",
+    "https://www.thehindu.com/news/international/ballistic-missile-attack-on-zelenskyys-hometown-kills-2/article71729235.ece"
+   ],
+   [
+    "Al Jazeera English",
+    "21 Nov",
+    "https://www.aljazeera.com/news/2026/11/21/russian-strike-kills-two-wounds-60-in-zelenskyys-hometown?traffic_source=rss"
+   ],
+   [
+    "Channel 4 News",
+    "21 Nov",
+    "https://www.channel4.com/news/at-least-two-killed-in-russian-strikes-across-ukraine"
+   ],
+   [
+    "Off The Press",
+    "21 Nov",
+    "https://offthepress.com/r/183035?c=rss"
+   ],
+   [
+    "France 24",
+    "21 Nov",
+    "https://www.france24.com/en/russia-launches-ballistic-missile-attack-on-zelensky-s-hometown-in-central-ukraine"
+   ]
+  ],
+  "nvidia-growth-outlook-bofa-expert-jensen-huang": [
+   [
+    "Livemint",
+    "20 Nov",
+    "https://www.livemint.com/companies/news/nvidia-growth-outlook-bofa-expert-says-jensen-huang-singular-but-company-more-than-one-person-demand-remains-strong-11795155375951.html"
+   ],
+   [
+    "MoneyWeek",
+    "20 Nov",
+    "https://moneyweek.com/investments/tech-stocks/why-nvidia-can-thrive-without-jensen-huang"
+   ],
+   [
+    "Naked Capitalism",
+    "20 Nov",
+    "https://www.nakedcapitalism.com/2026/11/nvidia-chased-500-billion-chip-funding-scheme-with-wall-street-heavyweights-who-demanded-more-backing-than-jensen-would-give.html"
+   ],
+   [
+    "TechCrunch",
+    "20 Nov",
+    "https://techcrunch.com/2026/11/20/behind-jensen-huangs-exit-questions-about-a-management-style-reportedly-built-on-fear/"
+   ],
+   [
+    "Wired",
+    "20 Nov",
+    "https://www.wired.com/story/dont-bring-jensen-back/"
+   ],
+   [
+    "Investors Business Daily",
+    "20 Nov",
+    "https://www.investors.com/news/technology/nvidia-stock-could-jensen-huang-land-at-intel/"
+   ],
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/policy/technology/6233257-bessent-denies-huang-apec-talks/"
+   ],
+   [
+    "The Post Millennial",
+    "20 Nov",
+    "https://thepostmillennial.com/news/breaking-trump-says-if-nvidia-is-smart-they-d-take-jensen-huang-back"
+   ],
+   [
+    "Jacobin",
+    "20 Nov",
+    "https://jacobin.com/2026/11/huang-scandal-tech-ai-china-hawks"
+   ],
+   [
+    "CNBC",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/jensen-huang-nvidia-senate-testimony.html"
+   ],
+   [
+    "Hindustan Times",
+    "20 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/he-is-a-good-man-trump-backs-jensen-huang-s-return-as-nvidia-ceo-asks-him-to-make-a-big-apology-101795203021126.html"
+   ],
+   [
+    "Washington Post",
+    "20 Nov",
+    "https://www.washingtonpost.com/politics/2026/11/20/trump-defends-jensen-huang-after-alleged-chinese-spy-affair/"
+   ],
+   [
+    "Political Wire",
+    "20 Nov",
+    "https://politicalwire.com/2026/11/20/trump-says-jensen-huang-should-return-as-nvidia-ceo/"
+   ],
+   [
+    "Citizen Free Press",
+    "20 Nov",
+    "https://citizenfreepress.com/breaking/trump-i-want-to-see-jensen-huang-back-running-nvidia/"
+   ],
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html"
+   ],
+   [
+    "The Information",
+    "21 Nov",
+    "https://www.theinformation.com/articles/can-jensen-return"
+   ],
+   [
+    "Hot Air",
+    "21 Nov",
+    "https://hotair.com/headlines/2026/11/21/the-real-winners-of-the-jensen-huang-affair-n3821192"
+   ]
+  ],
+  "poland-condemns-russian-airspace-provocation": [
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/europe/2026/1120/1600008-poland-russia-airspace-violations/"
+   ],
+   [
+    "SOFREP",
+    "20 Nov",
+    "https://sofrep.com/news/russian-missiles-and-drone-breach-polish-airspace-as-nato-jets-scramble-and-hold-fire/"
+   ],
+   [
+    "The Citizen",
+    "20 Nov",
+    "https://www.citizen.co.za/news/news-world/russia-pummels-ukraine-missile-hits-poland-after-putin-threat/"
+   ],
+   [
+    "Euractiv",
+    "20 Nov",
+    "https://www.rapporteur.com/news/poland-seeks-more-nato-support-after-russian-missile-incursion/"
+   ],
+   [
+    "End Time Headlines",
+    "20 Nov",
+    "https://endtimeheadlines.org/2026/11/poland-requesting-nato-support-after-being-struck-by-russian-missile-and-drone/"
+   ],
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/policy/international/6233039-poland-accuses-russia-missile-drone-incursion/"
+   ],
+   [
+    "Legal Insurrection",
+    "20 Nov",
+    "https://legalinsurrection.com/2026/11/russian-missiles-drone-crash-in-poland-near-ukraines-border/?utm_source=rss&utm_medium=rss&utm_campaign=russian-missiles-drone-crash-in-poland-near-ukraines-border"
+   ],
+   [
+    "Military.com",
+    "20 Nov",
+    "https://www.military.com/ukraine-reports-russian-missile-blitz-after-putin-met-with-trump"
+   ],
+   [
+    "CBS News",
+    "20 Nov",
+    "https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/"
+   ],
+   [
+    "The New York Times",
+    "20 Nov",
+    "https://www.nytimes.com/2026/11/20/world/europe/poland-russia-airspace-missile.html"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16310391/Trump-Ukraine-peace-deal-January.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "Defense One",
+    "21 Nov",
+    "https://www.defenseone.com/threats/2026/11/europeans-ukraines-help-brace-more-russian-attacks/417389/"
+   ],
+   [
+    "Breitbart",
+    "21 Nov",
+    "https://www.breitbart.com/europe/2026/11/21/russian-missiles-land-in-poland-amid-european-military-drills/"
+   ],
+   [
+    "The Straits Times",
+    "21 Nov",
+    "https://www.straitstimes.com/world/europe/nato-will-defend-every-inch-of-polish-territory-rutte-says"
+   ],
+   [
+    "Washington Post",
+    "21 Nov",
+    "https://www.washingtonpost.com/world/2026/11/21/poland-says-russian-missiles-hit-its-territory-trump-calls-it-mistake/"
+   ],
+   [
+    "Political Wire",
+    "21 Nov",
+    "https://politicalwire.com/2026/11/21/poland-says-russian-missiles-hit-its-territory/"
+   ]
+  ],
+  "uk-eu-reset-tuition-fees": [
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/uk/2026/1120/1599944-uk-eu-summit/"
+   ],
+   [
+    "Sky News",
+    "20 Nov",
+    "https://news.sky.com/story/will-andy-burnham-be-the-pm-to-undo-brexit-13614088"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/business/2026/nov/20/what-impact-brexit-uk-eu-economies"
+   ],
+   [
+    "HuffPost UK",
+    "20 Nov",
+    "https://www.huffingtonpost.co.uk/entry/andy-burnham-new-brexit-deal_uk_6afff6c7e4b0976dc4a2b817"
+   ],
+   [
+    "Daily Mirror",
+    "20 Nov",
+    "https://www.mirror.co.uk/news/politics/brexit-eu-andy-burnham-rejoin-37717150"
+   ],
+   [
+    "Institute for Government",
+    "20 Nov",
+    "https://www.instituteforgovernment.org.uk/podcast/inside-briefing/burnhams-brexit-mission-brussels-love"
+   ],
+   [
+    "Guido Fawkes",
+    "20 Nov",
+    "https://order-order.com/2026/11/20/in-full-every-brexit-freedom-labour-has-given-away-under-surrender-reset/"
+   ],
+   [
+    "BBC News",
+    "20 Nov",
+    "https://www.bbc.co.uk/news/articles/cm4gn9xw1v99o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "i News",
+    "20 Nov",
+    "https://inews.co.uk/news/politics/what-the-brexit-reset-deal-really-means-for-you-4916803"
+   ],
+   [
+    "The Herald",
+    "20 Nov",
+    "https://www.heraldscotland.com/politics/westminster/26749819.andy-burnham-secures-17bn-brexit-deal-european-union/?ref=rss"
+   ],
+   [
+    "The New York Times",
+    "20 Nov",
+    "https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html"
+   ],
+   [
+    "MercoPress",
+    "20 Nov",
+    "https://en.mercopress.com/2026/11/20/uk-and-eu-sign-their-biggest-deal-since-brexit-in-brussels?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+   ],
+   [
+    "Daily Express",
+    "21 Nov",
+    "https://www.express.co.uk/finance/personalfinance/2268121/andy-burnham-just-blew-brexit-to-pieces-brussels-laughing-in-our-faces"
+   ],
+   [
+    "Hindustan Times",
+    "21 Nov",
+    "https://www.hindustantimes.com/world-news/andy-burnham-s-eu-deal-is-only-a-start-101795250782539.html"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16310221/Details-Burnham-disputed-EU-plan-isnt-agreed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "The Sun",
+    "21 Nov",
+    "https://www.thesun.co.uk/news/41100855/andy-burnham-brexit-billions-stay-out/"
+   ],
+   [
+    "Legal Insurrection",
+    "21 Nov",
+    "https://legalinsurrection.com/2026/11/uks-burnham-announces-brexit-reset-deal-with-eu/?utm_source=rss&utm_medium=rss&utm_campaign=uks-burnham-announces-brexit-reset-deal-with-eu"
+   ]
+  ],
   "eu-digital-tax-budget-proposal": [
    [
     "RTÉ News",
@@ -3474,51 +3397,207 @@ window.DAYBREAK = {
     "https://www.ndtv.com/world-news/european-union-proposes-tax-on-big-tech-in-new-budget-draft-12360091#publisher=newsstand"
    ]
   ],
-  "uk-eu-reset-tuition-fees": [
+  "signal-restrict-screenshots-ai-agent-concerns-again": [
    [
-    "RTÉ News",
+    "Android Authority",
     "20 Nov",
-    "https://www.rte.ie/news/uk/2026/1120/1599944-uk-eu-summit/"
+    "https://www.androidauthority.com/signal-blocks-gemini-siri-ai-private-messages-3737647/"
    ],
    [
-    "Sky News",
+    "9to5Mac",
     "20 Nov",
-    "https://news.sky.com/story/will-andy-burnham-be-the-pm-to-undo-brexit-13614088"
+    "https://9to5mac.com/2026/11/20/signal-now-blocks-screenshots-on-iphone-to-stop-siri-ai-from-seeing-chats/"
    ],
    [
-    "The Guardian",
+    "ZDNET",
     "20 Nov",
-    "https://www.theguardian.com/business/2026/nov/20/what-impact-brexit-uk-eu-economies"
+    "https://www.zdnet.com/innovation/signal-restricts-screenshots-over-ai-agent-concerns/"
    ],
    [
-    "BBC News",
+    "Inc.com",
     "20 Nov",
-    "https://www.bbc.co.uk/news/articles/cm4gn9xw1v99o?at_medium=RSS&at_campaign=rss"
+    "https://www.inc.com/aaron-mok/signal-blocks-screenshots-ai-agents-privacy/91440348"
    ],
    [
-    "The Herald",
+    "CNET",
     "20 Nov",
-    "https://www.heraldscotland.com/politics/westminster/26749819.andy-burnham-secures-17bn-brexit-deal-european-union/?ref=rss"
+    "https://www.cnet.com/tech/services-and-software/signal-text-message-screenshots/"
    ],
    [
-    "Daily Mirror",
+    "The Decoder",
     "20 Nov",
-    "https://www.mirror.co.uk/news/politics/andy-burnham-brexit-eu-summit-37898867"
+    "https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/"
    ],
    [
-    "MercoPress",
+    "BizPac Review",
     "20 Nov",
-    "https://en.mercopress.com/2026/11/20/uk-and-eu-sign-their-biggest-deal-since-brexit-in-brussels?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+    "https://www.bizpacreview.com/2026/11/20/signal-moves-to-block-big-techs-ai-agents-from-reading-users-private-chats-1668404/"
    ],
+   [
+    "Slashdot",
+    "20 Nov",
+    "https://yro.slashdot.org/story/26/11/20/2231247/signal-restricts-screenshots-to-block-ai-agents-from-reading-messages?utm_source=rss1.0mainlinkanon&utm_medium=feed"
+   ],
+   [
+    "The Hacker News",
+    "21 Nov",
+    "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html"
+   ],
+   [
+    "Decrypt",
+    "21 Nov",
+    "https://decrypt.co/383750/signal-os-level-ai-existential-threat-blocks-screenshots"
+   ],
+   [
+    "TechCrunch",
+    "21 Nov",
+    "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
+   ]
+  ],
+  "village-uproar-plans-house-nearly-1-000": [
    [
     "Daily Express",
     "21 Nov",
-    "https://www.express.co.uk/finance/personalfinance/2268121/andy-burnham-just-blew-brexit-to-pieces-brussels-laughing-in-our-faces"
+    "https://www.express.co.uk/news/uk/2268115/uk-village-uproar-plans-house"
+   ],
+   [
+    "GB News",
+    "21 Nov",
+    "https://www.gbnews.com/news/migrant-crisis-barnham-villagers-vote-asylum-camp"
+   ],
+   [
+    "Daily Mirror",
+    "21 Nov",
+    "https://www.mirror.co.uk/news/uk-news/barnham-village-votes-leave-uk-37902426"
+   ],
+   [
+    "Belfast Live",
+    "21 Nov",
+    "https://www.belfastlive.co.uk/news/uk-world-news/village-votes-leave-uk-symbolic-34948299"
+   ],
+   [
+    "Evening Standard",
+    "21 Nov",
+    "https://www.standard.co.uk/news/politics/barnham-suffolk-uk-migrants-housing-raf-base-b1305842.html"
+   ],
+   [
+    "The Guardian",
+    "21 Nov",
+    "https://www.theguardian.com/uk-news/2026/nov/21/suffolk-village-votes-to-leave-the-uk-over-plans-to-house-asylum-seekers-nearby"
+   ],
+   [
+    "Times of Malta",
+    "21 Nov",
+    "https://timesofmalta.com/article/english-village-votes-leave-uk-migrant-camp-plan.1137483"
+   ],
+   [
+    "Breitbart",
+    "21 Nov",
+    "https://www.breitbart.com/europe/2026/11/21/second-british-village-votes-to-secede-from-uk-over-migrant-camp-scheme/"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cvze71y6g85yo?at_medium=RSS&at_campaign=rss"
    ],
    [
     "Daily Mail",
     "21 Nov",
-    "https://www.dailymail.com/news/article-16310221/Details-Burnham-disputed-EU-plan-isnt-agreed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+    "https://www.dailymail.com/news/article-16311515/Barnham-votes-leave-UK-RAF-asylum-seeker-camp.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "Metro",
+    "21 Nov",
+    "https://metro.co.uk/2026/11/21/suffolk-village-votes-leave-uk-plans-asylum-camp-raf-base-29809314/"
+   ]
+  ],
+  "tuition-fees-talks-delay-adoption-eu-deal": [
+   [
+    "Euractiv",
+    "20 Nov",
+    "https://www.rapporteur.com/news/tuition-fees-talks-delay-adoption-of-eu-uk-deal/"
+   ],
+   [
+    "Financial Times",
+    "20 Nov",
+    "https://www.ft.com/content/8515b514-2067-43eb-a7f5-b5aa20ec4cc3"
+   ],
+   [
+    "Guido Fawkes",
+    "20 Nov",
+    "https://order-order.com/2026/11/20/burnham-hands-eu-100000-visas-as-tuition-fee-row-continues/"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates"
+   ],
+   [
+    "i News",
+    "20 Nov",
+    "https://inews.co.uk/news/politics/burnham-cut-tuition-fees-eu-students-brexit-deal-collapse-4914711"
+   ],
+   [
+    "Channel 4 News",
+    "20 Nov",
+    "https://www.channel4.com/news/government-committed-to-finding-agreement-with-eu-over-tuition-fees-says-minister"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cm9w9p4geke8o?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Daily Mirror",
+    "21 Nov",
+    "https://www.mirror.co.uk/news/politics/cabinet-minister-clashes-bbc-host-37901597"
+   ],
+   [
+    "The Conversation UK",
+    "21 Nov",
+    "https://theconversation.com/what-does-the-uk-eu-reset-deal-mean-for-immigration-and-tuition-fees-297086"
+   ]
+  ],
+  "hotel-chocolat-issues-urgent-alert-christmas-boxes": [
+   [
+    "Daily Mirror",
+    "21 Nov",
+    "https://www.mirror.co.uk/news/uk-news/hotel-chocolat-salmonella-recall-chocolate-37902565"
+   ],
+   [
+    "Evening Standard",
+    "21 Nov",
+    "https://www.standard.co.uk/news/health/hotel-chocolat-food-standards-agency-british-press-association-b1305847.html"
+   ],
+   [
+    "Belfast Telegraph",
+    "21 Nov",
+    "https://www.belfasttelegraph.co.uk/news/uk/hotel-chocolat-recalls-some-christmas-boxes-over-salmonella-risk/a/164909421.html"
+   ],
+   [
+    "Manchester Evening News",
+    "21 Nov",
+    "https://www.manchestereveningnews.co.uk/news/uk-news/hotel-chocolat-recalls-christmas-item-34948602"
+   ],
+   [
+    "The Sun",
+    "21 Nov",
+    "https://www.thesun.co.uk/news/41102676/hotel-chocolat-urgently-recalls-christmas-boxes-salmonella-warning/"
+   ],
+   [
+    "Sky News",
+    "21 Nov",
+    "https://news.sky.com/story/hotel-chocolat-recalls-several-christmas-boxes-over-potential-salmonella-risk-13615043"
+   ],
+   [
+    "Metro",
+    "21 Nov",
+    "https://metro.co.uk/2026/11/21/hotel-chocolat-recalls-several-christmas-products-salmonella-warning-29809373/"
+   ],
+   [
+    "Daily Mail",
+    "21 Nov",
+    "https://www.dailymail.com/news/article-16311955/Hotel-Chocolat-issues-urgent-recall-Christmas-boxes-salmonella-risk-pistachio-paste.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
    ]
   ],
   "bradford-councillor-stabbing-charge": [
@@ -3563,6 +3642,211 @@ window.DAYBREAK = {
     "https://www.dailymail.com/news/article-16311137/Man-32-charged-attempted-murder-councillor-stabbed-community-clean-up.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
    ]
   ],
+  "robert-pattinsons-james-bond-casting-marks-hollywoods": [
+   [
+    "City AM",
+    "20 Nov",
+    "https://www.cityam.com/james-bond-amazon-pattinson-keeping-us-wanting-more/"
+   ],
+   [
+    "The Week UK",
+    "20 Nov",
+    "https://theweek.com/culture-life/film/robert-pattinson-james-bond-hollywood-pivot"
+   ],
+   [
+    "HuffPost UK",
+    "20 Nov",
+    "https://www.huffingtonpost.co.uk/entry/george-lazenby-robert-pattinson-james-bond_uk_6afff8eee4b0db04454910bf"
+   ],
+   [
+    "Daily Mail",
+    "20 Nov",
+    "https://www.dailymail.com/sciencetech/article-16308443/handsome-James-Bond-actors-according-science.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+   ],
+   [
+    "9to5Google",
+    "20 Nov",
+    "https://9to5google.com/2026/11/20/google-search-easter-egg-robert-pattinson-james-bond/"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/film/2026/nov/20/robert-pattinson-batman-james-bond-third-movie-delays-dc"
+   ],
+   [
+    "BBC News",
+    "21 Nov",
+    "https://www.bbc.co.uk/news/articles/cr4g1l7x52jno?at_medium=RSS&at_campaign=rss"
+   ],
+   [
+    "Taipei Times",
+    "22 Nov",
+    "https://www.taipeitimes.com/News/editorials/archives/2026/11/22/2003868162"
+   ]
+  ],
+  "custom-mri-tool-show-within-weeks-if": [
+   [
+    "Derbyshire Live",
+    "20 Nov",
+    "https://www.derbytelegraph.co.uk/news/uk-world-news/pancreatic-cancer-pill-wipes-out-11248851"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib"
+   ],
+   [
+    "RTÉ News",
+    "20 Nov",
+    "https://www.rte.ie/news/health/2026/1120/1600064-pill-for-advanced-pancreatic-cancer-shows-promise/"
+   ],
+   [
+    "Medical Xpress",
+    "20 Nov",
+    "https://medicalxpress.com/news/2026-11-custom-mri-tool-weeks-pancreatic.html"
+   ],
+   [
+    "Citizen Free Press",
+    "20 Nov",
+    "https://citizenfreepress.com/breaking/breakthrough-pill-for-pancreatic-cancer/"
+   ],
+   [
+    "Fox News",
+    "21 Nov",
+    "https://www.foxnews.com/health/new-drug-combo-shrinks-tumors-most-patients-aggressive-cancer-type"
+   ],
+   [
+    "NewsNation",
+    "21 Nov",
+    "https://www.newsnationnow.com/health/pancreatic-cancer-drug-stops-tumor-growth/"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "21 Nov",
+    "https://www.wfla.com/news/national/new-pancreatic-cancer-drug-stops-tumor-growth-study/"
+   ]
+  ],
+  "bayers-7-25bn-settlement-cancer-cases-approved": [
+   [
+    "Financial Times",
+    "20 Nov",
+    "https://www.ft.com/content/e7d36416-9eb7-4479-a217-d593545499df?syn-25a6b1a6=1"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/business/2026/nov/20/bayer-roundup-cancer-litigation"
+   ],
+   [
+    "The Hill",
+    "21 Nov",
+    "https://thehill.com/policy/energy-environment/6234796-judge-approves-roundup-settlement/"
+   ],
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/2026/11/20/business/bayer-settlement-roundup-cancer.html"
+   ],
+   [
+    "Mother Jones",
+    "21 Nov",
+    "https://www.motherjones.com/politics/2026/11/it-just-got-harder-to-sue-over-glyphosate/"
+   ],
+   [
+    "Washington Post",
+    "21 Nov",
+    "https://www.washingtonpost.com/climate-environment/2026/11/21/judge-approves-725-billion-roundup-cancer-settlement/"
+   ],
+   [
+    "NPR",
+    "21 Nov",
+    "https://www.npr.org/2026/11/21/nx-s1-6049684/roundup-bayer-hodgkins-settlement"
+   ]
+  ],
+  "iphone-duo-livestream-many-folds-apples-phone": [
+   [
+    "CNET",
+    "20 Nov",
+    "https://www.youtube.com/watch?v=9wqAjlxfnL0"
+   ],
+   [
+    "Livemint",
+    "20 Nov",
+    "https://www.livemint.com/companies/people/who-is-jon-mccormack-the-apple-executive-who-helped-shape-your-iphone-camera-and-draws-the-line-on-ai-photography-11795176101442.html"
+   ],
+   [
+    "9to5Mac",
+    "20 Nov",
+    "https://9to5mac.com/2026/11/20/iphone-air-2-dual-camera-system/"
+   ],
+   [
+    "MacRumors",
+    "20 Nov",
+    "https://www.macrumors.com/2026/11/20/iphone-air-2-and-iphone-18-dummy-models/"
+   ],
+   [
+    "Digital Trends",
+    "21 Nov",
+    "https://www.digitaltrends.com/photography/dummies-give-us-an-early-look-at-the-upcoming-iphone-air-2-and-iphone-18/"
+   ],
+   [
+    "India Today",
+    "22 Nov",
+    "https://www.indiatoday.in/visualstories/technology/iphone-16-gets-huge-discount-price-drops-by-rs-9910-287566-17-11-2026?utm_source=rss"
+   ]
+  ],
+  "anthropics-ipo-triumph": [
+   [
+    "The Information",
+    "20 Nov",
+    "https://www.theinformation.com/articles/anthropics-ipo-triumph"
+   ],
+   [
+    "New York Observer",
+    "20 Nov",
+    "https://observer.com/2026/11/dario-amodei-takes-anthropic-to-wall-street-in-record-81-billion-ipo/"
+   ],
+   [
+    "The Guardian",
+    "20 Nov",
+    "https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai"
+   ],
+   [
+    "The Hindu",
+    "20 Nov",
+    "https://www.thehindu.com/business/markets/ai-firm-anthropic-shares-wall-streets-nasdaq-debut/article71721723.ece"
+   ],
+   [
+    "CNBC",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/anthropic-ipo-stocks-market.html"
+   ],
+   [
+    "Financial Times",
+    "20 Nov",
+    "https://www.ft.com/content/017044a9-76dc-4cb4-9259-a844a96f2757"
+   ],
+   [
+    "Euronews",
+    "20 Nov",
+    "https://www.euronews.com/2026/11/20/stocks-gold-and-silver-fall-after-blockbuster-anthropic-ipo"
+   ],
+   [
+    "South China Morning Post",
+    "20 Nov",
+    "https://www.scmp.com/business/china-business/article/3375169/anthropics-us81b-ipo-gold-price-drops-5-figures-investors-are-watching-week"
+   ],
+   [
+    "Investors Business Daily",
+    "20 Nov",
+    "https://www.investors.com/news/technology/anthropic-stock-ipo-ai-falls/"
+   ],
+   [
+    "Phys.org",
+    "20 Nov",
+    "https://techxplore.com/news/2026-11-anthropic-falls-day-ipo.html"
+   ]
+  ],
   "bepicolombo-reaches-mercury": [
    [
     "BBC News",
@@ -3594,6 +3878,113 @@ window.DAYBREAK = {
     "21 Nov",
     "https://eos.org/research-and-developments/bepicolombo-arrives-at-mercury"
    ]
+  ],
+  "dow-p-500-close-correction-nasdaq-slides": [
+   [
+    "MarketWatch",
+    "20 Nov",
+    "https://www.marketwatch.com/bulletins/redirect/go?g=7584d1dd-3ec7-43fa-8e57-63eae6a76eed&mod=mw_rss_bulletins"
+   ],
+   [
+    "Bloomberg",
+    "21 Nov",
+    "https://www.bloomberg.com/news/audio/2026-11-21/stocks-close-lower-on-ai-selloff-anthropic-gives-up-gains-more"
+   ],
+   [
+    "Fox Business",
+    "21 Nov",
+    "https://www.foxbusiness.com/markets/wall-street-suffers-historic-losses-dow-sp-500-plunge-correction-territory"
+   ],
+   [
+    "Dawn",
+    "21 Nov",
+    "https://www.dawn.com/news/2046101/wall-street-ends-sharply-lower-on-ai-selloff-sampp-500-dow-in-correction"
+   ]
+  ],
+  "economy-doing-better-think-everyone": [
+   [
+    "The Hill",
+    "20 Nov",
+    "https://thehill.com/opinion/finance/6231352-us-economy-outlook-2026/"
+   ],
+   [
+    "Bloomberg",
+    "21 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-21/world-economy-latest-japan-s-economy-slips-as-weather-dents-spending"
+   ],
+   [
+    "The New York Times",
+    "21 Nov",
+    "https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html"
+   ]
+  ],
+  "administration-tries-intervene-kalshi-threatened-restraining-order": [
+   [
+    "CoinDesk",
+    "20 Nov",
+    "https://www.coindesk.com/policy/2026/11/20/kalshi-races-to-get-ahead-of-new-york-order-that-could-shut-down-exchange"
+   ],
+   [
+    "ABC News (US)",
+    "21 Nov",
+    "https://abcnews.com/US/kalshi-prediction-market-crippled-judge-grants-restraining-order/story?id=138329957"
+   ],
+   [
+    "The Block",
+    "21 Nov",
+    "https://www.theblock.co/news/regulation/2026-11-21-kalshi-faces-monday-hearing-on-new-york-order-it-says-would-shut-down-its-exchange-nationwide-444813"
+   ]
+  ],
+  "japan-core-inflation-soars-highest-energy-subsidy": [
+   [
+    "CNBC",
+    "20 Nov",
+    "https://www.cnbc.com/2026/11/20/japan-inflation-cpi-october.html"
+   ],
+   [
+    "Jacobin",
+    "21 Nov",
+    "https://jacobin.com/2026/11/inflation-austerity-oil-class-sweden"
+   ],
+   [
+    "Bloomberg",
+    "21 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-21/us-consumers-are-holding-up-against-inflation-going-into-holiday-season"
+   ]
+  ],
+  "physician-explains-glp-1s-biggest-potential-side": [
+   [
+    "Nautilus",
+    "20 Nov",
+    "https://nautil.us/a-physician-explains-glp-1s-biggest-potential-side-effect-a-rare-but-serious-eye-condition-1286851/"
+   ],
+   [
+    "Medical Xpress",
+    "21 Nov",
+    "https://medicalxpress.com/news/2026-11-soaring-demand-glp-1s-eligible.html"
+   ],
+   [
+    "Inc.com",
+    "21 Nov",
+    "https://www.inc.com/avery-miles/a-massive-study-of-250000-patients-just-revealed-a-surprising-new-use-for-glp-1s/91436392"
+   ]
+  ],
+  "james-webb-telescope-spots-giant-star-swallowing": [
+   [
+    "Live Science",
+    "20 Nov",
+    "https://www.livescience.com/space/astronomers-spot-giant-star-swallowing-its-companion-in-first-ever-observations-of-a-stellar-merger"
+   ],
+   [
+    "Ars Technica",
+    "20 Nov",
+    "https://arstechnica.com/science/2026/11/astronomers-watched-a-star-spiral-to-its-death-inside-a-giant-companion/"
+   ],
+   [
+    "ScienceDaily",
+    "21 Nov",
+    "https://www.sciencedaily.com/releases/2026/11/261120075556.htm"
+   ]
   ]
  },
  "META": {
@@ -3601,12 +3992,12 @@ window.DAYBREAK = {
   "dateLabel": "Sunday 22 November 2026",
   "range": "20–22 Nov",
   "rangeLong": "20–22 November 2026",
-  "lastRun": "22 Nov 2026, 00:20",
+  "lastRun": "22 Nov 2026, 00:24",
   "digest": [
-   "FBI has been hacked again, this time the breach has targeted its crime database (End Time Headlines)",
-   "FBI most wanted cartel leader captured. (Citizen Free Press)",
-   "Anthropic mathematician proves Riemann hypothesis, most famous problem in all of math (Scientific American)",
-   "Catherine talks openly about how cancer changed her in documentary on BBC (BBC News)"
+   "Mexico captures top drug lord 'El Chapo Isidro' (RTÉ News)",
+   "FBI reportedly investigating apparent hack of its criminal database (BBC News)",
+   "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis (New Scientist)",
+   "Princess of Wales speaks about impact of cancer diagnosis in BBC film Heal (The Guardian)"
   ],
   "generated": "automatic",
   "writer": "template"
