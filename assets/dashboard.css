@@ -289,3 +289,18 @@ body.reader-focus .reader { border: 0; }
 @media (prefers-reduced-motion: reduce) {
   .paper-provider-track { scroll-behavior: auto; }
 }
+
+
+/* Newspaper reading depth: the stone background gently darkens as the feed scrolls.
+   Card surfaces and article text keep their original contrast. */
+body.paper-browse,
+body.paper-browse .dashboard-shell,
+body.paper-browse .dashboard-body {
+  background-color: color-mix(in srgb, var(--paper) calc(100% - var(--paper-scroll-mix, 0%)), #B0A28D var(--paper-scroll-mix, 0%));
+}
+body.paper-browse { background-color: color-mix(in srgb, #E3D8C6 calc(100% - var(--paper-scroll-mix, 0%)), #B0A28D var(--paper-scroll-mix, 0%)); }
+.paper-story-feed .news-card { content-visibility: auto; contain-intrinsic-size: auto 260px; }
+.paper-providers .paper-provider.on { border-color: var(--blue); }
+@media (prefers-reduced-motion: reduce) {
+  .paper-provider, .paper-provider-track { transition: none; }
+}
