@@ -1028,22 +1028,44 @@
 
   /* ---------- Newspapers View ---------- */
   function storiesForPaper(name) {
-    return CURRENT.filter(function (s) {
-      return s.source === name || s.cov.rows.some(function (r) { return r.name === name; });
-    }).map(function (s) {
+    return CURRENT.map(function (s) {
       var match = s.cov.rows.find(function (r) { return r.name === name; });
-      return match && match.title && match.title !== s.headline
-        ? Object.assign({}, s, { headline: match.title, source: name, time: match.date || s.time })
-        : Object.assign({}, s, { source: name });
-    });
+      if (!match && s.source !== name) return null;
+      var originalUrl = safeExternalUrl(match ? match.url : s.url);
+      // Only show coverage with a verifiable original destination.
+      if (!originalUrl) return null;
+      return {
+        id: s.id,
+        publisher: name,
+        headline: (match && match.title) || s.headline,
+        date: (match && match.date) || s.publishedLabel || s.time,
+        url: originalUrl,
+        story: s
+      };
+    }).filter(Boolean);
+  }
+
+  function renderPaperArticle(a) {
+    var story = a.story;
+    return '<article class="paper-source-article">' +
+      (safeAsset(story.image) ? '<div class="paper-source-image"><img src="' + esc(safeAsset(story.image)) +
+        '" alt="' + esc(story.imageAlt || '') + '" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>' : '') +
+      '<div class="paper-source-copy">' +
+      '<div class="news-card-meta"><span class="publisher-tag">' + esc(a.publisher) + '</span><time>' + esc(a.date) + '</time></div>' +
+      '<h3><a href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.headline) + '</a></h3>' +
+      '<p class="paper-source-context">Pheme covers this story in its multi-source briefing.</p>' +
+      '<div class="paper-source-actions">' +
+      originalArticleLink(a.url, a.publisher, 'Read at publisher ↗', 'paper-source-primary') +
+      nativeSourceLink(story, a.publisher, 'View on Pheme', 'paper-source-secondary') +
+      '</div></div></article>';
   }
 
   function paperArticleBody(name, meta, stories) {
     return stories.length
-      ? '<div class="paper-story-feed" aria-label="Articles covered by ' + esc(name) + '">' + stories.map(renderDashboardCard).join('') + '</div>'
-      : '<div class="notice"><strong>No featured stories from ' + esc(name) + ' today.</strong> ' +
-        'When Pheme features a story from this outlet, it will appear here.' +
-        (meta.paywall ? ' Full articles require a subscription to this paper.' : '') + '</div>';
+      ? '<div class="paper-story-feed" aria-label="Original coverage from ' + esc(name) + '">' + stories.map(renderPaperArticle).join('') + '</div>'
+      : '<div class="notice"><strong>No linked articles from ' + esc(name) + ' in this edition.</strong> ' +
+        'Pheme only lists publisher coverage when an original article link is available.' +
+        (meta.paywall ? ' Some articles may require a subscription.' : '') + '</div>';
   }
 
   function selectPaperInPlace(name) {
@@ -1099,19 +1121,34 @@
   }, { passive: true });
   window.addEventListener('resize', updateSiteScrollTone, { passive: true });
 
+  // Publisher-owned brand icons, delivered as site favicons; not approximated wordmarks.
+  // If a favicon is unavailable, keep a readable text monogram.
+  var PUBLISHER_DOMAINS = {
+    'BBC News': 'bbc.com', 'The Guardian': 'theguardian.com',
+    'Sky News': 'news.sky.com', 'Al Jazeera English': 'aljazeera.com',
+    'Financial Times': 'ft.com', 'The Economist': 'economist.com',
+    'The Telegraph': 'telegraph.co.uk', 'Daily Mail': 'dailymail.co.uk',
+    'ITV News': 'itv.com', 'RTÉ News': 'rte.ie',
+    'CNBC': 'cnbc.com', 'City AM': 'cityam.com',
+    'The New York Times': 'nytimes.com', 'NPR': 'npr.org',
+    'Fox News': 'foxnews.com', 'France 24': 'france24.com',
+    'DW News': 'dw.com', 'Politico Europe': 'politico.eu',
+    'Euronews': 'euronews.com', 'South China Morning Post': 'scmp.com',
+    'Nature News': 'nature.com', 'New Scientist': 'newscientist.com',
+    'ScienceDaily': 'sciencedaily.com', 'TechCrunch': 'techcrunch.com',
+    'The Verge': 'theverge.com', 'Ars Technica': 'arstechnica.com'
+  };
   function newspaperWordmark(name) {
-    var logos = {
-      'BBC News': '<span class="paper-logo paper-logo-bbc" aria-hidden="true">BBC</span>',
-      'The Guardian': '<span class="paper-logo paper-logo-guardian" aria-hidden="true"><span>The</span><span>Guardian</span></span>',
-      'Sky News': '<span class="paper-logo paper-logo-sky" aria-hidden="true">sky news</span>',
-      'Al Jazeera English': '<span class="paper-logo paper-logo-aj" aria-hidden="true">AJ</span>',
-      'Financial Times': '<span class="paper-logo paper-logo-ft" aria-hidden="true">FT</span>',
-      'The Economist': '<span class="paper-logo paper-logo-economist" aria-hidden="true"><span>The</span><span>Economist</span></span>'
-    };
-    if (logos[name]) return logos[name];
     var initials = name.split(/\\s+/).filter(function (part) { return !/^(the|of|and)$/i.test(part); })
       .slice(0, 3).map(function (part) { return part.charAt(0).toUpperCase(); }).join('');
-    return '<span class="paper-logo paper-logo-generic" aria-hidden="true">' + esc(initials || name.slice(0, 2).toUpperCase()) + '</span>';
+    var fallback = '<span class="paper-logo paper-logo-generic" aria-hidden="true">' +
+      esc(initials || name.slice(0, 2).toUpperCase()) + '</span>';
+    var domain = PUBLISHER_DOMAINS[name];
+    if (!domain) return fallback;
+    var icon = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
+    return '<span class="paper-logo-asset">' +
+      '<img class="paper-logo-image" src="' + esc(icon) + '" alt="" loading="lazy" decoding="async">' +
+      fallback + '</span>';
   }
 
   function renderPapers() {
@@ -1793,6 +1830,10 @@
   app.addEventListener('error', function (e) {
     var target = e.target;
     if (target && target.tagName === 'IMG') {
+      if (target.classList.contains('paper-logo-image')) {
+        target.hidden = true;
+        return;
+      }
       var box = target.closest('.dashboard-image, .hero-figure, .reader-photo');
       if (box) box.hidden = true;
     }
