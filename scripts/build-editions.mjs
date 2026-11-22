@@ -46,9 +46,16 @@ for (const file of files) {
       assert(Number.isFinite(lng) && Math.abs(lng) <= 180, 'Invalid longitude: ' + story.id);
     }
     if (story.image) {
-      assert.match(story.image, /^assets\/images\/[a-z0-9._-]+$/i, 'Invalid image path: ' + story.id);
-      assert(existsSync(story.image), 'Missing image file: ' + story.image);
+      if (story.image.startsWith('https://')) {
+        checkedUrl(story.image);
+      } else {
+        assert.match(story.image, /^assets\/images\/[a-z0-9._-]+$/i, 'Invalid image path: ' + story.id);
+        assert(existsSync(story.image), 'Missing image file: ' + story.image);
+      }
       assert(typeof story.imageAlt === 'string' && story.imageAlt.trim(), 'Missing imageAlt: ' + story.id);
+    }
+    if (story.imageCredit !== undefined) {
+      assert(typeof story.imageCredit === 'string' && story.imageCredit.trim(), 'Invalid imageCredit: ' + story.id);
     }
     if (story.article) {
       assert(Array.isArray(story.article) && story.article.length > 0, 'Invalid article paragraphs: ' + story.id);

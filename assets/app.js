@@ -89,7 +89,17 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-  function safeAsset(u) { return /^assets\/images\/[a-z0-9._-]+$/i.test(u || '') ? u : ''; }
+  function safeAsset(u) {
+    if (!u || typeof u !== 'string') return '';
+    if (/^assets\/images\/[a-z0-9._-]+$/i.test(u)) return u;
+    if (/^https:\/\//i.test(u)) {
+      try {
+        var parsed = new URL(u);
+        if (parsed.protocol === 'https:' && !parsed.username && !parsed.password) return parsed.href;
+      } catch (e) { /* invalid URL */ }
+    }
+    return '';
+  }
   function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
 
   var ICON = {
@@ -354,7 +364,10 @@
 
   function loadMarketData() {
     marketLoadFailed = false;
-    fetch('assets/markets.json', { cache: 'no-cache' }).then(function (response) {
+    var buildMeta = document.querySelector('meta[name="daybreak-build"]');
+    var buildId = buildMeta && buildMeta.getAttribute('content');
+    var url = 'assets/markets.json' + (buildId && buildId !== 'dev' ? '?v=' + encodeURIComponent(buildId) : '');
+    fetch(url, { cache: 'no-cache' }).then(function (response) {
       if (!response.ok) throw new Error('Market data request failed');
       return response.json();
     }).then(function (data) {
@@ -410,17 +423,9 @@
       '<div class="sidebar-personalise"><span class="personalise-symbol" aria-hidden="true">✦</span><h2>A wider perspective.</h2><p>Follow your newspapers. Choose your markets. Make your briefing yours.</p><button data-act="settings">Personalise your feed</button></div></aside>';
   }
 
-  var TOPIC_IMAGES = {
-    uk: 'assets/images/uk-westminster.jpg', world: 'assets/images/world-peace-palace.jpg',
-    science: 'assets/images/science-cern-detector.jpg', tech: 'assets/images/tech-mac-desk.jpg',
-    business: 'assets/images/business-aerospace.jpg', finance: 'assets/images/finance-city-london.jpg'
-  };
-
   function dashboardImage(s, cls) {
-    var actual = safeAsset(s.image);
-    var src = actual || TOPIC_IMAGES[s.topic];
-    return src ? '<button class="dashboard-image ' + (cls || '') + '" data-act="open" data-id="' + esc(s.id) + '" aria-label="Open ' + esc(s.headline) + '"><img src="' + src + '" alt="' + esc(actual ? (s.imageAlt || '') : labelOf[s.topic] + ' topic illustration') + '" loading="lazy" decoding="async">' +
-      (!actual ? '<span class="topic-image-label">Topic image</span>' : '') + '</button>' : '';
+    var src = safeAsset(s.image);
+    return src ? '<button class="dashboard-image ' + (cls || '') + '" data-act="open" data-id="' + esc(s.id) + '" aria-label="Open ' + esc(s.headline) + '"><img src="' + esc(src) + '" alt="' + esc(s.imageAlt || s.headline) + '" loading="lazy" decoding="async" referrerpolicy="no-referrer"></button>' : '';
   }
 
   function renderChannels() {
@@ -483,24 +488,13 @@
       '</div></div></nav>' + searchDrawer + '</div>';
   }
 
-  var TOPIC_FALLBACK_IMAGE = {
-    uk: { src: 'assets/images/uk-westminster.jpg', alt: 'Palace of Westminster and Big Ben on the River Thames' },
-    world: { src: 'assets/images/world-peace-palace.jpg', alt: 'International diplomacy and global coverage' },
-    science: { src: 'assets/images/science-cern-detector.jpg', alt: 'Scientific research instrumentation' },
-    tech: { src: 'assets/images/tech-mac-desk.jpg', alt: 'Modern technology workspace' },
-    business: { src: 'assets/images/business-aerospace.jpg', alt: 'Industry and global commerce' },
-    finance: { src: 'assets/images/finance-city-london.jpg', alt: 'Financial district and markets' }
-  };
-
   /* ---------- Broadsheet Front Page / Topic / Saved ---------- */
   function renderLead(s) {
-    var img = safeAsset(s.image);
-    var fallback = !img && TOPIC_FALLBACK_IMAGE[s.topic] ? TOPIC_FALLBACK_IMAGE[s.topic] : null;
-    var src = img || (fallback ? fallback.src : '');
-    var alt = img ? (s.imageAlt || s.headline) : (fallback ? fallback.alt : s.headline);
+    var src = safeAsset(s.image);
+    var alt = s.imageAlt || s.headline;
     var figure = src
       ? '<figure class="hero-figure"><button class="hero-figure-btn" data-act="open" data-id="' + esc(s.id) + '" aria-label="Open ' + esc(s.headline) + '">' +
-        '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="eager" decoding="async"></button></figure>'
+        '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="eager" decoding="async" referrerpolicy="no-referrer"></button></figure>'
       : '';
     return '<article class="hero-lead">' + figure +
       '<p class="kicker">' + esc(labelOf[s.topic]) +
@@ -1062,7 +1056,13 @@
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
       sourceContext +
-      (img ? '<figure class="reader-photo"><img src="' + esc(img) + '" alt="' + esc(s.imageAlt || s.headline) + '"><figcaption class="reader-caption">' + esc(s.imageAlt || '') + '</figcaption></figure>' : '') +
+      (img ? (function () {
+        var capParts = [];
+        if (s.imageAlt && s.imageAlt !== s.headline) capParts.push(esc(s.imageAlt));
+        if (s.imageCredit) capParts.push('Photo: ' + esc(s.imageCredit));
+        return '<figure class="reader-photo"><img src="' + esc(img) + '" alt="' + esc(s.imageAlt || s.headline) + '" referrerpolicy="no-referrer">' +
+          (capParts.length ? '<figcaption class="reader-caption">' + capParts.join(' · ') + '</figcaption>' : '') + '</figure>';
+      })() : '') +
       '<div class="reader-body">' +
       (paras.length ? paras.map(function (para, idx) {
         var hl = !!storyHighlights[idx];
@@ -1415,6 +1415,13 @@
   });
 
   app.addEventListener('submit', function (e) { e.preventDefault(); });
+  app.addEventListener('error', function (e) {
+    var target = e.target;
+    if (target && target.tagName === 'IMG') {
+      var box = target.closest('.dashboard-image, .hero-figure, .reader-photo');
+      if (box) box.hidden = true;
+    }
+  }, true);
   document.addEventListener('keydown', function (e) {
     var tag = e.target && e.target.tagName;
     var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';

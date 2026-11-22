@@ -360,7 +360,10 @@ window.DAYBREAK = {
      "url": "https://techcrunch.com/2026/11/21/trump-says-reported-fbi-database-hack-is-not-good/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/3fd7/live/9009b220-e58d-11f1-99a1-253766e7ad8b.jpg",
+   "imageAlt": "The FBI headquarters in Washington DC. File photo",
+   "imageCredit": "BBC News"
   },
   {
    "id": "mexico-el-chapo-isidro-capture",
@@ -407,7 +410,10 @@ window.DAYBREAK = {
      "url": "https://www.theguardian.com/world/2026/nov/21/alleged-mexican-drug-cartel-boss-el-chapo-isidro-meza-flores-arrested"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.rte.ie/images/0025613b-1600.jpg",
+   "imageAlt": "Mexican forces capture alleged cartel leader El Chapo Isidro",
+   "imageCredit": "RTÉ News"
   },
   {
    "id": "climate-money-africa-europe-use-whats-already",
@@ -454,7 +460,10 @@ window.DAYBREAK = {
      "url": "https://www.france24.com/en/countries-race-to-secure-cop31-deal"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/reuters_6b025ad2-1795316434.jpg?resize=1920%2C1440",
+   "imageAlt": "COP31 climate talks on the brink as new draft deal faces scrutiny",
+   "imageCredit": "Al Jazeera English"
   },
   {
    "id": "love-carjackings-video-game",
@@ -499,7 +508,16 @@ window.DAYBREAK = {
      "url": "https://www.cbsnews.com/video/grand-theft-auto-vi-on-track-to-shatter-records-as-game-launches-to-rave-reviews/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "Edinburgh, Scotland, UK",
+    "shortLabel": "Edinburgh",
+    "lat": 55.9533,
+    "lng": -3.1883
+   },
+   "image": "https://i.guim.co.uk/img/media/bf2fb910b6bd1814c2576b1066e4abdbc6482747/356_0_3818_3055/master/3818.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=010307a0f33910c355d4f6d3b524ccb1",
+   "imageAlt": "Grand Theft Auto VI launch generates about $3.8 billion in sales",
+   "imageCredit": "The Guardian"
   },
   {
    "id": "riemann-hypothesis-ai-proof-claim",
@@ -546,7 +564,10 @@ window.DAYBREAK = {
      "url": "https://www.newscientist.com/article/2600134-anthropic-mathematician-claims-ai-assisted-proof-of-the-riemann-hypothesis/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.newscientist.com/wp-content/uploads/2026/11/SEI_321419544.jpg",
+   "imageAlt": "Mathematician claims AI-assisted breakthrough on Riemann hypothesis",
+   "imageCredit": "New Scientist"
   },
   {
    "id": "catherine-bbc-cancer-film",
@@ -589,7 +610,10 @@ window.DAYBREAK = {
      "url": "https://www.nytimes.com/2026/11/21/world/europe/princess-kate-bbc-cancer-film.html"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i.guim.co.uk/img/media/fd810cd935a14aa8ada325f3b3bdf72e59b7c84f/726_0_3234_2588/master/3234.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=8c75fe823fbf60d71110f8eb2d9a6209",
+   "imageAlt": "Princess of Wales discusses life after cancer in BBC documentary",
+   "imageCredit": "The Guardian"
   },
   {
    "id": "ice-agents-detain-people-seattle-airport",
@@ -636,7 +660,10 @@ window.DAYBREAK = {
      "url": "https://mynorthwest.com/local/immigrations-seattle-airport/4303207"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/image-1795323981.jpg?resize=1920%2C1080&quality=80",
+   "imageAlt": "ICE agents detain two people at Seattle airport",
+   "imageCredit": "Al Jazeera English"
   },
   {
    "id": "nvidia-growth-outlook-bofa-expert-jensen-huang",
@@ -683,7 +710,10 @@ window.DAYBREAK = {
      "url": "https://www.cnbc.com/2026/11/20/jensen-huang-nvidia-senate-testimony.html"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://image.cnbcfm.com/api/v1/image/108237918-1793908643837-108237918-1765118171532-gettyimages-2249151004-HUANG_SENATE.jpg?v=1795203530&w=1920&h=1080",
+   "imageAlt": "Report examines allegations about Jensen Huang’s management at Nvidia",
+   "imageCredit": "CNBC"
   },
   {
    "id": "poland-condemns-russian-airspace-provocation",
@@ -730,7 +760,10 @@ window.DAYBREAK = {
      "url": "https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.rte.ie/images/00255fd7-1600.jpg",
+   "imageAlt": "Poland reports suspected Russian missiles and drone in its airspace",
+   "imageCredit": "RTÉ News"
   },
   {
    "id": "strait-hormuz-athlete-swims-through-war-zone",
@@ -777,7 +810,10 @@ window.DAYBREAK = {
      "url": "https://www.euronews.com/video/2026/11/21/strait-of-hormuz-athlete-swims-through-war-zone-to-expose-wars-environmental-toll"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://images.euronews.com/articles/stories/10/00/26/44/1200x675_cmsv2_e09c71fe-9c0c-5fdc-bd14-ef2ecd9a216f-10002644.jpg",
+   "imageAlt": "Strait of Hormuz: Athlete swims through war zone to expose war's environmental toll",
+   "imageCredit": "Euronews"
   },
   {
    "id": "gulf-of-finland-drone-ship-attack",
@@ -824,7 +860,10 @@ window.DAYBREAK = {
      "url": "https://www.cnbc.com/2026/11/21/russian-cargo-ship-hit-by-drones-in-baltic-finland-tightens-security.html"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/4cee/live/4e2fa7a0-e5c5-11f1-a738-4787e1a18cce.jpg",
+   "imageAlt": "Image of ship ablaze through lens",
+   "imageCredit": "BBC News"
   },
   {
    "id": "trump-china-trip-iran-ukraine-peace-declaration",
@@ -871,7 +910,10 @@ window.DAYBREAK = {
      "url": "https://www.euronews.com/2026/11/20/trump-accuses-iran-of-dishonesty-while-defending-putin-ties"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://images.euronews.com/articles/stories/10/00/20/96/1200x675_cmsv2_3a56aa46-3dab-5407-b76c-355314e65330-10002096.jpg",
+   "imageAlt": "Trump defends Putin ties and accuses Iran of dishonesty in negotiations",
+   "imageCredit": "Euronews"
   },
   {
    "id": "dead-36-missing-indonesia-factory-fire",
@@ -918,7 +960,10 @@ window.DAYBREAK = {
      "url": "https://www.aljazeera.com/news/2026/11/22/indonesia-factory-fire-kills-three-36-missing?traffic_source=rss"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.rte.ie/images/002561c2-1600.jpg",
+   "imageAlt": "Three killed and dozens missing in Indonesian factory fire",
+   "imageCredit": "RTÉ News"
   },
   {
    "id": "trump-vows-work-democrats-cap-credit-card",
@@ -961,7 +1006,10 @@ window.DAYBREAK = {
      "url": "https://www.washingtonexaminer.com/policy/economy/4811339/trump-credit-card-interest-rate-cap/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/14/ca3d845e-2e76-4093-9b96-5798868f6369/thumbnail/1200x630g3/9332f7876c080ed03093c3d2d3f0256a/gettyimages-2302566480.jpg",
+   "imageAlt": "Trump backs working with Democrats on credit-card rate cap",
+   "imageCredit": "CBS News"
   },
   {
    "id": "tanker-struck-strait-bahrain-iran-hit-facility",
@@ -1004,7 +1052,10 @@ window.DAYBREAK = {
      "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility?traffic_source=rss"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.rte.ie/images/002561c7-1600.jpg",
+   "imageAlt": "Bahrain reports industrial-site strike as tankers are hit in Hormuz",
+   "imageCredit": "RTÉ News"
   },
   {
    "id": "much-loved-mum-51-among-somerset-funeral",
@@ -1039,7 +1090,10 @@ window.DAYBREAK = {
      "url": "https://www.somersetlive.co.uk/news/somerset-news/much-loved-mum-51-among-11249049"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i2-prod.bristolpost.co.uk/incoming/article11248866.ece/ALTERNATES/s615/0_image3.jpg",
+   "imageAlt": "Families share tributes in Somerset’s latest funeral notices",
+   "imageCredit": "Bristol Post"
   },
   {
    "id": "tuition-fees-talks-delay-adoption-eu-deal",
@@ -1082,7 +1136,10 @@ window.DAYBREAK = {
      "url": "https://www.theguardian.com/politics/video/2026/nov/20/andy-burnham-and-eu-leaders-call-uk-eu-reset-deal-a-win-win-video"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d218/live/12a1fc40-e531-11f1-a67d-39d55c7178b0.jpg",
+   "imageAlt": "A photo of Ed Miliband - a man with greying hair wearing a blue suit and white shirt - looking pensive during a candid moment at a meeting in Brussels.",
+   "imageCredit": "BBC News"
   },
   {
    "id": "cold-gives-way-rain-parts-weather-warning",
@@ -1117,7 +1174,10 @@ window.DAYBREAK = {
      "url": "https://www.theguardian.com/uk-news/2026/nov/21/uk-weather-cold-rain-warning-south-west-england"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i.guim.co.uk/img/media/cf9535c982b545e490c47bb89f288a644547dd4d/1843_310_3857_3087/master/3857.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=8e1dc367688425d8663d09eaf10830fd",
+   "imageAlt": "Heavy rain warning follows cold spell in south-west England",
+   "imageCredit": "The Guardian"
   },
   {
    "id": "bepicolombo-reaches-mercury",
@@ -1160,7 +1220,10 @@ window.DAYBREAK = {
      "url": "https://thewest.com.au/news/world/little-mercury-gets-its-first-visitor-in-years-c-23196530"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://media.nature.com/lw1200/magazine-assets/d41586-026-03803-8/d41586-026-03803-8_54002884.jpg",
+   "imageAlt": "BepiColombo reaches Mercury after eight-year journey",
+   "imageCredit": "Nature News"
   },
   {
    "id": "robert-pattinsons-james-bond-casting-marks-hollywoods",
@@ -1203,7 +1266,10 @@ window.DAYBREAK = {
      "url": "https://9to5google.com/2026/11/20/google-search-easter-egg-robert-pattinson-james-bond/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i.guim.co.uk/img/media/20c984c6b6913d90c4c8e7d970b39ccb61caa4b0/82_71_1671_1337/master/1671.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=daf72a71548ce852486b79a8622ca083",
+   "imageAlt": "Robert Pattinson’s Bond casting raises questions about 007’s next chapter",
+   "imageCredit": "The Guardian"
   },
   {
    "id": "village-uproar-plans-house-nearly-1-000",
@@ -1242,7 +1308,10 @@ window.DAYBREAK = {
      "url": "https://www.theguardian.com/uk-news/2026/nov/21/suffolk-village-votes-to-leave-the-uk-over-plans-to-house-asylum-seekers-nearby"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i.guim.co.uk/img/media/bfb4a0d197f8daee0456ecc459f3eddb4cc320cc/835_0_4628_3704/master/4628.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=d61639006bf904f3990b58161dc39181",
+   "imageAlt": "Suffolk village stages symbolic independence vote over asylum plan",
+   "imageCredit": "The Guardian"
   },
   {
    "id": "signal-restrict-screenshots-ai-agent-concerns-again",
@@ -1283,7 +1352,16 @@ window.DAYBREAK = {
      "url": "https://9to5mac.com/2026/11/20/signal-now-blocks-screenshots-on-iphone-to-stop-siri-ai-from-seeing-chats/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "Mountain View, California, USA",
+    "shortLabel": "Mountain View",
+    "lat": 37.3861,
+    "lng": -122.0839
+   },
+   "image": "https://www.androidauthority.com/wp-content/uploads/2025/07/the-signal-app-on-a-smartphone-screen-scaled.jpg",
+   "imageAlt": "Signal restricts screenshots to limit AI access to private chats",
+   "imageCredit": "Android Authority"
   },
   {
    "id": "tech-stock-sell-off-drags-markets-down",
@@ -1326,7 +1404,10 @@ window.DAYBREAK = {
      "url": "https://news.sky.com/story/anthropic-among-big-fallers-in-global-stock-market-rout-13614361"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/03d5/live/7b6fe9b0-e4ed-11f1-8781-bf15c9202663.jpg",
+   "imageAlt": "A man watchesDario Amodei, CEO of Anthropic on video outside the Nasdaq MarketSite while 1in Times Square as shares begin trading after their IPO on November 19, 2026 in New York City.",
+   "imageCredit": "BBC News"
   },
   {
    "id": "iphone-duo-livestream-many-folds-apples-phone",
@@ -1369,7 +1450,10 @@ window.DAYBREAK = {
      "url": "https://www.digitaltrends.com/photography/dummies-give-us-an-early-look-at-the-upcoming-iphone-air-2-and-iphone-18/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2025/05/iPhone-Air-3.png?resize=1200%2C630&ssl=1",
+   "imageAlt": "Dummy models suggest dual-camera redesign for iPhone Air 2",
+   "imageCredit": "Digital Trends"
   },
   {
    "id": "tesla-launch-fsd-15-next-month-elon",
@@ -1412,7 +1496,10 @@ window.DAYBREAK = {
      "url": "https://www.techmeme.com/261122/p4#a261122p4"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/11/Tesla-Reality-View-on-the-center-display.jpg?resize=1200%2C630&ssl=1",
+   "imageAlt": "Tesla begins limited FSD 15 rollout ahead of planned wider release",
+   "imageCredit": "Digital Trends"
   },
   {
    "id": "scientists-turn-moon-dust-lego-like-bricks",
@@ -1447,7 +1534,10 @@ window.DAYBREAK = {
      "url": "https://www.sciencedaily.com/releases/2026/11/261119194525.htm"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.sciencedaily.com/images/1920/lunar-regolith-blocks.webp",
+   "imageAlt": "Researchers test Moon-dust bricks for possible lunar construction",
+   "imageCredit": "ScienceDaily"
   },
   {
    "id": "uk-eu-reset-tuition-fees",
@@ -1474,8 +1564,6 @@ window.DAYBREAK = {
     "lat": 54.5973,
     "lng": -5.9301
    },
-   "image": "assets/images/uk-westminster.jpg",
-   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight",
    "articleStatus": "ready",
    "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
    "articleSources": [
@@ -1492,7 +1580,10 @@ window.DAYBREAK = {
      "url": "https://www.bbc.co.uk/news/articles/cm4gn9xw1v99o?at_medium=RSS&at_campaign=rss"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/162f/live/e1e89af0-e445-11f1-9192-3924a59e54c7.jpg",
+   "imageAlt": "A white lorry pulling an orange trailer along a road. In the background, is the Stena Line terminal at the Port of Belfast. A large silver and blue arch with the Stena Line logo on it is situated at the entrance to the t",
+   "imageCredit": "BBC News"
   },
   {
    "id": "warren-buffett-quadruples-thanksgiving-gifts-breakdown-much",
@@ -1531,7 +1622,10 @@ window.DAYBREAK = {
      "url": "https://observer.com/2026/11/warren-buffett-gives-four-foundations-5-47-billion-how-fast-will-they-spend-it/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://image.cnbcfm.com/api/v1/image/108140490-1746283733049-BUFFETT_3.jpg?v=1747341825&w=1920&h=1080",
+   "imageAlt": "Warren Buffett’s Thanksgiving gifts rise to about $5.5 billion",
+   "imageCredit": "CNBC"
   },
   {
    "id": "prince-william-plans-strip-harry-titles-hes",
@@ -1568,7 +1662,16 @@ window.DAYBREAK = {
      "url": "https://www.standard.co.uk/news/uk/prince-william-strip-harry-titles-king-tom-sykes-book-b1305871.html"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "Windsor, Berkshire, UK",
+    "shortLabel": "Windsor",
+    "lat": 51.4839,
+    "lng": -0.6044
+   },
+   "image": "https://i.dailymail.com/1s/2026/11/21/21/112655119-0-image-m-12_1795296788854.jpg",
+   "imageAlt": "New book claims William plans changes to royal titles",
+   "imageCredit": "Daily Mail"
   },
   {
    "id": "bradford-councillor-stabbing-charge",
@@ -1611,7 +1714,10 @@ window.DAYBREAK = {
      "url": "https://news.sky.com/story/man-charged-with-attempted-murder-after-councillor-stabbed-in-bradford-13614648"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bc67/live/17204b50-e4d7-11f1-ae38-71bf515761f1.jpg",
+   "imageAlt": "A man with short grey and black beard wearing a suit and smiling",
+   "imageCredit": "BBC News"
   },
   {
    "id": "rare-titanic-items-sell-record-breaking-sums",
@@ -1652,7 +1758,16 @@ window.DAYBREAK = {
      "url": "https://www.thejournal.ie/titanic-survivors-diamond-ring-sells-150000-at-auction-7234116-Nov2026/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "Devizes, Wiltshire, UK",
+    "shortLabel": "Wiltshire",
+    "lat": 51.3526,
+    "lng": -1.9951
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f7eb/live/4eb5f6f0-84d3-11f1-8a1f-271692b35cb6.jpg",
+   "imageAlt": "A black and white photo of the Titanic on the open water. It has four large funnels and its hull is dark black",
+   "imageCredit": "BBC News"
   },
   {
    "id": "bayers-7-25bn-settlement-cancer-cases-approved",
@@ -1693,7 +1808,16 @@ window.DAYBREAK = {
      "url": "https://www.motherjones.com/politics/2026/11/it-just-got-harder-to-sue-over-glyphosate/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "St. Louis, Missouri, USA",
+    "shortLabel": "St. Louis",
+    "lat": 38.627,
+    "lng": -90.1994
+   },
+   "image": "https://i.guim.co.uk/img/media/efbc188d676f119c98b60ce20d212a75264e7757/483_0_3333_2667/master/3333.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=5edeaf13f200c4f950da4fc630d80c08",
+   "imageAlt": "Judge approves Bayer’s $7.25 billion Roundup settlement",
+   "imageCredit": "The Guardian"
   },
   {
    "id": "custom-mri-tool-show-within-weeks-if",
@@ -1730,7 +1854,16 @@ window.DAYBREAK = {
      "url": "https://www.foxnews.com/health/new-drug-combo-shrinks-tumors-most-patients-aggressive-cancer-type"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7644,
+    "lng": -73.9565
+   },
+   "image": "https://www.rte.ie/images/00254b3b-1600.jpg",
+   "imageAlt": "Pancreatic-cancer drug combination shows encouraging early trial results",
+   "imageCredit": "RTÉ News"
   },
   {
    "id": "wall-street-asks-save-ai-trade-anthropic",
@@ -1769,7 +1902,10 @@ window.DAYBREAK = {
      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/wall-street-asks-what-can-save-ai-trade-after-anthropic-wipeout/articleshow/136067463.cms"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://img.etimg.com/thumb/msid-136067463,width-1200,height-900,imgsize-66554,overlay-etmarkets/articleshow.jpg",
+   "imageAlt": "Anthropic debut fails to halt pressure on AI shares",
+   "imageCredit": "Economic Times"
   },
   {
    "id": "gold-silver-drop-lowest-levels",
@@ -1802,7 +1938,16 @@ window.DAYBREAK = {
      "url": "https://economictimes.indiatimes.com/markets/commodities/news/from-record-highs-to-a-brutal-rout-what-is-behind-the-meltdown-in-gold-and-silver/articleshow/136051518.cms"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7128,
+    "lng": -74.006
+   },
+   "image": "https://img.etimg.com/thumb/msid-136051644,width-1200,height-900,imgsize-169078,overlay-etmarkets/articleshow.jpg",
+   "imageAlt": "Gold and silver fall as rate expectations weigh on precious metals",
+   "imageCredit": "Economic Times"
   },
   {
    "id": "nasas-voyager-1-now-far-away-light",
@@ -1841,7 +1986,10 @@ window.DAYBREAK = {
      "url": "https://mashable.com/science/nasa-voyager-1-data-outage-continues-past-one-light-day"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.sciencedaily.com/images/1920/nasa-voyager-spacecraft-radio-signal.webp",
+   "imageAlt": "Voyager 1 reaches a one-light-day distance from Earth",
+   "imageCredit": "ScienceDaily"
   },
   {
    "id": "california-entrepreneur-state-avoided-economic-disaster-billionaire",
@@ -1884,7 +2032,10 @@ window.DAYBREAK = {
      "url": "https://jacobin.com/2026/11/billionaire-tax-tech-wealth-control"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/01/0/0/gavin-newsom-san-fran-jan-2026.jpg?ve=1&tl=1",
+   "imageAlt": "California rejects billionaire-tax measure as debate continues",
+   "imageCredit": "Fox Business"
   },
   {
    "id": "economy-doing-better-think-everyone",
@@ -1923,7 +2074,10 @@ window.DAYBREAK = {
      "url": "https://thehill.com/opinion/finance/6231352-us-economy-outlook-2026/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://thehill.com/wp-content/uploads/sites/2/2026/11/AP26296812766405.jpg?w=1280",
+   "imageAlt": "AI’s growing economic role brings a concentration risk",
+   "imageCredit": "The Hill"
   },
   {
    "id": "tentative-deal-averts-strike-threat-busiest-u",
@@ -1966,7 +2120,10 @@ window.DAYBREAK = {
      "url": "https://www.bloomberg.com/news/articles/2026-11-21/los-angeles-port-strike-threat-resolved-with-tentative-agreement"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://www.freightwaves.com/wp-content/uploads/2026/11/21/Screenshot-2026-11-21-at-9.53.13-AM.png",
+   "imageAlt": "Tentative security-workers’ deal averts Los Angeles port strike threat",
+   "imageCredit": "Freightwaves"
   },
   {
    "id": "physician-explains-glp-1s-biggest-potential-side",
@@ -1995,7 +2152,16 @@ window.DAYBREAK = {
      "url": "https://www.inc.com/avery-miles/a-massive-study-of-250000-patients-just-revealed-a-surprising-new-use-for-glp-1s/91436392"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "Rochester, Minnesota, USA",
+    "shortLabel": "Minnesota",
+    "lat": 44.0225,
+    "lng": -92.4669
+   },
+   "image": "https://lede-admin.nautil.us/wp-content/uploads/sites/70/2026/11/AdobeStock_2072923046_Editorial_Use_Only.jpeg",
+   "imageAlt": "Large health-record study examines GLP-1 drugs and prediabetes",
+   "imageCredit": "Nautilus"
   },
   {
    "id": "lufthansa-cut-1-000-jobs-citing-ongoing",
@@ -2042,7 +2208,10 @@ window.DAYBREAK = {
      "url": "https://oilprice.com/Latest-Energy-News/World-News/Lufthansa-to-Slash-1000-Jobs-as-Airlines-Reel-from-High-Fuel-Costs.html"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "image": "https://static.dw.com/image/79691095_6.jpg",
+   "imageAlt": "A picture of a Lufthansa Airbus A340-600 taking off",
+   "imageCredit": "DW News"
   },
   {
    "id": "james-webb-telescope-spots-giant-star-swallowing",
@@ -2079,7 +2248,16 @@ window.DAYBREAK = {
      "url": "https://arstechnica.com/science/2026/11/astronomers-watched-a-star-spiral-to-its-death-inside-a-giant-companion/"
     }
    ],
-   "articleOrigin": "editorial"
+   "articleOrigin": "editorial",
+   "location": {
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "image": "https://www.sciencedaily.com/images/1920/andromeda-star-merger.webp",
+   "imageAlt": "Webb observations reveal aftermath of a star swallowing its companion",
+   "imageCredit": "ScienceDaily"
   }
  ],
  "OUTLETS": {

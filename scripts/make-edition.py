@@ -31,6 +31,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ratings  # noqa: E402
 from native_articles import article_is_ready, apply_editorial  # noqa: E402
+from story_images import enrich_stories  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 LONDON = ZoneInfo('Europe/London')
@@ -354,17 +355,20 @@ GAZETTEER = [
     (r'\b(kryvyi rih|kyiv|ukraine|ukrainian|crimea|crimean)\b', 'Kyiv, Ukraine', 'Ukraine', 50.4501, 30.5234),
     (r'\b(moscow|kremlin|russia|russian)\b', 'Moscow, Russia', 'Russia', 55.7558, 37.6173),
     (r'\b(belfast|northern ireland)\b', 'Belfast, Northern Ireland', 'Belfast', 54.5973, -5.9301),
-    (r'\b(edinburgh|glasgow|scotland|scottish)\b', 'Edinburgh, Scotland, UK', 'Edinburgh', 55.9533, -3.1883),
+    (r'\b(edinburgh|glasgow|scotland|scottish|rockstar|grand theft auto|gta\s+vi|gta\s+6)\b', 'Edinburgh, Scotland, UK', 'Edinburgh', 55.9533, -3.1883),
     (r'\b(cardiff|wales|welsh)\b', 'Cardiff, Wales, UK', 'Cardiff', 51.4816, -3.1791),
     (r'\b(bradford|leeds|yorkshire)\b', 'Bradford, West Yorkshire, UK', 'Bradford', 53.7960, -1.7594),
+    (r'\b(liverpool|merseyside)\b', 'Liverpool, UK', 'Liverpool', 53.4084, -2.9916),
     (r'\b(manchester)\b', 'Manchester, UK', 'Manchester', 53.4808, -2.2426),
     (r'\b(birmingham|walsall|midlands|poundland)\b', 'West Midlands, UK', 'Midlands', 52.4862, -1.8904),
-    (r'\b(windsor|buckingham|princess of wales|catherine)\b', 'Windsor, Berkshire, UK', 'Windsor', 51.4839, -0.6044),
+    (r'\b(devizes|wiltshire|henry aldridge|titanic)\b', 'Devizes, Wiltshire, UK', 'Wiltshire', 51.3526, -1.9951),
+    (r'\b(somerset|bristol|bath|devon|cornwall|plymouth)\b', 'Bristol, UK', 'Bristol', 51.4545, -2.5879),
+    (r'\b(windsor|buckingham|princess of wales|catherine|prince william|prince harry|king charles|royal titles|royal family)\b', 'Windsor, Berkshire, UK', 'Windsor', 51.4839, -0.6044),
     (r'\b(bank of england|ftse|city of london|bailey)\b', 'City of London, UK', 'City of London', 51.5142, -0.0886),
     (r'\b(westminster|downing street|whitehall|london|nhs|ons|uk|britain|british)\b', 'London, UK', 'London', 51.5072, -0.1276),
     (r'\b(dublin|ireland|irish)\b', 'Dublin, Ireland', 'Dublin', 53.3498, -6.2603),
     (r'\b(paris|france|french|macron)\b', 'Paris, France', 'Paris', 48.8566, 2.3522),
-    (r'\b(munich|garching|berlin|germany|german|darmstadt)\b', 'Berlin, Germany', 'Germany', 52.5200, 13.4050),
+    (r'\b(munich|garching|berlin|germany|german|darmstadt|lufthansa|frankfurt)\b', 'Berlin, Germany', 'Germany', 52.5200, 13.4050),
     (r'\b(rome|milan|italy|italian|vatican)\b', 'Rome, Italy', 'Italy', 41.9028, 12.4964),
     (r'\b(madrid|barcelona|spain|spanish)\b', 'Madrid, Spain', 'Spain', 40.4168, -3.7038),
     (r'\b(antalya|istanbul|ankara|turkey|turkish|cop31)\b', 'Antalya, Turkey', 'Turkey', 36.8969, 30.7133),
@@ -387,18 +391,28 @@ GAZETTEER = [
     (r'\b(tokyo|japan|japanese)\b', 'Tokyo, Japan', 'Tokyo', 35.6762, 139.6503),
     (r'\b(seoul|south korea|north korea|pyongyang)\b', 'Seoul, South Korea', 'Seoul', 37.5665, 126.9780),
     (r'\b(sydney|melbourne|canberra|australia|australian)\b', 'Sydney, Australia', 'Australia', -33.8688, 151.2093),
+    (r'\b(mountain view|signal)\b', 'Mountain View, California, USA', 'California', 37.3861, -122.0839),
     (r'\b(cupertino|apple|silicon valley|san francisco|anthropic|openai|nvidia|santa clara|google|meta|california)\b', 'San Francisco Bay Area, USA', 'California', 37.4419, -122.1430),
     (r'\b(spacex|los angeles|hollywood|hawthorne)\b', 'Los Angeles, California, USA', 'Los Angeles', 34.0522, -118.2437),
     (r'\b(seattle|amazon|microsoft)\b', 'Seattle, Washington, USA', 'Seattle', 47.6062, -122.3321),
-    (r'\b(austin|houston|texas|nasa)\b', 'Austin, Texas, USA', 'Texas', 30.2672, -97.7431),
-    (r'\b(wall street|nasdaq|s&p 500|dow jones|new york|nyc)\b', 'New York, USA', 'New York', 40.7128, -74.0060),
+    (r'\b(austin|houston|texas|nasa|tesla)\b', 'Austin, Texas, USA', 'Texas', 30.2672, -97.7431),
+    (r'\b(st\.?\s+louis|missouri|roundup|bayer)\b', 'St. Louis, Missouri, USA', 'St. Louis', 38.6270, -90.1994),
+    (r'\b(mayo clinic|minnesota)\b', 'Rochester, Minnesota, USA', 'Minnesota', 44.0225, -92.4669),
+    (r'\b(chicago|illinois)\b', 'Chicago, Illinois, USA', 'Chicago', 41.8781, -87.6298),
+    (r'\b(boston|harvard|mit\b|massachusetts)\b', 'Boston, Massachusetts, USA', 'Boston', 42.3601, -71.0589),
+    (r'\b(columbia university|sloan kettering|daraxonrasib|wall street|nasdaq|s&p 500|dow jones|new york|nyc|gold and silver|precious metals|comex|bullion)\b', 'New York, USA', 'New York', 40.7128, -74.0060),
+    (r'\b(james webb|jwst|stsci|baltimore|maryland)\b', 'Baltimore, Maryland, USA', 'Baltimore', 39.2904, -76.6122),
     (r'\b(white house|pentagon|fbi|federal reserve|congress|senate|washington|trump|usda|fcc)\b', 'Washington, D.C., USA', 'Washington, D.C.', 38.9072, -77.0369),
     (r'\b(ottawa|toronto|canada|canadian)\b', 'Ottawa, Canada', 'Canada', 45.4215, -75.6972),
 ]
 
 
-def infer_location(e, headline):
-    text = ' '.join([headline] + [a.get('title', '') for a in list(e['outlets'].values())[:6]]).lower()
+def infer_location(e, headline, extra_text=''):
+    parts = [headline, extra_text]
+    for a in list(e['outlets'].values())[:10]:
+        parts.append(a.get('title', ''))
+        parts.append(a.get('summary', '')[:200])
+    text = ' '.join(p for p in parts if p).lower()
     for pattern, label, short_label, lat, lng in GAZETTEER:
         if re.search(pattern, text):
             return {'label': label, 'shortLabel': short_label, 'lat': lat, 'lng': lng}
@@ -469,7 +483,8 @@ def write_story(e, taken):
         except (KeyError, TypeError, ValueError):
             pass
     if not story.get('location'):
-        inferred = infer_location(e, headline)
+        extra = ' '.join([summary] + points + article[:2])
+        inferred = infer_location(e, headline, extra)
         if inferred:
             story['location'] = inferred
     comparison = []
@@ -501,9 +516,12 @@ def reuse_ids(stories, coverage, previous):
                 s['id'] = sid
                 prev = prev_stories.get(sid)
                 if prev:
-                    if not s.get('image') and prev.get('image') and (ROOT / prev['image']).exists():
-                        s['image'] = prev['image']
+                    prev_img = prev.get('image')
+                    if not s.get('image') and prev_img and (prev_img.startswith('https://') or (ROOT / prev_img).exists()):
+                        s['image'] = prev_img
                         s['imageAlt'] = prev.get('imageAlt', s['headline'])
+                        if prev.get('imageCredit'):
+                            s['imageCredit'] = prev['imageCredit']
                     if not s.get('location') and prev.get('location'):
                         s['location'] = prev['location']
                 used.add(sid)
@@ -543,6 +561,11 @@ def main():
     if missing:
         print(f'Article quality gate: {len(missing)} stories have no source-backed article. Keeping the published edition unchanged. Configure ANTHROPIC_API_KEY or GROQ_API_KEY for new articles.', file=sys.stderr)
         return 1
+    rss_images = {a['url']: a['image'] for a in articles if a.get('image')}
+    needs_img = [s for s in stories if not (s.get('image') or '').startswith('https://')]
+    if needs_img:
+        found_imgs = enrich_stories(needs_img, coverage, rss_image_by_url=rss_images)
+        print(f'Resolved {found_imgs}/{len(needs_img)} live publisher images.', file=sys.stderr)
     digests = [s['headline'] + ' (' + s['source'] + ')' for s in stories]
     now = datetime.datetime.now(LONDON)
     pub = sorted(datetime.datetime.fromisoformat(a['published']).astimezone(LONDON)

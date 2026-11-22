@@ -21,6 +21,47 @@ FEEDS = [(f["outlet"], f["topic"], f["url"]) for f in json.loads(FEEDS_FILE.read
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 RSS1_NS = "{http://purl.org/rss/1.0/}"
 DC_NS = "{http://purl.org/dc/elements/1.1/}"
+MEDIA_NS = "{http://search.yahoo.com/mrss/}"
+IMG_EXT_RE = re.compile(r"\.(?:jpe?g|png|webp|avif)(?:\?|$)", re.I)
+BAD_FEED_IMG_RE = re.compile(r"(?:logo|favicon|icon|avatar|placeholder|0_brand\.|/ALTERNATES/s(?:98|120)/|\.svg(?:\?|$)|\.ico(?:\?|$))", re.I)
+
+
+def first_image(node):
+    """Return the best high-resolution HTTPS image URL embedded in an RSS/Atom entry."""
+    candidates = []
+    for el in node.iter():
+        tag = el.tag
+        if tag in ("enclosure", f"{MEDIA_NS}content", f"{MEDIA_NS}thumbnail") or tag.endswith("}content") or tag.endswith("}thumbnail"):
+            url = (el.attrib.get("url") or el.attrib.get("href") or "").strip()
+            if not url:
+                continue
+            mime = (el.attrib.get("type") or "").lower()
+            medium = (el.attrib.get("medium") or "").lower()
+            if mime and not mime.startswith("image/"):
+                continue
+            if not mime and medium and medium != "image":
+                continue
+            if not mime and not medium and not IMG_EXT_RE.search(url) and "thumbnail" not in tag.lower():
+                continue
+            parts = urllib.parse.urlsplit(url)
+            if parts.scheme == "http":
+                url = urllib.parse.urlunsplit(("https", parts.netloc, parts.path, parts.query, ""))
+                parts = urllib.parse.urlsplit(url)
+            if parts.scheme != "https" or not parts.netloc or parts.username or parts.password:
+                continue
+            if BAD_FEED_IMG_RE.search(parts.path + ("?" + parts.query if parts.query else "")):
+                continue
+            try:
+                width = int(el.attrib.get("width") or 0)
+            except ValueError:
+                width = 0
+            # Prefer enclosure / media:content over small thumbnails when width is omitted.
+            rank = (width, 1 if "thumbnail" not in tag.lower() else 0)
+            candidates.append((rank, url))
+    if not candidates:
+        return ""
+    candidates.sort(key=lambda pair: pair[0], reverse=True)
+    return candidates[0][1]
 
 
 def parse_timestamp(raw):
@@ -89,16 +130,18 @@ def collect(feed, cutoff):
             # story writer; it is never published as-is.
             raw_summary = first_text(entry, ("description", f"{ATOM_NS}summary", f"{ATOM_NS}content", f"{RSS1_NS}description"))
             summary = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw_summary or ""))).strip()[:500]
-            items.append(
-                dict(
-                    outlet=outlet,
-                    topic=topic,
-                    title=re.sub(r"\s+", " ", html.unescape(title)).strip(),
-                    summary=summary,
-                    url=link,
-                    published=published.isoformat(),
-                )
+            item = dict(
+                outlet=outlet,
+                topic=topic,
+                title=re.sub(r"\s+", " ", html.unescape(title)).strip(),
+                summary=summary,
+                url=link,
+                published=published.isoformat(),
             )
+            image = first_image(entry)
+            if image:
+                item["image"] = image
+            items.append(item)
     return items
 
 

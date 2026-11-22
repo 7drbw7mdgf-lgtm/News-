@@ -9,6 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from native_articles import article_is_ready, apply_editorial, ROOT
+import story_images
 
 spec = importlib.util.spec_from_file_location('pheme_writer', ROOT / 'scripts/make-edition.py')
 writer = importlib.util.module_from_spec(spec)
@@ -87,6 +88,28 @@ class NativeArticleTests(unittest.TestCase):
                 result = writer.main()
             self.assertEqual(result, 1)
             self.assertEqual(previous.read_text(), original)
+
+    def test_story_image_extractor_filters_generic_and_keeps_article_photos(self):
+        html_ok = '<head><meta property="og:image" content="https://ichef.bbci.co.uk/news/1200/photo.jpg"><meta property="og:image:alt" content="Press conference"></head>'
+        url, alt = story_images.extract_meta_image(html_ok, 'https://www.bbc.co.uk/news/example')
+        self.assertEqual(url, 'https://ichef.bbci.co.uk/news/1200/photo.jpg')
+        self.assertEqual(alt, 'Press conference')
+
+        html_logo = '<head><meta property="og:image" content="https://static.seekingalpha.com/assets/og_image_1200-abc.png"></head>'
+        url2, _ = story_images.extract_meta_image(html_logo, 'https://seekingalpha.com/news/1')
+        self.assertIsNone(url2)
+
+    def test_gazetteer_maps_previously_unmapped_entities(self):
+        cases = [
+            ('Judge approves Bayer Roundup settlement in Missouri', 'St. Louis, Missouri, USA'),
+            ('Mayo Clinic analysis examines GLP-1 medicines and prediabetes', 'Rochester, Minnesota, USA'),
+            ('Grand Theft Auto VI launch generates record sales for Rockstar', 'Edinburgh, Scotland, UK'),
+            ('Signal restricts screenshots over AI assistant concerns', 'Mountain View, California, USA'),
+        ]
+        for headline, expected in cases:
+            loc = writer.infer_location({'outlets': {}}, headline)
+            self.assertIsNotNone(loc, headline)
+            self.assertEqual(loc['label'], expected)
 
 
 if __name__ == '__main__':
