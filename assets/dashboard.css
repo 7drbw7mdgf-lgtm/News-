@@ -389,3 +389,9 @@ body.reader-focus .dashboard-body {
 @media (max-width: 640px) {
   .paper-story-feed .paper-source-article { grid-template-columns: minmax(0, 1fr); gap: 12px; }
 }
+
+
+/* Source-only rows have no borrowed cross-publisher lead image. */
+.paper-story-feed .paper-source-article { display: block; }
+.paper-source-copy { max-width: 880px; }
+.paper-source-copy h3 { max-width: 54ch; }
