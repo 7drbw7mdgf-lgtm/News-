@@ -8,19 +8,36 @@ Providers (selected automatically or via PHEME_TTS_PROVIDER):
 - OpenAI gpt-4o-mini-tts (when OPENAI_API_KEY is set)
 - ElevenLabs (when ELEVENLABS_API_KEY is set)
 - Microsoft Edge Neural conversational voices via edge-tts (default, zero-key)
+- Self-hosted open-source Kokoro-82M via kokoro-onnx (automatic offline fallback
+  when edge-tts is unavailable, or explicitly via PHEME_TTS_PROVIDER=kokoro)
 """
 import argparse
 import asyncio
 import hashlib
+import io
 import json
 import os
 import re
 import shutil
+import subprocess
 import sys
+import threading
 import urllib.request
+import wave
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+KOKORO_MODEL_URL = 'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx'
+KOKORO_VOICES_URL = 'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin'
+ESPEAK_LIB_CANDIDATES = (
+    '/usr/lib/x86_64-linux-gnu/libespeak-ng.so.1',
+    '/usr/lib/x86_64-linux-gnu/libespeak-ng.so',
+    '/usr/lib/aarch64-linux-gnu/libespeak-ng.so.1',
+    '/usr/lib/libespeak-ng.so.1',
+    '/opt/homebrew/lib/libespeak-ng.dylib',
+    '/usr/local/lib/libespeak-ng.dylib',
+)
 
 VOICES = [
     {
@@ -28,6 +45,7 @@ VOICES = [
         'label': 'Ava',
         'tagline': 'Warm & expressive',
         'edge': 'en-US-AvaMultilingualNeural',
+        'kokoro': 'af_heart',
         'openai': 'coral',
         'elevenlabs': 'EXAVITQu4vr4xnSDxMaL',
     },
@@ -36,6 +54,7 @@ VOICES = [
         'label': 'Andrew',
         'tagline': 'Calm & conversational',
         'edge': 'en-US-AndrewMultilingualNeural',
+        'kokoro': 'am_michael',
         'openai': 'ash',
         'elevenlabs': 'TxGEqnHWrfWFTfGW9XjX',
     },
@@ -46,6 +65,9 @@ OPENAI_INSTRUCTIONS = (
     'Use a relaxed, natural conversational cadence with gentle warmth, clear phrasing, '
     'and brief natural breaths between paragraphs. Never sound robotic, stiff, or like a news anchor.'
 )
+
+_kokoro_lock = threading.Lock()
+_kokoro_instance = None
 
 
 def prepare_spoken_text(text):
@@ -88,13 +110,37 @@ def _norm_words(text):
     return re.findall(r'[a-z0-9]+', (text or '').lower())
 
 
+def split_sentences(text, max_chars=300):
+    """Split text into natural sentence chunks short enough for Kokoro-82M's phoneme window."""
+    raw = re.split(r'(?<=[.!?])\s+', (text or '').strip())
+    chunks = []
+    for sent in raw:
+        sent = sent.strip()
+        if not sent:
+            continue
+        if len(sent) <= max_chars:
+            chunks.append(sent)
+            continue
+        # Soft-split very long sentences on clauses or word boundaries.
+        parts = re.split(r'(?<=[,;:])\s+', sent)
+        buf = ''
+        for part in parts:
+            if buf and len(buf) + 1 + len(part) > max_chars:
+                chunks.append(buf)
+                buf = part
+            else:
+                buf = f'{buf} {part}'.strip() if buf else part
+        if buf:
+            chunks.append(buf)
+    return chunks
+
+
 def align_paragraph_cues(parts, sentence_events, total_duration):
     """Map sentence boundary timestamps back to article paragraph indices (0..len(article)-1)."""
     para_count = max(0, len(parts) - 1)
     if para_count == 0:
         return []
     if not sentence_events:
-        # Proportional estimate fallback when provider does not emit timing cues.
         weights = [max(1, len(_norm_words(p))) for p in parts]
         total_w = sum(weights) or 1
         acc = weights[0]
@@ -104,7 +150,6 @@ def align_paragraph_cues(parts, sentence_events, total_duration):
             acc += w
         return cues
 
-    # Walk sentence events sequentially and detect the start of each paragraph.
     cues = [None] * para_count
     para_heads = [_norm_words(p)[:5] for p in parts[1:]]
     cursor = 1 if len(sentence_events) > 1 else 0
@@ -124,7 +169,6 @@ def align_paragraph_cues(parts, sentence_events, total_duration):
             cues[pidx] = round(sentence_events[matched]['offset'], 2)
             cursor = matched + 1
 
-    # Fill any unmatched paragraph cues cleanly by interpolation.
     for i in range(para_count):
         if cues[i] is None:
             prev_t = cues[i - 1] if i > 0 and cues[i - 1] is not None else (
@@ -133,6 +177,108 @@ def align_paragraph_cues(parts, sentence_events, total_duration):
             next_t = next((cues[j] for j in range(i + 1, para_count) if cues[j] is not None), total_duration)
             cues[i] = round(prev_t + (next_t - prev_t) * 0.35, 2)
     return cues
+
+
+def _download_atomic(url, dest):
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_suffix(dest.suffix + '.part')
+    req = urllib.request.Request(url, headers={'User-Agent': 'PhemeAudioBuilder/1.0'})
+    with urllib.request.urlopen(req, timeout=180) as resp, tmp.open('wb') as out:
+        shutil.copyfileobj(resp, out, length=1024 * 256)
+    tmp.replace(dest)
+
+
+def get_kokoro(cache_dir):
+    """Lazily download and initialise self-hosted Kokoro-82M ONNX runtime."""
+    global _kokoro_instance
+    if _kokoro_instance is not None:
+        return _kokoro_instance
+    with _kokoro_lock:
+        if _kokoro_instance is not None:
+            return _kokoro_instance
+        from kokoro_onnx import Kokoro
+
+        model_dir = (cache_dir or (ROOT / '.audio-cache')) / 'kokoro'
+        model_path = model_dir / 'kokoro-v1.0.onnx'
+        voices_path = model_dir / 'voices-v1.0.bin'
+        if not model_path.exists():
+            print('Downloading Kokoro-82M ONNX weights for offline neural TTS fallback...', flush=True)
+            _download_atomic(KOKORO_MODEL_URL, model_path)
+        if not voices_path.exists():
+            _download_atomic(KOKORO_VOICES_URL, voices_path)
+
+        try:
+            _kokoro_instance = Kokoro(str(model_path), str(voices_path))
+        except Exception:
+            from kokoro_onnx import EspeakConfig
+            lib = next((p for p in ESPEAK_LIB_CANDIDATES if Path(p).exists()), None)
+            if not lib:
+                raise
+            _kokoro_instance = Kokoro(str(model_path), str(voices_path), espeak_config=EspeakConfig(lib_path=lib))
+        return _kokoro_instance
+
+
+def encode_pcm_to_mp3(samples, sample_rate):
+    """Encode float32 mono PCM array to a compact 48 kbps 24 kHz MP3 via ffmpeg."""
+    import numpy as np
+
+    ffmpeg = shutil.which('ffmpeg')
+    if not ffmpeg:
+        raise RuntimeError('ffmpeg is required to encode Kokoro-82M audio to MP3')
+    clipped = np.clip(np.asarray(samples, dtype=np.float32), -1.0, 1.0)
+    pcm16 = (clipped * 32767.0).astype('<i2')
+    wav_buf = io.BytesIO()
+    with wave.open(wav_buf, 'wb') as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(int(sample_rate))
+        wf.writeframes(pcm16.tobytes())
+    proc = subprocess.run(
+        [ffmpeg, '-hide_banner', '-loglevel', 'error', '-f', 'wav', '-i', 'pipe:0', '-b:a', '48k', '-ac', '1', '-ar', '24000', '-f', 'mp3', 'pipe:1'],
+        input=wav_buf.getvalue(),
+        capture_output=True,
+        check=True,
+    )
+    if len(proc.stdout) < 1024:
+        raise RuntimeError('Empty MP3 produced by ffmpeg')
+    return proc.stdout
+
+
+def synth_kokoro_sync(parts, voice_cfg, cache_dir):
+    """Synthesise an entire article with self-hosted Kokoro-82M and exact paragraph cues."""
+    import numpy as np
+
+    kokoro = get_kokoro(cache_dir)
+    voice_name = voice_cfg['kokoro']
+    segments = []
+    cues = []
+    sample_rate = 24000
+    total_samples = 0
+
+    for idx, part in enumerate(parts):
+        if idx > 0:
+            cues.append(round(total_samples / sample_rate, 2))
+        part_chunks = split_sentences(part)
+        for s_idx, chunk in enumerate(part_chunks):
+            samples, sr = kokoro.create(chunk, voice=voice_name, speed=0.96, lang='en-us')
+            sample_rate = int(sr)
+            arr = np.asarray(samples, dtype=np.float32)
+            segments.append(arr)
+            total_samples += len(arr)
+            if s_idx + 1 < len(part_chunks):
+                pause = np.zeros(int(sample_rate * 0.14), dtype=np.float32)
+                segments.append(pause)
+                total_samples += len(pause)
+        if idx + 1 < len(parts):
+            gap_sec = 0.42 if idx == 0 else 0.32
+            pause = np.zeros(int(sample_rate * gap_sec), dtype=np.float32)
+            segments.append(pause)
+            total_samples += len(pause)
+
+    full_pcm = np.concatenate(segments) if segments else np.zeros(0, dtype=np.float32)
+    mp3_bytes = encode_pcm_to_mp3(full_pcm, sample_rate)
+    duration = round(total_samples / sample_rate, 2)
+    return mp3_bytes, duration, cues
 
 
 async def synth_edge(parts, voice_cfg):
@@ -159,7 +305,6 @@ async def synth_edge(parts, voice_cfg):
             })
     if len(audio) < 1024:
         raise RuntimeError('Empty audio returned by edge-tts')
-    # Edge outputs 24kHz 48kbps CBR MP3 (~6000 bytes/sec). Prefer boundary end if available.
     est_dur = len(audio) / 6000.0
     if events:
         last = events[-1]
@@ -192,7 +337,6 @@ def synth_openai_sync(parts, voice_cfg):
         audio = resp.read()
     if len(audio) < 1024:
         raise RuntimeError('Empty audio returned by OpenAI TTS')
-    # OpenAI MP3 is typically 160kbps (~20000 bytes/sec) or 128kbps; word-rate estimate is safer for cues.
     words = len(_norm_words(text))
     duration = round(max(5.0, words / 2.65), 2)
     cues = align_paragraph_cues(parts, [], duration)
@@ -236,7 +380,26 @@ def choose_provider():
     return 'edge'
 
 
-async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem):
+def _try_cache(cache_dir, voice_id, story_id, digest, dest):
+    if not cache_dir:
+        return None
+    cache_mp3 = cache_dir / f'{voice_id}-{story_id}-{digest}.mp3'
+    cache_meta = cache_dir / f'{voice_id}-{story_id}-{digest}.json'
+    if cache_mp3.exists() and cache_meta.exists():
+        shutil.copy2(cache_mp3, dest)
+        return json.loads(cache_meta.read_text())
+    return None
+
+
+def _save_cache(cache_dir, voice_id, story_id, digest, audio, duration, cues):
+    if not cache_dir:
+        return
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    (cache_dir / f'{voice_id}-{story_id}-{digest}.mp3').write_bytes(audio)
+    (cache_dir / f'{voice_id}-{story_id}-{digest}.json').write_text(json.dumps({'duration': duration, 'cues': cues}))
+
+
+async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, kokoro_sem):
     parts = story_script_parts(story)
     if len(parts) < 2:
         return None
@@ -245,52 +408,87 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem):
     dest = out_dir / rel_file
     dest.parent.mkdir(parents=True, exist_ok=True)
 
-    cache_mp3 = cache_dir / f"{voice_cfg['id']}-{story['id']}-{digest}.mp3" if cache_dir else None
-    cache_meta = cache_dir / f"{voice_cfg['id']}-{story['id']}-{digest}.json" if cache_dir else None
-
-    if cache_mp3 and cache_meta and cache_mp3.exists() and cache_meta.exists():
-        shutil.copy2(cache_mp3, dest)
-        meta = json.loads(cache_meta.read_text())
+    cached_meta = _try_cache(cache_dir, voice_cfg['id'], story['id'], digest, dest)
+    if cached_meta:
         return {
             'story_id': story['id'],
             'voice_id': voice_cfg['id'],
             'hash': digest,
             'file': rel_file,
-            'duration': meta['duration'],
-            'cues': meta['cues'],
+            'duration': cached_meta['duration'],
+            'cues': cached_meta['cues'],
             'cached': True,
+            'provider': provider,
         }
 
-    async with sem:
-        last_err = None
-        for attempt in range(1, 4):
-            try:
-                if provider == 'openai':
-                    audio, duration, cues = await asyncio.to_thread(synth_openai_sync, parts, voice_cfg)
-                elif provider == 'elevenlabs':
-                    audio, duration, cues = await asyncio.to_thread(synth_elevenlabs_sync, parts, voice_cfg)
-                else:
-                    audio, duration, cues = await synth_edge(parts, voice_cfg)
-                dest.write_bytes(audio)
-                if cache_mp3 and cache_meta:
-                    cache_dir.mkdir(parents=True, exist_ok=True)
-                    cache_mp3.write_bytes(audio)
-                    cache_meta.write_text(json.dumps({'duration': duration, 'cues': cues}))
-                return {
-                    'story_id': story['id'],
-                    'voice_id': voice_cfg['id'],
-                    'hash': digest,
-                    'file': rel_file,
-                    'duration': duration,
-                    'cues': cues,
-                    'cached': False,
-                }
-            except Exception as err:
-                last_err = err
-                if attempt < 3:
-                    await asyncio.sleep(1.5 * attempt)
-        print(f"Audio skipped for {story['id']} ({voice_cfg['id']}): {type(last_err).__name__}: {last_err}", file=sys.stderr)
-        return None
+    # Try primary provider first.
+    last_err = None
+    if provider != 'kokoro':
+        async with sem:
+            for attempt in range(1, 4):
+                try:
+                    if provider == 'openai':
+                        audio, duration, cues = await asyncio.to_thread(synth_openai_sync, parts, voice_cfg)
+                    elif provider == 'elevenlabs':
+                        audio, duration, cues = await asyncio.to_thread(synth_elevenlabs_sync, parts, voice_cfg)
+                    else:
+                        audio, duration, cues = await synth_edge(parts, voice_cfg)
+                    dest.write_bytes(audio)
+                    _save_cache(cache_dir, voice_cfg['id'], story['id'], digest, audio, duration, cues)
+                    return {
+                        'story_id': story['id'],
+                        'voice_id': voice_cfg['id'],
+                        'hash': digest,
+                        'file': rel_file,
+                        'duration': duration,
+                        'cues': cues,
+                        'cached': False,
+                        'provider': provider,
+                    }
+                except Exception as err:
+                    last_err = err
+                    if attempt < 3:
+                        await asyncio.sleep(1.5 * attempt)
+
+    # Self-hosted Kokoro-82M: either explicitly selected or automatic offline fallback.
+    fallback_digest = content_hash('kokoro', voice_cfg['id'], parts)
+    cached_fallback = _try_cache(cache_dir, voice_cfg['id'], story['id'], fallback_digest, dest)
+    if cached_fallback:
+        return {
+            'story_id': story['id'],
+            'voice_id': voice_cfg['id'],
+            'hash': fallback_digest,
+            'file': rel_file,
+            'duration': cached_fallback['duration'],
+            'cues': cached_fallback['cues'],
+            'cached': True,
+            'provider': 'kokoro',
+        }
+    async with kokoro_sem:
+        try:
+            audio, duration, cues = await asyncio.to_thread(synth_kokoro_sync, parts, voice_cfg, cache_dir)
+            dest.write_bytes(audio)
+            _save_cache(cache_dir, voice_cfg['id'], story['id'], fallback_digest, audio, duration, cues)
+            if provider != 'kokoro':
+                print(f"Kokoro-82M fallback rescued {story['id']} ({voice_cfg['id']}) after {type(last_err).__name__}.", flush=True)
+            return {
+                'story_id': story['id'],
+                'voice_id': voice_cfg['id'],
+                'hash': fallback_digest,
+                'file': rel_file,
+                'duration': duration,
+                'cues': cues,
+                'cached': False,
+                'provider': 'kokoro',
+            }
+        except Exception as fallback_err:
+            print(
+                f"Audio skipped for {story['id']} ({voice_cfg['id']}): "
+                f"primary={type(last_err).__name__ if last_err else 'none'}, "
+                f"kokoro={type(fallback_err).__name__}: {fallback_err}",
+                file=sys.stderr,
+            )
+            return None
 
 
 async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
@@ -298,8 +496,10 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
     provider = choose_provider()
     selected_voices = [v for v in VOICES if v['id'] in voice_ids]
     sem = asyncio.Semaphore(concurrency)
+    # Limit CPU-bound ONNX inference concurrency to keep memory and CPU throughput optimal.
+    kokoro_sem = asyncio.Semaphore(2)
     tasks = [
-        generate_one(story, v, provider, out_dir, cache_dir, sem)
+        generate_one(story, v, provider, out_dir, cache_dir, sem, kokoro_sem)
         for story in edition['STORIES']
         for v in selected_voices
     ]
@@ -308,6 +508,7 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
     stories_map = {}
     cached_count = 0
     fresh_count = 0
+    kokoro_count = 0
     for item in results:
         if not item:
             continue
@@ -315,6 +516,8 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
             cached_count += 1
         else:
             fresh_count += 1
+        if item['provider'] == 'kokoro':
+            kokoro_count += 1
         entry = stories_map.setdefault(item['story_id'], {'hash': item['hash'], 'voices': {}})
         entry['voices'][item['voice_id']] = {
             'file': item['file'],
@@ -326,14 +529,16 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
     manifest = {
         'version': 1,
         'provider': provider,
+        'fallback': 'kokoro',
         'voices': [{'id': v['id'], 'label': v['label'], 'tagline': v['tagline']} for v in selected_voices],
         'stories': stories_map,
     }
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + '\n')
     total_expected = len(edition['STORIES']) * len(selected_voices)
+    extra = f', {kokoro_count} via kokoro-82m' if kokoro_count else ''
     print(
-        f"Built audio ({provider}): {fresh_count} generated, {cached_count} cached, "
+        f"Built audio ({provider}): {fresh_count} generated, {cached_count} cached{extra}, "
         f"{len(stories_map)}/{len(edition['STORIES'])} stories ready ({fresh_count + cached_count}/{total_expected} tracks).",
         flush=True,
     )

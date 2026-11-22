@@ -135,6 +135,45 @@ class NativeArticleTests(unittest.TestCase):
         cues = audio_builder.align_paragraph_cues(parts, events, 12.0)
         self.assertEqual(cues, [2.8, 7.2])
 
+    def test_kokoro_sentence_splitting_and_voice_mapping(self):
+        long_para = 'First sentence about markets. ' + ('This is a long clause with details, ' * 12) + 'final ending.'
+        chunks = audio_builder.split_sentences(long_para, max_chars=200)
+        self.assertGreaterEqual(len(chunks), 3)
+        self.assertTrue(all(len(c) <= 240 for c in chunks))
+        for voice in audio_builder.VOICES:
+            self.assertTrue(voice.get('kokoro'))
+        with patch.dict(audio_builder.os.environ, {'PHEME_TTS_PROVIDER': 'kokoro'}):
+            self.assertEqual(audio_builder.choose_provider(), 'kokoro')
+
+    def test_edge_failure_falls_back_automatically_to_kokoro(self):
+        import asyncio
+        story = {
+            'id': 'sample-fallback-story',
+            'headline': 'Sample headline',
+            'article': ['First paragraph of reporting with clear facts.', 'Second paragraph with additional context.'],
+        }
+        fake_mp3 = b'ID3' + b'\x00' * 2048
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            out_dir = root / 'out'
+            cache_dir = root / 'cache'
+            async def boom(*_a, **_kw):
+                raise RuntimeError('Simulated edge-tts outage')
+            async def run_case():
+                with patch.object(audio_builder, 'synth_edge', side_effect=boom), \
+                     patch.object(audio_builder, 'synth_kokoro_sync', return_value=(fake_mp3, 12.5, [2.1, 7.4])) as mock_kokoro, \
+                     patch.object(audio_builder.asyncio, 'sleep', return_value=None):
+                    res = await audio_builder.generate_one(
+                        story, audio_builder.VOICES[0], 'edge', out_dir, cache_dir,
+                        asyncio.Semaphore(2), asyncio.Semaphore(1),
+                    )
+                    self.assertIsNotNone(res)
+                    self.assertEqual(res['provider'], 'kokoro')
+                    self.assertEqual(res['cues'], [2.1, 7.4])
+                    self.assertTrue((out_dir / res['file']).exists())
+                    mock_kokoro.assert_called_once()
+            asyncio.run(run_case())
+
 
 if __name__ == '__main__':
     unittest.main()
