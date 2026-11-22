@@ -1138,6 +1138,10 @@
   function marketNewsItems() {
     var result = [], seen = Object.create(null);
     var chosen = MARKET_COMPANIES.find(function (c) { return c.name === state.marketNewsFocus; });
+    var watchKeys = state.marketNewsFocus === 'watchlist'
+      ? MARKET_COMPANIES.filter(function (c) { return state.marketWatch.indexOf(c.name) !== -1; })
+        .reduce(function (acc, c) { return acc.concat(c.keys); }, [])
+      : null;
     if (publisherFeed && publisherFeed.publishers) {
       Object.keys(publisherFeed.publishers).forEach(function (publisher) {
         var data = publisherFeed.publishers[publisher];
@@ -1145,6 +1149,7 @@
           if (!article || !safeExternalUrl(article.url)) return;
           var text = (article.title || '') + ' ' + (article.summary || '');
           if (chosen ? !chosen.keys.some(function (k) { return new RegExp('\\b' + k + '\\b','i').test(text); }) :
+            watchKeys ? !watchKeys.some(function (k) { return new RegExp('\\b' + k + '\\b','i').test(text); }) :
             article.topic !== 'finance' && article.topic !== 'business' && !/stock|equities|earnings|inflation|central bank|interest rate|shares|economy|markets/i.test(article.title || '')) return;
           var key = article.url.split('?')[0];
           if (seen[key]) return;
@@ -1186,7 +1191,15 @@
       return '<button data-act="terminalrange" data-id="' + range + '" aria-pressed="' + (state.marketRange === range) +
         '" class="' + (state.marketRange === range ? 'on' : '') + '">' + range + '</button>';
     }).join('');
-    var filters = [{ name: 'all', label: 'Markets' }].concat(MARKET_COMPANIES.map(function (c) { return { name: c.name, label: c.name }; }));
+    var filters = [{ name: 'all', label: 'Markets' }, { name: 'watchlist', label: 'My watchlist' }].concat(MARKET_COMPANIES.map(function (c) { return { name: c.name, label: c.name }; }));
+    var watchControls = MARKET_COMPANIES.map(function (c) {
+      var on = state.marketWatch.indexOf(c.name) !== -1;
+      return '<button type="button" class="market-watch-chip' + (on ? ' on' : '') +
+        '" data-act="togglemarketwatch" data-name="' + esc(c.name) +
+        '" aria-pressed="' + on + '" aria-label="' + (on ? 'Remove ' : 'Add ') + esc(c.name) +
+        (on ? ' from' : ' to') + ' watchlist"><span aria-hidden="true">' + (on ? '★' : '☆') +
+        '</span> ' + esc(c.name) + '</button>';
+    }).join('');
     return '<div class="page-head"><h1>Markets</h1><p>Global exchanges, daily price charts and publisher-sourced financial coverage.</p></div>' +
       '<div class="terminal-status"><span class="terminal-live-dot" aria-hidden="true"></span>Latest verified daily close · ' +
       (marketData ? 'Source: ' + esc(marketData.source || 'Yahoo Finance') + ' · Updated ' + esc(marketData.updatedAt ? articlePublishedLabel(marketData.updatedAt) : 'unavailable') : 'Loading market series') +
@@ -1202,6 +1215,7 @@
       '<div id="exchange-world-map" class="exchange-world-map" role="region" aria-label="Map of major global financial exchanges"></div></section>' +
       '<section class="terminal-section" aria-labelledby="market-news-title"><div class="terminal-section-heading"><div><h2 id="market-news-title">News affecting your markets</h2>' +
       '<p>Matching publisher headlines, not predictions or proven price causation.</p></div></div>' +
+      '<div class="market-watchlist"><h3>Company watchlist <span>Saved in this browser</span></h3><div class="market-watch-options">' + watchControls + '</div></div>' +
       '<div class="market-news-filters" role="group" aria-label="Filter financial news">' + filters.map(function (f) {
         return '<button type="button" data-act="marketnews" data-name="' + esc(f.name) +
           '" aria-pressed="' + (focus === f.name) + '" class="' + (focus === f.name ? 'on' : '') + '">' + esc(f.label) + '</button>';
@@ -2025,6 +2039,26 @@
         break;
       case 'exchangereset':
         if (exchangeMap) exchangeMap.fitBounds(window.L.latLngBounds(EXCHANGE_PLACES.map(function (p) { return [p.lat,p.lng]; })), { padding: [20,20], maxZoom: 2 });
+        break;
+      case 'togglemarketwatch':
+        var watchName = t.getAttribute('data-name');
+        if (!MARKET_COMPANIES.some(function (c) { return c.name === watchName; })) break;
+        var watchIndex = state.marketWatch.indexOf(watchName);
+        if (watchIndex === -1) state.marketWatch.push(watchName);
+        else state.marketWatch.splice(watchIndex, 1);
+        persist();
+        var watchArea = app.querySelector('.market-watch-options');
+        if (watchArea) watchArea.querySelectorAll('[data-act="togglemarketwatch"]').forEach(function (btn) {
+          var enabled = state.marketWatch.indexOf(btn.getAttribute('data-name')) !== -1;
+          btn.classList.toggle('on', enabled);
+          btn.setAttribute('aria-pressed', String(enabled));
+          btn.querySelector('span').textContent = enabled ? '★' : '☆';
+          btn.setAttribute('aria-label', (enabled ? 'Remove ' : 'Add ') + btn.getAttribute('data-name') + (enabled ? ' from' : ' to') + ' watchlist');
+        });
+        if (state.marketNewsFocus === 'watchlist') {
+          var watchNews = app.querySelector('#market-news-content');
+          if (watchNews) watchNews.innerHTML = marketNewsHtml();
+        }
         break;
       case 'marketnews':
         state.marketNewsFocus = t.getAttribute('data-name') || 'all';
