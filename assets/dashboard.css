@@ -608,3 +608,28 @@ body.reader-focus .dashboard-body {
 .company-quote-sector { margin-top:auto; }
 @media(max-width:850px) { .company-quote-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:420px) { .company-quote-card { padding:11px; } .company-quote-heading span { font-size:11px; } }
+
+
+/* Provider-hosted free quotes: keys and data redistribution are not required. */
+.tv-market-overview {
+  width: 100%;
+  height: min(68vh, 620px);
+  min-height: 450px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.tv-market-overview .tradingview-widget-container { box-sizing: border-box; }
+.tv-market-overview .tradingview-widget-copyright {
+  padding: 5px 12px;
+  color: var(--ink-muted);
+  font: 500 11px/18px var(--sans);
+  background: #fff;
+  text-align: right;
+}
+.tv-market-overview .tradingview-widget-copyright a { color: var(--blue); text-decoration: none; }
+.tv-market-overview .tradingview-widget-copyright a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .tv-market-overview { height: 520px; min-height: 440px; border-radius: 9px; }
+}
