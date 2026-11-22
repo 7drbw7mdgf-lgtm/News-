@@ -6,6 +6,7 @@ import concurrent.futures
 import datetime
 import email.utils
 import html
+from html.parser import HTMLParser
 import json
 import re
 import sys
@@ -21,6 +22,7 @@ FEEDS = [(f["outlet"], f["topic"], f["url"]) for f in json.loads(FEEDS_FILE.read
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 RSS1_NS = "{http://purl.org/rss/1.0/}"
 DC_NS = "{http://purl.org/dc/elements/1.1/}"
+CONTENT_NS = "{http://purl.org/rss/1.0/modules/content/}"
 MEDIA_NS = "{http://search.yahoo.com/mrss/}"
 IMG_EXT_RE = re.compile(r"\.(?:jpe?g|png|webp|avif)(?:\?|$)", re.I)
 BAD_FEED_IMG_RE = re.compile(r"(?:logo|favicon|icon|avatar|placeholder|0_brand\.|/ALTERNATES/s(?:98|120)/|\.svg(?:\?|$)|\.ico(?:\?|$))", re.I)
@@ -101,6 +103,74 @@ def first_link(node):
     return ""
 
 
+def element_markup(node):
+    """Return an RSS element's inner markup, retaining any paragraph structure."""
+    parts = [node.text or ""]
+    for child in node:
+        tag = child.tag.rsplit("}", 1)[-1]
+        parts.extend(("<", tag, ">", element_markup(child), "</", tag, ">", child.tail or ""))
+    return "".join(parts)
+
+
+def first_markup(node, tags):
+    for tag in tags:
+        element = node.find(tag)
+        if element is not None:
+            value = element_markup(element).strip()
+            if value:
+                return value
+    return ""
+
+
+class ExcerptTextParser(HTMLParser):
+    """Convert feed HTML to safe plain text while preserving paragraph breaks."""
+
+    BLOCKS = {"address", "article", "blockquote", "dd", "div", "h1", "h2", "h3", "h4", "h5", "h6", "li", "ol", "p", "pre", "section", "tr", "ul"}
+    DROPPED = {"script", "style", "noscript"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+        self.skip_depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        if self.skip_depth:
+            if tag in self.DROPPED:
+                self.skip_depth += 1
+            return
+        if tag in self.DROPPED:
+            self.skip_depth = 1
+        elif tag == "br":
+            self.parts.append("\n")
+        elif tag in self.BLOCKS:
+            self.parts.append("\n\n" if tag in {"p", "div", "article", "section", "blockquote"} else "\n")
+
+    def handle_endtag(self, tag):
+        if self.skip_depth:
+            if tag in self.DROPPED:
+                self.skip_depth = max(0, self.skip_depth - 1)
+            return
+        if tag in self.BLOCKS:
+            self.parts.append("\n\n" if tag in {"p", "div", "article", "section", "blockquote"} else "\n")
+
+    def handle_data(self, data):
+        if not self.skip_depth:
+            self.parts.append(data)
+
+
+def full_excerpt(raw):
+    if not raw:
+        return ""
+    parser = ExcerptTextParser()
+    parser.feed(raw)
+    parser.close()
+    text = "".join(parser.parts)
+    text = re.sub(r"[ \t\f\v]+", " ", text)
+    text = re.sub(r" *\n *", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
 def collect(feed, cutoff):
     outlet, topic, url = feed
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; PhemeRSS/1.0)"})
@@ -126,15 +196,20 @@ def collect(feed, cutoff):
         if not published:
             continue
         if title and urllib.parse.urlsplit(link).scheme == "https" and published >= cutoff:
-            # The description is used only to group articles and as background for the
-            # story writer; it is never published as-is.
-            raw_summary = first_text(entry, ("description", f"{ATOM_NS}summary", f"{ATOM_NS}content", f"{RSS1_NS}description"))
-            summary = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw_summary or ""))).strip()[:500]
+            # Keep a compact summary for editorial grouping and retain the full RSS
+            # excerpt separately for the publisher feed.
+            raw_excerpt = first_markup(entry, (
+                f"{CONTENT_NS}encoded", f"{ATOM_NS}content", "content",
+                "description", f"{ATOM_NS}summary", f"{RSS1_NS}description",
+            ))
+            excerpt = full_excerpt(raw_excerpt)
+            summary = re.sub(r"\s+", " ", excerpt).strip()[:500]
             item = dict(
                 outlet=outlet,
                 topic=topic,
                 title=re.sub(r"\s+", " ", html.unescape(title)).strip(),
                 summary=summary,
+                excerpt=excerpt,
                 url=link,
                 published=published.isoformat(),
             )

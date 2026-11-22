@@ -217,19 +217,18 @@
     params.set('publisher', name);
     params.set('article', safeExternalUrl(article.url));
     if (article.title) params.set('title', article.title);
-    if (article.summary) params.set('excerpt', article.summary);
     if (article.published) params.set('published', article.published);
     return '?' + params.toString();
   }
   function nativePublisherArticleLink(article, name, label, cls) {
     var safe = safeExternalUrl(article && article.url);
     if (!safe) return '';
-    return '<a class="' + (cls || '') + '" href="' + esc(publisherArticleHref(article, name)) + '" data-act="publisherarticle" data-name="' + esc(name) + '" data-url="' + esc(safe) + '" data-title="' + esc(article.title || '') + '" data-excerpt="' + esc(article.summary || '') + '" data-published="' + esc(article.published || '') + '" aria-label="Read ' + esc(article.title || 'publisher article') + ' in Pheme">' + esc(label || 'Read in Pheme') + '</a>';
+    return '<a class="' + (cls || '') + '" href="' + esc(publisherArticleHref(article, name)) + '" data-act="publisherarticle" data-name="' + esc(name) + '" data-url="' + esc(safe) + '" data-title="' + esc(article.title || '') + '" data-published="' + esc(article.published || '') + '" aria-label="Read ' + esc(article.title || 'publisher article') + ' in Pheme">' + esc(label || 'Read in Pheme') + '</a>';
   }
   function nativePublisherImageLink(article, name, image) {
     var safe = safeExternalUrl(article && article.url);
     if (!safe) return '';
-    return '<a class="paper-source-image" href="' + esc(publisherArticleHref(article, name)) + '" data-act="publisherarticle" data-name="' + esc(name) + '" data-url="' + esc(safe) + '" data-title="' + esc(article.title || '') + '" data-excerpt="' + esc(article.summary || '') + '" data-published="' + esc(article.published || '') + '" aria-label="Read ' + esc(article.title || 'publisher article') + ' in Pheme"><img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>';
+    return '<a class="paper-source-image" href="' + esc(publisherArticleHref(article, name)) + '" data-act="publisherarticle" data-name="' + esc(name) + '" data-url="' + esc(safe) + '" data-title="' + esc(article.title || '') + '" data-published="' + esc(article.published || '') + '" aria-label="Read ' + esc(article.title || 'publisher article') + ' in Pheme"><img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>';
   }
   function originalArticleLink(url, name, label, cls) {
     var safe = safeExternalUrl(url);
@@ -2508,7 +2507,7 @@
         if (!publisherArticleUrl) break;
         state.publisherArticle = {
           name: t.getAttribute('data-name') || '', url: publisherArticleUrl,
-          title: t.getAttribute('data-title') || '', summary: t.getAttribute('data-excerpt') || '',
+          title: t.getAttribute('data-title') || '', summary: (publisherArticleFor(t.getAttribute('data-name') || '', publisherArticleUrl) || {}).summary || '',
           published: t.getAttribute('data-published') || ''
         };
         state.view = 'papers'; state.paper = state.publisherArticle.name;

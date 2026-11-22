@@ -48,7 +48,7 @@ def main():
                         continue
                     entries[name].append({
                         "title": title[:320],
-                        "summary": record.get("summary", "")[:400],
+                        "summary": record.get("excerpt") or record.get("summary", ""),
                         "url": link,
                         "published": record.get("published", ""),
                         "topic": record.get("topic", ""),
