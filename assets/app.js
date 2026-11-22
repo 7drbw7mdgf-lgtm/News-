@@ -1610,15 +1610,19 @@
 
   function fetchPublisherPage(entry, url) {
     if (entry.name === 'Indian Express') {
-      var api = '/api/indian-express.php?url=' + encodeURIComponent(url);
-      return fetch(api, { credentials: 'same-origin', referrerPolicy: 'no-referrer', headers: { Accept: 'application/json' } })
+      var parsedUrl;
+      try { parsedUrl = new URL(url); } catch (e) { return Promise.reject(new Error('Publisher page unavailable')); }
+      var articleId = /([0-9]+)\/?$/.exec(parsedUrl.pathname);
+      if (parsedUrl.hostname !== 'indianexpress.com' || !articleId) return Promise.reject(new Error('Publisher page unavailable'));
+      var api = '/assets/indian-express/' + articleId[1] + '.json';
+      return fetch(api, { credentials: 'same-origin', cache: 'no-store', referrerPolicy: 'no-referrer', headers: { Accept: 'application/json' } })
         .then(function (response) {
           if (!response.ok) throw new Error('Publisher reader backend unavailable');
           return response.json();
         })
         .then(function (data) {
           var finalUrl = safeExternalUrl(data && data.url);
-          if (!finalUrl || typeof data.html !== 'string') throw new Error('Publisher page unavailable');
+          if (!finalUrl || normalizedPublisherArticleUrl(finalUrl) !== normalizedPublisherArticleUrl(url) || typeof data.html !== 'string') throw new Error('Publisher page unavailable');
           return { markup: data.html, url: finalUrl };
         });
     }
