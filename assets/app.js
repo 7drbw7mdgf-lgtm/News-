@@ -1040,30 +1040,41 @@
 
   function renderPapers() {
     var papers = followed();
+    if (!papers.length) {
+      return '<div class="page-head"><h1>Newspapers</h1><p>Follow publishers to build your newspaper feed.</p></div>' +
+        '<button class="chip" data-act="settings">+ Add newspaper</button>';
+    }
     var name = state.paper && papers.some(function (p) { return p.name === state.paper; }) ? state.paper : papers[0].name;
     var meta = papers.filter(function (p) { return p.name === name; })[0] || {};
     var stories = storiesForPaper(name);
     var tabs = papers.map(function (p) {
       var on = p.name === name;
       var count = storiesForPaper(p.name).length;
-      return '<button class="chip' + (on ? ' on' : '') + '" data-act="paper" data-name="' + esc(p.name) + '" aria-pressed="' + on + '">' +
-        esc(p.name) + (count ? ' (' + count + ')' : '') + '</button>';
-    }).join('') + '<button class="chip" data-act="settings">+ Add newspaper</button>';
+      return '<button class="paper-provider' + (on ? ' on' : '') + '" data-act="paper" data-name="' + esc(p.name) +
+        '" role="tab" aria-selected="' + on + '" tabindex="' + (on ? '0' : '-1') + '">' +
+        '<span class="paper-provider-name">' + esc(p.name) + '</span>' +
+        '<span class="paper-provider-count">' + count + ' ' + (count === 1 ? 'story' : 'stories') + '</span></button>';
+    }).join('') + '<button class="paper-provider paper-provider-add" data-act="settings">+ Add newspaper</button>';
 
-    var body;
-    if (stories.length) {
-      body = '<div class="news-card-grid" aria-label="Stories covered by ' + esc(name) + '">' + stories.map(renderDashboardCard).join('') + '</div>';
-    } else {
-      body = '<div class="notice"><strong>No featured stories from ' + esc(name) + ' today.</strong> ' +
+    var body = stories.length
+      ? '<div class="paper-story-feed" aria-label="Articles covered by ' + esc(name) + '">' + stories.map(renderDashboardCard).join('') + '</div>'
+      : '<div class="notice"><strong>No featured stories from ' + esc(name) + ' today.</strong> ' +
         'When Pheme features a story from this outlet, it will appear here.' +
         (meta.paywall ? ' Full articles require a subscription to this paper.' : '') + '</div>';
-    }
 
-    return '<div class="page-head"><h1>Newspapers</h1><p>' + esc(plural(papers.length, 'newspaper', 'newspapers')) + ' followed · select one to view all stories it covered in today’s edition</p></div>' +
-      '<div class="chips" role="group" aria-label="Choose a newspaper">' + tabs + '</div>' +
+    return '<div class="page-head"><h1>Newspapers</h1><p>Browse publishers sideways. Scroll down for their latest coverage.</p></div>' +
+      '<section class="paper-providers" aria-label="Newspaper providers">' +
+      '<div class="paper-providers-head"><h2>Publishers <span>' + papers.length + '</span></h2>' +
+      '<div class="paper-carousel-controls">' +
+      '<button type="button" class="paper-carousel-arrow" data-act="paperscroll" data-dir="-1" aria-label="Scroll publishers left">‹</button>' +
+      '<button type="button" class="paper-carousel-arrow" data-act="paperscroll" data-dir="1" aria-label="Scroll publishers right">›</button>' +
+      '</div></div>' +
+      '<div class="paper-provider-track" id="paper-provider-track" role="tablist" aria-label="Choose newspaper">' + tabs + '</div></section>' +
       '<section class="paper-sheet" aria-labelledby="paper-name">' +
-      '<header class="paper-masthead"><h2 id="paper-name">' + esc(name) + '</h2>' +
-      '<span class="paper-dateline">Edition coverage · ' + esc(D.META.rangeLong) + '</span></header>' + body + '</section>';
+      '<header class="paper-masthead"><div class="paper-masthead-text"><h2 id="paper-name">' + esc(name) + '</h2>' +
+      '<span class="paper-dateline">Edition coverage · ' + esc(D.META.rangeLong) + '</span></div>' +
+      '<span class="paper-article-total">' + esc(plural(stories.length, 'article', 'articles')) + '</span></header>' +
+      body + '</section>';
   }
 
   /* ---------- Native Story Reader & Coverage Comparison ---------- */
@@ -1533,10 +1544,19 @@
         if (state.reading) changeStory(null);
         if (state.view === 'briefing') state.topic = state.topic || 'all';
         render(); break;
+      case 'paperscroll':
+        var providerTrack = app.querySelector('#paper-provider-track');
+        if (providerTrack) providerTrack.scrollBy({ left: (Number(t.getAttribute('data-dir')) || 1) * Math.max(240, providerTrack.clientWidth * 0.72), behavior: 'smooth' });
+        break;
       case 'paper':
+        var oldProviderTrack = app.querySelector('#paper-provider-track');
+        var providerOffset = oldProviderTrack ? oldProviderTrack.scrollLeft : 0;
         state.view = 'papers'; state.paper = t.getAttribute('data-name');
         if (state.reading) changeStory(null);
-        state.settingsOpen = false; render(); break;
+        state.settingsOpen = false; render();
+        var newProviderTrack = app.querySelector('#paper-provider-track');
+        if (newProviderTrack) newProviderTrack.scrollLeft = providerOffset;
+        break;
       case 'open':
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault(); changeStory(id); state.settingsOpen = false;
