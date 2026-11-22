@@ -594,3 +594,17 @@ body.reader-focus .dashboard-body {
 .market-watch-chip.on { border-color:var(--blue); background:#2F5D500D; color:var(--blue); }
 .market-watch-chip.on span { color:var(--blue); }
 .market-watch-chip:focus-visible,.market-news-filters button:focus-visible,.terminal-chart-controls button:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+
+
+/* Licensed provider company cards: source data must not be presented as streaming quotes. */
+.terminal-provider-notice { margin:0 0 13px; font:500 12px/1.6 var(--sans); color:var(--ink-muted); }
+.company-quote-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:11px; }
+.company-quote-card { padding:15px; min-height:130px; border:1px solid var(--rule); border-radius:11px; background:var(--surface); display:flex; flex-direction:column; gap:8px; }
+.company-quote-heading { display:flex; align-items:baseline; flex-wrap:wrap; gap:7px; font:500 12px var(--sans); color:var(--ink-muted); }
+.company-quote-heading strong { font:700 14px var(--sans); color:var(--blue); }
+.company-quote-price { font:700 clamp(20px,2vw,28px)/1.2 var(--serif); color:var(--ink); font-variant-numeric:tabular-nums; }
+.company-quote-meta,.company-quote-sector,.company-quote-change { font:500 11px/1.4 var(--sans); color:var(--ink-muted); }
+.company-quote-empty { margin:auto 0; font:500 13px/1.5 var(--sans); color:var(--ink-muted); }
+.company-quote-sector { margin-top:auto; }
+@media(max-width:850px) { .company-quote-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:420px) { .company-quote-card { padding:11px; } .company-quote-heading span { font-size:11px; } }
