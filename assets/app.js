@@ -1757,7 +1757,8 @@
     var details = publisherDetails(name);
     if (!publisherFeed) return '<div class="notice" role="status">' +
       (publisherFeedError ? 'Publisher feeds are temporarily unavailable. Try again later.' : 'Loading recent articles from publisher feeds…') + '</div>';
-    if (!details || details.status === 'unavailable') return '<div class="notice">No working RSS feed is currently available for ' + esc(name) + '. No articles have been invented or borrowed from another publisher.</div>';
+    if (!details || details.status === 'unavailable') return '<div class="notice">No verified, working RSS feed is currently available for ' + esc(name) + '. We will not attribute unrelated articles to this publisher.' +
+      (name === 'ITV News' ? ' <a href="https://www.itv.com/news" target="_blank" rel="noopener noreferrer">Read ITV News directly</a> while a reliable syndication source is verified.' : '') + '</div>';
     var stamp = details.updatedAt ? articlePublishedLabel(details.updatedAt) : 'Unavailable';
     var status = '<p class="paper-feed-updated">' +
       (details.status === 'stale' ? 'Cached articles · live refresh unavailable' : 'Publisher RSS · last collected ' + esc(stamp)) + '</p>';
