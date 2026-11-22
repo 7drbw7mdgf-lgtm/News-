@@ -178,6 +178,19 @@
     return story && name && story.cov.rows.some(function (r) { return r.name === name; }) ? name : null;
   }
   function sourceHref(id, name) { return storyHref(id) + '&source=' + encodeURIComponent(name); }
+  function safeExternalUrl(u) {
+    if (!u || typeof u !== 'string' || !/^https:\/\//i.test(u)) return '';
+    try {
+      var parsed = new URL(u);
+      if (parsed.protocol === 'https:' && !parsed.username && !parsed.password) return parsed.href;
+    } catch (e) { /* invalid URL */ }
+    return '';
+  }
+  function originalArticleLink(url, name, label, cls) {
+    var safe = safeExternalUrl(url);
+    if (!safe) return '';
+    return '<a class="' + (cls || '') + '" href="' + esc(safe) + '" target="_blank" rel="noopener noreferrer" aria-label="Read original article on ' + esc(name) + ' (opens in new tab)">' + esc(label || 'Read original ↗') + '</a>';
+  }
   function nativeSourceLink(s, name, label, cls) {
     return '<a class="' + (cls || '') + '" href="' + esc(sourceHref(s.id, name)) + '" data-act="opensource" data-id="' + esc(s.id) + '" data-source="' + esc(name) + '" aria-label="Read ' + esc(name) + ' coverage in Pheme">' + esc(label || name) + '</a>';
   }
@@ -1176,7 +1189,7 @@
         group.points.map(function (point) {
           return '<li>' + esc(point.text) + ' ' + point.sources.map(function (name) {
             var row = s.cov.rows.find(function (item) { return item.name === name; });
-            return row ? nativeSourceLink(s, name) : '';
+            return row ? originalArticleLink(row.url, name, name + ' ↗', 'source-inline-link') : '';
           }).join(' · ') + '</li>';
         }).join('') + '</ul></section>';
     }).join('');
@@ -1225,9 +1238,12 @@
     var more = STORIES.filter(function (o) { return o.source === s.source && o.id !== s.id; }).slice(0, 3);
     var cov = s.cov;
     var selectedSource = cov.rows.find(function (r) { return r.name === state.readingSource; });
+    var primarySource = selectedSource || cov.rows.find(function (r) { return r.url === s.url; }) || { name: s.source, url: s.url };
     var sourceContext = selectedSource ? '<aside class="source-context" aria-label="Selected publisher coverage"><p class="kicker">' + esc(selectedSource.name) + ' · ' + esc(selectedSource.date) + '</p>' +
       (selectedSource.title ? '<h2>' + esc(selectedSource.title) + '</h2>' : '') +
-      '<p class="small">Pheme’s article is below.' + (selectedSource.title ? ' The selected publisher’s headline is shown for reference.' : '') + '</p></aside>' : '';
+      '<div class="source-context-foot"><p class="small">Pheme’s multi-source briefing is below.</p>' +
+      originalArticleLink(selectedSource.url, selectedSource.name, 'Read original on ' + selectedSource.name + ' ↗', 'outline-sm') +
+      '</div></aside>' : '';
     var img = safeAsset(s.image);
     var paras = getArticleParagraphs(s);
     var takeaways = (s.points || []).filter(function (point) { return typeof point === 'string' && !ARTICLE_BOILERPLATE.test(point); });
@@ -1277,6 +1293,7 @@
       '<p class="kicker">' + esc(labelOf[s.topic]) +
       '<span class="kicker-meta">Pheme · ' + esc(articleDate) +
       (s.location ? ' · <button type="button" class="loc-chip" data-act="openonmap" data-id="' + esc(s.id) + '">' + esc(s.location.label) + '</button>' : '') +
+      (safeExternalUrl(primarySource.url) ? ' · ' + originalArticleLink(primarySource.url, primarySource.name, 'Original: ' + primarySource.name + ' ↗', 'loc-chip') : '') +
       '</span></p>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
@@ -1312,16 +1329,17 @@
       '<p style="margin:0;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink)">' + esc(cov.note) + '</p>' +
       '<div class="cov-tabs" role="group" aria-label="Filter outlets by leaning">' + covTabsHtml + '</div>' +
       '<ul class="covlist">' + visibleCovRows.map(function (r) {
+        var safeUrl = safeExternalUrl(r.url);
         return '<li>' + leanBadge(r.name) +
           '<div class="cov-outlet-col"><span class="name">' + esc(r.name) + '</span>' +
-          (r.title ? '<span class="cov-outlet-hl">' + esc(r.title) + '</span>' : '') +
+          (r.title ? (safeUrl ? '<a class="cov-outlet-hl cov-outlet-hl-link" href="' + esc(safeUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(r.title) + '</a>' : '<span class="cov-outlet-hl">' + esc(r.title) + '</span>') : '') +
           '</div>' +
           '<span class="small">' + esc(r.date) + '</span>' +
-          nativeSourceLink(s, r.name, 'Read in Pheme') + '</li>';
+          originalArticleLink(r.url, r.name, 'Read original ↗') + '</li>';
       }).join('') + '</ul></section>' +
-      '<div class="rfoot"><p class="small" style="max-width:60ch">' + (paras.length ? 'Written for Pheme from published reporting' + (s.articleSources && s.articleSources.length ? ' by ' + esc(s.articleSources.map(function (source) { return source.name; }).join(', ')) : '') + '.' : 'Source coverage for this archived story.') + '</p>' +
+      '<div class="rfoot"><p class="small" style="max-width:60ch">' + (paras.length ? 'Written for Pheme from published reporting' + (s.articleSources && s.articleSources.length ? ' by ' + s.articleSources.map(function (source) { return originalArticleLink(source.url, source.name, source.name, 'source-inline-link') || esc(source.name); }).join(', ') : '') + '.' : 'Source coverage for this archived story.') + '</p>' +
       '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + saveBtn(s) +
-      nativeSourceLink(s, s.source, 'Read ' + s.source + ' coverage', 'darkbtn') + '</div></div>' +
+      originalArticleLink(primarySource.url, primarySource.name, 'Read original on ' + primarySource.name + ' ↗', 'darkbtn') + '</div></div>' +
       ((prevStory || nextStory)
         ? '<nav class="story-pager" aria-label="Adjacent stories">' +
           (prevStory

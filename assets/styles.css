@@ -1635,6 +1635,26 @@ body.reader-theme-night .reader-para.hl-on {
   line-height: 1.35;
   color: var(--ink-body);
 }
+.cov-outlet-hl-link {
+  padding: 0 !important;
+  font-weight: 400 !important;
+  color: var(--ink-body);
+}
+.cov-outlet-hl-link:hover {
+  color: var(--blue);
+}
+.source-inline-link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.source-context-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
 .story-pager {
   display: grid;
