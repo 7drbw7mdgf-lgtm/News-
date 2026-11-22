@@ -582,3 +582,15 @@ body.reader-focus .dashboard-body {
   .market-news-image img { min-height:90px; }
   .market-news-item { padding:11px; }
 }
+
+
+/* Saved company watchlist on the market intelligence page */
+.market-watchlist { border:1px solid var(--rule); border-radius:11px; background:var(--surface); padding:15px; margin-bottom:15px; }
+.market-watchlist h3 { margin:0 0 11px; font:650 14px/1.4 var(--sans); color:var(--ink); }
+.market-watchlist h3 span { margin-left:6px; font:400 11px/1.4 var(--sans); color:var(--ink-muted); }
+.market-watch-options { display:flex; flex-wrap:wrap; gap:7px; }
+.market-watch-chip { padding:8px 11px; border:1px solid var(--rule); border-radius:8px; background:var(--paper); color:var(--ink-body); font:600 12px/1.25 var(--sans); }
+.market-watch-chip span { font-size:16px; margin-right:3px; color:var(--ink-muted); }
+.market-watch-chip.on { border-color:var(--blue); background:#2F5D500D; color:var(--blue); }
+.market-watch-chip.on span { color:var(--blue); }
+.market-watch-chip:focus-visible,.market-news-filters button:focus-visible,.terminal-chart-controls button:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
