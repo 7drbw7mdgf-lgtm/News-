@@ -12,14 +12,9 @@ from collect_feeds import FEEDS, collect
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "assets" / "publisher-feeds.json"
-PUBLISHERS = [
-    "BBC News", "The Guardian", "Sky News", "The Telegraph", "Daily Mail",
-    "ITV News", "RTÉ News", "Financial Times", "The Economist", "CNBC",
-    "City AM", "The New York Times", "NPR", "Fox News", "Al Jazeera English",
-    "France 24", "DW News", "Politico Europe", "Euronews",
-    "South China Morning Post", "Nature News", "New Scientist",
-    "ScienceDaily", "TechCrunch", "The Verge", "Ars Technica",
-]
+LOCATIONS = json.loads((ROOT / "feeds" / "publisher-locations.json").read_text(encoding="utf-8"))
+PUBLISHERS = list(LOCATIONS)
+
 MAX_ITEMS = 35
 
 
@@ -76,14 +71,14 @@ def main():
         if successes[name] == 0 and old.get("articles"):
             publishers[name] = {
                 "articles": old["articles"], "updatedAt": old.get("updatedAt"),
-                "status": "stale", "feedCount": 0,
+                "status": "stale", "feedCount": 0, "location": LOCATIONS[name],
             }
         else:
             publishers[name] = {
                 "articles": unique,
                 "updatedAt": now.isoformat() if successes[name] else None,
                 "status": "ok" if successes[name] else "unavailable",
-                "feedCount": successes[name],
+                "feedCount": successes[name], "location": LOCATIONS[name],
             }
     output = {"generatedAt": now.isoformat(), "cadenceMinutes": 60, "publishers": publishers}
     OUTPUT.write_text(json.dumps(output, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
