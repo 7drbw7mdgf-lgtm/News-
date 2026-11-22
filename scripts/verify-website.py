@@ -5,6 +5,7 @@ this reports a warning instead of claiming success. If the site is reachable
 but serves a different revision, it fails.
 """
 import os
+import json
 import re
 import sys
 import time
@@ -22,6 +23,15 @@ def fetch():
         return response.read(1024 * 1024).decode('utf-8', 'replace')
 
 
+def verify_reader_backend():
+    url = SITE + 'api/indian-express.php?health=1'
+    request = urllib.request.Request(url, headers={'Cache-Control': 'no-cache', 'User-Agent': 'pheme-deploy-check'})
+    with urllib.request.urlopen(request, timeout=15) as response:
+        payload = json.loads(response.read(16384).decode('utf-8', 'replace'))
+    if payload.get('ok') is not True or payload.get('curl') is not True:
+        raise RuntimeError('Indian Express reader backend did not pass its health check.')
+
+
 def main():
     expected = os.environ.get('EXPECTED_REVISION', '')
     for attempt in range(1, 6):
@@ -34,7 +44,8 @@ def main():
             return 0
         found = MARKER.search(body)
         if found and found.group(1) == expected:
-            print('Live site serves revision ' + expected + '.')
+            verify_reader_backend()
+            print('Live site serves revision ' + expected + ' and the reader backend is ready.')
             return 0
         print('Live site shows revision ' + (found.group(1) if found else 'none') + '; waiting (attempt ' + str(attempt) + '/5).', flush=True)
         time.sleep(10)
