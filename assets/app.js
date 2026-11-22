@@ -30,7 +30,10 @@
   var state = {
     view: 'briefing', topic: 'all', mapTopic: 'all', reading: null, paper: null,
     settingsOpen: false, searchOpen: false, srcQuery: '', query: '',
-    saved: {}, added: {}
+    saved: {}, added: {}, highlights: {},
+    readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused' },
+    readerFocus: false, aaOpen: false, covFilter: 'all', copiedId: null,
+    speaking: false, speechRate: 1, speakingIndex: -1
   };
   try {
     var stored = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
@@ -47,12 +50,19 @@
     if (stored) {
       if (stored.saved) state.saved = stored.saved;
       if (stored.added) state.added = stored.added;
+      if (stored.highlights) state.highlights = stored.highlights;
+      if (stored.readerPrefs) state.readerPrefs = Object.assign({}, state.readerPrefs, stored.readerPrefs);
     }
   } catch (e) { /* storage unavailable: keep defaults */ }
 
   function persist() {
     try {
-      localStorage.setItem(STORE_KEY, JSON.stringify({ saved: state.saved, added: state.added }));
+      localStorage.setItem(STORE_KEY, JSON.stringify({
+        saved: state.saved,
+        added: state.added,
+        highlights: state.highlights,
+        readerPrefs: state.readerPrefs
+      }));
     } catch (e) { /* ignore */ }
   }
 
@@ -73,14 +83,18 @@
     compare: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="1.5"></rect><rect x="14" y="4" width="7" height="16" rx="1.5"></rect><path d="M5.5 8h2M5.5 11h2M16.5 8h2M16.5 11h2"></path></svg>',
     bookmarkLg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
     bookmarkLgFilled: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
-    close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>'
+    close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>',
+    listen: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>',
+    stop: '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg>',
+    focus: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"></path></svg>',
+    link: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>'
   };
 
   /* ---------- coverage ---------- */
   function buildCoverage(id, archived) {
     var rows = (archived || D.COVERAGE[id] || []).map(function (r) {
       var code = D.OUTLETS[r[0]] || 'NC';
-      return { name: r[0], date: r[1], url: r[2], code: code };
+      return { name: r[0], date: r[1], url: r[2], title: r[3] || '', code: code };
     });
     var counts = {};
     rows.forEach(function (r) { counts[r.code] = (counts[r.code] || 0) + 1; });
@@ -129,13 +143,29 @@
     return '<a class="' + cls + '" href="' + storyHref(s.id) +
       '" data-act="open" data-id="' + esc(s.id) + '">' + esc(label) + '</a>';
   }
+  function stopSpeech() {
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+    }
+    state.speaking = false;
+    state.speakingIndex = -1;
+  }
+
   function changeStory(id) {
+    stopSpeech();
     state.reading = id;
+    state.covFilter = 'all';
+    state.aaOpen = false;
+    state.copiedId = null;
+    if (!id) state.readerFocus = false;
     history.pushState(null, '', id ? storyHref(id) : location.pathname);
   }
   window.addEventListener('popstate', function () {
+    stopSpeech();
     var id = new URLSearchParams(location.search).get('story');
     state.reading = byId[id] ? id : null;
+    if (!state.reading) state.readerFocus = false;
+    state.aaOpen = false;
     render();
   });
 
@@ -609,7 +639,92 @@
       '<span class="paper-dateline">Featured stories · ' + esc(D.META.rangeLong) + '</span></header>' + body + '</section>';
   }
 
-  /* ---------- Story Reader & Coverage Comparison ---------- */
+  /* ---------- Native Story Reader & Coverage Comparison ---------- */
+  function getArticleParagraphs(s) {
+    if (s.article && s.article.length) return s.article;
+    var cov = s.cov;
+    var out = [];
+    if (s.summary) out.push(s.summary);
+    if (s.points && s.points.length) {
+      out.push(s.points.join(' '));
+    }
+    if (cov && cov.rows.length > 1) {
+      var names = cov.rows.slice(0, 6).map(function (r) { return r.name; }).join(', ');
+      out.push('Pheme is tracking ' + cov.count + ' on this story (' + names + (cov.rows.length > 6 ? ', and more' : '') + '). ' + cov.note);
+    }
+    return out.filter(Boolean);
+  }
+
+  function estimateReadTime(s) {
+    var parts = [s.headline, s.summary].concat(getArticleParagraphs(s)).concat(s.points || []);
+    var words = parts.join(' ').trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 210)) + ' min read';
+  }
+
+  function startSpeech(s) {
+    if (!window.speechSynthesis) return;
+    stopSpeech();
+    var paras = getArticleParagraphs(s);
+    var queue = [s.headline].concat(paras);
+    state.speaking = true;
+    var speakNext = function (idx) {
+      if (!state.speaking || idx >= queue.length) {
+        state.speaking = false;
+        state.speakingIndex = -1;
+        syncSpeakingDom();
+        return;
+      }
+      state.speakingIndex = idx - 1;
+      syncSpeakingDom();
+      var utter = new SpeechSynthesisUtterance(queue[idx]);
+      utter.lang = 'en-GB';
+      utter.rate = state.speechRate;
+      utter.onend = function () { if (state.speaking) speakNext(idx + 1); };
+      utter.onerror = function () { state.speaking = false; state.speakingIndex = -1; syncSpeakingDom(); };
+      window.speechSynthesis.speak(utter);
+    };
+    speakNext(0);
+  }
+
+  function syncSpeakingDom() {
+    var btn = app.querySelector('[data-act="togglelisten"]');
+    if (btn) {
+      btn.classList.toggle('on', state.speaking);
+      btn.innerHTML = (state.speaking ? ICON.stop + 'Stop' : ICON.listen + 'Listen');
+    }
+    var rateBtn = app.querySelector('[data-act="speechrate"]');
+    if (rateBtn) {
+      rateBtn.hidden = !state.speaking;
+      rateBtn.textContent = state.speechRate + '×';
+    }
+    app.querySelectorAll('.reader-para').forEach(function (el) {
+      var idx = Number(el.getAttribute('data-pidx'));
+      el.classList.toggle('speaking', state.speaking && idx === state.speakingIndex);
+    });
+  }
+
+  function updateReadProgress() {
+    var fill = document.getElementById('read-progress-fill');
+    if (!fill) return;
+    if (!state.reading) { fill.style.width = '0%'; return; }
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    var pct = scrollable > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100)) : 100;
+    fill.style.width = pct.toFixed(1) + '%';
+  }
+  window.addEventListener('scroll', updateReadProgress, { passive: true });
+
+  function syncBodyReaderClasses() {
+    var b = document.body;
+    b.classList.remove('reader-theme-white', 'reader-theme-sepia', 'reader-theme-night', 'reader-focus');
+    if (state.reading) {
+      if (state.readerPrefs.theme && state.readerPrefs.theme !== 'newsprint') {
+        b.classList.add('reader-theme-' + state.readerPrefs.theme);
+      }
+      if (state.readerFocus) b.classList.add('reader-focus');
+    }
+  }
+
   function renderComparison(s) {
     return (s.comparison || []).map(function (group) {
       return '<section class="rsection"><h2>' + esc(group.label) + '</h2><ul class="points">' +
@@ -622,20 +737,114 @@
     }).join('');
   }
 
+  function covGroupMatches(code, filter) {
+    if (filter === 'all') return true;
+    if (filter === 'left') return code === 'L' || code === 'LL';
+    if (filter === 'centre') return code === 'C';
+    if (filter === 'right') return code === 'LR' || code === 'R';
+    if (filter === 'other') return code === 'S' || code === 'P' || code === 'NR' || code === 'NC';
+    return true;
+  }
+
+  function renderAaPopover() {
+    if (!state.aaOpen) return '';
+    var p = state.readerPrefs;
+    var themes = [
+      ['newsprint', 'Paper'],
+      ['white', 'White'],
+      ['sepia', 'Sepia'],
+      ['night', 'Night']
+    ];
+    var sizes = [['sm', 'S'], ['md', 'M'], ['lg', 'L'], ['xl', 'XL']];
+    return '<div class="aa-popover" role="dialog" aria-label="Reader appearance">' +
+      '<div class="aa-group"><span class="aa-label">Paper theme</span><div class="aa-row">' +
+      themes.map(function (t) {
+        return '<button type="button" class="aa-opt swatch-' + t[0] + (p.theme === t[0] ? ' on' : '') + '" data-act="rpref" data-key="theme" data-val="' + t[0] + '">' + t[1] + '</button>';
+      }).join('') + '</div></div>' +
+      '<div class="aa-group"><span class="aa-label">Text size</span><div class="aa-row">' +
+      sizes.map(function (sz) {
+        return '<button type="button" class="aa-opt' + (p.size === sz[0] ? ' on' : '') + '" data-act="rpref" data-key="size" data-val="' + sz[0] + '">' + sz[1] + '</button>';
+      }).join('') + '</div></div>' +
+      '<div class="aa-group"><span class="aa-label">Typeface</span><div class="aa-row two">' +
+      '<button type="button" class="aa-opt' + (p.font === 'serif' ? ' on' : '') + '" data-act="rpref" data-key="font" data-val="serif" style="font-family:var(--serif)">Editorial Serif</button>' +
+      '<button type="button" class="aa-opt' + (p.font === 'sans' ? ' on' : '') + '" data-act="rpref" data-key="font" data-val="sans" style="font-family:var(--sans)">Clean Sans</button>' +
+      '</div></div>' +
+      '<div class="aa-group"><span class="aa-label">Column width</span><div class="aa-row two">' +
+      '<button type="button" class="aa-opt' + (p.measure === 'focused' ? ' on' : '') + '" data-act="rpref" data-key="measure" data-val="focused">Focused</button>' +
+      '<button type="button" class="aa-opt' + (p.measure === 'wide' ? ' on' : '') + '" data-act="rpref" data-key="measure" data-val="wide">Wide</button>' +
+      '</div></div></div>';
+  }
+
   function renderReader(s) {
     var back = state.view === 'papers' ? 'Back to ' + (state.paper || followed()[0].name) : (state.view === 'saved' ? 'Back to saved' : 'Back to Pheme');
     var more = STORIES.filter(function (o) { return o.source === s.source && o.id !== s.id; }).slice(0, 3);
     var cov = s.cov;
     var img = safeAsset(s.image);
-    return '<article class="reader" id="reader" aria-labelledby="reader-title">' +
+    var paras = getArticleParagraphs(s);
+    var storyHighlights = state.highlights[s.id] || {};
+    var hlCount = Object.keys(storyHighlights).filter(function (k) { return storyHighlights[k]; }).length;
+    var p = state.readerPrefs;
+    var canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window;
+
+    var curIdx = CURRENT.findIndex(function (item) { return item.id === s.id; });
+    var prevStory = curIdx > 0 ? CURRENT[curIdx - 1] : null;
+    var nextStory = curIdx !== -1 && curIdx < CURRENT.length - 1 ? CURRENT[curIdx + 1] : null;
+
+    var covFilterDefs = [
+      ['all', 'All (' + cov.rows.length + ')'],
+      ['left', 'Left / Lean left'],
+      ['centre', 'Centre'],
+      ['right', 'Lean right / Right'],
+      ['other', 'Science / Other']
+    ];
+    var visibleCovRows = cov.rows.filter(function (r) { return covGroupMatches(r.code, state.covFilter); });
+    var covTabsHtml = covFilterDefs.map(function (def) {
+      var n = cov.rows.filter(function (r) { return covGroupMatches(r.code, def[0]); }).length;
+      if (def[0] !== 'all' && n === 0) return '';
+      var label = def[0] === 'all' ? def[1] : def[1] + ' (' + n + ')';
+      return '<button type="button" class="cov-tab' + (state.covFilter === def[0] ? ' on' : '') + '" data-act="covfilter" data-id="' + def[0] + '">' + esc(label) + '</button>';
+    }).join('');
+
+    var readerClasses = 'reader font-' + p.font + ' size-' + p.size + (p.measure === 'wide' ? ' measure-wide' : '');
+
+    return '<div class="read-progress" aria-hidden="true"><div class="read-progress-fill" id="read-progress-fill"></div></div>' +
+      '<article class="' + readerClasses + '" id="reader" aria-labelledby="reader-title">' +
+      '<div class="reader-bar">' +
       '<button class="backbtn" data-act="back">← ' + esc(back) + '</button>' +
-      '<p class="kicker">' + esc(labelOf[s.topic]) + '<span class="kicker-meta">' + esc(s.source) + ' · ' + esc(s.publishedLabel || s.time) + '</span></p>' +
+      '<div class="reader-tools">' +
+      '<span class="read-time">' + esc(estimateReadTime(s)) + '</span>' +
+      (canSpeak
+        ? '<button type="button" class="rtool' + (state.speaking ? ' on' : '') + '" data-act="togglelisten">' +
+          (state.speaking ? ICON.stop + 'Stop' : ICON.listen + 'Listen') + '</button>' +
+          '<button type="button" class="rtool" data-act="speechrate"' + (state.speaking ? '' : ' hidden') + '>' + state.speechRate + '×</button>'
+        : '') +
+      '<button type="button" class="rtool' + (state.aaOpen ? ' on' : '') + '" data-act="toggleaa" aria-expanded="' + state.aaOpen + '">Aa</button>' +
+      '<button type="button" class="rtool' + (state.readerFocus ? ' on' : '') + '" data-act="togglefocus" title="Distraction-free Focus mode (F)">' + ICON.focus + (state.readerFocus ? 'Exit focus' : 'Focus') + '</button>' +
+      '<button type="button" class="rtool" data-act="copylink" data-id="' + esc(s.id) + '">' + ICON.link + (state.copiedId === s.id ? 'Copied' : 'Share') + '</button>' +
+      saveBtn(s) +
+      renderAaPopover() +
+      '</div></div>' +
+      '<p class="kicker">' + esc(labelOf[s.topic]) +
+      '<span class="kicker-meta">' + esc(s.source) + ' · ' + esc(s.publishedLabel || s.time) +
+      (s.location ? ' · <button type="button" class="loc-chip" data-act="openonmap" data-id="' + esc(s.id) + '">' + esc(s.location.label) + '</button>' : '') +
+      '</span></p>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
-      (img ? '<figure class="reader-photo"><img src="' + esc(img) + '" alt="' + esc(s.imageAlt || s.headline) + '"></figure>' : '') +
+      (img ? '<figure class="reader-photo"><img src="' + esc(img) + '" alt="' + esc(s.imageAlt || s.headline) + '"><figcaption class="reader-caption">' + esc(s.imageAlt || '') + '</figcaption></figure>' : '') +
+      '<div class="reader-body">' +
+      paras.map(function (para, idx) {
+        var hl = !!storyHighlights[idx];
+        var sp = state.speaking && state.speakingIndex === idx;
+        return '<p class="reader-para' + (hl ? ' hl-on' : '') + (sp ? ' speaking' : '') + '" data-act="highlight" data-id="' + esc(s.id) + '" data-pidx="' + idx + '" title="Click to highlight passage">' + esc(para) + '</p>';
+      }).join('') +
+      '</div>' +
+      '<p class="reader-hint">Tip: click any paragraph to highlight' + (hlCount ? ' · ' + plural(hlCount, 'highlight', 'highlights') + ' saved' : '') + ' · press F for Focus mode · ← / → for previous &amp; next story.</p>' +
+      (s.points && s.points.length
+        ? '<section class="takeaways-box"><h2>Key takeaways</h2><ul class="points">' +
+          s.points.map(function (pt) { return '<li>' + esc(pt) + '</li>'; }).join('') +
+          '</ul></section>'
+        : '') +
       renderComparison(s) +
-      '<section class="rsection"><h2>Key points</h2><ul class="points">' +
-      (s.points || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></section>' +
       '<section class="rsection" aria-labelledby="cov-title">' +
       '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">' +
       '<h2 id="cov-title">Full coverage · ' + esc(cov.count) + '</h2>' +
@@ -643,13 +852,28 @@
       covBar(cov, true) +
       '<div class="legend">' + cov.legend.map(function (l) { return '<span><span class="dotlg ' + l.cls + '"></span>' + esc(l.label) + ' · ' + l.n + '</span>'; }).join('') + '</div>' +
       '<p style="margin:0;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink)">' + esc(cov.note) + '</p>' +
-      '<ul class="covlist">' + cov.rows.map(function (r) {
-        return '<li>' + leanBadge(r.name) + '<span class="name">' + esc(r.name) + '</span><span class="small">' + esc(r.date) + '</span>' +
-          '<a href="' + esc(safeUrl(r.url)) + '" target="_blank" rel="noopener noreferrer" aria-label="Open ' + esc(r.name) + ' article in a new tab">Open ↗</a></li>';
+      '<div class="cov-tabs" role="group" aria-label="Filter outlets by leaning">' + covTabsHtml + '</div>' +
+      '<ul class="covlist">' + visibleCovRows.map(function (r) {
+        return '<li>' + leanBadge(r.name) +
+          '<div class="cov-outlet-col"><span class="name">' + esc(r.name) + '</span>' +
+          (r.title ? '<span class="cov-outlet-hl">' + esc(r.title) + '</span>' : '') +
+          '</div>' +
+          '<span class="small">' + esc(r.date) + '</span>' +
+          '<a href="' + esc(safeUrl(r.url)) + '" target="_blank" rel="noopener noreferrer" aria-label="Open ' + esc(r.name) + ' article in a new tab">Read original ↗</a></li>';
       }).join('') + '</ul></section>' +
-      '<div class="rfoot"><p class="small" style="max-width:46ch">Summary written for Pheme from ' + esc(s.source) + '’s report. Follow the link for the full original article.</p>' +
+      '<div class="rfoot"><p class="small" style="max-width:46ch">Native briefing written for Pheme from ' + esc(cov.count) + ' led by ' + esc(s.source) + '. Follow the links above for full publisher articles.</p>' +
       '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + saveBtn(s) +
       '<a class="darkbtn" href="' + esc(safeUrl(s.url)) + '" target="_blank" rel="noopener noreferrer">Original at ' + esc(s.source) + ' ↗</a></div></div>' +
+      ((prevStory || nextStory)
+        ? '<nav class="story-pager" aria-label="Adjacent stories">' +
+          (prevStory
+            ? '<button type="button" class="pager-btn" data-act="open" data-id="' + esc(prevStory.id) + '"><span class="pager-dir">← Previous story</span><span class="pager-title">' + esc(prevStory.headline) + '</span></button>'
+            : '<div></div>') +
+          (nextStory
+            ? '<button type="button" class="pager-btn next" data-act="open" data-id="' + esc(nextStory.id) + '"><span class="pager-dir">Next story →</span><span class="pager-title">' + esc(nextStory.headline) + '</span></button>'
+            : '<div></div>') +
+          '</nav>'
+        : '') +
       (more.length ? '<section class="rsection"><h2>More from ' + esc(s.source) + '</h2><div class="papers-list">' +
         more.map(function (m) { return '<button class="more-link" data-act="open" data-id="' + esc(m.id) + '">' + esc(m.headline) + '</button>'; }).join('') +
         '</div></section>' : '') +
@@ -692,6 +916,7 @@
   function render(opts) {
     if (worldMap) { worldMap.remove(); worldMap = null; worldMarkerLayer = null; mapPinById = Object.create(null); }
     var reading = state.reading ? byId[state.reading] : null;
+    syncBodyReaderClasses();
     var main;
     if (reading) main = renderReader(reading);
     else if (state.view === 'papers') main = renderPapers();
@@ -703,18 +928,23 @@
       renderSettings();
 
     mountWorldMap();
+    updateReadProgress();
     if (opts && opts.focus) {
       var el = document.getElementById(opts.focus);
       if (el) { el.focus(); if (el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
     }
     if (opts && opts.scrollReader) {
-      var r = document.getElementById('reader');
-      if (r && r.scrollIntoView) r.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
   /* ---------- events ---------- */
   app.addEventListener('click', function (e) {
+    if (state.aaOpen && !e.target.closest('.aa-popover') && !e.target.closest('[data-act="toggleaa"]')) {
+      state.aaOpen = false;
+      render();
+      return;
+    }
     var t = e.target.closest('[data-act]');
     if (!t) return;
     var act = t.getAttribute('data-act');
@@ -766,6 +996,23 @@
           if (mapEl && mapEl.scrollIntoView) mapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         break;
+      case 'openonmap':
+        if (byId[id] && byId[id].location) {
+          state.view = 'briefing';
+          state.topic = 'world';
+          state.mapTopic = 'all';
+          changeStory(null);
+          render();
+          if (worldMap) {
+            var targetLoc = byId[id].location;
+            worldMap.once('moveend', function () {
+              refreshWorldMapMarkers();
+              if (mapPinById[id]) mapPinById[id].openPopup();
+            });
+            worldMap.setView([targetLoc.lat, targetLoc.lng], 11, { animate: true });
+          }
+        }
+        break;
       case 'view':
         state.view = t.getAttribute('data-view');
         if (state.reading) changeStory(null);
@@ -783,6 +1030,59 @@
         changeStory(null); render(); break;
       case 'save':
         state.saved[id] = !state.saved[id]; persist(); render(); break;
+      case 'toggleaa':
+        state.aaOpen = !state.aaOpen; render(); break;
+      case 'rpref':
+        var key = t.getAttribute('data-key');
+        var val = t.getAttribute('data-val');
+        if (key && val) {
+          state.readerPrefs[key] = val;
+          persist();
+          render();
+        }
+        break;
+      case 'togglefocus':
+        state.readerFocus = !state.readerFocus;
+        state.aaOpen = false;
+        render(); break;
+      case 'togglelisten':
+        if (state.speaking) {
+          stopSpeech();
+          syncSpeakingDom();
+        } else if (state.reading && byId[state.reading]) {
+          startSpeech(byId[state.reading]);
+        }
+        break;
+      case 'speechrate':
+        var rates = [1, 1.25, 1.5];
+        state.speechRate = rates[(rates.indexOf(state.speechRate) + 1) % rates.length];
+        if (state.speaking && state.reading && byId[state.reading]) {
+          startSpeech(byId[state.reading]);
+        }
+        break;
+      case 'highlight':
+        var pidx = t.getAttribute('data-pidx');
+        if (id && pidx !== null) {
+          if (!state.highlights[id]) state.highlights[id] = {};
+          state.highlights[id][pidx] = !state.highlights[id][pidx];
+          persist();
+          t.classList.toggle('hl-on', !!state.highlights[id][pidx]);
+        }
+        break;
+      case 'covfilter':
+        state.covFilter = id || 'all';
+        render(); break;
+      case 'copylink':
+        var fullUrl = location.origin + location.pathname + storyHref(id);
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(fullUrl).catch(function () {});
+        }
+        state.copiedId = id;
+        render();
+        setTimeout(function () {
+          if (state.copiedId === id) { state.copiedId = null; render(); }
+        }, 1800);
+        break;
       case 'togglesearch':
         state.searchOpen = !state.searchOpen;
         if (!state.searchOpen) state.query = '';
@@ -817,9 +1117,29 @@
 
   app.addEventListener('submit', function (e) { e.preventDefault(); });
   document.addEventListener('keydown', function (e) {
+    var tag = e.target && e.target.tagName;
+    var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
     if (e.key === 'Escape') {
       if (state.settingsOpen) { state.settingsOpen = false; render(); }
+      else if (state.aaOpen) { state.aaOpen = false; render(); }
+      else if (state.readerFocus) { state.readerFocus = false; render(); }
       else if (state.searchOpen) { state.searchOpen = false; state.query = ''; render(); }
+      else if (state.reading) { changeStory(null); render(); }
+    } else if (!typing && state.reading && !state.settingsOpen) {
+      if (e.key === 'f' || e.key === 'F') {
+        state.readerFocus = !state.readerFocus;
+        state.aaOpen = false;
+        render();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        var idx = CURRENT.findIndex(function (item) { return item.id === state.reading; });
+        if (idx !== -1) {
+          var nextIdx = e.key === 'ArrowLeft' ? idx - 1 : idx + 1;
+          if (CURRENT[nextIdx]) {
+            changeStory(CURRENT[nextIdx].id);
+            render({ scrollReader: true });
+          }
+        }
+      }
     }
   });
 

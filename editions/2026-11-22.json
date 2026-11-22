@@ -327,7 +327,18 @@
     "Coverage: 16 left-leaning, 7 centre, 18 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "location": {
+    "label": "Guasave, Sinaloa, Mexico",
+    "shortLabel": "Sinaloa",
+    "lat": 25.5747,
+    "lng": -108.4718
+   },
+   "article": [
+    "Mexico captures top drug lord 'El Chapo Isidro'. Reported by 41 outlets, including Sky News, Euronews and France 24. First reported by Hindustan Times on 21 Nov.",
+    "Across Pheme’s 41-source sample, this story is covered by centre-rated outlets including The Express Tribune, Sky News, France 24; left-leaning outlets including Hindustan Times, Euronews, Bloomberg; right-leaning outlets including Citizen Free Press, NDTV, Fox News. Coverage: 16 left-leaning, 7 centre, 18 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "fbi-criminal-database-hack",
@@ -342,7 +353,18 @@
     "Coverage: 8 left-leaning, 21 centre, 9 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "22 Nov 2026"
+   "publishedLabel": "22 Nov 2026",
+   "location": {
+    "label": "FBI HQ, Washington, D.C., USA",
+    "shortLabel": "FBI HQ",
+    "lat": 38.8952,
+    "lng": -77.0249
+   },
+   "article": [
+    "FBI reportedly investigating apparent hack of its criminal database. Reported by 39 outlets, including France 24, Al Jazeera English and TechCrunch. First reported by Techmeme on 21 Nov.",
+    "Across Pheme’s 39-source sample, this story is covered by centre-rated outlets including Political Wire, Investing.com, 7NEWS; left-leaning outlets including Hindustan Times, Middle East Eye, Al Jazeera English; right-leaning outlets including End Time Headlines, NewsNation, Greek Reporter. Coverage: 8 left-leaning, 21 centre, 9 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "riemann-hypothesis-ai-proof-claim",
@@ -357,7 +379,18 @@
     "Coverage: 8 left-leaning, 4 centre, 6 right-leaning, 10 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "location": {
+    "label": "San Francisco, California, USA",
+    "shortLabel": "San Francisco",
+    "lat": 37.7749,
+    "lng": -122.4194
+   },
+   "article": [
+    "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis. Reported by 28 outlets, including Financial Times, TechCrunch and The Economist. First reported by Scientific American on 20 Nov.",
+    "Across Pheme’s 28-source sample, this story is covered by centre-rated outlets including Financial Times, The Economist, The Information; left-leaning outlets including The Hindu, TechCrunch, Washington Post; right-leaning outlets including The Wall Street Journal, Daily Mail, MyNorthwest. Coverage: 8 left-leaning, 4 centre, 6 right-leaning, 10 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "catherine-bbc-cancer-film",
@@ -372,7 +405,18 @@
     "Coverage: 7 left-leaning, 10 centre, 7 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "location": {
+    "label": "Windsor, Berkshire, UK",
+    "shortLabel": "Windsor",
+    "lat": 51.4839,
+    "lng": -0.6044
+   },
+   "article": [
+    "Princess of Wales speaks about impact of cancer diagnosis in BBC film Heal. Reported by 24 outlets, including BBC News, The New York Times and Daily Mail. First reported by BBC News on 21 Nov.",
+    "Across Pheme’s 24-source sample, this story is covered by centre-rated outlets including Nottinghamshire Post, CityNews Edmonton, CityNews Halifax; left-leaning outlets including BBC News, Wales Online, The New York Times; right-leaning outlets including The West Australian, Evening Standard, The Straits Times. Coverage: 7 left-leaning, 10 centre, 7 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "jonathan-rinderknecht-found-guilty-palisades-fire-arson",
@@ -387,7 +431,12 @@
     "Coverage: 7 left-leaning, 9 centre, 6 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Man convicted of starting palisades fire. Reported by 22 outlets, including RTÉ News, BBC News and DW News. First reported by KTTV - Fox 11 - Los Angeles on 20 Nov.",
+    "Across Pheme’s 22-source sample, this story is covered by centre-rated outlets including KTTV - Fox 11 - Los Angeles, KTLA, WFLA - Tampa Bay; left-leaning outlets including Bloomberg, PBS NewsHour, Hindustan Times; right-leaning outlets including Citizen Free Press, The Post Millennial, GB News. Coverage: 7 left-leaning, 9 centre, 6 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "love-carjackings-video-game",
@@ -402,7 +451,12 @@
     "Coverage: 8 left-leaning, 9 centre, 9 right-leaning, 3 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Grand Theft Auto VI smashes records with $3.8bn in sales. Reported by 29 outlets, including The New York Times, Daily Mail and France 24. First reported by The New York Times on 20 Nov.",
+    "Across Pheme’s 29-source sample, this story is covered by centre-rated outlets including The Conversation UK, France 24, The Hill; left-leaning outlets including The New York Times, ABC News (US), Wired; right-leaning outlets including Breitbart, Daily Mail, CBS News. Coverage: 8 left-leaning, 9 centre, 9 right-leaning, 3 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "climate-money-africa-europe-use-whats-already",
@@ -417,7 +471,12 @@
     "Coverage: 9 left-leaning, 6 centre, 4 right-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Countries race to secure Cop31 deal. Reported by 21 outlets, including BBC News, Financial Times and RTÉ News. First reported by BBC News on 20 Nov.",
+    "Across Pheme’s 21-source sample, this story is covered by centre-rated outlets including Financial Times, RTÉ News, RNZ; left-leaning outlets including BBC News, Euractiv, Mongabay; right-leaning outlets including The Straits Times, Irish Independent, KFGO - 790 AM - Fargo. Coverage: 9 left-leaning, 6 centre, 4 right-leaning, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "trump-china-trip-iran-ukraine-peace-declaration",
@@ -432,7 +491,12 @@
     "Coverage: 9 left-leaning, 5 centre, 7 right-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Trump defends Putin ties and accuses Iran of dishonesty in negotiations. Reported by 23 outlets, including The New York Times, NPR and Daily Mail. First reported by ABC News (US) on 20 Nov.",
+    "Across Pheme’s 23-source sample, this story is covered by centre-rated outlets including Yorkshire Post, The Hill, WGN News; left-leaning outlets including ABC News (US), Axios, The New York Times; right-leaning outlets including CBS News, Armstrong Economics, Fox News. Coverage: 9 left-leaning, 5 centre, 7 right-leaning, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "gulf-of-finland-drone-ship-attack",
@@ -447,7 +511,18 @@
     "Coverage: 10 left-leaning, 3 centre, 6 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "location": {
+    "label": "Gulf of Finland, Helsinki",
+    "shortLabel": "Gulf of Finland",
+    "lat": 60.1699,
+    "lng": 24.9384
+   },
+   "article": [
+    "Drone attack sets Russian cargo ship ablaze in Gulf of Finland. Reported by 19 outlets, including Politico Europe, DW News and Daily Mail. First reported by GB News on 21 Nov.",
+    "Across Pheme’s 19-source sample, this story is covered by centre-rated outlets including France 24, CNA, RTÉ News; left-leaning outlets including Ukrainska Pravda, Bloomberg, Euractiv; right-leaning outlets including GB News, The Straits Times, NDTV. Coverage: 10 left-leaning, 3 centre, 6 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "eight-killed-massive-russian-attacks-ukraine",
@@ -462,7 +537,12 @@
     "Coverage: 6 left-leaning, 7 centre, 4 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Russia launches ballistic missile attack on Zelensky's hometown in central Ukraine. Reported by 18 outlets, including RTÉ News, BBC News and DW News. First reported by RTÉ News on 20 Nov.",
+    "Across Pheme’s 18-source sample, this story is covered by centre-rated outlets including RTÉ News, CityNews Edmonton, CityNews Halifax; left-leaning outlets including BBC News, Hindustan Times, Daily Mirror; right-leaning outlets including The West Australian, NDTV, Breitbart. Coverage: 6 left-leaning, 7 centre, 4 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "nvidia-growth-outlook-bofa-expert-jensen-huang",
@@ -477,7 +557,12 @@
     "Coverage: 8 left-leaning, 4 centre, 4 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "How Jensen Huang Made Humiliation Routine at Nvidia. Reported by 17 outlets, including TechCrunch, CNBC and Livemint. First reported by Livemint on 20 Nov.",
+    "Across Pheme’s 17-source sample, this story is covered by centre-rated outlets including Livemint, The Hill, Political Wire; left-leaning outlets including Naked Capitalism, TechCrunch, Wired; right-leaning outlets including Investors Business Daily, The Post Millennial, Citizen Free Press. Coverage: 8 left-leaning, 4 centre, 4 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "trump-threatens-tax-overseas-data-centres",
@@ -492,7 +577,12 @@
     "Coverage: 9 left-leaning, 4 centre, 3 right-leaning, 3 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Trump threatens tax for overseas US data centres. Reported by 19 outlets, including The New York Times, Financial Times and CNBC. First reported by US Top News and Analysis on 20 Nov.",
+    "Across Pheme’s 19-source sample, this story is covered by centre-rated outlets including WFLA - Tampa Bay, The Hill, Financial Times; left-leaning outlets including US Top News and Analysis, ABC News (US), NBC News; right-leaning outlets including The Post Millennial, The Globe and Mail, Breitbart. Coverage: 9 left-leaning, 4 centre, 3 right-leaning, 3 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "poland-condemns-russian-airspace-provocation",
@@ -507,7 +597,12 @@
     "Coverage: 3 left-leaning, 5 centre, 8 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Poland condemns Russian airspace 'provocation'. Reported by 16 outlets, including The New York Times, Daily Mail and SOFREP. First reported by RTÉ News on 20 Nov.",
+    "Across Pheme’s 16-source sample, this story is covered by centre-rated outlets including RTÉ News, The Hill, Military.com; left-leaning outlets including Euractiv, The New York Times, Washington Post; right-leaning outlets including SOFREP, The Citizen, End Time Headlines. Coverage: 3 left-leaning, 5 centre, 8 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "uk-eu-reset-tuition-fees",
@@ -522,7 +617,20 @@
     "Coverage: 8 left-leaning, 2 centre, 5 right-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "image": "assets/images/uk-westminster.jpg",
+   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight",
+   "location": {
+    "label": "Brussels, Belgium",
+    "shortLabel": "Brussels",
+    "lat": 50.8503,
+    "lng": 4.3517
+   },
+   "article": [
+    "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know. Reported by 17 outlets, including RTÉ News, Sky News and The Guardian. First reported by RTÉ News on 20 Nov.",
+    "Across Pheme’s 17-source sample, this story is covered by centre-rated outlets including RTÉ News, Sky News; left-leaning outlets including The Guardian, Daily Mirror, BBC News; right-leaning outlets including Guido Fawkes, Daily Express, Daily Mail. Coverage: 8 left-leaning, 2 centre, 5 right-leaning, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "eu-digital-tax-budget-proposal",
@@ -537,7 +645,18 @@
     "Coverage: 9 left-leaning, 5 centre, 2 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "location": {
+    "label": "EU Quarter, Brussels, Belgium",
+    "shortLabel": "EU Quarter",
+    "lat": 50.8428,
+    "lng": 4.3826
+   },
+   "article": [
+    "EU proposes tax on big tech companies to fund budget. Reported by 17 outlets, including Politico Europe, Financial Times and DW News. First reported by RTÉ News on 21 Nov.",
+    "Across Pheme’s 17-source sample, this story is covered by centre-rated outlets including RTÉ News, The Express Tribune, Times of Malta; left-leaning outlets including Politico Europe, Euractiv, Bloomberg; right-leaning outlets including The Straits Times, NDTV. Coverage: 9 left-leaning, 5 centre, 2 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "tech-stock-sell-off-drags-markets-down",
@@ -552,7 +671,12 @@
     "Coverage: 7 left-leaning, 6 centre, 5 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Tech stock sell-off drags markets down as Anthropic shares slide. Reported by 18 outlets, including France 24, Daily Mail and Sky News. First reported by France 24 on 20 Nov.",
+    "Across Pheme’s 18-source sample, this story is covered by centre-rated outlets including France 24, Sky News, Financial Times; left-leaning outlets including NBC News, US Top News and Analysis, NPR; right-leaning outlets including The Wall Street Journal, Daily Mail, This is Money. Coverage: 7 left-leaning, 6 centre, 5 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "strait-hormuz-athlete-swims-through-war-zone",
@@ -567,7 +691,12 @@
     "Coverage: 7 left-leaning, 2 centre, 5 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Strait of Hormuz: Athlete swims through war zone to expose war's environmental toll. Reported by 14 outlets, including France 24, BBC News and Daily Mail. First reported by Euronews on 21 Nov.",
+    "Across Pheme’s 14-source sample, this story is covered by centre-rated outlets including France 24, 7NEWS; left-leaning outlets including Euronews, Haaretz, BBC News; right-leaning outlets including Evening Standard, GB News, NDTV. Coverage: 7 left-leaning, 2 centre, 5 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "fiona-hippo-dies-swallowing-visitors-hat",
@@ -582,7 +711,12 @@
     "Coverage: 5 left-leaning, 5 centre, 3 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Fiona the hippo dies after swallowing a visitor's hat. Reported by 14 outlets, including Daily Mail, Wired and 7NEWS. First reported by Wired on 20 Nov.",
+    "Across Pheme’s 14-source sample, this story is covered by centre-rated outlets including 7NEWS, WFLA - Tampa Bay, The Hill; left-leaning outlets including Wired, Euronews, Hindustan Times; right-leaning outlets including Daily Mail, American Wire News, BizPac Review. Coverage: 5 left-leaning, 5 centre, 3 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "signal-restrict-screenshots-ai-agent-concerns-again",
@@ -597,7 +731,12 @@
     "Coverage: 1 left-leaning, 3 centre, 1 right-leaning, 6 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance. Reported by 11 outlets, including ZDNET, Inc.com and CNET. First reported by Android Authority on 20 Nov.",
+    "Across Pheme’s 11-source sample, this story is covered by centre-rated outlets including ZDNET, Inc.com, CNET; left-leaning outlets including TechCrunch; right-leaning outlets including BizPac Review. Coverage: 1 left-leaning, 3 centre, 1 right-leaning, 6 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "village-uproar-plans-house-nearly-1-000",
@@ -612,7 +751,12 @@
     "Coverage: 4 left-leaning, 2 centre, 5 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Village votes to 'leave UK' over migrant plan. Reported by 11 outlets, including The Guardian, Daily Mail and Daily Express. First reported by Daily Express on 21 Nov.",
+    "Across Pheme’s 11-source sample, this story is covered by centre-rated outlets including Belfast Live, Times of Malta; left-leaning outlets including Daily Mirror, The Guardian, BBC News; right-leaning outlets including Daily Express, GB News, Evening Standard. Coverage: 4 left-leaning, 2 centre, 5 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "tuition-fees-talks-delay-adoption-eu-deal",
@@ -627,7 +771,12 @@
     "Coverage: 5 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "UK and EU agree Brexit ‘reset’ but delivery rests on tuition fees. Reported by 9 outlets, including The Guardian, BBC News and Euractiv. First reported by Euractiv on 20 Nov.",
+    "Across Pheme’s 9-source sample, this story is covered by centre-rated outlets including Financial Times, The Conversation UK; left-leaning outlets including Euractiv, The Guardian, i News; right-leaning outlets including Guido Fawkes. Coverage: 5 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "hotel-chocolat-issues-urgent-alert-christmas-boxes",
@@ -642,7 +791,12 @@
     "Coverage: 3 left-leaning, 1 centre, 3 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Hotel Chocolat recalls several Christmas boxes over potential salmonella risk. Reported by 8 outlets, including Daily Mail, Daily Mirror and Evening Standard. First reported by Daily Mirror on 21 Nov.",
+    "Across Pheme’s 8-source sample, this story is covered by centre-rated outlets including Sky News; left-leaning outlets including Daily Mirror, Manchester Evening News, Metro; right-leaning outlets including Evening Standard, The Sun, Daily Mail. Coverage: 3 left-leaning, 1 centre, 3 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "bradford-councillor-stabbing-charge",
@@ -657,7 +811,18 @@
     "Coverage: 4 left-leaning, 2 centre, 2 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "location": {
+    "label": "Bradford, West Yorkshire, UK",
+    "shortLabel": "Bradford",
+    "lat": 53.796,
+    "lng": -1.7594
+   },
+   "article": [
+    "Man charged with attempted murder after councillor stabbed in Bradford. Reported by 8 outlets, including BBC News, The Guardian and Daily Mail. First reported by Yorkshire Post on 20 Nov.",
+    "Across Pheme’s 8-source sample, this story is covered by centre-rated outlets including Yorkshire Post, Sky News; left-leaning outlets including BBC News, The Herald, Metro; right-leaning outlets including GB News, Daily Mail. Coverage: 4 left-leaning, 2 centre, 2 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "robert-pattinsons-james-bond-casting-marks-hollywoods",
@@ -672,7 +837,12 @@
     "Coverage: 4 left-leaning, 1 right-leaning, 3 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Revealed: The most handsome James Bond actors, according to science - with Robert Pattinson fifth on the list. Reported by 8 outlets, including The Guardian, BBC News and City AM. First reported by City AM on 20 Nov.",
+    "Across Pheme’s 8-source sample, this story is covered by left-leaning outlets including The Week UK, The Guardian, BBC News; right-leaning outlets including Daily Mail. Coverage: 4 left-leaning, 1 right-leaning, 3 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "custom-mri-tool-show-within-weeks-if",
@@ -687,7 +857,12 @@
     "Coverage: 1 left-leaning, 3 centre, 3 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Pill for advanced pancreatic cancer shows promise. Reported by 8 outlets, including The Guardian, Derbyshire Live and Medical Xpress. First reported by Derbyshire Live on 20 Nov.",
+    "Across Pheme’s 8-source sample, this story is covered by centre-rated outlets including Derbyshire Live, RTÉ News, WFLA - Tampa Bay; left-leaning outlets including The Guardian; right-leaning outlets including Citizen Free Press, Fox News, NewsNation. Coverage: 1 left-leaning, 3 centre, 3 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "cold-gives-way-rain-parts-weather-warning",
@@ -702,7 +877,12 @@
     "Coverage: 3 left-leaning, 5 centre.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Cold gives way to rain in parts of UK as weather warning issued for south-west England. Reported by 8 outlets, including DublinLive, The Journal and WITI - FOX 6 - Milwaukee. First reported by DublinLive on 20 Nov.",
+    "Across Pheme’s 8-source sample, this story is covered by centre-rated outlets including DublinLive, WITI - FOX 6 - Milwaukee, Bristol Post; left-leaning outlets including The Journal, Wales Online, The Guardian. Coverage: 3 left-leaning, 5 centre.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "bayers-7-25bn-settlement-cancer-cases-approved",
@@ -717,7 +897,12 @@
     "Coverage: 5 left-leaning, 2 centre.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Judge approves $7.25bn Bayer payout to settle claims that Roundup causes cancer. Reported by 7 outlets, including Financial Times, The New York Times and NPR. First reported by Financial Times on 20 Nov.",
+    "Across Pheme’s 7-source sample, this story is covered by centre-rated outlets including Financial Times, The Hill; left-leaning outlets including The Guardian, The New York Times, Mother Jones. Coverage: 5 left-leaning, 2 centre.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "veteran-journalist-david-mckittrick-dies-aged-77",
@@ -732,7 +917,12 @@
     "Coverage: 2 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Veteran journalist David McKittrick dies aged 77. Reported by 6 outlets, including BBC News, Evening Standard and The Journal. First reported by BBC News on 21 Nov.",
+    "Across Pheme’s 6-source sample, this story is covered by centre-rated outlets including RTÉ News, Belfast Live; left-leaning outlets including BBC News, The Journal; right-leaning outlets including Evening Standard. Coverage: 2 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "iphone-duo-livestream-many-folds-apples-phone",
@@ -747,7 +937,12 @@
     "Coverage: 3 centre, 1 right-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "iPhone Duo Livestream: How Many Folds Can Apple’s Phone Take? Day 24. Reported by 6 outlets, including Livemint, Digital Trends and India Today. First reported by CNET on 20 Nov.",
+    "Across Pheme’s 6-source sample, this story is covered by centre-rated outlets including CNET, Livemint, Digital Trends; right-leaning outlets including India Today. Coverage: 3 centre, 1 right-leaning, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "anthropics-ipo-triumph",
@@ -762,7 +957,12 @@
     "Coverage: 5 left-leaning, 2 centre, 2 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Stocks, gold and silver fall after blockbuster Anthropic IPO. Reported by 10 outlets, including The Guardian, CNBC and Financial Times. First reported by The Information on 20 Nov.",
+    "Across Pheme’s 10-source sample, this story is covered by centre-rated outlets including The Information, Financial Times; left-leaning outlets including The Guardian, The Hindu, CNBC; right-leaning outlets including New York Observer, Investors Business Daily. Coverage: 5 left-leaning, 2 centre, 2 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "bepicolombo-reaches-mercury",
@@ -777,7 +977,18 @@
     "Coverage: 1 left-leaning, 5 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "location": {
+    "label": "ESA Operations, Darmstadt, Germany",
+    "shortLabel": "Darmstadt",
+    "lat": 49.8717,
+    "lng": 8.6227
+   },
+   "article": [
+    "The BepiColombo spacecraft is finally entering orbit around Mercury. Reported by 6 outlets, including BBC News, Nature News and Scientific American. First reported by BBC News on 20 Nov.",
+    "Across Pheme’s 6-source sample, this story is covered by left-leaning outlets including BBC News. Coverage: 1 left-leaning, 5 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "early-alzheimers-disease-warning-sign-seen-body",
@@ -792,7 +1003,12 @@
     "Coverage: 2 left-leaning, 1 centre, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Early Alzheimer's disease warning sign may be seen on body. Reported by 4 outlets, including Latest Science News -- ScienceDaily, Wales Online and ABC7 New York. First reported by Latest Science News -- ScienceDaily on 20 Nov.",
+    "Across Pheme’s 4-source sample, this story is covered by centre-rated outlets including ABC7 New York; left-leaning outlets including Wales Online, Daily Mirror. Coverage: 2 left-leaning, 1 centre, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "bitcoins-regulation-bull-case-played-drive-crypto",
@@ -807,7 +1023,12 @@
     "Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Bitcoin's regulation bull case is played out. What could drive crypto gains moving forward. Reported by 3 outlets, including Citizen Free Press and Cointelegraph. First reported by CNBC on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by left-leaning outlets including CNBC; right-leaning outlets including Citizen Free Press. Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "dow-p-500-close-correction-nasdaq-slides",
@@ -822,7 +1043,12 @@
     "Coverage: 2 left-leaning, 2 right-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Dow and S&P 500 close in correction, Nasdaq slides 5.3% to erase 2026 gains. Reported by 4 outlets, including Bloomberg, Fox Business and Dawn. First reported by MarketWatch on 20 Nov.",
+    "Across Pheme’s 4-source sample, this story is covered by left-leaning outlets including Bloomberg, Dawn; right-leaning outlets including MarketWatch, Fox Business. Coverage: 2 left-leaning, 2 right-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "tiktok-launches-tool-detect-use-deepfakes-globally",
@@ -837,7 +1063,12 @@
     "Coverage: 1 left-leaning, 2 centre.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "TikTok launches tool to detect use of deepfakes globally. Reported by 3 outlets, including Euractiv and Forbes. First reported by RTÉ News on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by centre-rated outlets including RTÉ News, Forbes; left-leaning outlets including Euractiv. Coverage: 1 left-leaning, 2 centre.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "economy-doing-better-think-everyone",
@@ -852,7 +1083,12 @@
     "Coverage: 2 left-leaning, 1 centre.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "How the U.S. Economy Is Tied to A.I.. Reported by 3 outlets, including The Hill and Bloomberg. First reported by The Hill on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by centre-rated outlets including The Hill; left-leaning outlets including Bloomberg, The New York Times. Coverage: 2 left-leaning, 1 centre.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "tentative-deal-averts-strike-threat-busiest-u",
@@ -867,7 +1103,12 @@
     "Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Tentative Deal Averts Strike Threat at Busiest U.S. Ports. Reported by 3 outlets, including Bloomberg and Freightwaves. First reported by Bloomberg on 21 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by left-leaning outlets including Bloomberg; right-leaning outlets including The Wall Street Journal. Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "administration-tries-intervene-kalshi-threatened-restraining-order",
@@ -882,7 +1123,12 @@
     "Coverage: 1 left-leaning, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "Administration tries to intervene after Kalshi is threatened with restraining order. Reported by 3 outlets, including CoinDesk and The Block. First reported by CoinDesk on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by left-leaning outlets including ABC News (US). Coverage: 1 left-leaning, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "japan-core-inflation-soars-highest-energy-subsidy",
@@ -897,7 +1143,12 @@
     "Coverage: 3 left-leaning.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Japan core inflation soars to highest this year as energy subsidy expiry pushes up consumer prices. Reported by 3 outlets, including Jacobin and Bloomberg. First reported by CNBC on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by left-leaning outlets including CNBC, Jacobin, Bloomberg. Coverage: 3 left-leaning.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "government-stockpiling-push-helps-boost-retail-sales",
@@ -912,7 +1163,12 @@
     "Coverage: 2 left-leaning, 1 centre, 3 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "20 Nov 2026"
+   "publishedLabel": "20 Nov 2026",
+   "article": [
+    "Government stockpiling push helps boost retail sales. Reported by 6 outlets, including Sky News, BBC News and The Guardian. First reported by ONS on 20 Nov.",
+    "Across Pheme’s 6-source sample, this story is covered by centre-rated outlets including Sky News; left-leaning outlets including BBC News, The Guardian. Coverage: 2 left-leaning, 1 centre, 3 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "physician-explains-glp-1s-biggest-potential-side",
@@ -927,7 +1183,12 @@
     "Coverage: 1 centre, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "A Massive Study of 250,000 Patients Just Revealed a Surprising New Use for GLP-1s. Reported by 3 outlets, including Nautilus and Medical Xpress. First reported by Nautilus on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by centre-rated outlets including Inc.com. Coverage: 1 centre, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   },
   {
    "id": "james-webb-telescope-spots-giant-star-swallowing",
@@ -942,7 +1203,12 @@
     "Coverage: 1 centre, 2 other or unrated.",
     "Open each outlet’s report below to compare their headlines and framing."
    ],
-   "publishedLabel": "21 Nov 2026"
+   "publishedLabel": "21 Nov 2026",
+   "article": [
+    "A giant star swallowed another star. James Webb reveals the aftermath. Reported by 3 outlets, including Ars Technica and Live Science. First reported by Live Science on 20 Nov.",
+    "Across Pheme’s 3-source sample, this story is covered by centre-rated outlets including Ars Technica. Coverage: 1 centre, 2 other or unrated.",
+    "Use the leaning filter tabs below to inspect how different newsrooms across the spectrum covered this event, or click any outlet link to open the full original report."
+   ]
   }
  ],
  "OUTLETS": {

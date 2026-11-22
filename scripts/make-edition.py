@@ -267,6 +267,7 @@ Using ONLY this material (no outside knowledge), return a JSON object with:
 - "topic": one of "uk", "world", "science", "tech", "business", "finance" (uk = UK and Ireland domestic news)
 - "headline": a neutral headline in your own words, at most 90 characters, no quotation marks from outlets
 - "summary": one or two sentences in your own words, at most 45 words
+- "article": three short, original neutral briefing paragraphs in your own words (each 40-75 words) synthesising what happened, how coverage compares, and why it matters
 - "points": three short factual key points in your own words, each at most 30 words
 - "digest": a one-line version for a daily digest, at most 18 words
 - "location": the main place the event happened as {{"label": "City, Country", "shortLabel": "City", "lat": number, "lng": number}}, or null if not one place
@@ -286,7 +287,7 @@ def ask_claude(e):
     for o, a in sorted(e['outlets'].items(), key=lambda x: x[1]['published'])[:14]:
         lines.append(f"- {o} ({day_label(a['published'])}): {a['title']} — {a.get('summary', '')[:300]}")
     body = json.dumps({
-        'model': MODEL, 'max_tokens': 900,
+        'model': MODEL, 'max_tokens': 1300,
         'messages': [{'role': 'user', 'content': PROMPT.format(material='\n'.join(lines))}],
     }).encode()
     req = urllib.request.Request('https://api.anthropic.com/v1/messages', data=body, headers={
@@ -332,6 +333,7 @@ def write_story(e, taken):
         headline = gen['headline'].strip()[:110]
         summary = gen['summary'].strip()
         points = [p.strip() for p in gen.get('points', []) if isinstance(p, str) and p.strip()][:3]
+        article = [p.strip() for p in gen.get('article', []) if isinstance(p, str) and p.strip()][:5]
         digest = (gen.get('digest') or headline).strip()
         if gen.get('topic') in QUOTA:
             e['topic'] = gen['topic']
@@ -344,6 +346,22 @@ def write_story(e, taken):
         summary = f"Reported by {len(names)} outlets, including {', '.join(others[:-1]) + ' and ' + others[-1] if len(others) > 1 else others[0]}."
         points = [f'First reported by {first} on {day_label(e["outlets"][first]["published"])}.', coverage_line(e),
                   'Open each outlet’s report below to compare their headlines and framing.']
+        left_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] in LEFT][:3]
+        centre_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] == 'C'][:3]
+        right_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] in RIGHT][:3]
+        angles = []
+        if centre_list:
+            angles.append(f"centre-rated outlets including {', '.join(centre_list)}")
+        if left_list:
+            angles.append(f"left-leaning outlets including {', '.join(left_list)}")
+        if right_list:
+            angles.append(f"right-leaning outlets including {', '.join(right_list)}")
+        p1 = f"{headline}. {summary} Coverage began on {day_label(e['outlets'][first]['published'])} with initial reporting from {first}, with {lead} leading today’s featured headline."
+        p2 = (f"Across Pheme’s {len(names)}-source sample, the story is being tracked across "
+              + ('; '.join(angles) if angles else ', '.join(others or [lead]))
+              + f". {coverage_line(e)}")
+        p3 = "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or open any original article directly."
+        article = [p1, p2, p3]
         digest = f'{headline} ({lead})'
         gen = {}
     story = {
@@ -352,6 +370,8 @@ def write_story(e, taken):
         'summary': summary, 'points': points or [coverage_line(e)],
         'publishedLabel': datetime.datetime.fromisoformat(la['published']).astimezone(LONDON).strftime('%-d %b %Y'),
     }
+    if article:
+        story['article'] = article
     loc = gen.get('location')
     if isinstance(loc, dict):
         try:
@@ -372,13 +392,14 @@ def write_story(e, taken):
             comparison.append({'label': label, 'points': pts})
     if comparison:
         story['comparison'] = comparison
-    coverage = [[o, day_label(e['outlets'][o]['published']), e['outlets'][o]['url']] for o in names]
+    coverage = [[o, day_label(e['outlets'][o]['published']), e['outlets'][o]['url'], e['outlets'][o]['title']] for o in names]
     return story, coverage, digest
 
 
 def reuse_ids(stories, coverage, previous):
-    """Keep yesterday's ID when a story continues (shares two links or the lead link)."""
+    """Keep yesterday's ID (and curated media/location) when a story continues."""
     prev_urls = {sid: {row[2] for row in rows} for sid, rows in previous.get('COVERAGE', {}).items()}
+    prev_stories = {s['id']: s for s in previous.get('STORIES', [])}
     used = set()
     for s in stories:
         urls = {row[2] for row in coverage[s['id']]}
@@ -386,6 +407,13 @@ def reuse_ids(stories, coverage, previous):
             if sid not in used and (len(urls & purls) >= 2 or s['url'] in purls):
                 coverage[sid] = coverage.pop(s['id'])
                 s['id'] = sid
+                prev = prev_stories.get(sid)
+                if prev:
+                    if not s.get('image') and prev.get('image') and (ROOT / prev['image']).exists():
+                        s['image'] = prev['image']
+                        s['imageAlt'] = prev.get('imageAlt', s['headline'])
+                    if not s.get('location') and prev.get('location'):
+                        s['location'] = prev['location']
                 used.add(sid)
                 break
 

@@ -37,13 +37,22 @@ for (const file of files) {
       assert(existsSync(story.image), 'Missing image file: ' + story.image);
       assert(typeof story.imageAlt === 'string' && story.imageAlt.trim(), 'Missing imageAlt: ' + story.id);
     }
+    if (story.article) {
+      assert(Array.isArray(story.article) && story.article.length > 0, 'Invalid article paragraphs: ' + story.id);
+      for (const para of story.article) {
+        assert(typeof para === 'string' && para.trim(), 'Empty article paragraph: ' + story.id);
+      }
+    }
     checkedUrl(story.url);
     const coverage = edition.COVERAGE[story.id];
     assert(coverage?.length, 'Missing coverage: ' + story.id);
     const sources = new Set();
-    for (const [name, date, url] of coverage) {
+    for (const [name, date, url, title] of coverage) {
       assert(name && date && !sources.has(name), 'Invalid or duplicate outlet: ' + story.id);
       checkedUrl(url);
+      if (title !== undefined) {
+        assert(typeof title === 'string', 'Invalid coverage title: ' + story.id);
+      }
       sources.add(name);
     }
     assert(coverage.some(([, , url]) => url === story.url), 'Missing original article: ' + story.id);
