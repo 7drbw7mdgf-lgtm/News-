@@ -8,9 +8,11 @@ import datetime
 import json
 import re
 from pathlib import Path
-from collect_feeds import FEEDS, collect
+from runpy import run_path
 
 ROOT = Path(__file__).resolve().parent.parent
+_feed_module = run_path(str(ROOT / 'scripts' / 'collect-feeds.py'), run_name='pheme_feed_library')
+FEEDS, collect = _feed_module['FEEDS'], _feed_module['collect']
 OUTPUT = ROOT / "assets" / "publisher-feeds.json"
 LOCATIONS = json.loads((ROOT / "feeds" / "publisher-locations.json").read_text(encoding="utf-8"))
 PUBLISHERS = list(LOCATIONS)
