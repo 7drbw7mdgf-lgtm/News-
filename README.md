@@ -2,7 +2,7 @@
 
 A news briefing across UK, world, science, tech, business and finance. Each story shows coverage from several outlets, with each outlet's political leaning (ratings from Media Bias/Fact Check).
 
-It's a plain static site: no build step, no server code.
+Pheme serves a static frontend. GitHub Actions builds the site and refreshes the publisher-page cache before deployment; there is no persistent application server.
 
 ```
 index.html          page shell
@@ -54,7 +54,7 @@ Headlines, comparison citations and coverage links open Pheme’s native reader.
 
 ### Publisher pages in the native reader
 
-`api/indian-express.php` fetches public Indian Express article pages for Pheme’s reader. It accepts only HTTPS article URLs present in the current `assets/data.js` edition, follows up to three HTTPS redirects on the same host, caps responses at 8 MiB and caches successful pages for 15 minutes. The endpoint requires PHP cURL on Fasthosts. Mozilla Readability extracts the page in the browser and Pheme sanitizes the extracted HTML before rendering it. The reader sends no login cookies and does not bypass subscriber restrictions; if a page is unavailable, Pheme shows the available RSS excerpt and a publisher link.
+The deployment workflow runs `scripts/scrape-indian-express.mjs` on GitHub Actions at deploy time and every six hours. It reads only Indian Express article URLs already present in the current `assets/data.js` edition, fetches public pages without login cookies, limits each response to 8 MiB and follows up to three HTTPS redirects on the same host. Successful pages are deployed as same-origin JSON assets; Mozilla Readability extracts the page in the browser and Pheme sanitizes the result before rendering it. The scraper does not bypass subscriber restrictions. If a page is denied or unavailable, Pheme shows the available RSS excerpt and publisher link.
 
 ## Article content
 
