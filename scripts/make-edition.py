@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LONDON = ZoneInfo('Europe/London')
 MIN_OUTLETS = 3
 SIMILARITY = 0.30
+MERGE = 0.50
 QUOTA = {'world': 12, 'uk': 8, 'science': 6, 'tech': 6, 'business': 5, 'finance': 5}
 TOTAL = sum(QUOTA.values())
 MODEL = os.environ.get('PHEME_MODEL', 'claude-sonnet-5-5')
@@ -112,7 +113,35 @@ def cluster(articles):
             clusters.append({'members': [i], 'sum': dict(v), 'centroid': dict(v)})
             for t in top:
                 index[t].add(len(clusters) - 1)
-    return [[articles[i] for i in c['members']] for c in clusters]
+    # Second pass: merge fragments of the same event whose centroids are close.
+    merged = True
+    while merged:
+        merged = False
+        big = [i for i, c in enumerate(clusters) if len(c['members']) >= 2]
+        for x in range(len(big)):
+            a = clusters[big[x]]
+            if not a['members']:
+                continue
+            for y in range(x + 1, len(big)):
+                b = clusters[big[y]]
+                if b['members'] and cosine(a['centroid'], b['centroid']) >= MERGE:
+                    a['members'] += b['members']
+                    for t, v in b['sum'].items():
+                        a['sum'][t] = a['sum'].get(t, 0.0) + v
+                    norm = math.sqrt(sum(v * v for v in a['sum'].values())) or 1.0
+                    a['centroid'] = {t: v / norm for t, v in a['sum'].items()}
+                    b['members'] = []
+                    merged = True
+        clusters = [c for c in clusters if c['members']]
+    out = []
+    for c in clusters:
+        group = []
+        for i in c['members']:
+            a = dict(articles[i])
+            a['typicality'] = cosine(vecs[i], c['centroid'])
+            group.append(a)
+        out.append(group)
+    return out
 
 
 def slug(text, taken):
@@ -132,6 +161,43 @@ def day_label(iso):
     return f'{d.day} {d:%b}'
 
 
+NOT_NEWS = re.compile(r"\b(lotto|lottery|euromillions|thunderball|horoscope|black friday|cyber monday|best .* deals?|price drops?|discount(ed)?|coupon|crossword|wordle|quordle)\b", re.I)
+SPORT = re.compile(r"premier league|champions league|\bnfl\b|\bnba\b|\bmlb\b|\bnhl\b|how to watch|team news|predicted line-?up|kick-?off time|start time tonight|live stream|\bvs\.? \w+.*(live|score|result)|strictly come dancing|i'?m a celebrity|\bf1\b|grand prix|six nations|ashes|wimbledon", re.I)
+SPORT_URL = re.compile(r"/(sport|sports|football|soccer|rugby|rugby-union|rugby-league|cricket|tennis|golf|f1|formula-?1|motorsport|boxing|nfl|nba|mlb|nhl|cycling|athletics|olympics)(/|-)", re.I)
+CULTURE_URL = re.compile(r"/(culture|entertainment|film|films|movies|tv|tv-and-radio|television|music|celebrity|showbiz|tvshowbiz|lifestyle|style|fashion|travel|food|recipes|shopping|deals|reviews?|horoscopes?)(/|-)", re.I)
+OPINION_URL = re.compile(r"/(opinion|opinions|comment|commentisfree|columnists?|editorials?|letters|analysis/opinion)(/|-)", re.I)
+URL_TOPIC = [
+    (re.compile(r"/(uk-news|uk|politics|scotland|wales|northern-ireland|england)(/|-)", re.I), 'uk'),
+    (re.compile(r"/(money|markets|personal-finance|investing|your-money|stocks|crypto)(/|-)", re.I), 'finance'),
+    (re.compile(r"/(business|economy|economics|companies)(/|-)", re.I), 'business'),
+    (re.compile(r"/(technology|tech|science-and-technology|gadgets|ai)(/|-)", re.I), 'tech'),
+    (re.compile(r"/(science|environment|health|space|climate)(/|-)", re.I), 'science'),
+    (re.compile(r"/(world|international|global|us-news|europe|asia|africa|middle-east|americas)(/|-)", re.I), 'world'),
+]
+KEYWORDS = {
+    'finance': r"stocks?|shares|markets?|investors?|inflation|interest rates?|bonds?|crypto|bitcoin|dow|nasdaq|s&p|ftse|wall street|treasury yields?|central bank|fed\b|ecb\b|mortgage",
+    'business': r"compan(y|ies)|merger|acquisition|ceo|profits?|revenue|layoffs?|job cuts|retail(er)?s?|ipo|settlement|tariffs?|trade deal|factory|airline|oil prices?",
+    'tech': r"\bai\b|artificial intelligence|apple|google|microsoft|nvidia|openai|anthropic|chips?|semiconductor|software|iphone|android|cyber|hack(ed|ers?)?|video game|gta|grand theft auto|startup|robot",
+    'science': r"scientists?|researchers?|study|nasa|esa\b|space(craft)?|telescope|astronom|species|fossil|physics|vaccine|virus|bacteri|disease|cancer|climate|cop\d\d|mercury|mars\b|moon\b|quantum|mathematic",
+    'uk': r"\buk\b|britain|british|england|scotland|wales|welsh|northern ireland|london|starmer|reeves|badenoch|farage|labour|tor(y|ies)|conservatives|nhs\b|ofsted|councillor|westminster|princess of wales|prince william|king charles|bbc licence",
+}
+
+
+def classify(members, votes):
+    text = ' '.join(a['title'] for a in members).lower()
+    n = sum(votes.values()) or 1
+    score = {t: votes.get(t, 0) / n for t in QUOTA}
+    for a in members:
+        for pattern, t in URL_TOPIC:
+            if pattern.search(a['url']):
+                score[t] += 0.6 / len(members)
+                break
+    for t, pattern in KEYWORDS.items():
+        hits = len(re.findall(pattern, text))
+        score[t] += (0.2 if t == 'uk' else 0.12) * min(hits / max(len(members), 1) * 3, 3)
+    return max(score, key=score.get)
+
+
 def build_events(articles):
     events = []
     for members in cluster(articles):
@@ -140,8 +206,17 @@ def build_events(articles):
             by_outlet.setdefault(a['outlet'], a)
         if len(by_outlet) < MIN_OUTLETS:
             continue
+        n = len(members)
+        if sum(1 for a in members if SPORT.search(a['title']) or SPORT_URL.search(a['url'])) >= 0.4 * n:
+            continue  # Pheme has no sport section
+        if sum(1 for a in members if NOT_NEWS.search(a['title'])) >= 0.4 * n:
+            continue  # lotteries, shopping deals, puzzles
+        if sum(1 for a in members if OPINION_URL.search(a['url'])) >= 0.5 * n:
+            continue  # opinion pieces, not a news event
+        if len(by_outlet) < 15 and sum(1 for a in members if CULTURE_URL.search(a['url'])) >= 0.5 * n:
+            continue  # arts and entertainment, unless it is a very big story
         rated = {o: ratings.rate(o, [a['url'], a.get('feed', '')]) for o, a in by_outlet.items()}
-        topic = Counter(a['topic'] for a in by_outlet.values()).most_common(1)[0][0]
+        topic = classify(members, Counter(a['topic'] for a in by_outlet.values()))
         codes = [r['code'] for r in rated.values()]
         newest = max(a['published'] for a in members)
         age_h = (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(newest)).total_seconds() / 3600
@@ -165,11 +240,21 @@ def choose(events):
     return sorted(picked, key=lambda e: e['score'], reverse=True)
 
 
+FOLLOWED = set()
+
+
 def lead_article(e):
-    good = [(a['published'], o) for o, a in e['outlets'].items()
-            if e['ratings'][o]['code'] in {'L', 'LL', 'C', 'LR', 'R', 'S'} and not e['ratings'][o]['questionable']]
-    pool = good or [(a['published'], o) for o, a in e['outlets'].items()]
-    return min(pool)[1]
+    """The outlet whose headline best represents the story, preferring well-known outlets."""
+    def rank(o):
+        r = e['ratings'][o]
+        if r['questionable']:
+            return 4
+        if o in FOLLOWED:
+            return 0
+        return {'C': 1, 'LL': 1, 'LR': 1, 'S': 1, 'L': 2, 'R': 2}.get(r['code'], 3)
+    def ok_title(t):
+        return 25 <= len(t) <= 120 and not t.isupper()
+    return min(e['outlets'], key=lambda o: (rank(o), not ok_title(e['outlets'][o]['title']), -e['outlets'][o].get('typicality', 0)))
 
 
 # ---------- writing ----------
@@ -177,7 +262,9 @@ def lead_article(e):
 PROMPT = """You write stories for Pheme, a neutral news briefing that compares how outlets cover the same event.
 Below are headlines and short descriptions from several outlets about what should be ONE news event.
 Using ONLY this material (no outside knowledge), return a JSON object with:
-- "same_event": true if these mostly describe one event, else false
+- "same_event": true if these mostly describe one news event, else false
+- "is_news": false for sport fixtures, TV listings, shopping deals, horoscopes or opinion-only pieces, else true
+- "topic": one of "uk", "world", "science", "tech", "business", "finance" (uk = UK and Ireland domestic news)
 - "headline": a neutral headline in your own words, at most 90 characters, no quotation marks from outlets
 - "summary": one or two sentences in your own words, at most 45 words
 - "points": three short factual key points in your own words, each at most 30 words
@@ -211,7 +298,7 @@ def ask_claude(e):
     except Exception as error:  # fall back to the factual template
         print('Story writer unavailable for one story (' + type(error).__name__ + ').', file=sys.stderr)
         return None
-    if not data.get('same_event', True):
+    if not data.get('same_event', True) or data.get('is_news') is False:
         return {'reject': True}
     return data
 
@@ -246,6 +333,8 @@ def write_story(e, taken):
         summary = gen['summary'].strip()
         points = [p.strip() for p in gen.get('points', []) if isinstance(p, str) and p.strip()][:3]
         digest = (gen.get('digest') or headline).strip()
+        if gen.get('topic') in QUOTA:
+            e['topic'] = gen['topic']
     else:
         headline = la['title']
         others = [o for o in names if o != lead][:3]
@@ -308,6 +397,7 @@ def main():
     print(f'{len(articles)} articles → {len(events)} events covered by {MIN_OUTLETS}+ outlets', file=sys.stderr)
     editions = sorted((ROOT / 'editions').glob('*.json'))
     previous = json.loads(editions[-1].read_text()) if editions else {}
+    FOLLOWED.update(f['name'] for f in previous.get('FOLLOWED', []))
     taken, stories, coverage, digests, outlets, questionable = set(), [], {}, [], {}, set()
     for e in choose(events):
         written = write_story(e, taken)
