@@ -1175,6 +1175,60 @@
     }).join('') + '</div>';
   }
 
+
+  var companyMarketData = null;
+  var companyMarketLoadError = false;
+
+  function renderCompanyQuotes() {
+    if (!companyMarketData) return '<p class="terminal-provider-notice">' +
+      (companyMarketLoadError ? 'Company data unavailable.' : 'Checking company data connection…') + '</p>';
+    var data = companyMarketData;
+    var licensed = data.status === 'available';
+    var tickerMap = { Apple: 'AAPL', Microsoft: 'MSFT', Nvidia: 'NVDA', Tesla: 'TSLA', Alphabet: 'GOOGL', Amazon: 'AMZN' };
+    var cards = MARKET_COMPANIES.map(function (company) {
+      var ticker = tickerMap[company.name], quote = licensed && data.quotes[ticker];
+      var profile = licensed && data.profiles && data.profiles[ticker];
+      var valid = quote && Number.isFinite(quote.price) && quote.price > 0;
+      var age = valid && quote.collectedAt ? Date.now() - Date.parse(quote.collectedAt) : NaN;
+      var freshness = !Number.isFinite(age) || age < 0 ? 'Time unknown' :
+        age > 30 * 60 * 1000 ? 'Stale snapshot' : 'Recent snapshot';
+      return '<article class="company-quote-card"><div class="company-quote-heading"><strong>' +
+        esc(ticker) + '</strong><span>' + esc(company.name) + '</span></div>' +
+        (valid ? '<div class="company-quote-price">' + (quote.currency === 'USD' ? 'USD ' : '') +
+          marketNumber(quote.price) + (quote.currency !== 'USD' ? ' ' + esc(quote.currency || '') : '') +
+          '</div><div class="company-quote-meta">' + esc(freshness) + ' · ' +
+          esc(quote.quoteTime || 'Quote time unknown') + '</div>' +
+          (Number.isFinite(quote.changePercent) ? '<div class="company-quote-change">' +
+            (quote.changePercent >= 0 ? '+' : '') + quote.changePercent.toFixed(2) + '% reported change</div>' : '') :
+          '<div class="company-quote-empty">No public quote</div>') +
+        (profile && profile.sector ? '<span class="company-quote-sector">' + esc(profile.sector) + '</span>' : '') +
+        '</article>';
+    }).join('');
+    return '<p class="terminal-provider-notice">' +
+      (licensed ? 'Licensed vendor snapshots. These are not streaming live prices.' :
+        'Company quotes not enabled. Credentials and public-display rights must be configured.') +
+      '</p><div class="company-quote-grid">' + cards + '</div>' +
+      '<p class="terminal-disclaimer">Quotes: Twelve Data; optional profiles: Financial Modeling Prep. Snapshots may be delayed.</p>';
+  }
+
+  function loadCompanyMarketData() {
+    fetch('assets/company-market-data.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Company market data request failed');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !data.status || !data.quotes) throw new Error('Invalid company market data');
+        companyMarketData = data;
+        companyMarketLoadError = false;
+      })
+      .catch(function () { companyMarketLoadError = true; })
+      .finally(function () {
+        var el = app.querySelector('#company-market-panel-content');
+        if (el) el.innerHTML = renderCompanyQuotes();
+      });
+  }
+
   function renderTrading() {
     var focus = state.marketNewsFocus;
     var cards = MARKETS.map(function (m) {
@@ -1204,6 +1258,10 @@
       '<div class="terminal-status"><span class="terminal-live-dot" aria-hidden="true"></span>Latest verified daily close · ' +
       (marketData ? 'Source: ' + esc(marketData.source || 'Yahoo Finance') + ' · Updated ' + esc(marketData.updatedAt ? articlePublishedLabel(marketData.updatedAt) : 'unavailable') : 'Loading market series') +
       ' · Quotes are not real-time</div>' +
+      '<section class="terminal-section" aria-labelledby="company-quotes-title">' +
+      '<div class="terminal-section-heading"><div><h2 id="company-quotes-title">Company quotes</h2>' +
+      '<p>Six US companies · licensed provider snapshots only</p></div></div>' +
+      '<div id="company-market-panel-content">' + renderCompanyQuotes() + '</div></section>' +
       '<section class="terminal-section" aria-label="Market index charts"><div class="terminal-section-heading"><h2>Market overview</h2><span>Choose an index</span></div>' +
       '<div class="terminal-index-grid">' + cards + '</div>' +
       '<div class="terminal-chart-panel"><div class="terminal-chart-controls"><h2>' + esc((MARKETS.find(function (m) { return m.id === state.tradingMarket; }) || MARKETS[0]).index) +
@@ -2399,6 +2457,8 @@
   });
   render();
   loadMarketData();
+  loadCompanyMarketData();
+  setInterval(loadCompanyMarketData, 5 * 60 * 1000);
   loadPublisherFeeds();
   setInterval(loadPublisherFeeds, 5 * 60 * 1000);
   loadAudioManifest();
