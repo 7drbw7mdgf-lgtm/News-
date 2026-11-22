@@ -133,31 +133,41 @@
   };
 
   /* ---------- coverage ---------- */
+  var EXCLUDED_FROM_LEANING = ['End Time Headlines'];
   function buildCoverage(id, archived) {
+    var flaggedNames = (D.QUESTIONABLE || []).concat(EXCLUDED_FROM_LEANING);
     var rows = (archived || D.COVERAGE[id] || []).map(function (r) {
       var code = D.OUTLETS[r[0]] || 'NC';
-      return { name: r[0], date: r[1], url: r[2], title: r[3] || '', code: code };
+      return { name: r[0], date: r[1], url: r[2], title: r[3] || '', code: code,
+        excludedFromLeaning: flaggedNames.indexOf(r[0]) !== -1 };
+    });
+    // Keep every publisher in the source list, but don't allow flagged/fringe
+    // or unrated outlets to skew political leaning visualisations.
+    var ratedRows = rows.filter(function (r) {
+      return !r.excludedFromLeaning && SEG_ORDER.indexOf(r.code) !== -1;
     });
     var counts = {};
-    rows.forEach(function (r) { counts[r.code] = (counts[r.code] || 0) + 1; });
-    var other = (counts.P || 0) + (counts.NR || 0) + (counts.NC || 0);
+    ratedRows.forEach(function (r) { counts[r.code] = (counts[r.code] || 0) + 1; });
+    var other = rows.length - ratedRows.length;
     var present = SEG_ORDER.filter(function (k) { return counts[k]; });
     var legend = present.map(function (k) { return { cls: 'c-' + k, label: D.LEAN[k][0], n: counts[k] }; });
-    if (other) legend.push({ cls: 'c-O', label: 'Other / unrated', n: other });
+    if (other) legend.push({ cls: 'c-O', label: 'Excluded / unrated', n: other });
     var left = (counts.L || 0) + (counts.LL || 0);
     var right = (counts.LR || 0) + (counts.R || 0);
     var centre = counts.C || 0;
     var rated = left + right + centre;
     var note;
-    if (rows.length && (counts.S || 0) > rows.length / 2) note = 'Mostly science outlets, which aren’t rated left–right.';
-    else if (rated < 2) note = 'Too few rated outlets to judge the spread.';
-    else if (right === 0 && left > 0) note = 'No right-leaning outlets in this sample.';
-    else if (left === 0 && right > 0) note = 'No left-leaning outlets in this sample.';
-    else if (left === 0 && right === 0) note = 'Only centre-rated outlets in this sample.';
-    else note = 'Includes both left- and right-leaning outlets.';
+    if (!ratedRows.length) note = 'No unflagged outlets with a usable left-right rating.';
+    else if (rated < 2) note = 'Too few unflagged politically rated outlets to judge the spread.';
+    else if (right === 0 && left > 0) note = 'No right-leaning outlets in the unflagged sample.';
+    else if (left === 0 && right > 0) note = 'No left-leaning outlets in the unflagged sample.';
+    else if (left === 0 && right === 0) note = 'Only centre-rated outlets in the unflagged sample.';
+    else note = 'Leaning mix excludes flagged/fringe and unrated outlets. All original links remain listed.';
     return {
-      rows: rows, legend: legend, note: note, count: plural(rows.length, 'source', 'sources'),
-      aria: 'Coverage mix: ' + legend.map(function (l) { return l.n + ' ' + l.label.toLowerCase(); }).join(', ')
+      rows: rows, legend: legend, note: note,
+      count: ratedRows.length + ' assessed · ' + other + ' excluded/unrated',
+      aria: 'Based on ' + ratedRows.length + ' assessed sources; ' + other + ' excluded or unrated. Coverage mix: ' +
+        legend.map(function (l) { return l.n + ' ' + l.label.toLowerCase(); }).join(', ')
     };
   }
 
@@ -469,7 +479,7 @@
   function leanBadge(name) {
     var code = D.OUTLETS[name] || 'NC';
     var lean = D.LEAN[code] || D.LEAN.NC;
-    var flagged = (D.QUESTIONABLE || []).indexOf(name) !== -1;
+    var flagged = (D.QUESTIONABLE || []).concat(EXCLUDED_FROM_LEANING).indexOf(name) !== -1;
     return '<span class="lean lb-' + (D.LEAN[code] ? code : 'NC') + '" title="Media Bias/Fact Check: ' + esc(lean[1]) + (flagged ? ' · rated a questionable source' : '') + '">' +
       esc(lean[0]) + (flagged ? ' <span aria-hidden="true">⚠</span><span class="sr-only">(questionable source)</span>' : '') + '</span>';
   }
