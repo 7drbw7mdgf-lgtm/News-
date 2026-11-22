@@ -1,0 +1,374 @@
+{
+  "BBC News": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.5188,
+    "lng": -0.1432
+  },
+  "The Guardian": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.534,
+    "lng": -0.122
+  },
+  "Sky News": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "The Telegraph": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "Daily Mail": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "ITV News": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "RTÉ News": {
+    "city": "Dublin",
+    "country": "Ireland",
+    "lat": 53.3498,
+    "lng": -6.2603
+  },
+  "Financial Times": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "The Economist": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "CNBC": {
+    "city": "Englewood Cliffs",
+    "country": "United States",
+    "lat": 40.8854,
+    "lng": -73.9524
+  },
+  "City AM": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "The New York Times": {
+    "city": "New York",
+    "country": "United States",
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  "NPR": {
+    "city": "Washington, DC",
+    "country": "United States",
+    "lat": 38.9072,
+    "lng": -77.0369
+  },
+  "Fox News": {
+    "city": "New York",
+    "country": "United States",
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  "Al Jazeera English": {
+    "city": "Doha",
+    "country": "Qatar",
+    "lat": 25.2854,
+    "lng": 51.531
+  },
+  "France 24": {
+    "city": "Issy-les-Moulineaux",
+    "country": "France",
+    "lat": 48.822,
+    "lng": -2.27
+  },
+  "DW News": {
+    "city": "Bonn",
+    "country": "Germany",
+    "lat": 50.7374,
+    "lng": 7.0982
+  },
+  "Politico Europe": {
+    "city": "Brussels",
+    "country": "Belgium",
+    "lat": 50.8503,
+    "lng": 4.3517
+  },
+  "Euronews": {
+    "city": "Lyon",
+    "country": "France",
+    "lat": 45.764,
+    "lng": 4.8357
+  },
+  "South China Morning Post": {
+    "city": "Hong Kong",
+    "country": "China",
+    "lat": 22.3193,
+    "lng": 114.1694
+  },
+  "Nature News": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "New Scientist": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "ScienceDaily": {
+    "city": "Rockville",
+    "country": "United States",
+    "lat": 39.084,
+    "lng": -77.1528
+  },
+  "TechCrunch": {
+    "city": "San Francisco",
+    "country": "United States",
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  "The Verge": {
+    "city": "New York",
+    "country": "United States",
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  "Ars Technica": {
+    "city": "New York",
+    "country": "United States",
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  "ABC News Australia": {
+    "city": "Sydney",
+    "country": "Australia",
+    "lat": -33.8688,
+    "lng": 151.2093
+  },
+  "Sydney Morning Herald": {
+    "city": "Sydney",
+    "country": "Australia",
+    "lat": -33.8688,
+    "lng": 151.2093
+  },
+  "The Age": {
+    "city": "Melbourne",
+    "country": "Australia",
+    "lat": -37.8136,
+    "lng": 144.9631
+  },
+  "RNZ": {
+    "city": "Wellington",
+    "country": "New Zealand",
+    "lat": -41.2865,
+    "lng": 174.7767
+  },
+  "NZ Herald": {
+    "city": "Auckland",
+    "country": "New Zealand",
+    "lat": -36.8485,
+    "lng": 174.7633
+  },
+  "CNA": {
+    "city": "Singapore",
+    "country": "Singapore",
+    "lat": 1.3521,
+    "lng": 103.8198
+  },
+  "The Straits Times": {
+    "city": "Singapore",
+    "country": "Singapore",
+    "lat": 1.3521,
+    "lng": 103.8198
+  },
+  "Bangkok Post": {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "lat": 13.7563,
+    "lng": 100.5018
+  },
+  "VnExpress International": {
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "lat": 21.0278,
+    "lng": 105.8342
+  },
+  "Philippine Daily Inquirer": {
+    "city": "Manila",
+    "country": "Philippines",
+    "lat": 14.5995,
+    "lng": 120.9842
+  },
+  "Rappler": {
+    "city": "Manila",
+    "country": "Philippines",
+    "lat": 14.5995,
+    "lng": 120.9842
+  },
+  "Japan Times": {
+    "city": "Tokyo",
+    "country": "Japan",
+    "lat": 35.6762,
+    "lng": 139.6503
+  },
+  "Yonhap": {
+    "city": "Seoul",
+    "country": "South Korea",
+    "lat": 37.5665,
+    "lng": 126.978
+  },
+  "The Korea Times": {
+    "city": "Seoul",
+    "country": "South Korea",
+    "lat": 37.5665,
+    "lng": 126.978
+  },
+  "Taipei Times": {
+    "city": "Taipei",
+    "country": "Taiwan",
+    "lat": 25.033,
+    "lng": 121.5654
+  },
+  "The Hindu": {
+    "city": "Chennai",
+    "country": "India",
+    "lat": 13.0827,
+    "lng": 80.2707
+  },
+  "Indian Express": {
+    "city": "New Delhi",
+    "country": "India",
+    "lat": 28.6139,
+    "lng": 77.209
+  },
+  "NDTV": {
+    "city": "New Delhi",
+    "country": "India",
+    "lat": 28.6139,
+    "lng": 77.209
+  },
+  "Dawn": {
+    "city": "Karachi",
+    "country": "Pakistan",
+    "lat": 24.8607,
+    "lng": 67.0011
+  },
+  "Premium Times": {
+    "city": "Abuja",
+    "country": "Nigeria",
+    "lat": 9.0765,
+    "lng": 7.3986
+  },
+  "The Sun - Nigeria": {
+    "city": "Lagos",
+    "country": "Nigeria",
+    "lat": 6.5244,
+    "lng": 3.3792
+  },
+  "Nation (Kenya)": {
+    "city": "Nairobi",
+    "country": "Kenya",
+    "lat": -1.2921,
+    "lng": 36.8219
+  },
+  "Daily Maverick": {
+    "city": "Cape Town",
+    "country": "South Africa",
+    "lat": -33.9249,
+    "lng": 18.4241
+  },
+  "Independent Online": {
+    "city": "Cape Town",
+    "country": "South Africa",
+    "lat": -33.9249,
+    "lng": 18.4241
+  },
+  "Haaretz": {
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "lat": 32.0853,
+    "lng": 34.7818
+  },
+  "The Jerusalem Post": {
+    "city": "Jerusalem",
+    "country": "Israel",
+    "lat": 31.7683,
+    "lng": 35.2137
+  },
+  "Middle East Eye": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  },
+  "Al-Monitor": {
+    "city": "Washington, DC",
+    "country": "United States",
+    "lat": 38.9072,
+    "lng": -77.0369
+  },
+  "Mexico News Daily": {
+    "city": "Puerto Vallarta",
+    "country": "Mexico",
+    "lat": 20.6534,
+    "lng": -105.2253
+  },
+  "MercoPress": {
+    "city": "Montevideo",
+    "country": "Uruguay",
+    "lat": -34.9011,
+    "lng": -56.1645
+  },
+  "The Rio Times": {
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "lat": -22.9068,
+    "lng": -43.1729
+  },
+  "Global News": {
+    "city": "Toronto",
+    "country": "Canada",
+    "lat": 43.6532,
+    "lng": -79.3832
+  },
+  "The Globe and Mail": {
+    "city": "Toronto",
+    "country": "Canada",
+    "lat": 43.6532,
+    "lng": -79.3832
+  },
+  "Ukrainska Pravda": {
+    "city": "Kyiv",
+    "country": "Ukraine",
+    "lat": 50.4501,
+    "lng": 30.5234
+  },
+  "The Conversation": {
+    "city": "Melbourne",
+    "country": "Australia",
+    "lat": -37.8136,
+    "lng": 144.9631
+  },
+  "The Conversation UK": {
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.507,
+    "lng": -0.128
+  }
+}
