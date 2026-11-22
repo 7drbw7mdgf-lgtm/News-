@@ -508,6 +508,38 @@ body.reader-focus .dashboard-body {
   .publisher-world-map { height:370px; border-radius:10px; }
   .publisher-map-heading { align-items:flex-start; }
 }
+
+.source-context-summary { margin: 0; max-width: 72ch; color: var(--ink-body); font: 400 16px/1.7 var(--serif); }
+.source-context-note { margin: 0; color: var(--ink-muted); font: 500 11px/1.5 var(--sans); }
+.source-reader { max-width: 860px; margin: 0 auto; padding: clamp(18px, 4vw, 42px); border: 1px solid var(--rule-soft); border-radius: 15px; background: var(--surface); }
+.source-reader-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+.source-reader-label { color: var(--ink-muted); font: 600 11px/1.4 var(--sans); letter-spacing: .06em; text-transform: uppercase; }
+.source-reader-head { max-width: 72ch; }
+.source-reader-head .kicker { margin-bottom: 12px; }
+.source-reader-head time { display: block; margin: 0 0 12px; color: var(--ink-muted); font: 400 12px/1.5 var(--sans); }
+.source-reader-head h1 { margin: 0; color: var(--ink); font: 700 clamp(30px, 5vw, 52px)/1.12 var(--display); letter-spacing: -.04em; }
+.source-reader-photo { margin: 28px 0 0; }
+.source-reader-photo img { display: block; width: 100%; max-height: 420px; object-fit: cover; border-radius: 11px; }
+.source-reader-body { max-width: 72ch; margin-top: 26px; color: var(--ink-body); font: 400 17px/1.75 var(--serif); }
+.source-reader-summary { margin: 0; white-space: pre-line; }
+.source-reader-byline { margin: 12px 0 0; color: var(--ink-muted); font: 500 13px/1.5 var(--sans); }
+.source-reader-content { overflow-wrap: anywhere; }
+.source-reader-content > :first-child { margin-top: 0; }
+.source-reader-content > :last-child { margin-bottom: 0; }
+.source-reader-content p { margin: 0 0 1.2em; }
+.source-reader-content h2, .source-reader-content h3, .source-reader-content h4 { margin: 1.7em 0 .55em; color: var(--ink); font-family: var(--display); line-height: 1.2; }
+.source-reader-content blockquote { margin: 1.4em 0; padding-left: 1em; border-left: 3px solid var(--rule); color: var(--ink-muted); }
+.source-reader-content ul, .source-reader-content ol { padding-left: 1.5em; }
+.source-reader-content a { color: var(--accent); text-decoration: underline; text-underline-offset: .15em; }
+.source-reader-content img { display: block; max-width: 100%; height: auto; margin: 1.5em auto; border-radius: 8px; }
+.source-reader-note, .source-reader-access { margin: 18px 0 0; color: var(--ink-muted); font: 400 12px/1.6 var(--sans); }
+.source-reader-access { font-weight: 600; }
+.source-reader-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
+@media(max-width:640px) {
+  .source-reader { padding: 18px; }
+  .source-reader-head h1 { font-size: 32px; }
+  .source-reader-body { font-size: 16px; }
+}
 @media(max-width:640px) {
   .paper-logo-asset { height:68px; }
   .paper-logo-image { width:60px; height:60px; }

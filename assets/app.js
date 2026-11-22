@@ -43,6 +43,7 @@
   /* ---------- state (saved choices persist in this browser) ---------- */
   var state = {
     view: 'briefing', topic: 'all', mapTopic: 'all', reading: null, readingSource: null, paper: null,
+    publisherArticle: null,
     settingsOpen: false, searchOpen: false, utilityOpen: null, srcQuery: '', query: '',
     headerPrefs: { showClock: true, markets: ['london', 'newyork', 'shanghai'] },
     marketOpen: null, marketRange: '6M', marketHover: null, tradingMarket: 'london', marketNewsFocus: 'all', marketWatch: ['Apple', 'Microsoft', 'Nvidia'],
@@ -175,6 +176,18 @@
 
   state.reading = byId[route.get('story')] ? route.get('story') : null;
   state.readingSource = sourceForStory(state.reading, route.get('source'));
+  var routePublisher = route.get('publisher');
+  var routeArticle = safeExternalUrl(route.get('article'));
+  if (routePublisher) {
+    state.view = 'papers';
+    state.paper = routePublisher;
+  }
+  if (routePublisher && routeArticle) {
+    state.publisherArticle = {
+      name: routePublisher, url: routeArticle, title: route.get('title') || '',
+      summary: route.get('excerpt') || '', published: route.get('published') || ''
+    };
+  }
   if (route.has('q')) {
     state.query = route.get('q');
     if (state.query.trim()) state.searchOpen = true;
@@ -186,6 +199,11 @@
     return story && name && story.cov.rows.some(function (r) { return r.name === name; }) ? name : null;
   }
   function sourceHref(id, name) { return storyHref(id) + '&source=' + encodeURIComponent(name); }
+  function leavePublisherArticle(href) {
+    if (!state.publisherArticle) return;
+    state.publisherArticle = null;
+    history.pushState(null, '', href || location.pathname);
+  }
   function safeExternalUrl(u) {
     if (!u || typeof u !== 'string' || !/^https:\/\//i.test(u)) return '';
     try {
@@ -193,6 +211,25 @@
       if (parsed.protocol === 'https:' && !parsed.username && !parsed.password) return parsed.href;
     } catch (e) { /* invalid URL */ }
     return '';
+  }
+  function publisherArticleHref(article, name) {
+    var params = new URLSearchParams();
+    params.set('publisher', name);
+    params.set('article', safeExternalUrl(article.url));
+    if (article.title) params.set('title', article.title);
+    if (article.summary) params.set('excerpt', article.summary);
+    if (article.published) params.set('published', article.published);
+    return '?' + params.toString();
+  }
+  function nativePublisherArticleLink(article, name, label, cls) {
+    var safe = safeExternalUrl(article && article.url);
+    if (!safe) return '';
+    return '<a class="' + (cls || '') + '" href="' + esc(publisherArticleHref(article, name)) + '" data-act="publisherarticle" data-name="' + esc(name) + '" data-url="' + esc(safe) + '" data-title="' + esc(article.title || '') + '" data-excerpt="' + esc(article.summary || '') + '" data-published="' + esc(article.published || '') + '" aria-label="Read ' + esc(article.title || 'publisher article') + ' in Pheme">' + esc(label || 'Read in Pheme') + '</a>';
+  }
+  function nativePublisherImageLink(article, name, image) {
+    var safe = safeExternalUrl(article && article.url);
+    if (!safe) return '';
+    return '<a class="paper-source-image" href="' + esc(publisherArticleHref(article, name)) + '" data-act="publisherarticle" data-name="' + esc(name) + '" data-url="' + esc(safe) + '" data-title="' + esc(article.title || '') + '" data-excerpt="' + esc(article.summary || '') + '" data-published="' + esc(article.published || '') + '" aria-label="Read ' + esc(article.title || 'publisher article') + ' in Pheme"><img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>';
   }
   function originalArticleLink(url, name, label, cls) {
     var safe = safeExternalUrl(url);
@@ -397,6 +434,7 @@
 
   function changeStory(id, source) {
     stopSpeech();
+    state.publisherArticle = null;
     state.reading = id;
     state.readingSource = sourceForStory(id, source);
     state.covFilter = 'all';
@@ -409,7 +447,15 @@
     stopSpeech();
     var params = new URLSearchParams(location.search);
     var id = params.get('story');
+    var publisher = params.get('publisher');
+    var articleUrl = safeExternalUrl(params.get('article'));
+    state.publisherArticle = publisher && articleUrl ? {
+      name: publisher, url: articleUrl, title: params.get('title') || '',
+      summary: params.get('excerpt') || '', published: params.get('published') || ''
+    } : null;
+    if (publisher) { state.view = 'papers'; state.paper = publisher; }
     state.reading = byId[id] ? id : null;
+    if (state.reading && !publisher) state.view = 'briefing';
     state.readingSource = sourceForStory(state.reading, params.get('source'));
     if (!state.reading) state.readerFocus = false;
     state.aaOpen = false;
@@ -1379,6 +1425,7 @@
   var publisherFeed = null;
   var publisherFeedLoading = false;
   var publisherFeedError = false;
+  var publisherReaderCache = Object.create(null);
 
   function allPublisherChoices() {
     var choices = followed().slice();
@@ -1523,6 +1570,110 @@
     });
   }
 
+  function normalizedPublisherArticleUrl(raw) {
+    var safe = safeExternalUrl(raw);
+    if (!safe) return '';
+    try {
+      var parsed = new URL(safe);
+      parsed.search = '';
+      parsed.hash = '';
+      return parsed.href.replace(/\/+$/, '').toLowerCase();
+    } catch (e) { return ''; }
+  }
+
+  function publisherArticleFor(name, url) {
+    var articles = storiesForPaper(name);
+    var exact = articles.find(function (article) { return safeExternalUrl(article.url) === safeExternalUrl(url); });
+    if (exact) return exact;
+    var normalized = normalizedPublisherArticleUrl(url);
+    return normalized ? articles.find(function (article) { return normalizedPublisherArticleUrl(article.url) === normalized; }) || null : null;
+  }
+
+  function publisherPreview(name, url, title, published) {
+    return publisherArticleFor(name, url) || { url: url, title: title || '', published: published || '' };
+  }
+
+  function isKnownPublisherArticle(name, url) {
+    var normalized = normalizedPublisherArticleUrl(url);
+    if (!normalized) return false;
+    if (publisherArticleFor(name, url)) return true;
+    return STORIES.some(function (story) {
+      return story.cov.rows.some(function (row) {
+        return row.name === name && normalizedPublisherArticleUrl(row.url) === normalized;
+      });
+    });
+  }
+
+  function publisherRequiresSubscription(name) {
+    var choice = CATALOGUE.find(function (item) { return item.name === name; }) || followed().find(function (item) { return item.name === name; });
+    return !!(choice && choice.paywall);
+  }
+
+  function sanitizedReaderContent(html, sourceUrl) {
+    var parsed = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    var allowed = { p: 1, h2: 1, h3: 1, h4: 1, blockquote: 1, ul: 1, ol: 1, li: 1, pre: 1, figure: 1, figcaption: 1, br: 1, strong: 1, em: 1, b: 1, i: 1, code: 1, hr: 1 };
+    var blocked = { script: 1, style: 1, noscript: 1, iframe: 1, object: 1, embed: 1, form: 1, button: 1, svg: 1, math: 1 };
+    function resolved(raw) {
+      try { return safeExternalUrl(new URL(raw, sourceUrl).href); } catch (e) { return ''; }
+    }
+    function serialize(node) {
+      if (node.nodeType === 3) return esc(node.nodeValue);
+      if (node.nodeType !== 1) return '';
+      var tag = node.tagName.toLowerCase();
+      if (blocked[tag]) return '';
+      if (tag === 'img') {
+        var image = resolved(node.getAttribute('src') || node.getAttribute('data-src') || '');
+        return image ? '<img src="' + esc(image) + '" alt="' + esc(node.getAttribute('alt') || '') + '" loading="lazy" decoding="async" referrerpolicy="no-referrer">' : '';
+      }
+      var children = Array.prototype.map.call(node.childNodes, serialize).join('');
+      if (tag === 'a') {
+        var href = resolved(node.getAttribute('href') || '');
+        return href ? '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + children + '</a>' : children;
+      }
+      if (!allowed[tag]) return children;
+      if (tag === 'br' || tag === 'hr') return '<' + tag + '>';
+      return '<' + tag + '>' + children + '</' + tag + '>';
+    }
+    return Array.prototype.map.call(parsed.body.childNodes, serialize).join('');
+  }
+
+  function loadPublisherArticleContent(entry) {
+    var url = safeExternalUrl(entry && entry.url);
+    if (!url || publisherReaderCache[url]) return;
+    if (!publisherFeed && !isKnownPublisherArticle(entry.name, url)) return;
+    if (!isKnownPublisherArticle(entry.name, url)) {
+      publisherReaderCache[url] = { status: 'unavailable' };
+      return;
+    }
+    var result = publisherReaderCache[url] = { status: 'loading' };
+    fetch(url, { mode: 'cors', credentials: 'omit', redirect: 'follow', referrerPolicy: 'no-referrer' })
+      .then(function (response) {
+        if (!response.ok || !/text\/html/i.test(response.headers.get('content-type') || '')) throw new Error('Publisher page unavailable');
+        var finalUrl = safeExternalUrl(response.url);
+        if (!finalUrl) throw new Error('Publisher page unavailable');
+        return response.text().then(function (markup) { return { markup: markup, url: finalUrl }; });
+      })
+      .then(function (page) {
+        if (page.markup.length > 8000000 || !window.Readability || !window.isProbablyReaderable) throw new Error('Reader extraction unavailable');
+        var sourceDocument = new DOMParser().parseFromString(page.markup, 'text/html');
+        var base = sourceDocument.createElement('base');
+        base.href = page.url;
+        sourceDocument.head.insertBefore(base, sourceDocument.head.firstChild);
+        if (!window.isProbablyReaderable(sourceDocument)) throw new Error('No readable article content');
+        var article = new window.Readability(sourceDocument.cloneNode(true), { charThreshold: 400 }).parse();
+        if (!article || !article.content || (article.length || 0) < 400) throw new Error('No readable article content');
+        result.status = 'ready';
+        result.title = article.title || '';
+        result.byline = article.byline || '';
+        result.published = article.publishedTime || '';
+        result.content = sanitizedReaderContent(article.content, page.url);
+      })
+      .catch(function () { result.status = 'unavailable'; })
+      .finally(function () {
+        if (state.publisherArticle && safeExternalUrl(state.publisherArticle.url) === url) render();
+      });
+  }
+
   function articlePublishedLabel(raw) {
     var date = new Date(raw);
     if (!raw || !Number.isFinite(date.getTime())) return 'Date unavailable';
@@ -1534,18 +1685,42 @@
 
   function renderPaperArticle(a, publisher) {
     var image = safeAsset(a.image);
-    var href = safeExternalUrl(a.url);
     return '<article class="paper-source-article' + (image ? ' has-image' : '') + '">' +
-      (image ? '<a class="paper-source-image" href="' + esc(href) + '" target="_blank" rel="noopener noreferrer" aria-label="Read ' + esc(a.title) + ' at ' + esc(publisher) + '">' +
-        '<img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>' : '') +
+      (image ? nativePublisherImageLink(a, publisher, image) : '') +
       '<div class="paper-source-copy">' +
       '<div class="news-card-meta"><span class="publisher-tag">' + esc(publisher) + '</span><time>' + esc(articlePublishedLabel(a.published)) + '</time></div>' +
-      '<h3><a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title) + '</a></h3>' +
+      '<h3>' + nativePublisherArticleLink(a, publisher, a.title) + '</h3>' +
       (a.summary ? '<p class="paper-source-summary">' + esc(a.summary) + '</p>' : '') +
       '<div class="paper-source-actions">' +
-      originalArticleLink(href, publisher, 'Read original article ↗', 'paper-source-primary') +
+      nativePublisherArticleLink(a, publisher, 'Read in Pheme →', 'paper-source-primary') +
       (a.topic ? '<span class="paper-source-topic">' + esc(labelOf[a.topic] || a.topic) + '</span>' : '') +
       '</div></div></article>';
+  }
+
+  function renderPublisherArticle(entry) {
+    var item = publisherArticleFor(entry.name, entry.url) || entry;
+    var extraction = publisherReaderCache[safeExternalUrl(entry.url)];
+    var extracted = extraction && extraction.status === 'ready';
+    var title = (extracted && extraction.title) || item.title || entry.title || ('Latest reporting from ' + entry.name);
+    var summary = item.summary || entry.summary || '';
+    var published = (extracted && extraction.published) || item.published || entry.published;
+    var image = safeAsset(item.image || entry.image);
+    var safe = safeExternalUrl(entry.url);
+    return '<article class="source-reader" aria-labelledby="source-reader-title">' +
+      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : 'Publisher preview') + '</span></div>' +
+      '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : 'Publisher RSS') + '</p>' +
+      (published ? '<time>' + esc(articlePublishedLabel(published)) + '</time>' : '') +
+      (extracted && extraction.byline ? '<p class="source-reader-byline">' + esc(extraction.byline) + '</p>' : '') +
+      '<h1 id="source-reader-title">' + esc(title) + '</h1></header>' +
+      (image ? '<figure class="source-reader-photo"><img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure>' : '') +
+      '<div class="source-reader-body">' +
+      (extracted ? '<div class="source-reader-content">' + extraction.content + '</div>' : (summary ? '<p class="source-reader-summary">' + esc(summary) + '</p>' : '<p class="notice">This publisher has not supplied an RSS excerpt for this article. Open it at the publisher to read the full story.</p>')) +
+      (extracted ? '<p class="source-reader-note">Readability cleaned article text the publisher made available to this browser. Restricted or paywalled text is not retrieved.</p>' :
+        '<p class="source-reader-note">' + (extraction && extraction.status === 'unavailable' ? 'Pheme could not extract the publisher page in this browser. The publisher may block browser access or require a subscription.' + (summary ? ' The available RSS excerpt is shown above.' : ' No RSS excerpt is available.') : 'Pheme is checking whether the publisher page allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) + '</p>') +
+      (publisherRequiresSubscription(entry.name) ? '<p class="source-reader-access">The publisher may require a subscription for the full article.</p>' : '') +
+      '</div>' +
+      '<div class="source-reader-actions">' + (safe ? originalArticleLink(safe, entry.name, 'Continue to ' + entry.name + ' ↗', 'darkbtn') : '') +
+      '<button type="button" class="outline-sm" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">Back to publisher feed</button></div></article>';
   }
 
   function paperArticleBody(name, meta, stories) {
@@ -1885,7 +2060,7 @@
         group.points.map(function (point) {
           return '<li>' + esc(point.text) + ' ' + point.sources.map(function (name) {
             var row = s.cov.rows.find(function (item) { return item.name === name; });
-            return row ? originalArticleLink(row.url, name, name + ' ↗', 'source-inline-link') : '';
+            return row ? nativePublisherArticleLink(publisherPreview(name, row.url, row.title || s.headline, row.date), name, name + ' ↗', 'source-inline-link') : '';
           }).join(' · ') + '</li>';
         }).join('') + '</ul></section>';
     }).join('');
@@ -1935,10 +2110,14 @@
     var cov = s.cov;
     var selectedSource = cov.rows.find(function (r) { return r.name === state.readingSource; });
     var primarySource = selectedSource || cov.rows.find(function (r) { return r.url === s.url; }) || { name: s.source, url: s.url };
+    var selectedSourceArticle = selectedSource && publisherArticleFor(selectedSource.name, selectedSource.url);
+    var selectedSourcePreview = selectedSource && publisherPreview(selectedSource.name, selectedSource.url, selectedSource.title, selectedSource.date);
+    var primarySourcePreview = publisherPreview(primarySource.name, primarySource.url, primarySource.title || s.headline, s.publishedLabel || s.time);
     var sourceContext = selectedSource ? '<aside class="source-context" aria-label="Selected publisher coverage"><p class="kicker">' + esc(selectedSource.name) + ' · ' + esc(selectedSource.date) + '</p>' +
       (selectedSource.title ? '<h2>' + esc(selectedSource.title) + '</h2>' : '') +
-      '<div class="source-context-foot"><p class="small">Pheme’s multi-source briefing is below.</p>' +
-      originalArticleLink(selectedSource.url, selectedSource.name, 'Read original on ' + selectedSource.name + ' ↗', 'outline-sm') +
+      (selectedSourceArticle && selectedSourceArticle.summary ? '<p class="source-context-summary">' + esc(selectedSourceArticle.summary) + '</p><p class="source-context-note">Publisher-provided RSS excerpt</p>' : '<p class="source-context-note">' + (publisherFeed ? 'The available publisher feed has no excerpt for this article.' : (publisherFeedError ? 'Publisher excerpts are temporarily unavailable.' : 'Checking the publisher feed for an excerpt.')) + '</p>') +
+      '<div class="source-context-foot"><p class="small">Pheme’s multi-source briefing continues below.</p>' +
+      nativePublisherArticleLink(selectedSourcePreview, selectedSource.name, 'Read source in Pheme →', 'outline-sm') +
       '</div></aside>' : '';
     var img = safeAsset(s.image);
     var paras = getArticleParagraphs(s);
@@ -1989,7 +2168,7 @@
       '<p class="kicker">' + esc(labelOf[s.topic]) +
       '<span class="kicker-meta">Pheme · ' + esc(articleDate) +
       (s.location ? ' · <button type="button" class="loc-chip" data-act="openonmap" data-id="' + esc(s.id) + '">' + esc(s.location.label) + '</button>' : '') +
-      (safeExternalUrl(primarySource.url) ? ' · ' + originalArticleLink(primarySource.url, primarySource.name, 'Original: ' + primarySource.name + ' ↗', 'loc-chip') : '') +
+      (safeExternalUrl(primarySource.url) ? ' · ' + nativePublisherArticleLink(primarySourcePreview, primarySource.name, 'Original source: ' + primarySource.name + ' →', 'loc-chip') : '') +
       '</span></p>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
@@ -2028,14 +2207,14 @@
         var safeUrl = safeExternalUrl(r.url);
         return '<li>' + leanBadge(r.name) +
           '<div class="cov-outlet-col"><span class="name">' + esc(r.name) + '</span>' +
-          (r.title ? (safeUrl ? '<a class="cov-outlet-hl cov-outlet-hl-link" href="' + esc(safeUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(r.title) + '</a>' : '<span class="cov-outlet-hl">' + esc(r.title) + '</span>') : '') +
+          (r.title ? (safeUrl ? nativePublisherArticleLink(publisherPreview(r.name, r.url, r.title, r.date), r.name, r.title, 'cov-outlet-hl cov-outlet-hl-link') : '<span class="cov-outlet-hl">' + esc(r.title) + '</span>') : '') +
           '</div>' +
           '<span class="small">' + esc(r.date) + '</span>' +
-          originalArticleLink(r.url, r.name, 'Read original ↗') + '</li>';
+          nativePublisherArticleLink(publisherPreview(r.name, r.url, r.title || s.headline, r.date), r.name, 'Read in Pheme →') + '</li>';
       }).join('') + '</ul></section>' +
-      '<div class="rfoot"><p class="small" style="max-width:60ch">' + (paras.length ? 'Written for Pheme from published reporting' + (s.articleSources && s.articleSources.length ? ' by ' + s.articleSources.map(function (source) { return originalArticleLink(source.url, source.name, source.name, 'source-inline-link') || esc(source.name); }).join(', ') : '') + '.' : 'Source coverage for this archived story.') + '</p>' +
+      '<div class="rfoot"><p class="small" style="max-width:60ch">' + (paras.length ? 'Written for Pheme from published reporting' + (s.articleSources && s.articleSources.length ? ' by ' + s.articleSources.map(function (source) { return nativePublisherArticleLink(publisherPreview(source.name, source.url, s.headline, s.publishedLabel || s.time), source.name, source.name, 'source-inline-link') || esc(source.name); }).join(', ') : '') + '.' : 'Source coverage for this archived story.') + '</p>' +
       '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + saveBtn(s) +
-      originalArticleLink(primarySource.url, primarySource.name, 'Read original on ' + primarySource.name + ' ↗', 'darkbtn') + '</div></div>' +
+      nativePublisherArticleLink(primarySourcePreview, primarySource.name, 'Open source in Pheme →', 'darkbtn') + '</div></div>' +
       ((prevStory || nextStory)
         ? '<nav class="story-pager" aria-label="Adjacent stories">' +
           (prevStory
@@ -2102,7 +2281,8 @@
     var reading = state.reading ? byId[state.reading] : null;
     syncBodyReaderClasses();
     var main;
-    if (reading) main = renderReader(reading);
+    if (state.publisherArticle) main = renderPublisherArticle(state.publisherArticle);
+    else if (reading) main = renderReader(reading);
     else if (state.view === 'papers') main = renderPapers();
     else if (state.view === 'trading') main = renderTrading();
     else main = renderBriefing();
@@ -2110,6 +2290,8 @@
     app.innerHTML = '<div class="dashboard-shell">' + renderSidebar() + '<div class="dashboard-body">' + renderHeader() +
       '<main class="wrap page-main" id="main">' + main + '</main></div></div>' +
       renderSettings() + renderMarketDialog();
+
+    if (state.publisherArticle) loadPublisherArticleContent(state.publisherArticle);
 
     var nextMarkets = document.getElementById('market-widgets');
     if (previousMarkets && nextMarkets && previousMarkets.getAttribute('data-markets') === nextMarkets.getAttribute('data-markets')) {
@@ -2218,10 +2400,12 @@
         state.utilityOpen = state.utilityOpen === id ? null : id;
         render({ focus: state.utilityOpen ? 'menu-' + id : 'menu-toggle-' + id }); break;
       case 'home':
+        leavePublisherArticle(location.pathname);
         state.view = 'briefing'; state.topic = 'all'; state.query = ''; state.searchOpen = false;
         if (state.reading) changeStory(null);
         render(); break;
       case 'topic':
+        leavePublisherArticle(location.pathname);
         state.view = 'briefing'; state.topic = id;
         if (state.reading) changeStory(null);
         render(); break;
@@ -2281,6 +2465,7 @@
         }
         break;
       case 'view':
+        leavePublisherArticle(location.pathname);
         state.view = t.getAttribute('data-view');
         if (state.reading) changeStory(null);
         if (state.view === 'briefing') state.topic = state.topic || 'all';
@@ -2298,7 +2483,8 @@
         if (providerTrack) providerTrack.scrollBy({ left: (Number(t.getAttribute('data-dir')) || 1) * Math.max(240, providerTrack.clientWidth * 0.72), behavior: 'smooth' });
         break;
       case 'paper':
-        if (state.view === 'papers' && !state.reading) {
+        if (state.publisherArticle) leavePublisherArticle('?publisher=' + encodeURIComponent(t.getAttribute('data-name') || ''));
+        if (state.view === 'papers' && !state.reading && !state.publisherArticle) {
           selectPaperInPlace(t.getAttribute('data-name'));
         } else {
           state.view = 'papers';
@@ -2315,6 +2501,23 @@
       case 'opensource':
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault(); changeStory(id, t.getAttribute('data-source')); state.settingsOpen = false;
+        render({ scrollReader: true }); break;
+      case 'publisherarticle':
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        var publisherArticleUrl = safeExternalUrl(t.getAttribute('data-url'));
+        if (!publisherArticleUrl) break;
+        state.publisherArticle = {
+          name: t.getAttribute('data-name') || '', url: publisherArticleUrl,
+          title: t.getAttribute('data-title') || '', summary: t.getAttribute('data-excerpt') || '',
+          published: t.getAttribute('data-published') || ''
+        };
+        state.view = 'papers'; state.paper = state.publisherArticle.name;
+        state.reading = null; state.readingSource = null; state.settingsOpen = false;
+        history.pushState(null, '', publisherArticleHref(state.publisherArticle, state.publisherArticle.name));
+        render({ scrollReader: true }); break;
+      case 'closesourcearticle':
+        state.publisherArticle = null; state.view = 'papers'; state.paper = t.getAttribute('data-name') || state.paper;
+        history.pushState(null, '', '?publisher=' + encodeURIComponent(state.paper || ''));
         render({ scrollReader: true }); break;
       case 'back':
         changeStory(state.readingSource ? state.reading : null); render({ scrollReader: true }); break;
@@ -2446,6 +2649,7 @@
       var box = document.getElementById('src-list');
       if (box) box.innerHTML = sourceListHtml();
     } else if (e.target.id === 'q') {
+      leavePublisherArticle(location.pathname);
       state.query = e.target.value;
       if (state.reading) changeStory(null);
       if (state.view === 'papers') state.view = 'briefing';
@@ -2497,6 +2701,7 @@
       else if (state.aaOpen) { state.aaOpen = false; render(); }
       else if (state.readerFocus) { state.readerFocus = false; render(); }
       else if (state.searchOpen) { state.searchOpen = false; state.query = ''; render(); }
+      else if (state.publisherArticle) { leavePublisherArticle('?publisher=' + encodeURIComponent(state.publisherArticle.name || '')); state.view = 'papers'; render(); }
       else if (state.reading) { changeStory(null); render(); }
     } else if (!typing && state.reading && !state.settingsOpen && !state.marketOpen) {
       if (e.key === ' ' && state.audioOpen && tag !== 'BUTTON' && tag !== 'A') {
