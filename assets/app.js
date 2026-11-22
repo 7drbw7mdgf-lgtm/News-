@@ -1125,7 +1125,7 @@
     });
     var displayed = quick.concat(featured).map(function (s) { return s.id; });
     var remaining = list.filter(function (s) { return displayed.indexOf(s.id) === -1; });
-    return renderChannels() + '<section class="headline-section" aria-labelledby="headlines-title"><div class="dashboard-section-head"><h2 id="headlines-title">Today’s headlines</h2><span>' + list.length + ' stories · ' + esc(D.META.range) + '</span></div><div class="quick-grid">' + quick.map(renderQuickStory).join('') + '</div></section>' +
+    return renderChannels() + '<section class="headline-section" aria-labelledby="headlines-title"><div class="dashboard-section-head"><h2 id="headlines-title">Latest edition headlines</h2><span>' + list.length + ' stories · ' + esc(D.META.range) + '</span></div><div class="quick-grid">' + quick.map(renderQuickStory).join('') + '</div></section>' +
       '<section class="featured-section" aria-labelledby="featured-title"><div class="dashboard-section-head"><h2 id="featured-title">Featured stories</h2><span>A view across the topics</span></div><div class="news-card-grid">' + featured.map(renderDashboardCard).join('') + '</div></section>' +
       (remaining.length ? '<section class="more-section" aria-labelledby="more-title"><div class="dashboard-section-head"><h2 id="more-title">More in your briefing</h2><span>' + remaining.length + ' more stories</span></div><div class="news-card-grid">' + remaining.map(renderDashboardCard).join('') + '</div></section>' : '');
   }
@@ -2188,7 +2188,7 @@
       '<p class="kicker">' + esc(labelOf[s.topic]) +
       '<span class="kicker-meta">Pheme · ' + esc(articleDate) +
       (s.location ? ' · <button type="button" class="loc-chip" data-act="openonmap" data-id="' + esc(s.id) + '">' + esc(s.location.label) + '</button>' : '') +
-      (safeExternalUrl(primarySource.url) ? ' · ' + nativePublisherArticleLink(primarySourcePreview, primarySource.name, 'Original source: ' + primarySource.name + ' →', 'loc-chip') : '') +
+      (safeExternalUrl(primarySource.url) ? ' · ' + nativePublisherArticleLink(primarySourcePreview, primarySource.name, 'Lead article: ' + primarySource.name + ' →', 'loc-chip') : '') +
       '</span></p>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
@@ -2692,8 +2692,15 @@
         target.hidden = true;
         return;
       }
-      var box = target.closest('.dashboard-image, .hero-figure, .reader-photo');
-      if (box) box.hidden = true;
+      var box = target.closest('.dashboard-image, .hero-figure, .reader-photo, .market-news-image, .paper-source-image');
+      if (box && !box.querySelector('.broken-media-fallback')) {
+        var fallback = document.createElement('span');
+        fallback.className = 'broken-media-fallback';
+        fallback.textContent = 'Image unavailable';
+        box.classList.add('image-unavailable');
+        target.hidden = true;
+        box.appendChild(fallback);
+      }
     }
   }, true);
   document.addEventListener('keydown', function (e) {
