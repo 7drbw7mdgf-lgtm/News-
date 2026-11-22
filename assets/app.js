@@ -1072,31 +1072,32 @@
       tab.tabIndex = selected ? 0 : -1;
     });
     section.setAttribute('aria-label', 'Articles from ' + name);
-    updatePaperScrollTone();
+    updateSiteScrollTone();
   }
 
   var paperScrollQueued = false;
-  function updatePaperScrollTone() {
-    var active = state.view === 'papers' && !state.reading;
-    document.body.classList.toggle('paper-browse', active);
-    var scrolled = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
-    // Use an explicit RGB colour rather than a CSS color-mix calculation:
-    // this is predictable on mobile Safari and reacts on short article pages.
-    var progress = active ? Math.min(1, scrolled / 380) : 0;
-    function channel(start, end) { return Math.round(start + (end - start) * progress); }
-    var paperColor = 'rgb(' + channel(233, 152) + ', ' + channel(226, 139) + ', ' + channel(211, 120) + ')';
-    var outerColor = 'rgb(' + channel(227, 143) + ', ' + channel(216, 130) + ', ' + channel(198, 109) + ')';
-    document.documentElement.style.setProperty('--paper-scroll-background', paperColor);
-    document.documentElement.style.setProperty('--paper-scroll-outer', outerColor);
+  function updateSiteScrollTone() {
+    // Reach the deepest stone shade at 60% of the available vertical scroll.
+    // This applies to briefing, newspapers and article-reader views alike.
+    var root = document.documentElement;
+    var maxScroll = Math.max(0, root.scrollHeight - window.innerHeight);
+    var scrolled = Math.max(0, window.scrollY || root.scrollTop || 0);
+    var progress = maxScroll > 0 ? Math.min(1, scrolled / (maxScroll * 0.6)) : 0;
+    function channel(start, finish) { return Math.round(start + (finish - start) * progress); }
+    var paperColor = 'rgb(' + channel(233, 145) + ', ' + channel(226, 128) + ', ' + channel(211, 109) + ')';
+    var outerColor = 'rgb(' + channel(227, 125) + ', ' + channel(216, 109) + ', ' + channel(198, 92) + ')';
+    root.style.setProperty('--paper-scroll-background', paperColor);
+    root.style.setProperty('--paper-scroll-outer', outerColor);
   }
   window.addEventListener('scroll', function () {
     if (paperScrollQueued) return;
     paperScrollQueued = true;
     requestAnimationFrame(function () {
       paperScrollQueued = false;
-      updatePaperScrollTone();
+      updateSiteScrollTone();
     });
   }, { passive: true });
+  window.addEventListener('resize', updateSiteScrollTone, { passive: true });
 
   function newspaperWordmark(name) {
     var logos = {
@@ -1509,7 +1510,7 @@
 
     mountWorldMap();
     updateReadProgress();
-    updatePaperScrollTone();
+    updateSiteScrollTone();
     if (opts && opts.focus) {
       var el = document.getElementById(opts.focus);
       if (el) { el.focus(); if (el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
