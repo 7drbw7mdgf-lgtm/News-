@@ -2620,7 +2620,9 @@
         state.covFilter = id || 'all';
         render(); break;
       case 'copylink':
-        var fullUrl = location.origin + location.pathname + (state.readingSource ? sourceHref(id, state.readingSource) : storyHref(id));
+        var fullUrl = state.readingSource
+          ? location.origin + location.pathname + sourceHref(id, state.readingSource)
+          : location.origin + '/stories/' + encodeURIComponent(id) + '/';
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(fullUrl).catch(function () {});
         }
