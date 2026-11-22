@@ -2,7 +2,7 @@ name: Refresh Pheme market charts
 
 on:
   schedule:
-    - cron: '35 * * * *'
+    - cron: '35 0,6,12,18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -27,18 +27,12 @@ jobs:
         run: python3 scripts/update-markets.py
       - name: Validate market data
         run: python3 scripts/update-markets.py --check
-      - name: Collect licensed company snapshots
-        env:
-          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
-          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-          PHEME_MARKET_DATA_PUBLIC_DISPLAY: ${{ vars.PHEME_MARKET_DATA_PUBLIC_DISPLAY }}
-        run: python3 scripts/collect-company-markets.py
       - name: Commit updated charts and profiles
         id: commit
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/markets.json assets/company-market-data.json
+          git add assets/markets.json
           if git diff --cached --quiet; then echo 'No changes.'; exit 0; fi
           git commit -m "Refresh daily market charts [skip ci]"
           for i in 1 2 3; do
