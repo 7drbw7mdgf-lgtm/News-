@@ -1,0 +1,6470 @@
+[
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/uk/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/politics/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/england/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/scotland/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/wales/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/northern_ireland/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/education/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "uk",
+  "url": "https://feeds.bbci.co.uk/news/health/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/africa/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/asia/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/europe/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/latin_america/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "world",
+  "url": "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "science",
+  "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "tech",
+  "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC News",
+  "topic": "business",
+  "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/uk-news/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/politics/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/society/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/education/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "uk",
+  "url": "https://www.theguardian.com/uk/media/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/europe-news/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/middleeast/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/africa/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/asia/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/us-news/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/australia-news/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/global-development/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/americas/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/science/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/environment/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "tech",
+  "url": "https://www.theguardian.com/uk/technology/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "business",
+  "url": "https://www.theguardian.com/uk/business/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "business",
+  "url": "https://www.theguardian.com/business/economics/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "finance",
+  "url": "https://www.theguardian.com/uk/money/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "finance",
+  "url": "https://www.theguardian.com/business/stock-markets/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "uk",
+  "url": "https://feeds.skynews.com/feeds/rss/uk.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "uk",
+  "url": "https://feeds.skynews.com/feeds/rss/politics.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "uk",
+  "url": "https://feeds.skynews.com/feeds/rss/home.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "world",
+  "url": "https://feeds.skynews.com/feeds/rss/world.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "world",
+  "url": "https://feeds.skynews.com/feeds/rss/us.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "business",
+  "url": "https://feeds.skynews.com/feeds/rss/business.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "tech",
+  "url": "https://feeds.skynews.com/feeds/rss/technology.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "uk",
+  "url": "https://www.independent.co.uk/news/uk/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "uk",
+  "url": "https://www.independent.co.uk/news/uk/politics/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "world",
+  "url": "https://www.independent.co.uk/news/world/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "world",
+  "url": "https://www.independent.co.uk/news/world/americas/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "world",
+  "url": "https://www.independent.co.uk/news/world/europe/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "science",
+  "url": "https://www.independent.co.uk/news/science/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "science",
+  "url": "https://www.independent.co.uk/climate-change/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "tech",
+  "url": "https://www.independent.co.uk/tech/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "business",
+  "url": "https://www.independent.co.uk/news/business/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Independent",
+  "topic": "finance",
+  "url": "https://www.independent.co.uk/money/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "uk",
+  "url": "https://www.telegraph.co.uk/news/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "uk",
+  "url": "https://www.telegraph.co.uk/politics/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "world",
+  "url": "https://www.telegraph.co.uk/world-news/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "business",
+  "url": "https://www.telegraph.co.uk/business/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "finance",
+  "url": "https://www.telegraph.co.uk/money/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "tech",
+  "url": "https://www.telegraph.co.uk/technology/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Telegraph",
+  "topic": "science",
+  "url": "https://www.telegraph.co.uk/science/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mail",
+  "topic": "uk",
+  "url": "https://www.dailymail.co.uk/news/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mail",
+  "topic": "uk",
+  "url": "https://www.dailymail.co.uk/news/uk/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mail",
+  "topic": "world",
+  "url": "https://www.dailymail.co.uk/news/worldnews/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mail",
+  "topic": "science",
+  "url": "https://www.dailymail.co.uk/sciencetech/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mail",
+  "topic": "finance",
+  "url": "https://www.dailymail.co.uk/money/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "This is Money",
+  "topic": "finance",
+  "url": "https://www.thisismoney.co.uk/money/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Evening Standard",
+  "topic": "uk",
+  "url": "https://www.standard.co.uk/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Metro",
+  "topic": "uk",
+  "url": "https://metro.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mirror",
+  "topic": "uk",
+  "url": "https://www.mirror.co.uk/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Mirror",
+  "topic": "uk",
+  "url": "https://www.mirror.co.uk/news/politics/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Express",
+  "topic": "uk",
+  "url": "https://www.express.co.uk/posts/rss/1/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Express",
+  "topic": "uk",
+  "url": "https://www.express.co.uk/posts/rss/139/politics",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Express",
+  "topic": "world",
+  "url": "https://www.express.co.uk/posts/rss/78/world",
+  "origin": "curated"
+ },
+ {
+  "name": "The Sun",
+  "topic": "uk",
+  "url": "https://www.thesun.co.uk/news/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "i News",
+  "topic": "uk",
+  "url": "https://inews.co.uk/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "i News",
+  "topic": "uk",
+  "url": "https://inews.co.uk/news/politics/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "The Spectator",
+  "topic": "uk",
+  "url": "https://www.spectator.co.uk/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "New Statesman",
+  "topic": "uk",
+  "url": "https://www.newstatesman.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "HuffPost UK",
+  "topic": "uk",
+  "url": "https://www.huffingtonpost.co.uk/feeds/index.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Channel 4 News",
+  "topic": "uk",
+  "url": "https://www.channel4.com/news/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "ITV News",
+  "topic": "uk",
+  "url": "https://www.itv.com/news/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "UnHerd",
+  "topic": "uk",
+  "url": "https://unherd.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Byline Times",
+  "topic": "uk",
+  "url": "https://bylinetimes.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Full Fact",
+  "topic": "uk",
+  "url": "https://fullfact.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Conversation UK",
+  "topic": "uk",
+  "url": "https://theconversation.com/uk/articles.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "The Scotsman",
+  "topic": "uk",
+  "url": "https://www.scotsman.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Herald",
+  "topic": "uk",
+  "url": "https://www.heraldscotland.com/news/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Wales Online",
+  "topic": "uk",
+  "url": "https://www.walesonline.co.uk/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Belfast Telegraph",
+  "topic": "uk",
+  "url": "https://www.belfasttelegraph.co.uk/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Manchester Evening News",
+  "topic": "uk",
+  "url": "https://www.manchestereveningnews.co.uk/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Liverpool Echo",
+  "topic": "uk",
+  "url": "https://www.liverpoolecho.co.uk/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Birmingham Mail",
+  "topic": "uk",
+  "url": "https://www.birminghammail.co.uk/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Yorkshire Post",
+  "topic": "uk",
+  "url": "https://www.yorkshirepost.co.uk/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "MyLondon",
+  "topic": "uk",
+  "url": "https://www.mylondon.news/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bristol Post",
+  "topic": "uk",
+  "url": "https://www.bristolpost.co.uk/news/?service=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Politics.co.uk",
+  "topic": "uk",
+  "url": "https://www.politics.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "LabourList",
+  "topic": "uk",
+  "url": "https://labourlist.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "ConservativeHome",
+  "topic": "uk",
+  "url": "https://conservativehome.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Left Foot Forward",
+  "topic": "uk",
+  "url": "https://leftfootforward.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Guido Fawkes",
+  "topic": "uk",
+  "url": "https://order-order.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "GB News",
+  "topic": "uk",
+  "url": "https://www.gbnews.com/feeds/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Critic",
+  "topic": "uk",
+  "url": "https://thecritic.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Prospect",
+  "topic": "uk",
+  "url": "https://www.prospectmagazine.co.uk/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "The Week UK",
+  "topic": "uk",
+  "url": "https://theweek.com/uk/feed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "RTÉ News",
+  "topic": "uk",
+  "url": "https://www.rte.ie/feeds/rss/?index=/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Journal",
+  "topic": "uk",
+  "url": "https://www.thejournal.ie/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Irish Independent",
+  "topic": "uk",
+  "url": "https://www.independent.ie/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Irish Examiner",
+  "topic": "uk",
+  "url": "https://www.irishexaminer.com/feed/35-top_news.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Institute for Government",
+  "topic": "uk",
+  "url": "https://www.instituteforgovernment.org.uk/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "UK Parliament",
+  "topic": "uk",
+  "url": "https://www.parliament.uk/business/news/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "GOV.UK",
+  "topic": "uk",
+  "url": "https://www.gov.uk/search/news-and-communications.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "NHS England",
+  "topic": "uk",
+  "url": "https://www.england.nhs.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Schools Week",
+  "topic": "uk",
+  "url": "https://schoolsweek.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Times Higher Education",
+  "topic": "uk",
+  "url": "https://www.timeshighereducation.com/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Wonkhe",
+  "topic": "uk",
+  "url": "https://wonkhe.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Nursing Times",
+  "topic": "uk",
+  "url": "https://www.nursingtimes.net/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Pulse",
+  "topic": "uk",
+  "url": "https://www.pulsetoday.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Al Jazeera English",
+  "topic": "world",
+  "url": "https://www.aljazeera.com/xml/rss/all.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/europe/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/africa/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/asia-pacific/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/middle-east/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "world",
+  "url": "https://www.france24.com/en/americas/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "France 24",
+  "topic": "business",
+  "url": "https://www.france24.com/en/business-tech/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-world",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-eu",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-ger",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-africa",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-asia",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "world",
+  "url": "https://rss.dw.com/xml/rss-en-all",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "business",
+  "url": "https://rss.dw.com/xml/rss-en-bus",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "science",
+  "url": "https://rss.dw.com/xml/rss_en_environment",
+  "origin": "curated"
+ },
+ {
+  "name": "DW News",
+  "topic": "science",
+  "url": "https://rss.dw.com/xml/rss-en-sci",
+  "origin": "curated"
+ },
+ {
+  "name": "Euronews",
+  "topic": "world",
+  "url": "https://www.euronews.com/rss?level=theme&name=news",
+  "origin": "curated"
+ },
+ {
+  "name": "Euronews",
+  "topic": "world",
+  "url": "https://www.euronews.com/rss?format=mrss&level=vertical&name=news",
+  "origin": "curated"
+ },
+ {
+  "name": "Euronews",
+  "topic": "world",
+  "url": "https://www.euronews.com/rss?level=program&name=world",
+  "origin": "curated"
+ },
+ {
+  "name": "Euronews",
+  "topic": "world",
+  "url": "https://www.euronews.com/rss?level=program&name=europe",
+  "origin": "curated"
+ },
+ {
+  "name": "Euronews",
+  "topic": "business",
+  "url": "https://www.euronews.com/rss?level=vertical&name=business",
+  "origin": "curated"
+ },
+ {
+  "name": "Politico Europe",
+  "topic": "world",
+  "url": "https://www.politico.eu/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Politico",
+  "topic": "world",
+  "url": "https://rss.politico.com/politics-news.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Politico",
+  "topic": "world",
+  "url": "https://rss.politico.com/congress.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Politico",
+  "topic": "world",
+  "url": "https://rss.politico.com/economy.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "world",
+  "url": "https://feeds.npr.org/1004/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "world",
+  "url": "https://feeds.npr.org/1001/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "world",
+  "url": "https://feeds.npr.org/1014/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "world",
+  "url": "https://feeds.npr.org/1003/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "science",
+  "url": "https://feeds.npr.org/1007/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "science",
+  "url": "https://feeds.npr.org/1128/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "business",
+  "url": "https://feeds.npr.org/1006/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NPR",
+  "topic": "tech",
+  "url": "https://feeds.npr.org/1019/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/AsiaPacific.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Africa.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Americas.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "world",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "science",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Space.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "tech",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "tech",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/PersonalTech.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "business",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "business",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "business",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/DealBook.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The New York Times",
+  "topic": "finance",
+  "url": "https://rss.nytimes.com/services/xml/rss/nyt/YourMoney.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "world",
+  "url": "https://www.cbsnews.com/latest/rss/world",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "world",
+  "url": "https://www.cbsnews.com/latest/rss/main",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "world",
+  "url": "https://www.cbsnews.com/latest/rss/politics",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "world",
+  "url": "https://www.cbsnews.com/latest/rss/us",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "science",
+  "url": "https://www.cbsnews.com/latest/rss/science",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "tech",
+  "url": "https://www.cbsnews.com/latest/rss/technology",
+  "origin": "curated"
+ },
+ {
+  "name": "CBS News",
+  "topic": "finance",
+  "url": "https://www.cbsnews.com/latest/rss/moneywatch",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "world",
+  "url": "https://moxie.foxnews.com/google-publisher/world.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "world",
+  "url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "world",
+  "url": "https://moxie.foxnews.com/google-publisher/politics.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "world",
+  "url": "https://moxie.foxnews.com/google-publisher/us.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "science",
+  "url": "https://moxie.foxnews.com/google-publisher/science.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "science",
+  "url": "https://moxie.foxnews.com/google-publisher/health.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox News",
+  "topic": "tech",
+  "url": "https://moxie.foxnews.com/google-publisher/tech.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox Business",
+  "topic": "business",
+  "url": "https://moxie.foxbusiness.com/google-publisher/latest.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Fox Business",
+  "topic": "business",
+  "url": "https://moxie.foxbusiness.com/google-publisher/markets.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "world",
+  "url": "https://www.scmp.com/rss/3/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "world",
+  "url": "https://www.scmp.com/rss/91/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "world",
+  "url": "https://www.scmp.com/rss/4/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "world",
+  "url": "https://www.scmp.com/rss/5/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "world",
+  "url": "https://www.scmp.com/rss/2/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "business",
+  "url": "https://www.scmp.com/rss/92/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "South China Morning Post",
+  "topic": "tech",
+  "url": "https://www.scmp.com/rss/36/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News Australia",
+  "topic": "world",
+  "url": "https://www.abc.net.au/news/feed/2942460/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News Australia",
+  "topic": "world",
+  "url": "https://www.abc.net.au/news/feed/51120/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News Australia",
+  "topic": "world",
+  "url": "https://www.abc.net.au/news/feed/45910/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News Australia",
+  "topic": "science",
+  "url": "https://www.abc.net.au/news/feed/2942460/rss.xml?science",
+  "origin": "curated"
+ },
+ {
+  "name": "Times of India",
+  "topic": "world",
+  "url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+  "origin": "curated"
+ },
+ {
+  "name": "Times of India",
+  "topic": "world",
+  "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+  "origin": "curated"
+ },
+ {
+  "name": "Times of India",
+  "topic": "world",
+  "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+  "origin": "curated"
+ },
+ {
+  "name": "MercoPress",
+  "topic": "world",
+  "url": "https://en.mercopress.com/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Washington Post",
+  "topic": "world",
+  "url": "https://feeds.washingtonpost.com/rss/world",
+  "origin": "curated"
+ },
+ {
+  "name": "Washington Post",
+  "topic": "world",
+  "url": "https://feeds.washingtonpost.com/rss/politics",
+  "origin": "curated"
+ },
+ {
+  "name": "Washington Post",
+  "topic": "world",
+  "url": "https://feeds.washingtonpost.com/rss/national",
+  "origin": "curated"
+ },
+ {
+  "name": "Washington Post",
+  "topic": "business",
+  "url": "https://feeds.washingtonpost.com/rss/business",
+  "origin": "curated"
+ },
+ {
+  "name": "Washington Post",
+  "topic": "tech",
+  "url": "https://feeds.washingtonpost.com/rss/business/technology",
+  "origin": "curated"
+ },
+ {
+  "name": "LA Times",
+  "topic": "world",
+  "url": "https://www.latimes.com/world-nation/rss2.0.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "LA Times",
+  "topic": "world",
+  "url": "https://www.latimes.com/politics/rss2.0.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "LA Times",
+  "topic": "science",
+  "url": "https://www.latimes.com/science/rss2.0.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CNN",
+  "topic": "world",
+  "url": "http://rss.cnn.com/rss/edition_world.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "CNN",
+  "topic": "world",
+  "url": "http://rss.cnn.com/rss/edition.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "CNN",
+  "topic": "world",
+  "url": "http://rss.cnn.com/rss/cnn_allpolitics.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "CNN",
+  "topic": "business",
+  "url": "http://rss.cnn.com/rss/money_latest.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "CNN",
+  "topic": "tech",
+  "url": "http://rss.cnn.com/rss/edition_technology.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News (US)",
+  "topic": "world",
+  "url": "https://abcnews.go.com/abcnews/internationalheadlines",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News (US)",
+  "topic": "world",
+  "url": "https://abcnews.go.com/abcnews/topstories",
+  "origin": "curated"
+ },
+ {
+  "name": "ABC News (US)",
+  "topic": "world",
+  "url": "https://abcnews.go.com/abcnews/politicsheadlines",
+  "origin": "curated"
+ },
+ {
+  "name": "NBC News",
+  "topic": "world",
+  "url": "https://feeds.nbcnews.com/nbcnews/public/world",
+  "origin": "curated"
+ },
+ {
+  "name": "NBC News",
+  "topic": "world",
+  "url": "https://feeds.nbcnews.com/nbcnews/public/news",
+  "origin": "curated"
+ },
+ {
+  "name": "NBC News",
+  "topic": "world",
+  "url": "https://feeds.nbcnews.com/nbcnews/public/politics",
+  "origin": "curated"
+ },
+ {
+  "name": "PBS NewsHour",
+  "topic": "world",
+  "url": "https://www.pbs.org/newshour/feeds/rss/world",
+  "origin": "curated"
+ },
+ {
+  "name": "PBS NewsHour",
+  "topic": "world",
+  "url": "https://www.pbs.org/newshour/feeds/rss/politics",
+  "origin": "curated"
+ },
+ {
+  "name": "PBS NewsHour",
+  "topic": "world",
+  "url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+  "origin": "curated"
+ },
+ {
+  "name": "PBS NewsHour",
+  "topic": "science",
+  "url": "https://www.pbs.org/newshour/feeds/rss/science",
+  "origin": "curated"
+ },
+ {
+  "name": "PBS NewsHour",
+  "topic": "business",
+  "url": "https://www.pbs.org/newshour/feeds/rss/economy",
+  "origin": "curated"
+ },
+ {
+  "name": "The Hill",
+  "topic": "world",
+  "url": "https://thehill.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Hill",
+  "topic": "world",
+  "url": "https://thehill.com/policy/international/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Axios",
+  "topic": "world",
+  "url": "https://api.axios.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Vox",
+  "topic": "world",
+  "url": "https://www.vox.com/rss/index.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Atlantic",
+  "topic": "world",
+  "url": "https://www.theatlantic.com/feed/all/",
+  "origin": "curated"
+ },
+ {
+  "name": "The New Yorker",
+  "topic": "world",
+  "url": "https://www.newyorker.com/feed/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Time",
+  "topic": "world",
+  "url": "https://time.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Newsweek",
+  "topic": "world",
+  "url": "https://www.newsweek.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "USA Today",
+  "topic": "world",
+  "url": "http://rssfeeds.usatoday.com/usatoday-NewsTopStories",
+  "origin": "curated"
+ },
+ {
+  "name": "USA Today",
+  "topic": "world",
+  "url": "http://rssfeeds.usatoday.com/UsatodaycomWorld-TopStories",
+  "origin": "curated"
+ },
+ {
+  "name": "New York Post",
+  "topic": "world",
+  "url": "https://nypost.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "New York Post",
+  "topic": "world",
+  "url": "https://nypost.com/news/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Washington Examiner",
+  "topic": "world",
+  "url": "https://www.washingtonexaminer.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "National Review",
+  "topic": "world",
+  "url": "https://www.nationalreview.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Reason",
+  "topic": "world",
+  "url": "https://reason.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Federalist",
+  "topic": "world",
+  "url": "https://thefederalist.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Dispatch",
+  "topic": "world",
+  "url": "https://thedispatch.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Breitbart",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/breitbart",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Wire",
+  "topic": "world",
+  "url": "https://www.dailywire.com/feeds/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Newsmax",
+  "topic": "world",
+  "url": "https://www.newsmax.com/rss/Newsfront/16/",
+  "origin": "curated"
+ },
+ {
+  "name": "Newsmax",
+  "topic": "world",
+  "url": "https://www.newsmax.com/rss/World/5/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Washington Times",
+  "topic": "world",
+  "url": "https://www.washingtontimes.com/rss/headlines/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Washington Times",
+  "topic": "world",
+  "url": "https://www.washingtontimes.com/rss/headlines/news/world/",
+  "origin": "curated"
+ },
+ {
+  "name": "The American Conservative",
+  "topic": "world",
+  "url": "https://www.theamericanconservative.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Free Press",
+  "topic": "world",
+  "url": "https://www.thefp.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Christian Science Monitor",
+  "topic": "world",
+  "url": "https://rss.csmonitor.com/feeds/world",
+  "origin": "curated"
+ },
+ {
+  "name": "Christian Science Monitor",
+  "topic": "world",
+  "url": "https://rss.csmonitor.com/feeds/usa",
+  "origin": "curated"
+ },
+ {
+  "name": "ProPublica",
+  "topic": "world",
+  "url": "https://feeds.propublica.org/propublica/main",
+  "origin": "curated"
+ },
+ {
+  "name": "The Intercept",
+  "topic": "world",
+  "url": "https://theintercept.com/feed/?rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Mother Jones",
+  "topic": "world",
+  "url": "https://www.motherjones.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Nation",
+  "topic": "world",
+  "url": "https://www.thenation.com/feed/?post_type=article",
+  "origin": "curated"
+ },
+ {
+  "name": "Jacobin",
+  "topic": "world",
+  "url": "https://jacobin.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Slate",
+  "topic": "world",
+  "url": "https://slate.com/feeds/all.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Salon",
+  "topic": "world",
+  "url": "https://www.salon.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Daily Beast",
+  "topic": "world",
+  "url": "https://feeds.thedailybeast.com/rss/articles",
+  "origin": "curated"
+ },
+ {
+  "name": "HuffPost",
+  "topic": "world",
+  "url": "https://www.huffpost.com/section/front-page/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "HuffPost",
+  "topic": "world",
+  "url": "https://www.huffpost.com/section/world-news/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Democracy Now!",
+  "topic": "world",
+  "url": "https://www.democracynow.org/democracynow.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Common Dreams",
+  "topic": "world",
+  "url": "https://www.commondreams.org/feeds/feed.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian US",
+  "topic": "world",
+  "url": "https://www.theguardian.com/us-news/us-politics/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Foreign Policy",
+  "topic": "world",
+  "url": "https://foreignpolicy.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Foreign Affairs",
+  "topic": "world",
+  "url": "https://www.foreignaffairs.com/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Diplomat",
+  "topic": "world",
+  "url": "https://thediplomat.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Asia Times",
+  "topic": "world",
+  "url": "https://asiatimes.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Responsible Statecraft",
+  "topic": "world",
+  "url": "https://responsiblestatecraft.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "War on the Rocks",
+  "topic": "world",
+  "url": "https://warontherocks.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Defense One",
+  "topic": "world",
+  "url": "https://www.defenseone.com/rss/all/",
+  "origin": "curated"
+ },
+ {
+  "name": "Breaking Defense",
+  "topic": "world",
+  "url": "https://breakingdefense.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "UN News",
+  "topic": "world",
+  "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Global Voices",
+  "topic": "world",
+  "url": "https://globalvoices.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The New Humanitarian",
+  "topic": "world",
+  "url": "https://www.thenewhumanitarian.org/rss/all.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Voice of America",
+  "topic": "world",
+  "url": "https://www.voanews.com/api/zq$omekvi_",
+  "origin": "curated"
+ },
+ {
+  "name": "Voice of America",
+  "topic": "world",
+  "url": "https://www.voanews.com/api/zmjuqtemi",
+  "origin": "curated"
+ },
+ {
+  "name": "Radio Free Europe/Radio Liberty",
+  "topic": "world",
+  "url": "https://www.rferl.org/api/zrqiteuuir",
+  "origin": "curated"
+ },
+ {
+  "name": "Euractiv",
+  "topic": "world",
+  "url": "https://www.euractiv.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Brussels Times",
+  "topic": "world",
+  "url": "https://www.brusselstimes.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "The Local Germany",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/de",
+  "origin": "curated"
+ },
+ {
+  "name": "The Local France",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/fr",
+  "origin": "curated"
+ },
+ {
+  "name": "The Local Sweden",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/se",
+  "origin": "curated"
+ },
+ {
+  "name": "Notes from Poland",
+  "topic": "world",
+  "url": "https://notesfrompoland.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Balkan Insight",
+  "topic": "world",
+  "url": "https://balkaninsight.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Kathimerini English",
+  "topic": "world",
+  "url": "https://www.ekathimerini.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Swissinfo",
+  "topic": "world",
+  "url": "https://www.swissinfo.ch/eng/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Kyiv Independent",
+  "topic": "world",
+  "url": "https://kyivindependent.com/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Ukrainska Pravda",
+  "topic": "world",
+  "url": "https://www.pravda.com.ua/eng/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Moscow Times",
+  "topic": "world",
+  "url": "https://www.themoscowtimes.com/rss/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Meduza",
+  "topic": "world",
+  "url": "https://meduza.io/rss/en/all",
+  "origin": "curated"
+ },
+ {
+  "name": "Novaya Gazeta Europe",
+  "topic": "world",
+  "url": "https://novayagazeta.eu/feed/rss/en",
+  "origin": "curated"
+ },
+ {
+  "name": "Times of Israel",
+  "topic": "world",
+  "url": "https://www.timesofisrael.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Jerusalem Post",
+  "topic": "world",
+  "url": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
+  "origin": "curated"
+ },
+ {
+  "name": "Haaretz",
+  "topic": "world",
+  "url": "https://www.haaretz.com/srv/haaretz-latest-headlines",
+  "origin": "curated"
+ },
+ {
+  "name": "Arab News",
+  "topic": "world",
+  "url": "https://www.arabnews.com/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Middle East Eye",
+  "topic": "world",
+  "url": "https://www.middleeasteye.net/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Al-Monitor",
+  "topic": "world",
+  "url": "https://www.al-monitor.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The National (UAE)",
+  "topic": "world",
+  "url": "https://www.thenationalnews.com/arc/outboundfeeds/rss/?outputType=xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Gulf News",
+  "topic": "world",
+  "url": "https://gulfnews.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Iran International",
+  "topic": "world",
+  "url": "https://www.iranintl.com/en/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Sabah",
+  "topic": "world",
+  "url": "https://www.dailysabah.com/rssFeed/turkey",
+  "origin": "curated"
+ },
+ {
+  "name": "Hurriyet Daily News",
+  "topic": "world",
+  "url": "https://www.hurriyetdailynews.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Japan Times",
+  "topic": "world",
+  "url": "https://www.japantimes.co.jp/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Kyodo News",
+  "topic": "world",
+  "url": "https://english.kyodonews.net/rss/all.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NHK World",
+  "topic": "world",
+  "url": "https://www3.nhk.or.jp/nhkworld/en/news/feeds/",
+  "origin": "curated"
+ },
+ {
+  "name": "Nikkei Asia",
+  "topic": "world",
+  "url": "https://asia.nikkei.com/rss/feed/nar",
+  "origin": "curated"
+ },
+ {
+  "name": "Yonhap",
+  "topic": "world",
+  "url": "https://en.yna.co.kr/RSS/news.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Korea Herald",
+  "topic": "world",
+  "url": "https://www.koreaherald.com/common/rss_xml.php?ct=102",
+  "origin": "curated"
+ },
+ {
+  "name": "The Korea Times",
+  "topic": "world",
+  "url": "https://www.koreatimes.co.kr/www/rss/nation.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Taipei Times",
+  "topic": "world",
+  "url": "https://www.taipeitimes.com/xml/index.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Focus Taiwan",
+  "topic": "world",
+  "url": "https://focustaiwan.tw/rss/aall.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Hong Kong Free Press",
+  "topic": "world",
+  "url": "https://hongkongfp.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Standard (HK)",
+  "topic": "world",
+  "url": "https://www.thestandard.com.hk/newsfeed/latest/news.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sixth Tone",
+  "topic": "world",
+  "url": "https://www.sixthtone.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Straits Times",
+  "topic": "world",
+  "url": "https://www.straitstimes.com/news/world/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Straits Times",
+  "topic": "world",
+  "url": "https://www.straitstimes.com/news/asia/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CNA",
+  "topic": "world",
+  "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CNA",
+  "topic": "world",
+  "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6311",
+  "origin": "curated"
+ },
+ {
+  "name": "Rappler",
+  "topic": "world",
+  "url": "https://www.rappler.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Philippine Daily Inquirer",
+  "topic": "world",
+  "url": "https://newsinfo.inquirer.net/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Bangkok Post",
+  "topic": "world",
+  "url": "https://www.bangkokpost.com/rss/data/topstories.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "VnExpress International",
+  "topic": "world",
+  "url": "https://e.vnexpress.net/rss/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Malay Mail",
+  "topic": "world",
+  "url": "https://www.malaymail.com/feed/rss/malaysia",
+  "origin": "curated"
+ },
+ {
+  "name": "The Jakarta Post",
+  "topic": "world",
+  "url": "https://www.thejakartapost.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Hindu",
+  "topic": "world",
+  "url": "https://www.thehindu.com/news/international/feeder/default.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Hindu",
+  "topic": "world",
+  "url": "https://www.thehindu.com/news/national/feeder/default.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Hindustan Times",
+  "topic": "world",
+  "url": "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Hindustan Times",
+  "topic": "world",
+  "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Indian Express",
+  "topic": "world",
+  "url": "https://indianexpress.com/section/world/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Indian Express",
+  "topic": "world",
+  "url": "https://indianexpress.com/section/india/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "NDTV",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/ndtvnews-world-news",
+  "origin": "curated"
+ },
+ {
+  "name": "NDTV",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/ndtvnews-top-stories",
+  "origin": "curated"
+ },
+ {
+  "name": "Scroll.in",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/ScrollinArticles.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Wire (India)",
+  "topic": "world",
+  "url": "https://thewire.in/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Dawn",
+  "topic": "world",
+  "url": "https://www.dawn.com/feeds/home",
+  "origin": "curated"
+ },
+ {
+  "name": "The Express Tribune",
+  "topic": "world",
+  "url": "https://tribune.com.pk/feed/home",
+  "origin": "curated"
+ },
+ {
+  "name": "The Daily Star (Bangladesh)",
+  "topic": "world",
+  "url": "https://www.thedailystar.net/frontpage/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Kathmandu Post",
+  "topic": "world",
+  "url": "https://kathmandupost.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "SBS News",
+  "topic": "world",
+  "url": "https://www.sbs.com.au/news/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Sydney Morning Herald",
+  "topic": "world",
+  "url": "https://www.smh.com.au/rss/feed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sydney Morning Herald",
+  "topic": "world",
+  "url": "https://www.smh.com.au/rss/world.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Age",
+  "topic": "world",
+  "url": "https://www.theage.com.au/rss/feed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "RNZ",
+  "topic": "world",
+  "url": "https://www.rnz.co.nz/rss/world.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "RNZ",
+  "topic": "world",
+  "url": "https://www.rnz.co.nz/rss/national.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "NZ Herald",
+  "topic": "world",
+  "url": "https://www.nzherald.co.nz/arc/outboundfeeds/rss/curated/78/?outputType=xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CBC News",
+  "topic": "world",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-topstories",
+  "origin": "curated"
+ },
+ {
+  "name": "CBC News",
+  "topic": "world",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-world",
+  "origin": "curated"
+ },
+ {
+  "name": "CBC News",
+  "topic": "world",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-canada",
+  "origin": "curated"
+ },
+ {
+  "name": "CBC News",
+  "topic": "world",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-politics",
+  "origin": "curated"
+ },
+ {
+  "name": "CBC News",
+  "topic": "business",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-business",
+  "origin": "curated"
+ },
+ {
+  "name": "CBC News",
+  "topic": "tech",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-technology",
+  "origin": "curated"
+ },
+ {
+  "name": "The Globe and Mail",
+  "topic": "world",
+  "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Globe and Mail",
+  "topic": "world",
+  "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Globe and Mail",
+  "topic": "business",
+  "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/business/",
+  "origin": "curated"
+ },
+ {
+  "name": "National Post",
+  "topic": "world",
+  "url": "https://nationalpost.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "CTV News",
+  "topic": "world",
+  "url": "https://www.ctvnews.ca/rss/ctvnews-ca-top-stories-public-rss-1.822009",
+  "origin": "curated"
+ },
+ {
+  "name": "Global News",
+  "topic": "world",
+  "url": "https://globalnews.ca/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "allAfrica",
+  "topic": "world",
+  "url": "https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf",
+  "origin": "curated"
+ },
+ {
+  "name": "Africanews",
+  "topic": "world",
+  "url": "https://www.africanews.com/feed/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "News24",
+  "topic": "world",
+  "url": "https://feeds.news24.com/articles/news24/TopStories/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Daily Maverick",
+  "topic": "world",
+  "url": "https://www.dailymaverick.co.za/dmrss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Mail & Guardian",
+  "topic": "world",
+  "url": "https://mg.co.za/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Premium Times",
+  "topic": "world",
+  "url": "https://www.premiumtimesng.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "The East African",
+  "topic": "world",
+  "url": "https://www.theeastafrican.co.ke/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nation (Kenya)",
+  "topic": "world",
+  "url": "https://nation.africa/kenya/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Buenos Aires Times",
+  "topic": "world",
+  "url": "https://www.batimes.com.ar/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "The Rio Times",
+  "topic": "world",
+  "url": "https://www.riotimesonline.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Mexico News Daily",
+  "topic": "world",
+  "url": "https://mexiconewsdaily.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Americas Quarterly",
+  "topic": "world",
+  "url": "https://www.americasquarterly.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "InSight Crime",
+  "topic": "world",
+  "url": "https://insightcrime.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Caribbean National Weekly",
+  "topic": "world",
+  "url": "https://www.caribbeannationalweekly.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nature.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nmicrobiol.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nrmicro.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/ncomms.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nm.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nclimate.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/natastron.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/ni.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/nbt.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nature News",
+  "topic": "science",
+  "url": "https://www.nature.com/ng.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Science",
+  "topic": "science",
+  "url": "https://www.science.org/rss/news_current.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Science",
+  "topic": "science",
+  "url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/feed/home/",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/health/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/space/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/environment/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/life/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "science",
+  "url": "https://www.newscientist.com/subject/physics/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "New Scientist",
+  "topic": "tech",
+  "url": "https://www.newscientist.com/subject/technology/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/physics-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/space-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/biology-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/earth-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/chemistry-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "science",
+  "url": "https://phys.org/rss-feed/biology-news/microbiology/",
+  "origin": "curated"
+ },
+ {
+  "name": "Phys.org",
+  "topic": "tech",
+  "url": "https://phys.org/rss-feed/technology-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Medical Xpress",
+  "topic": "science",
+  "url": "https://medicalxpress.com/rss-feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Medical Xpress",
+  "topic": "science",
+  "url": "https://medicalxpress.com/rss-feed/infectious-diseases-news/",
+  "origin": "curated"
+ },
+ {
+  "name": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/top/science.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/plants_animals/microbiology.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/health_medicine/infectious_diseases.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/top/health.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/top/environment.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/space_time.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Live Science",
+  "topic": "science",
+  "url": "https://www.livescience.com/feeds/all",
+  "origin": "curated"
+ },
+ {
+  "name": "Space.com",
+  "topic": "science",
+  "url": "https://www.space.com/feeds/all",
+  "origin": "curated"
+ },
+ {
+  "name": "NASA",
+  "topic": "science",
+  "url": "https://www.nasa.gov/news-release/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "NASA",
+  "topic": "science",
+  "url": "https://www.nasa.gov/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "ESA",
+  "topic": "science",
+  "url": "https://www.esa.int/rssfeed/Our_Activities",
+  "origin": "curated"
+ },
+ {
+  "name": "Scientific American",
+  "topic": "science",
+  "url": "https://www.scientificamerican.com/platform/syndication/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Quanta Magazine",
+  "topic": "science",
+  "url": "https://www.quantamagazine.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Science News",
+  "topic": "science",
+  "url": "https://www.sciencenews.org/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Smithsonian Magazine",
+  "topic": "science",
+  "url": "https://www.smithsonianmag.com/rss/science-nature/",
+  "origin": "curated"
+ },
+ {
+  "name": "Ars Technica",
+  "topic": "science",
+  "url": "https://feeds.arstechnica.com/arstechnica/science",
+  "origin": "curated"
+ },
+ {
+  "name": "The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/uk/environment/articles.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/uk/health/articles.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/global/articles.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "Eos",
+  "topic": "science",
+  "url": "https://eos.org/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Carbon Brief",
+  "topic": "science",
+  "url": "https://www.carbonbrief.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Inside Climate News",
+  "topic": "science",
+  "url": "https://insideclimatenews.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Mongabay",
+  "topic": "science",
+  "url": "https://news.mongabay.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Grist",
+  "topic": "science",
+  "url": "https://grist.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "EurekAlert!",
+  "topic": "science",
+  "url": "https://www.eurekalert.org/rss/news.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "EurekAlert!",
+  "topic": "science",
+  "url": "https://www.eurekalert.org/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "STAT",
+  "topic": "science",
+  "url": "https://www.statnews.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The BMJ",
+  "topic": "science",
+  "url": "https://www.bmj.com/rss/recent.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Lancet",
+  "topic": "science",
+  "url": "https://www.thelancet.com/rssfeed/lancet_current.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Lancet",
+  "topic": "science",
+  "url": "https://www.thelancet.com/rssfeed/laninf_current.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Lancet",
+  "topic": "science",
+  "url": "https://www.thelancet.com/rssfeed/lanmic_current.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "WHO",
+  "topic": "science",
+  "url": "https://www.who.int/rss-feeds/news-english.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CIDRAP",
+  "topic": "science",
+  "url": "https://www.cidrap.umn.edu/news/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "ECDC",
+  "topic": "science",
+  "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1307/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "UKHSA",
+  "topic": "science",
+  "url": "https://www.gov.uk/government/organisations/uk-health-security-agency.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "mBio",
+  "topic": "science",
+  "url": "https://journals.asm.org/action/showFeed?type=etoc&feed=rss&jc=mbio",
+  "origin": "curated"
+ },
+ {
+  "name": "ASM Microbe",
+  "topic": "science",
+  "url": "https://asm.org/rss/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Cell Host & Microbe",
+  "topic": "science",
+  "url": "https://www.cell.com/cell-host-microbe/current.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Cell",
+  "topic": "science",
+  "url": "https://www.cell.com/cell/current.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "PLOS Pathogens",
+  "topic": "science",
+  "url": "https://journals.plos.org/plospathogens/feed/atom",
+  "origin": "curated"
+ },
+ {
+  "name": "PLOS Biology",
+  "topic": "science",
+  "url": "https://journals.plos.org/plosbiology/feed/atom",
+  "origin": "curated"
+ },
+ {
+  "name": "eLife",
+  "topic": "science",
+  "url": "https://elifesciences.org/rss/recent.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "bioRxiv Microbiology",
+  "topic": "science",
+  "url": "https://connect.biorxiv.org/biorxiv_xml/microbiology",
+  "origin": "curated"
+ },
+ {
+  "name": "bioRxiv Immunology",
+  "topic": "science",
+  "url": "https://connect.biorxiv.org/biorxiv_xml/immunology",
+  "origin": "curated"
+ },
+ {
+  "name": "medRxiv",
+  "topic": "science",
+  "url": "https://connect.medrxiv.org/medrxiv_xml/infectious_diseases",
+  "origin": "curated"
+ },
+ {
+  "name": "Microbiology Society",
+  "topic": "science",
+  "url": "https://microbiologysociety.org/rss/news.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Scientist",
+  "topic": "science",
+  "url": "https://www.the-scientist.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Chemistry World",
+  "topic": "science",
+  "url": "https://www.chemistryworld.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Physics World",
+  "topic": "science",
+  "url": "https://physicsworld.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Universe Today",
+  "topic": "science",
+  "url": "https://www.universetoday.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky & Telescope",
+  "topic": "science",
+  "url": "https://skyandtelescope.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Big Think",
+  "topic": "science",
+  "url": "https://bigthink.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Knowable Magazine",
+  "topic": "science",
+  "url": "https://knowablemagazine.org/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Undark",
+  "topic": "science",
+  "url": "https://undark.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Nautilus",
+  "topic": "science",
+  "url": "https://nautil.us/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Wellcome",
+  "topic": "science",
+  "url": "https://wellcome.org/news/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Royal Society",
+  "topic": "science",
+  "url": "https://royalsociety.org/rss/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Our World in Data",
+  "topic": "science",
+  "url": "https://ourworldindata.org/atom.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Ars Technica",
+  "topic": "tech",
+  "url": "https://feeds.arstechnica.com/arstechnica/index",
+  "origin": "curated"
+ },
+ {
+  "name": "Ars Technica",
+  "topic": "tech",
+  "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+  "origin": "curated"
+ },
+ {
+  "name": "Ars Technica",
+  "topic": "tech",
+  "url": "https://feeds.arstechnica.com/arstechnica/gadgets",
+  "origin": "curated"
+ },
+ {
+  "name": "Ars Technica",
+  "topic": "tech",
+  "url": "https://feeds.arstechnica.com/arstechnica/security",
+  "origin": "curated"
+ },
+ {
+  "name": "Ars Technica",
+  "topic": "tech",
+  "url": "https://feeds.arstechnica.com/arstechnica/tech-policy",
+  "origin": "curated"
+ },
+ {
+  "name": "The Verge",
+  "topic": "tech",
+  "url": "https://www.theverge.com/rss/index.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Verge",
+  "topic": "tech",
+  "url": "https://www.theverge.com/rss/tech/index.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Verge",
+  "topic": "tech",
+  "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Verge",
+  "topic": "tech",
+  "url": "https://www.theverge.com/rss/policy/index.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/category/startups/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/category/security/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Wired",
+  "topic": "tech",
+  "url": "https://www.wired.com/feed/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Wired",
+  "topic": "tech",
+  "url": "https://www.wired.com/feed/category/business/latest/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Wired",
+  "topic": "tech",
+  "url": "https://www.wired.com/feed/category/security/latest/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Wired",
+  "topic": "tech",
+  "url": "https://www.wired.com/feed/category/gear/latest/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Wired",
+  "topic": "tech",
+  "url": "https://www.wired.com/feed/tag/ai/latest/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Wired",
+  "topic": "science",
+  "url": "https://www.wired.com/feed/category/science/latest/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Engadget",
+  "topic": "tech",
+  "url": "https://www.engadget.com/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Gizmodo",
+  "topic": "tech",
+  "url": "https://gizmodo.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Register",
+  "topic": "tech",
+  "url": "https://www.theregister.com/headlines.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "The Register",
+  "topic": "tech",
+  "url": "https://www.theregister.com/security/headlines.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "The Register",
+  "topic": "tech",
+  "url": "https://www.theregister.com/software/ai_ml/headlines.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "MIT Technology Review",
+  "topic": "tech",
+  "url": "https://www.technologyreview.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "IEEE Spectrum",
+  "topic": "tech",
+  "url": "https://spectrum.ieee.org/feeds/feed.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "ZDNET",
+  "topic": "tech",
+  "url": "https://www.zdnet.com/news/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CNET",
+  "topic": "tech",
+  "url": "https://www.cnet.com/rss/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "TechRadar",
+  "topic": "tech",
+  "url": "https://www.techradar.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Tom's Hardware",
+  "topic": "tech",
+  "url": "https://www.tomshardware.com/feeds/all",
+  "origin": "curated"
+ },
+ {
+  "name": "The Next Web",
+  "topic": "tech",
+  "url": "https://thenextweb.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "VentureBeat",
+  "topic": "tech",
+  "url": "https://venturebeat.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Rest of World",
+  "topic": "tech",
+  "url": "https://restofworld.org/feed/latest/",
+  "origin": "curated"
+ },
+ {
+  "name": "404 Media",
+  "topic": "tech",
+  "url": "https://www.404media.co/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Fast Company",
+  "topic": "tech",
+  "url": "https://www.fastcompany.com/technology/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Hacker News",
+  "topic": "tech",
+  "url": "https://hnrss.org/frontpage",
+  "origin": "curated"
+ },
+ {
+  "name": "Slashdot",
+  "topic": "tech",
+  "url": "https://rss.slashdot.org/Slashdot/slashdotMain",
+  "origin": "curated"
+ },
+ {
+  "name": "Krebs on Security",
+  "topic": "tech",
+  "url": "https://krebsonsecurity.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "BleepingComputer",
+  "topic": "tech",
+  "url": "https://www.bleepingcomputer.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Record",
+  "topic": "tech",
+  "url": "https://therecord.media/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Dark Reading",
+  "topic": "tech",
+  "url": "https://www.darkreading.com/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Hacker News",
+  "topic": "tech",
+  "url": "https://feeds.feedburner.com/TheHackersNews",
+  "origin": "curated"
+ },
+ {
+  "name": "SecurityWeek",
+  "topic": "tech",
+  "url": "https://www.securityweek.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "9to5Mac",
+  "topic": "tech",
+  "url": "https://9to5mac.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "9to5Google",
+  "topic": "tech",
+  "url": "https://9to5google.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "MacRumors",
+  "topic": "tech",
+  "url": "https://feeds.macrumors.com/MacRumors-All",
+  "origin": "curated"
+ },
+ {
+  "name": "Android Police",
+  "topic": "tech",
+  "url": "https://www.androidpolice.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Android Authority",
+  "topic": "tech",
+  "url": "https://www.androidauthority.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Computer Weekly",
+  "topic": "tech",
+  "url": "https://www.computerweekly.com/rss/All-Computer-Weekly-content.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "UKTN",
+  "topic": "tech",
+  "url": "https://www.uktech.news/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Sifted",
+  "topic": "tech",
+  "url": "https://sifted.eu/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Tech.eu",
+  "topic": "tech",
+  "url": "https://tech.eu/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Decoder",
+  "topic": "tech",
+  "url": "https://the-decoder.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Simon Willison",
+  "topic": "tech",
+  "url": "https://simonwillison.net/atom/everything/",
+  "origin": "curated"
+ },
+ {
+  "name": "Electrek",
+  "topic": "tech",
+  "url": "https://electrek.co/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "InsideEVs",
+  "topic": "tech",
+  "url": "https://insideevs.com/rss/news/all/",
+  "origin": "curated"
+ },
+ {
+  "name": "Protocol / Semafor Tech",
+  "topic": "tech",
+  "url": "https://www.semafor.com/vertical/tech/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "GeekWire",
+  "topic": "tech",
+  "url": "https://www.geekwire.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "SiliconANGLE",
+  "topic": "tech",
+  "url": "https://siliconangle.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Information",
+  "topic": "tech",
+  "url": "https://www.theinformation.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Techmeme",
+  "topic": "tech",
+  "url": "https://www.techmeme.com/feed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "PCWorld",
+  "topic": "tech",
+  "url": "https://www.pcworld.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Digital Trends",
+  "topic": "tech",
+  "url": "https://www.digitaltrends.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Mashable",
+  "topic": "tech",
+  "url": "https://mashable.com/feeds/rss/all",
+  "origin": "curated"
+ },
+ {
+  "name": "Lifehacker",
+  "topic": "tech",
+  "url": "https://lifehacker.com/feed/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Guardian",
+  "topic": "tech",
+  "url": "https://www.theguardian.com/technology/artificialintelligenceai/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "BBC Click / Tech",
+  "topic": "tech",
+  "url": "https://feeds.bbci.co.uk/news/technology/rss.xml?edition=int",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/business/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/finance-and-economics/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/briefing/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "business",
+  "url": "https://www.economist.com/leaders/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/international/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/britain/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/europe/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/united-states/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/the-americas/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/asia/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/china/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "world",
+  "url": "https://www.economist.com/middle-east-and-africa/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "The Economist",
+  "topic": "science",
+  "url": "https://www.economist.com/science-and-technology/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Financial Times",
+  "topic": "business",
+  "url": "https://www.ft.com/companies?format=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Financial Times",
+  "topic": "business",
+  "url": "https://www.ft.com/world?format=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Financial Times",
+  "topic": "business",
+  "url": "https://www.ft.com/global-economy?format=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Financial Times",
+  "topic": "finance",
+  "url": "https://www.ft.com/rss/home/uk",
+  "origin": "curated"
+ },
+ {
+  "name": "Financial Times",
+  "topic": "finance",
+  "url": "https://www.ft.com/markets?format=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Financial Times",
+  "topic": "tech",
+  "url": "https://www.ft.com/technology?format=rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bloomberg",
+  "topic": "finance",
+  "url": "https://feeds.bloomberg.com/markets/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bloomberg",
+  "topic": "business",
+  "url": "https://feeds.bloomberg.com/economics/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bloomberg",
+  "topic": "business",
+  "url": "https://feeds.bloomberg.com/business/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bloomberg",
+  "topic": "business",
+  "url": "https://feeds.bloomberg.com/industries/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bloomberg",
+  "topic": "tech",
+  "url": "https://feeds.bloomberg.com/technology/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bloomberg",
+  "topic": "world",
+  "url": "https://feeds.bloomberg.com/politics/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Wall Street Journal",
+  "topic": "world",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+  "origin": "curated"
+ },
+ {
+  "name": "The Wall Street Journal",
+  "topic": "business",
+  "url": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+  "origin": "curated"
+ },
+ {
+  "name": "The Wall Street Journal",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+  "origin": "curated"
+ },
+ {
+  "name": "The Wall Street Journal",
+  "topic": "tech",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+  "origin": "curated"
+ },
+ {
+  "name": "MarketWatch",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+  "origin": "curated"
+ },
+ {
+  "name": "MarketWatch",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/mw_marketpulse",
+  "origin": "curated"
+ },
+ {
+  "name": "MarketWatch",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/mw_bulletins",
+  "origin": "curated"
+ },
+ {
+  "name": "MarketWatch",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "business",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "business",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664&b",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "business",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001054",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "world",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "world",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "finance",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "finance",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "finance",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258",
+  "origin": "curated"
+ },
+ {
+  "name": "CNBC",
+  "topic": "tech",
+  "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910",
+  "origin": "curated"
+ },
+ {
+  "name": "Business Insider",
+  "topic": "business",
+  "url": "https://feeds.businessinsider.com/custom/all",
+  "origin": "curated"
+ },
+ {
+  "name": "Fortune",
+  "topic": "business",
+  "url": "https://fortune.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Forbes",
+  "topic": "business",
+  "url": "https://www.forbes.com/business/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Harvard Business Review",
+  "topic": "business",
+  "url": "https://feeds.hbr.org/harvardbusiness",
+  "origin": "curated"
+ },
+ {
+  "name": "Quartz",
+  "topic": "business",
+  "url": "https://qz.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Semafor",
+  "topic": "business",
+  "url": "https://www.semafor.com/vertical/business/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Sky News",
+  "topic": "finance",
+  "url": "https://feeds.skynews.com/feeds/rss/money.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "City AM",
+  "topic": "finance",
+  "url": "https://www.cityam.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "City AM",
+  "topic": "business",
+  "url": "https://www.cityam.com/category/business/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Retail Gazette",
+  "topic": "business",
+  "url": "https://www.retailgazette.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Construction News",
+  "topic": "business",
+  "url": "https://www.constructionnews.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Management Today",
+  "topic": "business",
+  "url": "https://www.managementtoday.co.uk/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Supply Chain Dive",
+  "topic": "business",
+  "url": "https://www.supplychaindive.com/feeds/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Retail Dive",
+  "topic": "business",
+  "url": "https://www.retaildive.com/feeds/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "Modern Retail",
+  "topic": "business",
+  "url": "https://www.modernretail.co/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Marketing Week",
+  "topic": "business",
+  "url": "https://www.marketingweek.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Press Gazette",
+  "topic": "business",
+  "url": "https://pressgazette.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Grocer",
+  "topic": "business",
+  "url": "https://www.thegrocer.co.uk/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Freightwaves",
+  "topic": "business",
+  "url": "https://www.freightwaves.com/news/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Oilprice.com",
+  "topic": "business",
+  "url": "https://oilprice.com/rss/main",
+  "origin": "curated"
+ },
+ {
+  "name": "Energy Monitor / Recharge",
+  "topic": "business",
+  "url": "https://www.rechargenews.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Nikkei Asia",
+  "topic": "business",
+  "url": "https://asia.nikkei.com/rss/feed/nar?business",
+  "origin": "curated"
+ },
+ {
+  "name": "Caixin Global",
+  "topic": "business",
+  "url": "https://www.caixinglobal.com/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "Economic Times",
+  "topic": "business",
+  "url": "https://economictimes.indiatimes.com/rssfeedstopstories.cms",
+  "origin": "curated"
+ },
+ {
+  "name": "Livemint",
+  "topic": "business",
+  "url": "https://www.livemint.com/rss/companies",
+  "origin": "curated"
+ },
+ {
+  "name": "Business Standard",
+  "topic": "business",
+  "url": "https://www.business-standard.com/rss/latest.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "The Conversation",
+  "topic": "business",
+  "url": "https://theconversation.com/uk/business/articles.atom",
+  "origin": "curated"
+ },
+ {
+  "name": "Yahoo Finance",
+  "topic": "finance",
+  "url": "https://finance.yahoo.com/news/rssindex",
+  "origin": "curated"
+ },
+ {
+  "name": "Investing.com",
+  "topic": "finance",
+  "url": "https://www.investing.com/rss/news.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Investing.com",
+  "topic": "finance",
+  "url": "https://www.investing.com/rss/news_25.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Investing.com",
+  "topic": "finance",
+  "url": "https://www.investing.com/rss/news_14.rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Seeking Alpha",
+  "topic": "finance",
+  "url": "https://seekingalpha.com/market_currents.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Seeking Alpha",
+  "topic": "finance",
+  "url": "https://seekingalpha.com/feed.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Motley Fool UK",
+  "topic": "finance",
+  "url": "https://www.fool.co.uk/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Motley Fool",
+  "topic": "finance",
+  "url": "https://www.fool.com/a/feeds/partner/google/",
+  "origin": "curated"
+ },
+ {
+  "name": "Kiplinger",
+  "topic": "finance",
+  "url": "https://www.kiplinger.com/feeds/all",
+  "origin": "curated"
+ },
+ {
+  "name": "Investopedia",
+  "topic": "finance",
+  "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
+  "origin": "curated"
+ },
+ {
+  "name": "Morningstar UK",
+  "topic": "finance",
+  "url": "https://www.morningstar.co.uk/uk/news/rss.aspx",
+  "origin": "curated"
+ },
+ {
+  "name": "Proactive Investors",
+  "topic": "finance",
+  "url": "https://www.proactiveinvestors.co.uk/rss/all_news",
+  "origin": "curated"
+ },
+ {
+  "name": "Interactive Investor",
+  "topic": "finance",
+  "url": "https://www.ii.co.uk/rss/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Hargreaves Lansdown",
+  "topic": "finance",
+  "url": "https://www.hl.co.uk/news/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "MoneyWeek",
+  "topic": "finance",
+  "url": "https://moneyweek.com/feeds/all",
+  "origin": "curated"
+ },
+ {
+  "name": "MoneySavingExpert",
+  "topic": "finance",
+  "url": "https://www.moneysavingexpert.com/news/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "FT Adviser",
+  "topic": "finance",
+  "url": "https://www.ftadviser.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Bank of England",
+  "topic": "finance",
+  "url": "https://www.bankofengland.co.uk/rss/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Bank of England",
+  "topic": "finance",
+  "url": "https://www.bankofengland.co.uk/rss/publications",
+  "origin": "curated"
+ },
+ {
+  "name": "Federal Reserve",
+  "topic": "finance",
+  "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "European Central Bank",
+  "topic": "finance",
+  "url": "https://www.ecb.europa.eu/rss/press.html",
+  "origin": "curated"
+ },
+ {
+  "name": "IMF",
+  "topic": "finance",
+  "url": "https://www.imf.org/en/News/rss?language=eng",
+  "origin": "curated"
+ },
+ {
+  "name": "ONS",
+  "topic": "finance",
+  "url": "https://www.ons.gov.uk/releasecalendar?rss",
+  "origin": "curated"
+ },
+ {
+  "name": "FCA",
+  "topic": "finance",
+  "url": "https://www.fca.org.uk/news/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Barron's",
+  "topic": "finance",
+  "url": "https://feeds.content.dowjones.io/public/rss/RSSBarronsTopStories",
+  "origin": "curated"
+ },
+ {
+  "name": "Calculated Risk",
+  "topic": "finance",
+  "url": "https://www.calculatedriskblog.com/feeds/posts/default",
+  "origin": "curated"
+ },
+ {
+  "name": "Naked Capitalism",
+  "topic": "finance",
+  "url": "https://www.nakedcapitalism.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Zero Hedge",
+  "topic": "finance",
+  "url": "https://feeds.feedburner.com/zerohedge/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Wolf Street",
+  "topic": "finance",
+  "url": "https://wolfstreet.com/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Marginal Revolution",
+  "topic": "finance",
+  "url": "https://marginalrevolution.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Bruegel",
+  "topic": "finance",
+  "url": "https://www.bruegel.org/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "FXStreet",
+  "topic": "finance",
+  "url": "https://www.fxstreet.com/rss/news",
+  "origin": "curated"
+ },
+ {
+  "name": "Kitco",
+  "topic": "finance",
+  "url": "https://www.kitco.com/rss/KitcoNews.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "CoinDesk",
+  "topic": "finance",
+  "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+  "origin": "curated"
+ },
+ {
+  "name": "The Block",
+  "topic": "finance",
+  "url": "https://www.theblock.co/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Decrypt",
+  "topic": "finance",
+  "url": "https://decrypt.co/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Cointelegraph",
+  "topic": "finance",
+  "url": "https://cointelegraph.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Pensions & Investments",
+  "topic": "finance",
+  "url": "https://www.pionline.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Institutional Investor",
+  "topic": "finance",
+  "url": "https://www.institutionalinvestor.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Banking Dive",
+  "topic": "finance",
+  "url": "https://www.bankingdive.com/feeds/news/",
+  "origin": "curated"
+ },
+ {
+  "name": "American Banker",
+  "topic": "finance",
+  "url": "https://www.americanbanker.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Finextra",
+  "topic": "finance",
+  "url": "https://www.finextra.com/rss/headlines.aspx",
+  "origin": "curated"
+ },
+ {
+  "name": "AltFi",
+  "topic": "finance",
+  "url": "https://www.altfi.com/rss",
+  "origin": "curated"
+ },
+ {
+  "name": "Economics Observatory",
+  "topic": "finance",
+  "url": "https://www.economicsobservatory.com/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "Resolution Foundation",
+  "topic": "finance",
+  "url": "https://www.resolutionfoundation.org/feed/",
+  "origin": "curated"
+ },
+ {
+  "name": "Institute for Fiscal Studies",
+  "topic": "finance",
+  "url": "https://ifs.org.uk/rss.xml",
+  "origin": "curated"
+ },
+ {
+  "name": "Money Week Investing",
+  "topic": "finance",
+  "url": "https://moneyweek.com/investments/feed",
+  "origin": "curated"
+ },
+ {
+  "name": "International: Top News And Analysis",
+  "topic": "world",
+  "url": "https://www.cnbc.com/id/100727362/device/rss/rss.html",
+  "origin": "plenary:News"
+ },
+ {
+  "name": "Top stories - Google News",
+  "topic": "world",
+  "url": "https://news.google.com/rss",
+  "origin": "plenary:News"
+ },
+ {
+  "name": "World News",
+  "topic": "world",
+  "url": "https://www.reddit.com/r/worldnews/.rss",
+  "origin": "plenary:News"
+ },
+ {
+  "name": "Bitcoin & Crypto Trading: Ledger Cast",
+  "topic": "finance",
+  "url": "https://feeds.simplecast.com/j5Cx9jps",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Bitcoin - The Currency of the Internet",
+  "topic": "finance",
+  "url": "https://www.reddit.com/r/Bitcoin/.rss",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Bitcoin Audible",
+  "topic": "finance",
+  "url": "https://bitcoinaudible.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Bitcoin News",
+  "topic": "finance",
+  "url": "https://news.bitcoin.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "BuyUcoin Talks - Medium",
+  "topic": "finance",
+  "url": "https://medium.com/feed/buyucoin-talks",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "CryptoCurrency – Finance Magnates | Financial and business news",
+  "topic": "finance",
+  "url": "https://www.financemagnates.com/cryptocurrency/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "CryptoNinjas",
+  "topic": "finance",
+  "url": "https://www.cryptoninjas.net/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "CryptoPotato",
+  "topic": "finance",
+  "url": "https://cryptopotato.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Cryptocurrency News & Discussion",
+  "topic": "finance",
+  "url": "https://www.reddit.com/r/CryptoCurrency/.rss",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "DailyCoin",
+  "topic": "finance",
+  "url": "https://dailycoin.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Epicenter - Learn about Crypto, Blockchain, Ethereum, Bitcoin and Distributed Technologies",
+  "topic": "finance",
+  "url": "https://feeds.simplecast.com/lKmQDG9R",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Ethereum",
+  "topic": "finance",
+  "url": "https://www.reddit.com/r/ethereum/.rss",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Ethereum Foundation Blog",
+  "topic": "finance",
+  "url": "https://blog.ethereum.org/feed.xml",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "INCRYPTED",
+  "topic": "finance",
+  "url": "https://incrypted.net/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Interviews",
+  "topic": "finance",
+  "url": "https://feed.podbean.com/nuggetsnews/feed.xml",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Kraken Blog",
+  "topic": "finance",
+  "url": "https://blog.kraken.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "News - Cryptonews",
+  "topic": "finance",
+  "url": "https://cryptonews.com/news/feed",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "NewsBTC",
+  "topic": "finance",
+  "url": "https://www.newsbtc.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Stephan Livera Podcast",
+  "topic": "finance",
+  "url": "https://anchor.fm/s/7d083a4/podcast/rss",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "The Bad Crypto Podcast",
+  "topic": "finance",
+  "url": "https://badcryptopodcast.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "The Bitcoin Knowledge Podcast",
+  "topic": "finance",
+  "url": "https://www.bitcoin.kn/feed/podcast/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "The Bitcoin Podcast",
+  "topic": "finance",
+  "url": "https://feeds.simplecast.com/xCQr3ykc",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "The Market's Compass Technical View",
+  "topic": "finance",
+  "url": "https://themarketscompass.substack.com/feed",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "Today in Web 3",
+  "topic": "finance",
+  "url": "https://feeds.soundcloud.com/users/soundcloud:users:844321453/sounds.rss",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "ZebPay",
+  "topic": "finance",
+  "url": "https://zebpay.com/feed/",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "cryptocurrency | TechCrunch",
+  "topic": "finance",
+  "url": "https://techcrunch.com/tag/cryptocurrency/feed",
+  "origin": "plenary:Cryptocurrency"
+ },
+ {
+  "name": "/r/space: news, articles and discussion",
+  "topic": "science",
+  "url": "https://www.reddit.com/r/space/.rss?format=xml",
+  "origin": "plenary:Space"
+ },
+ {
+  "name": "NASA",
+  "topic": "science",
+  "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+  "origin": "plenary:Space"
+ },
+ {
+  "name": "Space | The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/science/space/rss",
+  "origin": "plenary:Space"
+ },
+ {
+  "name": "SpaceX",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=spacexchannel",
+  "origin": "plenary:Space"
+ },
+ {
+  "name": "Afford Anything®",
+  "topic": "finance",
+  "url": "https://affordanything.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Afford Anything®",
+  "topic": "finance",
+  "url": "https://feeds.feedburner.com/AffordAnythingFeed",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Budgets Are Sexy",
+  "topic": "finance",
+  "url": "https://feeds2.feedburner.com/budgetsaresexy",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Financial Samurai",
+  "topic": "finance",
+  "url": "https://www.financialsamurai.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Frugalwoods",
+  "topic": "finance",
+  "url": "https://feeds.feedburner.com/Frugalwoods",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Good Financial Cents®",
+  "topic": "finance",
+  "url": "https://www.goodfinancialcents.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Invest Like the Best with Patrick O'Shaughnessy",
+  "topic": "finance",
+  "url": "http://investlikethebest.libsyn.com/rss",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Learn To Trade The Market",
+  "topic": "finance",
+  "url": "https://www.learntotradethemarket.com/feed",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Listen Money Matters - Free your inner financial badass. All the stuff you should know about personal finance.",
+  "topic": "finance",
+  "url": "https://feeds.megaphone.fm/listen-money-matters",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Making Sense Of Cents",
+  "topic": "finance",
+  "url": "https://www.makingsenseofcents.com/feed",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Millennial Money",
+  "topic": "finance",
+  "url": "https://millennialmoney.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Money Crashers",
+  "topic": "finance",
+  "url": "https://www.moneycrashers.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Money For the Rest of Us",
+  "topic": "finance",
+  "url": "https://rss.art19.com/money-for-the-rest-of-us",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Money Saving Mom®",
+  "topic": "finance",
+  "url": "https://moneysavingmom.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Money Under 30",
+  "topic": "finance",
+  "url": "https://www.moneyunder30.com/feed",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "MoneyNing",
+  "topic": "finance",
+  "url": "http://feeds.feedburner.com/MoneyNing",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "MyWifeQuitHerJob.com",
+  "topic": "finance",
+  "url": "https://mywifequitherjob.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Nerd's Eye View | Kitces.com",
+  "topic": "finance",
+  "url": "http://feeds.feedblitz.com/kitcesnerdseyeview&x=1",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "NerdWallet",
+  "topic": "finance",
+  "url": "https://www.nerdwallet.com/blog/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Oblivious Investor",
+  "topic": "finance",
+  "url": "https://obliviousinvestor.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Personal Finance",
+  "topic": "finance",
+  "url": "https://reddit.com/r/personalfinance/.rss",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "SavingAdvice.com Blog",
+  "topic": "finance",
+  "url": "https://www.savingadvice.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Side Hustle Nation",
+  "topic": "finance",
+  "url": "https://www.sidehustlenation.com/feed",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "So Money with Farnoosh Torabi",
+  "topic": "finance",
+  "url": "https://feeds.megaphone.fm/somoney",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "The Clark Howard Podcast",
+  "topic": "finance",
+  "url": "https://feeds.megaphone.fm/clarkhoward",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "The College Investor",
+  "topic": "finance",
+  "url": "https://thecollegeinvestor.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "The Ramsey Show",
+  "topic": "finance",
+  "url": "https://daveramsey.libsyn.com/rss",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "The Stacking Benjamins Show",
+  "topic": "finance",
+  "url": "https://feeds.megaphone.fm/stacking-benjamins",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Well Kept Wallet",
+  "topic": "finance",
+  "url": "https://wellkeptwallet.com/feed/",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Wise Bread",
+  "topic": "finance",
+  "url": "http://feeds.killeraces.com/wisebread",
+  "origin": "plenary:Personal finance"
+ },
+ {
+  "name": "Bloomberg Originals",
+  "topic": "business",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=Bloomberg",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "Business Insider",
+  "topic": "business",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=businessinsider",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "EconTalk",
+  "topic": "business",
+  "url": "https://feeds.simplecast.com/wgl4xEgL",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "Economic Times",
+  "topic": "business",
+  "url": "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "HBR IdeaCast",
+  "topic": "business",
+  "url": "http://feeds.harvardbusiness.org/harvardbusiness/ideacast",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "How I Built This with Guy Raz",
+  "topic": "business",
+  "url": "https://feeds.npr.org/510313/podcast.xml",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "Planet Money",
+  "topic": "business",
+  "url": "https://feeds.npr.org/510289/podcast.xml",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "Startup Stories - Mixergy",
+  "topic": "business",
+  "url": "https://feeds.feedburner.com/Mixergy-main-podcast",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "The Blog of Author Tim Ferriss",
+  "topic": "business",
+  "url": "https://tim.blog/feed/",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "The Duct Tape Marketing Podcast",
+  "topic": "business",
+  "url": "https://ducttape.libsyn.com/rss",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "The Growth Show",
+  "topic": "business",
+  "url": "http://thegrowthshow.hubspot.libsynpro.com/",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "US Top News and Analysis",
+  "topic": "business",
+  "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+  "origin": "plenary:Business & Economy"
+ },
+ {
+  "name": "Apple",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=Apple",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "Apple Newsroom",
+  "topic": "tech",
+  "url": "https://www.apple.com/newsroom/rss-feed.rss",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "AppleInsider News",
+  "topic": "tech",
+  "url": "https://appleinsider.com/rss/news/",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "Cult of Mac",
+  "topic": "tech",
+  "url": "https://www.cultofmac.com/feed",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "Daring Fireball",
+  "topic": "tech",
+  "url": "https://daringfireball.net/feeds/main",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "MacRumors",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=macrumors",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "MacRumors: Mac News and Rumors - Mac Blog",
+  "topic": "tech",
+  "url": "http://feeds.macrumors.com/MacRumors-Mac",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "MacStories",
+  "topic": "tech",
+  "url": "https://www.macstories.net/feed",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "Macworld",
+  "topic": "tech",
+  "url": "https://www.macworld.com/index.rss",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "Marco.org",
+  "topic": "tech",
+  "url": "https://marco.org/rss",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "OS X Daily",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/osxdaily",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "The Loop",
+  "topic": "tech",
+  "url": "https://www.loopinsight.com/feed",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "iMore - The #1 iPhone, iPad, and iPod touch blog",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/TheiPhoneBlog",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "r/Apple: Unofficial Apple Community",
+  "topic": "tech",
+  "url": "https://www.reddit.com/r/apple/.rss",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "r/iPhone",
+  "topic": "tech",
+  "url": "https://www.reddit.com/r/iphone/.rss",
+  "origin": "plenary:Apple"
+ },
+ {
+  "name": "AVC",
+  "topic": "tech",
+  "url": "https://avc.com/feed/",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Blog on Feld Thoughts",
+  "topic": "tech",
+  "url": "https://feld.com/archives/tag/blog/feed",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Entrepreneur – Latest",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/entrepreneur/latest",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Feld Thoughts",
+  "topic": "tech",
+  "url": "https://feld.com/feed",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "GaryVee",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=GaryVaynerchuk",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Inc.com",
+  "topic": "tech",
+  "url": "https://www.inc.com/rss/",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Marie Forleo",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=marieforleo",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Masters of Scale",
+  "topic": "tech",
+  "url": "https://rss.art19.com/masters-of-scale",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Paul Graham: Essays",
+  "topic": "tech",
+  "url": "http://www.aaronsw.com/2002/feeds/pgessays.rss",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Product Hunt — The best new products, every day",
+  "topic": "tech",
+  "url": "https://www.producthunt.com/feed",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Small Business Trends",
+  "topic": "tech",
+  "url": "https://feeds2.feedburner.com/SmallBusinessTrends",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Smart Passive Income",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/smartpassiveincome",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "Steve Blank",
+  "topic": "tech",
+  "url": "https://steveblank.com/feed/",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "The Intercom Blog",
+  "topic": "tech",
+  "url": "https://www.intercom.com/blog/feed",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "The Startup Junkies Podcast",
+  "topic": "tech",
+  "url": "https://startupjunkie.libsyn.com/rss",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "The Tim Ferriss Show",
+  "topic": "tech",
+  "url": "https://rss.art19.com/tim-ferriss-show",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "VentureBeat",
+  "topic": "tech",
+  "url": "https://feeds.feedburner.com/venturebeat/SZYF",
+  "origin": "plenary:Startups"
+ },
+ {
+  "name": "www.cyanogenmods.org",
+  "topic": "tech",
+  "url": "https://www.cyanogenmods.org/feed",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "All About Android (Audio)",
+  "topic": "tech",
+  "url": "https://feeds.twit.tv/aaa.xml",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android",
+  "topic": "tech",
+  "url": "https://blog.google/products/android/rss",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android",
+  "topic": "tech",
+  "url": "https://www.reddit.com/r/android/.rss",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android Authority",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=AndroidAuthority",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android Authority Podcast",
+  "topic": "tech",
+  "url": "https://androidauthority.libsyn.com/rss",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android Central Podcast",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/AndroidCentralPodcast",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android Community",
+  "topic": "tech",
+  "url": "https://androidcommunity.com/feed/",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Android Police",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/AndroidPolice",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Blind Android Users Podcast",
+  "topic": "tech",
+  "url": "https://anchor.fm/s/4495abac/podcast/rss",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Cult of Android",
+  "topic": "tech",
+  "url": "https://www.cultofandroid.com/feed",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Droid Life – Opinionated Android news.",
+  "topic": "tech",
+  "url": "https://www.droid-life.com/feed",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "GSMArena.com - Latest articles",
+  "topic": "tech",
+  "url": "https://www.gsmarena.com/rss-news-reviews.php3",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Latest from Android Central",
+  "topic": "tech",
+  "url": "http://feeds.androidcentral.com/androidcentral",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "Phandroid",
+  "topic": "tech",
+  "url": "http://feeds2.feedburner.com/AndroidPhoneFans",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "TalkAndroid",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/AndroidNewsGoogleAndroidForums",
+  "origin": "plenary:Android"
+ },
+ {
+  "name": "60-Second Science",
+  "topic": "science",
+  "url": "http://rss.sciam.com/sciam/60secsciencepodcast",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Discovery",
+  "topic": "science",
+  "url": "https://podcasts.files.bbci.co.uk/p002w557.rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "FlowingData",
+  "topic": "science",
+  "url": "https://flowingdata.com/feed",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Gastropod",
+  "topic": "science",
+  "url": "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/2a195077-f014-41d2-8313-ab190186b4c2/277bcd5c-0a05-4c14-8ba6-ab190186b4d5/podcast.rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Hidden Brain",
+  "topic": "science",
+  "url": "https://feeds.npr.org/510308/podcast.xml",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Invisibilia",
+  "topic": "science",
+  "url": "https://feeds.npr.org/510307/podcast.xml",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Latest Science News -- ScienceDaily",
+  "topic": "science",
+  "url": "https://www.sciencedaily.com/rss/all.xml",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Popular Science",
+  "topic": "science",
+  "url": "https://www.popsci.com/arcio/rss/",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Probably Science",
+  "topic": "science",
+  "url": "https://probablyscience.libsyn.com/rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Radiolab",
+  "topic": "science",
+  "url": "http://feeds.wnyc.org/radiolab",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Reddit Science",
+  "topic": "science",
+  "url": "https://reddit.com/r/science/.rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Sawbones: A Marital Tour of Misguided Medicine",
+  "topic": "science",
+  "url": "https://feeds.simplecast.com/y1LF_sn2",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Science",
+  "topic": "science",
+  "url": "https://gizmodo.com/tag/science/rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Scientific American Content: Global",
+  "topic": "science",
+  "url": "http://rss.sciam.com/ScientificAmerican-Global",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "Shirtloads of Science",
+  "topic": "science",
+  "url": "https://shirtloadsofscience.libsyn.com/rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "TED Talks Daily",
+  "topic": "science",
+  "url": "https://pa.tedcdn.com/feeds/talks.rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "The Infinite Monkey Cage",
+  "topic": "science",
+  "url": "https://podcasts.files.bbci.co.uk/b00snr0w.rss",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "This Week in Science – The Kickass Science Podcast",
+  "topic": "science",
+  "url": "http://www.twis.org/feed/",
+  "origin": "plenary:Science"
+ },
+ {
+  "name": "\"Human Nature\" Blog Feed",
+  "topic": "science",
+  "url": "http://feeds.feedburner.com/ConservationInternationalBlog",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Bionic Planet: Reversing Climate Change by Restoring Nature",
+  "topic": "science",
+  "url": "https://bionicplanet.libsyn.com/rss",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Conservation International",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCam5sCp6mzGBcn8ZBB2RBJg",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Environment",
+  "topic": "science",
+  "url": "https://www.reddit.com/r/environment/.rss",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Environment + Energy – The Conversation",
+  "topic": "science",
+  "url": "https://theconversation.com/au/environment/articles.atom",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Environment News, Earth News, Global Warming, Wild Life, Carbon Trading, Climate Business, Climate Change & Pollution News",
+  "topic": "science",
+  "url": "https://timesofindia.indiatimes.com/rssfeeds/2647163.cms",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Environment | The Guardian",
+  "topic": "science",
+  "url": "https://www.theguardian.com/us/environment/rss",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Good Good Good",
+  "topic": "science",
+  "url": "https://www.goodgoodgood.co/articles/rss.xml",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "NPR Topics: Environment",
+  "topic": "science",
+  "url": "https://feeds.npr.org/1025/rss.xml",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Prakati India",
+  "topic": "science",
+  "url": "https://www.prakati.in/feed/",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Vox",
+  "topic": "science",
+  "url": "https://www.vox.com/rss/energy-and-environment/index.xml",
+  "origin": "plenary:Environment"
+ },
+ {
+  "name": "Blackhat Library: Hacking techniques and research",
+  "topic": "tech",
+  "url": "https://www.reddit.com/r/blackhat/.rss",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "CyberWire Daily",
+  "topic": "tech",
+  "url": "https://feeds.megaphone.fm/cyberwire-daily-podcast",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Darknet Diaries",
+  "topic": "tech",
+  "url": "https://feeds.megaphone.fm/darknetdiaries",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Darknet – Hacking Tools, Hacker News & Cyber Security",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/darknethackers",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Google Online Security Blog",
+  "topic": "tech",
+  "url": "http://googleonlinesecurity.blogspot.com/atom.xml",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Hacking Humans",
+  "topic": "tech",
+  "url": "https://feeds.megaphone.fm/hacking-humans",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "ISF Podcast",
+  "topic": "tech",
+  "url": "https://audioboom.com/channels/4991893.rss",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Latest news",
+  "topic": "tech",
+  "url": "https://www.zdnet.com/topic/security/rss.xml",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Malicious Life",
+  "topic": "tech",
+  "url": "https://malicious.life/feed/podcast/",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Risky Business",
+  "topic": "tech",
+  "url": "https://risky.biz/feeds/risky-business",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Schneier on Security",
+  "topic": "tech",
+  "url": "http://www.schneier.com/blog/index.rdf",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Security Affairs",
+  "topic": "tech",
+  "url": "http://securityaffairs.co/wordpress/feed",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Smashing Security",
+  "topic": "tech",
+  "url": "http://www.smashingsecurity.com/rss",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Technical Information Security Content & Discussion",
+  "topic": "tech",
+  "url": "https://www.reddit.com/r/netsec/.rss",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "The Hacker News",
+  "topic": "tech",
+  "url": "http://thehackernews.com/feeds/posts/default",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "The Privacy, Security, & OSINT Show",
+  "topic": "tech",
+  "url": "http://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Threatpost",
+  "topic": "tech",
+  "url": "http://threatpost.com/feed",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "cybersecurity",
+  "topic": "tech",
+  "url": "https://www.reddit.com/r/cybersecurity/.rss",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "cybersecurity | TechCrunch",
+  "topic": "tech",
+  "url": "https://techcrunch.com/tag/cybersecurity/feed/",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "www.theregister.com - Articles",
+  "topic": "tech",
+  "url": "http://www.theregister.co.uk/security/headlines.atom",
+  "origin": "plenary:Cyber security"
+ },
+ {
+  "name": "Accidental Tech Podcast",
+  "topic": "tech",
+  "url": "https://atp.fm/rss",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Analog(ue)",
+  "topic": "tech",
+  "url": "https://www.relay.fm/analogue/feed",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "CNET",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=CNETTV",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Clockwise",
+  "topic": "tech",
+  "url": "https://www.relay.fm/clockwise/feed",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Crunch Hype",
+  "topic": "tech",
+  "url": "http://feeds.feedburner.com/TechCrunch",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Hacker News",
+  "topic": "tech",
+  "url": "https://news.ycombinator.com/rss",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Lifehacker",
+  "topic": "tech",
+  "url": "https://lifehacker.com/rss",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Linus Tech Tips",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=LinusTechTips",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Marques Brownlee",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=marquesbrownlee",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Mashable",
+  "topic": "tech",
+  "url": "http://feeds.mashable.com/Mashable",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "ReadWrite",
+  "topic": "tech",
+  "url": "https://readwrite.com/feed/",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Reply All",
+  "topic": "tech",
+  "url": "https://feeds.megaphone.fm/replyall",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Rocket",
+  "topic": "tech",
+  "url": "https://www.relay.fm/rocket/feed",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Stratechery by Ben Thompson",
+  "topic": "tech",
+  "url": "http://stratechery.com/feed/",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "The Keyword",
+  "topic": "tech",
+  "url": "https://www.blog.google/rss/",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "The Verge",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=TheVerge",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "The Vergecast",
+  "topic": "tech",
+  "url": "https://feeds.megaphone.fm/vergecast",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "This Week in Tech (Audio)",
+  "topic": "tech",
+  "url": "https://feeds.twit.tv/twit.xml",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "Unbox Therapy",
+  "topic": "tech",
+  "url": "https://www.youtube.com/feeds/videos.xml?user=unboxtherapy",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "www.theregister.com - Articles",
+  "topic": "tech",
+  "url": "https://www.theregister.com/headlines.rss",
+  "origin": "plenary:Tech"
+ },
+ {
+  "name": "BBC Earth",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCwmZiChSryoWQCZMIQezgTg",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "BBC Earth Podcast",
+  "topic": "science",
+  "url": "https://rss.acast.com/bbcearthpodcast",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "BLOG POSTS – Mark Avery",
+  "topic": "science",
+  "url": "https://markavery.info/blog/feed/",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Blog | Nature | PBS",
+  "topic": "science",
+  "url": "https://www.pbs.org/wnet/nature/blog/feed/",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "EarthPorn: Amazing images of light and landscape",
+  "topic": "science",
+  "url": "https://www.reddit.com/r/EarthPorn/.rss",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Explore Oceans",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSyg9cb3Iq-NtlbxqNB9wGw",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "National Geographic",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpVm7bg6pXKo1Pr6k5kxG9A",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Nature",
+  "topic": "science",
+  "url": "http://feeds.nature.com/nature/rss/current?x=1",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Nature",
+  "topic": "science",
+  "url": "https://www.reddit.com/r/nature/.rss",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Nature Gifs",
+  "topic": "science",
+  "url": "https://www.reddit.com/r/NatureGifs/.rss",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Nature on PBS",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCcBp_9YPyma4c3HTadmRJ3Q",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Reflections of the Natural World",
+  "topic": "science",
+  "url": "https://reflectionsofthenaturalworld.com/feed/",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Stories Archives - Nature Canada",
+  "topic": "science",
+  "url": "https://naturecanada.ca/category/news/blog/feed/",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "nature video",
+  "topic": "science",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC7c8mE90qCtu11z47U0KErg",
+  "origin": "plenary:Nature"
+ },
+ {
+  "name": "Japan Times latest articles",
+  "topic": "world",
+  "url": "https://www.japantimes.co.jp/feed/topstories/",
+  "origin": "plenary:Japan"
+ },
+ {
+  "name": "Japan Today",
+  "topic": "world",
+  "url": "https://japantoday.com/feed",
+  "origin": "plenary:Japan"
+ },
+ {
+  "name": "News On Japan",
+  "topic": "world",
+  "url": "http://www.newsonjapan.com/rss/top.xml",
+  "origin": "plenary:Japan"
+ },
+ {
+  "name": "BRIDGE（ブリッジ）テクノロジー＆スタートアップ情報",
+  "topic": "world",
+  "url": "http://feeds.feedburner.com/SdJapan",
+  "origin": "plenary:Japan"
+ },
+ {
+  "name": "ライブドアニュース - 主要トピックス",
+  "topic": "world",
+  "url": "https://news.livedoor.com/topics/rss/top.xml",
+  "origin": "plenary:Japan"
+ },
+ {
+  "name": "朝日新聞デジタル",
+  "topic": "world",
+  "url": "http://rss.asahi.com/rss/asahi/newsheadlines.rdf",
+  "origin": "plenary:Japan"
+ },
+ {
+  "name": "Folha de S.Paulo - Em cima da hora - Principal",
+  "topic": "world",
+  "url": "https://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
+  "origin": "plenary:Brazil"
+ },
+ {
+  "name": "Portal EBC - RSS",
+  "topic": "world",
+  "url": "http://www.ebc.com.br/rss/feed.xml",
+  "origin": "plenary:Brazil"
+ },
+ {
+  "name": "R7 - Notícias",
+  "topic": "world",
+  "url": "https://noticias.r7.com/feed.xml",
+  "origin": "plenary:Brazil"
+ },
+ {
+  "name": "UOL",
+  "topic": "world",
+  "url": "http://rss.home.uol.com.br/index.xml",
+  "origin": "plenary:Brazil"
+ },
+ {
+  "name": "Brasil Wire",
+  "topic": "world",
+  "url": "http://www.brasilwire.com/feed/",
+  "origin": "plenary:Brazil"
+ },
+ {
+  "name": "Jornal de Brasília",
+  "topic": "world",
+  "url": "https://jornaldebrasilia.com.br/feed/",
+  "origin": "plenary:Brazil"
+ },
+ {
+  "name": "BD24Live.com",
+  "topic": "world",
+  "url": "https://www.bd24live.com/feed",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "bdnews24.com - Home",
+  "topic": "world",
+  "url": "https://bdnews24.com/?widgetName=rssfeed&widgetId=1150&getXmlFeed=true",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "Bangla News",
+  "topic": "world",
+  "url": "https://www.banglanews24.com/rss/rss.xml",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "JUGANTOR",
+  "topic": "world",
+  "url": "https://www.jugantor.com/feed/rss.xml",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "jagonews24.com | rss Feed",
+  "topic": "world",
+  "url": "https://www.jagonews24.com/rss/rss.xml",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "kalerkantho Kantho",
+  "topic": "world",
+  "url": "https://www.kalerkantho.com/rss.xml",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "প্রথম আলো",
+  "topic": "world",
+  "url": "https://www.prothomalo.com/feed/",
+  "origin": "plenary:Bangladesh"
+ },
+ {
+  "name": "Mediapart",
+  "topic": "world",
+  "url": "https://www.mediapart.fr/articles/feed",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "Paris Star",
+  "topic": "world",
+  "url": "https://www.parisstaronline.com/feed",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "Le Monde.fr - Actualités et Infos en France et dans le monde",
+  "topic": "world",
+  "url": "https://www.lemonde.fr/rss/une.xml",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "L'Obs - A la une",
+  "topic": "world",
+  "url": "https://www.nouvelobs.com/a-la-une/rss.xml",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "Franceinfo - Les Titres",
+  "topic": "world",
+  "url": "https://www.francetvinfo.fr/titres.rss",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "Le Huffington Post",
+  "topic": "world",
+  "url": "https://www.huffingtonpost.fr/feeds/index.xml",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "La Dépêche du Midi : actualités et info en direct de la région Occitanie et des environs - ladepeche.fr",
+  "topic": "world",
+  "url": "https://www.ladepeche.fr/rss.xml",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "Ministry for Europe and Foreign Affairs - Actualités",
+  "topic": "world",
+  "url": "https://www.diplomatie.gouv.fr/spip.php?page=backend-fd&lang=en",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "L'essentiel",
+  "topic": "world",
+  "url": "https://www.sudouest.fr/essentiel/rss.xml",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "Ouest-France - Actualité",
+  "topic": "world",
+  "url": "https://www.ouest-france.fr/rss-en-continu.xml",
+  "origin": "plenary:France"
+ },
+ {
+  "name": "ZEIT ONLINE | Nachrichten, Hintergründe und Debatten",
+  "topic": "world",
+  "url": "http://newsfeed.zeit.de/index",
+  "origin": "plenary:Germany"
+ },
+ {
+  "name": "FOCUS Online",
+  "topic": "world",
+  "url": "https://rss.focus.de/fol/XML/rss_folnews.xml",
+  "origin": "plenary:Germany"
+ },
+ {
+  "name": "Aktuell - FAZ.NET",
+  "topic": "world",
+  "url": "https://www.faz.net/rss/aktuell/",
+  "origin": "plenary:Germany"
+ },
+ {
+  "name": "tagesschau.de - Die Nachrichten der ARD",
+  "topic": "world",
+  "url": "http://www.tagesschau.de/xml/rss2",
+  "origin": "plenary:Germany"
+ },
+ {
+  "name": "Deutsche Welle",
+  "topic": "world",
+  "url": "https://rss.dw.com/rdf/rss-en-all",
+  "origin": "plenary:Germany"
+ },
+ {
+  "name": "All Content",
+  "topic": "world",
+  "url": "http://saharareporters.com/feeds/latest/feed",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Nigeria News Links | Today's Updates - Nigerian Bulletin",
+  "topic": "world",
+  "url": "https://www.nigerianbulletin.com/forums/-/index.rss",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Nigerian News. Latest Nigeria News. Your online Nigerian Newspaper.",
+  "topic": "world",
+  "url": "http://feeds.feedburner.com/Nigerianeye",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Legit.ng",
+  "topic": "world",
+  "url": "https://www.legit.ng/rss/all.rss",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Latest Nigeria News, Nigerian Newspapers, Politics",
+  "topic": "world",
+  "url": "https://thenationonlineng.net/feed/",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Daily Post Nigeria",
+  "topic": "world",
+  "url": "https://dailypost.ng/feed",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Information Nigeria",
+  "topic": "world",
+  "url": "https://www.informationng.com/feed",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "The Guardian Nigeria News – Nigeria and World News",
+  "topic": "world",
+  "url": "https://guardian.ng/feed/",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "Tribune Online",
+  "topic": "world",
+  "url": "http://tribuneonlineng.com/feed/",
+  "origin": "plenary:Nigeria"
+ },
+ {
+  "name": "RSS di   - ANSA.it",
+  "topic": "world",
+  "url": "https://www.ansa.it/sito/ansait_rss.xml",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "The Local",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/it",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "RSS DiariodelWeb.it",
+  "topic": "world",
+  "url": "https://www.diariodelweb.it/rss/home/",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Fanpage",
+  "topic": "world",
+  "url": "https://www.fanpage.it/feed/",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Libero Quotidiano",
+  "topic": "world",
+  "url": "https://www.liberoquotidiano.it/rss.xml",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Il Mattino Web",
+  "topic": "world",
+  "url": "https://www.ilmattino.it/?sez=XML&args&p=search&args[box]=Home&limit=20&layout=rss",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Adnkronos - ultimoratop",
+  "topic": "world",
+  "url": "http://rss.adnkronos.com/RSS_PrimaPagina.xml",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Milan News",
+  "topic": "world",
+  "url": "https://www.milannews.it/rss/",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Internazionale",
+  "topic": "world",
+  "url": "https://www.internazionale.it/sitemaps/rss.xml",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Panorama",
+  "topic": "world",
+  "url": "https://www.panorama.it/feeds/feed.rss",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Italy | The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/italy/rss",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "Il Post",
+  "topic": "world",
+  "url": "https://www.ilpost.it/feed/",
+  "origin": "plenary:Italy"
+ },
+ {
+  "name": "All: BreakingNews.ie",
+  "topic": "uk",
+  "url": "https://feeds.breakingnews.ie/bntopstories",
+  "origin": "plenary:Ireland"
+ },
+ {
+  "name": "The42",
+  "topic": "uk",
+  "url": "https://www.the42.ie/feed/",
+  "origin": "plenary:Ireland"
+ },
+ {
+  "name": "IrishExaminer.com",
+  "topic": "uk",
+  "url": "https://feeds.feedburner.com/ietopstories",
+  "origin": "plenary:Ireland"
+ },
+ {
+  "name": "IrishCentral.com - Top Stories",
+  "topic": "uk",
+  "url": "https://feeds.feedburner.com/IrishCentral",
+  "origin": "plenary:Ireland"
+ },
+ {
+  "name": "Irish Mirror - Home",
+  "topic": "uk",
+  "url": "https://www.irishmirror.ie/?service=rss",
+  "origin": "plenary:Ireland"
+ },
+ {
+  "name": "BBC News - Home",
+  "topic": "uk",
+  "url": "http://feeds.bbci.co.uk/news/rss.xml",
+  "origin": "plenary:United Kingdom"
+ },
+ {
+  "name": "Home | Mail Online",
+  "topic": "uk",
+  "url": "https://www.dailymail.co.uk/home/index.rss",
+  "origin": "plenary:United Kingdom"
+ },
+ {
+  "name": "Daily Express :: News Feed",
+  "topic": "uk",
+  "url": "http://feeds.feedburner.com/daily-express-news-showbiz",
+  "origin": "plenary:United Kingdom"
+ },
+ {
+  "name": "Mexico | The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/mexico/rss",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "Excélsior - RSS",
+  "topic": "world",
+  "url": "https://www.excelsior.com.mx/rss.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "Reforma",
+  "topic": "world",
+  "url": "https://www.reforma.com/rss/portada.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "Lo último en Vanguardia MX",
+  "topic": "world",
+  "url": "https://vanguardia.com.mx/rss.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "Portada, El Siglo de Torreón",
+  "topic": "world",
+  "url": "https://www.elsiglodetorreon.com.mx/index.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "El Financiero",
+  "topic": "world",
+  "url": "https://www.elfinanciero.com.mx/arc/outboundfeeds/rss/?outputType=xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "ElNorte",
+  "topic": "world",
+  "url": "https://www.elnorte.com/rss/portada.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "El Informador :: Noticias de Jalisco, México, Deportes & Entretenimiento",
+  "topic": "world",
+  "url": "https://www.informador.mx/rss/ultimas-noticias.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "24 Horas",
+  "topic": "world",
+  "url": "https://www.24-horas.mx/feed/",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "Tu Periódico Quequi",
+  "topic": "world",
+  "url": "https://quequi.com.mx/feed/",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "DEBATE",
+  "topic": "world",
+  "url": "https://www.debate.com.mx/rss/feed.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "El Diario",
+  "topic": "world",
+  "url": "https://diario.mx/jrz/media/sitemaps/rss.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "8 Columnas",
+  "topic": "world",
+  "url": "https://8columnas.com.mx/feed/",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "www.eluniversal.com.mx",
+  "topic": "world",
+  "url": "https://www.eluniversal.com.mx/seccion/1671/rss.xml",
+  "origin": "plenary:Mexico"
+ },
+ {
+  "name": "Republika Online RSS Feed",
+  "topic": "world",
+  "url": "https://www.republika.co.id/rss/",
+  "origin": "plenary:Indonesia"
+ },
+ {
+  "name": "Tribunnews.com",
+  "topic": "world",
+  "url": "https://www.tribunnews.com/rss",
+  "origin": "plenary:Indonesia"
+ },
+ {
+  "name": "Merdeka.com",
+  "topic": "world",
+  "url": "https://www.merdeka.com/feed/",
+  "origin": "plenary:Indonesia"
+ },
+ {
+  "name": "Suara.com",
+  "topic": "world",
+  "url": "https://www.suara.com/rss",
+  "origin": "plenary:Indonesia"
+ },
+ {
+  "name": "Myanmar Gazette News Media Forum Network",
+  "topic": "world",
+  "url": "http://myanmargazette.net/feed",
+  "origin": "plenary:Myanmar (Burma)"
+ },
+ {
+  "name": "DVB Multimedia Group",
+  "topic": "world",
+  "url": "http://www.dvb.no/feed",
+  "origin": "plenary:Myanmar (Burma)"
+ },
+ {
+  "name": "THIT HTOO LWIN (Daily News)",
+  "topic": "world",
+  "url": "http://www.thithtoolwin.com/feeds/posts/default",
+  "origin": "plenary:Myanmar (Burma)"
+ },
+ {
+  "name": "The Local",
+  "topic": "world",
+  "url": "https://feeds.thelocal.com/rss/es",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "EL PAÍS: el periódico global",
+  "topic": "world",
+  "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "España",
+  "topic": "world",
+  "url": "https://rss.elconfidencial.com/espana/",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "ElDiario.es - ElDiario.es",
+  "topic": "world",
+  "url": "https://www.eldiario.es/rss/",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "Portada // expansion",
+  "topic": "world",
+  "url": "https://e00-expansion.uecdn.es/rss/portada.xml",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "El Periódico - portada",
+  "topic": "world",
+  "url": "https://www.elperiodico.com/es/rss/rss_portada.xml",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "huffingtonpost.es",
+  "topic": "world",
+  "url": "https://www.huffingtonpost.es/feeds/index.xml",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "Euro Weekly News Spain",
+  "topic": "world",
+  "url": "https://www.euroweeklynews.com/feed/",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "Agencia EFE | www.efe.com | English edition",
+  "topic": "world",
+  "url": "https://www.efe.com/efe/english/4/rss",
+  "origin": "plenary:Spain"
+ },
+ {
+  "name": "CBC | Top Stories News",
+  "topic": "world",
+  "url": "https://www.cbc.ca/cmlink/rss-topstories",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "Financial Post",
+  "topic": "world",
+  "url": "https://business.financialpost.com/feed/",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "Ottawa Citizen",
+  "topic": "world",
+  "url": "https://ottawacitizen.com/feed/",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "The Province",
+  "topic": "world",
+  "url": "https://theprovince.com/feed/",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "LaPresse.ca - Actualités",
+  "topic": "world",
+  "url": "https://www.lapresse.ca/actualites/rss",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "Toronto Star",
+  "topic": "world",
+  "url": "https://www.thestar.com/content/thestar/feed.RSSManagerServlet.articles.topstories.rss",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "Toronto Sun - RSS Feed",
+  "topic": "world",
+  "url": "https://torontosun.com/category/news/feed",
+  "origin": "plenary:Canada"
+ },
+ {
+  "name": "Latest News and News Headlines | Daily Telegraph",
+  "topic": "world",
+  "url": "https://www.dailytelegraph.com.au/news/breaking-news/rss",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "Latest News and News Headlines | Herald Sun",
+  "topic": "world",
+  "url": "https://www.heraldsun.com.au/news/breaking-news/rss",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "ABC News",
+  "topic": "world",
+  "url": "https://www.abc.net.au/news/feed/1948/rss.xml",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "The Courier Mail",
+  "topic": "world",
+  "url": "https://www.couriermail.com.au/rss",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "PerthNow",
+  "topic": "world",
+  "url": "https://www.perthnow.com.au/news/feed",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "The Canberra Times - Local News",
+  "topic": "world",
+  "url": "https://www.canberratimes.com.au/rss.xml",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "Brisbane Times - Latest News",
+  "topic": "world",
+  "url": "https://www.brisbanetimes.com.au/rss/feed.xml",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "Independent Australia",
+  "topic": "world",
+  "url": "http://feeds.feedburner.com/IndependentAustralia",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "Business News - Latest Headlines",
+  "topic": "world",
+  "url": "https://www.businessnews.com.au/rssfeed/latest.rss",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "InDaily",
+  "topic": "world",
+  "url": "https://indaily.com.au/feed/",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "The Mercury",
+  "topic": "world",
+  "url": "https://www.themercury.com.au/rss",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "Crikey",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/com/rCTl",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "KUSA - News",
+  "topic": "world",
+  "url": "http://rssfeeds.9news.com/kusa/home&x=1",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "Michael West",
+  "topic": "world",
+  "url": "https://www.michaelwest.com.au/feed/",
+  "origin": "plenary:Australia"
+ },
+ {
+  "name": "خبرگزاری باشگاه خبرنگاران | آخرین اخبار ایران و جهان | YJC",
+  "topic": "world",
+  "url": "https://www.yjc.ir/fa/rss/allnews",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "تابناک | TABNAK",
+  "topic": "world",
+  "url": "https://www.tabnak.ir/fa/rss/allnews",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "خبرگزاری ایسنا | صفحه اصلی |  ISNA News Agency",
+  "topic": "world",
+  "url": "https://www.isna.ir/rss",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "خبرگزاری مهر | اخبار ایران و جهان | Mehr News Agency",
+  "topic": "world",
+  "url": "https://www.mehrnews.com/rss",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "خبرگزاری خبرآنلاین - آخرین اخبار ایران و جهان | Khabaronline",
+  "topic": "world",
+  "url": "https://www.khabaronline.ir/rss",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "اخبار ایران و جهان",
+  "topic": "world",
+  "url": "https://www.tasnimnews.com/fa/rss/feed/0/8/0/%D9%85%D9%87%D9%85%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%AA%D8%B3%D9%86%DB%8C%D9%85",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "عصر ايران",
+  "topic": "world",
+  "url": "https://www.asriran.com/fa/rss/allnews",
+  "origin": "plenary:Iran"
+ },
+ {
+  "name": "INQUIRER.net",
+  "topic": "world",
+  "url": "https://www.inquirer.net/fullfeed",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Latest News | Philippine Information Agency",
+  "topic": "world",
+  "url": "https://pia.gov.ph/news/feed.rss",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Interaksyon",
+  "topic": "world",
+  "url": "https://www.interaksyon.com/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "- The Manila Times",
+  "topic": "world",
+  "url": "https://www.manilatimes.net/rssfeed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "philstar.com - RSS Headlines",
+  "topic": "world",
+  "url": "https://www.philstar.com/rss/headlines",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "BusinessWorld",
+  "topic": "world",
+  "url": "https://www.bworldonline.com/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "https://www.sunstar.com.ph/",
+  "topic": "world",
+  "url": "https://www.sunstar.com.ph/rssFeed/selected",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "PhilNews.XYZ",
+  "topic": "world",
+  "url": "https://www.philnews.xyz/feeds/posts/default?alt=rss",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Manila Standard",
+  "topic": "world",
+  "url": "https://manilastandard.net/feed/all",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "GMA News Online / News",
+  "topic": "world",
+  "url": "https://data.gmanews.tv/gno/rss/news/feed.xml",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Current PH",
+  "topic": "world",
+  "url": "https://currentph.com/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Top Gear: The Philippine authority on cars and the automotive industry",
+  "topic": "world",
+  "url": "https://www.topgear.com.ph/feed/rss1",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Eagle News",
+  "topic": "world",
+  "url": "https://www.eaglenews.ph/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "UNBOX PH",
+  "topic": "world",
+  "url": "https://www.unbox.ph/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Tempo – The Nation's Fastest Growing Newspaper",
+  "topic": "world",
+  "url": "http://tempo.com.ph/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Abante Tonite",
+  "topic": "world",
+  "url": "https://tonite.abante.com.ph/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "BusinessMirror",
+  "topic": "world",
+  "url": "https://businessmirror.com.ph/feed/",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "Latest News | Philippine News Agency",
+  "topic": "world",
+  "url": "https://www.pna.gov.ph/latest.rss",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "TechPinas : Philippines' Technology News, Tips and Reviews Blog",
+  "topic": "world",
+  "url": "http://feeds.feedburner.com/Techpinas",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "BICOL STANDARD | Bicol News | Bicol Newspaper",
+  "topic": "world",
+  "url": "http://www.bicolstandard.com/feeds/posts/default?alt=rss",
+  "origin": "plenary:Philippines"
+ },
+ {
+  "name": "The Nation - Top Stories",
+  "topic": "world",
+  "url": "https://nation.com.pk/rss/top-stories",
+  "origin": "plenary:Pakistan"
+ },
+ {
+  "name": "قومی خبریں",
+  "topic": "world",
+  "url": "https://jang.com.pk/rss/1/1",
+  "origin": "plenary:Pakistan"
+ },
+ {
+  "name": "The News International - Pakistan",
+  "topic": "world",
+  "url": "https://www.thenews.com.pk/rss/1/1",
+  "origin": "plenary:Pakistan"
+ },
+ {
+  "name": "News Blog",
+  "topic": "world",
+  "url": "https://newsnblogs.com/feed/",
+  "origin": "plenary:Pakistan"
+ },
+ {
+  "name": "UrduPoint.com All Urdu News",
+  "topic": "world",
+  "url": "https://www.urdupoint.com/rss/urdupoint.rss",
+  "origin": "plenary:Pakistan"
+ },
+ {
+  "name": "ایکسپریس اردو",
+  "topic": "world",
+  "url": "https://www.express.pk/feed/",
+  "origin": "plenary:Pakistan"
+ },
+ {
+  "name": "FOX News",
+  "topic": "world",
+  "url": "http://feeds.foxnews.com/foxnews/latest",
+  "origin": "plenary:United States"
+ },
+ {
+  "name": "WSJ.com: World News",
+  "topic": "world",
+  "url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
+  "origin": "plenary:United States"
+ },
+ {
+  "name": "Yahoo News - Latest News & Headlines",
+  "topic": "world",
+  "url": "https://news.yahoo.com/rss/mostviewed",
+  "origin": "plenary:United States"
+ },
+ {
+  "name": "Playbook",
+  "topic": "world",
+  "url": "https://rss.politico.com/playbook.xml",
+  "origin": "plenary:United States"
+ },
+ {
+  "name": "Najnowsze",
+  "topic": "world",
+  "url": "http://feeds.feedburner.com/wPolitycepl",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "Newsweek Polska",
+  "topic": "world",
+  "url": "https://www.newsweek.pl/rss.xml",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "Dziennik.pl Dziennik - dziennik.pl",
+  "topic": "world",
+  "url": "http://rss.dziennik.pl/Dziennik-PL/",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "www.wirtualnemedia.pl",
+  "topic": "world",
+  "url": "https://www.wirtualnemedia.pl/rss/wirtualnemedia_rss.xml",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "GazetaPrawna.pl - biznes, podatki, prawo, finanse, wiadomości, praca",
+  "topic": "world",
+  "url": "http://rss.gazetaprawna.pl/GazetaPrawna",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "https://www.rp.pl",
+  "topic": "world",
+  "url": "https://www.rp.pl/rss/1019",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "Polska Agencja Prasowa SA",
+  "topic": "world",
+  "url": "https://www.pap.pl/rss.xml",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "RMF24.pl",
+  "topic": "world",
+  "url": "https://www.rmf24.pl/feed",
+  "origin": "plenary:Poland"
+ },
+ {
+  "name": "頭條日報 Headline Daily - 頭條網",
+  "topic": "world",
+  "url": "https://hd.stheadline.com/rss/news/daily/",
+  "origin": "plenary:Hong Kong SAR China"
+ },
+ {
+  "name": "香港新聞RSS - 香港經濟日報 hket.com",
+  "topic": "world",
+  "url": "https://www.hket.com/rss/hongkong",
+  "origin": "plenary:Hong Kong SAR China"
+ },
+ {
+  "name": "hongkongnews.net latest rss headlines",
+  "topic": "world",
+  "url": "http://feeds.hongkongnews.net/rss/b82693edf38ebff8",
+  "origin": "plenary:Hong Kong SAR China"
+ },
+ {
+  "name": "News Agency UNIAN",
+  "topic": "world",
+  "url": "https://rss.unian.net/site/news_eng.rss",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "ТЕЛЕГРАФ - последние новости Украины и мира",
+  "topic": "world",
+  "url": "https://telegraf.com.ua/yandex-feed/",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Последние новости на сайте korrespondent.net",
+  "topic": "world",
+  "url": "http://k.img.com.ua/rss/ru/all_news2.0.xml",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Цензор.НЕТ - Новости",
+  "topic": "world",
+  "url": "https://censor.net.ua/includes/news_ru.xml",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Новини на tsn.ua",
+  "topic": "world",
+  "url": "https://tsn.ua/rss/full.rss",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Українська правда",
+  "topic": "world",
+  "url": "https://www.pravda.com.ua/rss/",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Гордон - Самые популярные материалы",
+  "topic": "world",
+  "url": "https://gordonua.com/xml/rss_category/top.html",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "НВ",
+  "topic": "world",
+  "url": "https://nv.ua/rss/all.xml",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Информационное агентство УНИАН",
+  "topic": "world",
+  "url": "https://rss.unian.net/site/news_rus.rss",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Еспресо - український погляд на світ!",
+  "topic": "world",
+  "url": "https://espreso.tv/rss",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Gazeta.ua",
+  "topic": "world",
+  "url": "https://gazeta.ua/rss",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Вести.ua",
+  "topic": "world",
+  "url": "https://vesti.ua/feeds/partners",
+  "origin": "plenary:Ukraine"
+ },
+ {
+  "name": "Lenta.ru : Новости",
+  "topic": "world",
+  "url": "https://lenta.ru/rss",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Вести.Ru",
+  "topic": "world",
+  "url": "https://www.vesti.ru/vesti.rss",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Газета.Ru - Первая полоса",
+  "topic": "world",
+  "url": "https://www.gazeta.ru/export/rss/first.xml",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Все материалы - Московский Комсомолец",
+  "topic": "world",
+  "url": "https://www.mk.ru/rss/index.xml",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Российская Газета",
+  "topic": "world",
+  "url": "https://rg.ru/xml/index.xml",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "NEWSru.com :: Главные новости",
+  "topic": "world",
+  "url": "https://rss.newsru.com/top/big/",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "RT - Daily news",
+  "topic": "world",
+  "url": "https://www.rt.com/rss/",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Meduza.io",
+  "topic": "world",
+  "url": "https://meduza.io/rss/all",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Russia Insider Daily Headlines",
+  "topic": "world",
+  "url": "https://russia-insider.com/en/all-content/rss",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "TASS",
+  "topic": "world",
+  "url": "http://tass.com/rss/v2.xml",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "Газета",
+  "topic": "world",
+  "url": "https://www.kommersant.ru/RSS/main.xml",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "PravdaReport",
+  "topic": "world",
+  "url": "https://www.pravdareport.com/export.xml",
+  "origin": "plenary:Russia"
+ },
+ {
+  "name": "SowetanLIVE",
+  "topic": "world",
+  "url": "https://www.sowetanlive.co.za/rss/?publication=sowetan-live",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "TechCentral",
+  "topic": "world",
+  "url": "https://techcentral.co.za/feed",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "Eyewitness News | Latest News",
+  "topic": "world",
+  "url": "https://ewn.co.za/RSS%20Feeds/Latest%20News",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "The Citizen",
+  "topic": "world",
+  "url": "https://citizen.co.za/feed/",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "Moneyweb",
+  "topic": "world",
+  "url": "https://www.moneyweb.co.za/feed/",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "IOL section feed for News",
+  "topic": "world",
+  "url": "http://rss.iol.io/iol/news",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "TimesLIVE",
+  "topic": "world",
+  "url": "https://www.timeslive.co.za/rss/",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "The South African",
+  "topic": "world",
+  "url": "https://www.thesouthafrican.com/feed/",
+  "origin": "plenary:South Africa"
+ },
+ {
+  "name": "BBC News - India",
+  "topic": "world",
+  "url": "http://feeds.bbci.co.uk/news/world/asia/india/rss.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "India | The Guardian",
+  "topic": "world",
+  "url": "https://www.theguardian.com/world/india/rss",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "SEBI RSS Feed",
+  "topic": "world",
+  "url": "https://www.sebi.gov.in/sebirss.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "The Hindu - Home",
+  "topic": "world",
+  "url": "https://www.thehindu.com/feeder/default.rss",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "India Today | Latest Stories",
+  "topic": "world",
+  "url": "https://www.indiatoday.in/rss/home",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Front Page | The Indian Express",
+  "topic": "world",
+  "url": "http://indianexpress.com/print/front-page/feed/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Top World News- News18.com",
+  "topic": "world",
+  "url": "https://www.news18.com/rss/world.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "India News",
+  "topic": "world",
+  "url": "https://www.dnaindia.com/feeds/india.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Firstpost India Latest News",
+  "topic": "world",
+  "url": "https://www.firstpost.com/rss/india.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Home Page",
+  "topic": "world",
+  "url": "https://www.business-standard.com/rss/home_page_top_stories.rss",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Outlook India",
+  "topic": "world",
+  "url": "https://www.outlookindia.com/rss/main/magazine",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Free Press Journal",
+  "topic": "world",
+  "url": "https://www.freepressjournal.in/stories.rss",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Deccan Chronicle - Latest India news | Breaking news | Hyderabad News | World news | Business news | Politics | Technology news",
+  "topic": "world",
+  "url": "https://www.deccanchronicle.com/rss_feed/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Moneycontrol Latest News",
+  "topic": "world",
+  "url": "http://www.moneycontrol.com/rss/latestnews.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "News, Latest News, Today's News Headlines, Breaking News, LIVE News - Oneindia",
+  "topic": "world",
+  "url": "https://www.oneindia.com/rss/news-fb.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "The Financial Express",
+  "topic": "world",
+  "url": "https://www.financialexpress.com/feed/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Business Line - Home",
+  "topic": "world",
+  "url": "https://www.thehindubusinessline.com/feeder/default.rss",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "TechGenyz",
+  "topic": "world",
+  "url": "http://feeds.feedburner.com/techgenyz",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Top Stories News - Gujarat Samachar : World's Leading Gujarati Newspaper",
+  "topic": "world",
+  "url": "https://www.gujaratsamachar.com/rss/top-stories",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Marathi News: मराठी बातम्या,  Latest News in Marathi, Breaking Marathi News, Marathi News Paper | Maharashtra Times",
+  "topic": "world",
+  "url": "https://maharashtratimes.com/rssfeedsdefault.cms",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Loksattaदेश-विदेश – Loksatta",
+  "topic": "world",
+  "url": "https://www.loksatta.com/desh-videsh/feed/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Latest News program News18 Lokmat",
+  "topic": "world",
+  "url": "https://lokmat.news18.com/rss/program.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "OpIndia",
+  "topic": "world",
+  "url": "https://feeds.feedburner.com/opindia",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "ThePrint",
+  "topic": "world",
+  "url": "https://theprint.in/feed/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Swarajya",
+  "topic": "world",
+  "url": "https://prod-qt-images.s3.amazonaws.com/production/swarajya/feed.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Latest And Breaking Hindi News Headlines, News In Hindi | अमर उजाला हिंदी न्यूज़ | - Amar Ujala",
+  "topic": "world",
+  "url": "https://www.amarujala.com/rss/breaking-news.xml",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Navbharat Times",
+  "topic": "world",
+  "url": "https://navbharattimes.indiatimes.com/rssfeedsdefault.cms",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Patrika : India's Leading Hindi News Portal",
+  "topic": "world",
+  "url": "http://api.patrika.com/rss/india-news",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "JansattaJansatta",
+  "topic": "world",
+  "url": "https://www.jansatta.com/feed/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "Live Hindustan Rss feed",
+  "topic": "world",
+  "url": "https://feed.livehindustan.com/rss/3127",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "देश | दैनिक भास्कर",
+  "topic": "world",
+  "url": "https://www.bhaskar.com/rss-feed/1061/",
+  "origin": "plenary:India"
+ },
+ {
+  "name": "ઈન્ડિયા | દિવ્ય ભાસ્કર",
+  "topic": "world",
+  "url": "https://www.divyabhaskar.co.in/rss-feed/1037/",
+  "origin": "plenary:India"
+ }
+]

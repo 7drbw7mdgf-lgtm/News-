@@ -1,0 +1,39 @@
+name: Check candidate feeds
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - feeds/candidates.json
+      - scripts/check-feeds.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: check-feeds
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test every candidate feed
+        run: python3 scripts/check-feeds.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add feeds/check-results.json
+          git commit -m 'Record feed check results [skip ci]' || exit 0
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
