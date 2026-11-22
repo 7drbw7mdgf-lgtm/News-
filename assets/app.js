@@ -250,7 +250,9 @@
 
     return '<div class="masthead-wrap">' +
       '<div class="wrap"><header class="topbar">' +
-      '<button class="brand" data-act="home" aria-label="Pheme home">Pheme</button>' +
+      '<button class="brand" data-act="home" aria-label="Pheme home">' +
+      '<img class="brand-logo" src="assets/images/pheme-logo.png" alt="" width="44" height="44" decoding="async">' +
+      '<span>Pheme</span></button>' +
       '<div class="topbar-date">' + esc(displayDate()) + '</div>' +
       '<div class="topbar-actions">' +
       '<button class="search-toggle' + (state.searchOpen ? ' on' : '') + '" data-act="togglesearch" aria-label="Search stories" aria-expanded="' + state.searchOpen + '">' + ICON.search + '</button>' +
