@@ -358,3 +358,34 @@ body.reader-focus .dashboard-body {
   .paper-logo-aj, .paper-logo-ft { font-size: 49px; }
   .paper-logo-economist { min-width: 135px; font-size: 21px; }
 }
+
+
+/* Publisher favicon assets with a readable fallback when blocked or unavailable. */
+.paper-logo-asset { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; height: 90px; }
+.paper-logo-image { position: relative; z-index: 1; width: 78px; height: 78px; object-fit: contain; background: #F5F0E7; }
+.paper-logo-image[hidden] { display: none !important; }
+.paper-logo-asset .paper-logo-generic { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); }
+@media (max-width: 640px) {
+  .paper-logo-asset { height: 68px; }
+  .paper-logo-image { width: 60px; height: 60px; }
+}
+/* Newspaper feeds show the publisher's own headline and URL, never a rewritten
+   cross-source summary presented as if it were the publisher's article. */
+.paper-story-feed .paper-source-article { display: grid; grid-template-columns: minmax(130px, 29%) minmax(0, 1fr); gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.paper-story-feed .paper-source-article:first-child { padding-top: 0; }
+.paper-story-feed .paper-source-article:last-child { border-bottom: 0; }
+.paper-source-image { overflow: hidden; border-radius: 9px; align-self: start; background: var(--paper-alt); }
+.paper-source-image img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.paper-source-copy { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; gap: 10px; }
+.paper-source-copy h3 { margin: 0; font: 650 clamp(18px, 2vw, 23px)/1.35 var(--sans); }
+.paper-source-copy h3 a { color: var(--ink); text-decoration: none; }
+.paper-source-copy h3 a:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.paper-source-context { margin: 0; color: var(--ink-muted); font: 400 13px/1.5 var(--sans); }
+.paper-source-actions { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 4px; }
+.paper-source-primary { display: inline-flex; align-items: center; min-height: 38px; padding: 8px 13px; background: var(--blue); color: #fff; border-radius: 7px; text-decoration: none; font: 600 12px/1.4 var(--sans); }
+.paper-source-primary:hover { background: var(--blue-hover); color: #fff; }
+.paper-source-secondary { color: var(--blue); font: 600 12px/1.4 var(--sans); text-decoration: none; }
+.paper-source-secondary:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .paper-story-feed .paper-source-article { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
