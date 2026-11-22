@@ -665,3 +665,20 @@ body.reader-focus .dashboard-body {
 @media (max-width: 640px) {
   .tv-market-overview { height: 520px; min-height: 440px; border-radius: 9px; }
 }
+
+
+/* Keep all three clocks inside the phone viewport, including Shanghai. */
+@media (max-width:640px) {
+  .masthead-status { min-width:0; max-width:100%; }
+  .world-clock-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; min-width:0; column-gap:4px; }
+  .world-clock { min-width:0; justify-content:center; gap:4px; }
+  .world-clock-face { flex:0 0 27px; width:27px; height:27px; }
+  .world-clock-copy { min-width:0; white-space:normal; }
+  .world-clock-city,.world-clock-time { overflow-wrap:anywhere; font-size:9px; line-height:1.15; }
+  .topbar, .dashboard-body, .page-main { min-width:0; }
+}
+.image-unavailable { display:flex!important; flex-direction:column; justify-content:center; align-items:center; gap:6px; background:var(--paper-alt)!important; color:var(--ink-muted); }
+.broken-media-fallback { display:flex; justify-content:center; align-items:center; min-height:90px; width:100%; padding:12px; text-align:center; font:600 11px/1.4 var(--sans); color:var(--ink-muted); }
+.dashboard-image.image-unavailable .broken-media-fallback,.hero-figure.image-unavailable .broken-media-fallback { aspect-ratio:16/9; }
+.paper-source-image.image-unavailable .broken-media-fallback,.market-news-image.image-unavailable .broken-media-fallback { min-height:115px; }
+.image-unavailable img[hidden] { display:none!important; }
