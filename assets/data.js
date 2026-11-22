@@ -321,25 +321,46 @@ window.DAYBREAK = {
    "source": "BBC News",
    "time": "22 Nov",
    "url": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss",
-   "headline": "FBI reportedly investigating apparent hack of its criminal database",
-   "summary": "Reported by 44 outlets, including CNBC, France 24 and TechCrunch.",
+   "headline": "FBI investigates reported breach of national crime database",
+   "summary": "The reported intrusion concerns a system used by police across the United States to share criminal-justice information.",
    "points": [
-    "First reported by End Time Headlines on 21 Nov.",
-    "Coverage: 9 left-leaning, 22 centre, 12 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "The FBI is investigating reports that hackers gained access to the National Crime Information Center, a database used by federal and local law-enforcement agencies across the United States.",
+    "The database contains information about wanted people, missing persons, criminal histories and stolen property, according to France 24.",
+    "President Donald Trump said he had been briefed on the incident and expressed concern."
    ],
    "publishedLabel": "22 Nov 2026",
    "article": [
-    "FBI reportedly investigating apparent hack of its criminal database. Reported by 44 outlets, including CNBC, France 24 and TechCrunch. Coverage began on 21 Nov with initial reporting from End Time Headlines, with BBC News leading today’s featured headline.",
-    "Across Pheme’s 44-source sample, the story is being tracked across centre-rated outlets including France 24, Political Wire, 7NEWS; left-leaning outlets including CNBC, TechCrunch, BBC News; right-leaning outlets including Daily Mail, End Time Headlines, The Post Millennial. Coverage: 9 left-leaning, 22 centre, 12 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "The FBI is investigating reports that hackers gained access to the National Crime Information Center, a database used by federal and local law-enforcement agencies across the United States. The reported breach concerns a central information-sharing system rather than an individual police force’s records.",
+    "The database contains information about wanted people, missing persons, criminal histories and stolen property, according to France 24. That makes the nature and extent of any unauthorised access particularly significant for the agencies that depend on it.",
+    "President Donald Trump said he had been briefed on the incident and expressed concern. The available reports describe an investigation into an apparent intrusion; they do not establish how much information was accessed or whether records were altered. CNBC reported that it would be the second intrusion involving an FBI system in recent months."
    ],
    "location": {
     "label": "Washington, D.C., USA",
     "shortLabel": "Washington, D.C.",
     "lat": 38.9072,
     "lng": -77.0369
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "France 24",
+     "url": "https://www.france24.com/en/fbi-criminal-database-hacked"
+    },
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/11/21/fbis-criminal-information-database-hacked-cnn-reports.html"
+    },
+    {
+     "name": "TechCrunch",
+     "url": "https://techcrunch.com/2026/11/21/trump-says-reported-fbi-database-hack-is-not-good/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "mexico-el-chapo-isidro-capture",
@@ -347,25 +368,46 @@ window.DAYBREAK = {
    "source": "RTÉ News",
    "time": "21 Nov",
    "url": "https://www.rte.ie/news/world/2026/1121/1600134-mexico-drugs-fbi/",
-   "headline": "Mexico captures top drug lord 'El Chapo Isidro'",
-   "summary": "Reported by 42 outlets, including Sky News, Euronews and France 24.",
+   "headline": "Mexican forces capture alleged cartel leader El Chapo Isidro",
+   "summary": "Fausto Isidro Meza Flores was detained after a gun battle in Sinaloa, alongside two other alleged leaders of his organisation.",
    "points": [
-    "First reported by Hindustan Times on 21 Nov.",
-    "Coverage: 16 left-leaning, 8 centre, 18 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Mexican military forces have arrested Fausto Isidro Meza Flores, the alleged drug-trafficking leader known as El Chapo Isidro, in Sinaloa.",
+    "The Guardian reported that the special-forces raid took place on Friday night and involved a gun battle in Guasave.",
+    "Meza Flores was on the FBI’s list of ten most-wanted fugitives and had avoided capture for more than a decade, according to the Guardian."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Mexico captures top drug lord 'El Chapo Isidro'. Reported by 42 outlets, including Sky News, Euronews and France 24. Coverage began on 21 Nov with initial reporting from Hindustan Times, with RTÉ News leading today’s featured headline.",
-    "Across Pheme’s 42-source sample, the story is being tracked across centre-rated outlets including Sky News, France 24, RTÉ News; left-leaning outlets including Euronews, The New York Times, The Guardian; right-leaning outlets including Daily Mail, Citizen Free Press, MyNorthwest. Coverage: 16 left-leaning, 8 centre, 18 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Mexican military forces have arrested Fausto Isidro Meza Flores, the alleged drug-trafficking leader known as El Chapo Isidro, in Sinaloa. He was detained during an operation that also captured two other suspected leaders of his organisation, RTÉ reported.",
+    "The Guardian reported that the special-forces raid took place on Friday night and involved a gun battle in Guasave. The confrontation caused widespread alarm in the city. The Financial Times also reported violence in Sinaloa following the arrest.",
+    "Meza Flores was on the FBI’s list of ten most-wanted fugitives and had avoided capture for more than a decade, according to the Guardian. The BBC reported that the allegations against him include drug trafficking and torture. His detention is an arrest in connection with those allegations, rather than a finding of guilt."
    ],
    "location": {
     "label": "Mexico City, Mexico",
     "shortLabel": "Mexico",
     "lat": 19.4326,
     "lng": -99.1332
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/ckz749ey0r75o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "Financial Times",
+     "url": "https://www.ft.com/content/90a8d0bd-32c8-471a-8696-e95555e41b78?syn-25a6b1a6=1"
+    },
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/world/2026/1121/1600134-mexico-drugs-fbi/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/world/2026/nov/21/alleged-mexican-drug-cartel-boss-el-chapo-isidro-meza-flores-arrested"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "climate-money-africa-europe-use-whats-already",
@@ -373,25 +415,46 @@ window.DAYBREAK = {
    "source": "Al Jazeera English",
    "time": "22 Nov",
    "url": "https://www.aljazeera.com/news/2026/11/22/fossil-fuel-impasse-pushes-cop31-climate-talks-into-second-day-of-overtime?traffic_source=rss",
-   "headline": "COP31 climate talks close to final deal, summit president says",
-   "summary": "Reported by 28 outlets, including DW News, RTÉ News and Euronews.",
+   "headline": "Fossil-fuel dispute holds up COP31 agreement",
+   "summary": "Negotiators in Turkey are struggling to settle language on fossil fuels, electrification and financial support for developing countries.",
    "points": [
-    "First reported by Mongabay on 20 Nov.",
-    "Coverage: 14 left-leaning, 9 centre, 3 right-leaning, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "COP31 climate negotiations have run beyond their planned timetable as governments struggle to agree a final text.",
+    "An earlier draft attracted criticism because it did not mention fossil fuels, France 24 reported.",
+    "The summit’s co-conveners, Australia’s Chris Bowen and Turkey’s Murat Kurum, held meetings with governments into Saturday evening."
    ],
    "publishedLabel": "22 Nov 2026",
    "article": [
-    "COP31 climate talks close to final deal, summit president says. Reported by 28 outlets, including DW News, RTÉ News and Euronews. Coverage began on 20 Nov with initial reporting from Mongabay, with Al Jazeera English leading today’s featured headline.",
-    "Across Pheme’s 28-source sample, the story is being tracked across centre-rated outlets including RTÉ News, France 24, RNZ; left-leaning outlets including DW News, Euronews, The Guardian; right-leaning outlets including The Straits Times, The West Australian, Times of India. Coverage: 14 left-leaning, 9 centre, 3 right-leaning, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "COP31 climate negotiations have run beyond their planned timetable as governments struggle to agree a final text. Talks in Turkey remained divided over fossil fuels and the shape of a new international climate agreement, with nearly 200 countries involved.",
+    "An earlier draft attracted criticism because it did not mention fossil fuels, France 24 reported. The Guardian described continuing disagreements about electrification and finance for developing countries, alongside pressure on Saudi Arabia and its allies over a fossil-fuel phaseout.",
+    "The summit’s co-conveners, Australia’s Chris Bowen and Turkey’s Murat Kurum, held meetings with governments into Saturday evening. Although efforts to produce a revised agreement continued, the EU’s climate envoy said key differences had not yet been resolved. The negotiations described in these reports had therefore not produced an agreed final deal."
    ],
    "location": {
     "label": "Antalya, Turkey",
     "shortLabel": "Turkey",
     "lat": 36.8969,
     "lng": 30.7133
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/environment/2026/1121/1600094-cop31-turkey/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/environment/2026/nov/21/climate-talks-stall-countries-mull-showdown-saudi-arabia-over-fossil-fuels"
+    },
+    {
+     "name": "France 24",
+     "url": "https://www.france24.com/en/countries-race-to-secure-cop31-deal"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "love-carjackings-video-game",
@@ -399,19 +462,44 @@ window.DAYBREAK = {
    "source": "Financial Times",
    "time": "20 Nov",
    "url": "https://www.ft.com/content/6648bce8-41fc-4542-8f24-ab37f8acd5d7?syn-25a6b1a6=1",
-   "headline": "Grand Theft Auto VI smashes records with $3.8bn in sales",
-   "summary": "Reported by 25 outlets, including Daily Mail, The Guardian and The New York Times.",
+   "headline": "Grand Theft Auto VI launch generates about $3.8 billion in sales",
+   "summary": "Rockstar’s long-awaited game has arrived to record sales and strong reviews after a 13-year gap between main instalments.",
    "points": [
-    "First reported by Wired on 20 Nov.",
-    "Coverage: 7 left-leaning, 6 centre, 10 right-leaning, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Grand Theft Auto VI has made about $3.8 billion in its opening sales period, turning the arrival of Rockstar’s latest game into a major entertainment launch.",
+    "The release follows a 13-year wait for a new main instalment.",
+    "Early reviews have been strongly positive."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Grand Theft Auto VI smashes records with $3.8bn in sales. Reported by 25 outlets, including Daily Mail, The Guardian and The New York Times. Coverage began on 20 Nov with initial reporting from Wired, with Financial Times leading today’s featured headline.",
-    "Across Pheme’s 25-source sample, the story is being tracked across centre-rated outlets including Financial Times, The Conversation UK, The Hill; left-leaning outlets including The Guardian, The New York Times, Wired; right-leaning outlets including Daily Mail, CBS News, Investors Business Daily. Coverage: 7 left-leaning, 6 centre, 10 right-leaning, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "Grand Theft Auto VI has made about $3.8 billion in its opening sales period, turning the arrival of Rockstar’s latest game into a major entertainment launch. The New York Times reported $3.79 billion in a single day, while the Financial Times described consumer spending above the box-office takings of the highest-grossing film.",
+    "The release follows a 13-year wait for a new main instalment. Fans around the world cleared time to play, with the Guardian describing people taking leave from work and preparing to spend hours exploring the game. Its reporting also highlighted quieter activities alongside the series’ familiar action and criminal escapades.",
+    "Early reviews have been strongly positive. CBS News reported widespread critical acclaim, while Wired emphasised the detail of the game’s Leonida setting and the rewards of exploring it slowly. Together, the commercial figures and reception make the launch significant both as a business event and as the return of a franchise with a large, established audience."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Financial Times",
+     "url": "https://www.ft.com/content/6648bce8-41fc-4542-8f24-ab37f8acd5d7?syn-25a6b1a6=1"
+    },
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/20/arts/grand-theft-auto-vi-sales-revenue.html"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/games/2026/nov/20/grand-theft-auto-vi-players-review"
+    },
+    {
+     "name": "Wired",
+     "url": "https://www.wired.com/story/gta-vi-is-finally-out-dont-rush-it/"
+    },
+    {
+     "name": "CBS News",
+     "url": "https://www.cbsnews.com/video/grand-theft-auto-vi-on-track-to-shatter-records-as-game-launches-to-rave-reviews/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "riemann-hypothesis-ai-proof-claim",
@@ -419,25 +507,46 @@ window.DAYBREAK = {
    "source": "New Scientist",
    "time": "20 Nov",
    "url": "https://www.newscientist.com/article/2600134-anthropic-mathematician-claims-ai-assisted-proof-of-the-riemann-hypothesis/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
-   "headline": "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis",
-   "summary": "Reported by 27 outlets, including Financial Times, TechCrunch and The Economist.",
+   "headline": "Mathematician claims AI-assisted breakthrough on Riemann hypothesis",
+   "summary": "Anthropic researcher Levent Alpöge says Claude helped him tackle the 167-year-old problem, with scrutiny of the claimed proof continuing.",
    "points": [
-    "First reported by Scientific American on 20 Nov.",
-    "Coverage: 9 left-leaning, 3 centre, 5 right-leaning, 10 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A mathematician working at Anthropic says the company’s Claude software helped him find a proof of the Riemann hypothesis, one of mathematics’ most prominent longstanding problems.",
+    "Alpöge said the work took six weeks.",
+    "The claim is undergoing examination."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis. Reported by 27 outlets, including Financial Times, TechCrunch and The Economist. Coverage began on 20 Nov with initial reporting from Scientific American, with New Scientist leading today’s featured headline.",
-    "Across Pheme’s 27-source sample, the story is being tracked across centre-rated outlets including Financial Times, The Economist, The Information; left-leaning outlets including TechCrunch, BBC News, NPR; right-leaning outlets including Daily Mail, The Wall Street Journal, The Globe and Mail. Coverage: 9 left-leaning, 3 centre, 5 right-leaning, 10 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "A mathematician working at Anthropic says the company’s Claude software helped him find a proof of the Riemann hypothesis, one of mathematics’ most prominent longstanding problems. Levent Alpöge announced the claim in a note on his website on Friday, according to the Guardian.",
+    "Alpöge said the work took six weeks. The problem has resisted a proof for 167 years, which is why a successful solution would be a substantial mathematical result as well as a notable example of AI-assisted research.",
+    "The claim is undergoing examination. The Guardian reported positive assessments from two groups, while the BBC stressed that checking the proof would take time. Those early reactions should be distinguished from a completed, universally accepted verification process: the news is a claimed breakthrough whose reasoning still requires detailed scrutiny."
    ],
    "location": {
     "label": "San Francisco Bay Area, USA",
     "shortLabel": "California",
     "lat": 37.4419,
     "lng": -122.143
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/c6pqr2g7w059o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "Financial Times",
+     "url": "https://www.ft.com/content/fa8eeb49-2cb4-4286-8131-03db15383d87?syn-25a6b1a6=1"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai"
+    },
+    {
+     "name": "New Scientist",
+     "url": "https://www.newscientist.com/article/2600134-anthropic-mathematician-claims-ai-assisted-proof-of-the-riemann-hypothesis/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "catherine-bbc-cancer-film",
@@ -445,25 +554,42 @@ window.DAYBREAK = {
    "source": "The Guardian",
    "time": "21 Nov",
    "url": "https://www.theguardian.com/uk-news/2026/nov/21/princess-of-wales-impact-cancer-diagnosis-bbc-film-heal",
-   "headline": "Princess of Wales speaks about impact of cancer diagnosis in BBC film Heal",
-   "summary": "Reported by 20 outlets, including BBC News, The New York Times and Nottinghamshire Post.",
+   "headline": "Princess of Wales discusses life after cancer in BBC documentary",
+   "summary": "The film Heal follows Catherine’s experience of recovery and the wider personal impact of her diagnosis.",
    "points": [
-    "First reported by BBC News on 21 Nov.",
-    "Coverage: 3 left-leaning, 10 centre, 7 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "The Princess of Wales has spoken about the lasting personal effect of a cancer diagnosis in a new BBC documentary.",
+    "In the trailer, she describes the diagnosis as something that changes a person at a deeper level.",
+    "Catherine is in remission, according to the New York Times."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Princess of Wales speaks about impact of cancer diagnosis in BBC film Heal. Reported by 20 outlets, including BBC News, The New York Times and Nottinghamshire Post. Coverage began on 21 Nov with initial reporting from BBC News, with The Guardian leading today’s featured headline.",
-    "Across Pheme’s 20-source sample, the story is being tracked across centre-rated outlets including Nottinghamshire Post, CityNews Edmonton, CityNews Halifax; left-leaning outlets including BBC News, The New York Times, The Guardian; right-leaning outlets including Evening Standard, The Straits Times, CBS News. Coverage: 3 left-leaning, 10 centre, 7 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "The Princess of Wales has spoken about the lasting personal effect of a cancer diagnosis in a new BBC documentary. Catherine appears in Heal, a 30-minute film due to be released later this month, and discusses changes that extend beyond the physical effects of treatment.",
+    "In the trailer, she describes the diagnosis as something that changes a person at a deeper level. The Guardian reported that the documentary follows her taking on a Three Peaks challenge and finding hope while continuing to live with uncertainty.",
+    "Catherine is in remission, according to the New York Times. The film presents her own account of recovery and the emotional consequences of illness. Her comments concern an individual experience of cancer, rather than an announcement of a new treatment or a general medical conclusion about recovery."
    ],
    "location": {
     "label": "Cardiff, Wales, UK",
     "shortLabel": "Cardiff",
     "lat": 51.4816,
     "lng": -3.1791
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/c85y14zvexz9o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/uk-news/2026/nov/21/princess-of-wales-impact-cancer-diagnosis-bbc-film-heal"
+    },
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/21/world/europe/princess-kate-bbc-cancer-film.html"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "ice-agents-detain-people-seattle-airport",
@@ -471,25 +597,46 @@ window.DAYBREAK = {
    "source": "Al Jazeera English",
    "time": "22 Nov",
    "url": "https://www.aljazeera.com/video/newsfeed/2026/11/22/ice-agents-detain-two-people-at-seattle-airport?traffic_source=rss",
-   "headline": "ICE agents detain two people at Seattle airport",
-   "summary": "Reported by 19 outlets, including Daily Mail, MyNorthwest and Bloomberg.",
+   "headline": "Immigration arrests on Seattle jet bridge delay flight",
+   "summary": "Masked officers detained people as passengers boarded a Los Angeles-bound aircraft, prompting criticism from Washington’s governor.",
    "points": [
-    "First reported by MyNorthwest on 21 Nov.",
-    "Coverage: 6 left-leaning, 6 centre, 7 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Immigration officers detained people on a crowded jet bridge at Seattle-Tacoma International Airport on Saturday as passengers boarded a flight.",
+    "The incident delayed an Alaska Airlines flight bound for Los Angeles.",
+    "Washington governor Bob Ferguson condemned the operation after reports of the arrests emerged."
    ],
    "publishedLabel": "22 Nov 2026",
    "article": [
-    "ICE agents detain two people at Seattle airport. Reported by 19 outlets, including Daily Mail, MyNorthwest and Bloomberg. Coverage began on 21 Nov with initial reporting from MyNorthwest, with Al Jazeera English leading today’s featured headline.",
-    "Across Pheme’s 19-source sample, the story is being tracked across centre-rated outlets including The Hill, Investing.com, ABC7chicago.com; left-leaning outlets including Al Jazeera English, Bloomberg, Indian Express; right-leaning outlets including Daily Mail, MyNorthwest, The Straits Times. Coverage: 6 left-leaning, 6 centre, 7 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Immigration officers detained people on a crowded jet bridge at Seattle-Tacoma International Airport on Saturday as passengers boarded a flight. Al Jazeera reported two detentions during the operation by masked Immigration and Customs Enforcement agents.",
+    "The incident delayed an Alaska Airlines flight bound for Los Angeles. Reporting carried by MyNorthwest described officers dragging at least one person away, while the airline said the scene had been distressing for passengers and employees.",
+    "Washington governor Bob Ferguson condemned the operation after reports of the arrests emerged. His response focused on the conduct of federal immigration enforcement at the airport. The material available for this account does not establish the detained people’s individual immigration cases or the eventual outcome of their detention."
    ],
    "location": {
     "label": "Mexico City, Mexico",
     "shortLabel": "Mexico",
     "lat": 19.4326,
     "lng": -99.1332
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Al Jazeera English",
+     "url": "https://www.aljazeera.com/video/newsfeed/2026/11/22/ice-agents-detain-two-people-at-seattle-airport?traffic_source=rss"
+    },
+    {
+     "name": "Political Wire",
+     "url": "https://politicalwire.com/2026/11/21/horrific-ice-arrests-at-seattle-airport-rattle-passengers/"
+    },
+    {
+     "name": "The Hill",
+     "url": "https://thehill.com/homenews/state-watch/6235558-ferguson-condemns-ice-airport-detention/"
+    },
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/local/immigrations-seattle-airport/4303207"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "nvidia-growth-outlook-bofa-expert-jensen-huang",
@@ -497,25 +644,46 @@ window.DAYBREAK = {
    "source": "The New York Times",
    "time": "21 Nov",
    "url": "https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html",
-   "headline": "How Jensen Huang Made Humiliation Routine at Nvidia",
-   "summary": "Reported by 18 outlets, including TechCrunch, CNBC and Naked Capitalism.",
+   "headline": "Report examines allegations about Jensen Huang’s management at Nvidia",
+   "summary": "A New York Times investigation describes employee accounts and a past settlement as the former chief executive’s future remains in question.",
    "points": [
-    "First reported by MoneyWeek on 20 Nov.",
-    "Coverage: 9 left-leaning, 3 centre, 4 right-leaning, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A New York Times report has examined allegations about how Nvidia co-founder Jensen Huang treated employees during his years leading the company.",
+    "The reporting comes amid questions about Huang’s departure and a possible return.",
+    "Separate CNBC reporting said Huang was expected to testify publicly before the US Senate banking committee."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "How Jensen Huang Made Humiliation Routine at Nvidia. Reported by 18 outlets, including TechCrunch, CNBC and Naked Capitalism. Coverage began on 20 Nov with initial reporting from MoneyWeek, with The New York Times leading today’s featured headline.",
-    "Across Pheme’s 18-source sample, the story is being tracked across centre-rated outlets including Livemint, Political Wire, The Information; left-leaning outlets including TechCrunch, CNBC, The New York Times; right-leaning outlets including Investors Business Daily, The Post Millennial, Citizen Free Press. Coverage: 9 left-leaning, 3 centre, 4 right-leaning, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "A New York Times report has examined allegations about how Nvidia co-founder Jensen Huang treated employees during his years leading the company. The newspaper described accounts of belittling behaviour and reported a confidential settlement with an executive who had complained about the treatment of staff.",
+    "The reporting comes amid questions about Huang’s departure and a possible return. The Information reported that he had said he would be open to taking the chief executive role again, while Nvidia’s board had continued to say it would not rehire him.",
+    "Separate CNBC reporting said Huang was expected to testify publicly before the US Senate banking committee. The workplace allegations, the board’s position and the congressional scrutiny are distinct developments. The reported employee accounts are allegations attributed to the newspaper’s investigation, rather than findings made by Pheme."
    ],
    "location": {
     "label": "San Francisco Bay Area, USA",
     "shortLabel": "California",
     "lat": 37.4419,
     "lng": -122.143
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html"
+    },
+    {
+     "name": "TechCrunch",
+     "url": "https://techcrunch.com/2026/11/20/behind-jensen-huangs-exit-questions-about-a-management-style-reportedly-built-on-fear/"
+    },
+    {
+     "name": "The Information",
+     "url": "https://www.theinformation.com/articles/can-jensen-return"
+    },
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/11/20/jensen-huang-nvidia-senate-testimony.html"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "poland-condemns-russian-airspace-provocation",
@@ -523,25 +691,46 @@ window.DAYBREAK = {
    "source": "RTÉ News",
    "time": "20 Nov",
    "url": "https://www.rte.ie/news/europe/2026/1120/1600008-poland-russia-airspace-violations/",
-   "headline": "Poland condemns Russian airspace 'provocation'",
-   "summary": "Reported by 20 outlets, including BBC News, The New York Times and Daily Mail.",
+   "headline": "Poland reports suspected Russian missiles and drone in its airspace",
+   "summary": "Polish officials described three objects as a likely provocation while Russia carried out a major attack on Ukraine.",
    "points": [
-    "First reported by RTÉ News on 20 Nov.",
-    "Coverage: 4 left-leaning, 5 centre, 11 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Poland’s defence minister has said Russia violated Polish airspace with three objects believed to be two missiles and a drone.",
+    "The New York Times reported no injuries or damage from the incidents in Poland.",
+    "The developments came as Russia launched a large attack on Ukraine."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Poland condemns Russian airspace 'provocation'. Reported by 20 outlets, including BBC News, The New York Times and Daily Mail. Coverage began on 20 Nov with initial reporting from RTÉ News, with RTÉ News leading today’s featured headline.",
-    "Across Pheme’s 20-source sample, the story is being tracked across centre-rated outlets including RTÉ News, The Hill, Military.com; left-leaning outlets including BBC News, The New York Times, Euractiv; right-leaning outlets including Daily Mail, SOFREP, The Citizen. Coverage: 4 left-leaning, 5 centre, 11 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Poland’s defence minister has said Russia violated Polish airspace with three objects believed to be two missiles and a drone. Polish authorities described the incidents as a possible provocation, according to reports carried by RTÉ and the New York Times.",
+    "The New York Times reported no injuries or damage from the incidents in Poland. Officials linked their concerns to the timing of military exercises involving Ukraine’s allies. The identification of the objects and their purpose remained matters for the authorities’ assessment.",
+    "The developments came as Russia launched a large attack on Ukraine. The BBC reported strikes on bridges and railway stations in Kyiv, while CBS described missiles entering Polish territory during the assault. The attacks in Ukraine and the reported airspace violations have renewed concern about the conflict affecting a neighbouring NATO member."
    ],
    "location": {
     "label": "Warsaw, Poland",
     "shortLabel": "Poland",
     "lat": 52.2297,
     "lng": 21.0122
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/europe/2026/1120/1600008-poland-russia-airspace-violations/"
+    },
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/20/world/europe/poland-russia-airspace-missile.html"
+    },
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/videos/c65y19wy3xl8o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "CBS News",
+     "url": "https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "strait-hormuz-athlete-swims-through-war-zone",
@@ -549,25 +738,46 @@ window.DAYBREAK = {
    "source": "Euronews",
    "time": "21 Nov",
    "url": "https://www.euronews.com/video/2026/11/21/strait-of-hormuz-athlete-swims-through-war-zone-to-expose-wars-environmental-toll",
-   "headline": "Strait of Hormuz: Athlete swims through war zone to expose war's environmental toll",
-   "summary": "Reported by 16 outlets, including France 24, BBC News and Daily Mail.",
+   "headline": "Lewis Pugh swims Strait of Hormuz to highlight war’s environmental toll",
+   "summary": "The British endurance swimmer completed a three-day challenge intended to draw attention to damage to marine life and coastal waters.",
    "points": [
-    "First reported by Euronews on 21 Nov.",
-    "Coverage: 6 left-leaning, 2 centre, 8 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "British endurance swimmer Lewis Pugh has completed a swim through the Strait of Hormuz to highlight the environmental consequences of war.",
+    "Pugh undertook the challenge as an ocean campaigner, drawing attention to threats to wildlife and the condition of the sea.",
+    "The swim was intended as a public appeal for the fighting to end and for environmental damage to receive more attention."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Strait of Hormuz: Athlete swims through war zone to expose war's environmental toll. Reported by 16 outlets, including France 24, BBC News and Daily Mail. Coverage began on 21 Nov with initial reporting from Euronews, with Euronews leading today’s featured headline.",
-    "Across Pheme’s 16-source sample, the story is being tracked across centre-rated outlets including France 24, 7NEWS; left-leaning outlets including Euronews, BBC News, Al-Monitor; right-leaning outlets including Daily Mail, Evening Standard, The Straits Times. Coverage: 6 left-leaning, 2 centre, 8 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "British endurance swimmer Lewis Pugh has completed a swim through the Strait of Hormuz to highlight the environmental consequences of war. Euronews reported that he covered 15 kilometres over three days in November, with explosions and burning tankers nearby.",
+    "Pugh undertook the challenge as an ocean campaigner, drawing attention to threats to wildlife and the condition of the sea. France 24 described concerns about pollution reaching both the air and water during the conflict, alongside continuing danger to vessels in the strait.",
+    "The swim was intended as a public appeal for the fighting to end and for environmental damage to receive more attention. It was a campaigning endurance challenge, rather than a scientific survey measuring the extent of contamination. The BBC reported Pugh’s warning that the harm could last beyond the immediate conflict."
    ],
    "location": {
     "label": "London, UK",
     "shortLabel": "London",
     "lat": 51.5072,
     "lng": -0.1276
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/c95y1gr27xplo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "France 24",
+     "url": "https://www.france24.com/en/endurance-athlete-swims-in-hormuz-strait"
+    },
+    {
+     "name": "CBS News",
+     "url": "https://www.cbsnews.com/news/athlete-swims-strait-of-hormuz-iran-war-wildlife/"
+    },
+    {
+     "name": "Euronews",
+     "url": "https://www.euronews.com/video/2026/11/21/strait-of-hormuz-athlete-swims-through-war-zone-to-expose-wars-environmental-toll"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "gulf-of-finland-drone-ship-attack",
@@ -575,25 +785,46 @@ window.DAYBREAK = {
    "source": "France 24",
    "time": "21 Nov",
    "url": "https://www.france24.com/en/europe/20261121-drone-attack-sets-russian-cargo-ship-ablaze-in-gulf-of-finland",
-   "headline": "Drone attack sets Russian cargo ship ablaze in Gulf of Finland",
-   "summary": "Reported by 15 outlets, including Politico Europe, DW News and BBC News.",
+   "headline": "Russian cargo ship burns after drone strike in Gulf of Finland",
+   "summary": "Finnish authorities said the vessel was hit in international waters before drifting into Finland’s territorial waters.",
    "points": [
-    "First reported by GB News on 21 Nov.",
-    "Coverage: 9 left-leaning, 2 centre, 4 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A Russian cargo ship caught fire after a drone strike in the Gulf of Finland on Saturday and later drifted into Finnish territorial waters.",
+    "CNBC identified the vessel as the Sparta II and reported damage west of Russia’s Gogland island.",
+    "Finland’s defence forces said Ukraine was likely responsible, an assessment reported by the BBC."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Drone attack sets Russian cargo ship ablaze in Gulf of Finland. Reported by 15 outlets, including Politico Europe, DW News and BBC News. Coverage began on 21 Nov with initial reporting from GB News, with France 24 leading today’s featured headline.",
-    "Across Pheme’s 15-source sample, the story is being tracked across centre-rated outlets including France 24, RTÉ News; left-leaning outlets including Politico Europe, DW News, BBC News; right-leaning outlets including The Straits Times, KFGO - 790 AM - Fargo, GB News. Coverage: 9 left-leaning, 2 centre, 4 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "A Russian cargo ship caught fire after a drone strike in the Gulf of Finland on Saturday and later drifted into Finnish territorial waters. Finnish authorities said the attack took place in international waters, according to France 24.",
+    "CNBC identified the vessel as the Sparta II and reported damage west of Russia’s Gogland island. Its crew evacuated, while RTÉ described the ship as having links to the Russian military.",
+    "Finland’s defence forces said Ukraine was likely responsible, an assessment reported by the BBC. That attribution should be distinguished from an independently established account of who carried out the strike. Helsinki notified NATO and introduced temporary restrictions in the area as it responded to the damaged vessel entering Finnish waters."
    ],
    "location": {
     "label": "Helsinki, Finland",
     "shortLabel": "Finland",
     "lat": 60.1699,
     "lng": 24.9384
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/ukraine/2026/1121/1600153-finland-russia-ukraine/"
+    },
+    {
+     "name": "France 24",
+     "url": "https://www.france24.com/en/europe/20261121-drone-attack-sets-russian-cargo-ship-ablaze-in-gulf-of-finland"
+    },
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/11/21/russian-cargo-ship-hit-by-drones-in-baltic-finland-tightens-security.html"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "trump-china-trip-iran-ukraine-peace-declaration",
@@ -601,25 +832,46 @@ window.DAYBREAK = {
    "source": "BBC News",
    "time": "21 Nov",
    "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss",
-   "headline": "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend",
-   "summary": "Reported by 18 outlets, including The New York Times, Euronews and Daily Mail.",
+   "headline": "Zelensky criticises Putin after Trump defends relationship with Russian leader",
+   "summary": "The Ukrainian president’s remarks followed meetings involving the US, Russian and Chinese leaders in Shenzhen.",
    "points": [
-    "First reported by HuffPost UK on 20 Nov.",
-    "Coverage: 8 left-leaning, 3 centre, 5 right-leaning, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Ukrainian president Volodymyr Zelensky has criticised Vladimir Putin after Donald Trump described the Russian leader as a friend.",
+    "Trump, Putin and Chinese president Xi Jinping met in Shenzhen.",
+    "After returning to Washington, Trump defended his ties with both Xi and Putin and said he believed Russia wanted a diplomatic end to the war in Ukraine, according to Euronews."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend. Reported by 18 outlets, including The New York Times, Euronews and Daily Mail. Coverage began on 20 Nov with initial reporting from HuffPost UK, with BBC News leading today’s featured headline.",
-    "Across Pheme’s 18-source sample, the story is being tracked across centre-rated outlets including The Hill, WFLD - Fox 32 - Chicago, Military.com; left-leaning outlets including The New York Times, Euronews, BBC News; right-leaning outlets including Daily Mail, The Globe and Mail, Conservative Review. Coverage: 8 left-leaning, 3 centre, 5 right-leaning, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Ukrainian president Volodymyr Zelensky has criticised Vladimir Putin after Donald Trump described the Russian leader as a friend. The BBC reported Zelensky calling Putin a killer following Trump’s comments about their relationship during his visit to China.",
+    "Trump, Putin and Chinese president Xi Jinping met in Shenzhen. CBS News reported little apparent progress from their trilateral meeting, while the New York Times described Putin’s appearance alongside the other leaders as a symbolic diplomatic gain for Russia.",
+    "After returning to Washington, Trump defended his ties with both Xi and Putin and said he believed Russia wanted a diplomatic end to the war in Ukraine, according to Euronews. Zelensky’s response underscored the continuing distance between that portrayal and Ukraine’s assessment of the Russian president."
    ],
    "location": {
     "label": "Kyiv, Ukraine",
     "shortLabel": "Ukraine",
     "lat": 50.4501,
     "lng": 30.5234
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/20/world/europe/putin-trump-xi-summit-apec.html"
+    },
+    {
+     "name": "CBS News",
+     "url": "https://www.cbsnews.com/video/trump-defends-putin-after-trilateral-with-xi/"
+    },
+    {
+     "name": "Euronews",
+     "url": "https://www.euronews.com/2026/11/20/trump-accuses-iran-of-dishonesty-while-defending-putin-ties"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "dead-36-missing-indonesia-factory-fire",
@@ -627,25 +879,46 @@ window.DAYBREAK = {
    "source": "RTÉ News",
    "time": "22 Nov",
    "url": "https://www.rte.ie/news/world/2026/1122/1600169-indonesia-factory-fire/",
-   "headline": "Three dead, 36 missing after Indonesia factory fire",
-   "summary": "Reported by 14 outlets, including BBC News, DW News and The Guardian.",
+   "headline": "Three killed and dozens missing in Indonesian factory fire",
+   "summary": "Rescuers are searching a confectionery factory west of Jakarta after a blaze left extensive damage to the building.",
    "points": [
-    "First reported by CNA on 22 Nov.",
-    "Coverage: 7 left-leaning, 2 centre, 5 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "At least three people have died and 36 remained missing after a fire at a confectionery factory west of Jakarta, Indonesian rescue officials said.",
+    "The Guardian reported that parts of the factory’s roof had collapsed and that smoke was still rising from the site.",
+    "Al Jazeera reported that at least 15 people had been rescued, including four who were taken to hospital."
    ],
    "publishedLabel": "22 Nov 2026",
    "article": [
-    "Three dead, 36 missing after Indonesia factory fire. Reported by 14 outlets, including BBC News, DW News and The Guardian. Coverage began on 22 Nov with initial reporting from CNA, with RTÉ News leading today’s featured headline.",
-    "Across Pheme’s 14-source sample, the story is being tracked across centre-rated outlets including RTÉ News, CNA; left-leaning outlets including BBC News, DW News, The Guardian; right-leaning outlets including The West Australian, The Sun, Irish Sun. Coverage: 7 left-leaning, 2 centre, 5 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "At least three people have died and 36 remained missing after a fire at a confectionery factory west of Jakarta, Indonesian rescue officials said. Search teams were working through the damaged complex as families waited for information about those still unaccounted for.",
+    "The Guardian reported that parts of the factory’s roof had collapsed and that smoke was still rising from the site. Images and footage showed rescuers entering the burned building as relatives gathered near its entrance seeking updates.",
+    "Al Jazeera reported that at least 15 people had been rescued, including four who were taken to hospital. The cause of the fire had not been established in the available reports. The death and missing-person totals describe the position reported during the ongoing rescue effort and may change as searches continue."
    ],
    "location": {
     "label": "Jakarta, Indonesia",
     "shortLabel": "Jakarta",
     "lat": -6.2088,
     "lng": 106.8456
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cw8dvg5pgm0eo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/world/2026/1122/1600169-indonesia-factory-fire/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/world/2026/nov/22/fire-confectionary-factory-indonesia-jakarta"
+    },
+    {
+     "name": "Al Jazeera English",
+     "url": "https://www.aljazeera.com/news/2026/11/22/indonesia-factory-fire-kills-three-36-missing?traffic_source=rss"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "trump-vows-work-democrats-cap-credit-card",
@@ -653,25 +926,42 @@ window.DAYBREAK = {
    "source": "CBS News",
    "time": "21 Nov",
    "url": "https://www.cbsnews.com/news/trump-credit-card-rates-democrats-politics/",
-   "headline": "Trump vows to work with Democrats to cap credit card interest rates",
-   "summary": "Reported by 14 outlets, including Axios, MyNorthwest and Seeking Alpha.",
+   "headline": "Trump backs working with Democrats on credit-card rate cap",
+   "summary": "The president said he would support limits on card interest and fees, but the remarks did not establish a new legal cap.",
    "points": [
-    "First reported by Axios on 21 Nov.",
-    "Coverage: 3 left-leaning, 5 centre, 6 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "President Donald Trump has said he would work with Democrats in the incoming Congress to cap credit-card interest rates.",
+    "Axios reported that Trump also discussed card fees and argued that companies were making excessive profits.",
+    "The proposal would need to move beyond an expression of presidential support before changing the rules for cardholders."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Trump vows to work with Democrats to cap credit card interest rates. Reported by 14 outlets, including Axios, MyNorthwest and Seeking Alpha. Coverage began on 21 Nov with initial reporting from Axios, with CBS News leading today’s featured headline.",
-    "Across Pheme’s 14-source sample, the story is being tracked across centre-rated outlets including Political Wire, The Hill, ABC7chicago.com; left-leaning outlets including Axios, PBS NewsHour, Hindustan Times; right-leaning outlets including MyNorthwest, CBS News, Seeking Alpha. Coverage: 3 left-leaning, 5 centre, 6 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "President Donald Trump has said he would work with Democrats in the incoming Congress to cap credit-card interest rates. He made the comments in a Saturday television interview, renewing support for an idea he had previously raised during his presidential campaign.",
+    "Axios reported that Trump also discussed card fees and argued that companies were making excessive profits. During the interview, he was asked about an earlier suggestion of a one-year, 10 per cent interest-rate limit, according to the Washington Examiner.",
+    "The proposal would need to move beyond an expression of presidential support before changing the rules for cardholders. Supporters argue that a cap could reduce borrowing costs, while the banking industry argues it could restrict access to credit. No enacted change to interest rates was established by these reports."
    ],
    "location": {
     "label": "Washington, D.C., USA",
     "shortLabel": "Washington, D.C.",
     "lat": 38.9072,
     "lng": -77.0369
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "CBS News",
+     "url": "https://www.cbsnews.com/news/trump-credit-card-rates-democrats-politics/"
+    },
+    {
+     "name": "Axios",
+     "url": "https://www.axios.com/2026/11/21/trump-credit-cards-rates-warren"
+    },
+    {
+     "name": "Washington Examiner",
+     "url": "https://www.washingtonexaminer.com/policy/economy/4811339/trump-credit-card-interest-rate-cap/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "tanker-struck-strait-bahrain-iran-hit-facility",
@@ -679,25 +969,42 @@ window.DAYBREAK = {
    "source": "RTÉ News",
    "time": "22 Nov",
    "url": "https://www.rte.ie/news/middle-east/2026/1122/1600172-middle-east-iran/",
-   "headline": "Tanker struck in strait as Bahrain says Iran hit facility",
-   "summary": "Reported by 13 outlets, including Al Jazeera English, Euronews and France 24.",
+   "headline": "Bahrain reports industrial-site strike as tankers are hit in Hormuz",
+   "summary": "Bahrain said a fire damaged a civilian facility without causing casualties, while separate incidents affected tankers in the strait.",
    "points": [
-    "First reported by Citizen Free Press on 21 Nov.",
-    "Coverage: 7 left-leaning, 4 centre, 2 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Bahrain has accused Iran of striking a civilian industrial facility, causing a fire and damage but no reported casualties.",
+    "Al Jazeera reported Bahrain’s account of the industrial-site fire alongside an Iranian Revolutionary Guard statement saying it had targeted US military positions at bases in al-Riffa and Awali.",
+    "France 24 also reported that Tehran said it had shot down a US drone."
    ],
    "publishedLabel": "22 Nov 2026",
    "article": [
-    "Tanker struck in strait as Bahrain says Iran hit facility. Reported by 13 outlets, including Al Jazeera English, Euronews and France 24. Coverage began on 21 Nov with initial reporting from Citizen Free Press, with RTÉ News leading today’s featured headline.",
-    "Across Pheme’s 13-source sample, the story is being tracked across centre-rated outlets including France 24, RTÉ News, CNA; left-leaning outlets including Al Jazeera English, Euronews, Haaretz; right-leaning outlets including Citizen Free Press, The Straits Times. Coverage: 7 left-leaning, 4 centre, 2 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Bahrain has accused Iran of striking a civilian industrial facility, causing a fire and damage but no reported casualties. The allegation came as two tankers were hit in the Strait of Hormuz, according to RTÉ and France 24.",
+    "Al Jazeera reported Bahrain’s account of the industrial-site fire alongside an Iranian Revolutionary Guard statement saying it had targeted US military positions at bases in al-Riffa and Awali. Those descriptions represent the respective parties’ accounts and do not independently establish that they refer to the same target.",
+    "France 24 also reported that Tehran said it had shot down a US drone. The incidents occurred amid stalled efforts to end the conflict and continuing danger to shipping. The available material did not establish the full extent of damage to the tankers or independently resolve responsibility for each incident."
    ],
    "location": {
     "label": "Manama, Bahrain",
     "shortLabel": "Bahrain",
     "lat": 26.2285,
     "lng": 50.586
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/middle-east/2026/1122/1600172-middle-east-iran/"
+    },
+    {
+     "name": "France 24",
+     "url": "https://www.france24.com/en/middle-east/20261122-bahrain-accuses-iran-of-striking-industrial-site-as-tankers-hit-in-hormuz"
+    },
+    {
+     "name": "Al Jazeera English",
+     "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility?traffic_source=rss"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "much-loved-mum-51-among-somerset-funeral",
@@ -705,25 +1012,34 @@ window.DAYBREAK = {
    "source": "SomersetLive",
    "time": "20 Nov",
    "url": "https://www.somersetlive.co.uk/news/somerset-news/much-loved-mum-51-among-11249049",
-   "headline": "Much-loved mum, 51, among the latest Somerset funeral notices",
-   "summary": "Reported by 11 outlets, including Wales Online, Liverpool Echo and Hull Daily Mail.",
+   "headline": "Families share tributes in Somerset’s latest funeral notices",
+   "summary": "SomersetLive’s latest announcements include a tribute to a mother who died at 51, alongside other local death and funeral notices.",
    "points": [
-    "First reported by SomersetLive on 20 Nov.",
-    "Coverage: 1 left-leaning, 9 centre, 1 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Families in Somerset have shared tributes to loved ones in the latest round of local death and funeral announcements published by SomersetLive.",
+    "The announcements are individual family notices, rather than reports of a single incident.",
+    "No cause of death or additional personal details about the woman were supplied in the material available for this briefing."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Much-loved mum, 51, among the latest Somerset funeral notices. Reported by 11 outlets, including Wales Online, Liverpool Echo and Hull Daily Mail. Coverage began on 20 Nov with initial reporting from SomersetLive, with SomersetLive leading today’s featured headline.",
-    "Across Pheme’s 11-source sample, the story is being tracked across centre-rated outlets including SomersetLive, Liverpool Echo, Hull Daily Mail; left-leaning outlets including Wales Online; right-leaning outlets including Leicester Mercury. Coverage: 1 left-leaning, 9 centre, 1 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Families in Somerset have shared tributes to loved ones in the latest round of local death and funeral announcements published by SomersetLive. The notices include a tribute to a mother who died at the age of 51.",
+    "The announcements are individual family notices, rather than reports of a single incident. They bring together messages of remembrance and details of arrangements published by the local newspaper, allowing people in the community to learn about bereavements and pay their respects.",
+    "No cause of death or additional personal details about the woman were supplied in the material available for this briefing. Those details should not be inferred from a headline or from separate funeral announcements published elsewhere. Families’ original notices remain the source for specific service arrangements and tributes."
    ],
    "location": {
     "label": "Cardiff, Wales, UK",
     "shortLabel": "Cardiff",
     "lat": 51.4816,
     "lng": -3.1791
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "SomersetLive",
+     "url": "https://www.somersetlive.co.uk/news/somerset-news/much-loved-mum-51-among-11249049"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "tuition-fees-talks-delay-adoption-eu-deal",
@@ -731,25 +1047,42 @@ window.DAYBREAK = {
    "source": "Financial Times",
    "time": "20 Nov",
    "url": "https://www.ft.com/content/8515b514-2067-43eb-a7f5-b5aa20ec4cc3",
-   "headline": "UK and EU agree Brexit ‘reset’ but delivery rests on tuition fees",
-   "summary": "Reported by 10 outlets, including The Guardian, BBC News and Daily Mail.",
+   "headline": "Tuition-fee disagreement shadows UK–EU reset agreement",
+   "summary": "Britain and the EU have agreed closer cooperation, but accounts differ over whether university fees could hold up the wider deal.",
    "points": [
-    "First reported by Financial Times on 20 Nov.",
-    "Coverage: 4 left-leaning, 2 centre, 3 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Britain and the European Union have agreed a package intended to deepen their relationship after Brexit, but the treatment of EU students’ university fees remains unresolved.",
+    "Prime minister Andy Burnham met European Commission president Ursula von der Leyen and European Council president António Costa in Brussels.",
+    "The Financial Times reported Brussels insisting that Britain reduce fees for students from the bloc before the reset could be delivered."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "UK and EU agree Brexit ‘reset’ but delivery rests on tuition fees. Reported by 10 outlets, including The Guardian, BBC News and Daily Mail. Coverage began on 20 Nov with initial reporting from Financial Times, with Financial Times leading today’s featured headline.",
-    "Across Pheme’s 10-source sample, the story is being tracked across centre-rated outlets including Financial Times, The Conversation UK; left-leaning outlets including The Guardian, BBC News, i News; right-leaning outlets including Daily Mail, Guido Fawkes, Evening Standard. Coverage: 4 left-leaning, 2 centre, 3 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Britain and the European Union have agreed a package intended to deepen their relationship after Brexit, but the treatment of EU students’ university fees remains unresolved. The discussions cover arrangements for food and drink, emissions trading and youth mobility.",
+    "Prime minister Andy Burnham met European Commission president Ursula von der Leyen and European Council president António Costa in Brussels. The Guardian reported both sides presenting the agreements as mutually beneficial while acknowledging that student fees were still an outstanding issue.",
+    "The Financial Times reported Brussels insisting that Britain reduce fees for students from the bloc before the reset could be delivered. The BBC, however, reported Ed Miliband saying the wider deal did not depend on a tuition-fee agreement. Those competing accounts leave an important question about implementation unresolved, even though the broad agreements have been announced."
    ],
    "location": {
     "label": "London, UK",
     "shortLabel": "London",
     "lat": 51.5072,
     "lng": -0.1276
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cm9w9p4geke8o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "Financial Times",
+     "url": "https://www.ft.com/content/8515b514-2067-43eb-a7f5-b5aa20ec4cc3"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/politics/video/2026/nov/20/andy-burnham-and-eu-leaders-call-uk-eu-reset-deal-a-win-win-video"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "cold-gives-way-rain-parts-weather-warning",
@@ -757,25 +1090,34 @@ window.DAYBREAK = {
    "source": "The Guardian",
    "time": "21 Nov",
    "url": "https://www.theguardian.com/uk-news/2026/nov/21/uk-weather-cold-rain-warning-south-west-england",
-   "headline": "Cold gives way to rain in parts of UK as weather warning issued for south-west England",
-   "summary": "Reported by 10 outlets, including WITI - FOX 6 - Milwaukee, Bristol Post and WOFL Fox 35 Orlando.",
+   "headline": "Heavy rain warning follows cold spell in south-west England",
+   "summary": "Devon and Cornwall face a slow-moving band of rain, with more than 100 millimetres forecast on Dartmoor.",
    "points": [
-    "First reported by WITI - FOX 6 - Milwaukee on 21 Nov.",
-    "Coverage: 1 left-leaning, 5 centre, 3 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Parts of south-west England face heavy rain as colder conditions give way to a slow-moving weather system.",
+    "The warning runs from 6am on Sunday until midnight.",
+    "The largest forecast totals concern the wetter parts of the region rather than a uniform amount across the whole country."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Cold gives way to rain in parts of UK as weather warning issued for south-west England. Reported by 10 outlets, including WITI - FOX 6 - Milwaukee, Bristol Post and WOFL Fox 35 Orlando. Coverage began on 21 Nov with initial reporting from WITI - FOX 6 - Milwaukee, with The Guardian leading today’s featured headline.",
-    "Across Pheme’s 10-source sample, the story is being tracked across centre-rated outlets including WITI - FOX 6 - Milwaukee, Bristol Post, WOFL Fox 35 Orlando; left-leaning outlets including The Guardian; right-leaning outlets including Evening Standard, The Sun, Irish Sun. Coverage: 1 left-leaning, 5 centre, 3 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Parts of south-west England face heavy rain as colder conditions give way to a slow-moving weather system. The Met Office has issued a warning covering Devon and Cornwall, with more than 100 millimetres of rainfall expected on Dartmoor, the Guardian reported.",
+    "The warning runs from 6am on Sunday until midnight. Flood alerts have been issued, and the forecast raises the possibility of disruption and power cuts as rain persists over the affected area.",
+    "The largest forecast totals concern the wetter parts of the region rather than a uniform amount across the whole country. The change follows a spell of cold weather, making the incoming rain the main focus of the latest warning. The forecast and warning period describe conditions expected during Sunday’s weather event, rather than measurements of rain that has already fallen."
    ],
    "location": {
     "label": "London, UK",
     "shortLabel": "London",
     "lat": 51.5072,
     "lng": -0.1276
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/uk-news/2026/nov/21/uk-weather-cold-rain-warning-south-west-england"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "bepicolombo-reaches-mercury",
@@ -783,25 +1125,42 @@ window.DAYBREAK = {
    "source": "Nature News",
    "time": "21 Nov",
    "url": "https://www.nature.com/articles/d41586-026-03803-8",
-   "headline": "BepiColombo finally reaches Mercury after eight-year odyssey",
-   "summary": "Reported by 10 outlets, including Space.com, Hot Air and MyNorthwest.",
+   "headline": "BepiColombo reaches Mercury after eight-year journey",
+   "summary": "The linked European and Japanese spacecraft have entered orbit and are due to separate next month for their scientific missions.",
    "points": [
-    "First reported by Nature News on 21 Nov.",
-    "Coverage: 1 left-leaning, 1 centre, 5 right-leaning, 3 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "The BepiColombo mission has reached Mercury after an eight-year journey through the inner solar system.",
+    "One spacecraft is European and the other Japanese.",
+    "Their arrival brings a new opportunity to investigate Mercury after years without a visiting spacecraft."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "BepiColombo finally reaches Mercury after eight-year odyssey. Reported by 10 outlets, including Space.com, Hot Air and MyNorthwest. Coverage began on 21 Nov with initial reporting from Nature News, with Nature News leading today’s featured headline.",
-    "Across Pheme’s 10-source sample, the story is being tracked across centre-rated outlets including CityNews Toronto; left-leaning outlets including ABC News (US); right-leaning outlets including Hot Air, MyNorthwest, The West Australian. Coverage: 1 left-leaning, 1 centre, 5 right-leaning, 3 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "The BepiColombo mission has reached Mercury after an eight-year journey through the inner solar system. A pair of linked spacecraft entered orbit around the planet on Saturday, according to Associated Press reporting carried by MyNorthwest and CityNews Toronto.",
+    "One spacecraft is European and the other Japanese. The two explorers are due to separate next month so they can begin their individual work mapping and studying the planet, the AP report said.",
+    "Their arrival brings a new opportunity to investigate Mercury after years without a visiting spacecraft. The West Australian described the mission’s aim as studying and mapping the intensely hot planet. Entering orbit is a major journey milestone, but it is separate from the later stages in which the orbiters separate and carry out their scientific observations."
    ],
    "location": {
     "label": "Tokyo, Japan",
     "shortLabel": "Tokyo",
     "lat": 35.6762,
     "lng": 139.6503
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/national/little-mercury-gets-its-first-visitor-in-years-as-a-pair-of-spacecraft-loop-into-orbit/4303252"
+    },
+    {
+     "name": "CityNews Toronto",
+     "url": "https://toronto.citynews.ca/2026/11/21/little-mercury-gets-its-first-visitor-in-years-as-a-pair-of-spacecraft-loop-into-orbit/"
+    },
+    {
+     "name": "The West Australian",
+     "url": "https://thewest.com.au/news/world/little-mercury-gets-its-first-visitor-in-years-c-23196530"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "robert-pattinsons-james-bond-casting-marks-hollywoods",
@@ -809,25 +1168,42 @@ window.DAYBREAK = {
    "source": "The Guardian",
    "time": "20 Nov",
    "url": "https://www.theguardian.com/film/2026/nov/20/james-bond-movie-007s-death-in-no-time-to-die-robert-pattinson",
-   "headline": "Now get out of that! How can the new James Bond film get around 007’s death in No Time to Die?",
-   "summary": "Reported by 10 outlets, including Daily Mail, Inc.com and Citizen Free Press.",
+   "headline": "Robert Pattinson’s Bond casting raises questions about 007’s next chapter",
+   "summary": "The new casting follows a film that killed Daniel Craig’s version of Bond, leaving the next production’s approach to continuity unresolved.",
    "points": [
-    "First reported by Daily Mail on 20 Nov.",
-    "Coverage: 2 left-leaning, 2 centre, 4 right-leaning, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Robert Pattinson’s announcement as the next James Bond has renewed discussion about how the series will continue after No Time to Die.",
+    "The Guardian asked writers including Russell T Davies and David Hare how a new film might approach that ending.",
+    "The casting has also prompted reactions beyond the next film’s storyline."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Now get out of that! How can the new James Bond film get around 007’s death in No Time to Die?. Reported by 10 outlets, including Daily Mail, Inc.com and Citizen Free Press. Coverage began on 20 Nov with initial reporting from Daily Mail, with The Guardian leading today’s featured headline.",
-    "Across Pheme’s 10-source sample, the story is being tracked across centre-rated outlets including Inc.com, Forbes; left-leaning outlets including The Guardian, The Journal; right-leaning outlets including Daily Mail, Citizen Free Press, Spiked Magazine. Coverage: 2 left-leaning, 2 centre, 4 right-leaning, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Robert Pattinson’s announcement as the next James Bond has renewed discussion about how the series will continue after No Time to Die. Daniel Craig’s final Bond film appeared to kill the character, while its closing title still promised that James Bond would return.",
+    "The Guardian asked writers including Russell T Davies and David Hare how a new film might approach that ending. Their suggestions are ideas about possible storytelling choices, rather than confirmation of the plot of Pattinson’s first appearance.",
+    "The casting has also prompted reactions beyond the next film’s storyline. HuffPost UK reported comments from former Bond actor Léa Seydoux about changes behind the scenes, and 9to5Google reported a Google Search feature marking the announcement. The material available does not establish how the filmmakers will handle continuity with Craig’s final film."
    ],
    "location": {
     "label": "London, UK",
     "shortLabel": "London",
     "lat": 51.5072,
     "lng": -0.1276
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/film/2026/nov/20/james-bond-movie-007s-death-in-no-time-to-die-robert-pattinson"
+    },
+    {
+     "name": "HuffPost UK",
+     "url": "https://www.huffingtonpost.co.uk/entry/lea-seydoux-james-bond-amazon_uk_6b0077b1e4b0213d862693b1"
+    },
+    {
+     "name": "9to5Google",
+     "url": "https://9to5google.com/2026/11/20/google-search-easter-egg-robert-pattinson-james-bond/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "village-uproar-plans-house-nearly-1-000",
@@ -835,25 +1211,38 @@ window.DAYBREAK = {
    "source": "The Guardian",
    "time": "21 Nov",
    "url": "https://www.theguardian.com/uk-news/2026/nov/21/suffolk-village-votes-to-leave-the-uk-over-plans-to-house-asylum-seekers-nearby",
-   "headline": "Suffolk village votes to ‘leave the UK’ over plans to house asylum seekers nearby",
-   "summary": "Reported by 9 outlets, including Daily Mail, BBC News and Daily Mirror.",
+   "headline": "Suffolk village stages symbolic independence vote over asylum plan",
+   "summary": "Barnham residents voted 257 to 16 in a protest against plans to house 930 asylum seekers at a nearby former military base.",
    "points": [
-    "First reported by GB News on 21 Nov.",
-    "Coverage: 4 left-leaning, 1 centre, 4 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Residents of Barnham in Suffolk have voted to leave the UK in a symbolic referendum held in protest against government asylum-accommodation plans.",
+    "Around 500 people were eligible to take part in Saturday’s vote.",
+    "The BBC reported reactions from MPs and councillors who said the vote had sent a strong message."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Suffolk village votes to ‘leave the UK’ over plans to house asylum seekers nearby. Reported by 9 outlets, including Daily Mail, BBC News and Daily Mirror. Coverage began on 21 Nov with initial reporting from GB News, with The Guardian leading today’s featured headline.",
-    "Across Pheme’s 9-source sample, the story is being tracked across centre-rated outlets including Belfast Live; left-leaning outlets including The Guardian, BBC News, Daily Mirror; right-leaning outlets including Daily Mail, Evening Standard, GB News. Coverage: 4 left-leaning, 1 centre, 4 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Residents of Barnham in Suffolk have voted to leave the UK in a symbolic referendum held in protest against government asylum-accommodation plans. The Guardian reported 257 votes in favour of independence, 16 against and one spoiled ballot.",
+    "Around 500 people were eligible to take part in Saturday’s vote. The protest followed plans to house 930 asylum seekers at a former military base near the village. The ballot was a symbolic local action; it did not itself change the village’s constitutional status.",
+    "The BBC reported reactions from MPs and councillors who said the vote had sent a strong message. The Guardian also reported the local MP’s concern that legitimate criticism of the housing proposals was being used by political opponents to encourage racial discord. The dispute concerns the proposed site and the government’s accommodation plans, rather than any finding about individual asylum seekers."
    ],
    "location": {
     "label": "London, UK",
     "shortLabel": "London",
     "lat": 51.5072,
     "lng": -0.1276
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/c6vg270pw9ydo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/uk-news/2026/nov/21/suffolk-village-votes-to-leave-the-uk-over-plans-to-house-asylum-seekers-nearby"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "signal-restrict-screenshots-ai-agent-concerns-again",
@@ -861,19 +1250,40 @@ window.DAYBREAK = {
    "source": "TechCrunch",
    "time": "21 Nov",
    "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
-   "headline": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
-   "summary": "Reported by 11 outlets, including ZDNET, Inc.com and CNET.",
+   "headline": "Signal restricts screenshots to limit AI access to private chats",
+   "summary": "The messaging app is extending protections on Android and iOS, while acknowledging that it cannot block every form of AI-assisted capture.",
    "points": [
-    "First reported by Android Authority on 20 Nov.",
-    "Coverage: 2 left-leaning, 3 centre, 1 right-leaning, 5 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Signal is restricting screenshots in its Android and iOS apps as it tries to stop AI assistants from reading private conversations.",
+    "The Hacker News reported that screenshots would be restricted by default in supported circumstances.",
+    "Signal has acknowledged that the protection is incomplete, including gaps affecting macOS."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance. Reported by 11 outlets, including ZDNET, Inc.com and CNET. Coverage began on 20 Nov with initial reporting from Android Authority, with TechCrunch leading today’s featured headline.",
-    "Across Pheme’s 11-source sample, the story is being tracked across centre-rated outlets including ZDNET, Inc.com, CNET; left-leaning outlets including TechCrunch, Mashable; right-leaning outlets including BizPac Review. Coverage: 2 left-leaning, 3 centre, 1 right-leaning, 5 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "Signal is restricting screenshots in its Android and iOS apps as it tries to stop AI assistants from reading private conversations. TechCrunch reported the change as part of the encrypted messaging service’s response to growing use of assistants that can inspect what appears on a screen.",
+    "The Hacker News reported that screenshots would be restricted by default in supported circumstances. The Decoder described the protections as covering iOS 27 and Android situations in which the app can detect an assistant attempting to read a chat.",
+    "Signal has acknowledged that the protection is incomplete, including gaps affecting macOS. The change addresses the capture of messages after they are displayed on a device; it does not amount to a claim that every route by which another application might see a conversation has been eliminated. Users should distinguish the new screen-capture controls from the app’s existing message encryption."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "TechCrunch",
+     "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
+    },
+    {
+     "name": "The Decoder",
+     "url": "https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/"
+    },
+    {
+     "name": "The Hacker News",
+     "url": "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html"
+    },
+    {
+     "name": "9to5Mac",
+     "url": "https://9to5mac.com/2026/11/20/signal-now-blocks-screenshots-on-iphone-to-stop-siri-ai-from-seeing-chats/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "tech-stock-sell-off-drags-markets-down",
@@ -881,25 +1291,42 @@ window.DAYBREAK = {
    "source": "BBC News",
    "time": "20 Nov",
    "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
-   "headline": "Tech stock sell-off drags markets down as Anthropic shares slide",
-   "summary": "Reported by 13 outlets, including CNBC, Sky News and Financial Times.",
+   "headline": "Technology sell-off deepens after Anthropic’s stock-market debut",
+   "summary": "Anthropic shares fell sharply as broader selling pushed major US stock indices into correction or bear-market territory.",
    "points": [
-    "First reported by Investors Business Daily on 20 Nov.",
-    "Coverage: 5 left-leaning, 5 centre, 2 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Technology shares have fallen sharply as a wider market sell-off overtook the optimism surrounding Anthropic’s stock-market debut.",
+    "The Financial Times reported the Nasdaq 100 entering a bear market and Anthropic shares falling 8.5 per cent a day after their debut.",
+    "The movements show that the large initial public offering did not shelter the company or other technology shares from the broader downturn."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Tech stock sell-off drags markets down as Anthropic shares slide. Reported by 13 outlets, including CNBC, Sky News and Financial Times. Coverage began on 20 Nov with initial reporting from Investors Business Daily, with BBC News leading today’s featured headline.",
-    "Across Pheme’s 13-source sample, the story is being tracked across centre-rated outlets including Sky News, Financial Times, RTÉ News; left-leaning outlets including CNBC, NPR, BBC News; right-leaning outlets including Investors Business Daily, CBS News. Coverage: 5 left-leaning, 5 centre, 2 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Technology shares have fallen sharply as a wider market sell-off overtook the optimism surrounding Anthropic’s stock-market debut. The BBC reported that selling pushed both the S&P 500 and the Dow Jones Industrial Average into correction territory.",
+    "The Financial Times reported the Nasdaq 100 entering a bear market and Anthropic shares falling 8.5 per cent a day after their debut. Sky News had reported a drop of more than 10 per cent at Friday’s opening, a figure from a different point in the trading session.",
+    "The movements show that the large initial public offering did not shelter the company or other technology shares from the broader downturn. The figures in these accounts describe particular points during the sell-off, rather than a live quotation. They should not be treated as interchangeable opening, intraday and closing prices."
    ],
    "location": {
     "label": "San Francisco Bay Area, USA",
     "shortLabel": "California",
     "lat": 37.4419,
     "lng": -122.143
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "Financial Times",
+     "url": "https://www.ft.com/content/23fa83d8-e078-4853-959e-bd1f19d14ff5?syn-25a6b1a6=1"
+    },
+    {
+     "name": "Sky News",
+     "url": "https://news.sky.com/story/anthropic-among-big-fallers-in-global-stock-market-rout-13614361"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "iphone-duo-livestream-many-folds-apples-phone",
@@ -907,25 +1334,42 @@ window.DAYBREAK = {
    "source": "Digital Trends",
    "time": "21 Nov",
    "url": "https://www.digitaltrends.com/photography/dummies-give-us-an-early-look-at-the-upcoming-iphone-air-2-and-iphone-18/",
-   "headline": "Dummies give us an early look at the upcoming iPhone Air 2 and iPhone 18",
-   "summary": "Reported by 7 outlets, including Livemint, CNET and Mashable.",
+   "headline": "Dummy models suggest dual-camera redesign for iPhone Air 2",
+   "summary": "Unofficial mockups show a possible second rear camera for the Air, while the standard iPhone 18 appears closer to its predecessor.",
    "points": [
-    "First reported by Livemint on 20 Nov.",
-    "Coverage: 1 left-leaning, 3 centre, 1 right-leaning, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Images of unofficial dummy models have offered an early indication of possible designs for the iPhone Air 2 and standard iPhone 18.",
+    "MacRumors reported that the images were shared by Sonny Dickson.",
+    "Reports have linked the devices to a possible spring 2027 release, but the images are not an Apple product announcement."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Dummies give us an early look at the upcoming iPhone Air 2 and iPhone 18. Reported by 7 outlets, including Livemint, CNET and Mashable. Coverage began on 20 Nov with initial reporting from Livemint, with Digital Trends leading today’s featured headline.",
-    "Across Pheme’s 7-source sample, the story is being tracked across centre-rated outlets including Livemint, CNET, Digital Trends; left-leaning outlets including Mashable; right-leaning outlets including India Today. Coverage: 1 left-leaning, 3 centre, 1 right-leaning, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Images of unofficial dummy models have offered an early indication of possible designs for the iPhone Air 2 and standard iPhone 18. The most visible change is a second rear camera on the Air model, according to MacRumors and Digital Trends.",
+    "MacRumors reported that the images were shared by Sonny Dickson. The standard iPhone 18 mockup appears broadly similar to the iPhone 17, while the Air mockup suggests a move away from a single rear camera.",
+    "Reports have linked the devices to a possible spring 2027 release, but the images are not an Apple product announcement. Dummy units can indicate the shape and external layout being discussed ahead of a launch; they do not, by themselves, confirm working hardware, final specifications or a release date. The proposed camera change therefore remains an unofficial indication rather than a confirmed feature."
    ],
    "location": {
     "label": "San Francisco Bay Area, USA",
     "shortLabel": "California",
     "lat": 37.4419,
     "lng": -122.143
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "MacRumors",
+     "url": "https://www.macrumors.com/2026/11/20/iphone-air-2-and-iphone-18-dummy-models/"
+    },
+    {
+     "name": "9to5Mac",
+     "url": "https://9to5mac.com/2026/11/20/iphone-air-2-dual-camera-system/"
+    },
+    {
+     "name": "Digital Trends",
+     "url": "https://www.digitaltrends.com/photography/dummies-give-us-an-early-look-at-the-upcoming-iphone-air-2-and-iphone-18/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "tesla-launch-fsd-15-next-month-elon",
@@ -933,25 +1377,42 @@ window.DAYBREAK = {
    "source": "Seeking Alpha",
    "time": "21 Nov",
    "url": "https://seekingalpha.com/news/4675395-tesla-launch-fsd-15-next-month-elon-musk?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "headline": "Tesla to launch FSD 15 next month, Elon Musk says",
-   "summary": "Reported by 7 outlets, including Electrek, Investors Business Daily and Gizmodo.",
+   "headline": "Tesla begins limited FSD 15 rollout ahead of planned wider release",
+   "summary": "The update includes a new visualisation of the car’s surroundings, with a broader launch planned for next month.",
    "points": [
-    "First reported by Electrek on 21 Nov.",
-    "Coverage: 3 left-leaning, 1 centre, 2 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Tesla has started releasing version 15 of its Full Self-Driving software to an initial group of users.",
+    "The update includes a new rendering of the vehicle’s surroundings.",
+    "Tesla has claimed a large improvement in how the software handles safety-critical situations."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Tesla to launch FSD 15 next month, Elon Musk says. Reported by 7 outlets, including Electrek, Investors Business Daily and Gizmodo. Coverage began on 21 Nov with initial reporting from Electrek, with Seeking Alpha leading today’s featured headline.",
-    "Across Pheme’s 7-source sample, the story is being tracked across centre-rated outlets including Digital Trends; left-leaning outlets including Electrek, Gizmodo, InsideEVs; right-leaning outlets including Seeking Alpha, Investors Business Daily. Coverage: 3 left-leaning, 1 centre, 2 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Tesla has started releasing version 15 of its Full Self-Driving software to an initial group of users. Investors Business Daily reported that the first rollout began on Saturday, with Elon Musk saying a wider release was planned for next month.",
+    "The update includes a new rendering of the vehicle’s surroundings. Reporting summarised by Techmeme described a photorealistic view, while Digital Trends identified features called Reality View and Bike Rack Mode, alongside changes involving speed cameras.",
+    "Tesla has claimed a large improvement in how the software handles safety-critical situations. That is a company performance claim, rather than an independently established result in the material available here. The distinction between an initial rollout and general availability also matters: the reported release to some users does not mean the update has reached every eligible vehicle."
    ],
    "location": {
     "label": "Buenos Aires, Argentina",
     "shortLabel": "Buenos Aires",
     "lat": -34.6037,
     "lng": -58.3816
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Investors Business Daily",
+     "url": "https://www.investors.com/news/tesla-fsd-v15-coming-next-month-elon-musk-says-something-special/"
+    },
+    {
+     "name": "Digital Trends",
+     "url": "https://www.digitaltrends.com/cars/tesla-fsd-v15-rollout/"
+    },
+    {
+     "name": "Techmeme",
+     "url": "https://www.techmeme.com/261122/p4#a261122p4"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "scientists-turn-moon-dust-lego-like-bricks",
@@ -959,25 +1420,34 @@ window.DAYBREAK = {
    "source": "ScienceDaily",
    "time": "20 Nov",
    "url": "https://www.sciencedaily.com/releases/2026/11/261119194525.htm",
-   "headline": "Scientists turn Moon dust into LEGO-like bricks for future lunar bases",
-   "summary": "Reported by 7 outlets, including Ars Technica, Latest Science News -- ScienceDaily and Mashable.",
+   "headline": "Researchers test Moon-dust bricks for possible lunar construction",
+   "summary": "An experimental 3D-printing approach produces interlocking blocks, but the prototypes still need greater strength.",
    "points": [
-    "First reported by ScienceDaily on 20 Nov.",
-    "Coverage: 1 left-leaning, 1 centre, 1 right-leaning, 4 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Researchers have demonstrated an experimental way to turn Moon dust into interlocking, LEGO-like blocks using 3D printing.",
+    "The proposal concerns the use of local building material rather than a completed lunar building.",
+    "Building with material available at a destination could change how future bases are designed and supplied."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Scientists turn Moon dust into LEGO-like bricks for future lunar bases. Reported by 7 outlets, including Ars Technica, Latest Science News -- ScienceDaily and Mashable. Coverage began on 20 Nov with initial reporting from ScienceDaily, with ScienceDaily leading today’s featured headline.",
-    "Across Pheme’s 7-source sample, the story is being tracked across centre-rated outlets including Ars Technica; left-leaning outlets including Mashable; right-leaning outlets including Hot Air. Coverage: 1 left-leaning, 1 centre, 1 right-leaning, 4 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Researchers have demonstrated an experimental way to turn Moon dust into interlocking, LEGO-like blocks using 3D printing. ScienceDaily reported the work as a possible approach to constructing future lunar bases from material found on the Moon itself.",
+    "The proposal concerns the use of local building material rather than a completed lunar building. The blocks produced in the experiment still need to be made stronger, according to the report, so the results do not establish that they are ready to support permanent settlements.",
+    "Building with material available at a destination could change how future bases are designed and supplied. For this work, however, the immediate result is a set of experimental blocks and a manufacturing approach that requires further development. A successful demonstration of a construction technique is a different milestone from proving that it can withstand the demands of a working lunar base."
    ],
    "location": {
     "label": "Austin, Texas, USA",
     "shortLabel": "Texas",
     "lat": 30.2672,
     "lng": -97.7431
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "ScienceDaily",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261119194525.htm"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "uk-eu-reset-tuition-fees",
@@ -985,18 +1455,18 @@ window.DAYBREAK = {
    "source": "The New York Times",
    "time": "20 Nov",
    "url": "https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html",
-   "headline": "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know",
-   "summary": "Reported by 10 outlets, including BBC News, The Guardian and Daily Mirror.",
+   "headline": "UK and EU announce trade and youth-mobility agreements",
+   "summary": "The Brussels package aims to reduce post-Brexit barriers in food trade, emissions arrangements and movement for young people.",
    "points": [
-    "First reported by Daily Mirror on 20 Nov.",
-    "Coverage: 8 left-leaning, 2 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Britain and the European Union have announced agreements intended to remove some of the barriers created by Brexit.",
+    "The Guardian reported three main areas of agreement: food and drink, emissions trading and a youth-mobility scheme.",
+    "An unresolved disagreement over university tuition fees for EU students remains a potential obstacle to implementing the wider reset."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know. Reported by 10 outlets, including BBC News, The Guardian and Daily Mirror. Coverage began on 20 Nov with initial reporting from Daily Mirror, with The New York Times leading today’s featured headline.",
-    "Across Pheme’s 10-source sample, the story is being tracked across left-leaning outlets including BBC News, The New York Times, The Guardian; right-leaning outlets including Guido Fawkes, Legal Insurrection. Coverage: 8 left-leaning, 2 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Britain and the European Union have announced agreements intended to remove some of the barriers created by Brexit. Prime minister Andy Burnham and European leaders presented the package at a summit in Brussels on Friday.",
+    "The Guardian reported three main areas of agreement: food and drink, emissions trading and a youth-mobility scheme. The New York Times described the package as an effort to ease obstacles in the relationship between Britain and the bloc.",
+    "An unresolved disagreement over university tuition fees for EU students remains a potential obstacle to implementing the wider reset. The BBC has also examined what the arrangements could mean for Northern Ireland. The announcement establishes the broad areas of cooperation, but it should not be read as evidence that every detail has been settled or that all new arrangements are already operating."
    ],
    "location": {
     "label": "Belfast, Northern Ireland",
@@ -1005,7 +1475,24 @@ window.DAYBREAK = {
     "lng": -5.9301
    },
    "image": "assets/images/uk-westminster.jpg",
-   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight"
+   "imageAlt": "Palace of Westminster and Big Ben across the River Thames in autumn sunlight",
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/politics/2026/nov/20/burnham-trade-youth-mobility-deals-biggest-step-towards-eu-since-brexit"
+    },
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html"
+    },
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cm4gn9xw1v99o?at_medium=RSS&at_campaign=rss"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "warren-buffett-quadruples-thanksgiving-gifts-breakdown-much",
@@ -1013,25 +1500,38 @@ window.DAYBREAK = {
    "source": "CNBC",
    "time": "21 Nov",
    "url": "https://www.cnbc.com/2026/11/21/warren-buffett-quadruples-thanksgiving-gifts.html",
-   "headline": "Warren Buffett quadruples Thanksgiving gifts: A breakdown of how much wealth he's giving away",
-   "summary": "Reported by 5 outlets, including Inc.com, New York Observer and Forbes.",
+   "headline": "Warren Buffett’s Thanksgiving gifts rise to about $5.5 billion",
+   "summary": "The donations to four family foundations are more than four times the size of his Thanksgiving gifts a year earlier.",
    "points": [
-    "First reported by Inc.com on 20 Nov.",
-    "Coverage: 1 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Warren Buffett has increased his Thanksgiving donations to four family foundations to about $5.5 billion.",
+    "The New York Observer put the combined gift at $5.47 billion and examined questions about how quickly the foundations would distribute the money.",
+    "The announcement concerns transfers to the foundations, which is distinct from the timing of grants to individual charities and community organisations."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Warren Buffett quadruples Thanksgiving gifts: A breakdown of how much wealth he's giving away. Reported by 5 outlets, including Inc.com, New York Observer and Forbes. Coverage began on 20 Nov with initial reporting from Inc.com, with CNBC leading today’s featured headline.",
-    "Across Pheme’s 5-source sample, the story is being tracked across centre-rated outlets including Inc.com, Forbes; left-leaning outlets including CNBC; right-leaning outlets including New York Observer. Coverage: 1 left-leaning, 2 centre, 1 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Warren Buffett has increased his Thanksgiving donations to four family foundations to about $5.5 billion. CNBC reported that the value was more than four times the amount he gave through his Thanksgiving gifts the previous year.",
+    "The New York Observer put the combined gift at $5.47 billion and examined questions about how quickly the foundations would distribute the money. Its reporting included the perspective of a recipient of Sherwood Foundation funding in Omaha, who said the eventual implications for local programmes were not yet clear.",
+    "The announcement concerns transfers to the foundations, which is distinct from the timing of grants to individual charities and community organisations. The size of the gift therefore does not, on its own, establish how much any particular programme will receive or when recipients will see additional funding."
    ],
    "location": {
     "label": "Kyiv, Ukraine",
     "shortLabel": "Ukraine",
     "lat": 50.4501,
     "lng": 30.5234
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/11/21/warren-buffett-quadruples-thanksgiving-gifts.html"
+    },
+    {
+     "name": "New York Observer",
+     "url": "https://observer.com/2026/11/warren-buffett-gives-four-foundations-5-47-billion-how-fast-will-they-spend-it/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "prince-william-plans-strip-harry-titles-hes",
@@ -1039,19 +1539,36 @@ window.DAYBREAK = {
    "source": "Daily Mail",
    "time": "22 Nov",
    "url": "https://www.dailymail.com/news/article-16312089/Prince-William-strip-Harry-titles-non-working-royals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-   "headline": "Prince William plans to strip Harry of his titles when he's King and all non-working royals would lose HRH, bombshell new book claims",
-   "summary": "Reported by 5 outlets, including Daily Express, Hello Magazine and Evening Standard.",
+   "headline": "New book claims William plans changes to royal titles",
+   "summary": "Reports describe proposed changes affecting non-working royals if William becomes king; they are claims about future plans, not an announced reform.",
    "points": [
-    "First reported by Daily Express on 22 Nov.",
-    "Coverage: 1 left-leaning, 1 centre, 3 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A new book claims Prince William intends to change the use of royal titles when he becomes king.",
+    "The Daily Mail reported a proposed removal of HRH styles from non-working royals and said the suggested changes could also affect Harry’s children, Archie and Lilibet.",
+    "These reports concern a book’s account of possible future decisions."
    ],
    "publishedLabel": "22 Nov 2026",
    "article": [
-    "Prince William plans to strip Harry of his titles when he's King and all non-working royals would lose HRH, bombshell new book claims. Reported by 5 outlets, including Daily Express, Hello Magazine and Evening Standard. Coverage began on 22 Nov with initial reporting from Daily Express, with Daily Mail leading today’s featured headline.",
-    "Across Pheme’s 5-source sample, the story is being tracked across centre-rated outlets including Hello Magazine; left-leaning outlets including Metro; right-leaning outlets including Daily Mail, Daily Express, Evening Standard. Coverage: 1 left-leaning, 1 centre, 3 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "A new book claims Prince William intends to change the use of royal titles when he becomes king. Reports in the Daily Mail and Evening Standard say the proposals could affect Prince Harry and other members of the royal family who do not carry out official duties.",
+    "The Daily Mail reported a proposed removal of HRH styles from non-working royals and said the suggested changes could also affect Harry’s children, Archie and Lilibet. The Daily Express described the claims as part of a broader account of William’s ideas for reforming royal arrangements.",
+    "These reports concern a book’s account of possible future decisions. They do not establish that a new titles policy has been announced, that it has taken effect or that the changes will necessarily be made. The distinction is significant because the proposals are being reported as intentions attributed to William, rather than as a completed institutional decision."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Daily Mail",
+     "url": "https://www.dailymail.com/news/article-16312089/Prince-William-strip-Harry-titles-non-working-royals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+    },
+    {
+     "name": "Daily Express",
+     "url": "https://www.express.co.uk/news/royal/2268257/prince-william-harry-meghan-royals"
+    },
+    {
+     "name": "Evening Standard",
+     "url": "https://www.standard.co.uk/news/uk/prince-william-strip-harry-titles-king-tom-sykes-book-b1305871.html"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "bradford-councillor-stabbing-charge",
@@ -1059,25 +1576,42 @@ window.DAYBREAK = {
    "source": "Sky News",
    "time": "21 Nov",
    "url": "https://news.sky.com/story/man-charged-with-attempted-murder-after-councillor-stabbed-in-bradford-13614648",
-   "headline": "Man charged with attempted murder after councillor stabbed in Bradford",
-   "summary": "Reported by 7 outlets, including BBC News, The Guardian and Daily Mail.",
+   "headline": "Man charged after Bradford councillor is stabbed",
+   "summary": "Arfan Ali has appeared before magistrates following an attack on councillor Ibrar Ali while he was working in the community.",
    "points": [
-    "First reported by Sky News on 21 Nov.",
-    "Coverage: 3 left-leaning, 2 centre, 2 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A man has been charged with attempted murder after Bradford councillor Ibrar Ali was stabbed while working in the community.",
+    "Sky News described the councillor as having been out door-knocking when he was attacked.",
+    "The case is at the charging stage."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Man charged with attempted murder after councillor stabbed in Bradford. Reported by 7 outlets, including BBC News, The Guardian and Daily Mail. Coverage began on 21 Nov with initial reporting from Sky News, with Sky News leading today’s featured headline.",
-    "Across Pheme’s 7-source sample, the story is being tracked across centre-rated outlets including Sky News, Yorkshire Post; left-leaning outlets including BBC News, The Guardian, The Herald; right-leaning outlets including Daily Mail, GB News. Coverage: 3 left-leaning, 2 centre, 2 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "A man has been charged with attempted murder after Bradford councillor Ibrar Ali was stabbed while working in the community. The BBC reported that Arfan Ali appeared before magistrates in connection with Thursday’s attack.",
+    "Sky News described the councillor as having been out door-knocking when he was attacked. The Guardian reported that the incident took place at about 11am and that the defendant also faces charges of assault and possessing an offensive weapon in a public place.",
+    "The case is at the charging stage. The allegations against the defendant have not been determined by a trial in the material available for this account. Reports of the magistrates’ court appearance therefore concern the criminal proceedings following the attack, rather than a conviction or an established explanation of the attacker’s motive."
    ],
    "location": {
     "label": "Bradford, West Yorkshire, UK",
     "shortLabel": "Bradford",
     "lat": 53.796,
     "lng": -1.7594
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cmkgv2nlpy8ko?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/uk-news/2026/nov/21/man-charged-with-attempted-after-councillor-stabbed-in-bradford"
+    },
+    {
+     "name": "Sky News",
+     "url": "https://news.sky.com/story/man-charged-with-attempted-murder-after-councillor-stabbed-in-bradford-13614648"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "rare-titanic-items-sell-record-breaking-sums",
@@ -1085,19 +1619,40 @@ window.DAYBREAK = {
    "source": "BBC News",
    "time": "21 Nov",
    "url": "https://www.bbc.co.uk/news/articles/cme872563304o?at_medium=RSS&at_campaign=rss",
-   "headline": "Rare Titanic items sell for record-breaking sums",
-   "summary": "Reported by 5 outlets, including Daily Mail, Evening Standard and The Journal.",
+   "headline": "Titanic survivor’s diamond ring sells for £150,000",
+   "summary": "The auction also included a watch, a letter and a ticket connected with the ship’s departure, according to reports of the sale.",
    "points": [
-    "First reported by BBC News on 21 Nov.",
-    "Coverage: 2 left-leaning, 2 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A diamond ring belonging to Titanic survivor Lucy, Lady Duff Gordon, has sold at auction for £150,000.",
+    "The Daily Mail reported that Lady Duff Gordon was wearing the solitaire ring when the ship struck an iceberg during its maiden voyage from Southampton to New York in 1912.",
+    "The BBC described strong prices for rare Titanic items including a watch, ring and letter associated with passengers from different classes."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Rare Titanic items sell for record-breaking sums. Reported by 5 outlets, including Daily Mail, Evening Standard and The Journal. Coverage began on 21 Nov with initial reporting from BBC News, with BBC News leading today’s featured headline.",
-    "Across Pheme’s 5-source sample, the story is being tracked across left-leaning outlets including BBC News, The Journal; right-leaning outlets including Daily Mail, Evening Standard. Coverage: 2 left-leaning, 2 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "A diamond ring belonging to Titanic survivor Lucy, Lady Duff Gordon, has sold at auction for £150,000. The Evening Standard and the Journal reported the sale of the jewellery, which was among a collection of items connected with the liner and its passengers.",
+    "The Daily Mail reported that Lady Duff Gordon was wearing the solitaire ring when the ship struck an iceberg during its maiden voyage from Southampton to New York in 1912. The newspaper also reported a £40,000 sale for a ticket to watch the ship’s departure.",
+    "The BBC described strong prices for rare Titanic items including a watch, ring and letter associated with passengers from different classes. These objects connect the sale to individual experiences of the disaster, rather than simply to the vessel itself. The reported prices concern the particular lots sold at this auction."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "BBC News",
+     "url": "https://www.bbc.co.uk/news/articles/cme872563304o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+     "name": "Daily Mail",
+     "url": "https://www.dailymail.com/news/article-16312171/Diamond-ring-owned-aristocrat-Titanic-survivor-sold.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+    },
+    {
+     "name": "Evening Standard",
+     "url": "https://www.standard.co.uk/news/uk/son-lucy-southampton-british-wiltshire-b1305852.html"
+    },
+    {
+     "name": "The Journal",
+     "url": "https://www.thejournal.ie/titanic-survivors-diamond-ring-sells-150000-at-auction-7234116-Nov2026/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "bayers-7-25bn-settlement-cancer-cases-approved",
@@ -1105,19 +1660,40 @@ window.DAYBREAK = {
    "source": "The New York Times",
    "time": "21 Nov",
    "url": "https://www.nytimes.com/2026/11/20/business/bayer-settlement-roundup-cancer.html",
-   "headline": "Judge Approves $7 Billion Settlement Over Claims That Roundup Caused Cancer",
-   "summary": "Reported by 6 outlets, including The Guardian, NPR and The Hill.",
+   "headline": "Judge approves Bayer’s $7.25 billion Roundup settlement",
+   "summary": "The Missouri ruling addresses litigation alleging that exposure to the weedkiller caused non-Hodgkin lymphoma.",
    "points": [
-    "First reported by The Guardian on 20 Nov.",
-    "Coverage: 5 left-leaning, 1 centre.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A Missouri judge has approved a $7.25 billion settlement involving claims that Bayer’s Roundup weedkiller caused cancer.",
+    "Judge Timothy Boyer, sitting in a state court in St Louis, approved the nationwide class-action settlement on Friday.",
+    "The agreement is intended to address current and future claims, according to reporting on Bayer’s description of the settlement."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Judge Approves $7 Billion Settlement Over Claims That Roundup Caused Cancer. Reported by 6 outlets, including The Guardian, NPR and The Hill. Coverage began on 20 Nov with initial reporting from The Guardian, with The New York Times leading today’s featured headline.",
-    "Across Pheme’s 6-source sample, the story is being tracked across centre-rated outlets including The Hill; left-leaning outlets including The Guardian, The New York Times, NPR. Coverage: 5 left-leaning, 1 centre.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "A Missouri judge has approved a $7.25 billion settlement involving claims that Bayer’s Roundup weedkiller caused cancer. The Guardian reported that the agreement addresses litigation that has weighed on the company for close to a decade.",
+    "Judge Timothy Boyer, sitting in a state court in St Louis, approved the nationwide class-action settlement on Friday. The New York Times and the Hill reported that the claims concern non-Hodgkin lymphoma and exposure to the weedkiller. The Guardian described roughly 65,000 claims from people who said they developed cancer after using it.",
+    "The agreement is intended to address current and future claims, according to reporting on Bayer’s description of the settlement. Mother Jones noted that the approval remains subject to appeal. The court’s approval concerns the legal settlement; it should not be confused with a new clinical study establishing an individual person’s cause of cancer."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/business/2026/nov/20/bayer-roundup-cancer-litigation"
+    },
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/2026/11/20/business/bayer-settlement-roundup-cancer.html"
+    },
+    {
+     "name": "The Hill",
+     "url": "https://thehill.com/policy/energy-environment/6234796-judge-approves-roundup-settlement/"
+    },
+    {
+     "name": "Mother Jones",
+     "url": "https://www.motherjones.com/politics/2026/11/it-just-got-harder-to-sue-over-glyphosate/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "custom-mri-tool-show-within-weeks-if",
@@ -1125,19 +1701,36 @@ window.DAYBREAK = {
    "source": "RTÉ News",
    "time": "20 Nov",
    "url": "https://www.rte.ie/news/health/2026/1120/1600064-pill-for-advanced-pancreatic-cancer-shows-promise/",
-   "headline": "Pill for advanced pancreatic cancer shows promise",
-   "summary": "Reported by 6 outlets, including The Guardian, Medical Xpress and Citizen Free Press.",
+   "headline": "Pancreatic-cancer drug combination shows encouraging early trial results",
+   "summary": "Reports of a 61-patient study describe tumour responses to daraxonrasib alongside chemotherapy, with longer-term outcomes still to be established.",
    "points": [
-    "First reported by The Guardian on 20 Nov.",
-    "Coverage: 1 left-leaning, 2 centre, 2 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "An experimental pancreatic-cancer treatment combining daraxonrasib with chemotherapy has produced encouraging results in an early clinical study.",
+    "The Guardian reported results from 61 patients with recently diagnosed advanced disease.",
+    "The findings describe responses observed during a small clinical study, rather than proof of a lasting cure."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Pill for advanced pancreatic cancer shows promise. Reported by 6 outlets, including The Guardian, Medical Xpress and Citizen Free Press. Coverage began on 20 Nov with initial reporting from The Guardian, with RTÉ News leading today’s featured headline.",
-    "Across Pheme’s 6-source sample, the story is being tracked across centre-rated outlets including RTÉ News, WFLA - Tampa Bay; left-leaning outlets including The Guardian; right-leaning outlets including Citizen Free Press, Fox News. Coverage: 1 left-leaning, 2 centre, 2 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "An experimental pancreatic-cancer treatment combining daraxonrasib with chemotherapy has produced encouraging results in an early clinical study. RTÉ reported that the disease became undetectable in about one in twelve patients receiving the combination.",
+    "The Guardian reported results from 61 patients with recently diagnosed advanced disease. Tumour growth stopped in almost all participants, it said. Fox News reported tumour shrinkage in 60.7 per cent of patients and no visible tumour on scans in 8.2 per cent.",
+    "The findings describe responses observed during a small clinical study, rather than proof of a lasting cure. A tumour becoming undetectable on a scan does not by itself establish that cancer cannot return. The material available here does not settle the treatment’s longer-term survival benefit, the durability of responses or how the results will compare with a larger controlled study."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "RTÉ News",
+     "url": "https://www.rte.ie/news/health/2026/1120/1600064-pill-for-advanced-pancreatic-cancer-shows-promise/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib"
+    },
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/health/new-drug-combo-shrinks-tumors-most-patients-aggressive-cancer-type"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "wall-street-asks-save-ai-trade-anthropic",
@@ -1145,25 +1738,38 @@ window.DAYBREAK = {
    "source": "Bloomberg",
    "time": "21 Nov",
    "url": "https://www.bloomberg.com/news/articles/2026-11-21/wall-street-asks-what-can-save-ai-trade-after-anthropic-wipeout",
-   "headline": "Wall Street Asks What Can Save AI Trade After Anthropic Wipeout",
-   "summary": "Reported by 3 outlets, including Citizen Free Press and Economic Times.",
+   "headline": "Anthropic debut fails to halt pressure on AI shares",
+   "summary": "A record initial public offering has not reversed a difficult month for the technology sector, according to financial-market reports.",
    "points": [
-    "First reported by Citizen Free Press on 20 Nov.",
-    "Coverage: 1 left-leaning, 2 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "The market arrival of Anthropic has failed to bring the relief some investors expected for artificial-intelligence shares.",
+    "The sell-off came after an already difficult month that included Jensen Huang’s departure from Nvidia and the Democrats’ midterm-election victory.",
+    "The immediate development is the contrast between the scale of the company’s debut and the weakness of the wider sector."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Wall Street Asks What Can Save AI Trade After Anthropic Wipeout. Reported by 3 outlets, including Citizen Free Press and Economic Times. Coverage began on 20 Nov with initial reporting from Citizen Free Press, with Bloomberg leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across left-leaning outlets including Bloomberg; right-leaning outlets including Citizen Free Press, Economic Times. Coverage: 1 left-leaning, 2 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "The market arrival of Anthropic has failed to bring the relief some investors expected for artificial-intelligence shares. Bloomberg reported that a record-breaking initial public offering was followed by continued selling across technology stocks, with chipmakers among the companies under pressure.",
+    "The sell-off came after an already difficult month that included Jensen Huang’s departure from Nvidia and the Democrats’ midterm-election victory. Reporting carried by the Economic Times described the Anthropic float as an event that had been expected to improve sentiment but instead left investors asking further questions about the AI trade.",
+    "The immediate development is the contrast between the scale of the company’s debut and the weakness of the wider sector. A large new listing can attract substantial attention without reversing an existing decline across related shares. These reports describe market conditions during the sell-off, rather than a forecast that the decline will necessarily continue."
    ],
    "location": {
     "label": "San Francisco Bay Area, USA",
     "shortLabel": "California",
     "lat": 37.4419,
     "lng": -122.143
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Bloomberg",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-21/wall-street-asks-what-can-save-ai-trade-after-anthropic-wipeout"
+    },
+    {
+     "name": "Economic Times",
+     "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/wall-street-asks-what-can-save-ai-trade-after-anthropic-wipeout/articleshow/136067463.cms"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "gold-silver-drop-lowest-levels",
@@ -1171,19 +1777,32 @@ window.DAYBREAK = {
    "source": "The Wall Street Journal",
    "time": "20 Nov",
    "url": "https://www.wsj.com/finance/commodities-futures/gold-silver-drop-to-lowest-levels-in-over-a-year-c657402c?mod=rss_markets_main",
-   "headline": "Gold, Silver Drop to Lowest Levels in Over a Year",
-   "summary": "Reported by 3 outlets, including Citizen Free Press and Economic Times.",
+   "headline": "Gold and silver fall as rate expectations weigh on precious metals",
+   "summary": "Reports describe prices at their lowest levels in more than a year, despite the usual appeal of gold during periods of market uncertainty.",
    "points": [
-    "First reported by Citizen Free Press on 20 Nov.",
-    "Coverage: 3 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Gold and silver have fallen to their lowest levels in more than a year, according to the Wall Street Journal.",
+    "An Economic Times account described a much longer retreat from earlier highs, putting silver’s decline at 41 per cent over six months and gold’s at 19 per cent.",
+    "The reports present a market being pulled between uncertainty, demand for precious metals and expectations about monetary policy."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Gold, Silver Drop to Lowest Levels in Over a Year. Reported by 3 outlets, including Citizen Free Press and Economic Times. Coverage began on 20 Nov with initial reporting from Citizen Free Press, with The Wall Street Journal leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across right-leaning outlets including Citizen Free Press, The Wall Street Journal, Economic Times. Coverage: 3 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "Gold and silver have fallen to their lowest levels in more than a year, according to the Wall Street Journal. The newspaper reported that expectations of tighter monetary policy appeared to outweigh demand for gold as a refuge during unsettled markets.",
+    "An Economic Times account described a much longer retreat from earlier highs, putting silver’s decline at 41 per cent over six months and gold’s at 19 per cent. Those figures cover a six-month period and should be distinguished from a single day’s price change.",
+    "The reports present a market being pulled between uncertainty, demand for precious metals and expectations about monetary policy. They do not show that those influences have all moved in the same direction. The central development is that concern about tighter policy has coincided with substantial price falls even as some sources of demand remain in place."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The Wall Street Journal",
+     "url": "https://www.wsj.com/finance/commodities-futures/gold-silver-drop-to-lowest-levels-in-over-a-year-c657402c?mod=rss_markets_main"
+    },
+    {
+     "name": "Economic Times",
+     "url": "https://economictimes.indiatimes.com/markets/commodities/news/from-record-highs-to-a-brutal-rout-what-is-behind-the-meltdown-in-gold-and-silver/articleshow/136051518.cms"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "nasas-voyager-1-now-far-away-light",
@@ -1191,25 +1810,38 @@ window.DAYBREAK = {
    "source": "ScienceDaily",
    "time": "20 Nov",
    "url": "https://www.sciencedaily.com/releases/2026/11/261120075554.htm",
-   "headline": "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it",
-   "summary": "Reported by 3 outlets, including Mashable and Hot Air.",
+   "headline": "Voyager 1 reaches a one-light-day distance from Earth",
+   "summary": "Signals now take about 24 hours to travel one way between Earth and the nearly 50-year-old spacecraft.",
    "points": [
-    "First reported by ScienceDaily on 20 Nov.",
-    "Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Voyager 1 has reached a distance of about 16.1 billion miles from Earth, far enough for a radio signal to take a full day to cross the gap.",
+    "The distance creates an extraordinary delay in communication.",
+    "The milestone has coincided with a technical difficulty."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it. Reported by 3 outlets, including Mashable and Hot Air. Coverage began on 20 Nov with initial reporting from ScienceDaily, with ScienceDaily leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across left-leaning outlets including Mashable; right-leaning outlets including Hot Air. Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Voyager 1 has reached a distance of about 16.1 billion miles from Earth, far enough for a radio signal to take a full day to cross the gap. ScienceDaily reported the milestone as the spacecraft continues its journey through interstellar space nearly five decades after launch.",
+    "The distance creates an extraordinary delay in communication. A signal sent from Earth needs roughly 24 hours to reach the spacecraft, and a response needs another day to return, before allowing for time spent carrying out an instruction.",
+    "The milestone has coincided with a technical difficulty. Mashable reported that the probe was experiencing a data outage as it reached one light day from Earth, with engineers expecting to work on the problem. The distance record therefore should not be read as a statement that every instrument or communications function was operating normally at that moment."
    ],
    "location": {
     "label": "Austin, Texas, USA",
     "shortLabel": "Texas",
     "lat": 30.2672,
     "lng": -97.7431
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "ScienceDaily",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261120075554.htm"
+    },
+    {
+     "name": "Mashable",
+     "url": "https://mashable.com/science/nasa-voyager-1-data-outage-continues-past-one-light-day"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "california-entrepreneur-state-avoided-economic-disaster-billionaire",
@@ -1217,25 +1849,42 @@ window.DAYBREAK = {
    "source": "Fox Business",
    "time": "21 Nov",
    "url": "https://www.foxbusiness.com/economy/california-entrepreneur-says-state-avoided-economic-disaster-billionaire-tax-rejection",
-   "headline": "California entrepreneur says state avoided economic disaster with billionaire tax rejection",
-   "summary": "Reported by 3 outlets, including Jacobin and Business Insider.",
+   "headline": "California rejects billionaire-tax measure as debate continues",
+   "summary": "Opponents welcomed the defeat of Proposition 40, while supporters of higher taxes on the super-rich are continuing their campaign.",
    "points": [
-    "First reported by Jacobin on 20 Nov.",
-    "Coverage: 2 left-leaning, 1 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "California voters have rejected Proposition 40, a proposed billionaire wealth tax, according to reports examining the outcome.",
+    "Entrepreneur Eric Schiffer told Fox Business that the rejection had spared the state an exodus of entrepreneurs.",
+    "The defeat has not ended the wider campaign."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "California entrepreneur says state avoided economic disaster with billionaire tax rejection. Reported by 3 outlets, including Jacobin and Business Insider. Coverage began on 20 Nov with initial reporting from Jacobin, with Fox Business leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across left-leaning outlets including Jacobin, Business Insider; right-leaning outlets including Fox Business. Coverage: 2 left-leaning, 1 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "California voters have rejected Proposition 40, a proposed billionaire wealth tax, according to reports examining the outcome. The result has prompted competing interpretations of what it means for wealthy residents, businesses and future efforts to tax large fortunes.",
+    "Entrepreneur Eric Schiffer told Fox Business that the rejection had spared the state an exodus of entrepreneurs. That is his assessment of what might have happened under the measure, rather than proof that such a departure would have occurred.",
+    "The defeat has not ended the wider campaign. Business Insider reported economist Gabriel Zucman seeking support from politicians in France after the California result. Jacobin examined questions about how wealthy technology founders value control of their companies. The immediate confirmed development in these accounts is the measure’s defeat, while its longer-term economic effects and the future of related proposals remain open questions."
    ],
    "location": {
     "label": "Paris, France",
     "shortLabel": "Paris",
     "lat": 48.8566,
     "lng": 2.3522
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Fox Business",
+     "url": "https://www.foxbusiness.com/economy/california-entrepreneur-says-state-avoided-economic-disaster-billionaire-tax-rejection"
+    },
+    {
+     "name": "Business Insider",
+     "url": "https://www.businessinsider.com/french-billionaire-hunter-takes-fight-global-after-california-tax-defeat-2026-11"
+    },
+    {
+     "name": "Jacobin",
+     "url": "https://jacobin.com/2026/11/billionaire-tax-tech-wealth-control"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "economy-doing-better-think-everyone",
@@ -1243,25 +1892,38 @@ window.DAYBREAK = {
    "source": "The New York Times",
    "time": "21 Nov",
    "url": "https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html",
-   "headline": "How the U.S. Economy Is Tied to A.I.",
-   "summary": "Reported by 3 outlets, including The Hill and Bloomberg.",
+   "headline": "AI’s growing economic role brings a concentration risk",
+   "summary": "An economic explainer examines why dependence on one powerful technology trend can create vulnerabilities alongside growth.",
    "points": [
-    "First reported by The Hill on 20 Nov.",
-    "Coverage: 2 left-leaning, 1 centre.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Artificial intelligence has become a significant part of the US economy, prompting questions about the risks that come with its growing importance.",
+    "The basic concentration risk is that weaker confidence or spending in one heavily represented area can affect businesses and investors beyond that sector.",
+    "National economic descriptions also conceal different experiences."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "How the U.S. Economy Is Tied to A.I.. Reported by 3 outlets, including The Hill and Bloomberg. Coverage began on 20 Nov with initial reporting from The Hill, with The New York Times leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across centre-rated outlets including The Hill; left-leaning outlets including The New York Times, Bloomberg. Coverage: 2 left-leaning, 1 centre.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Artificial intelligence has become a significant part of the US economy, prompting questions about the risks that come with its growing importance. In a New York Times explainer, chief economics correspondent Ben Casselman examines that expanding economic role and the exposure it can create.",
+    "The basic concentration risk is that weaker confidence or spending in one heavily represented area can affect businesses and investors beyond that sector. A technology can contribute to growth while also becoming a source of vulnerability if expectations around it change sharply.",
+    "National economic descriptions also conceal different experiences. An accompanying Hill analysis emphasised that whether the economy appears strong or weak depends on the data being considered and the people being asked. The distinction matters when assessing an AI-led expansion: strength associated with one industry does not establish that the benefits or risks are shared evenly across the population."
    ],
    "location": {
     "label": "Tokyo, Japan",
     "shortLabel": "Tokyo",
     "lat": 35.6762,
     "lng": 139.6503
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The New York Times",
+     "url": "https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html"
+    },
+    {
+     "name": "The Hill",
+     "url": "https://thehill.com/opinion/finance/6231352-us-economy-outlook-2026/"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "tentative-deal-averts-strike-threat-busiest-u",
@@ -1269,25 +1931,42 @@ window.DAYBREAK = {
    "source": "The Wall Street Journal",
    "time": "21 Nov",
    "url": "https://www.wsj.com/logistics-report/tentative-deal-averts-strike-threat-at-busiest-u-s-ports-6f9a60d1?mod=pls_whats_news_us_business_f",
-   "headline": "Tentative Deal Averts Strike Threat at Busiest U.S. Ports",
-   "summary": "Reported by 3 outlets, including Bloomberg and Freightwaves.",
+   "headline": "Tentative security-workers’ deal averts Los Angeles port strike threat",
+   "summary": "About 250 security workers were covered by negotiations at the ports of Los Angeles and Long Beach.",
    "points": [
-    "First reported by Bloomberg on 21 Nov.",
-    "Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A tentative labour agreement has averted an immediate strike threat at the ports of Los Angeles and Long Beach.",
+    "The Wall Street Journal reported that the existing contract was due to expire overnight.",
+    "The negotiations concerned union security workers, rather than an announcement of a new agreement covering every category of employee at the ports."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "Tentative Deal Averts Strike Threat at Busiest U.S. Ports. Reported by 3 outlets, including Bloomberg and Freightwaves. Coverage began on 21 Nov with initial reporting from Bloomberg, with The Wall Street Journal leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across left-leaning outlets including Bloomberg; right-leaning outlets including The Wall Street Journal. Coverage: 1 left-leaning, 1 right-leaning, 1 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "A tentative labour agreement has averted an immediate strike threat at the ports of Los Angeles and Long Beach. Bloomberg reported that about 250 security workers reached terms with the group representing their employers.",
+    "The Wall Street Journal reported that the existing contract was due to expire overnight. FreightWaves said the tentative accord followed more than a year of bargaining and federally mediated negotiations at the country’s busiest container-port complex.",
+    "The negotiations concerned union security workers, rather than an announcement of a new agreement covering every category of employee at the ports. The reported deal eases the immediate risk of disruption associated with the expiring contract. As a tentative agreement, it should also be distinguished from evidence that every remaining step in finalising a labour contract has been completed."
    ],
    "location": {
     "label": "Los Angeles, California, USA",
     "shortLabel": "Los Angeles",
     "lat": 34.0522,
     "lng": -118.2437
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "The Wall Street Journal",
+     "url": "https://www.wsj.com/logistics-report/tentative-deal-averts-strike-threat-at-busiest-u-s-ports-6f9a60d1?mod=pls_whats_news_us_business_f"
+    },
+    {
+     "name": "Freightwaves",
+     "url": "https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach"
+    },
+    {
+     "name": "Bloomberg",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-21/los-angeles-port-strike-threat-resolved-with-tentative-agreement"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "physician-explains-glp-1s-biggest-potential-side",
@@ -1295,19 +1974,28 @@ window.DAYBREAK = {
    "source": "Inc.com",
    "time": "21 Nov",
    "url": "https://www.inc.com/avery-miles/a-massive-study-of-250000-patients-just-revealed-a-surprising-new-use-for-glp-1s/91436392",
-   "headline": "A Massive Study of 250,000 Patients Just Revealed a Surprising New Use for GLP-1s",
-   "summary": "Reported by 3 outlets, including Nautilus and Medical Xpress.",
+   "headline": "Large health-record study examines GLP-1 drugs and prediabetes",
+   "summary": "A reported Mayo Clinic analysis compares outcomes associated with GLP-1 medicines and metformin, without establishing a new treatment recommendation.",
    "points": [
-    "First reported by Nautilus on 20 Nov.",
-    "Coverage: 1 centre, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "A Mayo Clinic analysis of more than 250,000 health records has examined whether GLP-1 medicines could produce better outcomes than metformin for people with prediabetes.",
+    "The report concerns an analysis of existing health records.",
+    "The available summary does not establish a new clinical recommendation, a change in an individual patient’s treatment or the medicines’ full balance of benefits and risks."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "A Massive Study of 250,000 Patients Just Revealed a Surprising New Use for GLP-1s. Reported by 3 outlets, including Nautilus and Medical Xpress. Coverage began on 20 Nov with initial reporting from Nautilus, with Inc.com leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across centre-rated outlets including Inc.com. Coverage: 1 centre, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "A Mayo Clinic analysis of more than 250,000 health records has examined whether GLP-1 medicines could produce better outcomes than metformin for people with prediabetes. Inc.com reported findings suggesting potential advantages for returning blood sugar to normal levels and reducing heart-related risks.",
+    "The report concerns an analysis of existing health records. Such a comparison needs to be interpreted in light of who received each medicine and how the groups were selected; an association in records is not, on its own, proof that one treatment caused a better outcome.",
+    "The available summary does not establish a new clinical recommendation, a change in an individual patient’s treatment or the medicines’ full balance of benefits and risks. The finding is a research lead about possible additional uses of a drug class, rather than a basis for assuming that the same result will apply to everyone with prediabetes."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Inc.com",
+     "url": "https://www.inc.com/avery-miles/a-massive-study-of-250000-patients-just-revealed-a-surprising-new-use-for-glp-1s/91436392"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "lufthansa-cut-1-000-jobs-citing-ongoing",
@@ -1315,25 +2003,46 @@ window.DAYBREAK = {
    "source": "DW News",
    "time": "20 Nov",
    "url": "https://www.dw.com/en/lufthansa-to-cut-1-000-jobs-citing-ongoing-losses-reports/a-80000062?maca=en-rss-en-bus-2091-xml-mrss",
-   "headline": "Lufthansa to cut 1,000 jobs, citing ongoing losses — reports",
-   "summary": "Reported by 4 outlets, including Euronews, The Wall Street Journal and Oilprice.com.",
+   "headline": "Lufthansa plans 1,000 job cuts as flagship airline losses continue",
+   "summary": "Reports of a staff letter describe losses averaging €20 million a month and pressure from fuel costs and industrial action.",
    "points": [
-    "First reported by DW News on 20 Nov.",
-    "Coverage: 2 left-leaning, 1 centre, 1 right-leaning.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Lufthansa plans to cut about 1,000 full-time jobs as losses continue at its flagship airline.",
+    "The letter put average losses at €20 million a month between January and September.",
+    "Oilprice.com reported plans to reduce capacity on short- and medium-haul routes."
    ],
    "publishedLabel": "20 Nov 2026",
    "article": [
-    "Lufthansa to cut 1,000 jobs, citing ongoing losses — reports. Reported by 4 outlets, including Euronews, The Wall Street Journal and Oilprice.com. Coverage began on 20 Nov with initial reporting from DW News, with DW News leading today’s featured headline.",
-    "Across Pheme’s 4-source sample, the story is being tracked across centre-rated outlets including Oilprice.com; left-leaning outlets including DW News, Euronews; right-leaning outlets including The Wall Street Journal. Coverage: 2 left-leaning, 1 centre, 1 right-leaning.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
+    "Lufthansa plans to cut about 1,000 full-time jobs as losses continue at its flagship airline. Euronews reported that the positions were linked to Frankfurt and Munich, citing a letter to staff describing the pressure on the turnaround effort.",
+    "The letter put average losses at €20 million a month between January and September. DW reported that operational reductions were also planned, while the Wall Street Journal identified higher fuel costs and strike-related expenses as factors weighing on the carrier.",
+    "Oilprice.com reported plans to reduce capacity on short- and medium-haul routes. The accounts concern proposed changes at the flagship airline, which should be distinguished from a claim that every business in the wider Lufthansa group has the same financial position. The material available does not establish the final timing or individual employment arrangements for all of the planned cuts."
    ],
    "location": {
     "label": "Berlin, Germany",
     "shortLabel": "Germany",
     "lat": 52.52,
     "lng": 13.405
-   }
+   },
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "Euronews",
+     "url": "https://www.euronews.com/2026/11/20/lufthansa-plans-1000-job-cuts-in-frankfurt-and-munich-as-iran-war-slows-turnaround"
+    },
+    {
+     "name": "DW News",
+     "url": "https://www.dw.com/en/lufthansa-to-cut-1-000-jobs-citing-ongoing-losses-reports/a-80000062?maca=en-rss-en-bus-2091-xml-mrss"
+    },
+    {
+     "name": "The Wall Street Journal",
+     "url": "https://www.wsj.com/business/airlines/lufthansa-to-cut-1-000-jobs-at-flagship-airline-as-challenges-mount-a710ff68?mod=pls_whats_news_us_business_f"
+    },
+    {
+     "name": "Oilprice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/Lufthansa-to-Slash-1000-Jobs-as-Airlines-Reel-from-High-Fuel-Costs.html"
+    }
+   ],
+   "articleOrigin": "editorial"
   },
   {
    "id": "james-webb-telescope-spots-giant-star-swallowing",
@@ -1341,19 +2050,36 @@ window.DAYBREAK = {
    "source": "ScienceDaily",
    "time": "21 Nov",
    "url": "https://www.sciencedaily.com/releases/2026/11/261120075556.htm",
-   "headline": "A giant star swallowed another star. James Webb reveals the aftermath",
-   "summary": "Reported by 3 outlets, including Ars Technica and Live Science.",
+   "headline": "Webb observations reveal aftermath of a star swallowing its companion",
+   "summary": "Astronomers linked an eruption in the Andromeda galaxy to a stellar merger, with Webb observing the aftermath 47 days later.",
    "points": [
-    "First reported by Live Science on 20 Nov.",
-    "Coverage: 1 centre, 2 other or unrated.",
-    "Select an outlet below to compare headlines and read in Pheme."
+    "Astronomers have investigated an eruption in the Andromeda galaxy caused by a small star spiralling into a much larger companion.",
+    "The James Webb Space Telescope observed the aftermath 47 days after the eruption.",
+    "The observations connect a dramatic change in brightness to a physical event involving two stars merging."
    ],
    "publishedLabel": "21 Nov 2026",
    "article": [
-    "A giant star swallowed another star. James Webb reveals the aftermath. Reported by 3 outlets, including Ars Technica and Live Science. Coverage began on 20 Nov with initial reporting from Live Science, with ScienceDaily leading today’s featured headline.",
-    "Across Pheme’s 3-source sample, the story is being tracked across centre-rated outlets including Ars Technica. Coverage: 1 centre, 2 other or unrated.",
-    "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-   ]
+    "Astronomers have investigated an eruption in the Andromeda galaxy caused by a small star spiralling into a much larger companion. ScienceDaily reported that the giant star was about 18,000 times brighter than the Sun before the merger event.",
+    "The James Webb Space Telescope observed the aftermath 47 days after the eruption. Live Science described the work as following up earlier observations to confirm that the brightening involved one star swallowing another, while Ars Technica reported that the companion had been orbiting inside the larger star.",
+    "The observations connect a dramatic change in brightness to a physical event involving two stars merging. That is more informative than detecting a brightening alone, because it helps astronomers identify what caused the outburst. The event took place in Andromeda, a neighbouring galaxy, rather than in the Sun’s own stellar system."
+   ],
+   "articleStatus": "ready",
+   "articleUpdatedAt": "2026-11-22T09:33:39+00:00",
+   "articleSources": [
+    {
+     "name": "ScienceDaily",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261120075556.htm"
+    },
+    {
+     "name": "Live Science",
+     "url": "https://www.livescience.com/space/astronomers-spot-giant-star-swallowing-its-companion-in-first-ever-observations-of-a-stellar-merger"
+    },
+    {
+     "name": "Ars Technica",
+     "url": "https://arstechnica.com/science/2026/11/astronomers-watched-a-star-spiral-to-its-death-inside-a-giant-companion/"
+    }
+   ],
+   "articleOrigin": "editorial"
   }
  ],
  "OUTLETS": {
@@ -4783,13 +5509,14 @@ window.DAYBREAK = {
   "rangeLong": "20–22 November 2026",
   "lastRun": "22 Nov 2026, 09:08",
   "digest": [
-   "FBI reportedly investigating apparent hack of its criminal database (BBC News)",
-   "Mexico captures top drug lord 'El Chapo Isidro' (RTÉ News)",
-   "COP31 climate talks close to final deal, summit president says (Al Jazeera English)",
-   "Grand Theft Auto VI smashes records with $3.8bn in sales (Financial Times)"
+   "FBI investigates reported breach of national crime database (BBC News)",
+   "Mexican forces capture alleged cartel leader El Chapo Isidro (RTÉ News)",
+   "Fossil-fuel dispute holds up COP31 agreement (Al Jazeera English)",
+   "Grand Theft Auto VI launch generates about $3.8 billion in sales (Financial Times)"
   ],
   "generated": "automatic",
-  "writer": "template"
+  "writer": "editorial",
+  "articlePolicy": "source-based-v1"
  },
  "LEGACY_IDS": {
   "w1": "uk-eu-reset-tuition-fees",

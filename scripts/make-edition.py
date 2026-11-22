@@ -30,6 +30,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ratings  # noqa: E402
+from native_articles import article_is_ready, apply_editorial  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 LONDON = ZoneInfo('Europe/London')
@@ -267,7 +268,9 @@ Using ONLY this material (no outside knowledge), return a JSON object with:
 - "topic": one of "uk", "world", "science", "tech", "business", "finance" (uk = UK and Ireland domestic news)
 - "headline": a neutral headline in your own words, at most 90 characters, no quotation marks from outlets
 - "summary": one or two sentences in your own words, at most 45 words
-- "article": three short, original neutral briefing paragraphs in your own words (each 40-75 words) synthesising what happened, how coverage compares, and why it matters
+- "article": 2-5 original news paragraphs, at least 80 words altogether, about what happened and the concrete facts and context supported by this material. Do not write about source counts, political leanings, Pheme, or how to use the website
+- "article_sources": names of the outlets whose supplied material supports the article, exactly as given
+- "insufficient_material": true if the material is too thin to write a factual article without padding or speculation; if true, return an empty article
 - "points": three short factual key points in your own words, each at most 30 words
 - "digest": a one-line version for a daily digest, at most 18 words
 - "location": the main place the event happened as {{"label": "City, Country", "shortLabel": "City", "lat": number, "lng": number}}, or null if not one place
@@ -425,9 +428,12 @@ def write_story(e, taken):
     names = sorted(e['outlets'], key=lambda o: e['outlets'][o]['published'])
     first = names[0]
     gen = ask_writer(e)
+    if not isinstance(gen, dict):
+        gen = None
     if gen and gen.get('reject'):
         return None
-    if gen and gen.get('headline') and gen.get('summary'):
+    source_names = [name for name in (gen.get('article_sources') or []) if isinstance(name, str) and name in e['outlets']] if isinstance(gen, dict) else []
+    if gen and gen.get('headline') and gen.get('summary') and not gen.get('insufficient_material') and article_is_ready(gen) and source_names:
         headline = gen['headline'].strip()[:110]
         summary = gen['summary'].strip()
         points = [p.strip() for p in gen.get('points', []) if isinstance(p, str) and p.strip()][:3]
@@ -437,39 +443,23 @@ def write_story(e, taken):
             e['topic'] = gen['topic']
     else:
         headline = la['title']
-        def known(o):
-            r = e['ratings'][o]
-            return (r['questionable'], o not in FOLLOWED, r['code'] not in {'C', 'LL', 'LR', 'L', 'R', 'S'})
-        others = sorted((o for o in names if o != lead), key=known)[:3]
-        summary = f"Reported by {len(names)} outlets, including {', '.join(others[:-1]) + ' and ' + others[-1] if len(others) > 1 else others[0]}."
-        points = [f'First reported by {first} on {day_label(e["outlets"][first]["published"])}.', coverage_line(e),
-                  'Select an outlet below to compare headlines and read in Pheme.']
-        left_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] in LEFT][:3]
-        centre_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] == 'C'][:3]
-        right_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] in RIGHT][:3]
-        angles = []
-        if centre_list:
-            angles.append(f"centre-rated outlets including {', '.join(centre_list)}")
-        if left_list:
-            angles.append(f"left-leaning outlets including {', '.join(left_list)}")
-        if right_list:
-            angles.append(f"right-leaning outlets including {', '.join(right_list)}")
-        p1 = f"{headline}. {summary} Coverage began on {day_label(e['outlets'][first]['published'])} with initial reporting from {first}, with {lead} leading today’s featured headline."
-        p2 = (f"Across Pheme’s {len(names)}-source sample, the story is being tracked across "
-              + ('; '.join(angles) if angles else ', '.join(others or [lead]))
-              + f". {coverage_line(e)}")
-        p3 = "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
-        article = [p1, p2, p3]
+        summary = headline
+        points = []
+        article = []
         digest = f'{headline} ({lead})'
         gen = {}
     story = {
         'id': slug(headline, taken), 'topic': e['topic'], 'source': lead,
         'time': day_label(la['published']), 'url': la['url'], 'headline': headline,
-        'summary': summary, 'points': points or [coverage_line(e)],
+        'summary': summary, 'points': points,
         'publishedLabel': datetime.datetime.fromisoformat(la['published']).astimezone(LONDON).strftime('%-d %b %Y'),
     }
     if article:
         story['article'] = article
+        story['articleStatus'] = 'ready'
+        story['articleOrigin'] = 'generated'
+        story['articleUpdatedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
+        story['articleSources'] = [{'name': name, 'url': e['outlets'][name]['url']} for name in source_names]
     loc = gen.get('location')
     if isinstance(loc, dict):
         try:
@@ -548,6 +538,12 @@ def main():
         print('Too few multi-outlet stories; keeping the previous edition.', file=sys.stderr)
         return 1
     reuse_ids(stories, coverage, previous)
+    apply_editorial(stories, coverage, previous)
+    missing = [s['id'] for s in stories if not article_is_ready(s)]
+    if missing:
+        print(f'Article quality gate: {len(missing)} stories have no source-backed article. Keeping the published edition unchanged. Configure ANTHROPIC_API_KEY or GROQ_API_KEY for new articles.', file=sys.stderr)
+        return 1
+    digests = [s['headline'] + ' (' + s['source'] + ')' for s in stories]
     now = datetime.datetime.now(LONDON)
     pub = sorted(datetime.datetime.fromisoformat(a['published']).astimezone(LONDON)
                  for e in events for a in e['outlets'].values())
@@ -572,7 +568,8 @@ def main():
             'lastRun': now.strftime('%-d %b %Y, %H:%M'),
             'digest': digests[:4],
             'generated': 'automatic',
-            'writer': 'claude' if os.environ.get('ANTHROPIC_API_KEY') else ('groq' if os.environ.get('GROQ_API_KEY') else 'template'),
+            'articlePolicy': 'source-based-v1',
+            'writer': 'claude' if os.environ.get('ANTHROPIC_API_KEY') else ('groq' if os.environ.get('GROQ_API_KEY') else 'editorial-cache'),
         },
         'LEGACY_IDS': {},
     })

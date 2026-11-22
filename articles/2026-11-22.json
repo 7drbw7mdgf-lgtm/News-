@@ -1,0 +1,806 @@
+{
+  "updatedAt": "2026-11-22T09:33:39+00:00",
+  "stories": {
+    "fbi-criminal-database-hack": {
+      "headline": "FBI investigates reported breach of national crime database",
+      "summary": "The reported intrusion concerns a system used by police across the United States to share criminal-justice information.",
+      "sourceNames": [
+        "BBC News",
+        "France 24",
+        "CNBC",
+        "TechCrunch"
+      ],
+      "article": [
+        "The FBI is investigating reports that hackers gained access to the National Crime Information Center, a database used by federal and local law-enforcement agencies across the United States. The reported breach concerns a central information-sharing system rather than an individual police force’s records.",
+        "The database contains information about wanted people, missing persons, criminal histories and stolen property, according to France 24. That makes the nature and extent of any unauthorised access particularly significant for the agencies that depend on it.",
+        "President Donald Trump said he had been briefed on the incident and expressed concern. The available reports describe an investigation into an apparent intrusion; they do not establish how much information was accessed or whether records were altered. CNBC reported that it would be the second intrusion involving an FBI system in recent months."
+      ],
+      "points": [
+        "The FBI is investigating reports that hackers gained access to the National Crime Information Center, a database used by federal and local law-enforcement agencies across the United States.",
+        "The database contains information about wanted people, missing persons, criminal histories and stolen property, according to France 24.",
+        "President Donald Trump said he had been briefed on the incident and expressed concern."
+      ]
+    },
+    "mexico-el-chapo-isidro-capture": {
+      "headline": "Mexican forces capture alleged cartel leader El Chapo Isidro",
+      "summary": "Fausto Isidro Meza Flores was detained after a gun battle in Sinaloa, alongside two other alleged leaders of his organisation.",
+      "sourceNames": [
+        "BBC News",
+        "Financial Times",
+        "RTÉ News",
+        "The Guardian"
+      ],
+      "article": [
+        "Mexican military forces have arrested Fausto Isidro Meza Flores, the alleged drug-trafficking leader known as El Chapo Isidro, in Sinaloa. He was detained during an operation that also captured two other suspected leaders of his organisation, RTÉ reported.",
+        "The Guardian reported that the special-forces raid took place on Friday night and involved a gun battle in Guasave. The confrontation caused widespread alarm in the city. The Financial Times also reported violence in Sinaloa following the arrest.",
+        "Meza Flores was on the FBI’s list of ten most-wanted fugitives and had avoided capture for more than a decade, according to the Guardian. The BBC reported that the allegations against him include drug trafficking and torture. His detention is an arrest in connection with those allegations, rather than a finding of guilt."
+      ],
+      "points": [
+        "Mexican military forces have arrested Fausto Isidro Meza Flores, the alleged drug-trafficking leader known as El Chapo Isidro, in Sinaloa.",
+        "The Guardian reported that the special-forces raid took place on Friday night and involved a gun battle in Guasave.",
+        "Meza Flores was on the FBI’s list of ten most-wanted fugitives and had avoided capture for more than a decade, according to the Guardian."
+      ]
+    },
+    "climate-money-africa-europe-use-whats-already": {
+      "headline": "Fossil-fuel dispute holds up COP31 agreement",
+      "summary": "Negotiators in Turkey are struggling to settle language on fossil fuels, electrification and financial support for developing countries.",
+      "sourceNames": [
+        "BBC News",
+        "RTÉ News",
+        "The Guardian",
+        "France 24"
+      ],
+      "article": [
+        "COP31 climate negotiations have run beyond their planned timetable as governments struggle to agree a final text. Talks in Turkey remained divided over fossil fuels and the shape of a new international climate agreement, with nearly 200 countries involved.",
+        "An earlier draft attracted criticism because it did not mention fossil fuels, France 24 reported. The Guardian described continuing disagreements about electrification and finance for developing countries, alongside pressure on Saudi Arabia and its allies over a fossil-fuel phaseout.",
+        "The summit’s co-conveners, Australia’s Chris Bowen and Turkey’s Murat Kurum, held meetings with governments into Saturday evening. Although efforts to produce a revised agreement continued, the EU’s climate envoy said key differences had not yet been resolved. The negotiations described in these reports had therefore not produced an agreed final deal."
+      ],
+      "points": [
+        "COP31 climate negotiations have run beyond their planned timetable as governments struggle to agree a final text.",
+        "An earlier draft attracted criticism because it did not mention fossil fuels, France 24 reported.",
+        "The summit’s co-conveners, Australia’s Chris Bowen and Turkey’s Murat Kurum, held meetings with governments into Saturday evening."
+      ]
+    },
+    "love-carjackings-video-game": {
+      "headline": "Grand Theft Auto VI launch generates about $3.8 billion in sales",
+      "summary": "Rockstar’s long-awaited game has arrived to record sales and strong reviews after a 13-year gap between main instalments.",
+      "sourceNames": [
+        "Financial Times",
+        "The New York Times",
+        "The Guardian",
+        "Wired",
+        "CBS News"
+      ],
+      "article": [
+        "Grand Theft Auto VI has made about $3.8 billion in its opening sales period, turning the arrival of Rockstar’s latest game into a major entertainment launch. The New York Times reported $3.79 billion in a single day, while the Financial Times described consumer spending above the box-office takings of the highest-grossing film.",
+        "The release follows a 13-year wait for a new main instalment. Fans around the world cleared time to play, with the Guardian describing people taking leave from work and preparing to spend hours exploring the game. Its reporting also highlighted quieter activities alongside the series’ familiar action and criminal escapades.",
+        "Early reviews have been strongly positive. CBS News reported widespread critical acclaim, while Wired emphasised the detail of the game’s Leonida setting and the rewards of exploring it slowly. Together, the commercial figures and reception make the launch significant both as a business event and as the return of a franchise with a large, established audience."
+      ],
+      "points": [
+        "Grand Theft Auto VI has made about $3.8 billion in its opening sales period, turning the arrival of Rockstar’s latest game into a major entertainment launch.",
+        "The release follows a 13-year wait for a new main instalment.",
+        "Early reviews have been strongly positive."
+      ]
+    },
+    "riemann-hypothesis-ai-proof-claim": {
+      "headline": "Mathematician claims AI-assisted breakthrough on Riemann hypothesis",
+      "summary": "Anthropic researcher Levent Alpöge says Claude helped him tackle the 167-year-old problem, with scrutiny of the claimed proof continuing.",
+      "sourceNames": [
+        "BBC News",
+        "Financial Times",
+        "The Guardian",
+        "New Scientist"
+      ],
+      "article": [
+        "A mathematician working at Anthropic says the company’s Claude software helped him find a proof of the Riemann hypothesis, one of mathematics’ most prominent longstanding problems. Levent Alpöge announced the claim in a note on his website on Friday, according to the Guardian.",
+        "Alpöge said the work took six weeks. The problem has resisted a proof for 167 years, which is why a successful solution would be a substantial mathematical result as well as a notable example of AI-assisted research.",
+        "The claim is undergoing examination. The Guardian reported positive assessments from two groups, while the BBC stressed that checking the proof would take time. Those early reactions should be distinguished from a completed, universally accepted verification process: the news is a claimed breakthrough whose reasoning still requires detailed scrutiny."
+      ],
+      "points": [
+        "A mathematician working at Anthropic says the company’s Claude software helped him find a proof of the Riemann hypothesis, one of mathematics’ most prominent longstanding problems.",
+        "Alpöge said the work took six weeks.",
+        "The claim is undergoing examination."
+      ]
+    },
+    "catherine-bbc-cancer-film": {
+      "headline": "Princess of Wales discusses life after cancer in BBC documentary",
+      "summary": "The film Heal follows Catherine’s experience of recovery and the wider personal impact of her diagnosis.",
+      "sourceNames": [
+        "BBC News",
+        "The Guardian",
+        "The New York Times"
+      ],
+      "article": [
+        "The Princess of Wales has spoken about the lasting personal effect of a cancer diagnosis in a new BBC documentary. Catherine appears in Heal, a 30-minute film due to be released later this month, and discusses changes that extend beyond the physical effects of treatment.",
+        "In the trailer, she describes the diagnosis as something that changes a person at a deeper level. The Guardian reported that the documentary follows her taking on a Three Peaks challenge and finding hope while continuing to live with uncertainty.",
+        "Catherine is in remission, according to the New York Times. The film presents her own account of recovery and the emotional consequences of illness. Her comments concern an individual experience of cancer, rather than an announcement of a new treatment or a general medical conclusion about recovery."
+      ],
+      "points": [
+        "The Princess of Wales has spoken about the lasting personal effect of a cancer diagnosis in a new BBC documentary.",
+        "In the trailer, she describes the diagnosis as something that changes a person at a deeper level.",
+        "Catherine is in remission, according to the New York Times."
+      ]
+    },
+    "ice-agents-detain-people-seattle-airport": {
+      "headline": "Immigration arrests on Seattle jet bridge delay flight",
+      "summary": "Masked officers detained people as passengers boarded a Los Angeles-bound aircraft, prompting criticism from Washington’s governor.",
+      "sourceNames": [
+        "Al Jazeera English",
+        "Political Wire",
+        "The Hill",
+        "MyNorthwest"
+      ],
+      "article": [
+        "Immigration officers detained people on a crowded jet bridge at Seattle-Tacoma International Airport on Saturday as passengers boarded a flight. Al Jazeera reported two detentions during the operation by masked Immigration and Customs Enforcement agents.",
+        "The incident delayed an Alaska Airlines flight bound for Los Angeles. Reporting carried by MyNorthwest described officers dragging at least one person away, while the airline said the scene had been distressing for passengers and employees.",
+        "Washington governor Bob Ferguson condemned the operation after reports of the arrests emerged. His response focused on the conduct of federal immigration enforcement at the airport. The material available for this account does not establish the detained people’s individual immigration cases or the eventual outcome of their detention."
+      ],
+      "points": [
+        "Immigration officers detained people on a crowded jet bridge at Seattle-Tacoma International Airport on Saturday as passengers boarded a flight.",
+        "The incident delayed an Alaska Airlines flight bound for Los Angeles.",
+        "Washington governor Bob Ferguson condemned the operation after reports of the arrests emerged."
+      ]
+    },
+    "nvidia-growth-outlook-bofa-expert-jensen-huang": {
+      "headline": "Report examines allegations about Jensen Huang’s management at Nvidia",
+      "summary": "A New York Times investigation describes employee accounts and a past settlement as the former chief executive’s future remains in question.",
+      "sourceNames": [
+        "The New York Times",
+        "TechCrunch",
+        "The Information",
+        "CNBC"
+      ],
+      "article": [
+        "A New York Times report has examined allegations about how Nvidia co-founder Jensen Huang treated employees during his years leading the company. The newspaper described accounts of belittling behaviour and reported a confidential settlement with an executive who had complained about the treatment of staff.",
+        "The reporting comes amid questions about Huang’s departure and a possible return. The Information reported that he had said he would be open to taking the chief executive role again, while Nvidia’s board had continued to say it would not rehire him.",
+        "Separate CNBC reporting said Huang was expected to testify publicly before the US Senate banking committee. The workplace allegations, the board’s position and the congressional scrutiny are distinct developments. The reported employee accounts are allegations attributed to the newspaper’s investigation, rather than findings made by Pheme."
+      ],
+      "points": [
+        "A New York Times report has examined allegations about how Nvidia co-founder Jensen Huang treated employees during his years leading the company.",
+        "The reporting comes amid questions about Huang’s departure and a possible return.",
+        "Separate CNBC reporting said Huang was expected to testify publicly before the US Senate banking committee."
+      ]
+    },
+    "poland-condemns-russian-airspace-provocation": {
+      "headline": "Poland reports suspected Russian missiles and drone in its airspace",
+      "summary": "Polish officials described three objects as a likely provocation while Russia carried out a major attack on Ukraine.",
+      "sourceNames": [
+        "RTÉ News",
+        "The New York Times",
+        "BBC News",
+        "CBS News"
+      ],
+      "article": [
+        "Poland’s defence minister has said Russia violated Polish airspace with three objects believed to be two missiles and a drone. Polish authorities described the incidents as a possible provocation, according to reports carried by RTÉ and the New York Times.",
+        "The New York Times reported no injuries or damage from the incidents in Poland. Officials linked their concerns to the timing of military exercises involving Ukraine’s allies. The identification of the objects and their purpose remained matters for the authorities’ assessment.",
+        "The developments came as Russia launched a large attack on Ukraine. The BBC reported strikes on bridges and railway stations in Kyiv, while CBS described missiles entering Polish territory during the assault. The attacks in Ukraine and the reported airspace violations have renewed concern about the conflict affecting a neighbouring NATO member."
+      ],
+      "points": [
+        "Poland’s defence minister has said Russia violated Polish airspace with three objects believed to be two missiles and a drone.",
+        "The New York Times reported no injuries or damage from the incidents in Poland.",
+        "The developments came as Russia launched a large attack on Ukraine."
+      ]
+    },
+    "strait-hormuz-athlete-swims-through-war-zone": {
+      "headline": "Lewis Pugh swims Strait of Hormuz to highlight war’s environmental toll",
+      "summary": "The British endurance swimmer completed a three-day challenge intended to draw attention to damage to marine life and coastal waters.",
+      "sourceNames": [
+        "BBC News",
+        "France 24",
+        "CBS News",
+        "Euronews"
+      ],
+      "article": [
+        "British endurance swimmer Lewis Pugh has completed a swim through the Strait of Hormuz to highlight the environmental consequences of war. Euronews reported that he covered 15 kilometres over three days in November, with explosions and burning tankers nearby.",
+        "Pugh undertook the challenge as an ocean campaigner, drawing attention to threats to wildlife and the condition of the sea. France 24 described concerns about pollution reaching both the air and water during the conflict, alongside continuing danger to vessels in the strait.",
+        "The swim was intended as a public appeal for the fighting to end and for environmental damage to receive more attention. It was a campaigning endurance challenge, rather than a scientific survey measuring the extent of contamination. The BBC reported Pugh’s warning that the harm could last beyond the immediate conflict."
+      ],
+      "points": [
+        "British endurance swimmer Lewis Pugh has completed a swim through the Strait of Hormuz to highlight the environmental consequences of war.",
+        "Pugh undertook the challenge as an ocean campaigner, drawing attention to threats to wildlife and the condition of the sea.",
+        "The swim was intended as a public appeal for the fighting to end and for environmental damage to receive more attention."
+      ]
+    },
+    "gulf-of-finland-drone-ship-attack": {
+      "headline": "Russian cargo ship burns after drone strike in Gulf of Finland",
+      "summary": "Finnish authorities said the vessel was hit in international waters before drifting into Finland’s territorial waters.",
+      "sourceNames": [
+        "BBC News",
+        "RTÉ News",
+        "France 24",
+        "CNBC"
+      ],
+      "article": [
+        "A Russian cargo ship caught fire after a drone strike in the Gulf of Finland on Saturday and later drifted into Finnish territorial waters. Finnish authorities said the attack took place in international waters, according to France 24.",
+        "CNBC identified the vessel as the Sparta II and reported damage west of Russia’s Gogland island. Its crew evacuated, while RTÉ described the ship as having links to the Russian military.",
+        "Finland’s defence forces said Ukraine was likely responsible, an assessment reported by the BBC. That attribution should be distinguished from an independently established account of who carried out the strike. Helsinki notified NATO and introduced temporary restrictions in the area as it responded to the damaged vessel entering Finnish waters."
+      ],
+      "points": [
+        "A Russian cargo ship caught fire after a drone strike in the Gulf of Finland on Saturday and later drifted into Finnish territorial waters.",
+        "CNBC identified the vessel as the Sparta II and reported damage west of Russia’s Gogland island.",
+        "Finland’s defence forces said Ukraine was likely responsible, an assessment reported by the BBC."
+      ]
+    },
+    "trump-china-trip-iran-ukraine-peace-declaration": {
+      "headline": "Zelensky criticises Putin after Trump defends relationship with Russian leader",
+      "summary": "The Ukrainian president’s remarks followed meetings involving the US, Russian and Chinese leaders in Shenzhen.",
+      "sourceNames": [
+        "BBC News",
+        "The New York Times",
+        "CBS News",
+        "Euronews"
+      ],
+      "article": [
+        "Ukrainian president Volodymyr Zelensky has criticised Vladimir Putin after Donald Trump described the Russian leader as a friend. The BBC reported Zelensky calling Putin a killer following Trump’s comments about their relationship during his visit to China.",
+        "Trump, Putin and Chinese president Xi Jinping met in Shenzhen. CBS News reported little apparent progress from their trilateral meeting, while the New York Times described Putin’s appearance alongside the other leaders as a symbolic diplomatic gain for Russia.",
+        "After returning to Washington, Trump defended his ties with both Xi and Putin and said he believed Russia wanted a diplomatic end to the war in Ukraine, according to Euronews. Zelensky’s response underscored the continuing distance between that portrayal and Ukraine’s assessment of the Russian president."
+      ],
+      "points": [
+        "Ukrainian president Volodymyr Zelensky has criticised Vladimir Putin after Donald Trump described the Russian leader as a friend.",
+        "Trump, Putin and Chinese president Xi Jinping met in Shenzhen.",
+        "After returning to Washington, Trump defended his ties with both Xi and Putin and said he believed Russia wanted a diplomatic end to the war in Ukraine, according to Euronews."
+      ]
+    },
+    "dead-36-missing-indonesia-factory-fire": {
+      "headline": "Three killed and dozens missing in Indonesian factory fire",
+      "summary": "Rescuers are searching a confectionery factory west of Jakarta after a blaze left extensive damage to the building.",
+      "sourceNames": [
+        "BBC News",
+        "RTÉ News",
+        "The Guardian",
+        "Al Jazeera English"
+      ],
+      "article": [
+        "At least three people have died and 36 remained missing after a fire at a confectionery factory west of Jakarta, Indonesian rescue officials said. Search teams were working through the damaged complex as families waited for information about those still unaccounted for.",
+        "The Guardian reported that parts of the factory’s roof had collapsed and that smoke was still rising from the site. Images and footage showed rescuers entering the burned building as relatives gathered near its entrance seeking updates.",
+        "Al Jazeera reported that at least 15 people had been rescued, including four who were taken to hospital. The cause of the fire had not been established in the available reports. The death and missing-person totals describe the position reported during the ongoing rescue effort and may change as searches continue."
+      ],
+      "points": [
+        "At least three people have died and 36 remained missing after a fire at a confectionery factory west of Jakarta, Indonesian rescue officials said.",
+        "The Guardian reported that parts of the factory’s roof had collapsed and that smoke was still rising from the site.",
+        "Al Jazeera reported that at least 15 people had been rescued, including four who were taken to hospital."
+      ]
+    },
+    "trump-vows-work-democrats-cap-credit-card": {
+      "headline": "Trump backs working with Democrats on credit-card rate cap",
+      "summary": "The president said he would support limits on card interest and fees, but the remarks did not establish a new legal cap.",
+      "sourceNames": [
+        "CBS News",
+        "Axios",
+        "Washington Examiner"
+      ],
+      "article": [
+        "President Donald Trump has said he would work with Democrats in the incoming Congress to cap credit-card interest rates. He made the comments in a Saturday television interview, renewing support for an idea he had previously raised during his presidential campaign.",
+        "Axios reported that Trump also discussed card fees and argued that companies were making excessive profits. During the interview, he was asked about an earlier suggestion of a one-year, 10 per cent interest-rate limit, according to the Washington Examiner.",
+        "The proposal would need to move beyond an expression of presidential support before changing the rules for cardholders. Supporters argue that a cap could reduce borrowing costs, while the banking industry argues it could restrict access to credit. No enacted change to interest rates was established by these reports."
+      ],
+      "points": [
+        "President Donald Trump has said he would work with Democrats in the incoming Congress to cap credit-card interest rates.",
+        "Axios reported that Trump also discussed card fees and argued that companies were making excessive profits.",
+        "The proposal would need to move beyond an expression of presidential support before changing the rules for cardholders."
+      ]
+    },
+    "tanker-struck-strait-bahrain-iran-hit-facility": {
+      "headline": "Bahrain reports industrial-site strike as tankers are hit in Hormuz",
+      "summary": "Bahrain said a fire damaged a civilian facility without causing casualties, while separate incidents affected tankers in the strait.",
+      "sourceNames": [
+        "RTÉ News",
+        "France 24",
+        "Al Jazeera English"
+      ],
+      "article": [
+        "Bahrain has accused Iran of striking a civilian industrial facility, causing a fire and damage but no reported casualties. The allegation came as two tankers were hit in the Strait of Hormuz, according to RTÉ and France 24.",
+        "Al Jazeera reported Bahrain’s account of the industrial-site fire alongside an Iranian Revolutionary Guard statement saying it had targeted US military positions at bases in al-Riffa and Awali. Those descriptions represent the respective parties’ accounts and do not independently establish that they refer to the same target.",
+        "France 24 also reported that Tehran said it had shot down a US drone. The incidents occurred amid stalled efforts to end the conflict and continuing danger to shipping. The available material did not establish the full extent of damage to the tankers or independently resolve responsibility for each incident."
+      ],
+      "points": [
+        "Bahrain has accused Iran of striking a civilian industrial facility, causing a fire and damage but no reported casualties.",
+        "Al Jazeera reported Bahrain’s account of the industrial-site fire alongside an Iranian Revolutionary Guard statement saying it had targeted US military positions at bases in al-Riffa and Awali.",
+        "France 24 also reported that Tehran said it had shot down a US drone."
+      ]
+    },
+    "much-loved-mum-51-among-somerset-funeral": {
+      "headline": "Families share tributes in Somerset’s latest funeral notices",
+      "summary": "SomersetLive’s latest announcements include a tribute to a mother who died at 51, alongside other local death and funeral notices.",
+      "sourceNames": [
+        "SomersetLive"
+      ],
+      "article": [
+        "Families in Somerset have shared tributes to loved ones in the latest round of local death and funeral announcements published by SomersetLive. The notices include a tribute to a mother who died at the age of 51.",
+        "The announcements are individual family notices, rather than reports of a single incident. They bring together messages of remembrance and details of arrangements published by the local newspaper, allowing people in the community to learn about bereavements and pay their respects.",
+        "No cause of death or additional personal details about the woman were supplied in the material available for this briefing. Those details should not be inferred from a headline or from separate funeral announcements published elsewhere. Families’ original notices remain the source for specific service arrangements and tributes."
+      ],
+      "points": [
+        "Families in Somerset have shared tributes to loved ones in the latest round of local death and funeral announcements published by SomersetLive.",
+        "The announcements are individual family notices, rather than reports of a single incident.",
+        "No cause of death or additional personal details about the woman were supplied in the material available for this briefing."
+      ]
+    },
+    "tuition-fees-talks-delay-adoption-eu-deal": {
+      "headline": "Tuition-fee disagreement shadows UK–EU reset agreement",
+      "summary": "Britain and the EU have agreed closer cooperation, but accounts differ over whether university fees could hold up the wider deal.",
+      "sourceNames": [
+        "BBC News",
+        "Financial Times",
+        "The Guardian"
+      ],
+      "article": [
+        "Britain and the European Union have agreed a package intended to deepen their relationship after Brexit, but the treatment of EU students’ university fees remains unresolved. The discussions cover arrangements for food and drink, emissions trading and youth mobility.",
+        "Prime minister Andy Burnham met European Commission president Ursula von der Leyen and European Council president António Costa in Brussels. The Guardian reported both sides presenting the agreements as mutually beneficial while acknowledging that student fees were still an outstanding issue.",
+        "The Financial Times reported Brussels insisting that Britain reduce fees for students from the bloc before the reset could be delivered. The BBC, however, reported Ed Miliband saying the wider deal did not depend on a tuition-fee agreement. Those competing accounts leave an important question about implementation unresolved, even though the broad agreements have been announced."
+      ],
+      "points": [
+        "Britain and the European Union have agreed a package intended to deepen their relationship after Brexit, but the treatment of EU students’ university fees remains unresolved.",
+        "Prime minister Andy Burnham met European Commission president Ursula von der Leyen and European Council president António Costa in Brussels.",
+        "The Financial Times reported Brussels insisting that Britain reduce fees for students from the bloc before the reset could be delivered."
+      ]
+    },
+    "cold-gives-way-rain-parts-weather-warning": {
+      "headline": "Heavy rain warning follows cold spell in south-west England",
+      "summary": "Devon and Cornwall face a slow-moving band of rain, with more than 100 millimetres forecast on Dartmoor.",
+      "sourceNames": [
+        "The Guardian"
+      ],
+      "article": [
+        "Parts of south-west England face heavy rain as colder conditions give way to a slow-moving weather system. The Met Office has issued a warning covering Devon and Cornwall, with more than 100 millimetres of rainfall expected on Dartmoor, the Guardian reported.",
+        "The warning runs from 6am on Sunday until midnight. Flood alerts have been issued, and the forecast raises the possibility of disruption and power cuts as rain persists over the affected area.",
+        "The largest forecast totals concern the wetter parts of the region rather than a uniform amount across the whole country. The change follows a spell of cold weather, making the incoming rain the main focus of the latest warning. The forecast and warning period describe conditions expected during Sunday’s weather event, rather than measurements of rain that has already fallen."
+      ],
+      "points": [
+        "Parts of south-west England face heavy rain as colder conditions give way to a slow-moving weather system.",
+        "The warning runs from 6am on Sunday until midnight.",
+        "The largest forecast totals concern the wetter parts of the region rather than a uniform amount across the whole country."
+      ]
+    },
+    "bepicolombo-reaches-mercury": {
+      "headline": "BepiColombo reaches Mercury after eight-year journey",
+      "summary": "The linked European and Japanese spacecraft have entered orbit and are due to separate next month for their scientific missions.",
+      "sourceNames": [
+        "MyNorthwest",
+        "CityNews Toronto",
+        "The West Australian"
+      ],
+      "article": [
+        "The BepiColombo mission has reached Mercury after an eight-year journey through the inner solar system. A pair of linked spacecraft entered orbit around the planet on Saturday, according to Associated Press reporting carried by MyNorthwest and CityNews Toronto.",
+        "One spacecraft is European and the other Japanese. The two explorers are due to separate next month so they can begin their individual work mapping and studying the planet, the AP report said.",
+        "Their arrival brings a new opportunity to investigate Mercury after years without a visiting spacecraft. The West Australian described the mission’s aim as studying and mapping the intensely hot planet. Entering orbit is a major journey milestone, but it is separate from the later stages in which the orbiters separate and carry out their scientific observations."
+      ],
+      "points": [
+        "The BepiColombo mission has reached Mercury after an eight-year journey through the inner solar system.",
+        "One spacecraft is European and the other Japanese.",
+        "Their arrival brings a new opportunity to investigate Mercury after years without a visiting spacecraft."
+      ]
+    },
+    "robert-pattinsons-james-bond-casting-marks-hollywoods": {
+      "headline": "Robert Pattinson’s Bond casting raises questions about 007’s next chapter",
+      "summary": "The new casting follows a film that killed Daniel Craig’s version of Bond, leaving the next production’s approach to continuity unresolved.",
+      "sourceNames": [
+        "The Guardian",
+        "HuffPost UK",
+        "9to5Google"
+      ],
+      "article": [
+        "Robert Pattinson’s announcement as the next James Bond has renewed discussion about how the series will continue after No Time to Die. Daniel Craig’s final Bond film appeared to kill the character, while its closing title still promised that James Bond would return.",
+        "The Guardian asked writers including Russell T Davies and David Hare how a new film might approach that ending. Their suggestions are ideas about possible storytelling choices, rather than confirmation of the plot of Pattinson’s first appearance.",
+        "The casting has also prompted reactions beyond the next film’s storyline. HuffPost UK reported comments from former Bond actor Léa Seydoux about changes behind the scenes, and 9to5Google reported a Google Search feature marking the announcement. The material available does not establish how the filmmakers will handle continuity with Craig’s final film."
+      ],
+      "points": [
+        "Robert Pattinson’s announcement as the next James Bond has renewed discussion about how the series will continue after No Time to Die.",
+        "The Guardian asked writers including Russell T Davies and David Hare how a new film might approach that ending.",
+        "The casting has also prompted reactions beyond the next film’s storyline."
+      ]
+    },
+    "village-uproar-plans-house-nearly-1-000": {
+      "headline": "Suffolk village stages symbolic independence vote over asylum plan",
+      "summary": "Barnham residents voted 257 to 16 in a protest against plans to house 930 asylum seekers at a nearby former military base.",
+      "sourceNames": [
+        "BBC News",
+        "The Guardian"
+      ],
+      "article": [
+        "Residents of Barnham in Suffolk have voted to leave the UK in a symbolic referendum held in protest against government asylum-accommodation plans. The Guardian reported 257 votes in favour of independence, 16 against and one spoiled ballot.",
+        "Around 500 people were eligible to take part in Saturday’s vote. The protest followed plans to house 930 asylum seekers at a former military base near the village. The ballot was a symbolic local action; it did not itself change the village’s constitutional status.",
+        "The BBC reported reactions from MPs and councillors who said the vote had sent a strong message. The Guardian also reported the local MP’s concern that legitimate criticism of the housing proposals was being used by political opponents to encourage racial discord. The dispute concerns the proposed site and the government’s accommodation plans, rather than any finding about individual asylum seekers."
+      ],
+      "points": [
+        "Residents of Barnham in Suffolk have voted to leave the UK in a symbolic referendum held in protest against government asylum-accommodation plans.",
+        "Around 500 people were eligible to take part in Saturday’s vote.",
+        "The BBC reported reactions from MPs and councillors who said the vote had sent a strong message."
+      ]
+    },
+    "signal-restrict-screenshots-ai-agent-concerns-again": {
+      "headline": "Signal restricts screenshots to limit AI access to private chats",
+      "summary": "The messaging app is extending protections on Android and iOS, while acknowledging that it cannot block every form of AI-assisted capture.",
+      "sourceNames": [
+        "TechCrunch",
+        "The Decoder",
+        "The Hacker News",
+        "9to5Mac"
+      ],
+      "article": [
+        "Signal is restricting screenshots in its Android and iOS apps as it tries to stop AI assistants from reading private conversations. TechCrunch reported the change as part of the encrypted messaging service’s response to growing use of assistants that can inspect what appears on a screen.",
+        "The Hacker News reported that screenshots would be restricted by default in supported circumstances. The Decoder described the protections as covering iOS 27 and Android situations in which the app can detect an assistant attempting to read a chat.",
+        "Signal has acknowledged that the protection is incomplete, including gaps affecting macOS. The change addresses the capture of messages after they are displayed on a device; it does not amount to a claim that every route by which another application might see a conversation has been eliminated. Users should distinguish the new screen-capture controls from the app’s existing message encryption."
+      ],
+      "points": [
+        "Signal is restricting screenshots in its Android and iOS apps as it tries to stop AI assistants from reading private conversations.",
+        "The Hacker News reported that screenshots would be restricted by default in supported circumstances.",
+        "Signal has acknowledged that the protection is incomplete, including gaps affecting macOS."
+      ]
+    },
+    "tech-stock-sell-off-drags-markets-down": {
+      "headline": "Technology sell-off deepens after Anthropic’s stock-market debut",
+      "summary": "Anthropic shares fell sharply as broader selling pushed major US stock indices into correction or bear-market territory.",
+      "sourceNames": [
+        "BBC News",
+        "Financial Times",
+        "Sky News"
+      ],
+      "article": [
+        "Technology shares have fallen sharply as a wider market sell-off overtook the optimism surrounding Anthropic’s stock-market debut. The BBC reported that selling pushed both the S&P 500 and the Dow Jones Industrial Average into correction territory.",
+        "The Financial Times reported the Nasdaq 100 entering a bear market and Anthropic shares falling 8.5 per cent a day after their debut. Sky News had reported a drop of more than 10 per cent at Friday’s opening, a figure from a different point in the trading session.",
+        "The movements show that the large initial public offering did not shelter the company or other technology shares from the broader downturn. The figures in these accounts describe particular points during the sell-off, rather than a live quotation. They should not be treated as interchangeable opening, intraday and closing prices."
+      ],
+      "points": [
+        "Technology shares have fallen sharply as a wider market sell-off overtook the optimism surrounding Anthropic’s stock-market debut.",
+        "The Financial Times reported the Nasdaq 100 entering a bear market and Anthropic shares falling 8.5 per cent a day after their debut.",
+        "The movements show that the large initial public offering did not shelter the company or other technology shares from the broader downturn."
+      ]
+    },
+    "iphone-duo-livestream-many-folds-apples-phone": {
+      "headline": "Dummy models suggest dual-camera redesign for iPhone Air 2",
+      "summary": "Unofficial mockups show a possible second rear camera for the Air, while the standard iPhone 18 appears closer to its predecessor.",
+      "sourceNames": [
+        "MacRumors",
+        "9to5Mac",
+        "Digital Trends"
+      ],
+      "article": [
+        "Images of unofficial dummy models have offered an early indication of possible designs for the iPhone Air 2 and standard iPhone 18. The most visible change is a second rear camera on the Air model, according to MacRumors and Digital Trends.",
+        "MacRumors reported that the images were shared by Sonny Dickson. The standard iPhone 18 mockup appears broadly similar to the iPhone 17, while the Air mockup suggests a move away from a single rear camera.",
+        "Reports have linked the devices to a possible spring 2027 release, but the images are not an Apple product announcement. Dummy units can indicate the shape and external layout being discussed ahead of a launch; they do not, by themselves, confirm working hardware, final specifications or a release date. The proposed camera change therefore remains an unofficial indication rather than a confirmed feature."
+      ],
+      "points": [
+        "Images of unofficial dummy models have offered an early indication of possible designs for the iPhone Air 2 and standard iPhone 18.",
+        "MacRumors reported that the images were shared by Sonny Dickson.",
+        "Reports have linked the devices to a possible spring 2027 release, but the images are not an Apple product announcement."
+      ]
+    },
+    "tesla-launch-fsd-15-next-month-elon": {
+      "headline": "Tesla begins limited FSD 15 rollout ahead of planned wider release",
+      "summary": "The update includes a new visualisation of the car’s surroundings, with a broader launch planned for next month.",
+      "sourceNames": [
+        "Investors Business Daily",
+        "Digital Trends",
+        "Techmeme"
+      ],
+      "article": [
+        "Tesla has started releasing version 15 of its Full Self-Driving software to an initial group of users. Investors Business Daily reported that the first rollout began on Saturday, with Elon Musk saying a wider release was planned for next month.",
+        "The update includes a new rendering of the vehicle’s surroundings. Reporting summarised by Techmeme described a photorealistic view, while Digital Trends identified features called Reality View and Bike Rack Mode, alongside changes involving speed cameras.",
+        "Tesla has claimed a large improvement in how the software handles safety-critical situations. That is a company performance claim, rather than an independently established result in the material available here. The distinction between an initial rollout and general availability also matters: the reported release to some users does not mean the update has reached every eligible vehicle."
+      ],
+      "points": [
+        "Tesla has started releasing version 15 of its Full Self-Driving software to an initial group of users.",
+        "The update includes a new rendering of the vehicle’s surroundings.",
+        "Tesla has claimed a large improvement in how the software handles safety-critical situations."
+      ]
+    },
+    "scientists-turn-moon-dust-lego-like-bricks": {
+      "headline": "Researchers test Moon-dust bricks for possible lunar construction",
+      "summary": "An experimental 3D-printing approach produces interlocking blocks, but the prototypes still need greater strength.",
+      "sourceNames": [
+        "ScienceDaily"
+      ],
+      "article": [
+        "Researchers have demonstrated an experimental way to turn Moon dust into interlocking, LEGO-like blocks using 3D printing. ScienceDaily reported the work as a possible approach to constructing future lunar bases from material found on the Moon itself.",
+        "The proposal concerns the use of local building material rather than a completed lunar building. The blocks produced in the experiment still need to be made stronger, according to the report, so the results do not establish that they are ready to support permanent settlements.",
+        "Building with material available at a destination could change how future bases are designed and supplied. For this work, however, the immediate result is a set of experimental blocks and a manufacturing approach that requires further development. A successful demonstration of a construction technique is a different milestone from proving that it can withstand the demands of a working lunar base."
+      ],
+      "points": [
+        "Researchers have demonstrated an experimental way to turn Moon dust into interlocking, LEGO-like blocks using 3D printing.",
+        "The proposal concerns the use of local building material rather than a completed lunar building.",
+        "Building with material available at a destination could change how future bases are designed and supplied."
+      ]
+    },
+    "uk-eu-reset-tuition-fees": {
+      "headline": "UK and EU announce trade and youth-mobility agreements",
+      "summary": "The Brussels package aims to reduce post-Brexit barriers in food trade, emissions arrangements and movement for young people.",
+      "sourceNames": [
+        "The Guardian",
+        "The New York Times",
+        "BBC News"
+      ],
+      "article": [
+        "Britain and the European Union have announced agreements intended to remove some of the barriers created by Brexit. Prime minister Andy Burnham and European leaders presented the package at a summit in Brussels on Friday.",
+        "The Guardian reported three main areas of agreement: food and drink, emissions trading and a youth-mobility scheme. The New York Times described the package as an effort to ease obstacles in the relationship between Britain and the bloc.",
+        "An unresolved disagreement over university tuition fees for EU students remains a potential obstacle to implementing the wider reset. The BBC has also examined what the arrangements could mean for Northern Ireland. The announcement establishes the broad areas of cooperation, but it should not be read as evidence that every detail has been settled or that all new arrangements are already operating."
+      ],
+      "points": [
+        "Britain and the European Union have announced agreements intended to remove some of the barriers created by Brexit.",
+        "The Guardian reported three main areas of agreement: food and drink, emissions trading and a youth-mobility scheme.",
+        "An unresolved disagreement over university tuition fees for EU students remains a potential obstacle to implementing the wider reset."
+      ]
+    },
+    "warren-buffett-quadruples-thanksgiving-gifts-breakdown-much": {
+      "headline": "Warren Buffett’s Thanksgiving gifts rise to about $5.5 billion",
+      "summary": "The donations to four family foundations are more than four times the size of his Thanksgiving gifts a year earlier.",
+      "sourceNames": [
+        "CNBC",
+        "New York Observer"
+      ],
+      "article": [
+        "Warren Buffett has increased his Thanksgiving donations to four family foundations to about $5.5 billion. CNBC reported that the value was more than four times the amount he gave through his Thanksgiving gifts the previous year.",
+        "The New York Observer put the combined gift at $5.47 billion and examined questions about how quickly the foundations would distribute the money. Its reporting included the perspective of a recipient of Sherwood Foundation funding in Omaha, who said the eventual implications for local programmes were not yet clear.",
+        "The announcement concerns transfers to the foundations, which is distinct from the timing of grants to individual charities and community organisations. The size of the gift therefore does not, on its own, establish how much any particular programme will receive or when recipients will see additional funding."
+      ],
+      "points": [
+        "Warren Buffett has increased his Thanksgiving donations to four family foundations to about $5.5 billion.",
+        "The New York Observer put the combined gift at $5.47 billion and examined questions about how quickly the foundations would distribute the money.",
+        "The announcement concerns transfers to the foundations, which is distinct from the timing of grants to individual charities and community organisations."
+      ]
+    },
+    "prince-william-plans-strip-harry-titles-hes": {
+      "headline": "New book claims William plans changes to royal titles",
+      "summary": "Reports describe proposed changes affecting non-working royals if William becomes king; they are claims about future plans, not an announced reform.",
+      "sourceNames": [
+        "Daily Mail",
+        "Daily Express",
+        "Evening Standard"
+      ],
+      "article": [
+        "A new book claims Prince William intends to change the use of royal titles when he becomes king. Reports in the Daily Mail and Evening Standard say the proposals could affect Prince Harry and other members of the royal family who do not carry out official duties.",
+        "The Daily Mail reported a proposed removal of HRH styles from non-working royals and said the suggested changes could also affect Harry’s children, Archie and Lilibet. The Daily Express described the claims as part of a broader account of William’s ideas for reforming royal arrangements.",
+        "These reports concern a book’s account of possible future decisions. They do not establish that a new titles policy has been announced, that it has taken effect or that the changes will necessarily be made. The distinction is significant because the proposals are being reported as intentions attributed to William, rather than as a completed institutional decision."
+      ],
+      "points": [
+        "A new book claims Prince William intends to change the use of royal titles when he becomes king.",
+        "The Daily Mail reported a proposed removal of HRH styles from non-working royals and said the suggested changes could also affect Harry’s children, Archie and Lilibet.",
+        "These reports concern a book’s account of possible future decisions."
+      ]
+    },
+    "bradford-councillor-stabbing-charge": {
+      "headline": "Man charged after Bradford councillor is stabbed",
+      "summary": "Arfan Ali has appeared before magistrates following an attack on councillor Ibrar Ali while he was working in the community.",
+      "sourceNames": [
+        "BBC News",
+        "The Guardian",
+        "Sky News"
+      ],
+      "article": [
+        "A man has been charged with attempted murder after Bradford councillor Ibrar Ali was stabbed while working in the community. The BBC reported that Arfan Ali appeared before magistrates in connection with Thursday’s attack.",
+        "Sky News described the councillor as having been out door-knocking when he was attacked. The Guardian reported that the incident took place at about 11am and that the defendant also faces charges of assault and possessing an offensive weapon in a public place.",
+        "The case is at the charging stage. The allegations against the defendant have not been determined by a trial in the material available for this account. Reports of the magistrates’ court appearance therefore concern the criminal proceedings following the attack, rather than a conviction or an established explanation of the attacker’s motive."
+      ],
+      "points": [
+        "A man has been charged with attempted murder after Bradford councillor Ibrar Ali was stabbed while working in the community.",
+        "Sky News described the councillor as having been out door-knocking when he was attacked.",
+        "The case is at the charging stage."
+      ]
+    },
+    "rare-titanic-items-sell-record-breaking-sums": {
+      "headline": "Titanic survivor’s diamond ring sells for £150,000",
+      "summary": "The auction also included a watch, a letter and a ticket connected with the ship’s departure, according to reports of the sale.",
+      "sourceNames": [
+        "BBC News",
+        "Daily Mail",
+        "Evening Standard",
+        "The Journal"
+      ],
+      "article": [
+        "A diamond ring belonging to Titanic survivor Lucy, Lady Duff Gordon, has sold at auction for £150,000. The Evening Standard and the Journal reported the sale of the jewellery, which was among a collection of items connected with the liner and its passengers.",
+        "The Daily Mail reported that Lady Duff Gordon was wearing the solitaire ring when the ship struck an iceberg during its maiden voyage from Southampton to New York in 1912. The newspaper also reported a £40,000 sale for a ticket to watch the ship’s departure.",
+        "The BBC described strong prices for rare Titanic items including a watch, ring and letter associated with passengers from different classes. These objects connect the sale to individual experiences of the disaster, rather than simply to the vessel itself. The reported prices concern the particular lots sold at this auction."
+      ],
+      "points": [
+        "A diamond ring belonging to Titanic survivor Lucy, Lady Duff Gordon, has sold at auction for £150,000.",
+        "The Daily Mail reported that Lady Duff Gordon was wearing the solitaire ring when the ship struck an iceberg during its maiden voyage from Southampton to New York in 1912.",
+        "The BBC described strong prices for rare Titanic items including a watch, ring and letter associated with passengers from different classes."
+      ]
+    },
+    "bayers-7-25bn-settlement-cancer-cases-approved": {
+      "headline": "Judge approves Bayer’s $7.25 billion Roundup settlement",
+      "summary": "The Missouri ruling addresses litigation alleging that exposure to the weedkiller caused non-Hodgkin lymphoma.",
+      "sourceNames": [
+        "The Guardian",
+        "The New York Times",
+        "The Hill",
+        "Mother Jones"
+      ],
+      "article": [
+        "A Missouri judge has approved a $7.25 billion settlement involving claims that Bayer’s Roundup weedkiller caused cancer. The Guardian reported that the agreement addresses litigation that has weighed on the company for close to a decade.",
+        "Judge Timothy Boyer, sitting in a state court in St Louis, approved the nationwide class-action settlement on Friday. The New York Times and the Hill reported that the claims concern non-Hodgkin lymphoma and exposure to the weedkiller. The Guardian described roughly 65,000 claims from people who said they developed cancer after using it.",
+        "The agreement is intended to address current and future claims, according to reporting on Bayer’s description of the settlement. Mother Jones noted that the approval remains subject to appeal. The court’s approval concerns the legal settlement; it should not be confused with a new clinical study establishing an individual person’s cause of cancer."
+      ],
+      "points": [
+        "A Missouri judge has approved a $7.25 billion settlement involving claims that Bayer’s Roundup weedkiller caused cancer.",
+        "Judge Timothy Boyer, sitting in a state court in St Louis, approved the nationwide class-action settlement on Friday.",
+        "The agreement is intended to address current and future claims, according to reporting on Bayer’s description of the settlement."
+      ]
+    },
+    "custom-mri-tool-show-within-weeks-if": {
+      "headline": "Pancreatic-cancer drug combination shows encouraging early trial results",
+      "summary": "Reports of a 61-patient study describe tumour responses to daraxonrasib alongside chemotherapy, with longer-term outcomes still to be established.",
+      "sourceNames": [
+        "RTÉ News",
+        "The Guardian",
+        "Fox News"
+      ],
+      "article": [
+        "An experimental pancreatic-cancer treatment combining daraxonrasib with chemotherapy has produced encouraging results in an early clinical study. RTÉ reported that the disease became undetectable in about one in twelve patients receiving the combination.",
+        "The Guardian reported results from 61 patients with recently diagnosed advanced disease. Tumour growth stopped in almost all participants, it said. Fox News reported tumour shrinkage in 60.7 per cent of patients and no visible tumour on scans in 8.2 per cent.",
+        "The findings describe responses observed during a small clinical study, rather than proof of a lasting cure. A tumour becoming undetectable on a scan does not by itself establish that cancer cannot return. The material available here does not settle the treatment’s longer-term survival benefit, the durability of responses or how the results will compare with a larger controlled study."
+      ],
+      "points": [
+        "An experimental pancreatic-cancer treatment combining daraxonrasib with chemotherapy has produced encouraging results in an early clinical study.",
+        "The Guardian reported results from 61 patients with recently diagnosed advanced disease.",
+        "The findings describe responses observed during a small clinical study, rather than proof of a lasting cure."
+      ]
+    },
+    "wall-street-asks-save-ai-trade-anthropic": {
+      "headline": "Anthropic debut fails to halt pressure on AI shares",
+      "summary": "A record initial public offering has not reversed a difficult month for the technology sector, according to financial-market reports.",
+      "sourceNames": [
+        "Bloomberg",
+        "Economic Times"
+      ],
+      "article": [
+        "The market arrival of Anthropic has failed to bring the relief some investors expected for artificial-intelligence shares. Bloomberg reported that a record-breaking initial public offering was followed by continued selling across technology stocks, with chipmakers among the companies under pressure.",
+        "The sell-off came after an already difficult month that included Jensen Huang’s departure from Nvidia and the Democrats’ midterm-election victory. Reporting carried by the Economic Times described the Anthropic float as an event that had been expected to improve sentiment but instead left investors asking further questions about the AI trade.",
+        "The immediate development is the contrast between the scale of the company’s debut and the weakness of the wider sector. A large new listing can attract substantial attention without reversing an existing decline across related shares. These reports describe market conditions during the sell-off, rather than a forecast that the decline will necessarily continue."
+      ],
+      "points": [
+        "The market arrival of Anthropic has failed to bring the relief some investors expected for artificial-intelligence shares.",
+        "The sell-off came after an already difficult month that included Jensen Huang’s departure from Nvidia and the Democrats’ midterm-election victory.",
+        "The immediate development is the contrast between the scale of the company’s debut and the weakness of the wider sector."
+      ]
+    },
+    "gold-silver-drop-lowest-levels": {
+      "headline": "Gold and silver fall as rate expectations weigh on precious metals",
+      "summary": "Reports describe prices at their lowest levels in more than a year, despite the usual appeal of gold during periods of market uncertainty.",
+      "sourceNames": [
+        "The Wall Street Journal",
+        "Economic Times"
+      ],
+      "article": [
+        "Gold and silver have fallen to their lowest levels in more than a year, according to the Wall Street Journal. The newspaper reported that expectations of tighter monetary policy appeared to outweigh demand for gold as a refuge during unsettled markets.",
+        "An Economic Times account described a much longer retreat from earlier highs, putting silver’s decline at 41 per cent over six months and gold’s at 19 per cent. Those figures cover a six-month period and should be distinguished from a single day’s price change.",
+        "The reports present a market being pulled between uncertainty, demand for precious metals and expectations about monetary policy. They do not show that those influences have all moved in the same direction. The central development is that concern about tighter policy has coincided with substantial price falls even as some sources of demand remain in place."
+      ],
+      "points": [
+        "Gold and silver have fallen to their lowest levels in more than a year, according to the Wall Street Journal.",
+        "An Economic Times account described a much longer retreat from earlier highs, putting silver’s decline at 41 per cent over six months and gold’s at 19 per cent.",
+        "The reports present a market being pulled between uncertainty, demand for precious metals and expectations about monetary policy."
+      ]
+    },
+    "nasas-voyager-1-now-far-away-light": {
+      "headline": "Voyager 1 reaches a one-light-day distance from Earth",
+      "summary": "Signals now take about 24 hours to travel one way between Earth and the nearly 50-year-old spacecraft.",
+      "sourceNames": [
+        "ScienceDaily",
+        "Mashable"
+      ],
+      "article": [
+        "Voyager 1 has reached a distance of about 16.1 billion miles from Earth, far enough for a radio signal to take a full day to cross the gap. ScienceDaily reported the milestone as the spacecraft continues its journey through interstellar space nearly five decades after launch.",
+        "The distance creates an extraordinary delay in communication. A signal sent from Earth needs roughly 24 hours to reach the spacecraft, and a response needs another day to return, before allowing for time spent carrying out an instruction.",
+        "The milestone has coincided with a technical difficulty. Mashable reported that the probe was experiencing a data outage as it reached one light day from Earth, with engineers expecting to work on the problem. The distance record therefore should not be read as a statement that every instrument or communications function was operating normally at that moment."
+      ],
+      "points": [
+        "Voyager 1 has reached a distance of about 16.1 billion miles from Earth, far enough for a radio signal to take a full day to cross the gap.",
+        "The distance creates an extraordinary delay in communication.",
+        "The milestone has coincided with a technical difficulty."
+      ]
+    },
+    "california-entrepreneur-state-avoided-economic-disaster-billionaire": {
+      "headline": "California rejects billionaire-tax measure as debate continues",
+      "summary": "Opponents welcomed the defeat of Proposition 40, while supporters of higher taxes on the super-rich are continuing their campaign.",
+      "sourceNames": [
+        "Fox Business",
+        "Business Insider",
+        "Jacobin"
+      ],
+      "article": [
+        "California voters have rejected Proposition 40, a proposed billionaire wealth tax, according to reports examining the outcome. The result has prompted competing interpretations of what it means for wealthy residents, businesses and future efforts to tax large fortunes.",
+        "Entrepreneur Eric Schiffer told Fox Business that the rejection had spared the state an exodus of entrepreneurs. That is his assessment of what might have happened under the measure, rather than proof that such a departure would have occurred.",
+        "The defeat has not ended the wider campaign. Business Insider reported economist Gabriel Zucman seeking support from politicians in France after the California result. Jacobin examined questions about how wealthy technology founders value control of their companies. The immediate confirmed development in these accounts is the measure’s defeat, while its longer-term economic effects and the future of related proposals remain open questions."
+      ],
+      "points": [
+        "California voters have rejected Proposition 40, a proposed billionaire wealth tax, according to reports examining the outcome.",
+        "Entrepreneur Eric Schiffer told Fox Business that the rejection had spared the state an exodus of entrepreneurs.",
+        "The defeat has not ended the wider campaign."
+      ]
+    },
+    "economy-doing-better-think-everyone": {
+      "headline": "AI’s growing economic role brings a concentration risk",
+      "summary": "An economic explainer examines why dependence on one powerful technology trend can create vulnerabilities alongside growth.",
+      "sourceNames": [
+        "The New York Times",
+        "The Hill"
+      ],
+      "article": [
+        "Artificial intelligence has become a significant part of the US economy, prompting questions about the risks that come with its growing importance. In a New York Times explainer, chief economics correspondent Ben Casselman examines that expanding economic role and the exposure it can create.",
+        "The basic concentration risk is that weaker confidence or spending in one heavily represented area can affect businesses and investors beyond that sector. A technology can contribute to growth while also becoming a source of vulnerability if expectations around it change sharply.",
+        "National economic descriptions also conceal different experiences. An accompanying Hill analysis emphasised that whether the economy appears strong or weak depends on the data being considered and the people being asked. The distinction matters when assessing an AI-led expansion: strength associated with one industry does not establish that the benefits or risks are shared evenly across the population."
+      ],
+      "points": [
+        "Artificial intelligence has become a significant part of the US economy, prompting questions about the risks that come with its growing importance.",
+        "The basic concentration risk is that weaker confidence or spending in one heavily represented area can affect businesses and investors beyond that sector.",
+        "National economic descriptions also conceal different experiences."
+      ]
+    },
+    "tentative-deal-averts-strike-threat-busiest-u": {
+      "headline": "Tentative security-workers’ deal averts Los Angeles port strike threat",
+      "summary": "About 250 security workers were covered by negotiations at the ports of Los Angeles and Long Beach.",
+      "sourceNames": [
+        "The Wall Street Journal",
+        "Freightwaves",
+        "Bloomberg"
+      ],
+      "article": [
+        "A tentative labour agreement has averted an immediate strike threat at the ports of Los Angeles and Long Beach. Bloomberg reported that about 250 security workers reached terms with the group representing their employers.",
+        "The Wall Street Journal reported that the existing contract was due to expire overnight. FreightWaves said the tentative accord followed more than a year of bargaining and federally mediated negotiations at the country’s busiest container-port complex.",
+        "The negotiations concerned union security workers, rather than an announcement of a new agreement covering every category of employee at the ports. The reported deal eases the immediate risk of disruption associated with the expiring contract. As a tentative agreement, it should also be distinguished from evidence that every remaining step in finalising a labour contract has been completed."
+      ],
+      "points": [
+        "A tentative labour agreement has averted an immediate strike threat at the ports of Los Angeles and Long Beach.",
+        "The Wall Street Journal reported that the existing contract was due to expire overnight.",
+        "The negotiations concerned union security workers, rather than an announcement of a new agreement covering every category of employee at the ports."
+      ]
+    },
+    "physician-explains-glp-1s-biggest-potential-side": {
+      "headline": "Large health-record study examines GLP-1 drugs and prediabetes",
+      "summary": "A reported Mayo Clinic analysis compares outcomes associated with GLP-1 medicines and metformin, without establishing a new treatment recommendation.",
+      "sourceNames": [
+        "Inc.com"
+      ],
+      "article": [
+        "A Mayo Clinic analysis of more than 250,000 health records has examined whether GLP-1 medicines could produce better outcomes than metformin for people with prediabetes. Inc.com reported findings suggesting potential advantages for returning blood sugar to normal levels and reducing heart-related risks.",
+        "The report concerns an analysis of existing health records. Such a comparison needs to be interpreted in light of who received each medicine and how the groups were selected; an association in records is not, on its own, proof that one treatment caused a better outcome.",
+        "The available summary does not establish a new clinical recommendation, a change in an individual patient’s treatment or the medicines’ full balance of benefits and risks. The finding is a research lead about possible additional uses of a drug class, rather than a basis for assuming that the same result will apply to everyone with prediabetes."
+      ],
+      "points": [
+        "A Mayo Clinic analysis of more than 250,000 health records has examined whether GLP-1 medicines could produce better outcomes than metformin for people with prediabetes.",
+        "The report concerns an analysis of existing health records.",
+        "The available summary does not establish a new clinical recommendation, a change in an individual patient’s treatment or the medicines’ full balance of benefits and risks."
+      ]
+    },
+    "lufthansa-cut-1-000-jobs-citing-ongoing": {
+      "headline": "Lufthansa plans 1,000 job cuts as flagship airline losses continue",
+      "summary": "Reports of a staff letter describe losses averaging €20 million a month and pressure from fuel costs and industrial action.",
+      "sourceNames": [
+        "Euronews",
+        "DW News",
+        "The Wall Street Journal",
+        "Oilprice.com"
+      ],
+      "article": [
+        "Lufthansa plans to cut about 1,000 full-time jobs as losses continue at its flagship airline. Euronews reported that the positions were linked to Frankfurt and Munich, citing a letter to staff describing the pressure on the turnaround effort.",
+        "The letter put average losses at €20 million a month between January and September. DW reported that operational reductions were also planned, while the Wall Street Journal identified higher fuel costs and strike-related expenses as factors weighing on the carrier.",
+        "Oilprice.com reported plans to reduce capacity on short- and medium-haul routes. The accounts concern proposed changes at the flagship airline, which should be distinguished from a claim that every business in the wider Lufthansa group has the same financial position. The material available does not establish the final timing or individual employment arrangements for all of the planned cuts."
+      ],
+      "points": [
+        "Lufthansa plans to cut about 1,000 full-time jobs as losses continue at its flagship airline.",
+        "The letter put average losses at €20 million a month between January and September.",
+        "Oilprice.com reported plans to reduce capacity on short- and medium-haul routes."
+      ]
+    },
+    "james-webb-telescope-spots-giant-star-swallowing": {
+      "headline": "Webb observations reveal aftermath of a star swallowing its companion",
+      "summary": "Astronomers linked an eruption in the Andromeda galaxy to a stellar merger, with Webb observing the aftermath 47 days later.",
+      "sourceNames": [
+        "ScienceDaily",
+        "Live Science",
+        "Ars Technica"
+      ],
+      "article": [
+        "Astronomers have investigated an eruption in the Andromeda galaxy caused by a small star spiralling into a much larger companion. ScienceDaily reported that the giant star was about 18,000 times brighter than the Sun before the merger event.",
+        "The James Webb Space Telescope observed the aftermath 47 days after the eruption. Live Science described the work as following up earlier observations to confirm that the brightening involved one star swallowing another, while Ars Technica reported that the companion had been orbiting inside the larger star.",
+        "The observations connect a dramatic change in brightness to a physical event involving two stars merging. That is more informative than detecting a brightening alone, because it helps astronomers identify what caused the outburst. The event took place in Andromeda, a neighbouring galaxy, rather than in the Sun’s own stellar system."
+      ],
+      "points": [
+        "Astronomers have investigated an eruption in the Andromeda galaxy caused by a small star spiralling into a much larger companion.",
+        "The James Webb Space Telescope observed the aftermath 47 days after the eruption.",
+        "The observations connect a dramatic change in brightness to a physical event involving two stars merging."
+      ]
+    }
+  }
+}

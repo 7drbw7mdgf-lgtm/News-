@@ -872,29 +872,16 @@
   }
 
   /* ---------- Native Story Reader & Coverage Comparison ---------- */
-  function readerCopy(text) {
-    return text.replace('or click any outlet link to open the full original report.', 'or select an outlet to read Pheme’s native briefing.')
-      .replace('or open any original article directly.', 'or select an outlet to read in Pheme.')
-      .replace('Open each outlet’s report below to compare their headlines and framing.', 'Select an outlet below to compare headlines and read in Pheme.');
-  }
-
+  var ARTICLE_BOILERPLATE = /Across Pheme[’']s|Use the leaning filter|Pheme is tracking|Reported by \d+ outlets|First reported by|Coverage: \d|select an outlet to read|open any original article/i;
   function getArticleParagraphs(s) {
-    if (s.article && s.article.length) return s.article.map(readerCopy);
-    var cov = s.cov;
-    var out = [];
-    if (s.summary) out.push(s.summary);
-    if (s.points && s.points.length) {
-      out.push(s.points.join(' '));
-    }
-    if (cov && cov.rows.length > 1) {
-      var names = cov.rows.slice(0, 6).map(function (r) { return r.name; }).join(', ');
-      out.push('Pheme is tracking ' + cov.count + ' on this story (' + names + (cov.rows.length > 6 ? ', and more' : '') + '). ' + cov.note);
-    }
-    return out.filter(Boolean);
+    var paragraphs = Array.isArray(s.article) ? s.article : [];
+    if (paragraphs.length < 2 || !paragraphs.every(function (p) { return typeof p === 'string' && p.trim() && !ARTICLE_BOILERPLATE.test(p); })) return [];
+    if (paragraphs.join(' ').trim().split(/\s+/).length < 80) return [];
+    return paragraphs;
   }
 
   function estimateReadTime(s) {
-    var parts = [s.headline, s.summary].concat(getArticleParagraphs(s)).concat(s.points || []);
+    var parts = [s.headline, s.summary].concat(getArticleParagraphs(s));
     var words = parts.join(' ').trim().split(/\s+/).filter(Boolean).length;
     return Math.max(1, Math.round(words / 210)) + ' min read';
   }
@@ -1020,13 +1007,15 @@
     var selectedSource = cov.rows.find(function (r) { return r.name === state.readingSource; });
     var sourceContext = selectedSource ? '<aside class="source-context" aria-label="Selected publisher coverage"><p class="kicker">' + esc(selectedSource.name) + ' · ' + esc(selectedSource.date) + '</p>' +
       (selectedSource.title ? '<h2>' + esc(selectedSource.title) + '</h2>' : '') +
-      '<p class="small">Read Pheme’s native briefing of this story below.' + (selectedSource.title ? ' The publisher’s headline is shown for reference.' : '') + '</p></aside>' : '';
+      '<p class="small">Pheme’s article is below.' + (selectedSource.title ? ' The selected publisher’s headline is shown for reference.' : '') + '</p></aside>' : '';
     var img = safeAsset(s.image);
     var paras = getArticleParagraphs(s);
+    var takeaways = (s.points || []).filter(function (point) { return typeof point === 'string' && !ARTICLE_BOILERPLATE.test(point); });
+    var articleDate = s.articleUpdatedAt ? new Date(s.articleUpdatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : (s.publishedLabel || s.time);
     var storyHighlights = state.highlights[s.id] || {};
     var hlCount = Object.keys(storyHighlights).filter(function (k) { return storyHighlights[k]; }).length;
     var p = state.readerPrefs;
-    var canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window;
+    var canSpeak = paras.length && typeof window !== 'undefined' && 'speechSynthesis' in window;
 
     var curIdx = CURRENT.findIndex(function (item) { return item.id === s.id; });
     var prevStory = curIdx > 0 ? CURRENT[curIdx - 1] : null;
@@ -1067,7 +1056,7 @@
       renderAaPopover() +
       '</div></div>' +
       '<p class="kicker">' + esc(labelOf[s.topic]) +
-      '<span class="kicker-meta">' + esc(s.source) + ' · ' + esc(s.publishedLabel || s.time) +
+      '<span class="kicker-meta">Pheme · ' + esc(articleDate) +
       (s.location ? ' · <button type="button" class="loc-chip" data-act="openonmap" data-id="' + esc(s.id) + '">' + esc(s.location.label) + '</button>' : '') +
       '</span></p>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
@@ -1075,16 +1064,16 @@
       sourceContext +
       (img ? '<figure class="reader-photo"><img src="' + esc(img) + '" alt="' + esc(s.imageAlt || s.headline) + '"><figcaption class="reader-caption">' + esc(s.imageAlt || '') + '</figcaption></figure>' : '') +
       '<div class="reader-body">' +
-      paras.map(function (para, idx) {
+      (paras.length ? paras.map(function (para, idx) {
         var hl = !!storyHighlights[idx];
         var sp = state.speaking && state.speakingIndex === idx;
         return '<p class="reader-para' + (hl ? ' hl-on' : '') + (sp ? ' speaking' : '') + '" data-act="highlight" data-id="' + esc(s.id) + '" data-pidx="' + idx + '" title="Click to highlight passage">' + esc(para) + '</p>';
-      }).join('') +
+      }).join('') : '<section class="article-unavailable"><h2>Article not available</h2><p>A full Pheme article has not been written for this story. Its original summary and source list are available here.</p></section>') +
       '</div>' +
-      '<p class="reader-hint">Tip: click any paragraph to highlight' + (hlCount ? ' · ' + plural(hlCount, 'highlight', 'highlights') + ' saved' : '') + ' · press F for Focus mode · ← / → for previous &amp; next story.</p>' +
-      (s.points && s.points.length
+      (paras.length ? '<p class="reader-hint">Tip: click any paragraph to highlight' + (hlCount ? ' · ' + plural(hlCount, 'highlight', 'highlights') + ' saved' : '') + ' · press F for Focus mode · ← / → for previous &amp; next story.</p>' : '') +
+      (takeaways.length
         ? '<section class="takeaways-box"><h2>Key takeaways</h2><ul class="points">' +
-          s.points.map(function (pt) { return '<li>' + esc(readerCopy(pt)) + '</li>'; }).join('') +
+          takeaways.map(function (pt) { return '<li>' + esc(pt) + '</li>'; }).join('') +
           '</ul></section>'
         : '') +
       renderComparison(s) +
@@ -1104,7 +1093,7 @@
           '<span class="small">' + esc(r.date) + '</span>' +
           nativeSourceLink(s, r.name, 'Read in Pheme') + '</li>';
       }).join('') + '</ul></section>' +
-      '<div class="rfoot"><p class="small" style="max-width:46ch">Native briefing written for Pheme from ' + esc(cov.count) + ' led by ' + esc(s.source) + '.</p>' +
+      '<div class="rfoot"><p class="small" style="max-width:60ch">' + (paras.length ? 'Written for Pheme from published reporting' + (s.articleSources && s.articleSources.length ? ' by ' + esc(s.articleSources.map(function (source) { return source.name; }).join(', ')) : '') + '.' : 'Source coverage for this archived story.') + '</p>' +
       '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + saveBtn(s) +
       nativeSourceLink(s, s.source, 'Read ' + s.source + ' coverage', 'darkbtn') + '</div></div>' +
       ((prevStory || nextStory)

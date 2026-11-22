@@ -51,3 +51,9 @@ The market strip uses native SVG sparklines for the FTSE 100, S&P 500 and Shangh
 `scripts/update-markets.py` fetches and validates public historical quotes, excludes the current incomplete trading day, and keeps the last valid series if an individual refresh fails. `.github/workflows/markets.yml` checks every six hours and publishes changed data through the existing Fasthosts deployment. The deployment also validates the checked-in dataset offline.
 
 Headlines, comparison citations and coverage links open Pheme’s native reader. An outlet selection can be shared using `?story=EVENT-ID&source=OUTLET-NAME`. The reader identifies the selected publisher and displays Pheme’s own briefing rather than presenting it as a copy of the publisher’s full article.
+
+## Article content
+
+Pheme articles describe the events themselves. Outlet counts, political leaning and reader instructions belong to the coverage interface and are rejected as article bodies. The current edition has source-based original articles in `articles/2026-11-22.json`, with source references and update dates; `scripts/apply-article-edits.py` applies them before regenerating `assets/data.js`.
+
+New automated articles require a working repository secret named `ANTHROPIC_API_KEY` or `GROQ_API_KEY`. The writer must return factual paragraphs and named sources. If it is unavailable or returns inadequate material, the job retains the existing verified edition instead of publishing filler. Older archived entries without an article are labelled as unavailable in the reader rather than expanded into generic text.

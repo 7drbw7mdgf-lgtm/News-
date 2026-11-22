@@ -128,6 +128,9 @@ tv-mini-chart { height: 112px; }
 .rtool, .outline-sm, .darkbtn, .compare-btn { border-radius: 8px; }
 .reader .covlist li { border-color: var(--rule-soft); }
 .source-context { border-radius: 8px; }
+.article-unavailable { padding: 20px; background: var(--paper-alt); border-radius: 10px; }
+.article-unavailable h2 { margin: 0 0 8px; font: 600 18px/1.4 var(--sans); }
+.article-unavailable p { margin: 0; }
 .native-market { display: block; width: 100%; color: var(--ink); text-align: left; font-family: var(--sans); transition: border-color .15s, transform .15s; }
 .native-market:hover { border-color: #B5A4E0; transform: translateY(-2px); }
 .market-city { font-size: 14px; font-weight: 600; }

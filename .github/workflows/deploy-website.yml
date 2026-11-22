@@ -31,6 +31,7 @@ jobs:
       - name: Check
         run: |
           node scripts/build-editions.mjs --check
+          python3 -m unittest discover -s scripts -p 'test_native_articles.py'
           node --check assets/app.js
           python3 scripts/update-markets.py --check
           node --check assets/data.js
