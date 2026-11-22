@@ -1323,6 +1323,78 @@
     'Financial Times': { type: 'ft', html: 'FT' },
     'The Economist': { type: 'economist', html: '<span>The</span><span>Economist</span>' }
   };
+  var PUBLISHER_DOMAINS = {
+    'ABC News Australia': 'abc.net.au',
+    'Al Jazeera English': 'aljazeera.com',
+    'Al-Monitor': 'al-monitor.com',
+    'Ars Technica': 'arstechnica.com',
+    'Associated Press': 'apnews.com',
+    'BBC News': 'bbc.co.uk',
+    'Bangkok Post': 'bangkokpost.com',
+    'Bloomberg': 'bloomberg.com',
+    'CNA': 'channelnewsasia.com',
+    'CNBC': 'cnbc.com',
+    'City AM': 'cityam.com',
+    'DW News': 'dw.com',
+    'Daily Mail': 'dailymail.com',
+    'Daily Maverick': 'dailymaverick.co.za',
+    'Dawn': 'dawn.com',
+    'Euronews': 'euronews.com',
+    'Financial Times': 'ft.com',
+    'Fox News': 'foxnews.com',
+    'France 24': 'france24.com',
+    'Global News': 'globalnews.ca',
+    'Haaretz': 'haaretz.com',
+    'ITV News': 'itv.com',
+    'Independent Online': 'iol.co.za',
+    'Indian Express': 'indianexpress.com',
+    'Japan Times': 'japantimes.co.jp',
+    'MercoPress': 'mercopress.com',
+    'Mexico News Daily': 'mexiconewsdaily.com',
+    'Middle East Eye': 'middleeasteye.net',
+    'NDTV': 'ndtv.com',
+    'NPR': 'npr.org',
+    'NZ Herald': 'nzherald.co.nz',
+    'Nation (Kenya)': 'nation.africa',
+    'Nature News': 'nature.com',
+    'New Scientist': 'newscientist.com',
+    'Philippine Daily Inquirer': 'inquirer.net',
+    'Politico Europe': 'politico.eu',
+    'Premium Times': 'premiumtimesng.com',
+    'RNZ': 'rnz.co.nz',
+    'RTÉ News': 'rte.ie',
+    'Rappler': 'rappler.com',
+    'Reuters': 'reuters.com',
+    'ScienceDaily': 'sciencedaily.com',
+    'Sky News': 'news.sky.com',
+    'South China Morning Post': 'scmp.com',
+    'Sydney Morning Herald': 'smh.com.au',
+    'Taipei Times': 'taipeitimes.com',
+    'TechCrunch': 'techcrunch.com',
+    'The Age': 'theage.com.au',
+    'The Conversation': 'theconversation.com',
+    'The Conversation UK': 'theconversation.com',
+    'The Economist': 'economist.com',
+    'The Globe and Mail': 'theglobeandmail.com',
+    'The Guardian': 'theguardian.com',
+    'The Hindu': 'thehindu.com',
+    'The Independent': 'independent.co.uk',
+    'The Jerusalem Post': 'jpost.com',
+    'The Korea Times': 'koreatimes.co.kr',
+    'The New York Times': 'nytimes.com',
+    'The Rio Times': 'riotimesonline.com',
+    'The Straits Times': 'straitstimes.com',
+    'The Sun - Nigeria': 'thesun.ng',
+    'The Telegraph': 'telegraph.co.uk',
+    'The Times': 'thetimes.com',
+    'The Verge': 'theverge.com',
+    'The Wall Street Journal': 'wsj.com',
+    'VnExpress International': 'vnexpress.net',
+    'Wired': 'wired.com',
+    'Ukrainska Pravda': 'pravda.com.ua',
+    'Yonhap': 'yna.co.kr',
+    'STAT': 'statnews.com'
+  };
   var PUBLISHER_MARK_PALETTE = [
     ['#17395F', '#E8EFF7'], ['#8E2A34', '#F8E8E2'], ['#24584B', '#E5EEE7'],
     ['#5A3C7D', '#EEE8F5'], ['#7A4A18', '#F5EBDD'], ['#263746', '#E7EDF0'],
@@ -1336,7 +1408,11 @@
     var initials = words.slice(0, 3).map(function (part) { return part.charAt(0).toUpperCase(); }).join('') || name.slice(0, 2).toUpperCase();
     var hash = name.split('').reduce(function (value, character) { return (value * 31 + character.charCodeAt(0)) >>> 0; }, 7);
     var colors = PUBLISHER_MARK_PALETTE[hash % PUBLISHER_MARK_PALETTE.length];
-    return '<span class="paper-logo paper-logo-generic" style="--publisher-mark-ink:' + colors[0] + ';--publisher-mark-bg:' + colors[1] + '" aria-hidden="true">' + esc(initials) + '</span>';
+    var fallback = '<span class="paper-logo paper-logo-generic" aria-hidden="true" style="--publisher-mark-ink:' + colors[0] + ';--publisher-mark-bg:' + colors[1] + '"><span class="paper-logo-initials">' + esc(initials) + '</span><span class="paper-logo-name">' + esc(name) + '</span></span>';
+    var domain = PUBLISHER_DOMAINS[name];
+    if (!domain) return fallback;
+    var icon = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
+    return '<span class="paper-logo-asset"><img class="paper-logo-image" src="' + esc(icon) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">' + fallback + '</span>';
   }
 
   function renderPapers() {
@@ -2035,6 +2111,10 @@
   app.addEventListener('error', function (e) {
     var target = e.target;
     if (target && target.tagName === 'IMG') {
+      if (target.classList.contains('paper-logo-image')) {
+        target.hidden = true;
+        return;
+      }
       var box = target.closest('.dashboard-image, .hero-figure, .reader-photo');
       if (box) box.hidden = true;
     }

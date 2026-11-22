@@ -352,8 +352,14 @@ body.reader-focus .dashboard-body {
 }
 
 
-/* Stable local marks keep every publisher card legible without remote favicons. */
-.paper-logo-generic { min-width: 102px; min-height: 70px; padding: 10px; border-radius: 3px; background: var(--publisher-mark-bg, #E8EDF0); color: var(--publisher-mark-ink, #263746); font: 750 30px/1 var(--sans); letter-spacing: -.035em; }
+/* Publisher logos load from each outlet's domain, with a full local wordmark behind them. */
+.paper-logo-asset { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 90px; }
+.paper-logo-image { position: relative; z-index: 1; width: 78px; height: 78px; object-fit: contain; background: #F5F0E7; }
+.paper-logo-image[hidden] { display: none !important; }
+.paper-logo-asset .paper-logo-generic { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); }
+.paper-logo-generic { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-width: 112px; min-height: 70px; padding: 8px 10px; border-radius: 3px; background: var(--publisher-mark-bg, #E8EDF0); color: var(--publisher-mark-ink, #263746); text-align: center; white-space: normal; }
+.paper-logo-initials { font: 750 23px/1 var(--sans); letter-spacing: -.035em; }
+.paper-logo-name { max-width: 150px; font: 650 10px/1.15 var(--sans); letter-spacing: -.01em; }
 .paper-logo-bbc { display: inline-flex; gap: 3px; padding: 0; background: transparent; color: #fff; font: 800 31px/1 var(--sans); letter-spacing: 0; }
 .paper-logo-bbc span { display: inline-flex; align-items: center; justify-content: center; width: 37px; height: 37px; background: #202127; }
 .paper-logo-guardian { display: flex; flex-direction: column; align-items: flex-start; color: #123766; font: 800 28px/.88 Georgia, serif; letter-spacing: -.055em; text-align: left; }
@@ -501,4 +507,8 @@ body.reader-focus .dashboard-body {
 @media(max-width:640px) {
   .publisher-world-map { height:370px; border-radius:10px; }
   .publisher-map-heading { align-items:flex-start; }
+}
+@media(max-width:640px) {
+  .paper-logo-asset { height:68px; }
+  .paper-logo-image { width:60px; height:60px; }
 }
