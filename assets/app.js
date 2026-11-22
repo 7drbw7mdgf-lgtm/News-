@@ -1038,6 +1038,7 @@
         id: s.id,
         publisher: name,
         headline: (match && match.title) || s.headline,
+        hasPublisherHeadline: !!(match && match.title),
         date: (match && match.date) || s.publishedLabel || s.time,
         url: originalUrl,
         story: s
@@ -1048,12 +1049,13 @@
   function renderPaperArticle(a) {
     var story = a.story;
     return '<article class="paper-source-article">' +
-      (safeAsset(story.image) ? '<div class="paper-source-image"><img src="' + esc(safeAsset(story.image)) +
-        '" alt="' + esc(story.imageAlt || '') + '" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>' : '') +
+
       '<div class="paper-source-copy">' +
       '<div class="news-card-meta"><span class="publisher-tag">' + esc(a.publisher) + '</span><time>' + esc(a.date) + '</time></div>' +
       '<h3><a href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.headline) + '</a></h3>' +
-      '<p class="paper-source-context">Pheme covers this story in its multi-source briefing.</p>' +
+      '<p class="paper-source-context">' +
+      (a.hasPublisherHeadline ? 'Publisher headline and original article link.' : 'Pheme headline (publisher headline unavailable); original article link provided.') +
+      '</p>' +
       '<div class="paper-source-actions">' +
       originalArticleLink(a.url, a.publisher, 'Read at publisher ↗', 'paper-source-primary') +
       nativeSourceLink(story, a.publisher, 'View on Pheme', 'paper-source-secondary') +
@@ -1139,7 +1141,7 @@
     'The Verge': 'theverge.com', 'Ars Technica': 'arstechnica.com'
   };
   function newspaperWordmark(name) {
-    var initials = name.split(/\\s+/).filter(function (part) { return !/^(the|of|and)$/i.test(part); })
+    var initials = name.split(/\s+/).filter(function (part) { return !/^(the|of|and)$/i.test(part); })
       .slice(0, 3).map(function (part) { return part.charAt(0).toUpperCase(); }).join('');
     var fallback = '<span class="paper-logo paper-logo-generic" aria-hidden="true">' +
       esc(initials || name.slice(0, 2).toUpperCase()) + '</span>';
