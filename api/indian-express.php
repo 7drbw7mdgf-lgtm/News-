@@ -73,6 +73,7 @@ $html = '';
 $status = 0;
 $contentType = '';
 $fetchError = false;
+$curlError = 0;
 for ($redirect = 0; $redirect <= 3; $redirect++) {
     $responseBody = '';
     $location = '';
@@ -101,6 +102,7 @@ for ($redirect = 0; $redirect <= 3; $redirect++) {
     $result = curl_exec($curl);
     $status = (int)curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
     $contentType = (string)curl_getinfo($curl, CURLINFO_CONTENT_TYPE);
+    $curlError = (int)curl_errno($curl);
     curl_close($curl);
 
     if ($result === false) {
@@ -165,6 +167,10 @@ if ($fetchError
     || $status >= 300
     || stripos($contentType, 'text/html') === false
     || strlen($html) === 0) {
+    $failure = $fetchError ? 'fetch' : ($status < 200 || $status >= 300 ? 'upstream-status' : (stripos($contentType, 'text/html') === false ? 'content-type' : 'empty-page'));
+    header('X-Pheme-Reader-Failure: ' . $failure);
+    header('X-Pheme-Reader-Upstream-Status: ' . max(0, min(599, $status)));
+    header('X-Pheme-Reader-Curl-Error: ' . max(0, min(999, $curlError)));
     reply(502, ['error' => 'Indian Express did not provide a public article page']);
 }
 
