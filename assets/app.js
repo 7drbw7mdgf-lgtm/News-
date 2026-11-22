@@ -10,6 +10,8 @@
   var worldMap;
   var publisherMap;
   var publisherMapLayer;
+  var exchangeMap;
+  var exchangeMapLayer;
   var worldMarkerLayer;
   var mapPinById = Object.create(null);
   var MARKETS = [
@@ -42,7 +44,7 @@
     view: 'briefing', topic: 'all', mapTopic: 'all', reading: null, readingSource: null, paper: null,
     settingsOpen: false, searchOpen: false, utilityOpen: null, srcQuery: '', query: '',
     headerPrefs: { showClock: true, markets: ['london', 'newyork', 'shanghai'] },
-    marketOpen: null, marketRange: '6M', marketHover: null,
+    marketOpen: null, marketRange: '6M', marketHover: null, tradingMarket: 'london', marketNewsFocus: 'all', marketWatch: ['Apple', 'Microsoft', 'Nvidia'],
     saved: {}, added: {}, highlights: {},
     readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused', voice: 'ava', rate: 1 },
     readerFocus: false, aaOpen: false, covFilter: 'all', copiedId: null,
@@ -66,6 +68,7 @@
       if (stored.saved) state.saved = stored.saved;
       if (stored.added) state.added = stored.added;
       if (stored.highlights) state.highlights = stored.highlights;
+      if (Array.isArray(stored.marketWatch)) state.marketWatch = stored.marketWatch.filter(function (name) { return ['Apple','Microsoft','Nvidia','Tesla','Alphabet','Amazon'].indexOf(name) !== -1; });
       if (stored.readerPrefs) state.readerPrefs = Object.assign({}, state.readerPrefs, stored.readerPrefs);
       if (state.readerPrefs.rate && [0.9, 1, 1.15, 1.25, 1.5].indexOf(state.readerPrefs.rate) !== -1) {
         state.speechRate = state.readerPrefs.rate;
@@ -86,7 +89,8 @@
         added: state.added,
         highlights: state.highlights,
         readerPrefs: state.readerPrefs,
-        headerPrefs: state.headerPrefs
+        headerPrefs: state.headerPrefs,
+        marketWatch: state.marketWatch
       }));
     } catch (e) { /* ignore */ }
   }
@@ -1074,8 +1078,160 @@
       (remaining.length ? '<section class="more-section" aria-labelledby="more-title"><div class="dashboard-section-head"><h2 id="more-title">More in your briefing</h2><span>' + remaining.length + ' more stories</span></div><div class="news-card-grid">' + remaining.map(renderDashboardCard).join('') + '</div></section>' : '');
   }
 
+  var EXCHANGE_PLACES = [
+    { name: 'London Stock Exchange', city: 'London', region: 'Europe', lat: 51.515, lng: -0.099, id: 'london' },
+    { name: 'New York Stock Exchange', city: 'New York', region: 'North America', lat: 40.7069, lng: -74.0113, id: 'newyork' },
+    { name: 'Nasdaq', city: 'New York', region: 'North America', lat: 40.756, lng: -73.986, id: 'newyork' },
+    { name: 'Shanghai Stock Exchange', city: 'Shanghai', region: 'Asia', lat: 31.23, lng: 121.474, id: 'shanghai' },
+    { name: 'Tokyo Stock Exchange', city: 'Tokyo', region: 'Asia', lat: 35.681, lng: 139.774 },
+    { name: 'Hong Kong Exchanges', city: 'Hong Kong', region: 'Asia', lat: 22.285, lng: 114.158 },
+    { name: 'Deutsche Börse', city: 'Frankfurt', region: 'Europe', lat: 50.1155, lng: 8.677 },
+    { name: 'Euronext Paris', city: 'Paris', region: 'Europe', lat: 48.872, lng: 2.341 },
+    { name: 'National Stock Exchange of India', city: 'Mumbai', region: 'Asia', lat: 19.06, lng: 72.859 },
+    { name: 'Australian Securities Exchange', city: 'Sydney', region: 'Oceania', lat: -33.868, lng: 151.209 },
+    { name: 'B3', city: 'São Paulo', region: 'South America', lat: -23.546, lng: -46.634 },
+    { name: 'Johannesburg Stock Exchange', city: 'Johannesburg', region: 'Africa', lat: -26.107, lng: 28.055 }
+  ];
+  var MARKET_COMPANIES = [
+    { name: 'Apple', keys: ['apple','aapl','iphone','ipad'] },
+    { name: 'Microsoft', keys: ['microsoft','msft','azure'] },
+    { name: 'Nvidia', keys: ['nvidia','nvda'] },
+    { name: 'Tesla', keys: ['tesla','tsla'] },
+    { name: 'Alphabet', keys: ['alphabet','google','googl'] },
+    { name: 'Amazon', keys: ['amazon','amzn','aws'] }
+  ];
+
+  function terminalPoints(marketId) {
+    var points = marketPoints(marketId);
+    if (!points.length) return points;
+    var days = { '1M': 30, '3M': 90, '6M': 180, '1Y': 366 }[state.marketRange] || 180;
+    var cutoff = new Date(points[points.length - 1].date + 'T00:00:00Z');
+    cutoff.setUTCDate(cutoff.getUTCDate() - days);
+    return points.filter(function (p) { return p.date >= cutoff.toISOString().slice(0, 10); });
+  }
+
+  function terminalChart() {
+    var market = MARKETS.find(function (m) { return m.id === state.tradingMarket; }) || MARKETS[0];
+    var series = terminalPoints(market.id);
+    if (series.length < 2) return '<div class="terminal-chart-empty">Daily prices unavailable. No live quote is being displayed.</div>';
+    var g = chartGeometry(series, 960, 360, { left: 82, right: 22, top: 20, bottom: 40 });
+    var lines = [0,1,2,3,4].map(function (i) {
+      var y = 20 + i * 75;
+      return '<line x1="82" x2="938" y1="' + y + '" y2="' + y + '" class="terminal-gridline"></line>' +
+        '<text x="72" y="' + (y + 4) + '" text-anchor="end" class="terminal-chart-label">' +
+        marketNumber(g.max - i / 4 * (g.max - g.min)) + '</text>';
+    }).join('');
+    var last = series[series.length - 1];
+    return '<div class="terminal-chart-head"><div><span class="terminal-eyebrow">' + esc(market.city) + ' · Latest completed close</span>' +
+      '<strong>' + marketNumber(last.close) + '</strong>' + marketChange(marketPoints(market.id)) + '</div>' +
+      '<span>As of ' + marketDate(last.date, true) + '</span></div>' +
+      '<div class="terminal-chart-scroll"><svg viewBox="0 0 960 360" role="img" aria-label="' + esc(market.index) +
+      ' daily closing prices between ' + esc(marketDate(series[0].date)) + ' and ' + esc(marketDate(last.date)) + '">' +
+      lines + '<path d="' + g.area + '" class="terminal-chart-fill"></path>' +
+      '<path d="' + g.line + '" class="terminal-chart-stroke"></path>' +
+      '<text class="terminal-chart-label" x="82" y="348" text-anchor="start">' + esc(marketDate(series[0].date)) + '</text>' +
+      '<text class="terminal-chart-label" x="938" y="348" text-anchor="end">' + esc(marketDate(last.date)) + '</text></svg></div>' +
+      '<div class="terminal-chart-summary">Range high <strong>' + marketNumber(Math.max.apply(null, series.map(function (p) { return p.close; }))) +
+      '</strong> · Range low <strong>' + marketNumber(Math.min.apply(null, series.map(function (p) { return p.close; }))) + '</strong></div>';
+  }
+
+  function marketNewsItems() {
+    var result = [], seen = Object.create(null);
+    var chosen = MARKET_COMPANIES.find(function (c) { return c.name === state.marketNewsFocus; });
+    if (publisherFeed && publisherFeed.publishers) {
+      Object.keys(publisherFeed.publishers).forEach(function (publisher) {
+        var data = publisherFeed.publishers[publisher];
+        (data && data.articles || []).forEach(function (article) {
+          if (!article || !safeExternalUrl(article.url)) return;
+          var text = (article.title || '') + ' ' + (article.summary || '');
+          if (chosen ? !chosen.keys.some(function (k) { return new RegExp('\\b' + k + '\\b','i').test(text); }) :
+            article.topic !== 'finance' && article.topic !== 'business' && !/stock|equities|earnings|inflation|central bank|interest rate|shares|economy|markets/i.test(article.title || '')) return;
+          var key = article.url.split('?')[0];
+          if (seen[key]) return;
+          seen[key] = true;
+          result.push({ publisher: publisher, article: article });
+        });
+      });
+    }
+    return result.sort(function (a, b) { return String(b.article.published || '').localeCompare(String(a.article.published || '')); }).slice(0, 24);
+  }
+
+  function marketNewsHtml() {
+    var news = marketNewsItems();
+    if (!publisherFeed) return '<p class="notice">' + (publisherFeedError ? 'Publisher news temporarily unavailable.' : 'Loading publisher market headlines…') + '</p>';
+    if (!news.length) return '<p class="notice">No recent matching original headlines in the available publisher feeds.</p>';
+    return '<div class="market-news-list">' + news.map(function (item) {
+      var a = item.article, url = safeExternalUrl(a.url), img = safeAsset(a.image);
+      return '<article class="market-news-item">' +
+        (img ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" class="market-news-image"><img src="' + esc(img) + '" loading="lazy" decoding="async" alt=""></a>' : '') +
+        '<div class="market-news-copy"><span>' + esc(item.publisher) + ' · ' + esc(articlePublishedLabel(a.published)) + '</span>' +
+        '<h3><a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title) + '</a></h3>' +
+        (a.summary ? '<p>' + esc(a.summary) + '</p>' : '') + '</div></article>';
+    }).join('') + '</div>';
+  }
+
   function renderTrading() {
-    return '<div class="page-head"><h1>Trading</h1><p>Explore market indices and their interactive daily closing charts.</p></div>' + renderMarkets();
+    var focus = state.marketNewsFocus;
+    var cards = MARKETS.map(function (m) {
+      var series = marketPoints(m.id), last = series[series.length - 1];
+      var selected = state.tradingMarket === m.id;
+      return '<button type="button" class="terminal-index-card' + (selected ? ' active' : '') +
+        '" data-act="terminalmarket" data-id="' + m.id + '" aria-pressed="' + selected + '">' +
+        '<span>' + esc(m.index) + '</span>' +
+        (last ? '<strong>' + marketNumber(last.close) + '</strong><span class="terminal-index-row">' +
+          marketChange(series) + ' <small>' + esc(marketDate(last.date)) + '</small></span>' +
+          renderSparkline(series) : '<small>Daily data unavailable</small>') + '</button>';
+    }).join('');
+    var ranges = ['1M','3M','6M','1Y'].map(function (range) {
+      return '<button data-act="terminalrange" data-id="' + range + '" aria-pressed="' + (state.marketRange === range) +
+        '" class="' + (state.marketRange === range ? 'on' : '') + '">' + range + '</button>';
+    }).join('');
+    var filters = [{ name: 'all', label: 'Markets' }].concat(MARKET_COMPANIES.map(function (c) { return { name: c.name, label: c.name }; }));
+    return '<div class="page-head"><h1>Markets</h1><p>Global exchanges, daily price charts and publisher-sourced financial coverage.</p></div>' +
+      '<div class="terminal-status"><span class="terminal-live-dot" aria-hidden="true"></span>Latest verified daily close · ' +
+      (marketData ? 'Source: ' + esc(marketData.source || 'Yahoo Finance') + ' · Updated ' + esc(marketData.updatedAt ? articlePublishedLabel(marketData.updatedAt) : 'unavailable') : 'Loading market series') +
+      ' · Quotes are not real-time</div>' +
+      '<section class="terminal-section" aria-label="Market index charts"><div class="terminal-section-heading"><h2>Market overview</h2><span>Choose an index</span></div>' +
+      '<div class="terminal-index-grid">' + cards + '</div>' +
+      '<div class="terminal-chart-panel"><div class="terminal-chart-controls"><h2>' + esc((MARKETS.find(function (m) { return m.id === state.tradingMarket; }) || MARKETS[0]).index) +
+      '</h2><div role="group" aria-label="Price chart date range">' + ranges + '</div></div>' + terminalChart() +
+      '<p class="terminal-disclaimer">Completed daily closing prices only. Not live or executable quotes. Previous performance is not a forecast.</p></div></section>' +
+      '<section class="terminal-section" aria-labelledby="exchange-atlas-title"><div class="terminal-section-heading"><div><h2 id="exchange-atlas-title">Global exchange map</h2>' +
+      '<p>Exchange locations; only marked index markets have verified price data.</p></div>' +
+      '<button type="button" class="outline-sm" data-act="exchangereset">Reset world</button></div>' +
+      '<div id="exchange-world-map" class="exchange-world-map" role="region" aria-label="Map of major global financial exchanges"></div></section>' +
+      '<section class="terminal-section" aria-labelledby="market-news-title"><div class="terminal-section-heading"><div><h2 id="market-news-title">News affecting your markets</h2>' +
+      '<p>Matching publisher headlines, not predictions or proven price causation.</p></div></div>' +
+      '<div class="market-news-filters" role="group" aria-label="Filter financial news">' + filters.map(function (f) {
+        return '<button type="button" data-act="marketnews" data-name="' + esc(f.name) +
+          '" aria-pressed="' + (focus === f.name) + '" class="' + (focus === f.name ? 'on' : '') + '">' + esc(f.label) + '</button>';
+      }).join('') + '</div><div id="market-news-content">' + marketNewsHtml() + '</div>' +
+      '<p class="terminal-disclaimer">Company matches are keyword-based. Check each original article before relying on it.</p></section>';
+  }
+
+  function mountExchangeMap() {
+    var canvas = app.querySelector('#exchange-world-map');
+    if (!canvas || !window.L || exchangeMap) return;
+    var L = window.L;
+    exchangeMap = L.map(canvas, { scrollWheelZoom: false, minZoom: 2, maxZoom: 12, worldCopyJump: true });
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 17
+    }).addTo(exchangeMap);
+    exchangeMapLayer = L.layerGroup().addTo(exchangeMap);
+    EXCHANGE_PLACES.forEach(function (place) {
+      var market = MARKETS.find(function (m) { return m.id === place.id; });
+      var points = market ? marketPoints(market.id) : [];
+      var last = points[points.length - 1];
+      var content = '<div class="exchange-popup"><strong>' + esc(place.name) + '</strong><span>' +
+        esc(place.city) + ' · ' + esc(place.region) + '</span>' +
+        (market ? '<p>' + esc(market.index) + (last ? ' · ' + marketNumber(last.close) + ' (' + marketDate(last.date) + ')' : ' · data unavailable') + '</p>' +
+          '<button type="button" data-act="exchangefocus" data-id="' + market.id + '">View price chart</button>' :
+          '<p>Location only · no market quote feed connected</p>') + '</div>';
+      L.circleMarker([place.lat, place.lng], {
+        radius: market ? 9 : 6, weight: 2, color: '#204D3D', fillColor: market ? '#2F5D50' : '#C2A77A', fillOpacity: .9
+      }).addTo(exchangeMapLayer).bindPopup(content, { maxWidth: 290 });
+    });
+    exchangeMap.fitBounds(L.latLngBounds(EXCHANGE_PLACES.map(function (p) { return [p.lat,p.lng]; })), { padding: [20,20], maxZoom: 2 });
   }
 
   /* ---------- Newspapers View ---------- */
@@ -1205,6 +1361,10 @@
             });
             selectPaperInPlace(state.paper || followed()[0].name);
           } else render();
+        }
+        if (state.view === 'trading' && !state.reading) {
+          var newsContent = app.querySelector('#market-news-content');
+          if (newsContent) newsContent.innerHTML = marketNewsHtml();
         }
         refreshPublisherMap();
       });
@@ -1797,6 +1957,7 @@
     var previousSettingsScroll = settingsScroll ? settingsScroll.scrollTop : 0;
     if (worldMap) { worldMap.remove(); worldMap = null; worldMarkerLayer = null; mapPinById = Object.create(null); }
     if (publisherMap) { publisherMap.remove(); publisherMap = null; publisherMapLayer = null; }
+    if (exchangeMap) { exchangeMap.remove(); exchangeMap = null; exchangeMapLayer = null; }
     var reading = state.reading ? byId[state.reading] : null;
     syncBodyReaderClasses();
     var main;
@@ -1819,6 +1980,7 @@
 
     mountWorldMap();
     mountPublisherMap();
+    mountExchangeMap();
     updateReadProgress();
     updateSiteScrollTone();
     if (opts && opts.focus) {
@@ -1847,6 +2009,35 @@
     var id = t.getAttribute('data-id');
     if (act !== 'headermenu') state.utilityOpen = null;
     switch (act) {
+      case 'terminalmarket':
+      case 'exchangefocus':
+        if (MARKETS.some(function (m) { return m.id === id; })) {
+          state.tradingMarket = id;
+          render();
+          if (act === 'exchangefocus') {
+            var panel = app.querySelector('.terminal-chart-panel');
+            if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+        break;
+      case 'terminalrange':
+        if (['1M','3M','6M','1Y'].indexOf(id) >= 0) { state.marketRange = id; render(); }
+        break;
+      case 'exchangereset':
+        if (exchangeMap) exchangeMap.fitBounds(window.L.latLngBounds(EXCHANGE_PLACES.map(function (p) { return [p.lat,p.lng]; })), { padding: [20,20], maxZoom: 2 });
+        break;
+      case 'marketnews':
+        state.marketNewsFocus = t.getAttribute('data-name') || 'all';
+        var newsContent = app.querySelector('#market-news-content');
+        if (newsContent) {
+          newsContent.innerHTML = marketNewsHtml();
+          app.querySelectorAll('[data-act="marketnews"]').forEach(function (btn) {
+            var active = btn.getAttribute('data-name') === state.marketNewsFocus;
+            btn.classList.toggle('on', active);
+            btn.setAttribute('aria-pressed', String(active));
+          });
+        }
+        break;
       case 'openmarket':
         if (!MARKETS.some(function (m) { return m.id === id; })) break;
         state.marketOpen = id; state.marketHover = null; state.utilityOpen = null;
@@ -2170,6 +2361,7 @@
   document.getElementById('world-map-library')?.addEventListener('load', function () {
     mountWorldMap();
     mountPublisherMap();
+    mountExchangeMap();
   });
   render();
   loadMarketData();
