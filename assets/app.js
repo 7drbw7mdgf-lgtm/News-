@@ -18,6 +18,7 @@
     { id: 'shanghai', city: 'Shanghai', index: 'Shanghai Composite', zone: 'Asia/Shanghai', url: 'https://finance.yahoo.com/quote/000001.SS/history/' }
   ];
   var clockFormats = Object.create(null);
+  var clockPartsFormats = Object.create(null);
   var marketData = null;
   var marketLoadFailed = false;
   var route = new URLSearchParams(location.search);
@@ -472,12 +473,55 @@
     return clockFormats[zone].format(new Date());
   }
 
+  function clockParts(zone, now) {
+    if (!clockPartsFormats[zone]) clockPartsFormats[zone] = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' });
+    return clockPartsFormats[zone].formatToParts(now || new Date()).reduce(function (parts, item) {
+      if (item.type === 'hour' || item.type === 'minute' || item.type === 'second') parts[item.type] = Number(item.value);
+      return parts;
+    }, {});
+  }
+
+  function clockAngle(parts, hand) {
+    if (hand === 'hour') return ((parts.hour % 12) + parts.minute / 60) * 30;
+    if (hand === 'minute') return (parts.minute + parts.second / 60) * 6;
+    return parts.second * 6;
+  }
+
+  function renderAnalogClock(city, zone) {
+    var parts = clockParts(zone);
+    return '<div class="world-clock" data-analog-clock-zone="' + zone + '">' +
+      '<span class="world-clock-face" role="img" aria-label="' + esc(city + ' local time, ' + clockText(zone)) + '">' +
+      '<span class="world-clock-hand world-clock-hour" data-clock-hand="hour" style="--hand-angle:' + clockAngle(parts, 'hour') + 'deg"></span>' +
+      '<span class="world-clock-hand world-clock-minute" data-clock-hand="minute" style="--hand-angle:' + clockAngle(parts, 'minute') + 'deg"></span>' +
+      '<span class="world-clock-hand world-clock-second" data-clock-hand="second" style="--hand-angle:' + clockAngle(parts, 'second') + 'deg"></span>' +
+      '<span class="world-clock-pin"></span></span>' +
+      '<span class="world-clock-copy"><span class="world-clock-city">' + esc(city) + '</span>' +
+      '<time class="world-clock-time" data-clock-zone="' + zone + '">' + clockText(zone) + '</time></span></div>';
+  }
+
+  function renderWorldClocks() {
+    if (!state.headerPrefs.showClock) return '';
+    return '<div class="world-clock-strip" aria-label="World clocks">' +
+      renderAnalogClock('London', 'Europe/London') +
+      renderAnalogClock('New York', 'America/New_York') +
+      renderAnalogClock('Shanghai', 'Asia/Shanghai') + '</div>';
+  }
+
   function renderClock(zone, label) {
     return '<time class="header-clock" data-clock-zone="' + zone + '" aria-label="' + esc(label) + '">' + clockText(zone) + '</time>';
   }
 
   function updateClocks() {
-    app.querySelectorAll('[data-clock-zone]').forEach(function (el) { el.textContent = clockText(el.getAttribute('data-clock-zone')); });
+    var now = new Date();
+    app.querySelectorAll('[data-clock-zone]').forEach(function (el) { el.textContent = clockFormats[el.getAttribute('data-clock-zone')] ? clockFormats[el.getAttribute('data-clock-zone')].format(now) : clockText(el.getAttribute('data-clock-zone')); });
+    app.querySelectorAll('[data-analog-clock-zone]').forEach(function (clock) {
+      var zone = clock.getAttribute('data-analog-clock-zone'), parts = clockParts(zone, now);
+      clock.querySelectorAll('[data-clock-hand]').forEach(function (hand) {
+        hand.style.setProperty('--hand-angle', clockAngle(parts, hand.getAttribute('data-clock-hand')) + 'deg');
+      });
+      var face = clock.querySelector('.world-clock-face');
+      if (face) face.setAttribute('aria-label', clock.querySelector('.world-clock-city').textContent + ' local time, ' + clockText(zone));
+    });
   }
 
   function marketNumber(value) { return value.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
@@ -588,7 +632,7 @@
 
   function renderMarkets() {
     var selected = MARKETS.filter(function (m) { return state.headerPrefs.markets.indexOf(m.id) !== -1; });
-    if (!selected.length) return '';
+    if (!selected.length) return '<section class="market-strip market-empty" aria-label="Stock market widgets"><p class="notice">No exchanges selected. <button data-act="settings">Choose exchanges in Settings</button></p></section>';
     var key = selected.map(function (m) { return m.id; }).join(',') + ':' + state.headerPrefs.showClock + ':' + (marketData ? marketData.updatedAt : marketLoadFailed ? 'unavailable' : 'loading');
     var existing = document.getElementById('market-widgets');
     if (existing && existing.getAttribute('data-markets') === key) return '<div id="market-widgets" data-markets="' + key + '"></div>';
@@ -614,16 +658,18 @@
 
   function renderSidebar() {
     var home = state.view === 'briefing' && state.topic === 'all';
-    var world = state.view === 'briefing' && state.topic === 'world';
     var savedCount = STORIES.filter(function (s) { return state.saved[s.id]; }).length;
-    return '<aside class="dashboard-sidebar" aria-label="Main navigation"><button class="sidebar-brand" data-act="home" aria-label="Briefing home"><img src="assets/images/pheme-logo.png" width="56" height="56" alt=""><span>YOUR DAILY<br> PERSPECTIVE</span></button>' +
+    var topicFilters = [{ id: 'all', label: 'All' }].concat(D.TOPICS).map(function (topic) {
+      var count = topic.id === 'all' ? CURRENT.length : CURRENT.filter(function (story) { return story.topic === topic.id; }).length;
+      var on = state.view === 'briefing' && state.topic === topic.id;
+      return '<button class="sidebar-topic' + (on ? ' active' : '') + '" data-act="topic" data-id="' + esc(topic.id) + '" aria-pressed="' + on + '"><span>' + esc(topic.label) + '</span><span class="sidebar-topic-count">' + count + '</span></button>';
+    }).join('');
+    return '<aside class="dashboard-sidebar" aria-label="Main navigation"><button class="sidebar-brand" data-act="home" aria-label="Pheme home"><img src="assets/images/pheme-logo.png" width="56" height="56" alt=""></button>' +
       '<nav class="sidebar-nav" aria-label="Main"><button class="sidebar-link' + (home ? ' active' : '') + '" data-act="home"' + (home ? ' aria-current="page"' : '') + '>' + navIcon('M3 10 12 3l9 7v11h-6v-7H9v7H3z') + 'Home</button>' +
-      '<button class="sidebar-link' + (world ? ' active' : '') + '" data-act="topic" data-id="world">' + navIcon('M3 5l6-2 6 2 6-2v16l-6 2-6-2-6 2V5zm6-2v16m6-14v16') + 'World map</button>' +
       '<button class="sidebar-link' + (state.view === 'papers' ? ' active' : '') + '" data-act="view" data-view="papers">' + navIcon('M4 3h16v18H4zM8 7h8M8 11h8M8 15h3m3 0h2') + 'Newspapers</button>' +
       '<button class="sidebar-link' + (state.view === 'saved' ? ' active' : '') + '" data-act="view" data-view="saved">' + ICON.bookmarkLg + 'Saved stories' + (savedCount ? '<span class="sidebar-count">' + savedCount + '</span>' : '') + '</button>' +
-      '<button class="sidebar-link" data-act="settings">' + navIcon('M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M10 3h4l1 3 3 1 3 3v4l-3 1-1 3-3 3h-4l-1-3-3-1-3-3v-4l3-1 1-3z') + 'Settings</button></nav>' +
-      '<div class="sidebar-edition"><span class="sidebar-label">IN THIS EDITION</span><strong>' + CURRENT.length + ' stories</strong><span>Across ' + D.TOPICS.length + ' topics</span><span>' + esc(D.META.rangeLong) + '</span></div>' +
-      '<div class="sidebar-personalise"><span class="personalise-symbol" aria-hidden="true">✦</span><h2>A wider perspective.</h2><p>Follow your newspapers. Choose your markets. Make your briefing yours.</p><button data-act="settings">Personalise your feed</button></div></aside>';
+      '<button class="sidebar-link' + (state.view === 'trading' ? ' active' : '') + '" data-act="view" data-view="trading"' + (state.view === 'trading' ? ' aria-current="page"' : '') + '>' + navIcon('M3 18h3l4-7 4 4 6-10m-1 0h1v1') + 'Trading</button></nav>' +
+      '<nav class="sidebar-topic-nav" aria-label="Filter stories by topic"><span class="sidebar-topic-heading">Topics</span>' + topicFilters + '</nav></aside>';
   }
 
   function dashboardImage(s, cls) {
@@ -675,16 +721,15 @@
       '<button class="brand" data-act="home" aria-label="Pheme home">' +
       '<img class="brand-logo" src="assets/images/pheme-logo.png" alt="" width="44" height="44" decoding="async">' +
       '</button>' +
-      '<div class="topbar-date">' + esc(displayDate()) +
-      (state.headerPrefs.showClock ? '<span class="masthead-time">' + renderClock('Europe/London', 'London time') + ' London</span>' : '') + '</div>' +
+      '<div class="masthead-status"><div class="topbar-date">' + esc(displayDate()) + '</div>' + renderWorldClocks() + '</div>' +
       '<div class="topbar-actions">' +
       '<button class="search-toggle search-launch' + (state.searchOpen ? ' on' : '') + '" data-act="togglesearch" aria-label="Search stories" aria-expanded="' + state.searchOpen + '">' + ICON.search + '<span>Search anything…</span></button>' +
       '<span class="vsep" aria-hidden="true"></span>' +
       '<button class="nav-link' + (isSaved ? ' on' : '') + '" data-act="view" data-view="saved" aria-pressed="' + isSaved + '">Saved' +
       (savedCount ? '<span class="badge-count">' + savedCount + '</span>' : '') + '</button>' +
       '<button id="settings-toggle" class="nav-link settings-toggle" data-act="settings" aria-expanded="' + state.settingsOpen + '">Settings</button>' +
-      '</div></header>' + renderMarkets() + '</div>' +
-      '<nav class="topicbar" aria-label="Topics"><div class="wrap topicbar-inner">' +
+      '</div></header></div>' +
+      '<nav class="topicbar" aria-label="Pheme navigation"><div class="wrap topicbar-inner">' +
       '<div class="topic-tabs">' + topicTabs + '</div>' +
       '<div class="topic-utility">' +
       renderHeaderMenu('digest', 'Digest') + renderHeaderMenu('coverage', 'Coverage') + renderHeaderMenu('newspapers', 'Newspapers') +
@@ -1029,6 +1074,10 @@
       (remaining.length ? '<section class="more-section" aria-labelledby="more-title"><div class="dashboard-section-head"><h2 id="more-title">More in your briefing</h2><span>' + remaining.length + ' more stories</span></div><div class="news-card-grid">' + remaining.map(renderDashboardCard).join('') + '</div></section>' : '');
   }
 
+  function renderTrading() {
+    return '<div class="page-head"><h1>Trading</h1><p>Explore market indices and their interactive daily closing charts.</p></div>' + renderMarkets();
+  }
+
   /* ---------- Newspapers View ---------- */
   var publisherFeed = null;
   var publisherFeedLoading = false;
@@ -1265,34 +1314,29 @@
   }, { passive: true });
   window.addEventListener('resize', updateSiteScrollTone, { passive: true });
 
-  // Publisher-owned brand icons, delivered as site favicons; not approximated wordmarks.
-  // If a favicon is unavailable, keep a readable text monogram.
-  var PUBLISHER_DOMAINS = {
-    'BBC News': 'bbc.com', 'The Guardian': 'theguardian.com',
-    'Sky News': 'news.sky.com', 'Al Jazeera English': 'aljazeera.com',
-    'Financial Times': 'ft.com', 'The Economist': 'economist.com',
-    'The Telegraph': 'telegraph.co.uk', 'Daily Mail': 'dailymail.co.uk',
-    'ITV News': 'itv.com', 'RTÉ News': 'rte.ie',
-    'CNBC': 'cnbc.com', 'City AM': 'cityam.com',
-    'The New York Times': 'nytimes.com', 'NPR': 'npr.org',
-    'Fox News': 'foxnews.com', 'France 24': 'france24.com',
-    'DW News': 'dw.com', 'Politico Europe': 'politico.eu',
-    'Euronews': 'euronews.com', 'South China Morning Post': 'scmp.com',
-    'Nature News': 'nature.com', 'New Scientist': 'newscientist.com',
-    'ScienceDaily': 'sciencedaily.com', 'TechCrunch': 'techcrunch.com',
-    'The Verge': 'theverge.com', 'Ars Technica': 'arstechnica.com'
+  // Render newspaper marks locally so they remain visible when publisher icon services are blocked.
+  var PUBLISHER_WORDMARKS = {
+    'BBC News': { type: 'bbc', html: '<span>B</span><span>B</span><span>C</span>' },
+    'The Guardian': { type: 'guardian', html: '<span>The</span><span>Guardian</span>' },
+    'Sky News': { type: 'sky', html: '<span>sky</span><span>news</span>' },
+    'Al Jazeera English': { type: 'aj', html: 'AJ' },
+    'Financial Times': { type: 'ft', html: 'FT' },
+    'The Economist': { type: 'economist', html: '<span>The</span><span>Economist</span>' }
   };
+  var PUBLISHER_MARK_PALETTE = [
+    ['#17395F', '#E8EFF7'], ['#8E2A34', '#F8E8E2'], ['#24584B', '#E5EEE7'],
+    ['#5A3C7D', '#EEE8F5'], ['#7A4A18', '#F5EBDD'], ['#263746', '#E7EDF0'],
+    ['#A33A23', '#FAE9E3'], ['#3F536F', '#E8EDF4']
+  ];
+
   function newspaperWordmark(name) {
-    var initials = name.split(/\s+/).filter(function (part) { return !/^(the|of|and)$/i.test(part); })
-      .slice(0, 3).map(function (part) { return part.charAt(0).toUpperCase(); }).join('');
-    var fallback = '<span class="paper-logo paper-logo-generic" aria-hidden="true">' +
-      esc(initials || name.slice(0, 2).toUpperCase()) + '</span>';
-    var domain = PUBLISHER_DOMAINS[name];
-    if (!domain) return fallback;
-    var icon = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
-    return '<span class="paper-logo-asset">' +
-      '<img class="paper-logo-image" src="' + esc(icon) + '" alt="" loading="lazy" decoding="async">' +
-      fallback + '</span>';
+    var wordmark = PUBLISHER_WORDMARKS[name];
+    if (wordmark) return '<span class="paper-logo paper-logo-' + wordmark.type + '" aria-hidden="true">' + wordmark.html + '</span>';
+    var words = name.replace(/^The\s+/i, '').split(/\s+/).filter(function (part) { return !/^(of|and|news|english)$/i.test(part); });
+    var initials = words.slice(0, 3).map(function (part) { return part.charAt(0).toUpperCase(); }).join('') || name.slice(0, 2).toUpperCase();
+    var hash = name.split('').reduce(function (value, character) { return (value * 31 + character.charCodeAt(0)) >>> 0; }, 7);
+    var colors = PUBLISHER_MARK_PALETTE[hash % PUBLISHER_MARK_PALETTE.length];
+    return '<span class="paper-logo paper-logo-generic" style="--publisher-mark-ink:' + colors[0] + ';--publisher-mark-bg:' + colors[1] + '" aria-hidden="true">' + esc(initials) + '</span>';
   }
 
   function renderPapers() {
@@ -1509,7 +1553,7 @@
   }
 
   function renderReader(s) {
-    var back = state.readingSource ? 'Back to story' : (state.view === 'papers' ? 'Back to ' + (state.paper || followed()[0].name) : (state.view === 'saved' ? 'Back to saved' : 'Back to Pheme'));
+    var back = state.readingSource ? 'Back to story' : (state.view === 'papers' ? 'Back to ' + (state.paper || followed()[0].name) : (state.view === 'saved' ? 'Back to saved' : (state.view === 'trading' ? 'Back to Trading' : 'Back to Pheme')));
     var more = STORIES.filter(function (o) { return o.source === s.source && o.id !== s.id; }).slice(0, 3);
     var cov = s.cov;
     var selectedSource = cov.rows.find(function (r) { return r.name === state.readingSource; });
@@ -1660,7 +1704,7 @@
       '<div class="settings-head"><h2 id="settings-title">Settings</h2>' +
       '<button class="search-toggle" data-act="close" aria-label="Close">' + ICON.close + '</button></div>' +
       '<div class="settings-body">' +
-      '<fieldset class="widget-settings"><legend>Header widgets</legend><label class="widget-choice"><input id="show-clock" type="checkbox"' + (state.headerPrefs.showClock ? ' checked' : '') + '><span>Show clocks<small>London time and each market’s local time</small></span></label></fieldset>' +
+      '<fieldset class="widget-settings"><legend>Trading and clocks</legend><label class="widget-choice"><input id="show-clock" type="checkbox"' + (state.headerPrefs.showClock ? ' checked' : '') + '><span>Show clocks<small>Analog clocks for London, New York and Shanghai</small></span></label></fieldset>' +
       '<fieldset class="widget-settings"><legend>Stock exchanges</legend><p class="small">Choose the markets shown in your toolbar. Your choices are saved in this browser.</p>' + marketChoices + '</fieldset>' +
       '<h3 class="settings-section-title">Newspapers</h3>' +
       '<p class="small">Pin newspapers for quick access to any stories featured in Pheme.</p>' +
@@ -1682,6 +1726,7 @@
     var main;
     if (reading) main = renderReader(reading);
     else if (state.view === 'papers') main = renderPapers();
+    else if (state.view === 'trading') main = renderTrading();
     else main = renderBriefing();
 
     app.innerHTML = '<div class="dashboard-shell">' + renderSidebar() + '<div class="dashboard-body">' + renderHeader() +
@@ -1990,10 +2035,6 @@
   app.addEventListener('error', function (e) {
     var target = e.target;
     if (target && target.tagName === 'IMG') {
-      if (target.classList.contains('paper-logo-image')) {
-        target.hidden = true;
-        return;
-      }
       var box = target.closest('.dashboard-image, .hero-figure, .reader-photo');
       if (box) box.hidden = true;
     }
