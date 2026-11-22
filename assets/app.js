@@ -1304,7 +1304,8 @@
       var content = '<div class="exchange-popup"><strong>' + esc(place.name) + '</strong><span>' +
         esc(place.city) + ' · ' + esc(place.region) + '</span>' +
         (market ? '<p>' + esc(market.index) + (last ? ' · ' + marketNumber(last.close) + ' (' + marketDate(last.date) + ')' : ' · data unavailable') + '</p>' +
-          '<button type="button" data-act="exchangefocus" data-id="' + market.id + '">View price chart</button>' :
+          '<button type="button" data-act="exchangefocus" data-id="' + market.id + '">' +
+          (last ? 'View daily chart' : 'View index · data pending') + '</button>' :
           '<p>Location marker · no index series connected</p>') + '</div>';
       L.circleMarker([place.lat, place.lng], {
         radius: market ? 9 : 6, weight: 2, color: '#204D3D', fillColor: market ? '#2F5D50' : '#C2A77A', fillOpacity: .9
