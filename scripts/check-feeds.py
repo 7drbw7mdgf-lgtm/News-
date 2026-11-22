@@ -58,10 +58,20 @@ def link_of(node):
 
 
 def check(c):
-    r = {'url': c['url'], 'ok': False}
+    # A candidate may list several guessed addresses ('urls'); the first that works wins.
+    last = None
+    for url in c.get('urls') or [c['url']]:
+        last = check_one(url, timeout=10 if c.get('urls') else 20)
+        if last['ok']:
+            break
+    return last
+
+
+def check_one(url, timeout=20):
+    r = {'url': url, 'ok': False}
     try:
-        req = urllib.request.Request(c['url'], headers={'User-Agent': UA, 'Accept': 'application/rss+xml, application/atom+xml, application/xml, text/xml, */*'})
-        with urllib.request.urlopen(req, timeout=20) as resp:
+        req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/rss+xml, application/atom+xml, application/xml, text/xml, */*'})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
             r['status'] = resp.status
             r['final_url'] = resp.geturl()
             body = resp.read(8 * 1024 * 1024)
@@ -101,13 +111,15 @@ def check(c):
 
 
 def main():
-    cands = json.loads((ROOT / 'feeds' / 'candidates.json').read_text())
-    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as pool:
+    name = sys.argv[1] if len(sys.argv) > 1 else 'candidates'
+    cands = json.loads((ROOT / 'feeds' / (name + '.json')).read_text())
+    with concurrent.futures.ThreadPoolExecutor(max_workers=48) as pool:
         results = list(pool.map(check, cands))
     for c, r in zip(cands, results):
-        r.update({'name': c['name'], 'topic': c['topic'], 'origin': c.get('origin', '')})
+        r.update({'name': c['name'], 'topic': c['topic'], 'origin': c.get('origin', ''), 'mbfc_domain': c.get('mbfc_domain', '')})
     stamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
-    (ROOT / 'feeds' / 'check-results.json').write_text(json.dumps({'checked_at': stamp, 'results': results}, indent=1, ensure_ascii=False))
+    out = 'check-results.json' if name == 'candidates' else 'check-results-' + name.split('-', 1)[-1] + '.json'
+    (ROOT / 'feeds' / out).write_text(json.dumps({'checked_at': stamp, 'results': results}, indent=1, ensure_ascii=False))
     ok = sum(1 for r in results if r['ok'])
     fresh = sum(1 for r in results if r['ok'] and r['newest_days'] is not None and r['newest_days'] <= 7)
     print(f'Checked {len(results)} feeds: {ok} parse with items, {fresh} have an item from the last 7 days.')
