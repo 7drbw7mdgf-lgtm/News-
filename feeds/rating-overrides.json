@@ -1,0 +1,152 @@
+{
+ "Fox News": {
+  "code": "R",
+  "questionable": true,
+  "mbfc_name": "Fox News",
+  "note": "Right; questionable source, low factual reporting (MBFC)"
+ },
+ "GB News": {
+  "code": "R",
+  "questionable": true,
+  "mbfc_name": "GB News UK",
+  "note": "Right; questionable source, mixed factual reporting (MBFC)"
+ },
+ "Breitbart": {
+  "code": "R",
+  "questionable": true,
+  "mbfc_name": "Breitbart",
+  "note": "Right; questionable source, mixed factual reporting (MBFC)"
+ },
+ "The Federalist": {
+  "code": "R",
+  "questionable": true,
+  "mbfc_name": "The Federalist",
+  "note": "Right; questionable source, mixed factual reporting (MBFC)"
+ },
+ "Hindustan Times": {
+  "code": "LL",
+  "questionable": true,
+  "mbfc_name": "Hindustan Times",
+  "note": "Left-Center; questionable source, mixed factual reporting (MBFC)"
+ },
+ "NDTV": {
+  "code": "LR",
+  "questionable": true,
+  "mbfc_name": "NDTV",
+  "note": "Right-Center; questionable source, mixed factual reporting (MBFC)"
+ },
+ "Economic Times": {
+  "code": "LR",
+  "questionable": true,
+  "mbfc_name": "The Economic Times",
+  "note": "Right-Center; questionable source, mixed factual reporting (MBFC)"
+ },
+ "The National (UAE)": {
+  "code": "LR",
+  "questionable": true,
+  "mbfc_name": "The National (UAE)",
+  "note": "Right-Center; questionable source, mixed factual reporting (MBFC)"
+ },
+ "MercoPress": {
+  "code": "LL",
+  "questionable": false,
+  "mbfc_name": "MercoPress",
+  "note": "Left-Center, mixed factual reporting (MBFC)"
+ },
+ "GOV.UK": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "Federal Reserve": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "Bank of England": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "European Central Bank": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "ONS": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "UKHSA": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "ECDC": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "WHO": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "NASA": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "ESA": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "UK Parliament": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "IMF": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "FCA": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "NHS England": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "Institute for Government": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ },
+ "UN News": {
+  "code": "P",
+  "questionable": false,
+  "mbfc_name": "",
+  "note": "Primary source, not a news outlet"
+ }
+}

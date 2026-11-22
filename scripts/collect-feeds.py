@@ -5,6 +5,7 @@ Output never replaces the public edition automatically.
 import concurrent.futures
 import datetime
 import email.utils
+import html
 import json
 import re
 import sys
@@ -84,11 +85,16 @@ def collect(feed, cutoff):
         if not published:
             continue
         if title and urllib.parse.urlsplit(link).scheme == "https" and published >= cutoff:
+            # The description is used only to group articles and as background for the
+            # story writer; it is never published as-is.
+            raw_summary = first_text(entry, ("description", f"{ATOM_NS}summary", f"{ATOM_NS}content", f"{RSS1_NS}description"))
+            summary = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw_summary or ""))).strip()[:500]
             items.append(
                 dict(
                     outlet=outlet,
                     topic=topic,
-                    title=title,
+                    title=re.sub(r"\s+", " ", html.unescape(title)).strip(),
+                    summary=summary,
                     url=link,
                     published=published.isoformat(),
                 )

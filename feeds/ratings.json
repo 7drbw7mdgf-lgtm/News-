@@ -1,0 +1,1887 @@
+{
+ "404 Media": {
+  "code": "LL",
+  "mbfc": "404 Media",
+  "questionable": false
+ },
+ "7NEWS": {
+  "code": "C",
+  "mbfc": "7NEWS",
+  "questionable": false
+ },
+ "9to5Google": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "9to5Mac": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "ABC News (US)": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "ABC News Australia": {
+  "code": "LL",
+  "mbfc": "ABC News Australia",
+  "questionable": false
+ },
+ "ABC7 New York": {
+  "code": "C",
+  "mbfc": "ABC7 New York",
+  "questionable": false
+ },
+ "ABC7chicago.com": {
+  "code": "C",
+  "mbfc": "ABC7chicago.com",
+  "questionable": false
+ },
+ "Al Jazeera English": {
+  "code": "LL",
+  "mbfc": "Al Jazeera",
+  "questionable": false
+ },
+ "Al-Monitor": {
+  "code": "LL",
+  "mbfc": "Al Monitor",
+  "questionable": false
+ },
+ "American Council on Science and Health (ACSH)": {
+  "code": "LR",
+  "mbfc": "American Council on Science and Health (ACSH)",
+  "questionable": false
+ },
+ "American Institute for Economic Research": {
+  "code": "LR",
+  "mbfc": "American Institute for Economic Research",
+  "questionable": false
+ },
+ "American Wire News": {
+  "code": "R",
+  "mbfc": "American Wire News",
+  "questionable": false
+ },
+ "Android Authority": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Android Police": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Armstrong Economics": {
+  "code": "R",
+  "mbfc": "Armstrong Economics",
+  "questionable": false
+ },
+ "Ars Technica": {
+  "code": "C",
+  "mbfc": "Ars Technica",
+  "questionable": false
+ },
+ "Axios": {
+  "code": "LL",
+  "mbfc": "Axios",
+  "questionable": false
+ },
+ "B92": {
+  "code": "R",
+  "mbfc": "B92",
+  "questionable": false
+ },
+ "BBC Click / Tech": {
+  "code": "LL",
+  "mbfc": "BBC News",
+  "questionable": false
+ },
+ "BBC News": {
+  "code": "LL",
+  "mbfc": "BBC News",
+  "questionable": false
+ },
+ "Bangkok Post": {
+  "code": "LR",
+  "mbfc": "Bangkok Post",
+  "questionable": false
+ },
+ "Bank of England": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Banking Dive": {
+  "code": "C",
+  "mbfc": "BankingDive",
+  "questionable": false
+ },
+ "Bearing Arms": {
+  "code": "R",
+  "mbfc": "Bearing Arms",
+  "questionable": false
+ },
+ "Belfast Live": {
+  "code": "C",
+  "mbfc": "Belfast Live",
+  "questionable": false
+ },
+ "Belfast Telegraph": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Benzinga": {
+  "code": "C",
+  "mbfc": "Benzinga",
+  "questionable": false
+ },
+ "Big Think": {
+  "code": "C",
+  "mbfc": "Big Think",
+  "questionable": false
+ },
+ "Birmingham Mail": {
+  "code": "LL",
+  "mbfc": "Birmingham Mail",
+  "questionable": false
+ },
+ "BizPac Review": {
+  "code": "R",
+  "mbfc": "BizPac Review",
+  "questionable": false
+ },
+ "BleepingComputer": {
+  "code": "C",
+  "mbfc": "Bleeping Computer",
+  "questionable": false
+ },
+ "Bloomberg": {
+  "code": "LL",
+  "mbfc": "Bloomberg",
+  "questionable": false
+ },
+ "Breitbart": {
+  "code": "R",
+  "mbfc": "Breitbart",
+  "questionable": true
+ },
+ "Bristol Post": {
+  "code": "C",
+  "mbfc": "Bristol Post",
+  "questionable": false
+ },
+ "Business Insider": {
+  "code": "LL",
+  "mbfc": "Business Insider",
+  "questionable": false
+ },
+ "Byline Times": {
+  "code": "LL",
+  "mbfc": "Byline Times",
+  "questionable": false
+ },
+ "CBS News": {
+  "code": "LR",
+  "mbfc": "CBS News",
+  "questionable": false
+ },
+ "CNA": {
+  "code": "C",
+  "mbfc": "Channel News Asia - CNA",
+  "questionable": false
+ },
+ "CNBC": {
+  "code": "LL",
+  "mbfc": "CNBC",
+  "questionable": false
+ },
+ "CNET": {
+  "code": "C",
+  "mbfc": "CNET",
+  "questionable": false
+ },
+ "Calgary Herald": {
+  "code": "LR",
+  "mbfc": "Calgary Herald",
+  "questionable": false
+ },
+ "Carbon Brief": {
+  "code": "S",
+  "mbfc": "Carbon Brief",
+  "questionable": false
+ },
+ "Channel 4 News": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "China Digital Times": {
+  "code": "LR",
+  "mbfc": "China Digital Times",
+  "questionable": false
+ },
+ "Christian Science Monitor": {
+  "code": "C",
+  "mbfc": "Christian Science Monitor",
+  "questionable": false
+ },
+ "Citizen Free Press": {
+  "code": "R",
+  "mbfc": "Citizen Free Press",
+  "questionable": false
+ },
+ "City AM": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "CityNews - Winnipeg": {
+  "code": "C",
+  "mbfc": "CityNews - Winnipeg",
+  "questionable": false
+ },
+ "CityNews Calgary": {
+  "code": "C",
+  "mbfc": "CityNews Calgary",
+  "questionable": false
+ },
+ "CityNews Edmonton": {
+  "code": "C",
+  "mbfc": "CityNews Edmonton",
+  "questionable": false
+ },
+ "CityNews Halifax": {
+  "code": "C",
+  "mbfc": "CityNews Halifax",
+  "questionable": false
+ },
+ "CityNews Kitchener": {
+  "code": "C",
+  "mbfc": "CityNews Kitchener",
+  "questionable": false
+ },
+ "CityNews Montreal": {
+  "code": "C",
+  "mbfc": "CityNews Montreal",
+  "questionable": false
+ },
+ "CityNews Ottawa": {
+  "code": "C",
+  "mbfc": "CityNews Ottawa",
+  "questionable": false
+ },
+ "CityNews Toronto": {
+  "code": "C",
+  "mbfc": "CityNews Toronto",
+  "questionable": false
+ },
+ "CityNews Vancouver": {
+  "code": "C",
+  "mbfc": "CityNews Vancouver",
+  "questionable": false
+ },
+ "CoinDesk": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Cointelegraph": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Colorado Springs Gazette": {
+  "code": "LR",
+  "mbfc": "Colorado Springs Gazette",
+  "questionable": false
+ },
+ "Comparitech": {
+  "code": "C",
+  "mbfc": "Comparitech",
+  "questionable": false
+ },
+ "Computer Weekly": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Conservative Review": {
+  "code": "R",
+  "mbfc": "Conservative Review",
+  "questionable": false
+ },
+ "ConservativeHome": {
+  "code": "LR",
+  "mbfc": "Conservative Home",
+  "questionable": false
+ },
+ "Construction News": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "DW News": {
+  "code": "LL",
+  "mbfc": "DW News",
+  "questionable": false
+ },
+ "Daily Caller": {
+  "code": "R",
+  "mbfc": "Daily Caller",
+  "questionable": false
+ },
+ "Daily Express": {
+  "code": "R",
+  "mbfc": "Daily Express",
+  "questionable": false
+ },
+ "Daily Mail": {
+  "code": "R",
+  "mbfc": "Daily Mail",
+  "questionable": false
+ },
+ "Daily Maverick": {
+  "code": "C",
+  "mbfc": "Daily Maverick",
+  "questionable": false
+ },
+ "Daily Mirror": {
+  "code": "LL",
+  "mbfc": "Daily Mirror",
+  "questionable": false
+ },
+ "Dallas Express": {
+  "code": "R",
+  "mbfc": "Dallas Express",
+  "questionable": false
+ },
+ "Dark Reading": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Dawn": {
+  "code": "LL",
+  "mbfc": "Dawn (Pakistan0",
+  "questionable": false
+ },
+ "Decrypt": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Defense One": {
+  "code": "C",
+  "mbfc": "Defense One",
+  "questionable": false
+ },
+ "Denver Gazette": {
+  "code": "LR",
+  "mbfc": "Denver Gazette",
+  "questionable": false
+ },
+ "Derbyshire Live": {
+  "code": "C",
+  "mbfc": "Derbyshire Live",
+  "questionable": false
+ },
+ "Digital Trends": {
+  "code": "C",
+  "mbfc": "Digital Trends",
+  "questionable": false
+ },
+ "DublinLive": {
+  "code": "C",
+  "mbfc": "DublinLive",
+  "questionable": false
+ },
+ "E! News": {
+  "code": "C",
+  "mbfc": "E! News",
+  "questionable": false
+ },
+ "ECDC": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Eat This, Not That": {
+  "code": "C",
+  "mbfc": "Eat This, Not That",
+  "questionable": false
+ },
+ "Economic Times": {
+  "code": "LR",
+  "mbfc": "The Economic Times",
+  "questionable": true
+ },
+ "Edinburgh Live": {
+  "code": "C",
+  "mbfc": "Edinburgh Live",
+  "questionable": false
+ },
+ "Edmonton Journal": {
+  "code": "LR",
+  "mbfc": "Edmonton Journal",
+  "questionable": false
+ },
+ "Electrek": {
+  "code": "LL",
+  "mbfc": "Electrek",
+  "questionable": false
+ },
+ "End Time Headlines": {
+  "code": "LR",
+  "mbfc": "End Time Headlines",
+  "questionable": false
+ },
+ "Engadget": {
+  "code": "LL",
+  "mbfc": "Engadget",
+  "questionable": false
+ },
+ "Environment + Energy – The Conversation": {
+  "code": "C",
+  "mbfc": "The Conversation",
+  "questionable": false
+ },
+ "Environment News, Earth News, Global Warming, Wild Life, Carbon Trading, Climate Business, Climate Change & Pollution News": {
+  "code": "LR",
+  "mbfc": "The Times of India",
+  "questionable": false
+ },
+ "Eos": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Euractiv": {
+  "code": "LL",
+  "mbfc": "EurActiv",
+  "questionable": false
+ },
+ "Euronews": {
+  "code": "LL",
+  "mbfc": "Euronews",
+  "questionable": false
+ },
+ "European Central Bank": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Evening Standard": {
+  "code": "LR",
+  "mbfc": "London Evening Standard",
+  "questionable": false
+ },
+ "Fast Company": {
+  "code": "LL",
+  "mbfc": "Fast Company",
+  "questionable": false
+ },
+ "Federal Reserve": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Financial Times": {
+  "code": "C",
+  "mbfc": "Financial Times",
+  "questionable": false
+ },
+ "Finextra": {
+  "code": "C",
+  "mbfc": "Finextra",
+  "questionable": false
+ },
+ "Forbes": {
+  "code": "C",
+  "mbfc": "Forbes",
+  "questionable": false
+ },
+ "Fortune": {
+  "code": "LR",
+  "mbfc": "Fortune Magazine",
+  "questionable": false
+ },
+ "Fox Business": {
+  "code": "LR",
+  "mbfc": "Fox Business",
+  "questionable": false
+ },
+ "Fox News": {
+  "code": "R",
+  "mbfc": "Fox News",
+  "questionable": true
+ },
+ "France 24": {
+  "code": "C",
+  "mbfc": "France 24",
+  "questionable": false
+ },
+ "Freightwaves": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Full Fact": {
+  "code": "C",
+  "mbfc": "Full Fact UK",
+  "questionable": false
+ },
+ "GB News": {
+  "code": "R",
+  "mbfc": "GB News UK",
+  "questionable": true
+ },
+ "GOV.UK": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Galway Beo": {
+  "code": "C",
+  "mbfc": "Galway Beo",
+  "questionable": false
+ },
+ "GeekWire": {
+  "code": "C",
+  "mbfc": "GeekWire",
+  "questionable": false
+ },
+ "Gizmodo": {
+  "code": "L",
+  "mbfc": "Gizmodo",
+  "questionable": false
+ },
+ "Glasgow Live": {
+  "code": "C",
+  "mbfc": "Glasgow Live",
+  "questionable": false
+ },
+ "Global News": {
+  "code": "LL",
+  "mbfc": "Global News",
+  "questionable": false
+ },
+ "Global Voices": {
+  "code": "L",
+  "mbfc": "Global Voices",
+  "questionable": false
+ },
+ "Gloucestershire Live": {
+  "code": "C",
+  "mbfc": "Gloucestershire Live",
+  "questionable": false
+ },
+ "Greek Reporter": {
+  "code": "R",
+  "mbfc": "Greek Reporter",
+  "questionable": false
+ },
+ "Gript.ie": {
+  "code": "R",
+  "mbfc": "Gript.ie",
+  "questionable": false
+ },
+ "Grist": {
+  "code": "LL",
+  "mbfc": "Grist",
+  "questionable": false
+ },
+ "Guido Fawkes": {
+  "code": "R",
+  "mbfc": "Guido Fawkes",
+  "questionable": false
+ },
+ "Haaretz": {
+  "code": "L",
+  "mbfc": "Haaretz",
+  "questionable": false
+ },
+ "Hacker News": {
+  "code": "C",
+  "mbfc": "Hacker News",
+  "questionable": false
+ },
+ "Hello Magazine": {
+  "code": "C",
+  "mbfc": "Hello Magazine",
+  "questionable": false
+ },
+ "Hindustan Times": {
+  "code": "LL",
+  "mbfc": "Hindustan Times",
+  "questionable": true
+ },
+ "Hot Air": {
+  "code": "R",
+  "mbfc": "Hot Air",
+  "questionable": false
+ },
+ "How-To Geek": {
+  "code": "C",
+  "mbfc": "How-To Geek",
+  "questionable": false
+ },
+ "HuffPost UK": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Hull Daily Mail": {
+  "code": "C",
+  "mbfc": "Hull Daily Mail",
+  "questionable": false
+ },
+ "IEEE Spectrum": {
+  "code": "S",
+  "mbfc": "Institute of Electrical and Electronics Engineers (IEEE)",
+  "questionable": false
+ },
+ "Inc.com": {
+  "code": "C",
+  "mbfc": "Inc. Magazine",
+  "questionable": false
+ },
+ "Independent Online": {
+  "code": "C",
+  "mbfc": "Independent Online",
+  "questionable": false
+ },
+ "India Today": {
+  "code": "LR",
+  "mbfc": "India Today",
+  "questionable": false
+ },
+ "Indian Express": {
+  "code": "LL",
+  "mbfc": "The Indian Express",
+  "questionable": false
+ },
+ "IndieWire": {
+  "code": "C",
+  "mbfc": "IndieWire",
+  "questionable": false
+ },
+ "Inside Climate News": {
+  "code": "LL",
+  "mbfc": "InsideClimate News",
+  "questionable": false
+ },
+ "InsideEVs": {
+  "code": "LL",
+  "mbfc": "InsideEVs",
+  "questionable": false
+ },
+ "Institute for Government": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Interesting Engineering": {
+  "code": "S",
+  "mbfc": "Interesting Engineering",
+  "questionable": false
+ },
+ "Investing.com": {
+  "code": "C",
+  "mbfc": "Investing.com",
+  "questionable": false
+ },
+ "Investors Business Daily": {
+  "code": "R",
+  "mbfc": "Investors Business Daily",
+  "questionable": false
+ },
+ "Iran International": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Irish Examiner": {
+  "code": "LL",
+  "mbfc": "The Irish Examiner",
+  "questionable": false
+ },
+ "Irish Independent": {
+  "code": "LR",
+  "mbfc": "Irish Independent",
+  "questionable": false
+ },
+ "Irish Mirror": {
+  "code": "LL",
+  "mbfc": "Irish Daily Mirror",
+  "questionable": false
+ },
+ "Irish Sun": {
+  "code": "R",
+  "mbfc": "Irish Sun",
+  "questionable": false
+ },
+ "Jacobin": {
+  "code": "L",
+  "mbfc": "Jacobin",
+  "questionable": false
+ },
+ "Japan Times": {
+  "code": "C",
+  "mbfc": "Japan Times",
+  "questionable": false
+ },
+ "Jewish News Syndicate": {
+  "code": "LR",
+  "mbfc": "Jewish News Syndicate",
+  "questionable": false
+ },
+ "KABC - Los Angeles News": {
+  "code": "C",
+  "mbfc": "KABC - Los Angeles News",
+  "questionable": false
+ },
+ "KDFW - Fox 4 - Dallas-Fort Worth": {
+  "code": "C",
+  "mbfc": "KDFW - Fox 4 - Dallas-Fort Worth",
+  "questionable": false
+ },
+ "KFGO - 790 AM - Fargo": {
+  "code": "LR",
+  "mbfc": "KFGO - 790 AM - Fargo",
+  "questionable": false
+ },
+ "KSAZ - Fox 10 Phoenix": {
+  "code": "C",
+  "mbfc": "KSAZ - Fox 10 Phoenix",
+  "questionable": false
+ },
+ "KSTP-TV": {
+  "code": "C",
+  "mbfc": "KSTP-TV",
+  "questionable": false
+ },
+ "KTLA": {
+  "code": "C",
+  "mbfc": "KTLA",
+  "questionable": false
+ },
+ "KTTV - Fox 11 - Los Angeles": {
+  "code": "C",
+  "mbfc": "KTTV - Fox 11 - Los Angeles",
+  "questionable": false
+ },
+ "KTVU Fox 2": {
+  "code": "C",
+  "mbfc": "KTVU Fox 2",
+  "questionable": false
+ },
+ "KUSI-TV": {
+  "code": "LR",
+  "mbfc": "KUSI-TV",
+  "questionable": false
+ },
+ "Kiplinger": {
+  "code": "C",
+  "mbfc": "Kiplinger",
+  "questionable": false
+ },
+ "Knowable Magazine": {
+  "code": "S",
+  "mbfc": "Knowable Magazine",
+  "questionable": false
+ },
+ "Krebs on Security": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "LA Times": {
+  "code": "C",
+  "mbfc": "LA Times",
+  "questionable": false
+ },
+ "Las Vegas Review Journal": {
+  "code": "LR",
+  "mbfc": "Las Vegas Review Journal",
+  "questionable": false
+ },
+ "Latest Science News -- ScienceDaily": {
+  "code": "S",
+  "mbfc": "Science Daily",
+  "questionable": false
+ },
+ "LeedsLive": {
+  "code": "C",
+  "mbfc": "LeedsLive",
+  "questionable": false
+ },
+ "Legal Insurrection": {
+  "code": "R",
+  "mbfc": "Legal Insurrection",
+  "questionable": false
+ },
+ "Leicester Mercury": {
+  "code": "LR",
+  "mbfc": "Leicester Mercury",
+  "questionable": false
+ },
+ "Lifehacker": {
+  "code": "LL",
+  "mbfc": "Lifehacker",
+  "questionable": false
+ },
+ "Live Science": {
+  "code": "S",
+  "mbfc": "Live Science",
+  "questionable": false
+ },
+ "Livemint": {
+  "code": "C",
+  "mbfc": "Mint Newspaper (livemint.com)",
+  "questionable": false
+ },
+ "Liverpool Echo": {
+  "code": "C",
+  "mbfc": "Liverpool Echo",
+  "questionable": false
+ },
+ "MIT Technology Review": {
+  "code": "S",
+  "mbfc": "MIT Technology Review",
+  "questionable": false
+ },
+ "MacRumors": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "MakeUseOf": {
+  "code": "C",
+  "mbfc": "MakeUseOf",
+  "questionable": false
+ },
+ "Manchester Evening News": {
+  "code": "LL",
+  "mbfc": "Manchester Evening News",
+  "questionable": false
+ },
+ "Manchester Union leader": {
+  "code": "LR",
+  "mbfc": "Manchester Union leader",
+  "questionable": false
+ },
+ "Marginal Revolution": {
+  "code": "LR",
+  "mbfc": "Marginal Revolution",
+  "questionable": false
+ },
+ "MarketBeat": {
+  "code": "C",
+  "mbfc": "MarketBeat",
+  "questionable": false
+ },
+ "MarketWatch": {
+  "code": "LR",
+  "mbfc": "MarketWatch",
+  "questionable": false
+ },
+ "Mashable": {
+  "code": "L",
+  "mbfc": "Mashable",
+  "questionable": false
+ },
+ "Medical Xpress": {
+  "code": "S",
+  "mbfc": "Medical XPress",
+  "questionable": false
+ },
+ "Mental Floss": {
+  "code": "C",
+  "mbfc": "Mental Floss",
+  "questionable": false
+ },
+ "MercoPress": {
+  "code": "LL",
+  "mbfc": "MercoPress",
+  "questionable": false
+ },
+ "Metro": {
+  "code": "LL",
+  "mbfc": "Metro UK",
+  "questionable": false
+ },
+ "Mexico News Daily": {
+  "code": "LL",
+  "mbfc": "Mexico Daily News",
+  "questionable": false
+ },
+ "Middle East Eye": {
+  "code": "LL",
+  "mbfc": "Middle East Eye",
+  "questionable": false
+ },
+ "Military.com": {
+  "code": "C",
+  "mbfc": "Military.com",
+  "questionable": false
+ },
+ "Modern Retail": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Money Crashers": {
+  "code": "C",
+  "mbfc": "Money Crashers",
+  "questionable": false
+ },
+ "MoneyWeek": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Mongabay": {
+  "code": "LL",
+  "mbfc": "Mongabay",
+  "questionable": false
+ },
+ "Mother Jones": {
+  "code": "LL",
+  "mbfc": "Mother Jones",
+  "questionable": false
+ },
+ "Motley Fool UK": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "MyLondon": {
+  "code": "C",
+  "mbfc": "MyLondon",
+  "questionable": false
+ },
+ "MyNorthwest": {
+  "code": "LR",
+  "mbfc": "MyNorthwest",
+  "questionable": false
+ },
+ "NASA": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "NBC News": {
+  "code": "LL",
+  "mbfc": "NBC News",
+  "questionable": false
+ },
+ "NDTV": {
+  "code": "LR",
+  "mbfc": "NDTV",
+  "questionable": true
+ },
+ "NHS England": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "NPR": {
+  "code": "LL",
+  "mbfc": "NPR",
+  "questionable": false
+ },
+ "NZ Herald": {
+  "code": "C",
+  "mbfc": "New Zealand Herald",
+  "questionable": false
+ },
+ "Naked Capitalism": {
+  "code": "LL",
+  "mbfc": "Naked Capitalism",
+  "questionable": false
+ },
+ "Nation (Kenya)": {
+  "code": "LL",
+  "mbfc": "Daily Nation",
+  "questionable": false
+ },
+ "National Geographic": {
+  "code": "S",
+  "mbfc": "National Geographic",
+  "questionable": false
+ },
+ "Nature News": {
+  "code": "S",
+  "mbfc": "Nature",
+  "questionable": false
+ },
+ "Nautilus": {
+  "code": "S",
+  "mbfc": "Nautilus Magazine",
+  "questionable": false
+ },
+ "New Scientist": {
+  "code": "S",
+  "mbfc": "New Scientist",
+  "questionable": false
+ },
+ "New Statesman": {
+  "code": "L",
+  "mbfc": "New Statesman",
+  "questionable": false
+ },
+ "New York Observer": {
+  "code": "LR",
+  "mbfc": "New York Observer",
+  "questionable": false
+ },
+ "New York Post": {
+  "code": "LR",
+  "mbfc": "New York Post",
+  "questionable": false
+ },
+ "News - Cryptonews": {
+  "code": "C",
+  "mbfc": "CryptoNews",
+  "questionable": false
+ },
+ "NewsNation": {
+  "code": "LR",
+  "mbfc": "NewsNation",
+  "questionable": false
+ },
+ "Newsbusters": {
+  "code": "R",
+  "mbfc": "Newsbusters",
+  "questionable": false
+ },
+ "Newstalk ZB": {
+  "code": "LR",
+  "mbfc": "Newstalk ZB",
+  "questionable": false
+ },
+ "Newsweek": {
+  "code": "LR",
+  "mbfc": "Newsweek",
+  "questionable": false
+ },
+ "North Wales Live": {
+  "code": "C",
+  "mbfc": "North Wales Live",
+  "questionable": false
+ },
+ "Nottinghamshire Post": {
+  "code": "C",
+  "mbfc": "Nottinghamshire Post",
+  "questionable": false
+ },
+ "Novaya Gazeta Europe": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Nursing Times": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "ONS": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Off The Press": {
+  "code": "R",
+  "mbfc": "Off The Press",
+  "questionable": false
+ },
+ "Oilprice.com": {
+  "code": "C",
+  "mbfc": "OilPrice",
+  "questionable": false
+ },
+ "Organiser": {
+  "code": "R",
+  "mbfc": "Organiser",
+  "questionable": false
+ },
+ "Ottawa Citizen": {
+  "code": "LR",
+  "mbfc": "Ottawa Citizen",
+  "questionable": false
+ },
+ "Our World in Data": {
+  "code": "LL",
+  "mbfc": "Our World In Data",
+  "questionable": false
+ },
+ "PBS NewsHour": {
+  "code": "LL",
+  "mbfc": "PBS News Hour",
+  "questionable": false
+ },
+ "PCWorld": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "PLOS Biology": {
+  "code": "S",
+  "mbfc": "Public Library of Science",
+  "questionable": false
+ },
+ "PLOS Pathogens": {
+  "code": "S",
+  "mbfc": "Public Library of Science",
+  "questionable": false
+ },
+ "Page Six": {
+  "code": "LR",
+  "mbfc": "Page Six",
+  "questionable": false
+ },
+ "Philippine Daily Inquirer": {
+  "code": "LL",
+  "mbfc": "Philippine Daily Inquirer",
+  "questionable": false
+ },
+ "Phys.org": {
+  "code": "S",
+  "mbfc": "Phys.org",
+  "questionable": false
+ },
+ "Physics World": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "PlymouthLive": {
+  "code": "C",
+  "mbfc": "PlymouthLive",
+  "questionable": false
+ },
+ "Political Wire": {
+  "code": "C",
+  "mbfc": "Political Wire",
+  "questionable": false
+ },
+ "Politico": {
+  "code": "LL",
+  "mbfc": "Politico",
+  "questionable": false
+ },
+ "Politico Europe": {
+  "code": "LL",
+  "mbfc": "Politico Europe",
+  "questionable": false
+ },
+ "Politics.co.uk": {
+  "code": "LL",
+  "mbfc": "Politics.co.uk",
+  "questionable": false
+ },
+ "Popular Mechanics": {
+  "code": "S",
+  "mbfc": "Popular Mechanics",
+  "questionable": false
+ },
+ "Popular Science": {
+  "code": "S",
+  "mbfc": "Popular Science",
+  "questionable": false
+ },
+ "Powerline": {
+  "code": "R",
+  "mbfc": "Powerline",
+  "questionable": false
+ },
+ "Premium Times": {
+  "code": "LL",
+  "mbfc": "Premium Times",
+  "questionable": false
+ },
+ "Press Gazette": {
+  "code": "C",
+  "mbfc": "Press Gazette",
+  "questionable": false
+ },
+ "Pulse": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Quanta Magazine": {
+  "code": "S",
+  "mbfc": "Quanta Magazine",
+  "questionable": false
+ },
+ "RNZ": {
+  "code": "C",
+  "mbfc": "RNZ (Radio New Zealand)",
+  "questionable": false
+ },
+ "RTÉ News": {
+  "code": "C",
+  "mbfc": "RTE (Radio Television of Ireland)",
+  "questionable": false
+ },
+ "Rappler": {
+  "code": "LL",
+  "mbfc": "Rappler",
+  "questionable": false
+ },
+ "RedState": {
+  "code": "R",
+  "mbfc": "RedState",
+  "questionable": false
+ },
+ "Resolution Foundation": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Rest of World": {
+  "code": "C",
+  "mbfc": "Rest of World",
+  "questionable": false
+ },
+ "Retail Dive": {
+  "code": "C",
+  "mbfc": "RetailDive",
+  "questionable": false
+ },
+ "Retail Gazette": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "SOFREP": {
+  "code": "LR",
+  "mbfc": "SOFREP",
+  "questionable": false
+ },
+ "STAT": {
+  "code": "LL",
+  "mbfc": "STAT (News)",
+  "questionable": false
+ },
+ "SciTechDaily": {
+  "code": "S",
+  "mbfc": "SciTechDaily",
+  "questionable": false
+ },
+ "Science": {
+  "code": "S",
+  "mbfc": "Science.org (Magazine)",
+  "questionable": false
+ },
+ "Science News": {
+  "code": "S",
+  "mbfc": "Science News",
+  "questionable": false
+ },
+ "ScienceAlert": {
+  "code": "S",
+  "mbfc": "ScienceAlert",
+  "questionable": false
+ },
+ "ScienceDaily": {
+  "code": "S",
+  "mbfc": "Science Daily",
+  "questionable": false
+ },
+ "Scientific American": {
+  "code": "S",
+  "mbfc": "Scientific American",
+  "questionable": false
+ },
+ "Scroll.in": {
+  "code": "LL",
+  "mbfc": "Scroll.in",
+  "questionable": false
+ },
+ "SecurityWeek": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Seeking Alpha": {
+  "code": "LR",
+  "mbfc": "Seeking Alpha",
+  "questionable": false
+ },
+ "Sifted": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "SiliconANGLE": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Simon Willison": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Sky News": {
+  "code": "C",
+  "mbfc": "Sky News UK",
+  "questionable": false
+ },
+ "Slashdot": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Slate": {
+  "code": "L",
+  "mbfc": "Slate",
+  "questionable": false
+ },
+ "Smithsonian Magazine": {
+  "code": "S",
+  "mbfc": "Smithsonian Magazine",
+  "questionable": false
+ },
+ "SomersetLive": {
+  "code": "C",
+  "mbfc": "SomersetLive",
+  "questionable": false
+ },
+ "South China Morning Post": {
+  "code": "LL",
+  "mbfc": "South China Morning Post",
+  "questionable": false
+ },
+ "Space.com": {
+  "code": "S",
+  "mbfc": "Space.com",
+  "questionable": false
+ },
+ "Spiked Magazine": {
+  "code": "R",
+  "mbfc": "Spiked Magazine",
+  "questionable": false
+ },
+ "Stoke-On-Trent Live": {
+  "code": "C",
+  "mbfc": "Stoke-On-Trent Live",
+  "questionable": false
+ },
+ "Supply Chain Dive": {
+  "code": "C",
+  "mbfc": "SupplyChainDive",
+  "questionable": false
+ },
+ "Sydney Morning Herald": {
+  "code": "LL",
+  "mbfc": "The Sydney Morning Herald",
+  "questionable": false
+ },
+ "Taipei Times": {
+  "code": "LL",
+  "mbfc": "Taipei Times",
+  "questionable": false
+ },
+ "Tech.eu": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "TechCrunch": {
+  "code": "LL",
+  "mbfc": "TechCrunch",
+  "questionable": false
+ },
+ "TechRadar": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Techmeme": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "The Age": {
+  "code": "LL",
+  "mbfc": "The Age (Australia)",
+  "questionable": false
+ },
+ "The Atlantic": {
+  "code": "LL",
+  "mbfc": "The Atlantic",
+  "questionable": false
+ },
+ "The Block": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "The Bulwark": {
+  "code": "LR",
+  "mbfc": "The Bulwark",
+  "questionable": false
+ },
+ "The Citizen": {
+  "code": "LR",
+  "mbfc": "The Citizen (South Africa)",
+  "questionable": false
+ },
+ "The Conversation": {
+  "code": "C",
+  "mbfc": "The Conversation",
+  "questionable": false
+ },
+ "The Conversation UK": {
+  "code": "C",
+  "mbfc": "The Conversation",
+  "questionable": false
+ },
+ "The Critic": {
+  "code": "R",
+  "mbfc": "The Critic",
+  "questionable": false
+ },
+ "The Decoder": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "The Economist": {
+  "code": "C",
+  "mbfc": "The Economist",
+  "questionable": false
+ },
+ "The Express Tribune": {
+  "code": "C",
+  "mbfc": "Express Tribune",
+  "questionable": false
+ },
+ "The Federalist": {
+  "code": "R",
+  "mbfc": "The Federalist",
+  "questionable": true
+ },
+ "The Globe and Mail": {
+  "code": "LR",
+  "mbfc": "The Globe and Mail (Toronto)",
+  "questionable": false
+ },
+ "The Guardian": {
+  "code": "LL",
+  "mbfc": "The Guardian",
+  "questionable": false
+ },
+ "The Guardian US": {
+  "code": "LL",
+  "mbfc": "The Guardian",
+  "questionable": false
+ },
+ "The Hacker News": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "The Herald": {
+  "code": "LL",
+  "mbfc": "The Glasgow Herald",
+  "questionable": false
+ },
+ "The Hill": {
+  "code": "C",
+  "mbfc": "The Hill",
+  "questionable": false
+ },
+ "The Hindu": {
+  "code": "LL",
+  "mbfc": "The Hindu",
+  "questionable": false
+ },
+ "The Information": {
+  "code": "C",
+  "mbfc": "The Information",
+  "questionable": false
+ },
+ "The Jerusalem Post": {
+  "code": "LR",
+  "mbfc": "Jerusalem Post",
+  "questionable": false
+ },
+ "The Jewish Press": {
+  "code": "LR",
+  "mbfc": "The Jewish Press",
+  "questionable": false
+ },
+ "The Journal": {
+  "code": "LL",
+  "mbfc": "TheJournal.ie",
+  "questionable": false
+ },
+ "The Korea Times": {
+  "code": "LL",
+  "mbfc": "The Korea Times",
+  "questionable": false
+ },
+ "The Lancet": {
+  "code": "S",
+  "mbfc": "The Lancet",
+  "questionable": false
+ },
+ "The Local France": {
+  "code": "LL",
+  "mbfc": "The Local (France)",
+  "questionable": false
+ },
+ "The New American": {
+  "code": "R",
+  "mbfc": "The New American",
+  "questionable": false
+ },
+ "The New York Times": {
+  "code": "LL",
+  "mbfc": "New York Times",
+  "questionable": false
+ },
+ "The New Yorker": {
+  "code": "L",
+  "mbfc": "New Yorker",
+  "questionable": false
+ },
+ "The Next Web": {
+  "code": "LL",
+  "mbfc": "The Next Web (TNW)",
+  "questionable": false
+ },
+ "The Post Millennial": {
+  "code": "R",
+  "mbfc": "The Post Millennial",
+  "questionable": false
+ },
+ "The Post-Journal (Jamestown, New york)": {
+  "code": "LR",
+  "mbfc": "The Post-Journal (Jamestown, New york)",
+  "questionable": false
+ },
+ "The Pour Over": {
+  "code": "LR",
+  "mbfc": "The Pour Over",
+  "questionable": false
+ },
+ "The Record": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "The Register": {
+  "code": "C",
+  "mbfc": "The Register UK",
+  "questionable": false
+ },
+ "The Rio Times": {
+  "code": "LR",
+  "mbfc": "The Rio Times",
+  "questionable": false
+ },
+ "The Scotsman": {
+  "code": "C",
+  "mbfc": "The Scotsman",
+  "questionable": false
+ },
+ "The Straits Times": {
+  "code": "LR",
+  "mbfc": "The Straits Times",
+  "questionable": false
+ },
+ "The Sun": {
+  "code": "R",
+  "mbfc": "The Sun",
+  "questionable": false
+ },
+ "The Sun - Nigeria": {
+  "code": "LR",
+  "mbfc": "The Sun - Nigeria",
+  "questionable": false
+ },
+ "The Telegraph": {
+  "code": "R",
+  "mbfc": "Daily Telegraph (UK)",
+  "questionable": false
+ },
+ "The US Sun": {
+  "code": "R",
+  "mbfc": "The US Sun",
+  "questionable": false
+ },
+ "The Verge": {
+  "code": "LL",
+  "mbfc": "The Verge",
+  "questionable": false
+ },
+ "The Wall Street Journal": {
+  "code": "LR",
+  "mbfc": "Wall Street Journal",
+  "questionable": false
+ },
+ "The Week UK": {
+  "code": "L",
+  "mbfc": "The Week",
+  "questionable": false
+ },
+ "The West Australian": {
+  "code": "LR",
+  "mbfc": "The West Australian",
+  "questionable": false
+ },
+ "This is Money": {
+  "code": "LR",
+  "mbfc": "This Is Money",
+  "questionable": false
+ },
+ "Time": {
+  "code": "LL",
+  "mbfc": "Time Magazine",
+  "questionable": false
+ },
+ "Times of India": {
+  "code": "LR",
+  "mbfc": "The Times of India",
+  "questionable": false
+ },
+ "Times of Malta": {
+  "code": "C",
+  "mbfc": "Times of Malta",
+  "questionable": false
+ },
+ "Toledo Blade": {
+  "code": "LR",
+  "mbfc": "Toledo Blade",
+  "questionable": false
+ },
+ "Tom's Hardware": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Toronto Sun": {
+  "code": "R",
+  "mbfc": "Toronto Sun",
+  "questionable": false
+ },
+ "Twitchy": {
+  "code": "R",
+  "mbfc": "Twitchy",
+  "questionable": false
+ },
+ "UKHSA": {
+  "code": "P",
+  "mbfc": "",
+  "questionable": false
+ },
+ "UKTN": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "US Top News and Analysis": {
+  "code": "LL",
+  "mbfc": "CNBC",
+  "questionable": false
+ },
+ "Ukrainska Pravda": {
+  "code": "LL",
+  "mbfc": "Ukrayinska Pravda (The Ukrainian Truth)",
+  "questionable": false
+ },
+ "UnHerd": {
+  "code": "LR",
+  "mbfc": "Unherd",
+  "questionable": false
+ },
+ "Universe Today": {
+  "code": "S",
+  "mbfc": "Universe Today",
+  "questionable": false
+ },
+ "Villages-News": {
+  "code": "LR",
+  "mbfc": "Villages-News",
+  "questionable": false
+ },
+ "Visual Capitalist": {
+  "code": "C",
+  "mbfc": "Visual Capitalist",
+  "questionable": false
+ },
+ "VnExpress International": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "WAGA - Fox 5 - Atlanta": {
+  "code": "C",
+  "mbfc": "WAGA - Fox 5 - Atlanta",
+  "questionable": false
+ },
+ "WANE - Fort Wayne News": {
+  "code": "C",
+  "mbfc": "WANE - Fort Wayne News",
+  "questionable": false
+ },
+ "WFLA - Tampa Bay": {
+  "code": "C",
+  "mbfc": "WFLA - Tampa Bay",
+  "questionable": false
+ },
+ "WFLD - Fox 32 - Chicago": {
+  "code": "C",
+  "mbfc": "WFLD - Fox 32 - Chicago",
+  "questionable": false
+ },
+ "WGN News": {
+  "code": "C",
+  "mbfc": "WGN News",
+  "questionable": false
+ },
+ "WITI - FOX 6 - Milwaukee": {
+  "code": "C",
+  "mbfc": "WITI - FOX 6 - Milwaukee",
+  "questionable": false
+ },
+ "WJBK - Fox 2 - Detroit": {
+  "code": "C",
+  "mbfc": "WJBK - Fox 2 - Detroit",
+  "questionable": false
+ },
+ "WJW - Cleveland News": {
+  "code": "C",
+  "mbfc": "WJW - Cleveland News",
+  "questionable": false
+ },
+ "WNYW - Fox 5 -New York": {
+  "code": "C",
+  "mbfc": "WNYW - Fox 5 -New York",
+  "questionable": false
+ },
+ "WOFL Fox 35 Orlando": {
+  "code": "C",
+  "mbfc": "WOFL Fox 35 Orlando",
+  "questionable": false
+ },
+ "WPIX 11": {
+  "code": "C",
+  "mbfc": "WPIX 11",
+  "questionable": false
+ },
+ "WTTG - Fox 5 - DC": {
+  "code": "C",
+  "mbfc": "WTTG - Fox 5 - DC",
+  "questionable": false
+ },
+ "WTVT - Fox 13 - Tampa Bay": {
+  "code": "C",
+  "mbfc": "WTVT - Fox 13 - Tampa Bay",
+  "questionable": false
+ },
+ "Wales Online": {
+  "code": "LL",
+  "mbfc": "WalesOnline",
+  "questionable": false
+ },
+ "Washington Examiner": {
+  "code": "LR",
+  "mbfc": "Washington Examiner",
+  "questionable": false
+ },
+ "Washington Post": {
+  "code": "LL",
+  "mbfc": "Washington Post",
+  "questionable": false
+ },
+ "Washington's Top News (WTOP)": {
+  "code": "C",
+  "mbfc": "Washington's Top News (WTOP)",
+  "questionable": false
+ },
+ "We Got This Covered": {
+  "code": "C",
+  "mbfc": "We Got This Covered",
+  "questionable": false
+ },
+ "Western Standard": {
+  "code": "R",
+  "mbfc": "Western Standard",
+  "questionable": false
+ },
+ "Williamsport Sun-Gazette": {
+  "code": "LR",
+  "mbfc": "Williamsport Sun-Gazette",
+  "questionable": false
+ },
+ "Winnipeg Free Press": {
+  "code": "C",
+  "mbfc": "Winnipeg Free Press",
+  "questionable": false
+ },
+ "Wired": {
+  "code": "LL",
+  "mbfc": "Wired Magazine",
+  "questionable": false
+ },
+ "Wolf Street": {
+  "code": "C",
+  "mbfc": "Wolf Street",
+  "questionable": false
+ },
+ "Wonkhe": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Yonhap": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "Yorkshire Post": {
+  "code": "C",
+  "mbfc": "Yorkshire Post",
+  "questionable": false
+ },
+ "ZDNET": {
+  "code": "C",
+  "mbfc": "ZDNet",
+  "questionable": false
+ },
+ "ZDoggMD": {
+  "code": "S",
+  "mbfc": "ZDoggMD",
+  "questionable": false
+ },
+ "cryptocurrency | TechCrunch": {
+  "code": "LL",
+  "mbfc": "TechCrunch",
+  "questionable": false
+ },
+ "cybersecurity | TechCrunch": {
+  "code": "LL",
+  "mbfc": "TechCrunch",
+  "questionable": false
+ },
+ "eLife": {
+  "code": "NR",
+  "mbfc": "",
+  "questionable": false
+ },
+ "i News": {
+  "code": "LL",
+  "mbfc": "iNews (The I Paper)",
+  "questionable": false
+ }
+}

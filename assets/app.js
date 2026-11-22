@@ -146,7 +146,10 @@
   }
   function leanBadge(name) {
     var code = D.OUTLETS[name] || 'NC';
-    return '<span class="lean lb-' + code + '" title="Media Bias/Fact Check: ' + esc(D.LEAN[code][1]) + '">' + esc(D.LEAN[code][0]) + '</span>';
+    var lean = D.LEAN[code] || D.LEAN.NC;
+    var flagged = (D.QUESTIONABLE || []).indexOf(name) !== -1;
+    return '<span class="lean lb-' + (D.LEAN[code] ? code : 'NC') + '" title="Media Bias/Fact Check: ' + esc(lean[1]) + (flagged ? ' · rated a questionable source' : '') + '">' +
+      esc(lean[0]) + (flagged ? ' <span aria-hidden="true">⚠</span><span class="sr-only">(questionable source)</span>' : '') + '</span>';
   }
   function saveBtn(s) {
     var on = !!state.saved[s.id];

@@ -1,0 +1,75 @@
+name: Build Pheme edition
+
+# Every 6 hours: collect the 500 feeds, group articles into multi-outlet
+# stories, write today's edition, commit it and publish the site.
+on:
+  schedule:
+    - cron: '15 0,6,12,18 * * *'
+      timezone: Europe/London
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: pheme-edition
+  cancel-in-progress: false
+
+jobs:
+  edition:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect the feeds
+        run: python3 scripts/collect-feeds.py > candidates.json
+      - name: Summarise the collection
+        if: always()
+        run: |
+          python3 - <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open('candidates.json'))
+          groups = d['candidateGroups']
+          items = sum(len(g) for g in groups)
+          outlets = {i['outlet'] for g in groups for i in g}
+          print(f"Feeds: {d['feedCount']} · failed: {len(d['feedErrors'])} · articles (last 2 days): {items} · outlets with articles: {len(outlets)}")
+          PY
+      - name: Write the edition
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 scripts/make-edition.py candidates.json | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/build-editions.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pheme-candidates
+          path: candidates.json
+          retention-days: 7
+      - name: Commit the edition
+        id: commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add editions assets/data.js
+          if git diff --cached --quiet; then echo 'No changes.'; exit 0; fi
+          git commit -m "Edition $(TZ=Europe/London date '+%Y-%m-%d %H:%M') [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then echo 'pushed=true' >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 5
+          done
+          exit 1
+      - name: Publish the site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run deploy-website.yml --ref main

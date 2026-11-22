@@ -13,6 +13,8 @@ function checkedUrl(value) {
   assert(!url.username && !url.password, value);
 }
 
+// Keep the last 30 editions in the archive so the data file stays small.
+const archived = new Set(files.slice(-30));
 for (const file of files) {
   const edition = JSON.parse(readFileSync('editions/' + file));
   assert.equal(edition.META.editionId + '.json', file);
@@ -51,7 +53,7 @@ for (const file of files) {
         assert(point.text && point.sources.length && point.sources.every(name => sources.has(name)), story.id);
       }
     }
-    history.set(story.id, { ...story, coverage });
+    if (archived.has(file)) history.set(story.id, { ...story, coverage });
   }
   legacy = { ...legacy, ...edition.LEGACY_IDS };
   current = edition;
