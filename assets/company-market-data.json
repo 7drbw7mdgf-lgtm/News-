@@ -1,0 +1,17 @@
+{
+  "updatedAt": null,
+  "status": "awaiting-licence",
+  "quoteType": "periodic-snapshot-not-live",
+  "quoteDelay": "Not independently verified",
+  "message": "Public market data requires API keys and verified public-display licences.",
+  "symbols": {
+    "AAPL": "Apple",
+    "MSFT": "Microsoft",
+    "NVDA": "Nvidia",
+    "TSLA": "Tesla",
+    "GOOGL": "Alphabet",
+    "AMZN": "Amazon"
+  },
+  "quotes": {},
+  "profiles": {}
+}
