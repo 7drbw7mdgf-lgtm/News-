@@ -1038,6 +1038,60 @@
     });
   }
 
+  function paperArticleBody(name, meta, stories) {
+    return stories.length
+      ? '<div class="paper-story-feed" aria-label="Articles covered by ' + esc(name) + '">' + stories.map(renderDashboardCard).join('') + '</div>'
+      : '<div class="notice"><strong>No featured stories from ' + esc(name) + ' today.</strong> ' +
+        'When Pheme features a story from this outlet, it will appear here.' +
+        (meta.paywall ? ' Full articles require a subscription to this paper.' : '') + '</div>';
+  }
+
+  function selectPaperInPlace(name) {
+    var papers = followed();
+    if (!papers.some(function (p) { return p.name === name; })) return;
+    var section = app.querySelector('.paper-sheet');
+    var feed = app.querySelector('#paper-article-content');
+    var title = app.querySelector('#paper-name');
+    var dateline = app.querySelector('#paper-article-total');
+    var rail = app.querySelector('#paper-provider-track');
+    if (!section || !feed || !title || !dateline || !rail) {
+      state.paper = name;
+      render();
+      return;
+    }
+    state.paper = name;
+    var meta = papers.find(function (p) { return p.name === name; }) || {};
+    var stories = storiesForPaper(name);
+    title.textContent = name;
+    dateline.textContent = plural(stories.length, 'article', 'articles');
+    feed.innerHTML = paperArticleBody(name, meta, stories);
+    rail.querySelectorAll('[data-act="paper"]').forEach(function (tab) {
+      var selected = tab.getAttribute('data-name') === name;
+      tab.classList.toggle('on', selected);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    section.setAttribute('aria-label', 'Articles from ' + name);
+    updatePaperScrollTone();
+  }
+
+  var paperScrollQueued = false;
+  function updatePaperScrollTone() {
+    var active = state.view === 'papers' && !state.reading;
+    document.body.classList.toggle('paper-browse', active);
+    var scrolled = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
+    var shade = active ? Math.round(Math.min(1, scrolled / 1100) * 42) : 0;
+    document.documentElement.style.setProperty('--paper-scroll-mix', shade + '%');
+  }
+  window.addEventListener('scroll', function () {
+    if (paperScrollQueued) return;
+    paperScrollQueued = true;
+    requestAnimationFrame(function () {
+      paperScrollQueued = false;
+      updatePaperScrollTone();
+    });
+  }, { passive: true });
+
   function renderPapers() {
     var papers = followed();
     if (!papers.length) {
@@ -1056,11 +1110,7 @@
         '<span class="paper-provider-count">' + count + ' ' + (count === 1 ? 'story' : 'stories') + '</span></button>';
     }).join('') + '<button class="paper-provider paper-provider-add" data-act="settings">+ Add newspaper</button>';
 
-    var body = stories.length
-      ? '<div class="paper-story-feed" aria-label="Articles covered by ' + esc(name) + '">' + stories.map(renderDashboardCard).join('') + '</div>'
-      : '<div class="notice"><strong>No featured stories from ' + esc(name) + ' today.</strong> ' +
-        'When Pheme features a story from this outlet, it will appear here.' +
-        (meta.paywall ? ' Full articles require a subscription to this paper.' : '') + '</div>';
+    var body = paperArticleBody(name, meta, stories);
 
     return '<div class="page-head"><h1>Newspapers</h1><p>Browse publishers sideways. Scroll down for their latest coverage.</p></div>' +
       '<section class="paper-providers" aria-label="Newspaper providers">' +
@@ -1074,7 +1124,7 @@
       '<header class="paper-masthead"><div class="paper-masthead-text"><h2 id="paper-name">' + esc(name) + '</h2>' +
       '<span class="paper-dateline">Edition coverage · ' + esc(D.META.rangeLong) + '</span></div>' +
       '<span class="paper-article-total">' + esc(plural(stories.length, 'article', 'articles')) + '</span></header>' +
-      body + '</section>';
+      '<div id="paper-article-content" role="tabpanel" aria-labelledby="paper-name" aria-live="polite" aria-atomic="false">' + body + '</div></section>';
   }
 
   /* ---------- Native Story Reader & Coverage Comparison ---------- */
@@ -1433,6 +1483,7 @@
 
     mountWorldMap();
     updateReadProgress();
+    updatePaperScrollTone();
     if (opts && opts.focus) {
       var el = document.getElementById(opts.focus);
       if (el) { el.focus(); if (el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
@@ -1549,13 +1600,15 @@
         if (providerTrack) providerTrack.scrollBy({ left: (Number(t.getAttribute('data-dir')) || 1) * Math.max(240, providerTrack.clientWidth * 0.72), behavior: 'smooth' });
         break;
       case 'paper':
-        var oldProviderTrack = app.querySelector('#paper-provider-track');
-        var providerOffset = oldProviderTrack ? oldProviderTrack.scrollLeft : 0;
-        state.view = 'papers'; state.paper = t.getAttribute('data-name');
-        if (state.reading) changeStory(null);
-        state.settingsOpen = false; render();
-        var newProviderTrack = app.querySelector('#paper-provider-track');
-        if (newProviderTrack) newProviderTrack.scrollLeft = providerOffset;
+        if (state.view === 'papers' && !state.reading) {
+          selectPaperInPlace(t.getAttribute('data-name'));
+        } else {
+          state.view = 'papers';
+          state.paper = t.getAttribute('data-name');
+          if (state.reading) changeStory(null);
+          state.settingsOpen = false;
+          render();
+        }
         break;
       case 'open':
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
