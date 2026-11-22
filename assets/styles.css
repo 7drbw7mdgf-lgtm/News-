@@ -1,15 +1,15 @@
 /* Pheme — broadsheet editorial news briefing styles */
 :root {
-  --paper: #FAF8F4;
-  --paper-alt: #F3EFE7;
-  --surface: #FFFFFF;
-  --ink: #121316;
-  --ink-body: #25282F;
-  --ink-muted: #5C606A;
-  --blue: #1B3AB8;
-  --blue-hover: #132B8C;
-  --rule: #D9D5CC;
-  --rule-soft: #E8E4DB;
+  --paper: #F5EBDD;
+  --paper-alt: #EADBC6;
+  --surface: #FFF9EF;
+  --ink: #30251B;
+  --ink-body: #504031;
+  --ink-muted: #776654;
+  --blue: #79512E;
+  --blue-hover: #593A22;
+  --rule: #D8C6AB;
+  --rule-soft: #E9DDCB;
   --page-gutter: clamp(16px, 1.6vw, 28px);
   --display: 'Playfair Display', 'Newsreader', Georgia, 'Times New Roman', serif;
   --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -761,12 +761,12 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .world-map {
   height: clamp(340px, 50vw, 520px);
   border: 1px solid var(--rule);
-  background: #DCE6EC;
+  background: #DED1B9;
   z-index: 0;
 }
 .world-map[hidden] { display: none; }
 .world-map .leaflet-tile-pane {
-  filter: sepia(16%) saturate(60%) brightness(1.03) contrast(95%);
+  filter: sepia(55%) saturate(65%) brightness(1.02) contrast(93%);
 }
 
 /* Custom Broadsheet Map Markers & Clusters */
@@ -1057,7 +1057,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 body.reader-theme-white {
   --paper: #FFFFFF;
   --paper-alt: #F4F4F2;
-  --surface: #FFFFFF;
+  --surface: #FFF9EF;
   --rule: #E2E0D8;
   --rule-soft: #ECEAE3;
 }
