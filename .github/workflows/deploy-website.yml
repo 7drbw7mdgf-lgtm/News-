@@ -32,7 +32,7 @@ jobs:
         run: |
           node scripts/build-editions.mjs --check
           node --check assets/app.js
-          node --check assets/market-loader.js
+          python3 scripts/update-markets.py --check
           node --check assets/data.js
           python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py scripts/collect-feeds.py
       - name: Build the public site

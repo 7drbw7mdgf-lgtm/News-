@@ -7,6 +7,7 @@ It's a plain static site: no build step, no server code.
 ```
 index.html          page shell
 assets/styles.css   styles
+assets/dashboard.css dashboard layout and responsive card styles
 assets/app.js       rendering and interactions
 assets/data.js      the stories, coverage and outlet ratings (window.DAYBREAK)
 ```
@@ -41,8 +42,12 @@ Stories can be shared using `?story=EVENT-ID`. Keep old edition files so those l
 
 ## Header and native reader
 
+The dashboard includes a responsive sidebar, followed-newspaper tiles, compact headlines and image cards. Existing local topic illustrations are used when a story has no image and are labelled “Topic image”. All current stories remain available through the dashboard, topic filters and search.
+
 Digest, coverage methodology and followed newspapers are available from header dropdowns. Settings saves the clock and market choices in this browser alongside existing reader preferences and bookmarks.
 
-The market strip uses TradingView mini charts over six months. London and New York use FOREX.com FTSE 100 and S&P 500 index CFDs, labelled as CFDs; Shanghai uses the Shanghai Composite with end-of-day data. These are provider-fed charts, and availability and delays depend on the provider. If the widget module cannot load, each chart retains a link to its source.
+The market strip uses native SVG sparklines for the FTSE 100, S&P 500 and Shanghai Composite. Selecting a card opens an accessible Pheme chart dialog with 1M, 3M, 6M and 1Y ranges, pointer exploration and keyboard navigation. Each value is a completed daily close, with its session date displayed. The popup identifies Yahoo Finance as the data source. These are daily index values, rather than a live feed or index CFDs.
+
+`scripts/update-markets.py` fetches and validates public historical quotes, excludes the current incomplete trading day, and keeps the last valid series if an individual refresh fails. `.github/workflows/markets.yml` checks every six hours and publishes changed data through the existing Fasthosts deployment. The deployment also validates the checked-in dataset offline.
 
 Headlines, comparison citations and coverage links open Pheme’s native reader. An outlet selection can be shared using `?story=EVENT-ID&source=OUTLET-NAME`. The reader identifies the selected publisher and displays Pheme’s own briefing rather than presenting it as a copy of the publisher’s full article.

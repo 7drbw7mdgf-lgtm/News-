@@ -11,11 +11,13 @@
   var worldMarkerLayer;
   var mapPinById = Object.create(null);
   var MARKETS = [
-    { id: 'london', city: 'London', index: 'FTSE 100 · CFD', symbol: 'FOREXCOM:UKXGBP', zone: 'Europe/London', url: 'https://www.tradingview.com/symbols/FOREXCOM-UKXGBP/' },
-    { id: 'newyork', city: 'New York', index: 'S&P 500 · CFD', symbol: 'FOREXCOM:SPXUSD', zone: 'America/New_York', url: 'https://www.tradingview.com/symbols/FOREXCOM-SPXUSD/' },
-    { id: 'shanghai', city: 'Shanghai', index: 'Shanghai Composite', symbol: 'SSE:000001', zone: 'Asia/Shanghai', url: 'https://www.tradingview.com/symbols/SSE-000001/' }
+    { id: 'london', city: 'London', index: 'FTSE 100', zone: 'Europe/London', url: 'https://finance.yahoo.com/quote/%5EFTSE/history/' },
+    { id: 'newyork', city: 'New York', index: 'S&P 500', zone: 'America/New_York', url: 'https://finance.yahoo.com/quote/%5EGSPC/history/' },
+    { id: 'shanghai', city: 'Shanghai', index: 'Shanghai Composite', zone: 'Asia/Shanghai', url: 'https://finance.yahoo.com/quote/000001.SS/history/' }
   ];
   var clockFormats = Object.create(null);
+  var marketData = null;
+  var marketLoadFailed = false;
   var route = new URLSearchParams(location.search);
   var SEG_ORDER = ['L', 'LL', 'C', 'LR', 'R', 'S'];
   var labelOf = {};
@@ -37,6 +39,7 @@
     view: 'briefing', topic: 'all', mapTopic: 'all', reading: null, readingSource: null, paper: null,
     settingsOpen: false, searchOpen: false, utilityOpen: null, srcQuery: '', query: '',
     headerPrefs: { showClock: true, markets: ['london', 'newyork', 'shanghai'] },
+    marketOpen: null, marketRange: '6M', marketHover: null,
     saved: {}, added: {}, highlights: {},
     readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused' },
     readerFocus: false, aaOpen: false, covFilter: 'all', copiedId: null,
@@ -264,27 +267,178 @@
     app.querySelectorAll('[data-clock-zone]').forEach(function (el) { el.textContent = clockText(el.getAttribute('data-clock-zone')); });
   }
 
+  function marketNumber(value) { return value.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function marketDate(date, long) { return new Date(date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: long ? 'numeric' : undefined, timeZone: 'UTC' }); }
+  function marketPoints(id) { return marketData && marketData.markets[id] ? marketData.markets[id].points : []; }
+  function marketChange(points) {
+    var change = points.length > 1 ? (points[points.length - 1].close / points[points.length - 2].close - 1) * 100 : 0;
+    return '<span class="market-change ' + (change >= 0 ? 'market-up' : 'market-down') + '">' + (change >= 0 ? '+' : '') + change.toFixed(2) + '%</span>';
+  }
+  function chartGeometry(points, width, height, inset) {
+    var values = points.map(function (p) { return p.close; });
+    var min = Math.min.apply(null, values), max = Math.max.apply(null, values);
+    var padding = (max - min) * .1 || max * .01;
+    min -= padding; max += padding;
+    var coords = points.map(function (p, i) {
+      return { x: inset.left + i / Math.max(1, points.length - 1) * (width - inset.left - inset.right), y: inset.top + (max - p.close) / (max - min) * (height - inset.top - inset.bottom) };
+    });
+    var line = coords.map(function (p, i) { return (i ? 'L' : 'M') + p.x.toFixed(2) + ',' + p.y.toFixed(2); }).join(' ');
+    var baseline = height - inset.bottom;
+    return { coords: coords, min: min, max: max, line: line, area: line + ' L' + coords[coords.length - 1].x.toFixed(2) + ',' + baseline + ' L' + coords[0].x.toFixed(2) + ',' + baseline + ' Z' };
+  }
+
+  function renderSparkline(points) {
+    var sample = points.slice(-30);
+    if (sample.length < 2) return '';
+    var geometry = chartGeometry(sample, 240, 48, { left: 2, right: 2, top: 3, bottom: 3 });
+    return '<svg class="market-sparkline" viewBox="0 0 240 48" preserveAspectRatio="none" aria-hidden="true"><path d="' + geometry.area + '" fill="currentColor" opacity=".06"></path><path d="' + geometry.line + '" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path></svg>';
+  }
+
+  function displayedMarketPoints() {
+    var points = marketPoints(state.marketOpen);
+    if (!points.length) return points;
+    var days = { '1M': 30, '3M': 90, '6M': 180, '1Y': 366 }[state.marketRange] || 180;
+    var cutoff = new Date(points[points.length - 1].date + 'T00:00:00Z');
+    cutoff.setUTCDate(cutoff.getUTCDate() - days);
+    var date = cutoff.toISOString().slice(0, 10);
+    return points.filter(function (p) { return p.date >= date; });
+  }
+
+  function renderMarketDialog() {
+    if (!state.marketOpen) return '';
+    var market = MARKETS.find(function (m) { return m.id === state.marketOpen; });
+    var points = displayedMarketPoints();
+    var allPoints = marketPoints(market.id);
+    var chart = '';
+    if (points.length > 1) {
+      var geometry = chartGeometry(points, 1000, 380, { left: 110, right: 24, top: 20, bottom: 40 });
+      var grid = [0, 1, 2, 3, 4].map(function (n) {
+        var y = 20 + n * 80;
+        var value = geometry.max - n / 4 * (geometry.max - geometry.min);
+        return '<line x1="110" x2="976" y1="' + y + '" y2="' + y + '" class="market-gridline"></line><text x="98" y="' + (y + 5) + '" text-anchor="end" class="market-axis">' + marketNumber(value) + '</text>';
+      }).join('');
+      var axis = [0, Math.floor((points.length - 1) / 2), points.length - 1].map(function (i, n) {
+        return '<text x="' + geometry.coords[i].x + '" y="372" text-anchor="' + (n === 0 ? 'start' : n === 2 ? 'end' : 'middle') + '" class="market-axis">' + marketDate(points[i].date) + '</text>';
+      }).join('');
+      var hovered = state.marketHover === null ? points.length - 1 : Math.max(0, Math.min(points.length - 1, state.marketHover));
+      var selected = points[hovered], pos = geometry.coords[hovered];
+      chart = '<div class="market-readout" id="market-readout" aria-live="polite">' + marketDate(selected.date, true) + ' · ' + marketNumber(selected.close) + ' points</div>' +
+        '<div class="market-plot" tabindex="0" role="group" aria-label="Interactive ' + esc(market.index) + ' chart. Use left and right arrow keys to explore daily values."><svg viewBox="0 0 1000 380" preserveAspectRatio="none" role="img" aria-label="Daily ' + esc(market.index) + ' values from ' + marketDate(points[0].date, true) + ' to ' + marketDate(points[points.length - 1].date, true) + '">' +
+        '<defs><linearGradient id="market-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#7961C8" stop-opacity=".22"></stop><stop offset="100%" stop-color="#7961C8" stop-opacity="0"></stop></linearGradient></defs>' + grid +
+        '<path d="' + geometry.area + '" fill="url(#market-area)"></path><path d="' + geometry.line + '" fill="none" stroke="#7961C8" stroke-width="2.5" vector-effect="non-scaling-stroke"></path>' +
+        '<line id="market-crosshair" x1="' + pos.x + '" x2="' + pos.x + '" y1="20" y2="340" class="market-crosshair"></line><circle id="market-point" cx="' + pos.x + '" cy="' + pos.y + '" r="5" fill="#7961C8" stroke="white" stroke-width="2"></circle>' + axis + '</svg></div><div class="market-mobile-dates"><span>' + marketDate(points[0].date) + '</span><span>' + marketDate(points[points.length - 1].date) + '</span></div>' +
+        '<p class="market-chart-hint">Move across the chart, or focus it and use the arrow keys, to explore daily values.</p>';
+    } else {
+      chart = '<div class="market-chart-empty">' + (marketLoadFailed ? 'Market data is temporarily unavailable.' : 'Loading daily market data…') + '<button class="outline-sm" data-act="retrymarkets">Retry</button></div>';
+    }
+    return '<div class="market-backdrop" data-act="closemarket"></div><section class="market-dialog" role="dialog" aria-modal="true" aria-labelledby="market-dialog-title" id="market-dialog" tabindex="-1"><header class="market-dialog-head"><div><p>' + market.city + '</p><h2 id="market-dialog-title">' + esc(market.index) + '</h2></div><button class="search-toggle" data-act="closemarket" aria-label="Close market chart">' + ICON.close + '</button></header>' +
+      '<div class="market-dialog-body"><div class="market-dialog-summary">' + (allPoints.length ? '<strong>' + marketNumber(allPoints[allPoints.length - 1].close) + '<small> points</small></strong>' + marketChange(allPoints) + '<span>Latest daily close · ' + marketDate(allPoints[allPoints.length - 1].date, true) + '</span>' : '') + '</div><div class="market-range" role="group" aria-label="Chart date range">' +
+      ['1M', '3M', '6M', '1Y'].map(function (range) { return '<button id="market-range-' + range + '" data-act="marketrange" data-id="' + range + '" aria-pressed="' + (state.marketRange === range) + '">' + range + '</button>'; }).join('') + '</div>' + chart +
+      '<p class="market-source">Completed daily sessions · Source: <a href="' + market.url + '" target="_blank" rel="noopener noreferrer">Yahoo Finance</a>. Daily change compares the latest two closes. Refreshed automatically; this is not a live feed.</p></div></section>';
+  }
+
+  function setMarketHover(index) {
+    var points = displayedMarketPoints();
+    if (points.length < 2) return;
+    index = Math.max(0, Math.min(points.length - 1, index));
+    if (state.marketHover === index) return;
+    state.marketHover = index;
+    var geometry = chartGeometry(points, 1000, 380, { left: 110, right: 24, top: 20, bottom: 40 });
+    var pos = geometry.coords[index];
+    var line = document.getElementById('market-crosshair'), dot = document.getElementById('market-point');
+    if (line) { line.setAttribute('x1', pos.x); line.setAttribute('x2', pos.x); }
+    if (dot) { dot.setAttribute('cx', pos.x); dot.setAttribute('cy', pos.y); }
+    var readout = document.getElementById('market-readout');
+    if (readout) readout.textContent = marketDate(points[index].date, true) + ' · ' + marketNumber(points[index].close) + ' points';
+  }
+
+  function loadMarketData() {
+    marketLoadFailed = false;
+    fetch('assets/markets.json', { cache: 'no-cache' }).then(function (response) {
+      if (!response.ok) throw new Error('Market data request failed');
+      return response.json();
+    }).then(function (data) {
+      if (!data || !data.markets) throw new Error('Invalid market data');
+      MARKETS.forEach(function (m) {
+        var series = data.markets[m.id] && data.markets[m.id].points;
+        if (!Array.isArray(series) || series.length < 2 || !series.every(function (p, i) {
+          return /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(p.close) && p.close > 0 && (!i || p.date > series[i - 1].date);
+        })) throw new Error('Invalid market series');
+      });
+      marketData = data;
+      render();
+    }).catch(function () { marketLoadFailed = true; render(); });
+  }
+
   function renderMarkets() {
     var selected = MARKETS.filter(function (m) { return state.headerPrefs.markets.indexOf(m.id) !== -1; });
     if (!selected.length) return '';
-    var key = selected.map(function (m) { return m.id; }).join(',') + ':' + state.headerPrefs.showClock;
+    var key = selected.map(function (m) { return m.id; }).join(',') + ':' + state.headerPrefs.showClock + ':' + (marketData ? marketData.updatedAt : marketLoadFailed ? 'unavailable' : 'loading');
     var existing = document.getElementById('market-widgets');
     if (existing && existing.getAttribute('data-markets') === key) return '<div id="market-widgets" data-markets="' + key + '"></div>';
     return '<section id="market-widgets" class="market-strip" aria-label="Stock market widgets" data-markets="' + key + '">' +
       '<div class="market-grid">' + selected.map(function (m) {
-        return '<article class="market-widget" aria-label="' + esc(m.city + ' ' + m.index) + '">' +
-          '<div class="market-heading"><h2>' + m.city + '<span>' + esc(m.index) + '</span></h2>' +
-          (state.headerPrefs.showClock ? renderClock(m.zone, m.city + ' time') : '') + '</div>' +
-          '<tv-mini-chart symbol="' + m.symbol + '" theme="light" time-frame="6M" aria-label="' + esc(m.index + ' price and chart') + '">' +
-          '<div class="market-fallback"><span class="market-loading">Loading market chart…</span><span class="market-unavailable">Market chart unavailable.</span> ' +
-          '<a href="' + m.url + '" target="_blank" rel="noopener noreferrer">View ' + esc(m.index) + ' chart</a></div></tv-mini-chart></article>';
-      }).join('') + '</div><p class="market-note">6-month charts by <a href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer">TradingView</a> · UK/US: index CFDs · Shanghai: end-of-day · Data may be delayed. <button data-act="settings">Customise widgets</button></p></section>';
+        var points = marketPoints(m.id);
+        var last = points[points.length - 1];
+        return '<button id="market-card-' + m.id + '" class="market-widget native-market" data-act="openmarket" data-id="' + m.id + '" aria-label="Open ' + esc(m.index) + ' interactive chart"><span class="market-heading"><span class="market-city">' + m.city + '<span>' + esc(m.index) + '</span></span>' +
+          (state.headerPrefs.showClock ? renderClock(m.zone, m.city + ' time') : '') + '</span>' +
+          (last ? '<span class="market-quote"><strong>' + marketNumber(last.close) + '</strong>' + marketChange(points) + '</span>' + renderSparkline(points) + '<span class="market-card-foot">' + marketDate(last.date) + ' · Daily close <span>Explore chart</span></span>' : '<span class="market-pending">' + (marketLoadFailed ? 'Data unavailable · Click to retry' : 'Loading market data…') + '</span>') + '</button>';
+      }).join('') + '</div><p class="market-note">Daily index closes · Select a market to explore its chart. <button data-act="settings">Customise widgets</button></p></section>';
   }
 
   function renderHeaderMenu(id, label) {
     var open = state.utilityOpen === id;
     return '<div class="header-menu"><button id="menu-toggle-' + id + '" class="tab tab-subtle menu-toggle' + (open ? ' on' : '') + '" data-act="headermenu" data-id="' + id + '" aria-expanded="' + open + '" aria-controls="menu-' + id + '">' + label + '<span aria-hidden="true">⌄</span></button>' +
       (open ? '<section id="menu-' + id + '" class="header-dropdown" role="dialog" aria-labelledby="menu-title-' + id + '" tabindex="-1">' + renderHeaderMenuContent(id) + '</section>' : '') + '</div>';
+  }
+
+  function navIcon(path) {
+    return '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"></path></svg>';
+  }
+
+  function renderSidebar() {
+    var home = state.view === 'briefing' && state.topic === 'all';
+    var world = state.view === 'briefing' && state.topic === 'world';
+    var savedCount = STORIES.filter(function (s) { return state.saved[s.id]; }).length;
+    return '<aside class="dashboard-sidebar" aria-label="Main navigation"><button class="sidebar-brand" data-act="home" aria-label="Briefing home"><img src="assets/images/pheme-logo.png" width="56" height="56" alt=""><span>YOUR DAILY<br> PERSPECTIVE</span></button>' +
+      '<nav class="sidebar-nav" aria-label="Main"><button class="sidebar-link' + (home ? ' active' : '') + '" data-act="home"' + (home ? ' aria-current="page"' : '') + '>' + navIcon('M3 10 12 3l9 7v11h-6v-7H9v7H3z') + 'Home</button>' +
+      '<button class="sidebar-link' + (world ? ' active' : '') + '" data-act="topic" data-id="world">' + navIcon('M3 5l6-2 6 2 6-2v16l-6 2-6-2-6 2V5zm6-2v16m6-14v16') + 'World map</button>' +
+      '<button class="sidebar-link' + (state.view === 'papers' ? ' active' : '') + '" data-act="view" data-view="papers">' + navIcon('M4 3h16v18H4zM8 7h8M8 11h8M8 15h3m3 0h2') + 'Newspapers</button>' +
+      '<button class="sidebar-link' + (state.view === 'saved' ? ' active' : '') + '" data-act="view" data-view="saved">' + ICON.bookmarkLg + 'Saved stories' + (savedCount ? '<span class="sidebar-count">' + savedCount + '</span>' : '') + '</button>' +
+      '<button class="sidebar-link" data-act="settings">' + navIcon('M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M10 3h4l1 3 3 1 3 3v4l-3 1-1 3-3 3h-4l-1-3-3-1-3-3v-4l3-1 1-3z') + 'Settings</button></nav>' +
+      '<div class="sidebar-edition"><span class="sidebar-label">IN THIS EDITION</span><strong>' + CURRENT.length + ' stories</strong><span>Across ' + D.TOPICS.length + ' topics</span><span>' + esc(D.META.rangeLong) + '</span></div>' +
+      '<div class="sidebar-personalise"><span class="personalise-symbol" aria-hidden="true">✦</span><h2>A wider perspective.</h2><p>Follow your newspapers. Choose your markets. Make your briefing yours.</p><button data-act="settings">Personalise your feed</button></div></aside>';
+  }
+
+  var TOPIC_IMAGES = {
+    uk: 'assets/images/uk-westminster.jpg', world: 'assets/images/world-peace-palace.jpg',
+    science: 'assets/images/science-cern-detector.jpg', tech: 'assets/images/tech-mac-desk.jpg',
+    business: 'assets/images/business-aerospace.jpg', finance: 'assets/images/finance-city-london.jpg'
+  };
+
+  function dashboardImage(s, cls) {
+    var actual = safeAsset(s.image);
+    var src = actual || TOPIC_IMAGES[s.topic];
+    return src ? '<button class="dashboard-image ' + (cls || '') + '" data-act="open" data-id="' + esc(s.id) + '" aria-label="Open ' + esc(s.headline) + '"><img src="' + src + '" alt="' + esc(actual ? (s.imageAlt || '') : labelOf[s.topic] + ' topic illustration') + '" loading="lazy" decoding="async">' +
+      (!actual ? '<span class="topic-image-label">Topic image</span>' : '') + '</button>' : '';
+  }
+
+  function renderChannels() {
+    var names = ['BBC News', 'The Guardian', 'Sky News', 'Al Jazeera English', 'Financial Times', 'The Economist'];
+    var available = followed();
+    var marks = { 'BBC News': 'BBC', 'The Guardian': 'The Guardian', 'Sky News': 'sky news', 'Al Jazeera English': 'AJ', 'Financial Times': 'FT', 'The Economist': 'The Economist' };
+    return '<section class="channel-section" aria-labelledby="channels-title"><div class="dashboard-section-head"><h1 id="channels-title">Explore newspapers</h1><button class="section-action" data-act="view" data-view="papers">View all</button></div><div class="channel-grid">' +
+      names.filter(function (name) { return available.some(function (p) { return p.name === name; }); }).map(function (name, i) {
+        return '<button class="channel-tile channel-' + i + '" data-act="paper" data-name="' + esc(name) + '"><span class="channel-mark" aria-hidden="true">' + marks[name] + '</span><span>' + esc(name) + '</span></button>';
+      }).join('') + '</div></section>';
+  }
+
+  function renderQuickStory(s) {
+    return '<article class="quick-story">' + dashboardImage(s, 'quick-image') + '<div class="quick-story-copy"><h3><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h3><div class="quick-meta"><span class="publisher-tag">' + esc(s.source) + '</span><span>' + esc(s.time) + '</span></div><div class="quick-story-tools"><span>' + esc(s.cov.count) + '</span>' + storyTools(s, true) + '</div></div></article>';
+  }
+
+  function renderDashboardCard(s) {
+    return '<article class="news-card">' + dashboardImage(s) + '<div class="news-card-copy"><div class="news-card-meta"><span class="publisher-tag">' + esc(s.source) + '</span><span>' + esc(s.time) + '</span></div><h3><button class="storybtn" data-act="open" data-id="' + esc(s.id) + '">' + esc(s.headline) + '</button></h3><p>' + esc(s.summary) + '</p><div class="card-coverage">' + covBar(s.cov) + '<span>' + esc(s.cov.count) + '</span></div><div class="card-actions">' + compareLink(s, 'textlink', 'Compare coverage') + storyTools(s, true) + '</div></div></article>';
   }
 
   /* ---------- Masthead & Topic Nav ---------- */
@@ -316,7 +470,7 @@
       '<div class="topbar-date">' + esc(displayDate()) +
       (state.headerPrefs.showClock ? '<span class="masthead-time">' + renderClock('Europe/London', 'London time') + ' London</span>' : '') + '</div>' +
       '<div class="topbar-actions">' +
-      '<button class="search-toggle' + (state.searchOpen ? ' on' : '') + '" data-act="togglesearch" aria-label="Search stories" aria-expanded="' + state.searchOpen + '">' + ICON.search + '</button>' +
+      '<button class="search-toggle search-launch' + (state.searchOpen ? ' on' : '') + '" data-act="togglesearch" aria-label="Search stories" aria-expanded="' + state.searchOpen + '">' + ICON.search + '<span>Search anything…</span></button>' +
       '<span class="vsep" aria-hidden="true"></span>' +
       '<button class="nav-link' + (isSaved ? ' on' : '') + '" data-act="view" data-view="saved" aria-pressed="' + isSaved + '">Saved' +
       (savedCount ? '<span class="badge-count">' + savedCount + '</span>' : '') + '</button>' +
@@ -659,24 +813,22 @@
         '</p>';
     }
 
-    var lead = list[0];
-    var side = list.slice(1, 3);
-    var rest = list.slice(3);
-
-    var heroHtml = side.length
-      ? '<section class="hero-grid" aria-label="Featured stories">' + renderLead(lead) +
-        '<div class="hero-side">' + side.map(renderSideItem).join('') + '</div></section>'
-      : '<section aria-label="Featured story">' + renderLead(lead) + '</section>';
-
     var mapHtml = !isSaved && state.topic === 'world' ? renderWorldMap() : '';
-
-    var restHtml = rest.length
-      ? '<div class="section-rule"><h2>More in ' + esc(isSaved ? 'saved' : (state.topic === 'all' ? 'today’s briefing' : labelOf[state.topic])) + '</h2>' +
-        '<span>Headlines from ' + esc(D.META.range) + '</span></div>' +
-        '<section class="edition-grid" aria-label="More stories">' + rest.map(renderGridItem).join('') + '</section>'
-      : '';
-
-    return headerHtml + mapHtml + heroHtml + restHtml;
+    var overview = !isSaved && state.topic === 'all' && !state.query.trim();
+    if (!overview) {
+      if (!headerHtml) headerHtml = '<div class="page-head"><h1>' + esc(labelOf[state.topic] || 'Your briefing') + '</h1><p>' + esc(plural(list.length, 'story', 'stories')) + ' in this edition</p></div>';
+      return headerHtml + mapHtml + '<section class="news-card-grid" aria-label="Stories">' + list.map(renderDashboardCard).join('') + '</section>';
+    }
+    var quick = list.slice(0, 6);
+    var featured = [];
+    list.slice(6).forEach(function (s) {
+      if (featured.length < 3 && !featured.some(function (f) { return f.topic === s.topic; })) featured.push(s);
+    });
+    var displayed = quick.concat(featured).map(function (s) { return s.id; });
+    var remaining = list.filter(function (s) { return displayed.indexOf(s.id) === -1; });
+    return renderChannels() + '<section class="headline-section" aria-labelledby="headlines-title"><div class="dashboard-section-head"><h2 id="headlines-title">Today’s headlines</h2><span>' + list.length + ' stories · ' + esc(D.META.range) + '</span></div><div class="quick-grid">' + quick.map(renderQuickStory).join('') + '</div></section>' +
+      '<section class="featured-section" aria-labelledby="featured-title"><div class="dashboard-section-head"><h2 id="featured-title">Featured stories</h2><span>A view across the topics</span></div><div class="news-card-grid">' + featured.map(renderDashboardCard).join('') + '</div></section>' +
+      (remaining.length ? '<section class="more-section" aria-labelledby="more-title"><div class="dashboard-section-head"><h2 id="more-title">More in your briefing</h2><span>' + remaining.length + ' more stories</span></div><div class="news-card-grid">' + remaining.map(renderDashboardCard).join('') + '</div></section>' : '');
   }
 
   /* ---------- Newspapers View ---------- */
@@ -705,12 +857,7 @@
 
     var body;
     if (stories.length) {
-      var lead = stories[0];
-      var rest = stories.slice(1);
-      body = renderLead(lead) + (rest.length
-        ? '<div class="section-rule"><h2>Also covered by ' + esc(name) + '</h2><span>' + esc(plural(stories.length, 'story', 'stories')) + ' in today’s edition</span></div>' +
-          '<div class="edition-grid">' + rest.map(renderGridItem).join('') + '</div>'
-        : '');
+      body = '<div class="news-card-grid" aria-label="Stories covered by ' + esc(name) + '">' + stories.map(renderDashboardCard).join('') + '</div>';
     } else {
       body = '<div class="notice"><strong>No featured stories from ' + esc(name) + ' today.</strong> ' +
         'When Pheme features a story from this outlet, it will appear here.' +
@@ -1016,6 +1163,7 @@
   }
 
   function render(opts) {
+    document.body.classList.toggle('market-chart-open', !!state.marketOpen);
     var previousMarkets = document.getElementById('market-widgets');
     var settingsScroll = app.querySelector('.settings-body');
     var previousSettingsScroll = settingsScroll ? settingsScroll.scrollTop : 0;
@@ -1027,9 +1175,9 @@
     else if (state.view === 'papers') main = renderPapers();
     else main = renderBriefing();
 
-    app.innerHTML = renderHeader() +
-      '<main class="wrap page-main" id="main">' + main + '</main>' +
-      renderSettings();
+    app.innerHTML = '<div class="dashboard-shell">' + renderSidebar() + '<div class="dashboard-body">' + renderHeader() +
+      '<main class="wrap page-main" id="main">' + main + '</main></div></div>' +
+      renderSettings() + renderMarketDialog();
 
     var nextMarkets = document.getElementById('market-widgets');
     if (previousMarkets && nextMarkets && previousMarkets.getAttribute('data-markets') === nextMarkets.getAttribute('data-markets')) {
@@ -1067,6 +1215,20 @@
     var id = t.getAttribute('data-id');
     if (act !== 'headermenu') state.utilityOpen = null;
     switch (act) {
+      case 'openmarket':
+        if (!MARKETS.some(function (m) { return m.id === id; })) break;
+        state.marketOpen = id; state.marketHover = null; state.utilityOpen = null;
+        render({ focus: 'market-dialog' }); break;
+      case 'closemarket':
+        var returnMarket = state.marketOpen;
+        state.marketOpen = null; state.marketHover = null;
+        render({ focus: 'market-card-' + returnMarket }); break;
+      case 'marketrange':
+        if (['1M', '3M', '6M', '1Y'].indexOf(id) === -1) break;
+        state.marketRange = id; state.marketHover = null;
+        render({ focus: 'market-range-' + id }); break;
+      case 'retrymarkets':
+        loadMarketData(); break;
       case 'headermenu':
         state.utilityOpen = state.utilityOpen === id ? null : id;
         render({ focus: state.utilityOpen ? 'menu-' + id : 'menu-toggle-' + id }); break;
@@ -1239,6 +1401,17 @@
     }
   });
 
+  function exploreMarketPointer(e) {
+    var plot = e.target.closest('.market-plot');
+    if (!plot || !state.marketOpen) return;
+    var rect = plot.querySelector('svg').getBoundingClientRect();
+    var count = displayedMarketPoints().length;
+    var position = ((e.clientX - rect.left) / rect.width * 1000 - 110) / 866;
+    setMarketHover(Math.round(position * (count - 1)));
+  }
+  app.addEventListener('pointermove', exploreMarketPointer);
+  app.addEventListener('pointerdown', exploreMarketPointer);
+
   app.addEventListener('input', function (e) {
     if (e.target.id === 'src-q') {
       state.srcQuery = e.target.value;
@@ -1256,20 +1429,30 @@
   document.addEventListener('keydown', function (e) {
     var tag = e.target && e.target.tagName;
     var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
-    if (e.key === 'Tab' && state.settingsOpen) {
-      var controls = app.querySelectorAll('.settings button, .settings input');
+    if (e.key === 'Tab' && (state.settingsOpen || state.marketOpen)) {
+      var controls = state.marketOpen
+        ? app.querySelectorAll('.market-dialog button, .market-dialog a[href], .market-dialog [tabindex="0"]')
+        : app.querySelectorAll('.settings button, .settings input');
       var first = controls[0], last = controls[controls.length - 1];
-      if (e.shiftKey && e.target === first) { e.preventDefault(); last.focus(); }
+      if (e.target.id === 'market-dialog') { e.preventDefault(); (e.shiftKey ? last : first).focus(); }
+      else if (e.shiftKey && e.target === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && e.target === last) { e.preventDefault(); first.focus(); }
     }
+    if (state.marketOpen && (e.key === 'ArrowLeft' || e.key === 'ArrowRight') && e.target.closest('.market-plot')) {
+      e.preventDefault();
+      var hoverIndex = state.marketHover === null ? displayedMarketPoints().length - 1 : state.marketHover;
+      setMarketHover(hoverIndex + (e.key === 'ArrowLeft' ? -1 : 1));
+      return;
+    }
     if (e.key === 'Escape') {
-      if (state.settingsOpen) { state.settingsOpen = false; render({ focus: 'settings-toggle' }); }
+      if (state.marketOpen) { var marketId = state.marketOpen; state.marketOpen = null; render({ focus: 'market-card-' + marketId }); }
+      else if (state.settingsOpen) { state.settingsOpen = false; render({ focus: 'settings-toggle' }); }
       else if (state.utilityOpen) { var menuId = state.utilityOpen; state.utilityOpen = null; render({ focus: 'menu-toggle-' + menuId }); }
       else if (state.aaOpen) { state.aaOpen = false; render(); }
       else if (state.readerFocus) { state.readerFocus = false; render(); }
       else if (state.searchOpen) { state.searchOpen = false; state.query = ''; render(); }
       else if (state.reading) { changeStory(null); render(); }
-    } else if (!typing && state.reading && !state.settingsOpen) {
+    } else if (!typing && state.reading && !state.settingsOpen && !state.marketOpen) {
       if (e.key === 'f' || e.key === 'F') {
         state.readerFocus = !state.readerFocus;
         state.aaOpen = false;
@@ -1289,5 +1472,6 @@
 
   document.getElementById('world-map-library')?.addEventListener('load', mountWorldMap);
   render();
+  loadMarketData();
   setInterval(updateClocks, 1000);
 })();
