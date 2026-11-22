@@ -1098,8 +1098,27 @@
     });
   }, { passive: true });
 
+  function newspaperWordmark(name) {
+    var logos = {
+      'BBC News': '<span class="paper-logo paper-logo-bbc" aria-hidden="true">BBC</span>',
+      'The Guardian': '<span class="paper-logo paper-logo-guardian" aria-hidden="true"><span>The</span><span>Guardian</span></span>',
+      'Sky News': '<span class="paper-logo paper-logo-sky" aria-hidden="true">sky news</span>',
+      'Al Jazeera English': '<span class="paper-logo paper-logo-aj" aria-hidden="true">AJ</span>',
+      'Financial Times': '<span class="paper-logo paper-logo-ft" aria-hidden="true">FT</span>',
+      'The Economist': '<span class="paper-logo paper-logo-economist" aria-hidden="true"><span>The</span><span>Economist</span></span>'
+    };
+    if (logos[name]) return logos[name];
+    var initials = name.split(/\\s+/).filter(function (part) { return !/^(the|of|and)$/i.test(part); })
+      .slice(0, 3).map(function (part) { return part.charAt(0).toUpperCase(); }).join('');
+    return '<span class="paper-logo paper-logo-generic" aria-hidden="true">' + esc(initials || name.slice(0, 2).toUpperCase()) + '</span>';
+  }
+
   function renderPapers() {
-    var papers = followed();
+    var featuredOrder = ['BBC News', 'The Guardian', 'Sky News', 'Al Jazeera English', 'Financial Times', 'The Economist'];
+    var papers = followed().sort(function (a, b) {
+      var ai = featuredOrder.indexOf(a.name), bi = featuredOrder.indexOf(b.name);
+      return (ai === -1 ? featuredOrder.length : ai) - (bi === -1 ? featuredOrder.length : bi);
+    });
     if (!papers.length) {
       return '<div class="page-head"><h1>Newspapers</h1><p>Follow publishers to build your newspaper feed.</p></div>' +
         '<button class="chip" data-act="settings">+ Add newspaper</button>';
@@ -1112,8 +1131,9 @@
       var count = storiesForPaper(p.name).length;
       return '<button class="paper-provider' + (on ? ' on' : '') + '" data-act="paper" data-name="' + esc(p.name) +
         '" role="tab" aria-selected="' + on + '" tabindex="' + (on ? '0' : '-1') + '">' +
+        '<span class="paper-provider-logo-wrap">' + newspaperWordmark(p.name) + '</span>' +
         '<span class="paper-provider-name">' + esc(p.name) + '</span>' +
-        '<span class="paper-provider-count">' + count + ' ' + (count === 1 ? 'story' : 'stories') + '</span></button>';
+        '<span class="sr-only">' + count + ' ' + (count === 1 ? 'story' : 'stories') + '</span></button>';
     }).join('') + '<button class="paper-provider paper-provider-add" data-act="settings">+ Add newspaper</button>';
 
     var body = paperArticleBody(name, meta, stories);
