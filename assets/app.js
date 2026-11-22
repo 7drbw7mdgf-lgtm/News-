@@ -1027,47 +1027,90 @@
   }
 
   /* ---------- Newspapers View ---------- */
-  function storiesForPaper(name) {
-    return CURRENT.map(function (s) {
-      var match = s.cov.rows.find(function (r) { return r.name === name; });
-      if (!match && s.source !== name) return null;
-      var originalUrl = safeExternalUrl(match ? match.url : s.url);
-      // Only show coverage with a verifiable original destination.
-      if (!originalUrl) return null;
-      return {
-        id: s.id,
-        publisher: name,
-        headline: (match && match.title) || s.headline,
-        hasPublisherHeadline: !!(match && match.title),
-        date: (match && match.date) || s.publishedLabel || s.time,
-        url: originalUrl,
-        story: s
-      };
-    }).filter(Boolean);
+  var publisherFeed = null;
+  var publisherFeedLoading = false;
+  var publisherFeedError = false;
+
+  function loadPublisherFeeds() {
+    if (publisherFeedLoading) return;
+    publisherFeedLoading = true;
+    fetch('assets/publisher-feeds.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Publisher feed unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !data.publishers || typeof data.publishers !== 'object') throw new Error('Invalid publisher feed');
+        publisherFeed = data;
+        publisherFeedError = false;
+      })
+      .catch(function () { publisherFeedError = true; })
+      .finally(function () {
+        publisherFeedLoading = false;
+        if (state.view === 'papers' && !state.reading) {
+          var track = app.querySelector('#paper-provider-track');
+          if (track && app.querySelector('#paper-article-content')) {
+            track.querySelectorAll('[data-act="paper"]').forEach(function (tab) {
+              var p = tab.getAttribute('data-name');
+              var count = storiesForPaper(p).length;
+              var indicator = tab.querySelector('.paper-provider-count');
+              if (indicator) indicator.textContent = count + ' ' + (count === 1 ? 'article' : 'articles');
+            });
+            selectPaperInPlace(state.paper || followed()[0].name);
+          } else render();
+        }
+      });
   }
 
-  function renderPaperArticle(a) {
-    var story = a.story;
-    return '<article class="paper-source-article">' +
+  function publisherDetails(name) {
+    return publisherFeed && publisherFeed.publishers && publisherFeed.publishers[name] || null;
+  }
 
+  function storiesForPaper(name) {
+    var details = publisherDetails(name);
+    if (!details || !Array.isArray(details.articles)) return [];
+    return details.articles.filter(function (a) {
+      return a && typeof a.title === 'string' && safeExternalUrl(a.url);
+    });
+  }
+
+  function articlePublishedLabel(raw) {
+    var date = new Date(raw);
+    if (!raw || !Number.isFinite(date.getTime())) return 'Date unavailable';
+    return date.toLocaleString('en-GB', {
+      day: 'numeric', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London'
+    });
+  }
+
+  function renderPaperArticle(a, publisher) {
+    var image = safeAsset(a.image);
+    var href = safeExternalUrl(a.url);
+    return '<article class="paper-source-article' + (image ? ' has-image' : '') + '">' +
+      (image ? '<a class="paper-source-image" href="' + esc(href) + '" target="_blank" rel="noopener noreferrer" aria-label="Read ' + esc(a.title) + ' at ' + esc(publisher) + '">' +
+        '<img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>' : '') +
       '<div class="paper-source-copy">' +
-      '<div class="news-card-meta"><span class="publisher-tag">' + esc(a.publisher) + '</span><time>' + esc(a.date) + '</time></div>' +
-      '<h3><a href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.headline) + '</a></h3>' +
-      '<p class="paper-source-context">' +
-      (a.hasPublisherHeadline ? 'Publisher headline and original article link.' : 'Pheme headline (publisher headline unavailable); original article link provided.') +
-      '</p>' +
+      '<div class="news-card-meta"><span class="publisher-tag">' + esc(publisher) + '</span><time>' + esc(articlePublishedLabel(a.published)) + '</time></div>' +
+      '<h3><a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title) + '</a></h3>' +
+      (a.summary ? '<p class="paper-source-summary">' + esc(a.summary) + '</p>' : '') +
       '<div class="paper-source-actions">' +
-      originalArticleLink(a.url, a.publisher, 'Read at publisher ↗', 'paper-source-primary') +
-      nativeSourceLink(story, a.publisher, 'View on Pheme', 'paper-source-secondary') +
+      originalArticleLink(href, publisher, 'Read original article ↗', 'paper-source-primary') +
+      (a.topic ? '<span class="paper-source-topic">' + esc(labelOf[a.topic] || a.topic) + '</span>' : '') +
       '</div></div></article>';
   }
 
   function paperArticleBody(name, meta, stories) {
-    return stories.length
-      ? '<div class="paper-story-feed" aria-label="Original coverage from ' + esc(name) + '">' + stories.map(renderPaperArticle).join('') + '</div>'
-      : '<div class="notice"><strong>No linked articles from ' + esc(name) + ' in this edition.</strong> ' +
-        'Pheme only lists publisher coverage when an original article link is available.' +
-        (meta.paywall ? ' Some articles may require a subscription.' : '') + '</div>';
+    var details = publisherDetails(name);
+    if (!publisherFeed) return '<div class="notice" role="status">' +
+      (publisherFeedError ? 'Publisher feeds are temporarily unavailable. Try again later.' : 'Loading recent articles from publisher feeds…') + '</div>';
+    if (!details || details.status === 'unavailable') return '<div class="notice">No working RSS feed is currently available for ' + esc(name) + '. No articles have been invented or borrowed from another publisher.</div>';
+    var stamp = details.updatedAt ? articlePublishedLabel(details.updatedAt) : 'Unavailable';
+    var status = '<p class="paper-feed-updated">' +
+      (details.status === 'stale' ? 'Cached articles · live refresh unavailable' : 'Publisher RSS · last collected ' + esc(stamp)) + '</p>';
+    return status + (stories.length
+      ? '<div class="paper-story-feed" aria-label="Latest publisher articles from ' + esc(name) + '">' +
+        stories.map(function (a) { return renderPaperArticle(a, name); }).join('') + '</div>'
+      : '<div class="notice">No recent published articles were returned by the available feeds for ' + esc(name) + '.</div>');
   }
 
   function selectPaperInPlace(name) {
@@ -1173,7 +1216,7 @@
         '" role="tab" aria-selected="' + on + '" tabindex="' + (on ? '0' : '-1') + '">' +
         '<span class="paper-provider-logo-wrap">' + newspaperWordmark(p.name) + '</span>' +
         '<span class="paper-provider-name">' + esc(p.name) + '</span>' +
-        '<span class="sr-only">' + count + ' ' + (count === 1 ? 'story' : 'stories') + '</span></button>';
+        '<span class="paper-provider-count">' + count + ' ' + (count === 1 ? 'article' : 'articles') + '</span></button>';
     }).join('') + '<button class="paper-provider paper-provider-add" data-act="settings">+ Add newspaper</button>';
 
     var body = paperArticleBody(name, meta, stories);
@@ -1891,6 +1934,8 @@
   document.getElementById('world-map-library')?.addEventListener('load', mountWorldMap);
   render();
   loadMarketData();
+  loadPublisherFeeds();
+  setInterval(loadPublisherFeeds, 5 * 60 * 1000);
   loadAudioManifest();
   setInterval(updateClocks, 1000);
 })();
