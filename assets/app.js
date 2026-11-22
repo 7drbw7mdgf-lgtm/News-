@@ -1267,8 +1267,11 @@
       ' · Quotes are not real-time</div>' +
       '<section class="terminal-section" aria-labelledby="company-quotes-title">' +
       '<div class="terminal-section-heading"><div><h2 id="company-quotes-title">Company quotes</h2>' +
-      '<p>Six US companies · licensed provider snapshots only</p></div></div>' +
-      '<div id="company-market-panel-content">' + renderCompanyQuotes() + '</div></section>' +
+      '<p>Free embedded market data · no API key needed</p></div></div>' +
+      '<p class="terminal-provider-notice">TradingView provides the data within its own hosted widget. Some exchanges are delayed. TradingView attribution is retained.</p>' +
+      '<div id="tv-market-overview" class="tv-market-overview" aria-label="TradingView company and index quotes">' +
+      '<p class="terminal-chart-empty">Loading TradingView market widget… <a href="https://www.tradingview.com/markets/stocks-usa/" target="_blank" rel="noopener noreferrer">Open market quotes</a></p></div>' +
+      '<p class="terminal-disclaimer">Third-party market data may be delayed or unavailable, depending on exchange. No trades are executed on Pheme.</p></section>' +
       '<section class="terminal-section" aria-label="Market index charts"><div class="terminal-section-heading"><h2>Market overview</h2><span>Choose an index</span></div>' +
       '<div class="terminal-index-grid">' + cards + '</div>' +
       '<div class="terminal-chart-panel"><div class="terminal-chart-controls"><h2>' + esc((MARKETS.find(function (m) { return m.id === state.tradingMarket; }) || MARKETS[0]).index) +
@@ -1286,6 +1289,64 @@
           '" aria-pressed="' + (focus === f.name) + '" class="' + (focus === f.name ? 'on' : '') + '">' + esc(f.label) + '</button>';
       }).join('') + '</div><div id="market-news-content">' + marketNewsHtml() + '</div>' +
       '<p class="terminal-disclaimer">Company matches are keyword-based. Check each original article before relying on it.</p></section>';
+  }
+
+  function mountTradingViewMarkets() {
+    var box = app.querySelector('#tv-market-overview');
+    if (!box || box.getAttribute('data-tv-loaded') === 'yes') return;
+    box.setAttribute('data-tv-loaded', 'yes');
+    // Official provider-hosted embedding; do not extract or redistribute widget prices.
+    var widget = document.createElement('div');
+    widget.className = 'tradingview-widget-container';
+    widget.style.width = '100%';
+    widget.style.height = '100%';
+    var canvas = document.createElement('div');
+    canvas.className = 'tradingview-widget-container__widget';
+    canvas.style.width = '100%';
+    canvas.style.height = 'calc(100% - 28px)';
+    var credit = document.createElement('div');
+    credit.className = 'tradingview-widget-copyright';
+    credit.innerHTML = '<a href="https://www.tradingview.com/markets/" target="_blank" rel="noopener nofollow noreferrer">Market data by TradingView</a>';
+    widget.appendChild(canvas);
+    widget.appendChild(credit);
+    box.replaceChildren(widget);
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
+    script.textContent = JSON.stringify({
+      colorTheme: 'light',
+      dateRange: '3M',
+      locale: 'en',
+      isTransparent: false,
+      showFloatingTooltip: true,
+      width: '100%',
+      height: '100%',
+      showSymbolLogo: true,
+      showChart: true,
+      tabs: [
+        { title: 'Companies', originalTitle: 'Companies', symbols: [
+          { s: 'NASDAQ:AAPL', d: 'Apple' },
+          { s: 'NASDAQ:MSFT', d: 'Microsoft' },
+          { s: 'NASDAQ:NVDA', d: 'Nvidia' },
+          { s: 'NASDAQ:TSLA', d: 'Tesla' },
+          { s: 'NASDAQ:GOOGL', d: 'Alphabet' },
+          { s: 'NASDAQ:AMZN', d: 'Amazon' }
+        ] },
+        { title: 'Global indices', originalTitle: 'Global indices', symbols: [
+          { s: 'NSE:NIFTY', d: 'NIFTY 50 · India' },
+          { s: 'TVC:UKX', d: 'FTSE 100 · UK' },
+          { s: 'SP:SPX', d: 'S&P 500 · US' },
+          { s: 'SSE:000001', d: 'Shanghai Composite · China' },
+          { s: 'TVC:NI225', d: 'Nikkei 225 · Japan' }
+        ] }
+      ]
+    });
+    script.onerror = function () {
+      box.removeAttribute('data-tv-loaded');
+      box.innerHTML = '<p class="terminal-chart-empty">Market widget unavailable. <a href="https://www.tradingview.com/markets/" target="_blank" rel="noopener noreferrer">View on TradingView</a>.</p>';
+    };
+    widget.appendChild(script);
   }
 
   function mountExchangeMap() {
@@ -2061,6 +2122,7 @@
     mountWorldMap();
     mountPublisherMap();
     mountExchangeMap();
+    mountTradingViewMarkets();
     updateReadProgress();
     updateSiteScrollTone();
     if (opts && opts.focus) {
@@ -2465,8 +2527,6 @@
   });
   render();
   loadMarketData();
-  loadCompanyMarketData();
-  setInterval(loadCompanyMarketData, 5 * 60 * 1000);
   loadPublisherFeeds();
   setInterval(loadPublisherFeeds, 5 * 60 * 1000);
   loadAudioManifest();
