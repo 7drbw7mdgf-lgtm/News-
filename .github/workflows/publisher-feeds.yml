@@ -1,0 +1,45 @@
+name: Refresh publisher news feeds
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: pheme-publisher-feeds
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch recent original articles from each publisher
+        run: python3 scripts/build-publisher-feeds.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Commit updated feed data
+        id: commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/publisher-feeds.json
+          if git diff --cached --quiet; then echo 'No changes.'; exit 0; fi
+          git commit -m "Refresh publisher feeds [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then echo 'pushed=true' >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 5
+          done
+          exit 1
+      - name: Publish refreshed newspaper feeds
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run deploy-website.yml --ref main
