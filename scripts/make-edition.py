@@ -337,7 +337,10 @@ def write_story(e, taken):
             e['topic'] = gen['topic']
     else:
         headline = la['title']
-        others = [o for o in names if o != lead][:3]
+        def known(o):
+            r = e['ratings'][o]
+            return (r['questionable'], o not in FOLLOWED, r['code'] not in {'C', 'LL', 'LR', 'L', 'R', 'S'})
+        others = sorted((o for o in names if o != lead), key=known)[:3]
         summary = f"Reported by {len(names)} outlets, including {', '.join(others[:-1]) + ' and ' + others[-1] if len(others) > 1 else others[0]}."
         points = [f'First reported by {first} on {day_label(e["outlets"][first]["published"])}.', coverage_line(e),
                   'Open each outlet’s report below to compare their headlines and framing.']
