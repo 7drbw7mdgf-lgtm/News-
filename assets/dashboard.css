@@ -512,3 +512,73 @@ body.reader-focus .dashboard-body {
   .paper-logo-asset { height:68px; }
   .paper-logo-image { width:60px; height:60px; }
 }
+
+
+/* Pheme Markets — responsive, integrated stone-paper financial intelligence. */
+.terminal-status { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0 0 22px; padding:11px 15px; border:1px solid var(--rule); border-radius:10px; background:var(--surface); font:500 12px/1.55 var(--sans); color:var(--ink-body); }
+.terminal-live-dot { width:8px; height:8px; border-radius:50%; background:#A98246; box-shadow:0 0 0 3px #A9824626; flex:none; }
+.terminal-section { margin-bottom:30px; }
+.terminal-section-heading { display:flex; justify-content:space-between; align-items:end; gap:15px; margin:0 0 14px; }
+.terminal-section-heading h2 { margin:0; font:700 clamp(20px,2.4vw,28px)/1.25 var(--serif); color:var(--ink); }
+.terminal-section-heading > span,.terminal-section-heading p { margin:3px 0 0; font:400 12px/1.5 var(--sans); color:var(--ink-muted); }
+.terminal-index-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.terminal-index-card { position:relative; display:flex; flex-direction:column; gap:8px; overflow:hidden; min-width:0; padding:17px; min-height:153px; border:1px solid var(--rule); border-radius:13px; background:var(--surface); color:var(--ink); text-align:left; transition:border-color .15s,box-shadow .15s; }
+.terminal-index-card:hover,.terminal-index-card:focus-visible { border-color:var(--blue); }
+.terminal-index-card.active { border:2px solid var(--blue); padding:16px; box-shadow:0 5px 18px #2F5D5018; }
+.terminal-index-card > span:first-child { font:650 12px/1.3 var(--sans); color:var(--ink-muted); }
+.terminal-index-card > strong { font:700 clamp(20px,2.25vw,31px)/1.2 var(--serif); font-variant-numeric:tabular-nums; }
+.terminal-index-row { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+.terminal-index-row small { color:var(--ink-muted); font:500 11px/1 var(--sans); }
+.terminal-index-card .market-sparkline { width:100%; height:32px; margin-top:auto; color:var(--blue); }
+.terminal-chart-panel { margin-top:15px; padding:20px; background:var(--surface); border:1px solid var(--rule); border-radius:14px; scroll-margin-top:18px; }
+.terminal-chart-controls { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; align-items:center; margin-bottom:13px; }
+.terminal-chart-controls h2 { margin:0; font:700 21px/1.3 var(--serif); }
+.terminal-chart-controls > div { display:flex; flex-wrap:wrap; gap:4px; }
+.terminal-chart-controls button,.market-news-filters button { min-height:36px; padding:7px 13px; background:transparent; border:1px solid var(--rule); border-radius:8px; color:var(--ink-body); font:600 12px/1.2 var(--sans); }
+.terminal-chart-controls button.on,.market-news-filters button.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+.terminal-chart-head { display:flex; justify-content:space-between; gap:10px; align-items:end; margin-bottom:10px; }
+.terminal-chart-head > div { display:flex; flex-wrap:wrap; align-items:center; column-gap:14px; row-gap:3px; }
+.terminal-chart-head strong { font:700 clamp(23px,3vw,37px)/1.1 var(--serif); font-variant-numeric:tabular-nums; }
+.terminal-chart-head > span,.terminal-eyebrow { font:500 11px/1.5 var(--sans); color:var(--ink-muted); }
+.terminal-eyebrow { width:100%; }
+.terminal-chart-scroll { overflow-x:auto; }
+.terminal-chart-scroll svg { display:block; width:100%; min-width:390px; height:auto; }
+.terminal-chart-fill { fill:#2F5D5019; }
+.terminal-chart-stroke { fill:none; stroke:var(--blue); stroke-width:3; vector-effect:non-scaling-stroke; }
+.terminal-gridline { stroke:var(--rule-soft); stroke-width:1; }
+.terminal-chart-label { font:12px var(--sans); fill:var(--ink-muted); }
+.terminal-chart-summary { font:500 12px/1.5 var(--sans); color:var(--ink-muted); margin:6px 0 0; }
+.terminal-chart-summary strong { color:var(--ink); }
+.terminal-disclaimer { margin:11px 0 0; font:400 11px/1.6 var(--sans); color:var(--ink-muted); }
+.terminal-chart-empty { padding:55px 10px; text-align:center; color:var(--ink-muted); }
+.exchange-world-map { width:100%; height:clamp(340px,44vw,520px); border:1px solid var(--rule); border-radius:14px; overflow:hidden; z-index:0; background:#E5DFD2; }
+.exchange-world-map .leaflet-tile-pane { filter:sepia(25%) saturate(65%); }
+.exchange-popup { font-family:var(--sans); color:var(--ink); display:flex; flex-direction:column; gap:6px; min-width:170px; }
+.exchange-popup strong { font-size:14px; }
+.exchange-popup span,.exchange-popup p { margin:0; font-size:11px; color:var(--ink-muted); }
+.exchange-popup button { align-self:start; padding:8px 12px; border:0; border-radius:6px; background:var(--blue); color:white; font:600 11px/1.2 var(--sans); }
+.market-news-filters { display:flex; flex-wrap:wrap; gap:7px; margin:0 0 16px; }
+.market-news-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.market-news-item { display:flex; gap:14px; min-width:0; padding:14px; border:1px solid var(--rule); border-radius:12px; background:var(--surface); }
+.market-news-image { width:110px; flex:0 0 110px; display:block; border-radius:7px; overflow:hidden; }
+.market-news-image img { display:block; width:100%; height:100%; min-height:100px; object-fit:cover; }
+.market-news-copy { min-width:0; }
+.market-news-copy > span { color:var(--ink-muted); font:500 11px/1.5 var(--sans); }
+.market-news-copy h3 { margin:6px 0; font:650 16px/1.38 var(--serif); }
+.market-news-copy h3 a { text-decoration:none; color:var(--ink); }
+.market-news-copy h3 a:hover { text-decoration:underline; color:var(--blue); }
+.market-news-copy p { margin:0; color:var(--ink-body); font:400 12px/1.55 var(--sans); display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+@media (max-width:900px) { .market-news-list { grid-template-columns:1fr; } }
+@media (max-width:640px) {
+  .terminal-index-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+  .terminal-index-card { min-height:140px; padding:12px; }
+  .terminal-index-card.active { padding:11px; }
+  .terminal-index-card > strong { font-size:22px; }
+  .terminal-chart-panel { padding:12px; }
+  .terminal-chart-head { align-items:start; flex-direction:column; }
+  .terminal-chart-scroll svg { min-width:390px; }
+  .exchange-world-map { height:370px; }
+  .market-news-image { width:88px; flex-basis:88px; }
+  .market-news-image img { min-height:90px; }
+  .market-news-item { padding:11px; }
+}
