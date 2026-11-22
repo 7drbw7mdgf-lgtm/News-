@@ -1082,10 +1082,10 @@
     var scrolled = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
     // Use an explicit RGB colour rather than a CSS color-mix calculation:
     // this is predictable on mobile Safari and reacts on short article pages.
-    var progress = active ? Math.min(1, scrolled / 520) : 0;
+    var progress = active ? Math.min(1, scrolled / 380) : 0;
     function channel(start, end) { return Math.round(start + (end - start) * progress); }
-    var paperColor = 'rgb(' + channel(233, 183) + ', ' + channel(226, 173) + ', ' + channel(211, 154) + ')';
-    var outerColor = 'rgb(' + channel(227, 174) + ', ' + channel(216, 164) + ', ' + channel(198, 146) + ')';
+    var paperColor = 'rgb(' + channel(233, 152) + ', ' + channel(226, 139) + ', ' + channel(211, 120) + ')';
+    var outerColor = 'rgb(' + channel(227, 143) + ', ' + channel(216, 130) + ', ' + channel(198, 109) + ')';
     document.documentElement.style.setProperty('--paper-scroll-background', paperColor);
     document.documentElement.style.setProperty('--paper-scroll-outer', outerColor);
   }
