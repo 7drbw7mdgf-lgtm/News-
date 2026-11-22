@@ -291,14 +291,19 @@ body.reader-focus .reader { border: 0; }
 }
 
 
-/* Responsive reading depth: the page colour follows vertical scroll. */
-body.paper-browse {
+/* Site-wide stone reading depth: maximum shade at 60% page scroll.
+   Leave article cards, sidebars and dialogs light to preserve text contrast. */
+body {
   background: var(--paper-scroll-outer, #E3D8C6);
 }
-body.paper-browse .dashboard-shell,
-body.paper-browse .dashboard-body,
-body.paper-browse .masthead-wrap {
-  background: var(--paper-scroll-background, var(--paper));
+.dashboard-shell,
+.dashboard-body,
+.masthead-wrap {
+  background-color: var(--paper-scroll-background, var(--paper));
+}
+body.reader-focus .dashboard-shell,
+body.reader-focus .dashboard-body {
+  background-color: var(--paper-scroll-background, var(--paper));
 }
 .paper-story-feed .news-card { content-visibility: auto; contain-intrinsic-size: auto 260px; }
 .paper-providers .paper-provider.on { border-color: var(--blue); }
