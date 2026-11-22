@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '23 */6 * * *'
 
 permissions:
   contents: read
@@ -33,6 +35,7 @@ jobs:
           node scripts/build-editions.mjs --check
           python3 -m unittest discover -s scripts -p 'test_native_articles.py'
           node --check assets/app.js
+          node --check scripts/scrape-indian-express.mjs
           python3 scripts/update-markets.py --check
           node --check assets/data.js
           python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py scripts/collect-feeds.py scripts/make-edition.py scripts/story_images.py scripts/build-audio.py scripts/build-publisher-feeds.py scripts/collect-company-markets.py
@@ -60,6 +63,7 @@ jobs:
           cp index.html build/site/
           cp -R assets build/site/
           cp -R api/. build/site/api/
+          node scripts/scrape-indian-express.mjs build/site/assets/indian-express
           python3 scripts/build-audio.py --out build/site/assets/audio --cache .audio-cache --concurrency 10
           sed -i "s|<meta name=\"daybreak-build\" content=\"dev\">|<meta name=\"daybreak-build\" content=\"$GITHUB_SHA\">|" build/site/index.html
           sed -i "s|?v=dev|?v=$GITHUB_SHA|g" build/site/index.html
