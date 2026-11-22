@@ -45,7 +45,7 @@ def main():
                 records = future.result()
                 successes[name] += 1
                 for record in records:
-                    title = re.sub(r"\\s+", " ", record.get("title", "")).strip()
+                    title = re.sub(r"\s+", " ", record.get("title", "")).strip()
                     link = record.get("url", "")
                     if not title or not link.startswith("https://"):
                         continue
