@@ -1135,6 +1135,19 @@
         if (state.view === 'papers' && !state.reading) {
           var track = app.querySelector('#paper-provider-track');
           if (track && app.querySelector('#paper-article-content')) {
+            // Rebuild the provider rail once when newly available world outlets appear.
+            // Subsequent publisher selections only replace the article feed in place.
+            var visible = Array.from(track.querySelectorAll('[data-act="paper"]')).map(function (tab) {
+              return tab.getAttribute('data-name');
+            });
+            var added = allPublisherChoices().some(function (p) { return visible.indexOf(p.name) === -1; });
+            if (added) {
+              var railOffset = track.scrollLeft;
+              render();
+              var newTrack = app.querySelector('#paper-provider-track');
+              if (newTrack) newTrack.scrollLeft = railOffset;
+              return;
+            }
             track.querySelectorAll('[data-act="paper"]').forEach(function (tab) {
               var p = tab.getAttribute('data-name');
               var count = storiesForPaper(p).length;
