@@ -1,0 +1,28 @@
+name: Snapshot collected articles (for tuning)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/collect-feeds.py > /tmp/candidates.json
+      - name: Push to the snapshot branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout --orphan snapshot
+          git rm -rfq .
+          cp /tmp/candidates.json candidates.json
+          git add candidates.json
+          git commit -qm 'Collected articles snapshot [skip ci]'
+          git push -f origin snapshot
