@@ -15,6 +15,10 @@ spec = importlib.util.spec_from_file_location('pheme_writer', ROOT / 'scripts/ma
 writer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(writer)
 
+audio_spec = importlib.util.spec_from_file_location('pheme_audio', ROOT / 'scripts/build-audio.py')
+audio_builder = importlib.util.module_from_spec(audio_spec)
+audio_spec.loader.exec_module(audio_builder)
+
 
 def event():
     names = ['Example News', 'Daily Reporting', 'World Wire']
@@ -110,6 +114,26 @@ class NativeArticleTests(unittest.TestCase):
             loc = writer.infer_location({'outlets': {}}, headline)
             self.assertIsNotNone(loc, headline)
             self.assertEqual(loc['label'], expected)
+
+    def test_audio_script_normalisation_and_cue_alignment(self):
+        spoken = audio_builder.prepare_spoken_text('GTA VI raised $3.79bn — while RTÉ covered GLP-1s.')
+        self.assertIn('GTA Six', spoken)
+        self.assertIn('3.79 billion dollars', spoken)
+        self.assertIn('R T E', spoken)
+        self.assertIn('G L P ones', spoken)
+
+        parts = [
+            'Headline about global markets.',
+            'Stocks fell sharply across London and New York on Friday.',
+            'Central banks signalled caution over future interest rate cuts.',
+        ]
+        events = [
+            {'offset': 0.05, 'duration': 2.5, 'text': 'Headline about global markets.'},
+            {'offset': 2.80, 'duration': 4.1, 'text': 'Stocks fell sharply across London and New York on Friday.'},
+            {'offset': 7.20, 'duration': 4.4, 'text': 'Central banks signalled caution over future interest rate cuts.'},
+        ]
+        cues = audio_builder.align_paragraph_cues(parts, events, 12.0)
+        self.assertEqual(cues, [2.8, 7.2])
 
 
 if __name__ == '__main__':

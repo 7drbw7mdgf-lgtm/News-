@@ -41,8 +41,10 @@
     headerPrefs: { showClock: true, markets: ['london', 'newyork', 'shanghai'] },
     marketOpen: null, marketRange: '6M', marketHover: null,
     saved: {}, added: {}, highlights: {},
-    readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused' },
+    readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused', voice: 'ava', rate: 1 },
     readerFocus: false, aaOpen: false, covFilter: 'all', copiedId: null,
+    audioOpen: false, audioStoryId: null, audioVoice: 'ava', audioLoading: false, audioError: null,
+    audioTime: 0, audioDuration: 0,
     speaking: false, speechRate: 1, speakingIndex: -1
   };
   try {
@@ -62,6 +64,9 @@
       if (stored.added) state.added = stored.added;
       if (stored.highlights) state.highlights = stored.highlights;
       if (stored.readerPrefs) state.readerPrefs = Object.assign({}, state.readerPrefs, stored.readerPrefs);
+      if (state.readerPrefs.rate && [0.9, 1, 1.15, 1.25, 1.5].indexOf(state.readerPrefs.rate) !== -1) {
+        state.speechRate = state.readerPrefs.rate;
+      }
       if (stored.headerPrefs) {
         if (typeof stored.headerPrefs.showClock === 'boolean') state.headerPrefs.showClock = stored.headerPrefs.showClock;
         if (Array.isArray(stored.headerPrefs.markets)) {
@@ -111,6 +116,8 @@
     bookmarkLgFilled: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>',
     close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>',
     listen: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>',
+    play: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5.2v13.6a1 1 0 0 0 1.52.85l11-6.8a1 1 0 0 0 0-1.7l-11-6.8A1 1 0 0 0 7 5.2z"></path></svg>',
+    pause: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4.5" height="14" rx="1.4"></rect><rect x="13.5" y="5" width="4.5" height="14" rx="1.4"></rect></svg>',
     stop: '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg>',
     focus: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"></path></svg>',
     link: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>'
@@ -178,12 +185,193 @@
     return '<a class="' + cls + '" href="' + storyHref(s.id) +
       '" data-act="open" data-id="' + esc(s.id) + '">' + esc(label) + '</a>';
   }
+  var audioManifest = null;
+  var audioManifestLoaded = false;
+  var voiceAudio = typeof Audio !== 'undefined' ? new Audio() : null;
+  var pendingSeek = null;
+
+  function buildCacheSuffix() {
+    var buildMeta = document.querySelector('meta[name="daybreak-build"]');
+    var buildId = buildMeta && buildMeta.getAttribute('content');
+    return buildId && buildId !== 'dev' ? '?v=' + encodeURIComponent(buildId) : '';
+  }
+
+  function loadAudioManifest() {
+    fetch('assets/audio/manifest.json' + buildCacheSuffix(), { cache: 'no-cache' }).then(function (resp) {
+      if (!resp.ok) throw new Error('Audio manifest unavailable');
+      return resp.json();
+    }).then(function (data) {
+      if (data && data.stories && Array.isArray(data.voices)) {
+        audioManifest = data;
+      }
+      audioManifestLoaded = true;
+      if (state.reading) render();
+    }).catch(function () {
+      audioManifestLoaded = true;
+    });
+  }
+
+  function audioVoices() {
+    return (audioManifest && Array.isArray(audioManifest.voices) && audioManifest.voices.length)
+      ? audioManifest.voices
+      : [{ id: 'ava', label: 'Ava', tagline: 'Warm & expressive' }, { id: 'andrew', label: 'Andrew', tagline: 'Calm & conversational' }];
+  }
+
+  function audioTrackFor(storyId, voiceId) {
+    if (!audioManifest || !audioManifest.stories || !audioManifest.stories[storyId]) return null;
+    var voices = audioManifest.stories[storyId].voices || {};
+    var chosen = voiceId && voices[voiceId] ? voiceId : Object.keys(voices)[0];
+    return chosen ? Object.assign({ voiceId: chosen }, voices[chosen]) : null;
+  }
+
+  function formatAudioTime(sec) {
+    var total = Math.max(0, Math.floor(Number.isFinite(sec) ? sec : 0));
+    var mins = Math.floor(total / 60);
+    var rem = total % 60;
+    return mins + ':' + (rem < 10 ? '0' : '') + rem;
+  }
+
+  function cueIndexForTime(cues, t) {
+    if (!Array.isArray(cues) || !cues.length) return -1;
+    var idx = -1;
+    for (var i = 0; i < cues.length; i++) {
+      if (t + 0.12 >= cues[i]) idx = i;
+      else break;
+    }
+    return idx;
+  }
+
+  function applyPlaybackRate(rate) {
+    if (!voiceAudio) return;
+    voiceAudio.playbackRate = rate;
+    if ('preservesPitch' in voiceAudio) voiceAudio.preservesPitch = true;
+    if ('mozPreservesPitch' in voiceAudio) voiceAudio.mozPreservesPitch = true;
+    if ('webkitPreservesPitch' in voiceAudio) voiceAudio.webkitPreservesPitch = true;
+  }
+
   function stopSpeech() {
-    if (typeof window !== 'undefined' && window.speechSynthesis) {
-      try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+    pendingSeek = null;
+    if (voiceAudio) {
+      try { voiceAudio.pause(); } catch (e) { /* ignore */ }
     }
     state.speaking = false;
+    state.audioLoading = false;
+    state.audioOpen = false;
+    state.audioError = null;
     state.speakingIndex = -1;
+    state.audioTime = 0;
+  }
+
+  function pauseStoryAudio() {
+    if (voiceAudio) {
+      try { voiceAudio.pause(); } catch (e) { /* ignore */ }
+    }
+    state.speaking = false;
+    state.audioLoading = false;
+    syncSpeakingDom();
+  }
+
+  function startSpeech(s, opts) {
+    if (!s) return;
+    opts = opts || {};
+    var desiredVoice = opts.voice || state.readerPrefs.voice || 'ava';
+    var track = audioTrackFor(s.id, desiredVoice);
+    state.audioOpen = true;
+    state.audioError = null;
+    if (!voiceAudio || !track) {
+      state.speaking = false;
+      state.audioLoading = false;
+      state.audioError = audioManifestLoaded
+        ? 'Natural voice narration isn’t available for this archived story yet.'
+        : 'Loading natural voice narration…';
+      render();
+      return;
+    }
+    var url = 'assets/audio/' + track.file + (track.hash ? '?v=' + encodeURIComponent(track.hash) : '');
+    var sameTrack = state.audioStoryId === s.id && state.audioVoice === track.voiceId && voiceAudio.src && voiceAudio.src.indexOf(track.file) !== -1;
+    state.audioStoryId = s.id;
+    state.audioVoice = track.voiceId;
+    state.audioDuration = track.duration || 0;
+    if (!sameTrack) {
+      state.audioLoading = true;
+      state.audioTime = typeof opts.seekTo === 'number' ? opts.seekTo : 0;
+      pendingSeek = typeof opts.seekTo === 'number' ? opts.seekTo : null;
+      voiceAudio.src = url;
+      voiceAudio.load();
+    } else if (typeof opts.seekTo === 'number') {
+      try { voiceAudio.currentTime = Math.max(0, Math.min(voiceAudio.duration || track.duration || 0, opts.seekTo)); } catch (e) { /* ignore */ }
+      state.audioTime = voiceAudio.currentTime || 0;
+    }
+    applyPlaybackRate(state.speechRate);
+    if (opts.autoplay !== false) {
+      var p = voiceAudio.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(function () {
+          state.speaking = false;
+          state.audioLoading = false;
+          syncSpeakingDom();
+        });
+      }
+    }
+    render();
+    syncSpeakingDom();
+  }
+
+  if (voiceAudio) {
+    voiceAudio.preload = 'metadata';
+    voiceAudio.addEventListener('loadedmetadata', function () {
+      if (Number.isFinite(voiceAudio.duration) && voiceAudio.duration > 0) {
+        state.audioDuration = voiceAudio.duration;
+      }
+      if (pendingSeek !== null) {
+        try {
+          voiceAudio.currentTime = Math.max(0, Math.min(state.audioDuration || pendingSeek, pendingSeek));
+        } catch (e) { /* ignore */ }
+        pendingSeek = null;
+      }
+      applyPlaybackRate(state.speechRate);
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('waiting', function () {
+      state.audioLoading = true;
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('canplay', function () {
+      state.audioLoading = false;
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('play', function () {
+      state.speaking = true;
+      state.audioLoading = false;
+      state.audioError = null;
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('pause', function () {
+      state.speaking = false;
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('timeupdate', function () {
+      state.audioTime = voiceAudio.currentTime || 0;
+      if (Number.isFinite(voiceAudio.duration) && voiceAudio.duration > 0) {
+        state.audioDuration = voiceAudio.duration;
+      }
+      var track = state.audioStoryId ? audioTrackFor(state.audioStoryId, state.audioVoice) : null;
+      state.speakingIndex = track ? cueIndexForTime(track.cues, state.audioTime) : -1;
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('ended', function () {
+      state.speaking = false;
+      state.speakingIndex = -1;
+      state.audioTime = 0;
+      try { voiceAudio.currentTime = 0; } catch (e) { /* ignore */ }
+      syncSpeakingDom();
+    });
+    voiceAudio.addEventListener('error', function () {
+      state.speaking = false;
+      state.audioLoading = false;
+      state.audioError = 'Could not load audio right now. Try again in a moment.';
+      if (state.reading && state.audioOpen) render();
+    });
   }
 
   function changeStory(id, source) {
@@ -880,46 +1068,84 @@
     return Math.max(1, Math.round(words / 210)) + ' min read';
   }
 
-  function startSpeech(s) {
-    if (!window.speechSynthesis) return;
-    stopSpeech();
-    var paras = getArticleParagraphs(s);
-    var queue = [s.headline].concat(paras);
-    state.speaking = true;
-    var speakNext = function (idx) {
-      if (!state.speaking || idx >= queue.length) {
-        state.speaking = false;
-        state.speakingIndex = -1;
-        syncSpeakingDom();
-        return;
-      }
-      state.speakingIndex = idx - 1;
-      syncSpeakingDom();
-      var utter = new SpeechSynthesisUtterance(queue[idx]);
-      utter.lang = 'en-GB';
-      utter.rate = state.speechRate;
-      utter.onend = function () { if (state.speaking) speakNext(idx + 1); };
-      utter.onerror = function () { state.speaking = false; state.speakingIndex = -1; syncSpeakingDom(); };
-      window.speechSynthesis.speak(utter);
-    };
-    speakNext(0);
-  }
-
   function syncSpeakingDom() {
     var btn = app.querySelector('[data-act="togglelisten"]');
     if (btn) {
-      btn.classList.toggle('on', state.speaking);
-      btn.innerHTML = (state.speaking ? ICON.stop + 'Stop' : ICON.listen + 'Listen');
+      btn.classList.toggle('on', state.audioOpen || state.speaking);
+      btn.innerHTML = (state.speaking ? ICON.pause + 'Pause' : ICON.listen + 'Listen');
     }
-    var rateBtn = app.querySelector('[data-act="speechrate"]');
-    if (rateBtn) {
-      rateBtn.hidden = !state.speaking;
-      rateBtn.textContent = state.speechRate + '×';
+    var player = app.querySelector('.voice-player');
+    if (player) {
+      player.classList.toggle('is-playing', state.speaking);
+      player.classList.toggle('is-loading', state.audioLoading);
+      var playBtn = player.querySelector('[data-act="voiceplay"]');
+      if (playBtn) {
+        playBtn.innerHTML = state.speaking ? ICON.pause : ICON.play;
+        playBtn.setAttribute('aria-label', state.speaking ? 'Pause narration' : 'Play narration');
+      }
+      var scrub = document.getElementById('voice-scrub');
+      var dur = state.audioDuration || 0;
+      if (scrub && dur > 0) {
+        scrub.max = String(dur.toFixed(2));
+        if (document.activeElement !== scrub) scrub.value = String(Math.min(dur, state.audioTime).toFixed(2));
+        scrub.style.setProperty('--progress', (Math.min(100, (state.audioTime / dur) * 100)).toFixed(2) + '%');
+      }
+      var curEl = document.getElementById('voice-cur');
+      if (curEl) curEl.textContent = formatAudioTime(state.audioTime);
+      var durEl = document.getElementById('voice-dur');
+      if (durEl && dur > 0) durEl.textContent = formatAudioTime(dur);
+      var rateBtn = player.querySelector('[data-act="speechrate"]');
+      if (rateBtn) rateBtn.textContent = state.speechRate + '×';
     }
     app.querySelectorAll('.reader-para').forEach(function (el) {
       var idx = Number(el.getAttribute('data-pidx'));
-      el.classList.toggle('speaking', state.speaking && idx === state.speakingIndex);
+      el.classList.toggle('speaking', (state.speaking || state.audioOpen) && idx === state.speakingIndex && state.speakingIndex >= 0);
     });
+  }
+
+  function renderVoicePlayer(s) {
+    if (!state.audioOpen) return '';
+    var track = audioTrackFor(s.id, state.readerPrefs.voice || 'ava');
+    if (!track || state.audioError) {
+      return '<section class="voice-player voice-player-note" aria-label="Article narration">' +
+        '<span class="voice-orb" aria-hidden="true"></span>' +
+        '<p class="voice-status">' + esc(state.audioError || 'Natural voice narration isn’t available for this archived story yet.') + '</p>' +
+        '<button type="button" class="voice-close" data-act="closeaudio" aria-label="Close audio player">' + ICON.close + '</button>' +
+        '</section>';
+    }
+    var voices = audioVoices();
+    var activeVoiceId = track.voiceId;
+    var activeMeta = voices.find(function (v) { return v.id === activeVoiceId; }) || voices[0];
+    var dur = state.audioStoryId === s.id && state.audioDuration ? state.audioDuration : (track.duration || 0);
+    var cur = state.audioStoryId === s.id ? state.audioTime : 0;
+    var pct = dur > 0 ? Math.min(100, (cur / dur) * 100).toFixed(2) : '0';
+    var voicePills = voices.length > 1
+      ? '<div class="voice-switcher" role="group" aria-label="Choose narrator">' + voices.map(function (v) {
+          var on = v.id === activeVoiceId;
+          return '<button type="button" class="voice-pill' + (on ? ' on' : '') + '" data-act="voicepick" data-id="' + esc(v.id) + '" aria-pressed="' + on + '">' + esc(v.label) + '</button>';
+        }).join('') + '</div>'
+      : '';
+    return '<section class="voice-player' + (state.speaking ? ' is-playing' : '') + (state.audioLoading ? ' is-loading' : '') + '" aria-label="Natural voice narration">' +
+      '<div class="voice-main">' +
+      '<button type="button" class="voice-play-btn" data-act="voiceplay" aria-label="' + (state.speaking ? 'Pause narration' : 'Play narration') + '">' +
+      (state.speaking ? ICON.pause : ICON.play) + '</button>' +
+      '<div class="voice-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>' +
+      '<div class="voice-track">' +
+      '<div class="voice-head">' +
+      '<span class="voice-name">' + esc(activeMeta.label) + '<small>' + esc(activeMeta.tagline || 'Natural voice') + '</small></span>' +
+      '<span class="voice-time"><span id="voice-cur">' + formatAudioTime(cur) + '</span> / <span id="voice-dur">' + formatAudioTime(dur) + '</span></span>' +
+      '</div>' +
+      '<input id="voice-scrub" class="voice-scrub" type="range" min="0" max="' + esc(String((dur || 1).toFixed(2))) + '" step="0.1" value="' + esc(String(cur.toFixed(2))) + '" style="--progress:' + pct + '%" aria-label="Seek narration position">' +
+      '</div></div>' +
+      '<div class="voice-controls">' +
+      '<div class="voice-skip-group">' +
+      '<button type="button" class="voice-chip" data-act="voiceseek" data-id="-15" aria-label="Rewind 15 seconds">−15s</button>' +
+      '<button type="button" class="voice-chip" data-act="voiceseek" data-id="15" aria-label="Skip forward 15 seconds">+15s</button>' +
+      '<button type="button" class="voice-chip" data-act="speechrate" aria-label="Playback speed">' + state.speechRate + '×</button>' +
+      '</div>' +
+      voicePills +
+      '<button type="button" class="voice-close" data-act="closeaudio" aria-label="Close audio player">' + ICON.close + '</button>' +
+      '</div></section>';
   }
 
   function updateReadProgress() {
@@ -1009,7 +1235,7 @@
     var storyHighlights = state.highlights[s.id] || {};
     var hlCount = Object.keys(storyHighlights).filter(function (k) { return storyHighlights[k]; }).length;
     var p = state.readerPrefs;
-    var canSpeak = paras.length && typeof window !== 'undefined' && 'speechSynthesis' in window;
+    var canSpeak = paras.length && !!audioTrackFor(s.id, p.voice || 'ava');
 
     var curIdx = CURRENT.findIndex(function (item) { return item.id === s.id; });
     var prevStory = curIdx > 0 ? CURRENT[curIdx - 1] : null;
@@ -1039,9 +1265,8 @@
       '<div class="reader-tools">' +
       '<span class="read-time">' + esc(estimateReadTime(s)) + '</span>' +
       (canSpeak
-        ? '<button type="button" class="rtool' + (state.speaking ? ' on' : '') + '" data-act="togglelisten">' +
-          (state.speaking ? ICON.stop + 'Stop' : ICON.listen + 'Listen') + '</button>' +
-          '<button type="button" class="rtool" data-act="speechrate"' + (state.speaking ? '' : ' hidden') + '>' + state.speechRate + '×</button>'
+        ? '<button type="button" class="rtool' + (state.audioOpen || state.speaking ? ' on' : '') + '" data-act="togglelisten">' +
+          (state.speaking ? ICON.pause + 'Pause' : ICON.listen + 'Listen') + '</button>'
         : '') +
       '<button type="button" class="rtool' + (state.aaOpen ? ' on' : '') + '" data-act="toggleaa" aria-expanded="' + state.aaOpen + '">Aa</button>' +
       '<button type="button" class="rtool' + (state.readerFocus ? ' on' : '') + '" data-act="togglefocus" title="Distraction-free Focus mode (F)">' + ICON.focus + (state.readerFocus ? 'Exit focus' : 'Focus') + '</button>' +
@@ -1055,6 +1280,7 @@
       '</span></p>' +
       '<h1 id="reader-title">' + esc(s.headline) + '</h1>' +
       '<p class="standfirst">' + esc(s.summary) + '</p>' +
+      renderVoicePlayer(s) +
       sourceContext +
       (img ? (function () {
         var capParts = [];
@@ -1321,19 +1547,43 @@
         state.aaOpen = false;
         render(); break;
       case 'togglelisten':
+      case 'voiceplay':
         if (state.speaking) {
-          stopSpeech();
-          syncSpeakingDom();
+          pauseStoryAudio();
         } else if (state.reading && byId[state.reading]) {
           startSpeech(byId[state.reading]);
         }
         break;
-      case 'speechrate':
-        var rates = [1, 1.25, 1.5];
-        state.speechRate = rates[(rates.indexOf(state.speechRate) + 1) % rates.length];
-        if (state.speaking && state.reading && byId[state.reading]) {
-          startSpeech(byId[state.reading]);
+      case 'closeaudio':
+        stopSpeech();
+        render();
+        break;
+      case 'voiceseek':
+        if (voiceAudio && state.audioStoryId === state.reading) {
+          var delta = Number(id) || 0;
+          var durLimit = state.audioDuration || voiceAudio.duration || 0;
+          var nextPos = Math.max(0, Math.min(durLimit, (voiceAudio.currentTime || 0) + delta));
+          try { voiceAudio.currentTime = nextPos; } catch (e) { /* ignore */ }
+          state.audioTime = nextPos;
+          syncSpeakingDom();
         }
+        break;
+      case 'voicepick':
+        if (id && state.reading && byId[state.reading]) {
+          state.readerPrefs.voice = id;
+          persist();
+          var resumeAt = state.audioStoryId === state.reading ? state.audioTime : 0;
+          var keepPlaying = state.speaking;
+          startSpeech(byId[state.reading], { voice: id, seekTo: resumeAt, autoplay: keepPlaying });
+        }
+        break;
+      case 'speechrate':
+        var rates = [1, 1.15, 1.25, 1.5, 0.9];
+        state.speechRate = rates[(rates.indexOf(state.speechRate) + 1) % rates.length];
+        state.readerPrefs.rate = state.speechRate;
+        persist();
+        applyPlaybackRate(state.speechRate);
+        syncSpeakingDom();
         break;
       case 'highlight':
         var pidx = t.getAttribute('data-pidx');
@@ -1411,6 +1661,13 @@
       if (state.reading) changeStory(null);
       if (state.view === 'papers') state.view = 'briefing';
       render({ focus: 'q' });
+    } else if (e.target.id === 'voice-scrub' && voiceAudio) {
+      var seekVal = parseFloat(e.target.value);
+      if (Number.isFinite(seekVal)) {
+        try { voiceAudio.currentTime = seekVal; } catch (err) { /* ignore */ }
+        state.audioTime = seekVal;
+        syncSpeakingDom();
+      }
     }
   });
 
@@ -1449,7 +1706,11 @@
       else if (state.searchOpen) { state.searchOpen = false; state.query = ''; render(); }
       else if (state.reading) { changeStory(null); render(); }
     } else if (!typing && state.reading && !state.settingsOpen && !state.marketOpen) {
-      if (e.key === 'f' || e.key === 'F') {
+      if (e.key === ' ' && state.audioOpen && tag !== 'BUTTON' && tag !== 'A') {
+        e.preventDefault();
+        if (state.speaking) pauseStoryAudio();
+        else if (byId[state.reading]) startSpeech(byId[state.reading]);
+      } else if (e.key === 'f' || e.key === 'F') {
         state.readerFocus = !state.readerFocus;
         state.aaOpen = false;
         render();
@@ -1469,5 +1730,6 @@
   document.getElementById('world-map-library')?.addEventListener('load', mountWorldMap);
   render();
   loadMarketData();
+  loadAudioManifest();
   setInterval(updateClocks, 1000);
 })();

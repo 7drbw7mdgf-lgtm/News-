@@ -10,6 +10,7 @@ Same approach as Sparkboard's deployment:
 import ftplib
 import hashlib
 import io
+import json
 import os
 import ssl
 import sys
@@ -78,6 +79,25 @@ def read_remote(ftp, name):
     return data.getvalue()
 
 
+def remote_size(ftp, name):
+    """Return the remote file's byte length, or None if unavailable."""
+    try:
+        return ftp.size(name)
+    except ftplib.error_perm:
+        return None
+
+
+def read_manifest(ftp):
+    raw = read_remote(ftp, BACKUP_DIR + '/manifest.json')
+    if not raw:
+        return {}
+    try:
+        parsed = json.loads(raw.decode('utf-8'))
+        return parsed if isinstance(parsed, dict) else {}
+    except (UnicodeDecodeError, ValueError):
+        return {}
+
+
 def ensure_directory(ftp, directory):
     try:
         ftp.mkd(directory)
@@ -134,6 +154,8 @@ def deploy(ftp, build, tag, server_dir=''):
         ftp.storbinary('STOR ' + BACKUP_DIR + '/previous-index-' + tag + '.html', io.BytesIO(previous))
         print('Backed up the existing homepage.', flush=True)
     made, uploaded, skipped = set(), 0, 0
+    remote_manifest = read_manifest(ftp)
+    next_manifest = dict(remote_manifest)
     index = None
     for name, data in files:
         if name == 'index.html':
@@ -145,11 +167,20 @@ def deploy(ftp, build, tag, server_dir=''):
             if d != '.' and d not in made:
                 ensure_directory(ftp, d)
                 made.add(d)
-        if digest(read_remote(ftp, name) or b'') == digest(data):
+        local_hash = digest(data)
+        if remote_manifest.get(name) == local_hash and remote_size(ftp, name) == len(data):
+            skipped += 1
+            continue
+        if digest(read_remote(ftp, name) or b'') == local_hash:
+            next_manifest[name] = local_hash
             skipped += 1
             continue
         atomic_write(ftp, name, data, tag)
+        next_manifest[name] = local_hash
         uploaded += 1
+    next_manifest['index.html'] = digest(index)
+    manifest_bytes = json.dumps(next_manifest, sort_keys=True, separators=(',', ':')).encode('utf-8')
+    atomic_write(ftp, BACKUP_DIR + '/manifest.json', manifest_bytes, tag)
     atomic_write(ftp, 'index.html', index, tag)  # homepage last
     print('Uploaded ' + str(uploaded + 1) + ' files (' + str(skipped) + ' unchanged skipped); index.html published last.', flush=True)
 
