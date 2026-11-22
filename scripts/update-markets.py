@@ -15,6 +15,7 @@ MARKETS = {
     'london': ('^FTSE', 'Europe/London'),
     'newyork': ('^GSPC', 'America/New_York'),
     'shanghai': ('000001.SS', 'Asia/Shanghai'),
+    'india': ('^NSEI', 'Asia/Kolkata'),
 }
 
 
@@ -61,13 +62,15 @@ def main():
     args = parser.parse_args()
     existing = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else {'markets': {}}
     if args.check:
-        for market_id in MARKETS:
+        for market_id in ('london', 'newyork', 'shanghai'):
             validate_market(existing['markets'][market_id])
-        print('Validated daily data for all three native market charts.')
+        if 'india' in existing['markets']:
+            validate_market(existing['markets']['india'])
+        print('Validated existing daily index series (including NIFTY 50 when available).')
         return
     markets = dict(existing.get('markets', {}))
     fresh = 0
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         jobs = {market_id: pool.submit(collect, market_id) for market_id in MARKETS}
         for market_id, job in jobs.items():
             try:
@@ -78,8 +81,10 @@ def main():
                 print('::warning::Could not refresh ' + market_id + ' (' + type(error).__name__ + '); retaining its last verified data.')
     if not fresh:
         raise SystemExit('No market data refreshed; leaving the published data unchanged.')
-    for market_id in MARKETS:
+    for market_id in ('london', 'newyork', 'shanghai'):
         validate_market(markets[market_id])
+    if 'india' in markets:
+        validate_market(markets['india'])
     # Unchanged market sessions do not need another commit or FTP deployment.
     if markets == existing.get('markets'):
         print('Daily market data is unchanged.')
