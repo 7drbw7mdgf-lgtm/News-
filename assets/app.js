@@ -1080,8 +1080,14 @@
     var active = state.view === 'papers' && !state.reading;
     document.body.classList.toggle('paper-browse', active);
     var scrolled = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
-    var shade = active ? Math.round(Math.min(1, scrolled / 1100) * 42) : 0;
-    document.documentElement.style.setProperty('--paper-scroll-mix', shade + '%');
+    // Use an explicit RGB colour rather than a CSS color-mix calculation:
+    // this is predictable on mobile Safari and reacts on short article pages.
+    var progress = active ? Math.min(1, scrolled / 520) : 0;
+    function channel(start, end) { return Math.round(start + (end - start) * progress); }
+    var paperColor = 'rgb(' + channel(233, 183) + ', ' + channel(226, 173) + ', ' + channel(211, 154) + ')';
+    var outerColor = 'rgb(' + channel(227, 174) + ', ' + channel(216, 164) + ', ' + channel(198, 146) + ')';
+    document.documentElement.style.setProperty('--paper-scroll-background', paperColor);
+    document.documentElement.style.setProperty('--paper-scroll-outer', outerColor);
   }
   window.addEventListener('scroll', function () {
     if (paperScrollQueued) return;
