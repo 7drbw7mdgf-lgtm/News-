@@ -38,3 +38,11 @@ The daily GitHub Actions workflow collects candidate articles from 35 RSS/Atom f
 3. Commit the edition and the generated data together. Deployment validates the generated file before uploading.
 
 Stories can be shared using `?story=EVENT-ID`. Keep old edition files so those links and bookmarks continue to resolve.
+
+## Header and native reader
+
+Digest, coverage methodology and followed newspapers are available from header dropdowns. Settings saves the clock and market choices in this browser alongside existing reader preferences and bookmarks.
+
+The market strip uses TradingView mini charts over six months. London and New York use FOREX.com FTSE 100 and S&P 500 index CFDs, labelled as CFDs; Shanghai uses the Shanghai Composite with end-of-day data. These are provider-fed charts, and availability and delays depend on the provider. If the widget module cannot load, each chart retains a link to its source.
+
+Headlines, comparison citations and coverage links open Pheme’s native reader. An outlet selection can be shared using `?story=EVENT-ID&source=OUTLET-NAME`. The reader identifies the selected publisher and displays Pheme’s own briefing rather than presenting it as a copy of the publisher’s full article.

@@ -345,7 +345,7 @@ def write_story(e, taken):
         others = sorted((o for o in names if o != lead), key=known)[:3]
         summary = f"Reported by {len(names)} outlets, including {', '.join(others[:-1]) + ' and ' + others[-1] if len(others) > 1 else others[0]}."
         points = [f'First reported by {first} on {day_label(e["outlets"][first]["published"])}.', coverage_line(e),
-                  'Open each outlet’s report below to compare their headlines and framing.']
+                  'Select an outlet below to compare headlines and read in Pheme.']
         left_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] in LEFT][:3]
         centre_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] == 'C'][:3]
         right_list = [o for o in sorted(names, key=known) if e['ratings'][o]['code'] in RIGHT][:3]
@@ -360,7 +360,7 @@ def write_story(e, taken):
         p2 = (f"Across Pheme’s {len(names)}-source sample, the story is being tracked across "
               + ('; '.join(angles) if angles else ', '.join(others or [lead]))
               + f". {coverage_line(e)}")
-        p3 = "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or open any original article directly."
+        p3 = "Use the leaning filter tabs below to inspect how individual newsrooms framed their headlines on this event, or select an outlet to read in Pheme."
         article = [p1, p2, p3]
         digest = f'{headline} ({lead})'
         gen = {}
