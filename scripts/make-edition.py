@@ -304,6 +304,104 @@ def ask_claude(e):
     return data
 
 
+def ask_groq(e):
+    key = os.environ.get('GROQ_API_KEY')
+    if not key:
+        return None
+    lines = []
+    for o, a in sorted(e['outlets'].items(), key=lambda x: x[1]['published'])[:12]:
+        lines.append(f"- {o} ({day_label(a['published'])}): {a['title']} — {a.get('summary', '')[:240]}")
+    body = json.dumps({
+        'model': os.environ.get('PHEME_GROQ_MODEL', 'openai/gpt-oss-20b'),
+        'max_tokens': 1100,
+        'temperature': 0.3,
+        'messages': [{'role': 'user', 'content': PROMPT.format(material='\n'.join(lines))}],
+    }).encode()
+    req = urllib.request.Request('https://api.groq.com/openai/v1/chat/completions', data=body, headers={
+        'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json', 'User-Agent': 'PhemeEdition/1.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            raw = json.loads(resp.read())['choices'][0]['message']['content']
+        raw = re.sub(r'<think>[\s\S]*?</think>', '', raw).strip()
+        data = json.loads(raw[raw.index('{'): raw.rindex('}') + 1])
+    except Exception as error:
+        print('Groq writer unavailable for one story (' + type(error).__name__ + ').', file=sys.stderr)
+        return None
+    if not data.get('same_event', True) or data.get('is_news') is False:
+        return {'reject': True}
+    return data
+
+
+def ask_writer(e):
+    return ask_claude(e) or ask_groq(e)
+
+
+GAZETTEER = [
+    (r'\b(sinaloa|guasave)\b', 'Guasave, Sinaloa, Mexico', 'Sinaloa', 25.5747, -108.4718),
+    (r'\b(mexico city|mexican|mexico)\b', 'Mexico City, Mexico', 'Mexico', 19.4326, -99.1332),
+    (r'\b(brasília|brasilia|bolsonaro|brazil|brazilian)\b', 'Brasília, Brazil', 'Brasília', -15.7975, -47.8919),
+    (r'\b(argentina|buenos aires)\b', 'Buenos Aires, Argentina', 'Buenos Aires', -34.6037, -58.3816),
+    (r'\b(venezuela|caracas)\b', 'Caracas, Venezuela', 'Caracas', 10.4806, -66.9036),
+    (r'\b(colombia|bogota|bogotá)\b', 'Bogotá, Colombia', 'Bogotá', 4.7110, -74.0721),
+    (r'\b(the hague|icj|international court of justice)\b', 'The Hague, Netherlands', 'The Hague', 52.0800, 4.3100),
+    (r'\b(brussels|eu summit|european commission|european union)\b', 'Brussels, Belgium', 'Brussels', 50.8503, 4.3517),
+    (r'\b(cern|lhcb|geneva)\b', 'Geneva, Switzerland', 'Geneva', 46.2330, 6.0557),
+    (r'\b(gulf of finland|helsinki|finland|finnish)\b', 'Helsinki, Finland', 'Finland', 60.1699, 24.9384),
+    (r'\b(lublin|chmielek|warsaw|poland|polish)\b', 'Warsaw, Poland', 'Poland', 52.2297, 21.0122),
+    (r'\b(kryvyi rih|kyiv|ukraine|ukrainian|crimea|crimean)\b', 'Kyiv, Ukraine', 'Ukraine', 50.4501, 30.5234),
+    (r'\b(moscow|kremlin|russia|russian)\b', 'Moscow, Russia', 'Russia', 55.7558, 37.6173),
+    (r'\b(belfast|northern ireland)\b', 'Belfast, Northern Ireland', 'Belfast', 54.5973, -5.9301),
+    (r'\b(edinburgh|glasgow|scotland|scottish)\b', 'Edinburgh, Scotland, UK', 'Edinburgh', 55.9533, -3.1883),
+    (r'\b(cardiff|wales|welsh)\b', 'Cardiff, Wales, UK', 'Cardiff', 51.4816, -3.1791),
+    (r'\b(bradford|leeds|yorkshire)\b', 'Bradford, West Yorkshire, UK', 'Bradford', 53.7960, -1.7594),
+    (r'\b(manchester)\b', 'Manchester, UK', 'Manchester', 53.4808, -2.2426),
+    (r'\b(birmingham|walsall|midlands|poundland)\b', 'West Midlands, UK', 'Midlands', 52.4862, -1.8904),
+    (r'\b(windsor|buckingham|princess of wales|catherine)\b', 'Windsor, Berkshire, UK', 'Windsor', 51.4839, -0.6044),
+    (r'\b(bank of england|ftse|city of london|bailey)\b', 'City of London, UK', 'City of London', 51.5142, -0.0886),
+    (r'\b(westminster|downing street|whitehall|london|nhs|ons|uk|britain|british)\b', 'London, UK', 'London', 51.5072, -0.1276),
+    (r'\b(dublin|ireland|irish)\b', 'Dublin, Ireland', 'Dublin', 53.3498, -6.2603),
+    (r'\b(paris|france|french|macron)\b', 'Paris, France', 'Paris', 48.8566, 2.3522),
+    (r'\b(munich|garching|berlin|germany|german|darmstadt)\b', 'Berlin, Germany', 'Germany', 52.5200, 13.4050),
+    (r'\b(rome|milan|italy|italian|vatican)\b', 'Rome, Italy', 'Italy', 41.9028, 12.4964),
+    (r'\b(madrid|barcelona|spain|spanish)\b', 'Madrid, Spain', 'Spain', 40.4168, -3.7038),
+    (r'\b(antalya|istanbul|ankara|turkey|turkish|cop31)\b', 'Antalya, Turkey', 'Turkey', 36.8969, 30.7133),
+    (r'\b(gaza|jerusalem|tel aviv|israel|israeli|netanyahu)\b', 'Jerusalem, Israel', 'Israel', 31.7683, 35.2137),
+    (r'\b(beirut|lebanon|lebanese)\b', 'Beirut, Lebanon', 'Lebanon', 33.8938, 35.5018),
+    (r'\b(bahrain|manama|al-riffa)\b', 'Manama, Bahrain', 'Bahrain', 26.2285, 50.5860),
+    (r'\b(tehran|iran|iranian|strait of hormuz)\b', 'Tehran, Iran', 'Iran', 35.6892, 51.3890),
+    (r'\b(riyadh|saudi arabia|saudi)\b', 'Riyadh, Saudi Arabia', 'Saudi Arabia', 24.7136, 46.6753),
+    (r'\b(baghdad|iraq|iraqi)\b', 'Baghdad, Iraq', 'Iraq', 33.3152, 44.3661),
+    (r'\b(cairo|egypt|egyptian)\b', 'Cairo, Egypt', 'Egypt', 30.0444, 31.2357),
+    (r'\b(sterkfontein|johannesburg|cape town|south africa)\b', 'Johannesburg, South Africa', 'South Africa', -26.2041, 28.0473),
+    (r'\b(nairobi|kenya|nigeria|lagos|sudan|khartoum)\b', 'Nairobi, Kenya', 'East Africa', -1.2921, 36.8219),
+    (r'\b(new delhi|mumbai|india|indian)\b', 'New Delhi, India', 'India', 28.6139, 77.2090),
+    (r'\b(myanmar|rohingya|rakhine|yangon)\b', 'Rakhine State, Myanmar', 'Myanmar', 20.1462, 92.8984),
+    (r'\b(jakarta|indonesia|indonesian)\b', 'Jakarta, Indonesia', 'Jakarta', -6.2088, 106.8456),
+    (r'\b(manila|philippines|philippine|asean)\b', 'Manila, Philippines', 'Manila', 14.5995, 120.9842),
+    (r'\b(shenzhen|hong kong)\b', 'Shenzhen, China', 'Shenzhen', 22.5431, 114.0579),
+    (r'\b(beijing|shanghai|china|chinese|xi jinping)\b', 'Beijing, China', 'Beijing', 39.9042, 116.4074),
+    (r'\b(taipei|taiwan|taiwanese)\b', 'Taipei, Taiwan', 'Taiwan', 25.0330, 121.5654),
+    (r'\b(tokyo|japan|japanese)\b', 'Tokyo, Japan', 'Tokyo', 35.6762, 139.6503),
+    (r'\b(seoul|south korea|north korea|pyongyang)\b', 'Seoul, South Korea', 'Seoul', 37.5665, 126.9780),
+    (r'\b(sydney|melbourne|canberra|australia|australian)\b', 'Sydney, Australia', 'Australia', -33.8688, 151.2093),
+    (r'\b(cupertino|apple|silicon valley|san francisco|anthropic|openai|nvidia|santa clara|google|meta|california)\b', 'San Francisco Bay Area, USA', 'California', 37.4419, -122.1430),
+    (r'\b(spacex|los angeles|hollywood|hawthorne)\b', 'Los Angeles, California, USA', 'Los Angeles', 34.0522, -118.2437),
+    (r'\b(seattle|amazon|microsoft)\b', 'Seattle, Washington, USA', 'Seattle', 47.6062, -122.3321),
+    (r'\b(austin|houston|texas|nasa)\b', 'Austin, Texas, USA', 'Texas', 30.2672, -97.7431),
+    (r'\b(wall street|nasdaq|s&p 500|dow jones|new york|nyc)\b', 'New York, USA', 'New York', 40.7128, -74.0060),
+    (r'\b(white house|pentagon|fbi|federal reserve|congress|senate|washington|trump|usda|fcc)\b', 'Washington, D.C., USA', 'Washington, D.C.', 38.9072, -77.0369),
+    (r'\b(ottawa|toronto|canada|canadian)\b', 'Ottawa, Canada', 'Canada', 45.4215, -75.6972),
+]
+
+
+def infer_location(e, headline):
+    text = ' '.join([headline] + [a.get('title', '') for a in list(e['outlets'].values())[:6]]).lower()
+    for pattern, label, short_label, lat, lng in GAZETTEER:
+        if re.search(pattern, text):
+            return {'label': label, 'shortLabel': short_label, 'lat': lat, 'lng': lng}
+    return None
+
+
 def coverage_line(e):
     counts = Counter(r['code'] for r in e['ratings'].values())
     left = counts['L'] + counts['LL']
@@ -326,7 +424,7 @@ def write_story(e, taken):
     la = e['outlets'][lead]
     names = sorted(e['outlets'], key=lambda o: e['outlets'][o]['published'])
     first = names[0]
-    gen = ask_claude(e)
+    gen = ask_writer(e)
     if gen and gen.get('reject'):
         return None
     if gen and gen.get('headline') and gen.get('summary'):
@@ -380,6 +478,10 @@ def write_story(e, taken):
                 story['location'] = {'label': str(loc['label']).strip(), 'shortLabel': str(loc.get('shortLabel') or loc['label']).split(',')[0].strip(), 'lat': lat, 'lng': lng}
         except (KeyError, TypeError, ValueError):
             pass
+    if not story.get('location'):
+        inferred = infer_location(e, headline)
+        if inferred:
+            story['location'] = inferred
     comparison = []
     for label, key in (('What outlets agree on', 'agree'), ('Where reports differ', 'differ')):
         pts = []
@@ -470,7 +572,7 @@ def main():
             'lastRun': now.strftime('%-d %b %Y, %H:%M'),
             'digest': digests[:4],
             'generated': 'automatic',
-            'writer': 'claude' if os.environ.get('ANTHROPIC_API_KEY') else 'template',
+            'writer': 'claude' if os.environ.get('ANTHROPIC_API_KEY') else ('groq' if os.environ.get('GROQ_API_KEY') else 'template'),
         },
         'LEGACY_IDS': {},
     })

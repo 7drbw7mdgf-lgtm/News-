@@ -329,12 +329,24 @@
       '</div></div></nav>' + searchDrawer + '</div>';
   }
 
+  var TOPIC_FALLBACK_IMAGE = {
+    uk: { src: 'assets/images/uk-westminster.jpg', alt: 'Palace of Westminster and Big Ben on the River Thames' },
+    world: { src: 'assets/images/world-peace-palace.jpg', alt: 'International diplomacy and global coverage' },
+    science: { src: 'assets/images/science-cern-detector.jpg', alt: 'Scientific research instrumentation' },
+    tech: { src: 'assets/images/tech-mac-desk.jpg', alt: 'Modern technology workspace' },
+    business: { src: 'assets/images/business-aerospace.jpg', alt: 'Industry and global commerce' },
+    finance: { src: 'assets/images/finance-city-london.jpg', alt: 'Financial district and markets' }
+  };
+
   /* ---------- Broadsheet Front Page / Topic / Saved ---------- */
   function renderLead(s) {
     var img = safeAsset(s.image);
-    var figure = img
+    var fallback = !img && TOPIC_FALLBACK_IMAGE[s.topic] ? TOPIC_FALLBACK_IMAGE[s.topic] : null;
+    var src = img || (fallback ? fallback.src : '');
+    var alt = img ? (s.imageAlt || s.headline) : (fallback ? fallback.alt : s.headline);
+    var figure = src
       ? '<figure class="hero-figure"><button class="hero-figure-btn" data-act="open" data-id="' + esc(s.id) + '" aria-label="Open ' + esc(s.headline) + '">' +
-        '<img src="' + esc(img) + '" alt="' + esc(s.imageAlt || s.headline) + '" loading="eager" decoding="async"></button></figure>'
+        '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="eager" decoding="async"></button></figure>'
       : '';
     return '<article class="hero-lead">' + figure +
       '<p class="kicker">' + esc(labelOf[s.topic]) +
@@ -668,14 +680,27 @@
   }
 
   /* ---------- Newspapers View ---------- */
+  function storiesForPaper(name) {
+    return CURRENT.filter(function (s) {
+      return s.source === name || s.cov.rows.some(function (r) { return r.name === name; });
+    }).map(function (s) {
+      var match = s.cov.rows.find(function (r) { return r.name === name; });
+      return match && match.title && match.title !== s.headline
+        ? Object.assign({}, s, { headline: match.title, source: name, time: match.date || s.time })
+        : Object.assign({}, s, { source: name });
+    });
+  }
+
   function renderPapers() {
     var papers = followed();
     var name = state.paper && papers.some(function (p) { return p.name === state.paper; }) ? state.paper : papers[0].name;
     var meta = papers.filter(function (p) { return p.name === name; })[0] || {};
-    var stories = CURRENT.filter(function (s) { return s.source === name; });
+    var stories = storiesForPaper(name);
     var tabs = papers.map(function (p) {
       var on = p.name === name;
-      return '<button class="chip' + (on ? ' on' : '') + '" data-act="paper" data-name="' + esc(p.name) + '" aria-pressed="' + on + '">' + esc(p.name) + '</button>';
+      var count = storiesForPaper(p.name).length;
+      return '<button class="chip' + (on ? ' on' : '') + '" data-act="paper" data-name="' + esc(p.name) + '" aria-pressed="' + on + '">' +
+        esc(p.name) + (count ? ' (' + count + ')' : '') + '</button>';
     }).join('') + '<button class="chip" data-act="settings">+ Add newspaper</button>';
 
     var body;
@@ -683,7 +708,7 @@
       var lead = stories[0];
       var rest = stories.slice(1);
       body = renderLead(lead) + (rest.length
-        ? '<div class="section-rule"><h2>Also in ' + esc(name) + '</h2><span>' + esc(plural(stories.length, 'story', 'stories')) + ' featured</span></div>' +
+        ? '<div class="section-rule"><h2>Also covered by ' + esc(name) + '</h2><span>' + esc(plural(stories.length, 'story', 'stories')) + ' in today’s edition</span></div>' +
           '<div class="edition-grid">' + rest.map(renderGridItem).join('') + '</div>'
         : '');
     } else {
@@ -692,11 +717,11 @@
         (meta.paywall ? ' Full articles require a subscription to this paper.' : '') + '</div>';
     }
 
-    return '<div class="page-head"><h1>Newspapers</h1><p>' + esc(plural(papers.length, 'newspaper', 'newspapers')) + ' followed · select one to view its featured stories</p></div>' +
+    return '<div class="page-head"><h1>Newspapers</h1><p>' + esc(plural(papers.length, 'newspaper', 'newspapers')) + ' followed · select one to view all stories it covered in today’s edition</p></div>' +
       '<div class="chips" role="group" aria-label="Choose a newspaper">' + tabs + '</div>' +
       '<section class="paper-sheet" aria-labelledby="paper-name">' +
       '<header class="paper-masthead"><h2 id="paper-name">' + esc(name) + '</h2>' +
-      '<span class="paper-dateline">Featured stories · ' + esc(D.META.rangeLong) + '</span></header>' + body + '</section>';
+      '<span class="paper-dateline">Edition coverage · ' + esc(D.META.rangeLong) + '</span></header>' + body + '</section>';
   }
 
   /* ---------- Native Story Reader & Coverage Comparison ---------- */
