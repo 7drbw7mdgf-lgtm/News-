@@ -215,9 +215,11 @@ def story_script_parts(story):
     return [headline] + paras
 
 
-def content_hash(provider, voice_id, parts):
+def content_hash(provider, voice_id, parts, voice_cfg=None):
     h = hashlib.sha256()
-    h.update(f'v1|{provider}|{voice_id}|'.encode('utf-8'))
+    model = os.environ.get('PHEME_ELEVENLABS_MODEL', 'eleven_multilingual_v2') if provider == 'elevenlabs' else ''
+    speaker = voice_cfg.get('elevenlabs', '') if voice_cfg and provider == 'elevenlabs' else ''
+    h.update(f'v2|{provider}|{voice_id}|{speaker}|{model}|'.encode('utf-8'))
     for part in parts:
         h.update(part.encode('utf-8'))
         h.update(b'\n\n')
@@ -467,7 +469,7 @@ def synth_elevenlabs_sync(parts, voice_cfg):
     text = '\n\n'.join(parts)
     payload = json.dumps({
         'text': text,
-        'model_id': os.environ.get('PHEME_ELEVENLABS_MODEL', 'eleven_flash_v2_5'),
+        'model_id': os.environ.get('PHEME_ELEVENLABS_MODEL', 'eleven_multilingual_v2'),
         'voice_settings': {'stability': 0.45, 'similarity_boost': 0.78, 'style': 0.25},
     }).encode('utf-8')
     req = urllib.request.Request(
@@ -491,6 +493,10 @@ def synth_elevenlabs_sync(parts, voice_cfg):
 def choose_provider():
     forced = os.environ.get('PHEME_TTS_PROVIDER', 'auto').strip().lower()
     if forced != 'auto':
+        if forced not in ('elevenlabs', 'openai', 'edge', 'kokoro'):
+            raise ValueError('Unknown PHEME_TTS_PROVIDER: ' + forced)
+        if forced == 'elevenlabs' and not os.environ.get('ELEVENLABS_API_KEY'):
+            raise ValueError('ElevenLabs requested but ELEVENLABS_API_KEY is missing. Add the GitHub Actions secret.')
         return forced
     if os.environ.get('ELEVENLABS_API_KEY'):
         return 'elevenlabs'
@@ -523,7 +529,7 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, koko
     if len(parts) < 2:
         return None
     effective_provider = voice_cfg.get('free_provider', provider) if provider == 'edge' else provider
-    digest = content_hash(effective_provider, voice_cfg['id'], parts)
+    digest = content_hash(effective_provider, voice_cfg['id'], parts, voice_cfg)
     rel_file = f"{voice_cfg['id']}/{story['id']}.mp3"
     dest = out_dir / rel_file
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -570,8 +576,16 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, koko
                     if attempt < 3:
                         await asyncio.sleep(1.5 * attempt)
 
+    # Explicit ElevenLabs production mode must never serve a different voice engine.
+    # On a provider error, leave the track unavailable rather than silently
+    # substituting Kokoro under the same voice label.
+    if effective_provider == 'elevenlabs' and os.environ.get('PHEME_TTS_STRICT') == '1':
+        print(f"ElevenLabs audio unavailable: {story['id']} ({voice_cfg['id']}): "
+              f"{type(last_err).__name__ if last_err else 'unknown'}", file=sys.stderr)
+        return None
+
     # Self-hosted Kokoro-82M: either selected for this voice or automatic offline fallback.
-    fallback_digest = content_hash('kokoro', voice_cfg['id'], parts)
+    fallback_digest = content_hash('kokoro', voice_cfg['id'], parts, voice_cfg)
     cached_fallback = _try_cache(cache_dir, voice_cfg['id'], story['id'], fallback_digest, dest)
     if cached_fallback:
         return {
@@ -647,12 +661,13 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
             'duration': item['duration'],
             'cues': item['cues'],
             'hash': item['hash'],
+            'provider': item['provider'],
         }
 
     manifest = {
         'version': 1,
         'provider': provider,
-        'fallback': 'kokoro',
+        'fallback': 'disabled' if provider == 'elevenlabs' and os.environ.get('PHEME_TTS_STRICT') == '1' else 'kokoro',
         'voices': [{'id': v['id'], 'label': v['label'], 'accent': v.get('accent', ''), 'tagline': v['tagline']} for v in selected_voices],
         'stories': stories_map,
     }
@@ -665,6 +680,8 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
         f"{len(stories_map)}/{len(edition['STORIES'])} stories ready ({fresh_count + cached_count}/{total_expected} tracks).",
         flush=True,
     )
+    if provider == 'elevenlabs' and os.environ.get('PHEME_TTS_STRICT') == '1' and (fresh_count + cached_count) != total_expected:
+        print('::warning::Some ElevenLabs recordings failed; they will not be substituted with a different provider.', file=sys.stderr)
     return 0 if stories_map else 1
 
 
