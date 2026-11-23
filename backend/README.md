@@ -6,6 +6,7 @@ The Railway service `pheme-reader-api` deploys from this repository using `backe
 - `GET /v1/articles?limit=30`: recent cached articles (up to 100)
 - `GET /v1/article?url=<encoded-original-publisher-url>`: cached lookup of a known publisher article
 - `GET /v1/corroborate?url=<encoded-original-publisher-url>`: first-pass Pheme-8 economic proposition matching, supporting and contradicting publishers, and provisional octal corroboration level
+- `GET /v1/infer?url=<encoded-original-publisher-url>`: Pheme-8 octal inference with full operation trace and no trading execution
 
 Production endpoint: https://pheme-reader-api-production.up.railway.app
 
@@ -39,3 +40,20 @@ The existing Fasthosts site and deployment workflow remain separate. Railway upt
 The `backend/corroboration.py` module scans source-attributed RSS titles and descriptions in the existing cache. It detects explicit macroeconomic and earnings-event phrases, requires a recognizable entity, compares only the *same entity and event*, and keeps links to original articles. The independent source count uses publisher identity as a weak proxy and excludes copied identical headlines, speculative/denied statements and records with missing or stale publication times. Pheme's own editorial summaries are **never** counted as publisher evidence.
 
 When there are zero qualifying external reports, the result remains **unverified**, not `0₈` or false. One independent supporting publisher produces provisional `4₈`, two produce `5₈`, and three or more produce `6₈`. Contradicting publications produce `contested` with no numeric grade. These are strictly *corroboration coverage levels*, not evidence that the event occurred, publisher truthfulness, market-move probability or investment advice. `7₈` is deliberately not assigned without primary-source verification, which this prototype does not implement. Related reporting can share a wire, ownership or original source even with different headlines. The rule-based extractor is incomplete and should be replaced or reviewed against annotated articles before using for any real-world decision. No trading or broker API is connected.
+
+## Pheme-8 octal inference (Element 2)
+
+The pure Python `backend/octal_engine.py` implements an explicit eight-valued algebra, with legal values `0₈` to `7₈` and a **separate null / unknown state**:
+
+- `AND8(a,b) = min(a,b)`
+- `OR8(a,b) = max(a,b)`
+- `NOT8(a) = 7-a`
+- `IMPLIES8(a,b) = min(7,7-a+b)` (finite Łukasiewicz implication)
+
+These are mathematically specified *evidence-strength* operations, not classical Boolean gates. Any operand that is unknown causes the result to be unknown. The engine evaluates a validated, bounded JSON syntax tree rather than Python expressions and emits a tree showing input and intermediate octal values.
+
+`/v1/infer` calls the cross-source `/v1/corroborate` process for a cached article and combines the eligible extracted propositions with `AND8` by default. **Contested** propositions veto a numeric result, **unverified, speculative, stale, or unsupported** propositions produce `null`, and a numeric result is returned only if all premises have qualifying cross-publisher corroboration.
+
+This deliberately conservative default does not assume that multiple distinct economic events are causally linked. The result is not a truth probability, buy/sell signal, source-reliability score or brokerage instruction. No live execution exists.
+
+Running the checks: `python3 -m unittest discover -s scripts -p 'test_octal_engine.py'`.
