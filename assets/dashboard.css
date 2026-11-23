@@ -776,3 +776,10 @@ body.reader-focus .dashboard-body {
  .ws-star-button { font-size:11px; }
  .ws-tabs button { padding:11px 13px; }
 }
+
+
+.ws-company-switch { display:flex; flex:none; gap:6px; padding:9px 13px; border-bottom:1px solid var(--rule-soft); }
+.ws-company-switch button { border:1px solid var(--rule); border-radius:7px; padding:7px 12px; min-height:32px; background:transparent; color:var(--ink-muted); font:650 11px/1.3 var(--sans); }
+.ws-company-switch button[aria-pressed=true] { background:var(--blue); color:#fff; border-color:var(--blue); }
+.ws-company-switch button:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+.ws-company-chart .tradingview-widget-container { overflow:hidden; }
