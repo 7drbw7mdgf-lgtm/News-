@@ -34,6 +34,7 @@ jobs:
         run: |
           node scripts/build-editions.mjs --check
           python3 -m unittest discover -s scripts -p 'test_native_articles.py'
+          python3 -m unittest discover -s scripts -p 'test_publisher_reader.py'
           node --check assets/app.js
           node --check scripts/scrape-indian-express.mjs
           python3 scripts/update-markets.py --check
