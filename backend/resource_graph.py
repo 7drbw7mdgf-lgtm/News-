@@ -81,6 +81,11 @@ def validate(graph):
             raise ValueError("Duplicate directed edge")
         seen.add(key)
         adj[a].append(b)
+        if "passThrough" in edge:
+            import math
+            factor = edge["passThrough"]
+            if isinstance(factor, bool) or not isinstance(factor, (float, int)) or not math.isfinite(factor) or not 0 <= factor <= 1:
+                raise ValueError("Pass-through must be a number between 0 and 1")
         if "quantity" in edge:
             quantity = edge["quantity"]
             if isinstance(quantity, bool) or not isinstance(quantity,(float,int)) or not 0 < quantity <= 1e12 or edge.get("unit") not in UNITS:
