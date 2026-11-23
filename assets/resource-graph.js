@@ -41,6 +41,52 @@
   };
   var graph = JSON.parse(JSON.stringify(SEED));
   var active = 'dc', notice = '';
+
+  /* Stage 4: source-backed candidates; never evidence that an edge is causal. */
+  var evidence = null, evidenceStatus = 'idle', fetchedAt = 0;
+  var EVIDENCE_API = 'https://pheme-reader-api-production.up.railway.app/v1/resource-evidence';
+  function articleUrl(value) {
+    if (typeof value !== 'string' || !/^https:\/\//i.test(value)) return '';
+    try { var u=new URL(value); return u.protocol==='https:'&&!u.username&&!u.password?u.href:''; }
+    catch(e) { return ''; }
+  }
+  function refreshEvidence(force) {
+    if (!document.getElementById('rg-root')) return;
+    if (evidenceStatus==='loading' || (!force && evidence && Date.now()-fetchedAt<300000)) return;
+    evidenceStatus='loading';paint();
+    fetch(EVIDENCE_API,{mode:'cors',credentials:'omit',cache:'no-store'})
+      .then(function(response){ if(!response.ok)throw Error('API unavailable');return response.json(); })
+      .then(function(data){
+        if(!data || data.model!=='rss-resource-candidates-v1'||!data.resources)throw Error('Invalid response');
+        evidence=data.resources;evidenceStatus='ready';fetchedAt=Date.now();paint();
+      })
+      .catch(function(){evidenceStatus='error';paint();});
+  }
+  function candidateLabel(id) {
+    var entry=evidence&&evidence[id];
+    if(!entry)return 'No evidence';
+    if(entry.status==='contested')return 'Contested';
+    if(entry.octalCorroboration!==null&&entry.octalCorroboration!==undefined)
+      return String(entry.octalCorroboration)+'₈ / '+String(entry.direction||'unknown');
+    return entry.status==='unverified'?'Unverified':'No evidence';
+  }
+  function newsInspector(node) {
+    var entry=evidence&&evidence[node.id];
+    var heading='<div class="rg-evidence-head"><h3>News propositions</h3><button type="button" data-rg="refresh-evidence">Refresh</button></div>'+
+      '<p class="rg-evidence-caution">Publisher headline matches only; no graph edge, financial exposure or price change is verified.</p>';
+    if(evidenceStatus==='loading')return heading+'<p>Loading publisher articles…</p>';
+    if(evidenceStatus==='error')return heading+'<p>Evidence service unavailable. Editing works offline.</p>';
+    if(!entry)return heading+'<p>No matching extractor for this custom node.</p>';
+    var links=(entry.articles||[]).filter(function(row){return articleUrl(row.url);}).slice(0,8).map(function(row){
+      return '<li><a href="'+escapeText(articleUrl(row.url))+'" target="_blank" rel="noopener noreferrer">'+
+        escapeText(row.headline)+'</a><small>'+escapeText(row.publisher)+' · '+escapeText(row.direction)+
+        ' · '+escapeText(String(row.published||'').slice(0,10))+'</small></li>';
+    }).join('');
+    return heading+'<div class="rg-evidence-score"><strong>'+escapeText(candidateLabel(node.id))+
+      '</strong><span>'+Number(entry.publisherCount||0)+' directional publisher candidates</span></div>'+
+      (links?'<ul class="rg-evidence-list">'+links+'</ul>':'<p>No recent matching publisher articles.</p>');
+  }
+
   try {
     var stored = JSON.parse(localStorage.getItem(KEY) || 'null');
     if (stored) { validate(stored); graph = stored; }
@@ -138,11 +184,11 @@
       '<h3>Outputs ('+outgoing.length+')</h3>'+
       '<ul class="rg-rel-list">'+(outgoing.map(function(e){
         return '<li>'+escapeText(find(e.target).label)+' <em>'+escapeText(e.relation.replace(/_/g,' '))+'</em><button type="button" data-rg="delete-edge" data-from="'+escapeText(e.source)+'" data-to="'+escapeText(e.target)+'" aria-label="Remove relationship">×</button></li>';
-      }).join('')||'<li>None</li>')+'</ul>';
+      }).join('')||'<li>None</li>')+'</ul>'+newsInspector(node);
   }
   function html() {
-    return '<section class="rg-workspace"><div class="rg-header"><div><h2>Economic dependency network</h2><p>Primary resources → production → secondary resources → companies → financial results</p></div><span class="rg-tag">Stage 3 · Editable prototype</span></div>'+
-      '<p class="rg-disclaimer">Illustrative production relationships, not verified financial exposures. No pricing, predictions or broker orders.</p>'+
+    return '<section class="rg-workspace"><div class="rg-header"><div><h2>Economic dependency network</h2><p>Primary resources → production → secondary resources → companies → financial results</p></div><span class="rg-tag">Stage 4 · News-linked prototype</span></div>'+
+      '<p class="rg-disclaimer">Illustrative production relationships. Publisher headline matches do not establish causal edges or financial exposures. No broker orders.</p>'+
       '<div class="rg-toolbar"><label>New node <input id="rg-new-label" placeholder="e.g. LNG shipping" maxlength="90"></label><label>Type<select id="rg-new-type">'+options(TYPES,'primary')+'</select></label><button type="button" data-rg="add-node">Add resource</button><button type="button" data-rg="reset">Reset demo</button></div>'+
       '<div class="rg-toolbar rg-connect"><label>From<select id="rg-from">'+graph.nodes.map(function(n){return '<option value="'+escapeText(n.id)+'"'+(n.id===active?' selected':'')+'>'+escapeText(n.label)+'</option>';}).join('')+'</select></label>'+
       '<label>Relation<select id="rg-relation">'+options(Object.keys(RELATIONS),'requires')+'</select></label>'+
@@ -168,6 +214,7 @@
     var button=e.target.closest('[data-rg]');
     if(!button) return;
     var act=button.getAttribute('data-rg');
+    if(act==='refresh-evidence'){refreshEvidence(true);return;}
     if(act==='add-node'){
       var label=(root.querySelector('#rg-new-label').value||'').trim(),type=root.querySelector('#rg-new-type').value;
       if(!label){notice='Enter a resource name.';paint();return;}
@@ -203,5 +250,5 @@
       e.preventDefault();active=e.target.getAttribute('data-rg-node');notice='';paint();
     }
   });
-  window.PhemeResourceGraph={html:function(){return '<div id="rg-root">'+html()+'</div>';},paint:paint};
+  window.PhemeResourceGraph={html:function(){return '<div id="rg-root">'+html()+'</div>';},paint:paint,refresh:refreshEvidence};
 })();
