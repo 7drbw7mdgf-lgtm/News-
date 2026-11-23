@@ -2889,6 +2889,50 @@
       '</div><div class="settings-foot"><button class="darkbtn" data-act="close">Done</button></div></div>';
   }
 
+  /* Workspace widget controls: enlarge dense third-party embeds without a page reload. */
+  function enhanceMarketWidgets() {
+    if (state.view !== 'trading' || state.reading) return;
+    app.querySelectorAll('.ws-panel .ws-widget').forEach(function (widget, idx) {
+      var head = widget.querySelector(':scope > .ws-widget-head');
+      if (!head || head.querySelector('[data-act="wsexpand"]')) return;
+      var heading = head.querySelector('h2,h3');
+      if (!heading) return;
+      if (!widget.id) widget.id = 'ws-panel-' + idx;
+      var controls = document.createElement('span');
+      controls.className = 'ws-widget-actions';
+      var control = document.createElement('button');
+      control.type = 'button';
+      control.className = 'ws-expand-button';
+      control.setAttribute('data-act', 'wsexpand');
+      control.setAttribute('data-id', widget.id);
+      control.setAttribute('aria-label', 'Expand ' + heading.textContent);
+      control.setAttribute('aria-expanded','false');
+      control.title = 'Expand widget';
+      control.textContent = '⤢';
+      controls.appendChild(control);
+      head.appendChild(controls);
+    });
+  }
+
+  function closeExpandedMarketWidget() {
+    var widget = app.querySelector('.ws-widget.ws-expanded');
+    if (!widget) return false;
+    widget.classList.remove('ws-expanded');
+    document.body.classList.remove('ws-expanded-active');
+    var button = widget.querySelector('[data-act="wsexpand"]');
+    if (button) {
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-label', button.getAttribute('aria-label').replace(/^Collapse /,'Expand '));
+      button.textContent = '⤢';
+      button.title = 'Expand widget';
+      button.focus();
+    }
+    if (exchangeMap && widget.querySelector('#exchange-world-map')) {
+      setTimeout(function () { if (exchangeMap) exchangeMap.invalidateSize(); }, 0);
+    }
+    return true;
+  }
+
   function render(opts) {
     document.body.classList.toggle('market-chart-open', !!state.marketOpen);
     var previousMarkets = document.getElementById('market-widgets');
@@ -2933,6 +2977,7 @@
     mountTradingViewMarkets();
     mountWorkspaceCompanyChart();
     mountWorkspaceScreener();
+    enhanceMarketWidgets();
     updateReadProgress();
     updateSiteScrollTone();
     if (opts && opts.focus) {
@@ -2961,6 +3006,29 @@
     var id = t.getAttribute('data-id');
     if (act !== 'headermenu') state.utilityOpen = null;
     switch (act) {
+      case 'wsexpand':
+        var expanding = app.querySelector('#' + id);
+        if (!expanding || !expanding.classList.contains('ws-widget')) break;
+        if (expanding.classList.contains('ws-expanded')) {
+          closeExpandedMarketWidget();
+        } else {
+          closeExpandedMarketWidget();
+          expanding.classList.add('ws-expanded');
+          document.body.classList.add('ws-expanded-active');
+          var expandButton = expanding.querySelector('[data-act="wsexpand"]');
+          if (expandButton) {
+            var expandedName = (expanding.querySelector('.ws-widget-head h2,.ws-widget-head h3') || {}).textContent || 'widget';
+            expandButton.setAttribute('aria-expanded','true');
+            expandButton.setAttribute('aria-label','Collapse ' + expandedName);
+            expandButton.textContent = '×';
+            expandButton.title = 'Close expanded widget';
+            expandButton.focus();
+          }
+          if (exchangeMap && expanding.querySelector('#exchange-world-map')) {
+            setTimeout(function () { if (exchangeMap) exchangeMap.invalidateSize(); }, 0);
+          }
+        }
+        break;
       case 'wstab':
         if (['overview','company','heatmap','movers','calendar','news','map','discover'].indexOf(id) < 0) break;
         state.marketWorkspaceTab = id;
@@ -3437,6 +3505,7 @@
       return;
     }
     if (e.key === 'Escape') {
+      if (closeExpandedMarketWidget()) return;
       if (state.marketOpen) { var marketId = state.marketOpen; state.marketOpen = null; render({ focus: 'market-card-' + marketId }); }
       else if (state.settingsOpen) { state.settingsOpen = false; render({ focus: 'settings-toggle' }); }
       else if (state.utilityOpen) { var menuId = state.utilityOpen; state.utilityOpen = null; render({ focus: 'menu-toggle-' + menuId }); }
