@@ -8,6 +8,7 @@ The Railway service `pheme-reader-api` deploys from this repository using `backe
 - `GET /v1/corroborate?url=<encoded-original-publisher-url>`: first-pass Pheme-8 economic proposition matching, supporting and contradicting publishers, and provisional octal corroboration level
 - `GET /v1/infer?url=<encoded-original-publisher-url>`: Pheme-8 octal inference with full operation trace and no trading execution
 - `GET /v1/primary-costs?industry=ai_infrastructure`: reusable Primary Costs taxonomy, industry-relevance candidates and known overlaps
+- `GET /v1/resource-graph`: read-only, typed, validated example production network with node/edge schema
 
 Production endpoint: https://pheme-reader-api-production.up.railway.app
 
@@ -77,3 +78,11 @@ The pure `aggregate(industry, evidence, floor=4)` function accepts *previously c
 **Current integration boundary:** the taxonomic REST route exists, but news-to-cost classification, company-specific exposures, a visual website dashboard and broker execution are **not implemented**. Adding a category does not assert that Pheme's present RSS corpus contains relevant claims for it. The `aggregate` function can already be tested with validated structured inputs; exposing it publicly would require a reviewed input validator and issuer mapping.
 
 Run: `python3 -m unittest discover -s scripts -p 'test_primary_costs.py'`.
+
+## Stage 3: typed resource production graph
+
+The pure-Python `backend/resource_graph.py` models five node types: **primary**, **secondary**, **process**, **company**, and **financial**. Four typed directed relations are supported: `requires`, `produces`, `supplies`, and `affects_cost`. The validator enforces permissible source/target types, unique IDs, no self-loops or duplicate directed edges, and acyclic graphs. Any optional quantitative edge requires a positive number and an explicit unit, but this stage does **not** estimate a causal coefficient or propagate costs.
+
+The AI infrastructure demonstration is illustrative and should not be represented as a verified company's actual production network. The endpoint `/v1/resource-graph` exposes a schema and the seed example; browser users can edit a separate client-local copy in **Trading → Resource network** on both desktop and mobile. It provides a horizontally scrollable SVG, node inspector, type editing, add/delete nodes, validated links, reset, and JSON export. Drafts save to browser localStorage only: no account sync, import of arbitrary JSON, persistence to Supabase, or public server mutation exists.
+
+Economic exposure measurement, scenario propagation, correlation-aware cost aggregation, evidence linkage and trade execution are **not implemented in this graph editor**. Tests: `python3 -m unittest discover -s scripts -p 'test_resource_graph.py'`.
