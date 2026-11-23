@@ -2284,16 +2284,15 @@
   function loadPublisherArticleContent(entry) {
     var url = safeExternalUrl(entry && entry.url);
     if (!url || publisherReaderCache[url]) return;
+    // A BBC deep link can arrive before the RSS feed or after it has rolled off.
+    // Render a clearly labelled external preview either way.
+    if (entry.name === 'BBC News' && /^https:\/\/(?:www\.)?bbc\.(?:co\.uk|com)\/news\//i.test(url)) {
+      publisherReaderCache[url] = { status: 'external' };
+      return;
+    }
     if (!publisherFeed && !isKnownPublisherArticle(entry.name, url)) return;
     if (!isKnownPublisherArticle(entry.name, url)) {
       publisherReaderCache[url] = { status: 'unavailable' };
-      return;
-    }
-    // BBC News pages are not a public CORS-enabled HTML API. Browser-side
-    // article extraction cannot reliably work, so show permitted RSS metadata
-    // and send readers to the publisher rather than displaying a fake spinner.
-    if (entry.name === 'BBC News' && /^https:\/\/(?:www\.)?bbc\.(?:co\.uk|com)\/news\//i.test(url)) {
-      publisherReaderCache[url] = { status: 'external' };
       return;
     }
     var result = publisherReaderCache[url] = { status: 'loading' };
