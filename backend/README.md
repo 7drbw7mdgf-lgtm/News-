@@ -9,6 +9,7 @@ The Railway service `pheme-reader-api` deploys from this repository using `backe
 - `GET /v1/infer?url=<encoded-original-publisher-url>`: Pheme-8 octal inference with full operation trace and no trading execution
 - `GET /v1/primary-costs?industry=ai_infrastructure`: reusable Primary Costs taxonomy, industry-relevance candidates and known overlaps
 - `GET /v1/resource-graph`: read-only, typed, validated example production network with node/edge schema
+- `GET /v1/resource-evidence`: source-backed recent resource-headline matches, directional corroboration candidates and explicit uncertainty
 
 Production endpoint: https://pheme-reader-api-production.up.railway.app
 
@@ -86,3 +87,15 @@ The pure-Python `backend/resource_graph.py` models five node types: **primary**,
 The AI infrastructure demonstration is illustrative and should not be represented as a verified company's actual production network. The endpoint `/v1/resource-graph` exposes a schema and the seed example; browser users can edit a separate client-local copy in **Trading → Resource network** on both desktop and mobile. It provides a horizontally scrollable SVG, node inspector, type editing, add/delete nodes, validated links, reset, and JSON export. Drafts save to browser localStorage only: no account sync, import of arbitrary JSON, persistence to Supabase, or public server mutation exists.
 
 Economic exposure measurement, scenario propagation, correlation-aware cost aggregation, evidence linkage and trade execution are **not implemented in this graph editor**. Tests: `python3 -m unittest discover -s scripts -p 'test_resource_graph.py'`.
+
+## Stage 4: connecting publisher reporting to resource nodes
+
+The `backend/resource_evidence.py` extractor scans **publisher-authored RSS headlines** for explicit seed-resource mentions and directional language. It excludes Pheme-authored editorial summaries, stale/undated articles, and qualified/negated wording as corroborating evidence. Two distinct named publishers with directionally similar *nonidentical* reports produce an illustrative `4₈` corroboration coverage level; three produce `5₈`; four or more `6₈`. Contradictions produce `contested` with a null score. Missing sources are unknown, never `0₈`.
+
+**This only links candidate news to resource nodes.** A publisher agreement is not proof; a word match is not a validated economic proposition; source feeds may share wire stories, owners, or primary evidence. News about a gas price rise does **not** verify that the gas→power-production relationship holds for any specified supplier or company. None of these resources has a measured issuer-specific price exposure or demonstrated trading signal.
+
+`GET /v1/resource-evidence` returns all seed-node candidates; passing `?node=gas` restricts to gas. The graph inspector in **Trading → Resource network** fetches this read-only service and displays links to original publisher reports, timestamps, direction and conditional octal corroboration. Custom nodes lack an approved extractor and remain explicitly unsupported. Evidence results are cached for five minutes in the browser and refreshed manually or when revisiting after expiration. On API failure the resource editor continues to function without claiming confirmed evidence.
+
+No broker orders, causal edge verification, numeric cost propagation or inferred security returns are implemented here.
+
+Tests: `python3 -m unittest discover -s scripts -p 'test_resource_evidence.py'`.
