@@ -10,6 +10,7 @@ The Railway service `pheme-reader-api` deploys from this repository using `backe
 - `GET /v1/primary-costs?industry=ai_infrastructure`: reusable Primary Costs taxonomy, industry-relevance candidates and known overlaps
 - `GET /v1/resource-graph`: read-only, typed, validated example production network with node/edge schema
 - `GET /v1/resource-evidence`: source-backed recent resource-headline matches, directional corroboration candidates and explicit uncertainty
+- `GET /v1/resource-scenario?shock=gas&percent=20`: read-only hypothetical scenario across the demonstration graph; never a forecast
 
 Production endpoint: https://pheme-reader-api-production.up.railway.app
 
@@ -99,3 +100,13 @@ The `backend/resource_evidence.py` extractor scans **publisher-authored RSS head
 No broker orders, causal edge verification, numeric cost propagation or inferred security returns are implemented here.
 
 Tests: `python3 -m unittest discover -s scripts -p 'test_resource_evidence.py'`.
+
+## Stage 5: quantitative shock scenarios (illustrative)
+
+`backend/resource_scenario.py` introduces a separate economic-assumption layer. An edge may have an optional `passThrough` coefficient from 0 to 1, specifying a *hypothetical relative-percent sensitivity of the target's metric to the source's metric*. A resource-price shock of `s` percent travels across one edge as `s × passThrough`; multi-step effects multiply coefficients, **not octal evidence scores**. The example assigns four **invented, explicitly demonstrative** coefficients to a gas → power generation → electricity → AI data centre → operating-margin path, without claiming they are estimated economic facts.
+
+The engine validates acyclic typed graph structure, finite shock bounds (-100% to +100%), and finite coefficient bounds. A missing coefficient yields an unknown/unreached result, not a numeric zero. If a resource reaches the same downstream node along multiple paths, the engine flags `overlap-review-required`, produces no change estimate for that node and propagates the review requirement downstream rather than double-counting pathways. All calculations are hypothetical relative changes, not prices, cash-flow forecasts or security valuations.
+
+The front-end resource editor provides a **Cost shock simulator**, user-editable coefficients in the node inspector, and a scenario output table. Edits remain in browser storage, and the demo graph can be reset to the annotated default assumptions. The public backend offers `/v1/resource-scenario?shock=gas&percent=20` for the fixed demonstrative graph only; it does not accept or persist arbitrary client graphs.
+
+This stage **does not** connect empirical price series, unit-consistent cost-accounting parameters, audited issuer exposures, sensitivity estimation, source evidence gates or investor returns. The coefficient on a financial outcome is purely illustrative, not a real operating-margin elasticity. Evidence strength from Pheme-8 Stage 4 never becomes an economic coefficient. Trade execution remains disabled. Run `python3 -m unittest discover -s scripts -p 'test_resource_scenario.py'`.
