@@ -42,6 +42,10 @@ octal_spec = importlib.util.spec_from_file_location("pheme_octal", ROOT / "backe
 OCTAL = importlib.util.module_from_spec(octal_spec)
 octal_spec.loader.exec_module(OCTAL)
 
+primary_cost_spec = importlib.util.spec_from_file_location("pheme_primary_costs", ROOT / "backend" / "primary_costs.py")
+PRIMARY_COSTS = importlib.util.module_from_spec(primary_cost_spec)
+primary_cost_spec.loader.exec_module(PRIMARY_COSTS)
+
 
 def read_cached():
     global ITEMS
@@ -258,6 +262,13 @@ class Handler(BaseHTTPRequestHandler):
                 "model": "octal-normalized-multiplication-and-filtering-v2",
                 "inference": OCTAL.infer_from_corroboration(assessed),
             })
+            return
+        if path.path == "/v1/primary-costs":
+            industry = (query.get("industry") or [None])[0]
+            try:
+                self.respond(PRIMARY_COSTS.taxonomy(industry))
+            except ValueError:
+                self.respond({"error": "Unknown industry profile"}, 400)
             return
         if path.path == "/v1/articles":
             try:
