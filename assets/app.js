@@ -46,7 +46,7 @@
     publisherArticle: null,
     settingsOpen: false, searchOpen: false, utilityOpen: null, srcQuery: '', query: '',
     headerPrefs: { showClock: true, markets: ['london', 'newyork', 'shanghai'] },
-    marketOpen: null, marketRange: '6M', marketHover: null, tradingMarket: 'london', marketNewsFocus: 'all', marketWatch: ['Apple', 'Microsoft', 'Nvidia'], marketWorkspaceTab: 'overview', marketSearch: '', marketSelectedCompany: 'AAPL',
+    marketOpen: null, marketRange: '6M', marketHover: null, tradingMarket: 'london', marketNewsFocus: 'all', marketWatch: ['Apple', 'Microsoft', 'Nvidia'], marketWorkspaceTab: 'overview', marketSearch: '', marketSelectedCompany: 'AAPL', marketCompanyPanel: 'chart',
     saved: {}, added: {}, highlights: {},
     readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused', voice: 'ava', rate: 1 },
     readerFocus: false, aaOpen: false, covFilter: 'all', copiedId: null,
@@ -1469,8 +1469,14 @@
       '<button class="ws-star-button" data-act="wswatch" data-id="' + esc(company.ticker) + '" aria-pressed="' +
       watched + '">' + (watched ? '★ In watchlist' : '☆ Add to watchlist') + '</button></div>' +
       '<div class="ws-company-layout"><section class="ws-widget ws-widget-company-chart">' +
-      '<div class="ws-widget-head"><h3>Interactive price chart</h3><span>TradingView · may be delayed</span></div>' +
-      '<div class="ws-company-chart" id="ws-company-chart" aria-label="Company TradingView chart"><p class="ws-empty">Loading chart…</p></div>' +
+      '<div class="ws-widget-head ws-company-widget-head"><h3>Company intelligence</h3><span>TradingView · may be delayed</span></div>' +
+      '<div class="ws-company-switch" role="group" aria-label="Company data views">' +
+      [{id:'chart',name:'Chart'},{id:'financials',name:'Financials'},{id:'profile',name:'Profile'}].map(function (option) {
+        var active = state.marketCompanyPanel === option.id;
+        return '<button type="button" data-act="wscompanypanel" data-id="' + option.id +
+          '" aria-pressed="' + active + '">' + option.name + '</button>';
+      }).join('') + '</div>' +
+      '<div class="ws-company-chart" id="ws-company-chart" aria-label="Company TradingView information"><p class="ws-empty">Loading provider information…</p></div>' +
       '<div class="ws-widget-foot"><a href="https://www.tradingview.com/symbols/' +
       encodeURIComponent(company.exchange) + '-' + encodeURIComponent(company.ticker.replace('.','')) +
       '/" target="_blank" rel="noopener noreferrer">Open instrument on TradingView ↗</a></div></section>' +
@@ -1597,6 +1603,7 @@
     if (!target || target.dataset.loaded === 'yes') return;
     target.dataset.loaded = 'yes';
     var company = selectedMarketCompany();
+    var mode = state.marketCompanyPanel;
     var container = document.createElement('div');
     container.className = 'tradingview-widget-container';
     container.style.height = '100%';
@@ -1607,28 +1614,41 @@
     chart.style.width = '100%';
     var attribution = document.createElement('div');
     attribution.className = 'tradingview-widget-copyright';
-    attribution.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow noreferrer" target="_blank">Charts by TradingView</a>';
+    attribution.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow noreferrer" target="_blank">Company data by TradingView</a>';
     container.appendChild(chart);
     container.appendChild(attribution);
     target.replaceChildren(container);
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
-    script.textContent = JSON.stringify({
-      symbols: [[company.name + '|' + company.tv]],
-      chartOnly: false, width: '100%', height: '100%',
-      locale: 'en', colorTheme: 'light', autosize: true,
-      showVolume: true, showMA: false, hideDateRanges: false,
-      hideMarketStatus: false, hideSymbolLogo: false,
-      scalePosition: 'right', scaleMode: 'Normal', fontFamily: 'Inter, sans-serif',
-      fontSize: '11', noTimeScale: false,
-      valuesTracking: '1', changeMode: 'price-and-percent',
-      chartType: 'area', lineWidth: 2,
-      dateRanges: ['1d|1','1m|30','3m|60','12m|1D','all|1M']
-    });
+    var base = 'https://s3.tradingview.com/external-embedding/';
+    var options = { colorTheme:'light', isTransparent:false, locale:'en', width:'100%', height:'100%' };
+    if (mode === 'financials') {
+      script.src = base + 'embed-widget-financials.js';
+      options.symbol = company.tv;
+      options.displayMode = 'regular';
+    } else if (mode === 'profile') {
+      script.src = base + 'embed-widget-symbol-profile.js';
+      options.symbol = company.tv;
+    } else {
+      script.src = base + 'embed-widget-symbol-overview.js';
+      options.symbols = [[company.name + '|' + company.tv]];
+      options.chartOnly = false;
+      options.autosize = true;
+      options.showVolume = true;
+      options.showMA = false;
+      options.hideDateRanges = false;
+      options.hideMarketStatus = false;
+      options.hideSymbolLogo = false;
+      options.scalePosition = 'right';
+      options.scaleMode = 'Normal';
+      options.chartType = 'area';
+      options.lineWidth = 2;
+      options.dateRanges = ['1d|1','1m|30','3m|60','12m|1D','all|1M'];
+    }
+    script.textContent = JSON.stringify(options);
     script.onerror = function () {
-      target.innerHTML = '<p class="ws-empty">Chart unavailable. Open the instrument on TradingView using the link below.</p>';
+      target.innerHTML = '<p class="ws-empty">This TradingView view is unavailable. Try another tab or open the company on TradingView.</p>';
     };
     container.appendChild(script);
   }
@@ -2629,6 +2649,19 @@
         state.marketWorkspaceTab = id;
         hideWorkspaceSearchResults();
         render();
+        break;
+      case 'wscompanypanel':
+        if (['chart','financials','profile'].indexOf(id) < 0) break;
+        state.marketCompanyPanel = id;
+        var companyWidget = app.querySelector('#ws-company-chart');
+        if (companyWidget) {
+          companyWidget.dataset.loaded = '';
+          companyWidget.innerHTML = '<p class="ws-empty">Loading company information…</p>';
+        }
+        app.querySelectorAll('[data-act="wscompanypanel"]').forEach(function (button) {
+          button.setAttribute('aria-pressed', String(button.getAttribute('data-id') === id));
+        });
+        mountWorkspaceCompanyChart();
         break;
       case 'wscompany':
         var selectedCompany = MARKET_DIRECTORY.find(function (c) { return c.ticker === id; });
