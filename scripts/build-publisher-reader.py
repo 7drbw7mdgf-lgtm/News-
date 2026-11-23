@@ -162,13 +162,24 @@ def edition_references(path=None):
     if start < 0 or end < 0:
         raise ValueError("Current Pheme edition JSON markers not found")
     edition = json.loads(source[start + len(start_marker):end])
+    archive_marker = "window.DAYBREAK_ARCHIVE = "
+    archive_start = source.find(archive_marker, end)
+    archive = []
+    if archive_start >= 0:
+        archive_source = source[archive_start + len(archive_marker):].strip()
+        archive = json.loads(archive_source.removesuffix(";"))
     result = []
-    for story in edition.get("STORIES", []):
-        for row in edition.get("COVERAGE", {}).get(story.get("id"), []):
+    current = [(story, edition.get("COVERAGE", {}).get(story.get("id"), []))
+               for story in edition.get("STORIES", [])]
+    previous = [(story, story.get("coverage", [])) for story in archive]
+    for story, coverage in current + previous:
+        for row in coverage:
             if len(row) < 3 or not isinstance(row[2], str):
                 continue
             publisher, date, url = row[:3]
-            title = row[3] if len(row) > 3 and row[3] else story.get("headline", "")
+            # Older archive links often have no publisher-specific article
+            # title. Never misattribute Pheme's editorial headline to them.
+            title = row[3] if len(row) > 3 and row[3] else ""
             if not isinstance(publisher, str) or not isinstance(title, str):
                 continue
             result.append({
@@ -176,6 +187,7 @@ def edition_references(path=None):
                 "published": "", "dateLabel": date, "status": "edition-reference",
                 "summary": "", "image": "",
                 "context": str(story.get("summary") or "")[:500],
+                "editorialHeadline": str(story.get("headline") or "")[:320],
             })
     return result
 
