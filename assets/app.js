@@ -2318,6 +2318,13 @@
       publisherReaderCache[url] = { status: 'external' };
       return;
     }
+    // The server cache supplies a stable source reference even when publisher
+    // HTML is blocked by CORS or the item has vanished from the rolling RSS.
+    // Do not retry arbitrary external HTML in the user's browser.
+    if (entry.name !== 'Indian Express') {
+      publisherReaderCache[url] = { status: 'external' };
+      return;
+    }
     if (!publisherFeed && !isKnownPublisherArticle(entry.name, url)) return;
     if (!isKnownPublisherArticle(entry.name, url)) {
       publisherReaderCache[url] = { status: 'unavailable' };
@@ -2370,7 +2377,8 @@
   }
 
   function renderPublisherArticle(entry) {
-    var serverItem = serverArticleFor(entry.url);
+    var candidate = serverArticleFor(entry.url);
+    var serverItem = candidate && candidate.publisher === entry.name ? candidate : null;
     var item = publisherArticleFor(entry.name, entry.url) || serverItem || entry;
     var extraction = publisherReaderCache[safeExternalUrl(entry.url)];
     var serverFullText = serverItem && serverItem.status === 'licensed-full-text' &&
@@ -2381,9 +2389,11 @@
     var published = (extraction && extraction.status === 'ready' && extraction.published) || item.published || entry.published;
     var image = safeAsset(item.image || entry.image);
     var safe = safeExternalUrl(entry.url);
+    var isReference = serverItem && serverItem.status === 'edition-reference' && !publisherArticleFor(entry.name, entry.url);
+    var hasContext = isReference && serverItem.context;
     return '<article class="source-reader" aria-labelledby="source-reader-title">' +
-      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : 'Publisher RSS preview') + '</span></div>' +
-      '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : 'Publisher RSS') + '</p>' +
+      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : isReference ? 'Source reference' : 'Publisher RSS preview') + '</span></div>' +
+      '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : isReference ? 'Source referenced in Pheme edition' : 'Publisher RSS') + '</p>' +
       (published ? '<time>' + esc(articlePublishedLabel(published)) + '</time>' : '') +
       (extraction && extraction.byline ? '<p class="source-reader-byline">' + esc(extraction.byline) + '</p>' : '') +
       '<h1 id="source-reader-title">' + esc(title) + '</h1></header>' +
@@ -2394,12 +2404,16 @@
         '</div>' : extraction && extraction.status === 'ready'
         ? '<div class="source-reader-content">' + extraction.content + '</div>'
         : (summary ? '<p class="source-reader-summary">' + esc(summary) + '</p>'
+        : hasContext
+        ? '<div class="source-reader-context"><strong>Pheme editorial context — not publisher text</strong><p>' + esc(serverItem.context) + '</p></div>'
         : '<p class="notice">No publisher RSS excerpt was supplied. Continue to the original article for full reporting.</p>')) +
       (serverFullText ? '<p class="source-reader-note">Article text supplied through an approved publisher integration, cached on Pheme’s server. Attribution and original link retained.</p>' :
         extracted ? '<p class="source-reader-note">Readability cleaned the publicly available article page. Restricted or paywalled text is not retrieved.</p>' :
         '<p class="source-reader-note">' +
         (extraction && extraction.status === 'external'
-          ? 'This is a publisher RSS preview, not the full BBC article. The BBC page cannot be reproduced inside Pheme without suitable access rights. Use the link below to read it at BBC News.'
+          ? (isReference
+              ? 'The publisher article is no longer in the available RSS feed. Pheme retained its source link and headline from the editorial edition; the full publisher text has not been retrieved.'
+              : 'Publisher-hosted article text is not available for authorised in-site reading. The latest available RSS preview appears above; open the original link for the full story.')
           : extraction && extraction.status === 'unavailable'
           ? 'Pheme could not retrieve this publisher’s full article. The publisher may restrict automated access. ' + (summary ? 'The available RSS excerpt is shown above.' : 'No RSS excerpt is available.')
           : 'Pheme is checking whether the publisher allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) +
