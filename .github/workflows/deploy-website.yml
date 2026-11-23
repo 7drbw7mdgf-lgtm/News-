@@ -35,6 +35,7 @@ jobs:
           node scripts/build-editions.mjs --check
           python3 -m unittest discover -s scripts -p 'test_native_articles.py'
           python3 -m unittest discover -s scripts -p 'test_publisher_reader.py'
+          python3 -m unittest discover -s scripts -p 'test_phemica_input.py'
           python3 -m unittest discover -s scripts -p 'test_corroboration.py'
           python3 -m unittest discover -s scripts -p 'test_octal_engine.py'
           python3 -m unittest discover -s scripts -p 'test_primary_costs.py'
@@ -55,6 +56,7 @@ jobs:
           test -s build/static-verify/sitemap.xml
           python3 scripts/build-publisher-reader.py --feed assets/publisher-feeds.json --out build/static-verify/reader-cache
           test -s build/static-verify/reader-cache/index.json
+          python3 -m backend.phemica_input --reader build/static-verify/reader-cache/index.json --events feeds/phemica-plan-events.json --out build/static-verify/api/phemica/v1/input.json --revision "$GITHUB_SHA"
       - name: Cache generated narration audio
         uses: actions/cache@v4
         with:
@@ -81,6 +83,7 @@ jobs:
           cp -R assets build/site/
           python3 scripts/build-publisher-reader.py --out build/site/assets/reader-cache
           test -s build/site/assets/reader-cache/index.json
+          python3 -m backend.phemica_input --reader build/site/assets/reader-cache/index.json --events feeds/phemica-plan-events.json --out build/site/api/phemica/v1/input.json --revision "$GITHUB_SHA"
           python3 scripts/build-static-news.py build/site
           cp -R api/. build/site/api/
           node scripts/scrape-indian-express.mjs build/site/assets/indian-express
