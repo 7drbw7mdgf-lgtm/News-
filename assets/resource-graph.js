@@ -39,6 +39,7 @@
       {source:'dc',target:'margin',relation:'affects_cost'}
     ]
   };
+  SEED.edges.forEach(function(e){var a=[["gas","powerplant",0.35],["powerplant","power",0.8],["power","dc",0.2],["dc","margin",0.4]].find(function(x){return x[0]===e.source&&x[1]===e.target;});if(a)e.passThrough=a[2];});
   var graph = JSON.parse(JSON.stringify(SEED));
   var active = 'dc', notice = '';
 
@@ -113,6 +114,7 @@
       var pairKey = e.source+'→'+e.target;
       if (pairs[pairKey]) throw Error('Duplicate resource relationship');
       pairs[pairKey] = true;
+      if(e.passThrough!==undefined&&(!Number.isFinite(e.passThrough)||e.passThrough<0||e.passThrough>1))throw Error('Coefficient must be between 0 and 1');
       next[e.source].push(e.target);
       if (e.quantity !== undefined && (!Number.isFinite(e.quantity) || e.quantity<=0 || e.quantity>1e12 ||
           ['unit','kg','tonne','MWh','kWh','litre','m3','hour','GPU-hour','GBP','USD','percent'].indexOf(e.unit)<0)) throw Error('Invalid quantity or unit');
@@ -138,6 +140,46 @@
   }
   function find(id) { return graph.nodes.find(function(n){return n.id===id;}); }
   function options(list, chosen) { return list.map(function(v){return '<option value="'+escapeText(v)+'"'+(v===chosen?' selected':'')+'>'+escapeText(v.replace(/_/g,' '))+'</option>';}).join(''); }
+
+  var scenarioShock='gas',scenarioPercent=20;
+  function runScenario() {
+    validate(graph);
+    var outgoing=Object.create(null),indegree=Object.create(null),nodes=Object.create(null),path=Object.create(null);
+    graph.nodes.forEach(function(n){nodes[n.id]=n;outgoing[n.id]=[];indegree[n.id]=0;});
+    graph.edges.forEach(function(e){outgoing[e.source].push(e);indegree[e.target]++;});
+    var queue=Object.keys(indegree).filter(function(id){return indegree[id]===0;}),order=[];
+    while(queue.length){var id=queue.shift();order.push(id);outgoing[id].forEach(function(e){if(--indegree[e.target]===0)queue.push(e.target);});}
+    if(!nodes[scenarioShock]||['primary','secondary'].indexOf(nodes[scenarioShock].type)<0)return {};
+    path[scenarioShock]=[{nodes:[scenarioShock],impact:scenarioPercent}];
+    order.forEach(function(id){if(!path[id])return;outgoing[id].forEach(function(e){
+      if(e.passThrough===undefined)return;
+      var children=path[id].map(function(p){return {nodes:p.nodes.concat(e.target),impact:p.impact*e.passThrough};});
+      path[e.target]=(path[e.target]||[]).concat(children).slice(0,121);
+    });});
+    var result=Object.create(null);
+    graph.nodes.forEach(function(n){var p=path[n.id]||[];
+      result[n.id]={status:p.length>1?'overlap-review':p.length?'hypothetical':'unknown',
+        impact:p.length===1?p[0].impact:null,paths:p.slice(0,8)};
+    });
+    return result;
+  }
+  function scenarioPanel() {
+    var result=runScenario(),choices=graph.nodes.filter(function(n){return ['primary','secondary'].indexOf(n.type)>=0;});
+    var rows=graph.nodes.filter(function(n){return result[n.id].status!=='unknown';}).map(function(n){
+      var r=result[n.id];
+      return '<tr><th>'+escapeText(n.label)+'</th><td>'+(r.impact===null?'—':(r.impact>=0?'+':'')+r.impact.toFixed(2)+'%')+
+        '</td><td>'+escapeText(r.status)+'</td></tr>';
+    }).join('');
+    return '<section class="rg-scenario"><div class="rg-header"><div><h3>Cost shock simulator</h3>'+
+      '<p>Hypothetical elasticities, not evidence-derived financial forecasts</p></div><span class="rg-tag">Stage 5</span></div>'+
+      '<div class="rg-toolbar"><label>Resource<select id="rg-shock">'+choices.map(function(n){
+        return '<option value="'+escapeText(n.id)+'"'+(n.id===scenarioShock?' selected':'')+'>'+escapeText(n.label)+'</option>';
+      }).join('')+'</select></label><label>Price change (%)<input id="rg-percent" type="number" min="-100" max="100" step="1" value="'+scenarioPercent+'"></label>'+
+      '<button type="button" data-rg="run-scenario">Simulate</button></div>'+
+      '<div class="rg-scenario-scroll"><table><thead><tr><th>Node</th><th>Relative change</th><th>Validity</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+      '<p class="rg-evidence-caution">Explicit demo assumptions only. Unknown edges stop transmission; duplicated upstream paths are blocked. Downstream percentage is not a share-price return.</p></section>';
+  }
+
   function layout() {
     var order={primary:0,process:1,secondary:2,company:3,financial:4};
     // Iteratively promote process nodes after their upstream secondary outputs,
@@ -187,10 +229,16 @@
       '<h3>Outputs ('+outgoing.length+')</h3>'+
       '<ul class="rg-rel-list">'+(outgoing.map(function(e){
         return '<li>'+escapeText(find(e.target).label)+' <em>'+escapeText(e.relation.replace(/_/g,' '))+'</em><button type="button" data-rg="delete-edge" data-from="'+escapeText(e.source)+'" data-to="'+escapeText(e.target)+'" aria-label="Remove relationship">×</button></li>';
-      }).join('')||'<li>None</li>')+'</ul>'+newsInspector(node);
+      }).join('')||'<li>None</li>')+'</ul><h3>Outgoing cost sensitivities</h3>'+
+      (outgoing.map(function(e){return '<label class="rg-label">'+escapeText(find(e.target).label)+
+        '<input class="rg-coefficient" type="number" min="0" max="1" step="0.05" data-from="'+escapeText(e.source)+
+        '" data-to="'+escapeText(e.target)+'" placeholder="Unknown" value="'+(e.passThrough===undefined?'':escapeText(e.passThrough))+'"></label>';}).join('')||'<p>No outgoing links.</p>')+
+      '<button type="button" class="rg-save-coefficients" data-rg="save-coefficients">Save sensitivities</button>'+
+      '<p class="rg-evidence-caution">Example: 0.4 assumes a 1% source change produces a 0.4% relative change in the target. Not measured.</p>'+
+      newsInspector(node);
   }
   function html() {
-    return '<section class="rg-workspace"><div class="rg-header"><div><h2>Economic dependency network</h2><p>Primary resources → production → secondary resources → companies → financial results</p></div><span class="rg-tag">Stage 4 · News-linked prototype</span></div>'+
+    return '<section class="rg-workspace"><div class="rg-header"><div><h2>Economic dependency network</h2><p>Primary resources → production → secondary resources → companies → financial results</p></div><span class="rg-tag">Stage 5 · Cost scenario prototype</span></div>'+
       '<p class="rg-disclaimer">Illustrative production relationships. Publisher headline matches do not establish causal edges or financial exposures. No broker orders.</p>'+
       '<div class="rg-toolbar"><label>New node <input id="rg-new-label" placeholder="e.g. LNG shipping" maxlength="90"></label><label>Type<select id="rg-new-type">'+options(TYPES,'primary')+'</select></label><button type="button" data-rg="add-node">Add resource</button><button type="button" data-rg="reset">Reset demo</button></div>'+
       '<div class="rg-toolbar rg-connect"><label>From<select id="rg-from">'+graph.nodes.map(function(n){return '<option value="'+escapeText(n.id)+'"'+(n.id===active?' selected':'')+'>'+escapeText(n.label)+'</option>';}).join('')+'</select></label>'+
@@ -199,6 +247,7 @@
       '<button type="button" data-rg="connect">Connect nodes</button></div>'+
       '<div class="rg-main"><div class="rg-graph-wrap"><div class="rg-scroll" tabindex="0" aria-label="Scroll resource network horizontally">'+svg()+'</div><div class="rg-legend"><span>● Primary</span><span>● Process</span><span>● Secondary</span><span>● Company</span><span>● Financial</span><span>Green dot: corroboration candidate</span><span>Red dot: contested</span><span>Grey dot: unknown</span></div></div>'+
       '<aside class="rg-inspector" id="rg-inspector">'+inspector()+'</aside></div>'+
+      scenarioPanel()+
       '<p class="rg-notice" role="status" id="rg-notice">'+escapeText(notice||'Select a node to inspect its dependencies; add resources or connect nodes to edit.')+'</p>'+
       '<div class="rg-footer"><span>'+graph.nodes.length+' nodes · '+graph.edges.length+' connections</span><button type="button" data-rg="export">Export JSON</button></div></section>';
   }
@@ -218,6 +267,23 @@
     if(!button) return;
     var act=button.getAttribute('data-rg');
     if(act==='refresh-evidence'){refreshEvidence(true);return;}
+
+    if(act==='run-scenario'){
+      var input=root.querySelector('#rg-percent'),pct=Number(input.value);
+      if(input.value.trim()===''||!Number.isFinite(pct)||pct< -100||pct>100){notice='Shock must be a number between -100 and 100';paint();return;}
+      scenarioShock=root.querySelector('#rg-shock').value;scenarioPercent=pct;notice='Hypothetical scenario recalculated.';paint();return;
+    }
+    if(act==='save-coefficients'){
+      var inputs=Array.from(root.querySelectorAll('.rg-coefficient'));
+      commit(function(g){inputs.forEach(function(input){
+        var edge=g.edges.find(function(e){return e.source===input.dataset.from&&e.target===input.dataset.to;});
+        if(!edge)return;
+        if(input.value.trim()===''){delete edge.passThrough;return;}
+        var value=Number(input.value);
+        if(!Number.isFinite(value)||value<0||value>1)throw Error('Invalid sensitivity');
+        edge.passThrough=value;
+      });});return;
+    }
     if(act==='add-node'){
       var label=(root.querySelector('#rg-new-label').value||'').trim(),type=root.querySelector('#rg-new-type').value;
       if(!label){notice='Enter a resource name.';paint();return;}
