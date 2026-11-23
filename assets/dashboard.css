@@ -909,3 +909,112 @@ body.reader-focus .dashboard-body {
 .ws-watch-remove { width:38px; min-width:38px; border:0; border-left:1px solid var(--rule-soft); color:var(--ink-muted); background:transparent; font:500 22px/1 var(--sans); }
 .ws-watch-remove:hover,.ws-watch-remove:focus-visible { background:#aa4a3314; color:#9d3928; outline-offset:-2px; }
 @media(max-width:600px) { .ws-data-disclosure { font-size:10px; } }
+
+
+/* Trading terminal responsive optimisation: compact phone reader / full desktop workstation */
+.ws-shell,.ws-panel,.ws-dashboard-grid,.ws-company-layout,.ws-two-col { min-width:0; }
+.ws-mobile-toolbar { display:none; }
+.ws-tabs { scroll-snap-type:x proximity; overscroll-behavior-x:contain; }
+.ws-tabs button { scroll-snap-align:center; min-height:44px; cursor:pointer; }
+.ws-tabs button:focus-visible,.ws-index-cell:focus-visible,.ws-company-switch button:focus-visible {
+  outline:2px solid var(--blue); outline-offset:-3px;
+}
+.ws-widget-head > span:not(.ws-widget-actions) { overflow:hidden; text-overflow:ellipsis; }
+.ws-widget-embed,.ws-company-chart,.ws-tv-overview { min-width:0; isolation:isolate; }
+.ws-widget-embed iframe,.ws-company-chart iframe,.ws-tv-overview iframe { display:block; width:100%; max-width:100%; }
+.ws-widget .ws-widget-embed,.ws-widget .ws-company-chart { touch-action:pan-x pan-y; }
+.ws-expand-button { flex:0 0 38px; width:38px; height:38px; min-height:38px; font-size:23px; }
+.ws-widget.ws-expanded { inset:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right))
+  max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))!important; }
+.ws-widget.ws-expanded .ws-widget-head { flex:0 0 auto; }
+.ws-widget.ws-expanded .ws-widget-embed,.ws-widget.ws-expanded .ws-company-chart {
+  min-height:0; flex:1 1 auto; }
+.ws-widget.ws-expanded .ws-company-chart .tradingview-widget-container { height:100%!important; }
+.ws-widget.ws-expanded .ws-widget-scroll { overscroll-behavior:contain; }
+.ws-widget.ws-expanded .ws-widget-foot { flex:0 0 auto; }
+
+@media(min-width:1200px) {
+  .ws-dashboard-grid { grid-template-columns:minmax(0,1.9fr) minmax(300px,.9fr); gap:16px; }
+  .ws-company-layout { grid-template-columns:minmax(0,1.9fr) minmax(300px,.9fr); gap:16px; }
+  .ws-widget-chart { height:clamp(480px,64vh,760px); }
+  .ws-widget-company-chart,.ws-widget-company-news { height:clamp(500px,69vh,770px); }
+  .ws-full-widget { height:clamp(540px,74vh,860px); }
+  .ws-half-widget { height:clamp(490px,69vh,750px); }
+  .ws-discover-panel { height:clamp(560px,74vh,850px); }
+  .ws-session-strip { gap:12px; }
+}
+
+@media(max-width:900px) {
+  .ws-dashboard-grid,.ws-company-layout { grid-template-columns:minmax(0,1fr); }
+  .ws-sidebar-stack { grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:minmax(0,1fr); height:320px; }
+  .ws-widget-chart { height:min(66vh,550px); min-height:380px; }
+  .ws-widget-company-chart { height:540px; }
+  .ws-widget-company-news { height:360px; }
+}
+
+@media(max-width:680px) {
+  .ws-shell { width:100%; overflow:clip; }
+  .ws-mobile-toolbar { display:flex; gap:9px; align-items:center; flex-wrap:wrap; padding:11px 0 3px; }
+  .ws-mobile-toolbar label { flex:0 0 auto; font:700 11px/1.4 var(--sans); color:var(--ink-muted); }
+  .ws-mobile-toolbar select {
+    min-width:0; flex:1 1 140px; max-width:300px; min-height:44px;
+    padding:10px 35px 10px 12px; border:1px solid var(--rule);
+    border-radius:9px; background:var(--surface); color:var(--ink);
+    font:650 13px/1.25 var(--sans);
+  }
+  .ws-mobile-toolbar select:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+  .ws-mobile-hint { display:block; flex-basis:100%; color:var(--ink-muted); font:500 10px/1.4 var(--sans); }
+  .ws-tabs { gap:2px; margin:5px -1px 12px; padding:0 1px 2px; scrollbar-width:none; }
+  .ws-tabs::-webkit-scrollbar { display:none; }
+  .ws-tabs button { flex:none; min-height:43px; padding:11px 13px; font-size:12px; }
+  .ws-search-area { flex-wrap:nowrap; min-height:46px; }
+  .ws-search-area input { min-width:0; font-size:16px; }
+  .ws-search-area > button { flex:none; min-height:40px; }
+  .ws-ticker-tape { margin:0 0 7px; }
+  .ws-data-disclosure { margin-bottom:10px; font-size:10px; line-height:1.5; }
+  .ws-market-strip { grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
+  .ws-index-cell { min-height:86px; padding:11px 10px; }
+  .ws-index-cell > span { line-height:1.3; }
+  .ws-index-cell > strong { overflow-wrap:anywhere; font-size:clamp(16px,4.6vw,21px); }
+  .ws-dashboard-grid,.ws-company-layout,.ws-two-col { display:grid; grid-template-columns:minmax(0,1fr); gap:11px; }
+  .ws-sidebar-stack { height:auto; grid-template-columns:minmax(0,1fr); grid-template-rows:220px 295px; gap:11px; }
+  .ws-widget { max-width:100%; border-radius:10px; }
+  .ws-widget-chart { height:clamp(365px,56svh,530px); min-height:365px; }
+  .ws-widget-company-chart { height:clamp(485px,72svh,680px); }
+  .ws-widget-company-news { height:350px; }
+  .ws-company-chart { min-height:0; }
+  .ws-company-header { align-items:flex-start; gap:10px; margin:13px 0; }
+  .ws-company-header > div { min-width:0; flex:1 1 180px; }
+  .ws-company-header h2 { font-size:clamp(21px,6vw,27px); overflow-wrap:anywhere; }
+  .ws-star-button { min-height:42px; }
+  .ws-company-switch { padding:8px; scroll-snap-type:x proximity; overflow-x:auto; scrollbar-width:none; }
+  .ws-company-switch::-webkit-scrollbar { display:none; }
+  .ws-company-switch button { min-height:42px; padding:9px 12px; font-size:12px; scroll-snap-align:start; }
+  .ws-widget-head { padding:9px 10px; min-height:50px; gap:6px; }
+  .ws-widget-head h2,.ws-widget-head h3 { font-size:15px; }
+  .ws-widget-head > span:not(.ws-widget-actions) { max-width:100px; font-size:10px; }
+  .ws-widget-actions { margin-left:auto; }
+  .ws-expand-button { width:42px; height:42px; min-height:42px; flex-basis:42px; }
+  .ws-widget-headlines .ws-widget-head > button:not(.ws-expand-button) { min-height:40px; }
+  .ws-full-widget { height:clamp(490px,73svh,720px); }
+  .ws-half-widget { height:clamp(410px,64svh,600px); }
+  .ws-discover-panel { height:clamp(520px,74svh,720px); }
+  .ws-news-workspace { height:min(75svh,690px); min-height:470px; }
+  .ws-map-panel .ws-exchange-map { height:clamp(420px,67svh,640px); }
+  .ws-session-strip { margin-bottom:10px; }
+  .ws-widget.ws-expanded {
+    inset:max(5px,env(safe-area-inset-top)) max(5px,env(safe-area-inset-right))
+      max(5px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left))!important;
+    border-radius:9px;
+  }
+  .ws-widget.ws-expanded .ws-widget-head > span:not(.ws-widget-actions) { display:none; }
+  .ws-widget.ws-expanded .ws-widget-head { min-height:54px; }
+  .ws-widget.ws-expanded .ws-company-switch { flex:0 0 auto; }
+  .ws-widget.ws-expanded .ws-widget-embed,.ws-widget.ws-expanded .ws-company-chart { flex:1 1 auto; min-height:0; }
+  .ws-widget.ws-expanded .ws-widget-scroll { overflow:auto; }
+}
+@media(max-width:370px) {
+  .ws-market-strip { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+  .ws-widget-head > span:not(.ws-widget-actions) { display:none; }
+  .ws-search-area > button { font-size:10px; padding-inline:7px; }
+}
