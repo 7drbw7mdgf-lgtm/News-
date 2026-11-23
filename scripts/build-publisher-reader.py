@@ -144,6 +144,41 @@ def extract_one(item, host):
     return {"paragraphs": paras, "extractedAt": datetime.datetime.now(datetime.timezone.utc).isoformat()}
 
 
+
+def edition_references(path=None):
+    """Read the edition's existing source links without fetching publisher HTML.
+
+    Older articles can disappear from the rolling RSS feeds. Retain their
+    publisher-specific headlines as *references*, not claimed full articles.
+    """
+    path = Path(path or ROOT / "assets" / "data.js")
+    if not path.exists():
+        return []
+    source = path.read_text(encoding="utf-8")
+    start_marker = "window.DAYBREAK = "
+    end_marker = ";\nwindow.DAYBREAK_ARCHIVE"
+    start = source.find(start_marker)
+    end = source.find(end_marker, start)
+    if start < 0 or end < 0:
+        raise ValueError("Current Pheme edition JSON markers not found")
+    edition = json.loads(source[start + len(start_marker):end])
+    result = []
+    for story in edition.get("STORIES", []):
+        for row in edition.get("COVERAGE", {}).get(story.get("id"), []):
+            if len(row) < 3 or not isinstance(row[2], str):
+                continue
+            publisher, date, url = row[:3]
+            title = row[3] if len(row) > 3 and row[3] else story.get("headline", "")
+            if not isinstance(publisher, str) or not isinstance(title, str):
+                continue
+            result.append({
+                "publisher": publisher, "title": title, "url": url,
+                "published": "", "dateLabel": date, "status": "edition-reference",
+                "summary": "", "image": "",
+                "context": str(story.get("summary") or "")[:500],
+            })
+    return result
+
 def build(feed_path, out_dir, limit=MAX_ARTICLES):
     data = json.loads(Path(feed_path).read_text(encoding="utf-8"))
     rules = authorised_rules()
@@ -169,6 +204,18 @@ def build(feed_path, out_dir, limit=MAX_ARTICLES):
             if host and urllib.parse.urlsplit(url).hostname == host and len(to_fetch) < limit:
                 to_fetch.append((key, article, host))
 
+    # Add article references from the current editorial edition even if they
+    # disappeared from the seven-day RSS feed. No unlicensed article HTML is
+    # downloaded or republished.
+    for reference in edition_references():
+        key = canonical(reference["url"])
+        if not key:
+            continue
+        if key not in preview:
+            preview[key] = {field: value for field, value in reference.items() if field != "url"}
+        elif not preview[key].get("context"):
+            preview[key]["context"] = reference["context"]
+
     # A website cannot be made a full-text syndication service just because
     # publicly visible HTML can be downloaded. Require explicit permission.
     if to_fetch:
@@ -190,7 +237,8 @@ def build(feed_path, out_dir, limit=MAX_ARTICLES):
         "items": preview,
     }
     (out_dir / "index.json").write_text(json.dumps(output, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
-    print(f"Reader cache built: {len(preview)} RSS previews, " +
+    print(f"Reader cache built: {len(preview)} source entries, " +
+          f"{sum(v['status'] == 'edition-reference' for v in preview.values())} older edition references, " +
           f"{sum(v['status'] == 'licensed-full-text' for v in preview.values())} authorised full articles.")
     return output
 
