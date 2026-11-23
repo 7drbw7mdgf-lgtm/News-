@@ -38,6 +38,10 @@ corroboration_spec = importlib.util.spec_from_file_location("pheme_corroboration
 CORROBORATION = importlib.util.module_from_spec(corroboration_spec)
 corroboration_spec.loader.exec_module(CORROBORATION)
 
+octal_spec = importlib.util.spec_from_file_location("pheme_octal", ROOT / "backend" / "octal_engine.py")
+OCTAL = importlib.util.module_from_spec(octal_spec)
+octal_spec.loader.exec_module(OCTAL)
+
 
 def read_cached():
     global ITEMS
@@ -235,6 +239,25 @@ class Handler(BaseHTTPRequestHandler):
             # Only use publisher-authored article previews, not Pheme's
             # contextual editorial summaries, as evidence.
             self.respond(CORROBORATION.corroborate(key, snapshot))
+            return
+        if path.path == "/v1/infer":
+            url = (query.get("url") or [""])[0]
+            key = READER.canonical(url)
+            if not key:
+                self.respond({"error": "Invalid article URL"}, 400)
+                return
+            with LOCK:
+                snapshot = dict(ITEMS)
+            if key not in snapshot:
+                self.respond({"error": "Article not in verified cache"}, 404)
+                return
+            assessed = CORROBORATION.corroborate(key, snapshot)
+            self.respond({
+                "article": key,
+                "engine": "PHEME-8",
+                "model": "octal-min-max-lukasiewicz-v1",
+                "inference": OCTAL.infer_from_corroboration(assessed),
+            })
             return
         if path.path == "/v1/articles":
             try:
