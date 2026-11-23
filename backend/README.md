@@ -7,6 +7,7 @@ The Railway service `pheme-reader-api` deploys from this repository using `backe
 - `GET /v1/article?url=<encoded-original-publisher-url>`: cached lookup of a known publisher article
 - `GET /v1/corroborate?url=<encoded-original-publisher-url>`: first-pass Pheme-8 economic proposition matching, supporting and contradicting publishers, and provisional octal corroboration level
 - `GET /v1/infer?url=<encoded-original-publisher-url>`: Pheme-8 octal inference with full operation trace and no trading execution
+- `GET /v1/primary-costs?industry=ai_infrastructure`: reusable Primary Costs taxonomy, industry-relevance candidates and known overlaps
 
 Production endpoint: https://pheme-reader-api-production.up.railway.app
 
@@ -64,3 +65,15 @@ The process returns the complete input assessment, filter reasons, multiplicatio
 `GET /v1/infer?url=<publisher-article-url>` wraps this process using `/v1/corroborate` inputs. The upstream RSS/keyword matching and publisher independence checks remain prototypes, so the result is not an established source-reliability score, truth probability or indication of asset direction.
 
 Regression tests: `python3 -m unittest discover -s scripts -p 'test_octal_engine.py'`.
+
+## Pheme-8 Primary Costs (Element 3)
+
+The `backend/primary_costs.py` module defines **18 cost classes**, nine sector templates, and explicit known dependency pairs. The categories include power/fuel, materials, chips, industrial equipment, wages, construction, transport, import duties, property, debt financing, compliance, cloud/network, maintenance, tax, supplier scarcity, water, insurance and sales acquisition. These are candidate direct/indirect financial cost drivers; the relevance of a driver to any specific company must be established independently.
+
+`GET /v1/primary-costs?industry=ai_infrastructure` returns a read-only taxonomy and dependency warnings. Available profiles: `ai_infrastructure`, `software_ai`, `semiconductors`, `manufacturing`, `retail`, `airlines`, `utilities`, `mining` and `healthcare`. Omitting `industry` lists the full cost registry.
+
+The pure `aggregate(industry, evidence, floor=4)` function accepts *previously corroborated structured proposition evidence*, not unverified keywords, and evaluates each relevant branch using normalized octal multiplication after filtering. Any missing, unsupported or contradicted required premise leaves that branch unscored. It returns separate branch scores, provenance, traces and overlap warnings, with `combinedScore=null` and `execution=disabled`. It does **not** multiply all costs into one global score: tariffs may already be embedded in GPU prices, labour in construction, and fuel in transport, so global aggregation requires real accounting exposure data and deduplication.
+
+**Current integration boundary:** the taxonomic REST route exists, but news-to-cost classification, company-specific exposures, a visual website dashboard and broker execution are **not implemented**. Adding a category does not assert that Pheme's present RSS corpus contains relevant claims for it. The `aggregate` function can already be tested with validated structured inputs; exposing it publicly would require a reviewed input validator and issuer mapping.
+
+Run: `python3 -m unittest discover -s scripts -p 'test_primary_costs.py'`.
