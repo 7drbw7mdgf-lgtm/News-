@@ -58,6 +58,20 @@ scenario_spec = importlib.util.spec_from_file_location("pheme_scenario", ROOT / 
 SCENARIO = importlib.util.module_from_spec(scenario_spec)
 scenario_spec.loader.exec_module(SCENARIO)
 
+broker_spec = importlib.util.spec_from_file_location("pheme_trading212", ROOT / "backend" / "trading212.py")
+BROKER = importlib.util.module_from_spec(broker_spec)
+broker_spec.loader.exec_module(BROKER)
+
+WIDGET_FILES = {
+    "/trading212/widget": ("trading212-widget.html", "text/html; charset=utf-8"),
+    "/trading212/widget.js": ("trading212-widget.js", "text/javascript; charset=utf-8"),
+}
+WIDGET_CSP = (
+    "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; "
+    "connect-src 'self'; form-action 'none'; base-uri 'none'; "
+    "frame-ancestors 'self' https://pheme24.online"
+)
+
 
 def read_cached():
     global ITEMS
@@ -211,13 +225,14 @@ def scheduler():
 
 
 class Handler(BaseHTTPRequestHandler):
-    def respond(self, body, code=200):
+    def respond(self, body, code=200, *, private=False):
         payload = json.dumps(body, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
         self.send_response(code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Cache-Control", "public, max-age=60" if code == 200 else "no-store")
-        self.send_header("Access-Control-Allow-Origin", ALLOWED_ORIGIN)
-        self.send_header("Vary", "Origin")
+        self.send_header("Cache-Control", "public, max-age=60" if code == 200 and not private else "no-store")
+        if not private:
+            self.send_header("Access-Control-Allow-Origin", ALLOWED_ORIGIN)
+            self.send_header("Vary", "Origin")
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Content-Length", str(len(payload)))
         self.end_headers()
@@ -226,6 +241,23 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urllib.parse.urlsplit(self.path)
         query = urllib.parse.parse_qs(path.query)
+        if path.path in WIDGET_FILES:
+            filename, content_type = WIDGET_FILES[path.path]
+            content = (ROOT / "backend" / filename).read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(len(content)))
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Security-Policy", WIDGET_CSP)
+            self.send_header("Referrer-Policy", "no-referrer")
+            self.send_header("X-Content-Type-Options", "nosniff")
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if path.path == "/v1/trading212/account":
+            status, payload = BROKER.WIDGET.account(self.headers.get("Authorization"))
+            self.respond(payload, status, private=True)
+            return
         if path.path == "/health":
             with LOCK:
                 snapshot = dict(STATE)

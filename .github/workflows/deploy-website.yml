@@ -45,6 +45,8 @@ jobs:
           node --check assets/app.js
           node --check assets/resource-graph.js
           node --test scripts/test-evidence-bot.cjs
+          node --check backend/trading212-widget.js
+          python3 -m unittest discover -s scripts -p 'test_trading212.py'
           node --check scripts/scrape-indian-express.mjs
           python3 scripts/update-markets.py --check
           node --check assets/data.js

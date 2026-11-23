@@ -110,3 +110,25 @@ The engine validates acyclic typed graph structure, finite shock bounds (-100% t
 The front-end resource editor provides a **Cost shock simulator**, user-editable coefficients in the node inspector, and a scenario output table. Edits remain in browser storage, and the demo graph can be reset to the annotated default assumptions. The public backend offers `/v1/resource-scenario?shock=gas&percent=20` for the fixed demonstrative graph only; it does not accept or persist arbitrary client graphs.
 
 This stage **does not** connect empirical price series, unit-consistent cost-accounting parameters, audited issuer exposures, sensitivity estimation, source evidence gates or investor returns. The coefficient on a financial outcome is purely illustrative, not a real operating-margin elasticity. Evidence strength from Pheme-8 Stage 4 never becomes an economic coefficient. Trade execution remains disabled. Run `python3 -m unittest discover -s scripts -p 'test_resource_scenario.py'`.
+
+## Private Trading 212 widget
+
+Trading → Evidence Bot embeds the widget from the Railway reader origin. The
+iframe is isolated from the site's market widgets. The account endpoint accepts
+a PHEME widget access token and serves account value, available cash and open
+positions over HTTPS. It uses only the broker's account-summary and positions
+GET endpoints. Responses omit account IDs and use no-store.
+
+Configure these private Railway service variables:
+
+- **TRADING212_API_KEY** and **TRADING212_API_SECRET** from a Trading 212 API key
+  with read-only account and positions access. Start with a demo account.
+- **TRADING212_ENV** is demo by default. Set live only for a live read-only key.
+- **PHEME_TRADING212_WIDGET_TOKEN** is a separate random 64-character lowercase
+  hex token. Generate it with openssl rand -hex 32 and keep it with the account
+  operator. Enter this token, rather than the brokerage credentials, to unlock
+  the widget. Rotating it revokes use of the old token on subsequent requests.
+
+Each Railway instance exposes a single configured private account to holders
+of that token. Keep the account private. The integration requires no order
+permissions. Official setup is at https://helpcentre.trading212.com/hc/en-us/articles/14584770928157-Trading-212-API-key.
