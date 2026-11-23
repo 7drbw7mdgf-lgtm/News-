@@ -114,6 +114,42 @@ class BasicArticleParser(HTMLParser):
             self.current.append(data)
 
 
+
+class ArticleMetadataParser(HTMLParser):
+    """Read public page metadata only, not the article body."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.fields = {}
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "meta":
+            return
+        props = {k.lower(): (v or "") for k, v in attrs if k}
+        key = (props.get("property") or props.get("name") or "").lower()
+        if key in ("og:title", "twitter:title", "og:description", "twitter:description", "description"):
+            value = re.sub(r"\s+", " ", html.unescape(props.get("content", ""))).strip()
+            if value and key not in self.fields:
+                self.fields[key] = value[:320]
+
+
+def recover_metadata(key, host):
+    """Recover a limited preview from robot-permitted public metadata.
+
+    Does not reproduce article body text or request paywalled material.
+    """
+    path = urllib.parse.urlsplit(key).path
+    if not robots_allows(host, path):
+        return None
+    markup = fetch_bounded(key, host, "text/html", 500_000)
+    parser = ArticleMetadataParser()
+    parser.feed(markup)
+    title = parser.fields.get("og:title") or parser.fields.get("twitter:title") or ""
+    description = (parser.fields.get("og:description") or parser.fields.get("twitter:description")
+                   or parser.fields.get("description") or "")
+    if not title and not description:
+        return None
+    return {"title": title[:240], "summary": description[:240], "status": "publisher-metadata"}
+
+
 def authorised_rules():
     path = ROOT / "feeds" / "reader-permissions.json"
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -228,6 +264,30 @@ def build(feed_path, out_dir, limit=MAX_ARTICLES):
         elif not preview[key].get("context"):
             preview[key]["context"] = reference["context"]
 
+    # Limited fallback for older, broken or inaccessible RSS entries: retrieve
+    # public title/description metadata only, where publisher robots rules
+    # explicitly allow it. Never cache or expose the article body.
+    metadata_candidates = [
+        (key, urllib.parse.urlsplit(key).hostname)
+        for key, item in preview.items()
+        if item.get("status") == "edition-reference" and
+           (not item.get("title") or not item.get("summary"))
+    ][:12]
+    if metadata_candidates:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+            jobs = {pool.submit(recover_metadata, key, host): key
+                    for key, host in metadata_candidates}
+            for job in concurrent.futures.as_completed(jobs):
+                key = jobs[job]
+                try:
+                    metadata = job.result()
+                    if metadata:
+                        # Source-specific headline and description are distinct
+                        # from Pheme's own editorial multi-source context.
+                        preview[key].update(metadata)
+                except Exception:
+                    pass
+
     # A website cannot be made a full-text syndication service just because
     # publicly visible HTML can be downloaded. Require explicit permission.
     if to_fetch:
@@ -250,7 +310,8 @@ def build(feed_path, out_dir, limit=MAX_ARTICLES):
     }
     (out_dir / "index.json").write_text(json.dumps(output, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"Reader cache built: {len(preview)} source entries, " +
-          f"{sum(v['status'] == 'edition-reference' for v in preview.values())} older edition references, " +
+          f"{sum(v['status'] == 'edition-reference' for v in preview.values())} older references, " +
+          f"{sum(v['status'] == 'publisher-metadata' for v in preview.values())} metadata recoveries, " +
           f"{sum(v['status'] == 'licensed-full-text' for v in preview.values())} authorised full articles.")
     return output
 
