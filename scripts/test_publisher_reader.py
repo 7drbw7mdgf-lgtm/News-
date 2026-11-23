@@ -43,5 +43,26 @@ class PublisherReaderTests(unittest.TestCase):
         self.assertNotIn("script", " ".join(parser.paragraphs))
 
 
+    def test_archive_links_are_recovered_without_relabeling_editorial_headlines(self):
+        references = reader.edition_references()
+        self.assertGreater(len(references), 0)
+        self.assertTrue(any(item["status"] == "edition-reference" for item in references))
+        self.assertTrue(all("publisher" in item and "context" in item for item in references))
+        # A story-level headline is not necessarily the publisher's headline.
+        self.assertTrue(all(
+            item.get("title") != item.get("editorialHeadline")
+            for item in references if not item.get("title")
+        ))
+
+    def test_public_metadata_parser_does_not_return_body_text(self):
+        parser = reader.ArticleMetadataParser()
+        parser.feed('<html><head><meta property="og:title" content="Publisher headline">'
+                    '<meta name="description" content="Publisher description"></head>'
+                    '<body><article>Do not republish full article body.</article></body></html>')
+        self.assertEqual(parser.fields["og:title"], "Publisher headline")
+        self.assertEqual(parser.fields["description"], "Publisher description")
+        self.assertNotIn("full article", str(parser.fields))
+
+
 if __name__ == "__main__":
     unittest.main()
