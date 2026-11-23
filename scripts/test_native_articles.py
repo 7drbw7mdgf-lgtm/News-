@@ -140,8 +140,10 @@ class NativeArticleTests(unittest.TestCase):
         chunks = audio_builder.split_sentences(long_para, max_chars=200)
         self.assertGreaterEqual(len(chunks), 3)
         self.assertTrue(all(len(c) <= 240 for c in chunks))
+        self.assertGreaterEqual(len(audio_builder.VOICES), 6)
         for voice in audio_builder.VOICES:
-            self.assertTrue(voice.get('kokoro'))
+            for key in ('id', 'label', 'accent', 'tagline', 'edge', 'kokoro', 'kokoro_lang', 'openai', 'elevenlabs'):
+                self.assertTrue(voice.get(key), f"Missing {key} on voice {voice.get('id')}")
         with patch.dict(audio_builder.os.environ, {'PHEME_TTS_PROVIDER': 'kokoro'}):
             self.assertEqual(audio_builder.choose_provider(), 'kokoro')
 

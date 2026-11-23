@@ -281,7 +281,14 @@
   function audioVoices() {
     return (audioManifest && Array.isArray(audioManifest.voices) && audioManifest.voices.length)
       ? audioManifest.voices
-      : [{ id: 'ava', label: 'Ava', tagline: 'Warm & expressive' }, { id: 'andrew', label: 'Andrew', tagline: 'Calm & conversational' }];
+      : [
+          { id: 'ava', label: 'Ava', accent: 'US', tagline: 'Warm & expressive' },
+          { id: 'andrew', label: 'Andrew', accent: 'US', tagline: 'Calm & conversational' },
+          { id: 'sonia', label: 'Sonia', accent: 'UK', tagline: 'British · Crisp & warm' },
+          { id: 'ryan', label: 'Ryan', accent: 'UK', tagline: 'British · Calm & clear' },
+          { id: 'emma', label: 'Emma', accent: 'US', tagline: 'Bright & natural' },
+          { id: 'brian', label: 'Brian', accent: 'US', tagline: 'Deep & thoughtful' }
+        ];
   }
 
   function audioTrackFor(storyId, voiceId) {
@@ -2028,17 +2035,21 @@
         '<button type="button" class="voice-close" data-act="closeaudio" aria-label="Close audio player">' + ICON.close + '</button>' +
         '</section>';
     }
-    var voices = audioVoices();
+    var allVoices = audioVoices();
+    var storyVoicesMap = (audioManifest && audioManifest.stories && audioManifest.stories[s.id] && audioManifest.stories[s.id].voices) || {};
+    var voices = allVoices.filter(function (v) { return !!storyVoicesMap[v.id]; });
+    if (!voices.length) voices = allVoices;
     var activeVoiceId = track.voiceId;
     var activeMeta = voices.find(function (v) { return v.id === activeVoiceId; }) || voices[0];
     var dur = state.audioStoryId === s.id && state.audioDuration ? state.audioDuration : (track.duration || 0);
     var cur = state.audioStoryId === s.id ? state.audioTime : 0;
     var pct = dur > 0 ? Math.min(100, (cur / dur) * 100).toFixed(2) : '0';
     var voicePills = voices.length > 1
-      ? '<div class="voice-switcher" role="group" aria-label="Choose narrator">' + voices.map(function (v) {
+      ? '<div class="voice-row" role="group" aria-label="Choose narrator"><span class="voice-row-label">Voice</span><div class="voice-switcher">' + voices.map(function (v) {
           var on = v.id === activeVoiceId;
-          return '<button type="button" class="voice-pill' + (on ? ' on' : '') + '" data-act="voicepick" data-id="' + esc(v.id) + '" aria-pressed="' + on + '">' + esc(v.label) + '</button>';
-        }).join('') + '</div>'
+          return '<button type="button" class="voice-pill' + (on ? ' on' : '') + '" data-act="voicepick" data-id="' + esc(v.id) + '" aria-pressed="' + on + '" title="' + esc(v.label + ' — ' + (v.tagline || 'Natural voice')) + '">' +
+            esc(v.label) + (v.accent ? '<span class="voice-accent">' + esc(v.accent) + '</span>' : '') + '</button>';
+        }).join('') + '</div></div>'
       : '';
     return '<section class="voice-player' + (state.speaking ? ' is-playing' : '') + (state.audioLoading ? ' is-loading' : '') + '" aria-label="Natural voice narration">' +
       '<div class="voice-main">' +
@@ -2058,9 +2069,8 @@
       '<button type="button" class="voice-chip" data-act="voiceseek" data-id="15" aria-label="Skip forward 15 seconds">+15s</button>' +
       '<button type="button" class="voice-chip" data-act="speechrate" aria-label="Playback speed">' + state.speechRate + '×</button>' +
       '</div>' +
-      voicePills +
       '<button type="button" class="voice-close" data-act="closeaudio" aria-label="Close audio player">' + ICON.close + '</button>' +
-      '</div></section>';
+      '</div>' + voicePills + '</section>';
   }
 
   function updateReadProgress() {

@@ -1476,30 +1476,59 @@ body.reader-theme-night .voice-player {
   border-color: var(--blue);
   color: var(--blue);
 }
+.voice-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule-soft);
+}
+.voice-row-label {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
 .voice-switcher {
   display: inline-flex;
   align-items: center;
-  padding: 2px;
-  border-radius: 999px;
-  border: 1px solid var(--rule);
-  background: var(--surface, var(--paper));
-  gap: 2px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 .voice-pill {
-  min-height: 24px;
+  min-height: 26px;
   padding: 0 10px;
-  border: 0;
+  border: 1px solid var(--rule);
   border-radius: 999px;
-  background: transparent;
-  color: var(--ink-muted);
+  background: var(--surface, var(--paper));
+  color: var(--ink-body);
   font-family: var(--sans);
   font-size: 11.5px;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: border-color 0.14s ease, color 0.14s ease, background-color 0.14s ease;
 }
-.voice-pill:hover { color: var(--ink); }
+.voice-pill:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
 .voice-pill.on {
   background: var(--blue);
+  border-color: var(--blue);
   color: #FFFFFF;
+}
+.voice-accent {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.72;
+}
+.voice-pill.on .voice-accent {
+  opacity: 0.9;
 }
 .voice-close {
   width: 28px;

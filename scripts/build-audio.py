@@ -43,20 +43,68 @@ VOICES = [
     {
         'id': 'ava',
         'label': 'Ava',
+        'accent': 'US',
         'tagline': 'Warm & expressive',
         'edge': 'en-US-AvaMultilingualNeural',
         'kokoro': 'af_heart',
+        'kokoro_lang': 'en-us',
         'openai': 'coral',
         'elevenlabs': 'EXAVITQu4vr4xnSDxMaL',
     },
     {
         'id': 'andrew',
         'label': 'Andrew',
+        'accent': 'US',
         'tagline': 'Calm & conversational',
         'edge': 'en-US-AndrewMultilingualNeural',
         'kokoro': 'am_michael',
+        'kokoro_lang': 'en-us',
         'openai': 'ash',
         'elevenlabs': 'TxGEqnHWrfWFTfGW9XjX',
+    },
+    {
+        'id': 'sonia',
+        'label': 'Sonia',
+        'accent': 'UK',
+        'tagline': 'British · Crisp & warm',
+        'edge': 'en-GB-SoniaNeural',
+        'kokoro': 'bf_emma',
+        'kokoro_lang': 'en-gb',
+        'openai': 'sage',
+        'elevenlabs': 'Xb7hH8MSUJpSbSDYk0k2',
+    },
+    {
+        'id': 'ryan',
+        'label': 'Ryan',
+        'accent': 'UK',
+        'tagline': 'British · Calm & clear',
+        'edge': 'en-GB-RyanNeural',
+        'kokoro': 'bm_george',
+        'kokoro_lang': 'en-gb',
+        'openai': 'ballad',
+        'elevenlabs': 'JBFqnCBsd6RMkjVDRZzb',
+    },
+    {
+        'id': 'emma',
+        'label': 'Emma',
+        'accent': 'US',
+        'tagline': 'Bright & natural',
+        'edge': 'en-US-EmmaMultilingualNeural',
+        'kokoro': 'af_bella',
+        'kokoro_lang': 'en-us',
+        'openai': 'shimmer',
+        'elevenlabs': '21m00Tcm4TlvDq8ikWAM',
+    },
+    {
+        'id': 'brian',
+        'label': 'Brian',
+        'accent': 'US',
+        'tagline': 'Deep & thoughtful',
+        'edge': 'en-US-BrianMultilingualNeural',
+        'kokoro': 'am_adam',
+        'kokoro_lang': 'en-us',
+        'openai': 'onyx',
+        'elevenlabs': 'pNInz6obpgDQGcFmaJgB',
     },
 ]
 
@@ -250,6 +298,7 @@ def synth_kokoro_sync(parts, voice_cfg, cache_dir):
 
     kokoro = get_kokoro(cache_dir)
     voice_name = voice_cfg['kokoro']
+    kokoro_lang = voice_cfg.get('kokoro_lang', 'en-us')
     segments = []
     cues = []
     sample_rate = 24000
@@ -260,7 +309,7 @@ def synth_kokoro_sync(parts, voice_cfg, cache_dir):
             cues.append(round(total_samples / sample_rate, 2))
         part_chunks = split_sentences(part)
         for s_idx, chunk in enumerate(part_chunks):
-            samples, sr = kokoro.create(chunk, voice=voice_name, speed=0.96, lang='en-us')
+            samples, sr = kokoro.create(chunk, voice=voice_name, speed=0.96, lang=kokoro_lang)
             sample_rate = int(sr)
             arr = np.asarray(samples, dtype=np.float32)
             segments.append(arr)
@@ -530,7 +579,7 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
         'version': 1,
         'provider': provider,
         'fallback': 'kokoro',
-        'voices': [{'id': v['id'], 'label': v['label'], 'tagline': v['tagline']} for v in selected_voices],
+        'voices': [{'id': v['id'], 'label': v['label'], 'accent': v.get('accent', ''), 'tagline': v['tagline']} for v in selected_voices],
         'stories': stories_map,
     }
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -557,7 +606,7 @@ def main():
     parser.add_argument('--edition', type=Path, default=None, help='Edition JSON path (default: latest)')
     parser.add_argument('--out', type=Path, default=ROOT / 'build' / 'site' / 'assets' / 'audio')
     parser.add_argument('--cache', type=Path, default=ROOT / '.audio-cache')
-    parser.add_argument('--voices', default='ava,andrew', help='Comma-separated voice IDs')
+    parser.add_argument('--voices', default=','.join(v['id'] for v in VOICES), help='Comma-separated voice IDs')
     parser.add_argument('--concurrency', type=int, default=8)
     args = parser.parse_args()
 
