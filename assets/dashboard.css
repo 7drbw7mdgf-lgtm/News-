@@ -1075,3 +1075,17 @@ body.reader-focus .dashboard-body {
 .rg-evidence-list li { display:grid; gap:4px; border-bottom:1px solid #edf0ed; padding:0 0 9px; }
 .rg-evidence-list a { font-size:12px; line-height:1.45; color:#255d4a; text-decoration:underline; text-underline-offset:2px; overflow-wrap:anywhere; }
 .rg-evidence-list small { color:#758579; font-size:10px; }
+
+
+/* Stage 5 shock simulator: accessible comparison table and editable assumptions */
+.rg-scenario { display:grid; gap:13px; border:1px solid #c9d9cd; background:#fff; border-radius:12px; padding:16px; min-width:0; }
+.rg-scenario .rg-header h3 { font-size:17px; margin:0 0 5px; }
+.rg-scenario .rg-header p { font-size:12px; }
+.rg-scenario-scroll { overflow:auto; max-height:310px; border:1px solid #dee6df; border-radius:9px; }
+.rg-scenario table { width:100%; border-collapse:collapse; text-align:left; font-size:12px; }
+.rg-scenario th,.rg-scenario td { padding:10px 12px; border-bottom:1px solid #edf0ed; }
+.rg-scenario th { font-weight:600; }
+.rg-scenario thead th { position:sticky; top:0; background:#f5f8f5; color:#50685a; }
+.rg-scenario td:last-child { color:#667c70; }
+.rg-save-coefficients { background:#2f5d50; color:#fff; font-weight:700; padding:10px 12px; border-radius:8px; border:0; cursor:pointer; min-height:40px; }
+.rg-coefficient { max-width:100%; }
