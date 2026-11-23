@@ -46,6 +46,10 @@ primary_cost_spec = importlib.util.spec_from_file_location("pheme_primary_costs"
 PRIMARY_COSTS = importlib.util.module_from_spec(primary_cost_spec)
 primary_cost_spec.loader.exec_module(PRIMARY_COSTS)
 
+resource_graph_spec = importlib.util.spec_from_file_location("pheme_resource_graph", ROOT / "backend" / "resource_graph.py")
+RESOURCE_GRAPH = importlib.util.module_from_spec(resource_graph_spec)
+resource_graph_spec.loader.exec_module(RESOURCE_GRAPH)
+
 
 def read_cached():
     global ITEMS
@@ -261,6 +265,17 @@ class Handler(BaseHTTPRequestHandler):
                 "engine": "PHEME-8",
                 "model": "octal-normalized-multiplication-and-filtering-v2",
                 "inference": OCTAL.infer_from_corroboration(assessed),
+            })
+            return
+        if path.path == "/v1/resource-graph":
+            self.respond({
+                "graph": RESOURCE_GRAPH.EXAMPLE,
+                "schema": {"nodeTypes": list(RESOURCE_GRAPH.NODE_TYPES),
+                           "relations": {name: [list(pair) for pair in pairs]
+                                         for name, pairs in RESOURCE_GRAPH.RELATIONS.items()},
+                           "units": list(RESOURCE_GRAPH.UNITS)},
+                "validation": RESOURCE_GRAPH.validate(RESOURCE_GRAPH.EXAMPLE),
+                "status": "illustrative-structure-only",
             })
             return
         if path.path == "/v1/primary-costs":
