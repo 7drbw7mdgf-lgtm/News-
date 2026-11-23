@@ -2163,6 +2163,11 @@
             selectPaperInPlace(state.paper || followed()[0].name);
           } else render();
         }
+        if (state.publisherArticle && !state.reading) {
+          // Deep-linked publisher articles initially have only query-string metadata.
+          // Redraw once RSS arrives so the headline, summary and image become available.
+          render();
+        }
         if (state.view === 'trading' && !state.reading) {
           refreshWorkspaceNews();
         }
@@ -2284,6 +2289,13 @@
       publisherReaderCache[url] = { status: 'unavailable' };
       return;
     }
+    // BBC News pages are not a public CORS-enabled HTML API. Browser-side
+    // article extraction cannot reliably work, so show permitted RSS metadata
+    // and send readers to the publisher rather than displaying a fake spinner.
+    if (entry.name === 'BBC News' && /^https:\/\/(?:www\.)?bbc\.(?:co\.uk|com)\/news\//i.test(url)) {
+      publisherReaderCache[url] = { status: 'external' };
+      return;
+    }
     var result = publisherReaderCache[url] = { status: 'loading' };
     fetchPublisherPage(entry, url)
       .then(function (page) {
@@ -2340,7 +2352,7 @@
     var image = safeAsset(item.image || entry.image);
     var safe = safeExternalUrl(entry.url);
     return '<article class="source-reader" aria-labelledby="source-reader-title">' +
-      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : 'Publisher preview') + '</span></div>' +
+      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : 'Publisher RSS preview') + '</span></div>' +
       '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : 'Publisher RSS') + '</p>' +
       (published ? '<time>' + esc(articlePublishedLabel(published)) + '</time>' : '') +
       (extracted && extraction.byline ? '<p class="source-reader-byline">' + esc(extraction.byline) + '</p>' : '') +
@@ -2349,7 +2361,13 @@
       '<div class="source-reader-body">' +
       (extracted ? '<div class="source-reader-content">' + extraction.content + '</div>' : (summary ? '<p class="source-reader-summary">' + esc(summary) + '</p>' : '<p class="notice">This publisher has not supplied an RSS excerpt for this article. Open it at the publisher to read the full story.</p>')) +
       (extracted ? '<p class="source-reader-note">Readability cleaned the publicly available article page. Restricted or paywalled text is not retrieved.</p>' :
-        '<p class="source-reader-note">' + (extraction && extraction.status === 'unavailable' ? 'Pheme could not extract the publisher page. The publisher may block automated access or require a subscription.' + (summary ? ' The available RSS excerpt is shown above.' : ' No RSS excerpt is available.') : 'Pheme is checking whether the publisher page allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) + '</p>') +
+        '<p class="source-reader-note">' +
+        (extraction && extraction.status === 'external'
+          ? 'This is a publisher RSS preview, not the full BBC article. BBC News does not offer a supported cross-origin article reader for Pheme. Use the link below to read the full article on BBC News.'
+          : extraction && extraction.status === 'unavailable'
+          ? 'Pheme could not retrieve this publisher’s full article. The publisher may restrict automated access. ' + (summary ? 'The available RSS excerpt is shown above.' : 'No RSS excerpt is available.')
+          : 'Pheme is checking whether the publisher allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) +
+        '</p>') +
       (publisherRequiresSubscription(entry.name) ? '<p class="source-reader-access">The publisher may require a subscription for the full article.</p>' : '') +
       '</div>' +
       '<div class="source-reader-actions">' + (safe ? originalArticleLink(safe, entry.name, 'Continue to ' + entry.name + ' ↗', 'darkbtn') : '') +
