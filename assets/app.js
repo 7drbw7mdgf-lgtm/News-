@@ -2390,10 +2390,11 @@
     var image = safeAsset(item.image || entry.image);
     var safe = safeExternalUrl(entry.url);
     var isReference = serverItem && serverItem.status === 'edition-reference' && !publisherArticleFor(entry.name, entry.url);
+    var isMetadata = serverItem && serverItem.status === 'publisher-metadata' && !publisherArticleFor(entry.name, entry.url);
     var hasContext = isReference && serverItem.context;
     return '<article class="source-reader" aria-labelledby="source-reader-title">' +
-      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : isReference ? 'Source reference' : 'Publisher RSS preview') + '</span></div>' +
-      '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : isReference ? 'Source referenced in Pheme edition' : 'Publisher RSS') + '</p>' +
+      '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : isReference ? 'Source reference' : isMetadata ? 'Publisher metadata preview' : 'Publisher RSS preview') + '</span></div>' +
+      '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : isReference ? 'Source referenced in Pheme edition' : isMetadata ? 'Publisher page metadata' : 'Publisher RSS') + '</p>' +
       (published ? '<time>' + esc(articlePublishedLabel(published)) + '</time>' : '') +
       (extraction && extraction.byline ? '<p class="source-reader-byline">' + esc(extraction.byline) + '</p>' : '') +
       '<h1 id="source-reader-title">' + esc(title) + '</h1></header>' +
@@ -2412,7 +2413,9 @@
         '<p class="source-reader-note">' +
         (extraction && extraction.status === 'external'
           ? (isReference
-              ? 'The publisher article is no longer in the available RSS feed. Pheme retained its source link and headline from the editorial edition; the full publisher text has not been retrieved.'
+              ? 'The publisher article is no longer in the available RSS feed. Pheme retained its source link and any original headline from the editorial edition; the full publisher text has not been retrieved.'
+              : isMetadata
+              ? 'Pheme recovered limited public title/description metadata from the publisher page, where permitted. This is not the full article; use the original publisher link.'
               : 'Publisher-hosted article text is not available for authorised in-site reading. The latest available RSS preview appears above; open the original link for the full story.')
           : extraction && extraction.status === 'unavailable'
           ? 'Pheme could not retrieve this publisher’s full article. The publisher may restrict automated access. ' + (summary ? 'The available RSS excerpt is shown above.' : 'No RSS excerpt is available.')
