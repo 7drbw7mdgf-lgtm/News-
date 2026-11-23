@@ -175,7 +175,7 @@
       '<div class="rg-toolbar"><label>Resource<select id="rg-shock">'+choices.map(function(n){
         return '<option value="'+escapeText(n.id)+'"'+(n.id===scenarioShock?' selected':'')+'>'+escapeText(n.label)+'</option>';
       }).join('')+'</select></label><label>Price change (%)<input id="rg-percent" type="number" min="-100" max="100" step="1" value="'+scenarioPercent+'"></label>'+
-      '<button type="button" data-rg="run-scenario">Simulate</button></div>'+
+      '<button type="button" data-rg="run-scenario">Simulate</button><button type="button" data-rg="demo-coefficients">Load demo assumptions</button></div>'+
       '<div class="rg-scenario-scroll"><table><thead><tr><th>Node</th><th>Relative change</th><th>Validity</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
       '<p class="rg-evidence-caution">Explicit demo assumptions only. Unknown edges stop transmission; duplicated upstream paths are blocked. Downstream percentage is not a share-price return.</p></section>';
   }
@@ -268,6 +268,16 @@
     var act=button.getAttribute('data-rg');
     if(act==='refresh-evidence'){refreshEvidence(true);return;}
 
+    if(act==='demo-coefficients'){
+      commit(function(g){
+        var demo=[["gas","powerplant",0.35],["powerplant","power",0.8],["power","dc",0.2],["dc","margin",0.4]];
+        demo.forEach(function(item){
+          var edge=g.edges.find(function(e){return e.source===item[0]&&e.target===item[1];});
+          if(edge)edge.passThrough=item[2];
+        });
+      });
+      return;
+    }
     if(act==='run-scenario'){
       var input=root.querySelector('#rg-percent'),pct=Number(input.value);
       if(input.value.trim()===''||!Number.isFinite(pct)||pct< -100||pct>100){notice='Shock must be a number between -100 and 100';paint();return;}
