@@ -1435,6 +1435,55 @@
     }).join('') : '<p class="ws-empty">Your watchlist is empty. Search for a company to add it.</p>';
   }
 
+  var EXCHANGE_SESSIONS = [
+    { id: 'london', name: 'London', code: 'LSE', zone: 'Europe/London', open: 480, close: 990, hours: '08:00–16:30' },
+    { id: 'newyork', name: 'New York', code: 'NYSE', zone: 'America/New_York', open: 570, close: 960, hours: '09:30–16:00' },
+    { id: 'mumbai', name: 'Mumbai', code: 'NSE', zone: 'Asia/Kolkata', open: 555, close: 930, hours: '09:15–15:30' },
+    { id: 'tokyo', name: 'Tokyo', code: 'TSE', zone: 'Asia/Tokyo', open: 540, close: 930, hours: '09:00–15:30' },
+    { id: 'shanghai', name: 'Shanghai', code: 'SSE', zone: 'Asia/Shanghai', open: 570, close: 900, hours: '09:30–15:00' }
+  ];
+
+  function exchangeSessionState(ex) {
+    try {
+      var parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: ex.zone, weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+      }).formatToParts(new Date());
+      var map = {};
+      parts.forEach(function (p) { map[p.type] = p.value; });
+      var day = map.weekday || '';
+      var mins = Number(map.hour || 0) * 60 + Number(map.minute || 0);
+      var weekday = day !== 'Sat' && day !== 'Sun';
+      var open = weekday && mins >= ex.open && mins < ex.close;
+      return { open: open, time: (map.hour || '00') + ':' + (map.minute || '00'), label: open ? 'Open' : 'Closed' };
+    } catch (e) {
+      return { open: false, time: '--:--', label: 'Closed' };
+    }
+  }
+
+  function renderExchangeSessions() {
+    return '<section class="ws-session-strip" aria-label="Global exchange session status">' + EXCHANGE_SESSIONS.map(function (ex) {
+      var st = exchangeSessionState(ex);
+      return '<div class="ws-session-card' + (st.open ? ' is-open' : '') + '" data-session-id="' + esc(ex.id) + '">' +
+        '<div class="ws-session-top"><strong>' + esc(ex.name) + ' <span>' + esc(ex.code) + '</span></strong>' +
+        '<span class="ws-session-badge">' + esc(st.label) + '</span></div>' +
+        '<div class="ws-session-foot"><time>' + esc(st.time) + '</time><small>' + esc(ex.hours) + '</small></div></div>';
+    }).join('') + '</section>';
+  }
+
+  function updateSessionCards() {
+    app.querySelectorAll('[data-session-id]').forEach(function (card) {
+      var id = card.getAttribute('data-session-id');
+      var ex = EXCHANGE_SESSIONS.find(function (x) { return x.id === id; });
+      if (!ex) return;
+      var st = exchangeSessionState(ex);
+      card.classList.toggle('is-open', st.open);
+      var badge = card.querySelector('.ws-session-badge');
+      if (badge) badge.textContent = st.label;
+      var timeEl = card.querySelector('time');
+      if (timeEl) timeEl.textContent = st.time;
+    });
+  }
+
   function marketWorkspaceOverview() {
     var mini = MARKETS.map(function (m) {
       var series = marketPoints(m.id), last = series[series.length-1];
@@ -1443,9 +1492,10 @@
         (last ? '<strong>' + marketNumber(last.close) + '</strong><small>' + esc(marketDate(last.date)) + ' · daily close</small>' :
           '<strong>—</strong><small>Data pending</small>') + '</button>';
     }).join('');
-    return '<section class="ws-market-strip" aria-label="Major world indices">' + mini + '</section>' +
+    return renderExchangeSessions() +
+      '<section class="ws-market-strip" aria-label="Major world indices">' + mini + '</section>' +
       '<div class="ws-dashboard-grid"><section class="ws-widget ws-widget-chart">' +
-      '<div class="ws-widget-head"><h2>Market monitor</h2><span>TradingView · exchange delays may apply</span></div>' +
+      '<div class="ws-widget-head"><h2>Market monitor</h2><span>TradingView · companies, indices, commodities &amp; FX</span></div>' +
       '<div id="tv-market-overview" class="tv-market-overview ws-tv-overview" aria-label="Embedded TradingView markets overview">' +
       '<p class="ws-empty">Connecting to TradingView…</p></div></section>' +
       '<div class="ws-sidebar-stack"><section class="ws-widget ws-widget-watch">' +
@@ -1471,7 +1521,7 @@
       '<div class="ws-company-layout"><section class="ws-widget ws-widget-company-chart">' +
       '<div class="ws-widget-head ws-company-widget-head"><h3>Company intelligence</h3><span>TradingView · may be delayed</span></div>' +
       '<div class="ws-company-switch" role="group" aria-label="Company data views">' +
-      [{id:'chart',name:'Chart'},{id:'financials',name:'Financials'},{id:'profile',name:'Profile'}].map(function (option) {
+      [{id:'chart',name:'Chart'},{id:'advanced',name:'Advanced'},{id:'technicals',name:'Technicals'},{id:'financials',name:'Financials'},{id:'profile',name:'Profile'}].map(function (option) {
         var active = state.marketCompanyPanel === option.id;
         return '<button type="button" data-act="wscompanypanel" data-id="' + option.id +
           '" aria-pressed="' + active + '">' + option.name + '</button>';
@@ -1512,14 +1562,16 @@
 
   function renderTrading() {
     var tabs = [
-      {id:'overview',label:'Overview'}, {id:'company',label:'Company'}, {id:'news',label:'News'},
-      {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
+      {id:'overview',label:'Overview'}, {id:'company',label:'Company'},
+      {id:'heatmap',label:'Heatmap'}, {id:'movers',label:'Movers & FX'}, {id:'calendar',label:'Calendar'},
+      {id:'news',label:'News'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
     ];
     var tab = tabs.some(function (t) { return t.id === state.marketWorkspaceTab; }) ? state.marketWorkspaceTab : 'overview';
     var results = marketSearchResultsHtml();
     return '<div class="ws-shell"><header class="ws-header"><div class="ws-heading">' +
       '<div><span class="ws-kicker">PHEME / MARKET INTELLIGENCE</span><h1>Markets workspace</h1></div>' +
-      '<span class="ws-provider-pill">Data from publisher RSS & TradingView</span></div>' +
+      '<span class="ws-provider-pill">Data from publisher RSS &amp; TradingView</span></div>' +
+      '<div id="ws-ticker-tape" class="ws-ticker-tape" aria-label="Live market ticker tape"><p class="ws-empty">Loading ticker tape…</p></div>' +
       '<div class="ws-search-area"><label class="sr-only" for="ws-company-search">Search companies, tickers or news</label>' +
       '<span aria-hidden="true" class="ws-search-icon">⌕</span>' +
       '<input id="ws-company-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search companies, tickers or publisher news…" value="' +
@@ -1533,6 +1585,15 @@
       '<div class="ws-panel" id="ws-active-panel">' +
       (tab === 'overview' ? marketWorkspaceOverview() :
        tab === 'company' ? marketWorkspaceCompany() :
+       tab === 'heatmap' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>S&amp;P 500 sector heatmap</h2><span>Sized by market cap · coloured by daily move</span></div>' +
+         '<div id="ws-stock-heatmap" class="ws-widget-embed"><p class="ws-empty">Loading sector heatmap…</p></div></section>' :
+       tab === 'movers' ? '<div class="ws-two-col">' +
+         '<section class="ws-widget ws-half-widget"><div class="ws-widget-head"><h2>Market movers</h2><span>Gainers, losers &amp; most active</span></div>' +
+         '<div id="ws-hotlists" class="ws-widget-embed"><p class="ws-empty">Loading market movers…</p></div></section>' +
+         '<section class="ws-widget ws-half-widget"><div class="ws-widget-head"><h2>Forex cross rates</h2><span>GBP · USD · EUR · JPY · CHF · CAD · AUD · INR</span></div>' +
+         '<div id="ws-forex-cross" class="ws-widget-embed"><p class="ws-empty">Loading forex cross rates…</p></div></section></div>' :
+       tab === 'calendar' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>Economic calendar</h2><span>Central banks, CPI, GDP &amp; jobs (UK, US, EU, JP, IN, CN)</span></div>' +
+         '<div id="ws-economic-calendar" class="ws-widget-embed"><p class="ws-empty">Loading economic calendar…</p></div></section>' :
        tab === 'news' ? marketWorkspaceNews() :
        tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
          '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
@@ -1543,11 +1604,9 @@
       '</div></div>';
   }
 
-  function mountTradingViewMarkets() {
-    var box = app.querySelector('#tv-market-overview');
+  function mountTradingViewBox(box, scriptFile, config, creditLabel, fallbackUrl) {
     if (!box || box.getAttribute('data-tv-loaded') === 'yes') return;
     box.setAttribute('data-tv-loaded', 'yes');
-    // Official provider-hosted embedding; do not extract or redistribute widget prices.
     var widget = document.createElement('div');
     widget.className = 'tradingview-widget-container';
     widget.style.width = '100%';
@@ -1555,18 +1614,51 @@
     var canvas = document.createElement('div');
     canvas.className = 'tradingview-widget-container__widget';
     canvas.style.width = '100%';
-    canvas.style.height = 'calc(100% - 28px)';
-    var credit = document.createElement('div');
-    credit.className = 'tradingview-widget-copyright';
-    credit.innerHTML = '<a href="https://www.tradingview.com/markets/" target="_blank" rel="noopener nofollow noreferrer">Market data by TradingView</a>';
+    canvas.style.height = creditLabel ? 'calc(100% - 28px)' : '100%';
     widget.appendChild(canvas);
-    widget.appendChild(credit);
+    if (creditLabel) {
+      var credit = document.createElement('div');
+      credit.className = 'tradingview-widget-copyright';
+      credit.innerHTML = '<a href="' + esc(fallbackUrl || 'https://www.tradingview.com/markets/') + '" target="_blank" rel="noopener nofollow noreferrer">' + esc(creditLabel) + '</a>';
+      widget.appendChild(credit);
+    }
     box.replaceChildren(widget);
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
-    script.textContent = JSON.stringify({
+    script.src = 'https://s3.tradingview.com/external-embedding/' + scriptFile;
+    script.textContent = JSON.stringify(config);
+    script.onerror = function () {
+      box.removeAttribute('data-tv-loaded');
+      box.innerHTML = '<p class="ws-empty">Widget unavailable right now. <a href="' + esc(fallbackUrl || 'https://www.tradingview.com/markets/') + '" target="_blank" rel="noopener noreferrer">Open on TradingView ↗</a></p>';
+    };
+    widget.appendChild(script);
+  }
+
+  function mountTradingViewMarkets() {
+    mountTradingViewBox(app.querySelector('#ws-ticker-tape'), 'embed-widget-ticker-tape.js', {
+      symbols: [
+        { proName: 'TVC:UKX', title: 'FTSE 100' },
+        { proName: 'SP:SPX', title: 'S&P 500' },
+        { proName: 'NASDAQ:NDX', title: 'NASDAQ 100' },
+        { proName: 'NSE:NIFTY', title: 'NIFTY 50' },
+        { proName: 'TVC:GOLD', title: 'Gold' },
+        { proName: 'TVC:UKOIL', title: 'Brent Oil' },
+        { proName: 'FX:GBPUSD', title: 'GBP/USD' },
+        { proName: 'FX:EURUSD', title: 'EUR/USD' },
+        { proName: 'BITSTAMP:BTCUSD', title: 'Bitcoin' },
+        { proName: 'NASDAQ:AAPL', title: 'Apple' },
+        { proName: 'NASDAQ:NVDA', title: 'Nvidia' },
+        { proName: 'NASDAQ:MSFT', title: 'Microsoft' }
+      ],
+      showSymbolLogo: true,
+      isTransparent: false,
+      displayMode: 'adaptive',
+      colorTheme: 'light',
+      locale: 'en'
+    }, '', 'https://www.tradingview.com/markets/');
+
+    mountTradingViewBox(app.querySelector('#tv-market-overview'), 'embed-widget-market-overview.js', {
       colorTheme: 'light',
       dateRange: '3M',
       locale: 'en',
@@ -1586,19 +1678,79 @@
           { s: 'NASDAQ:AMZN', d: 'Amazon' }
         ] },
         { title: 'Global indices', originalTitle: 'Global indices', symbols: [
-          { s: 'NSE:NIFTY', d: 'NIFTY 50 · India' },
           { s: 'TVC:UKX', d: 'FTSE 100 · UK' },
           { s: 'SP:SPX', d: 'S&P 500 · US' },
+          { s: 'NASDAQ:NDX', d: 'NASDAQ 100 · US' },
+          { s: 'NSE:NIFTY', d: 'NIFTY 50 · India' },
           { s: 'SSE:000001', d: 'Shanghai Composite · China' },
           { s: 'TVC:NI225', d: 'Nikkei 225 · Japan' }
+        ] },
+        { title: 'Commodities', originalTitle: 'Commodities', symbols: [
+          { s: 'TVC:GOLD', d: 'Gold Spot' },
+          { s: 'TVC:SILVER', d: 'Silver Spot' },
+          { s: 'TVC:UKOIL', d: 'Brent Crude Oil' },
+          { s: 'TVC:USOIL', d: 'WTI Crude Oil' },
+          { s: 'NYMEX:NG1!', d: 'Natural Gas' }
+        ] },
+        { title: 'Forex', originalTitle: 'Forex', symbols: [
+          { s: 'FX:GBPUSD', d: 'GBP / USD' },
+          { s: 'FX:EURUSD', d: 'EUR / USD' },
+          { s: 'FX:EURGBP', d: 'EUR / GBP' },
+          { s: 'FX:USDJPY', d: 'USD / JPY' },
+          { s: 'FX_IDC:USDINR', d: 'USD / INR' }
         ] }
       ]
-    });
-    script.onerror = function () {
-      box.removeAttribute('data-tv-loaded');
-      box.innerHTML = '<p class="terminal-chart-empty">Market widget unavailable. <a href="https://www.tradingview.com/markets/" target="_blank" rel="noopener noreferrer">View on TradingView</a>.</p>';
-    };
-    widget.appendChild(script);
+    }, 'Market data by TradingView', 'https://www.tradingview.com/markets/');
+
+    mountTradingViewBox(app.querySelector('#ws-stock-heatmap'), 'embed-widget-stock-heatmap.js', {
+      exchanges: [],
+      dataSource: 'SPX500',
+      grouping: 'sector',
+      blockSize: 'market_cap_basic',
+      blockColor: 'change',
+      locale: 'en',
+      symbolUrl: '',
+      colorTheme: 'light',
+      hasTopBar: true,
+      isDataSetEnabled: true,
+      isZoomEnabled: true,
+      hasSymbolTooltip: true,
+      isMonoSize: false,
+      width: '100%',
+      height: '100%'
+    }, 'Stock heatmap by TradingView', 'https://www.tradingview.com/heatmap/stock/');
+
+    mountTradingViewBox(app.querySelector('#ws-hotlists'), 'embed-widget-hotlists.js', {
+      colorTheme: 'light',
+      dateRange: '12M',
+      exchange: 'US',
+      showChart: true,
+      locale: 'en',
+      width: '100%',
+      height: '100%',
+      isTransparent: false,
+      showSymbolLogo: true,
+      showFloatingTooltip: true
+    }, 'Market movers by TradingView', 'https://www.tradingview.com/markets/stocks-usa/market-movers-gainers/');
+
+    mountTradingViewBox(app.querySelector('#ws-forex-cross'), 'embed-widget-forex-cross-rates.js', {
+      width: '100%',
+      height: '100%',
+      currencies: ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'],
+      isTransparent: false,
+      colorTheme: 'light',
+      locale: 'en'
+    }, 'Forex rates by TradingView', 'https://www.tradingview.com/markets/currencies/');
+
+    mountTradingViewBox(app.querySelector('#ws-economic-calendar'), 'embed-widget-events.js', {
+      colorTheme: 'light',
+      isTransparent: false,
+      width: '100%',
+      height: '100%',
+      locale: 'en',
+      importanceFilter: '-1,0,1',
+      countryFilter: 'gb,us,eu,jp,in,cn'
+    }, 'Economic calendar by TradingView', 'https://www.tradingview.com/economic-calendar/');
   }
 
   function mountWorkspaceCompanyChart() {
@@ -1626,7 +1778,27 @@
     script.async = true;
     var base = 'https://s3.tradingview.com/external-embedding/';
     var options = { colorTheme:'light', isTransparent:false, locale:'en', width:'100%', height:'100%' };
-    if (mode === 'financials') {
+    if (mode === 'advanced') {
+      script.src = base + 'embed-widget-advanced-chart.js';
+      options = {
+        autosize: true,
+        symbol: company.tv,
+        interval: 'D',
+        timezone: 'Europe/London',
+        theme: 'light',
+        style: '1',
+        locale: 'en',
+        allow_symbol_change: true,
+        calendar: false,
+        support_host: 'https://www.tradingview.com'
+      };
+    } else if (mode === 'technicals') {
+      script.src = base + 'embed-widget-technical-analysis.js';
+      options.symbol = company.tv;
+      options.interval = '1D';
+      options.showIntervalTabs = true;
+      options.displayMode = 'single';
+    } else if (mode === 'financials') {
       script.src = base + 'embed-widget-financials.js';
       options.symbol = company.tv;
       options.displayMode = 'regular';
@@ -2617,6 +2789,7 @@
   function render(opts) {
     document.body.classList.toggle('market-chart-open', !!state.marketOpen);
     var previousMarkets = document.getElementById('market-widgets');
+    var previousTicker = document.getElementById('ws-ticker-tape');
     var settingsScroll = app.querySelector('.settings-body');
     var previousSettingsScroll = settingsScroll ? settingsScroll.scrollTop : 0;
     if (worldMap) { worldMap.remove(); worldMap = null; worldMarkerLayer = null; mapPinById = Object.create(null); }
@@ -2641,9 +2814,14 @@
     if (previousMarkets && nextMarkets && previousMarkets.getAttribute('data-markets') === nextMarkets.getAttribute('data-markets')) {
       nextMarkets.replaceWith(previousMarkets);
     }
+    var nextTicker = document.getElementById('ws-ticker-tape');
+    if (previousTicker && nextTicker && previousTicker.getAttribute('data-tv-loaded') === 'yes') {
+      nextTicker.replaceWith(previousTicker);
+    }
     settingsScroll = app.querySelector('.settings-body');
     if (settingsScroll) settingsScroll.scrollTop = previousSettingsScroll;
     updateClocks();
+    updateSessionCards();
 
     mountWorldMap();
     mountPublisherMap();
@@ -2680,13 +2858,13 @@
     if (act !== 'headermenu') state.utilityOpen = null;
     switch (act) {
       case 'wstab':
-        if (['overview','company','news','map','discover'].indexOf(id) < 0) break;
+        if (['overview','company','heatmap','movers','calendar','news','map','discover'].indexOf(id) < 0) break;
         state.marketWorkspaceTab = id;
         hideWorkspaceSearchResults();
         render();
         break;
       case 'wscompanypanel':
-        if (['chart','financials','profile'].indexOf(id) < 0) break;
+        if (['chart','advanced','technicals','financials','profile'].indexOf(id) < 0) break;
         state.marketCompanyPanel = id;
         var companyWidget = app.querySelector('#ws-company-chart');
         if (companyWidget) {
@@ -3175,5 +3353,5 @@
   loadPublisherFeeds();
   setInterval(loadPublisherFeeds, 5 * 60 * 1000);
   loadAudioManifest();
-  setInterval(updateClocks, 1000);
+  setInterval(function () { updateClocks(); updateSessionCards(); }, 1000);
 })();

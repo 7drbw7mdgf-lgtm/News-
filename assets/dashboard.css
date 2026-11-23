@@ -791,3 +791,35 @@ body.reader-focus .dashboard-body {
 .ws-stock-screener .tradingview-widget-copyright { padding:5px 12px; font:500 10px/1.4 var(--sans); }
 .ws-stock-screener .tradingview-widget-copyright a { color:var(--blue); }
 .ws-discover-link { color:var(--blue); font-weight:700; justify-content:center; }
+
+/* Additional Trading workspace widgets: ticker tape, live exchange sessions, heatmap, movers/FX & calendar. */
+.ws-ticker-tape { width:100%; height:46px; min-height:46px; margin-bottom:10px; border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--surface); }
+.ws-ticker-tape .ws-empty { padding:11px 14px; font-size:11px; }
+.ws-session-strip { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:9px; margin-bottom:11px; }
+.ws-session-card { padding:10px 12px; border:1px solid var(--rule); border-radius:10px; background:var(--surface); display:flex; flex-direction:column; gap:5px; }
+.ws-session-card.is-open { border-color:#2D8A68; background:linear-gradient(180deg, rgba(45,138,104,0.04), var(--surface)); }
+.ws-session-top { display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.ws-session-top strong { font:650 12px/1.2 var(--sans); color:var(--ink); }
+.ws-session-top strong span { font:500 10px/1 var(--sans); color:var(--ink-muted); }
+.ws-session-badge { padding:2px 6px; border-radius:999px; font:700 9px/1.35 var(--sans); text-transform:uppercase; letter-spacing:.05em; background:var(--paper-alt); color:var(--ink-muted); }
+.ws-session-card.is-open .ws-session-badge { background:#E3F5EE; color:#196B4F; }
+.ws-session-foot { display:flex; align-items:baseline; justify-content:space-between; gap:6px; }
+.ws-session-foot time { font:700 16px/1.15 var(--serif); color:var(--ink); font-variant-numeric:tabular-nums; }
+.ws-session-foot small { font:400 10px/1.2 var(--sans); color:var(--ink-muted); }
+.ws-company-switch { flex-wrap:wrap; }
+.ws-full-widget { height:clamp(460px,70vh,720px); }
+.ws-two-col { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.ws-half-widget { height:clamp(450px,66vh,640px); }
+.ws-widget-embed { flex:1; min-height:0; overflow:hidden; background:#fff; }
+.ws-widget-embed .tradingview-widget-copyright { padding:5px 12px; font:500 10px/1.4 var(--sans); background:#fff; text-align:right; color:var(--ink-muted); }
+.ws-widget-embed .tradingview-widget-copyright a { color:var(--blue); text-decoration:none; }
+@media(max-width:1040px) {
+  .ws-session-strip { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .ws-two-col { grid-template-columns:1fr; }
+}
+@media(max-width:600px) {
+  .ws-session-strip { grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
+  .ws-session-card { padding:8px 10px; }
+  .ws-session-foot time { font-size:14px; }
+  .ws-full-widget,.ws-half-widget { height:480px; }
+}
