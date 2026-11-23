@@ -50,6 +50,10 @@ resource_graph_spec = importlib.util.spec_from_file_location("pheme_resource_gra
 RESOURCE_GRAPH = importlib.util.module_from_spec(resource_graph_spec)
 resource_graph_spec.loader.exec_module(RESOURCE_GRAPH)
 
+resource_evidence_spec = importlib.util.spec_from_file_location("pheme_resource_evidence", ROOT / "backend" / "resource_evidence.py")
+RESOURCE_EVIDENCE = importlib.util.module_from_spec(resource_evidence_spec)
+resource_evidence_spec.loader.exec_module(RESOURCE_EVIDENCE)
+
 
 def read_cached():
     global ITEMS
@@ -266,6 +270,16 @@ class Handler(BaseHTTPRequestHandler):
                 "model": "octal-normalized-multiplication-and-filtering-v2",
                 "inference": OCTAL.infer_from_corroboration(assessed),
             })
+            return
+        if path.path == "/v1/resource-evidence":
+            node = (query.get("node") or [None])[0]
+            if node is not None and (len(node) > 40 or node not in RESOURCE_EVIDENCE.LEXICON):
+                self.respond({"error": "Unsupported resource node"}, 400)
+                return
+            with LOCK:
+                snapshot = dict(ITEMS)
+            result = RESOURCE_EVIDENCE.resource_evidence(snapshot, node=node)
+            self.respond(result)
             return
         if path.path == "/v1/resource-graph":
             self.respond({
