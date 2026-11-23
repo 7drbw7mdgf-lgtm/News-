@@ -60,9 +60,9 @@ class OctalEngineTests(unittest.TestCase):
         self.assertEqual(result["execution"],"disabled")
 
     def test_multiplication_can_fail_output_filter(self):
-        result=engine.infer_from_corroboration({"propositions":[claim(5),claim(5)]})
+        result=engine.infer_from_corroboration({"propositions":[claim(5),claim(4)]})
         self.assertEqual(result["status"],"filtered")
-        self.assertEqual(result["rawOctalResult"],4)
+        self.assertEqual(result["rawOctalResult"],3)
         self.assertIsNone(result["octalResult"])
         self.assertFalse(result["trace"]["outputFilter"]["pass"])
 
