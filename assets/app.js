@@ -1685,7 +1685,7 @@
     var tabs = [
       {id:'overview',label:'Overview'}, {id:'company',label:'Company'},
       {id:'heatmap',label:'Heatmap'}, {id:'movers',label:'Movers & FX'}, {id:'calendar',label:'Calendar'},
-      {id:'news',label:'News'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
+      {id:'news',label:'News'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
     ];
     var tab = tabs.some(function (t) { return t.id === state.marketWorkspaceTab; }) ? state.marketWorkspaceTab : 'overview';
     var results = marketSearchResultsHtml();
@@ -1719,6 +1719,7 @@
        tab === 'calendar' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>Economic calendar</h2><span>Central banks, CPI, GDP &amp; jobs (UK, US, EU, JP, IN, CN)</span></div>' +
          '<div id="ws-economic-calendar" class="ws-widget-embed"><p class="ws-empty">Loading economic calendar…</p></div></section>' :
        tab === 'news' ? marketWorkspaceNews() :
+       tab === 'resources' ? (window.PhemeResourceGraph ? window.PhemeResourceGraph.html() : '<p>Resource graph unavailable.</p>') :
        tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
          '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
          '<p class="ws-widget-foot">Exchange pins do not imply real-time market data. Indices show completed daily closes.</p></section>' :
@@ -3133,7 +3134,7 @@
   app.addEventListener('change', function (event) {
     if (!event.target || event.target.id !== 'ws-mobile-section') return;
     var next = event.target.value;
-    if (['overview','company','heatmap','movers','calendar','news','map','discover'].indexOf(next) === -1 ||
+    if (['overview','company','heatmap','movers','calendar','news','resources','map','discover'].indexOf(next) === -1 ||
         next === state.marketWorkspaceTab) return;
     closeExpandedMarketWidget();
     state.marketWorkspaceTab = next;
@@ -3181,7 +3182,7 @@
         }
         break;
       case 'wstab':
-        if (['overview','company','heatmap','movers','calendar','news','map','discover'].indexOf(id) < 0) break;
+        if (['overview','company','heatmap','movers','calendar','news','resources','map','discover'].indexOf(id) < 0) break;
         closeExpandedMarketWidget();
         state.marketWorkspaceTab = id;
         hideWorkspaceSearchResults();
