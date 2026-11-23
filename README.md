@@ -61,3 +61,39 @@ The deployment workflow runs `scripts/scrape-indian-express.mjs` on GitHub Actio
 Pheme articles describe the events themselves. Outlet counts, political leaning and reader instructions belong to the coverage interface and are rejected as article bodies. The current edition has source-based original articles in `articles/2026-11-22.json`, with source references and update dates; `scripts/apply-article-edits.py` applies them before regenerating `assets/data.js`.
 
 New automated articles require a working repository secret named `ANTHROPIC_API_KEY` or `GROQ_API_KEY`. The writer must return factual paragraphs and named sources. If it is unavailable or returns inadequate material, the job retains the existing verified edition instead of publishing filler. Older archived entries without an article are labelled as unavailable in the reader rather than expanded into generic text.
+
+## Principia Phemica input feed
+
+The Fasthosts build publishes a versioned JSON input at
+[api/phemica/v1/input.json](https://pheme24.online/api/phemica/v1/input.json).
+The collector and verified plan records serve two different inputs.
+
+- **articles** are publisher metadata for claim extraction. Each article has
+  an ID based on its canonical URL and a version ID based on its source text
+  and metadata. **observedAt** records the reader snapshot time. Consumers
+  should retain observations by version ID to establish first-seen times
+  within their own archive. **publishedAt** carries the publisher's timestamp
+  where one with a UTC offset is available. **originId** stays null until
+  claim-level attribution is verified. Editorial summaries, archive references
+  without publisher metadata and article bodies are excluded.
+- **planEvents** are verified operator-backed assertions. Add a new event
+  to feeds/phemica-plan-events.json and point **supersedes** to the preceding
+  record for the same company, site and process. Use **publicAvailableOn**
+  for the dated source's publication day. **effectiveOn** records an exact
+  operational date where given and **effectiveBy** can preserve a deadline
+  without inventing a day of execution. Use null for unknown dates. Subsequent
+  postponements and confirmations can change the current plan status while
+  preserving the original announcement. The initial records reproduce the
+  Bremen 2022 replay. RSS candidates do not update this ledger automatically.
+
+The input feed is a snapshot. Run a consumer on a cadence suitable for the
+pilot and archive each observed article version, since rolling reader entries
+may disappear between polls. Date-only plan events support end-of-day replay.
+Exploring intraday timing requires source timestamps and a consumer audit log.
+
+To validate or replay a downloaded input:
+
+```sh
+python3 -m unittest discover -s scripts -p 'test_phemica_input.py'
+python3 -c 'import json; from backend.phemica_input import plans_as_of; print(plans_as_of(json.load(open("input.json")), "2022-09-30"))'
+```
