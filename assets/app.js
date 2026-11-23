@@ -285,12 +285,13 @@
           { id: 'ava', label: 'Ava', accent: 'US', tagline: 'Warm & expressive' },
           { id: 'andrew', label: 'Andrew', accent: 'US', tagline: 'Calm & conversational' },
           { id: 'sonia', label: 'Sonia', accent: 'UK', tagline: 'British Southern · Crisp & warm' },
-          { id: 'ryan', label: 'Ryan', accent: 'UK', tagline: 'British Northern · Calm & clear' },
           { id: 'libby', label: 'Libby', accent: 'UK', tagline: 'British London · Modern & friendly' },
-          { id: 'thomas', label: 'Thomas', accent: 'UK', tagline: 'British Classic · Measured & clear' },
+          { id: 'amelia', label: 'Amelia', accent: 'UK', tagline: 'British · Young & expressive' },
+          { id: 'allison', label: 'Allison', accent: 'UK', tagline: 'British · Smooth & velvety' },
+          { id: 'bradford', label: 'Bradford', accent: 'UK', tagline: 'British · Expressive storyteller' },
+          { id: 'sally', label: 'Sally Ford', accent: 'UK', tagline: 'British · Calm & well-spoken' },
           { id: 'emily', label: 'Emily', accent: 'IE', tagline: 'Irish · Warm & lyrical' },
-          { id: 'vivienne', label: 'Vivienne', accent: 'FR', tagline: 'French English · Warm & expressive' },
-          { id: 'remy', label: 'Remy', accent: 'FR', tagline: 'French English · Smooth & conversational' },
+          { id: 'ernesto', label: 'Ernesto', accent: 'MX', tagline: 'Mexican-American · Warm & conversational' },
           { id: 'ximena', label: 'Ximena', accent: 'ES', tagline: 'Spanish English · Warm & natural' },
           { id: 'alvaro', label: 'Alvaro', accent: 'ES', tagline: 'Spanish English · Castilian & clear' }
         ];

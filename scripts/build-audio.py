@@ -74,17 +74,6 @@ VOICES = [
         'elevenlabs': 'Xb7hH8MSUJpSbSDYk0k2',
     },
     {
-        'id': 'ryan',
-        'label': 'Ryan',
-        'accent': 'UK',
-        'tagline': 'British Northern · Calm & clear',
-        'edge': 'en-GB-RyanNeural',
-        'kokoro': 'bm_george',
-        'kokoro_lang': 'en-gb',
-        'openai': 'ballad',
-        'elevenlabs': 'JBFqnCBsd6RMkjVDRZzb',
-    },
-    {
         'id': 'libby',
         'label': 'Libby',
         'accent': 'UK',
@@ -96,15 +85,52 @@ VOICES = [
         'elevenlabs': '21m00Tcm4TlvDq8ikWAM',
     },
     {
-        'id': 'thomas',
-        'label': 'Thomas',
+        'id': 'amelia',
+        'label': 'Amelia',
         'accent': 'UK',
-        'tagline': 'British Classic · Measured & clear',
-        'edge': 'en-GB-ThomasNeural',
-        'kokoro': 'bm_daniel',
+        'tagline': 'British · Young & expressive',
+        'edge': 'en-GB-MaisieNeural',
+        'kokoro': 'bf_alice',
         'kokoro_lang': 'en-gb',
-        'openai': 'onyx',
-        'elevenlabs': 'pNInz6obpgDQGcFmaJgB',
+        'free_provider': 'kokoro',
+        'openai': 'shimmer',
+        'elevenlabs': 'ZF6FPAbjXT4488VcRRnw',
+    },
+    {
+        'id': 'allison',
+        'label': 'Allison',
+        'accent': 'UK',
+        'tagline': 'British · Smooth & velvety',
+        'edge': 'en-GB-SoniaNeural',
+        'kokoro': 'bf_isabella',
+        'kokoro_lang': 'en-gb',
+        'free_provider': 'kokoro',
+        'openai': 'coral',
+        'elevenlabs': 'Se2Vw1WbHmGbBbyWTuu4',
+    },
+    {
+        'id': 'bradford',
+        'label': 'Bradford',
+        'accent': 'UK',
+        'tagline': 'British · Expressive storyteller',
+        'edge': 'en-GB-RyanNeural',
+        'kokoro': 'bm_george',
+        'kokoro_lang': 'en-gb',
+        'free_provider': 'kokoro',
+        'openai': 'ballad',
+        'elevenlabs': 'NNl6r8mD7vthiJatiJt1',
+    },
+    {
+        'id': 'sally',
+        'label': 'Sally Ford',
+        'accent': 'UK',
+        'tagline': 'British · Calm & well-spoken',
+        'edge': 'en-GB-LibbyNeural',
+        'kokoro': 'bf_lily',
+        'kokoro_lang': 'en-gb',
+        'free_provider': 'kokoro',
+        'openai': 'sage',
+        'elevenlabs': 'kBag1HOZlaVBH7ICPE8x',
     },
     {
         'id': 'emily',
@@ -118,26 +144,15 @@ VOICES = [
         'elevenlabs': 'EXAVITQu4vr4xnSDxMaL',
     },
     {
-        'id': 'vivienne',
-        'label': 'Vivienne',
-        'accent': 'FR',
-        'tagline': 'French English · Warm & expressive',
-        'edge': 'fr-FR-VivienneMultilingualNeural',
-        'kokoro': 'bf_lily',
-        'kokoro_lang': 'en-gb',
-        'openai': 'coral',
-        'elevenlabs': 'Xb7hH8MSUJpSbSDYk0k2',
-    },
-    {
-        'id': 'remy',
-        'label': 'Remy',
-        'accent': 'FR',
-        'tagline': 'French English · Smooth & conversational',
-        'edge': 'fr-FR-RemyMultilingualNeural',
-        'kokoro': 'bm_lewis',
-        'kokoro_lang': 'en-gb',
+        'id': 'ernesto',
+        'label': 'Ernesto',
+        'accent': 'MX',
+        'tagline': 'Mexican-American · Warm & conversational',
+        'edge': 'es-MX-JorgeNeural',
+        'kokoro': 'am_fenrir',
+        'kokoro_lang': 'en-us',
         'openai': 'echo',
-        'elevenlabs': 'JBFqnCBsd6RMkjVDRZzb',
+        'elevenlabs': 'ZwLTvq6uCfb4W00YFl7F',
     },
     {
         'id': 'ximena',
@@ -507,7 +522,8 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, koko
     parts = story_script_parts(story)
     if len(parts) < 2:
         return None
-    digest = content_hash(provider, voice_cfg['id'], parts)
+    effective_provider = voice_cfg.get('free_provider', provider) if provider == 'edge' else provider
+    digest = content_hash(effective_provider, voice_cfg['id'], parts)
     rel_file = f"{voice_cfg['id']}/{story['id']}.mp3"
     dest = out_dir / rel_file
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -522,18 +538,18 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, koko
             'duration': cached_meta['duration'],
             'cues': cached_meta['cues'],
             'cached': True,
-            'provider': provider,
+            'provider': effective_provider,
         }
 
     # Try primary provider first.
     last_err = None
-    if provider != 'kokoro':
+    if effective_provider != 'kokoro':
         async with sem:
             for attempt in range(1, 4):
                 try:
-                    if provider == 'openai':
+                    if effective_provider == 'openai':
                         audio, duration, cues = await asyncio.to_thread(synth_openai_sync, parts, voice_cfg)
-                    elif provider == 'elevenlabs':
+                    elif effective_provider == 'elevenlabs':
                         audio, duration, cues = await asyncio.to_thread(synth_elevenlabs_sync, parts, voice_cfg)
                     else:
                         audio, duration, cues = await synth_edge(parts, voice_cfg)
@@ -547,14 +563,14 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, koko
                         'duration': duration,
                         'cues': cues,
                         'cached': False,
-                        'provider': provider,
+                        'provider': effective_provider,
                     }
                 except Exception as err:
                     last_err = err
                     if attempt < 3:
                         await asyncio.sleep(1.5 * attempt)
 
-    # Self-hosted Kokoro-82M: either explicitly selected or automatic offline fallback.
+    # Self-hosted Kokoro-82M: either selected for this voice or automatic offline fallback.
     fallback_digest = content_hash('kokoro', voice_cfg['id'], parts)
     cached_fallback = _try_cache(cache_dir, voice_cfg['id'], story['id'], fallback_digest, dest)
     if cached_fallback:
@@ -573,7 +589,7 @@ async def generate_one(story, voice_cfg, provider, out_dir, cache_dir, sem, koko
             audio, duration, cues = await asyncio.to_thread(synth_kokoro_sync, parts, voice_cfg, cache_dir)
             dest.write_bytes(audio)
             _save_cache(cache_dir, voice_cfg['id'], story['id'], fallback_digest, audio, duration, cues)
-            if provider != 'kokoro':
+            if effective_provider != 'kokoro':
                 print(f"Kokoro-82M fallback rescued {story['id']} ({voice_cfg['id']}) after {type(last_err).__name__}.", flush=True)
             return {
                 'story_id': story['id'],
@@ -602,6 +618,9 @@ async def build_all(edition_path, out_dir, cache_dir, voice_ids, concurrency):
     sem = asyncio.Semaphore(concurrency)
     # Limit CPU-bound ONNX inference concurrency to keep memory and CPU throughput optimal.
     kokoro_sem = asyncio.Semaphore(2)
+    needs_kokoro = provider == 'kokoro' or (provider == 'edge' and any(v.get('free_provider') == 'kokoro' for v in selected_voices))
+    if needs_kokoro:
+        await asyncio.to_thread(get_kokoro, cache_dir)
     tasks = [
         generate_one(story, v, provider, out_dir, cache_dir, sem, kokoro_sem)
         for story in edition['STORIES']

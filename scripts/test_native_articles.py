@@ -140,7 +140,19 @@ class NativeArticleTests(unittest.TestCase):
         chunks = audio_builder.split_sentences(long_para, max_chars=200)
         self.assertGreaterEqual(len(chunks), 3)
         self.assertTrue(all(len(c) <= 240 for c in chunks))
-        self.assertGreaterEqual(len(audio_builder.VOICES), 6)
+        self.assertGreaterEqual(len(audio_builder.VOICES), 12)
+        ids = {v['id'] for v in audio_builder.VOICES}
+        for removed in ('vivienne', 'remy', 'ryan', 'thomas'):
+            self.assertNotIn(removed, ids)
+        el_ids = {v['elevenlabs'] for v in audio_builder.VOICES}
+        for expected_el in (
+            'ZwLTvq6uCfb4W00YFl7F',
+            'ZF6FPAbjXT4488VcRRnw',
+            'Se2Vw1WbHmGbBbyWTuu4',
+            'NNl6r8mD7vthiJatiJt1',
+            'kBag1HOZlaVBH7ICPE8x',
+        ):
+            self.assertIn(expected_el, el_ids)
         for voice in audio_builder.VOICES:
             for key in ('id', 'label', 'accent', 'tagline', 'edge', 'kokoro', 'kokoro_lang', 'openai', 'elevenlabs'):
                 self.assertTrue(voice.get(key), f"Missing {key} on voice {voice.get('id')}")
