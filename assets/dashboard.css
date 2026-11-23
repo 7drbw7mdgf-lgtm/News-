@@ -823,3 +823,81 @@ body.reader-focus .dashboard-body {
   .ws-session-foot time { font-size:14px; }
   .ws-full-widget,.ws-half-widget { height:480px; }
 }
+
+
+/* Markets workspace UX pass: a terminal needs legible, resizable data panels. */
+.ws-shell { width:100%; }
+.ws-heading { align-items:center; }
+.ws-widget-head { gap:10px; }
+.ws-widget-head h2,.ws-widget-head h3 { flex:0 1 auto; min-width:0; }
+.ws-widget-head > span:not(.ws-widget-actions) { min-width:0; flex:1 1 auto; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ws-widget-actions { display:flex; align-items:center; flex:0 0 auto; margin-left:auto; }
+.ws-expand-button { width:34px; height:32px; display:grid; place-items:center; padding:0; border:1px solid var(--rule); border-radius:7px; color:var(--ink-body); background:var(--paper); font:700 21px/1 var(--sans); cursor:pointer; }
+.ws-expand-button:hover,.ws-expand-button:focus-visible { background:var(--blue); border-color:var(--blue); color:white; outline-offset:2px; }
+.ws-widget { box-shadow:0 2px 12px #283d3309; }
+.ws-widget .ws-widget-scroll { scrollbar-gutter:stable; }
+.ws-widget-scroll a:focus-visible,.ws-widget-head button:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+.ws-widget-headlines .ws-widget-head > button { margin-left:auto; }
+.ws-widget-headlines .ws-widget-actions { margin-left:0; }
+.ws-widget-headlines .ws-widget-head > button { flex:none; }
+.ws-expanded-active { overflow:hidden; }
+.ws-widget.ws-expanded {
+  position:fixed!important;
+  inset:clamp(10px,2.5vh,32px) clamp(10px,3vw,50px)!important;
+  z-index:2000!important;
+  width:auto!important;
+  height:auto!important;
+  max-height:none!important;
+  min-height:0!important;
+  margin:0!important;
+  border-radius:14px;
+  background:var(--surface);
+  box-shadow:0 0 0 100vmax #101f1bd9,0 28px 65px #0003;
+}
+.ws-widget.ws-expanded > .ws-widget-scroll { flex:1; min-height:0; }
+.ws-widget.ws-expanded .ws-widget-embed,
+.ws-widget.ws-expanded .ws-stock-screener,
+.ws-widget.ws-expanded .ws-company-chart { min-height:0; flex:1; height:auto!important; }
+.ws-widget.ws-expanded .ws-tv-overview { flex:1; min-height:0!important; height:auto!important; }
+.ws-widget.ws-expanded .ws-exchange-map { flex:1; height:auto!important; }
+.ws-widget.ws-expanded .ws-widget-head { min-height:53px; }
+.ws-widget.ws-expanded .ws-expand-button { font-size:25px; }
+.ws-widget.ws-expanded .ws-widget-scroll { scrollbar-gutter:stable; }
+@media(max-width:1100px) {
+  .ws-dashboard-grid { grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr); }
+  .ws-widget-head { padding:10px 12px; }
+  .ws-widget-head > span:not(.ws-widget-actions) { max-width:170px; }
+}
+@media(max-width:900px) {
+  .ws-dashboard-grid { grid-template-columns:minmax(0,1fr); }
+  .ws-widget-chart { height:430px; }
+  .ws-sidebar-stack { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ws-heading h1 { font-size:28px; }
+}
+@media(max-width:600px) {
+  .ws-shell { padding-bottom:10px; }
+  .ws-heading { margin-bottom:9px; }
+  .ws-heading h1 { font-size:25px; }
+  .ws-tabs { margin-top:8px; gap:2px; }
+  .ws-tabs button { padding:10px 12px; min-height:40px; }
+  .ws-session-strip { overflow-x:auto; display:flex; padding-bottom:4px; scroll-snap-type:x proximity; }
+  .ws-session-card { flex:0 0 140px; scroll-snap-align:start; }
+  .ws-market-strip { gap:6px; }
+  .ws-index-cell { padding:10px; }
+  .ws-index-cell > span { font-size:11px; }
+  .ws-index-cell > strong { font-size:19px; }
+  .ws-widget-head { min-height:46px; padding:9px 11px; }
+  .ws-widget-head > span:not(.ws-widget-actions) { max-width:102px; font-size:9px; }
+  .ws-widget-head h2,.ws-widget-head h3 { font-size:15px; }
+  .ws-expand-button { width:33px; height:33px; }
+  .ws-widget-chart { height:395px; }
+  .ws-widget-headlines .ws-widget-head > button:not(.ws-expand-button) { font-size:10px; }
+  .ws-company-switch { overflow-x:auto; flex-wrap:nowrap; gap:5px; scrollbar-width:thin; }
+  .ws-company-switch button { flex:none; }
+  .ws-two-col { grid-template-columns:minmax(0,1fr); }
+  .ws-half-widget { height:460px; }
+  .ws-widget.ws-expanded { inset:8px!important; border-radius:11px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .ws-widget,.ws-expand-button { transition:none!important; }
+}
