@@ -3112,6 +3112,7 @@
       }
     }
     if (state.view === 'trading') loadCompanyDirectory();
+    if (state.view === 'trading' && state.marketWorkspaceTab === 'resources' && window.PhemeResourceGraph) window.PhemeResourceGraph.refresh(false);
     mountWorldMap();
     mountPublisherMap();
     mountExchangeMap();
