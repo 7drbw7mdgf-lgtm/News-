@@ -1372,9 +1372,9 @@
       MARKET_DIRECTORY.slice(0,8).map(marketSearchResult).join('');
     var found = MARKET_DIRECTORY.filter(function (company) { return matchesMarketCompany(company,q); }).slice(0,9);
     return (found.length ? found.map(marketSearchResult).join('') :
-      '<div class="ws-search-empty">No company in the local directory. Search its ticker on TradingView instead.</div>') +
-      '<a class="ws-external-search" target="_blank" rel="noopener noreferrer" href="https://www.tradingview.com/symbols/">' +
-      'Explore all listed instruments on TradingView ↗</a>';
+      '<div class="ws-search-empty">Not in Pheme’s quick company directory. Try the full stock screener.</div>') +
+      '<button class="ws-search-hit ws-discover-link" type="button" data-act="wstab" data-id="discover">' +
+      'Browse the worldwide stock screener ↗</button>';
   }
 
   function marketSearchResult(company) {
@@ -1513,7 +1513,7 @@
   function renderTrading() {
     var tabs = [
       {id:'overview',label:'Overview'}, {id:'company',label:'Company'}, {id:'news',label:'News'},
-      {id:'map',label:'World map'}
+      {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
     ];
     var tab = tabs.some(function (t) { return t.id === state.marketWorkspaceTab; }) ? state.marketWorkspaceTab : 'overview';
     var results = marketSearchResultsHtml();
@@ -1534,9 +1534,12 @@
       (tab === 'overview' ? marketWorkspaceOverview() :
        tab === 'company' ? marketWorkspaceCompany() :
        tab === 'news' ? marketWorkspaceNews() :
-       '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
-       '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
-       '<p class="ws-widget-foot">Exchange pins do not imply real-time market data. Indices show completed daily closes.</p></section>') +
+       tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
+         '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
+         '<p class="ws-widget-foot">Exchange pins do not imply real-time market data. Indices show completed daily closes.</p></section>' :
+       '<section class="ws-widget ws-discover-panel"><div class="ws-widget-head"><h2>Discover global stocks</h2><span>TradingView stock screener · independent provider</span></div>' +
+         '<div id="ws-stock-screener" class="ws-stock-screener"><p class="ws-empty">Loading stock screener…</p></div>' +
+         '<p class="ws-widget-foot">Use the screener to explore more stocks. Pheme’s integrated company news currently searches its built-in directory.</p></section>') +
       '</div></div>';
   }
 
@@ -1649,6 +1652,37 @@
     script.textContent = JSON.stringify(options);
     script.onerror = function () {
       target.innerHTML = '<p class="ws-empty">This TradingView view is unavailable. Try another tab or open the company on TradingView.</p>';
+    };
+    container.appendChild(script);
+  }
+
+  function mountWorkspaceScreener() {
+    var target = app.querySelector('#ws-stock-screener');
+    if (!target || target.dataset.loaded === 'yes') return;
+    target.dataset.loaded = 'yes';
+    var container = document.createElement('div');
+    container.className = 'tradingview-widget-container';
+    container.style.height = '100%';
+    container.style.width = '100%';
+    var content = document.createElement('div');
+    content.className = 'tradingview-widget-container__widget';
+    content.style.height = 'calc(100% - 28px)';
+    var brand = document.createElement('div');
+    brand.className = 'tradingview-widget-copyright';
+    brand.innerHTML = '<a href="https://www.tradingview.com/markets/stocks-usa/market-movers-all-stocks/" rel="noopener nofollow noreferrer" target="_blank">Stock screener by TradingView</a>';
+    container.appendChild(content);
+    container.appendChild(brand);
+    target.replaceChildren(container);
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
+    script.textContent = JSON.stringify({
+      market:'america', showToolbar:true, defaultColumn:'overview',
+      defaultScreen:'general', isTransparent:false, locale:'en',
+      colorTheme:'light', width:'100%', height:'100%'
+    });
+    script.onerror = function () {
+      target.innerHTML = '<p class="ws-empty">The screener could not load. <a href="https://www.tradingview.com/markets/stocks-usa/" target="_blank" rel="noopener noreferrer">Explore markets on TradingView</a>.</p>';
     };
     container.appendChild(script);
   }
@@ -2616,6 +2650,7 @@
     mountExchangeMap();
     mountTradingViewMarkets();
     mountWorkspaceCompanyChart();
+    mountWorkspaceScreener();
     updateReadProgress();
     updateSiteScrollTone();
     if (opts && opts.focus) {
@@ -2645,7 +2680,7 @@
     if (act !== 'headermenu') state.utilityOpen = null;
     switch (act) {
       case 'wstab':
-        if (['overview','company','news','map'].indexOf(id) < 0) break;
+        if (['overview','company','news','map','discover'].indexOf(id) < 0) break;
         state.marketWorkspaceTab = id;
         hideWorkspaceSearchResults();
         render();
