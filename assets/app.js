@@ -3104,7 +3104,11 @@
 
     if (state.view === 'trading' && !state.publisherArticle && !state.reading) {
       var selectedTab = app.querySelector('.ws-tabs button.active');
-      if (selectedTab) selectedTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      if (selectedTab && selectedTab.parentElement) {
+        var rail = selectedTab.parentElement;
+        var desiredLeft = selectedTab.offsetLeft - rail.offsetLeft - (rail.clientWidth - selectedTab.offsetWidth) / 2;
+        rail.scrollLeft = Math.max(0, desiredLeft);
+      }
     }
     if (state.view === 'trading') loadCompanyDirectory();
     mountWorldMap();
