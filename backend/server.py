@@ -34,6 +34,10 @@ spec = importlib.util.spec_from_file_location("pheme_reader", ROOT / "scripts" /
 READER = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(READER)
 
+corroboration_spec = importlib.util.spec_from_file_location("pheme_corroboration", ROOT / "backend" / "corroboration.py")
+CORROBORATION = importlib.util.module_from_spec(corroboration_spec)
+corroboration_spec.loader.exec_module(CORROBORATION)
+
 
 def read_cached():
     global ITEMS
@@ -216,6 +220,21 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond({"error": "Article not in verified cache"}, 404)
             else:
                 self.respond({"url": key, **item})
+            return
+        if path.path == "/v1/corroborate":
+            url = (query.get("url") or [""])[0]
+            key = READER.canonical(url)
+            if not key:
+                self.respond({"error": "Invalid article URL"}, 400)
+                return
+            with LOCK:
+                snapshot = dict(ITEMS)
+            if key not in snapshot:
+                self.respond({"error": "Article not in verified cache"}, 404)
+                return
+            # Only use publisher-authored article previews, not Pheme's
+            # contextual editorial summaries, as evidence.
+            self.respond(CORROBORATION.corroborate(key, snapshot))
             return
         if path.path == "/v1/articles":
             try:
