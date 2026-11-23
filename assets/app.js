@@ -1699,6 +1699,9 @@
       esc(state.marketSearch) + '" aria-controls="ws-search-results" aria-expanded="false">' +
       '<button type="button" data-act="wssearchnews">Search news</button>' +
       '<div id="ws-search-results" class="ws-search-dropdown" hidden>' + results + '</div></div>' +
+      '<div class="ws-mobile-toolbar"><label for="ws-mobile-section">Workspace</label><select id="ws-mobile-section" aria-label="Choose market workspace">' +
+      tabs.map(function (t) { return '<option value="' + t.id + '"' + (t.id === tab ? ' selected' : '') + '>' + t.label + '</option>'; }).join('') +
+      '</select><span class="ws-mobile-hint">Swipe charts horizontally to inspect data</span></div>' +
       '<nav class="ws-tabs" aria-label="Market workspace sections">' +
       tabs.map(function (t) { return '<button type="button" data-act="wstab" data-id="' + t.id +
         '" aria-current="' + (t.id === tab ? 'page' : 'false') + '" class="' + (t.id === tab ? 'active' : '') +
@@ -1756,7 +1759,12 @@
     widget.appendChild(script);
   }
 
+  function isCompactTradingViewport() {
+    return window.matchMedia && window.matchMedia('(max-width: 680px)').matches;
+  }
+
   function mountTradingViewMarkets() {
+    var compact = isCompactTradingViewport();
     mountTradingViewBox(app.querySelector('#ws-ticker-tape'), 'embed-widget-ticker-tape.js', {
       symbols: [
         { proName: 'TVC:UKX', title: 'FTSE 100' },
@@ -1788,7 +1796,7 @@
       width: '100%',
       height: '100%',
       showSymbolLogo: true,
-      showChart: true,
+      showChart: !compact,
       tabs: [
         { title: 'Companies', originalTitle: 'Companies', symbols: [
           { s: 'NASDAQ:AAPL', d: 'Apple' },
@@ -1835,8 +1843,8 @@
       hasTopBar: true,
       isDataSetEnabled: true,
       isZoomEnabled: true,
-      hasSymbolTooltip: true,
-      isMonoSize: false,
+      hasSymbolTooltip: !compact,
+      isMonoSize: compact,
       width: '100%',
       height: '100%'
     }, 'Stock heatmap by TradingView', 'https://www.tradingview.com/heatmap/stock/');
@@ -1845,7 +1853,7 @@
       colorTheme: 'light',
       dateRange: '12M',
       exchange: 'US',
-      showChart: true,
+      showChart: !compact,
       locale: 'en',
       width: '100%',
       height: '100%',
@@ -1857,7 +1865,7 @@
     mountTradingViewBox(app.querySelector('#ws-forex-cross'), 'embed-widget-forex-cross-rates.js', {
       width: '100%',
       height: '100%',
-      currencies: ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'],
+      currencies: compact ? ['GBP', 'USD', 'EUR', 'JPY'] : ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'],
       isTransparent: false,
       colorTheme: 'light',
       locale: 'en'
@@ -1869,8 +1877,8 @@
       width: '100%',
       height: '100%',
       locale: 'en',
-      importanceFilter: '-1,0,1',
-      countryFilter: 'gb,us,eu,jp,in,cn'
+      importanceFilter: compact ? '1' : '-1,0,1',
+      countryFilter: compact ? 'gb,us,eu' : 'gb,us,eu,jp,in,cn'
     }, 'Economic calendar by TradingView', 'https://www.tradingview.com/economic-calendar/');
   }
 
@@ -1880,6 +1888,7 @@
     target.dataset.loaded = 'yes';
     var company = selectedMarketCompany();
     var mode = state.marketCompanyPanel;
+    var compact = isCompactTradingViewport();
     var container = document.createElement('div');
     container.className = 'tradingview-widget-container';
     container.style.height = '100%';
@@ -1910,6 +1919,9 @@
         style: '1',
         locale: 'en',
         allow_symbol_change: true,
+        hide_side_toolbar: compact,
+        withdateranges: !compact,
+        details: !compact,
         calendar: false,
         support_host: 'https://www.tradingview.com'
       };
@@ -1917,12 +1929,12 @@
       script.src = base + 'embed-widget-technical-analysis.js';
       options.symbol = company.tv;
       options.interval = '1D';
-      options.showIntervalTabs = true;
+      options.showIntervalTabs = !compact;
       options.displayMode = 'single';
     } else if (mode === 'financials') {
       script.src = base + 'embed-widget-financials.js';
       options.symbol = company.tv;
-      options.displayMode = 'regular';
+      options.displayMode = compact ? 'compact' : 'regular';
     } else if (mode === 'profile') {
       script.src = base + 'embed-widget-symbol-profile.js';
       options.symbol = company.tv;
@@ -1931,7 +1943,7 @@
       options.symbols = [[company.name + '|' + company.tv]];
       options.chartOnly = false;
       options.autosize = true;
-      options.showVolume = true;
+      options.showVolume = !compact;
       options.showMA = false;
       options.hideDateRanges = false;
       options.hideMarketStatus = false;
@@ -1940,7 +1952,7 @@
       options.scaleMode = 'Normal';
       options.chartType = 'area';
       options.lineWidth = 2;
-      options.dateRanges = ['1d|1','1m|30','3m|60','12m|1D','all|1M'];
+      options.dateRanges = compact ? ['1d|1','1m|30','3m|60','12m|1D'] : ['1d|1','1m|30','3m|60','12m|1D','all|1M'];
     }
     script.textContent = JSON.stringify(options);
     script.onerror = function () {
@@ -3090,6 +3102,10 @@
     updateClocks();
     updateSessionCards();
 
+    if (state.view === 'trading' && !state.publisherArticle && !state.reading) {
+      var selectedTab = app.querySelector('.ws-tabs button.active');
+      if (selectedTab) selectedTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
     if (state.view === 'trading') loadCompanyDirectory();
     mountWorldMap();
     mountPublisherMap();
@@ -3110,6 +3126,17 @@
   }
 
   /* ---------- events ---------- */
+  app.addEventListener('change', function (event) {
+    if (!event.target || event.target.id !== 'ws-mobile-section') return;
+    var next = event.target.value;
+    if (['overview','company','heatmap','movers','calendar','news','map','discover'].indexOf(next) === -1 ||
+        next === state.marketWorkspaceTab) return;
+    closeExpandedMarketWidget();
+    state.marketWorkspaceTab = next;
+    hideWorkspaceSearchResults();
+    render();
+  });
+
   app.addEventListener('click', function (e) {
     if (state.aaOpen && !e.target.closest('.aa-popover') && !e.target.closest('[data-act="toggleaa"]')) {
       state.aaOpen = false;
@@ -3151,6 +3178,7 @@
         break;
       case 'wstab':
         if (['overview','company','heatmap','movers','calendar','news','map','discover'].indexOf(id) < 0) break;
+        closeExpandedMarketWidget();
         state.marketWorkspaceTab = id;
         hideWorkspaceSearchResults();
         render();
