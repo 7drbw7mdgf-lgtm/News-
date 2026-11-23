@@ -1533,10 +1533,27 @@
       return MARKET_DIRECTORY.find(function (company) { return company.tv === name || company.name === name || company.ticker === name; });
     }).filter(Boolean);
     return saved.length ? saved.map(function (company) {
-      return '<button class="ws-watch-row" data-act="wscompany" data-id="' + esc(company.tv) +
-        '"><strong>' + esc(company.ticker) + '</strong><span>' + esc(company.name) +
-        '</span><span class="ws-watch-arrow" aria-hidden="true">↗</span></button>';
+      return '<div class="ws-watch-entry"><button type="button" class="ws-watch-row" data-act="wscompany" data-id="' + esc(company.tv) +
+        '" aria-label="Open ' + esc(company.name) + ' company details"><strong>' + esc(company.ticker) + '</strong><span>' + esc(company.name) +
+        '</span><span class="ws-watch-arrow" aria-hidden="true">↗</span></button>' +
+        '<button type="button" class="ws-watch-remove" data-act="wsremove" data-id="' + esc(company.tv) +
+        '" aria-label="Remove ' + esc(company.name) + ' from watchlist" title="Remove from watchlist">×</button></div>';
     }).join('') : '<p class="ws-empty">Your watchlist is empty. Search for a company to add it.</p>';
+  }
+
+  function updateMarketWatchlistInPlace() {
+    var list = app.querySelector('#ws-watchlist-content');
+    if (list) list.innerHTML = marketWorkspaceWatchlist();
+    var count = app.querySelector('#ws-watch-count');
+    if (count) count.textContent = state.marketWatch.length + ' saved';
+    var chosen = selectedMarketCompany();
+    var star = app.querySelector('[data-act="wswatch"]');
+    if (star && chosen) {
+      var active = state.marketWatch.some(function (name) { return name === chosen.tv || name === chosen.name; });
+      star.setAttribute('aria-pressed', String(active));
+      star.textContent = active ? '★ In watchlist' : '☆ Add to watchlist';
+    }
+    refreshWorkspaceNews();
   }
 
   var EXCHANGE_SESSIONS = [
@@ -1596,14 +1613,15 @@
         (last ? '<strong>' + marketNumber(last.close) + '</strong><small>' + esc(marketDate(last.date)) + ' · daily close</small>' :
           '<strong>—</strong><small>Data pending</small>') + '</button>';
     }).join('');
-    return renderExchangeSessions() +
+    return '<p class="ws-data-disclosure">Index cards: completed daily closes · Market sessions: indicative weekday schedules, excluding holidays · Embedded prices: exchange-dependent delays</p>' +
+      renderExchangeSessions() +
       '<section class="ws-market-strip" aria-label="Major world indices">' + mini + '</section>' +
       '<div class="ws-dashboard-grid"><section class="ws-widget ws-widget-chart">' +
-      '<div class="ws-widget-head"><h2>Market monitor</h2><span>TradingView · companies, indices, commodities &amp; FX</span></div>' +
+      '<div class="ws-widget-head"><h2>Market monitor</h2><span>TradingView · prices may be delayed</span></div>' +
       '<div id="tv-market-overview" class="tv-market-overview ws-tv-overview" aria-label="Embedded TradingView markets overview">' +
       '<p class="ws-empty">Connecting to TradingView…</p></div></section>' +
       '<div class="ws-sidebar-stack"><section class="ws-widget ws-widget-watch">' +
-      '<div class="ws-widget-head"><h2>Watchlist</h2><span>' + state.marketWatch.length + ' saved</span></div>' +
+      '<div class="ws-widget-head"><h2>Watchlist</h2><span id="ws-watch-count">' + state.marketWatch.length + ' saved</span></div>' +
       '<div class="ws-widget-scroll" id="ws-watchlist-content">' + marketWorkspaceWatchlist() + '</div></section>' +
       '<section class="ws-widget ws-widget-headlines"><div class="ws-widget-head"><h2>Market headlines</h2>' +
       '<button data-act="wstab" data-id="news">All news ↗</button></div>' +
@@ -3072,16 +3090,17 @@
         }
         break;
       case 'wswatch':
+      case 'wsremove':
         var watchCompany = findMarketCompany(id) || ensureCustomCompany(id);
         if (!watchCompany) break;
         var watchByTv = state.marketWatch.indexOf(watchCompany.tv);
         var watchByName = state.marketWatch.indexOf(watchCompany.name);
         if (watchByTv >= 0) state.marketWatch.splice(watchByTv, 1);
         else if (watchByName >= 0) state.marketWatch.splice(watchByName, 1);
-        else state.marketWatch.push(watchCompany.tv);
+        else if (act === 'wswatch') state.marketWatch.push(watchCompany.tv);
         state.marketWatch = state.marketWatch.slice(0,32);
         persist();
-        render();
+        updateMarketWatchlistInPlace();
         break;
       case 'wssearchnews':
         state.marketWorkspaceTab = 'news';
