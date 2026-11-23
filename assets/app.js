@@ -1522,7 +1522,7 @@
       '<span class="ws-provider-pill">Data from publisher RSS & TradingView</span></div>' +
       '<div class="ws-search-area"><label class="sr-only" for="ws-company-search">Search companies, tickers or news</label>' +
       '<span aria-hidden="true" class="ws-search-icon">⌕</span>' +
-      '<input id="ws-company-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search companies, tickers or news…" value="' +
+      '<input id="ws-company-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search companies, tickers or publisher news…" value="' +
       esc(state.marketSearch) + '" aria-controls="ws-search-results" aria-expanded="false">' +
       '<button type="button" data-act="wssearchnews">Search news</button>' +
       '<div id="ws-search-results" class="ws-search-dropdown" hidden>' + results + '</div></div>' +
@@ -1537,7 +1537,7 @@
        tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
          '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
          '<p class="ws-widget-foot">Exchange pins do not imply real-time market data. Indices show completed daily closes.</p></section>' :
-       '<section class="ws-widget ws-discover-panel"><div class="ws-widget-head"><h2>Discover global stocks</h2><span>TradingView stock screener · independent provider</span></div>' +
+       '<section class="ws-widget ws-discover-panel"><div class="ws-widget-head"><h2>Discover US-listed stocks</h2><span>TradingView stock screener · independent provider</span></div>' +
          '<div id="ws-stock-screener" class="ws-stock-screener"><p class="ws-empty">Loading stock screener…</p></div>' +
          '<p class="ws-widget-foot">Use the screener to explore more stocks. Pheme’s integrated company news currently searches its built-in directory.</p></section>') +
       '</div></div>';
@@ -2741,11 +2741,9 @@
       case 'exchangefocus':
         if (MARKETS.some(function (m) { return m.id === id; })) {
           state.tradingMarket = id;
-          render();
-          if (act === 'exchangefocus') {
-            var panel = app.querySelector('.terminal-chart-panel');
-            if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          state.marketOpen = id;
+          state.marketHover = null;
+          render({ focus: 'market-dialog' });
         }
         break;
       case 'terminalrange':
