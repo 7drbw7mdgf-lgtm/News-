@@ -1524,14 +1524,14 @@
       tabs.map(function (t) { return '<button type="button" data-act="wstab" data-id="' + t.id +
         '" aria-current="' + (t.id === tab ? 'page' : 'false') + '" class="' + (t.id === tab ? 'active' : '') +
         '">' + t.label + '</button>'; }).join('') + '</nav></header>' +
-      '<main class="ws-panel" id="ws-active-panel">' +
+      '<div class="ws-panel" id="ws-active-panel">' +
       (tab === 'overview' ? marketWorkspaceOverview() :
        tab === 'company' ? marketWorkspaceCompany() :
        tab === 'news' ? marketWorkspaceNews() :
        '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
        '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
        '<p class="ws-widget-foot">Exchange pins do not imply real-time market data. Indices show completed daily closes.</p></section>') +
-      '</main></div>';
+      '</div></div>';
   }
 
   function mountTradingViewMarkets() {
@@ -1590,6 +1590,75 @@
       box.innerHTML = '<p class="terminal-chart-empty">Market widget unavailable. <a href="https://www.tradingview.com/markets/" target="_blank" rel="noopener noreferrer">View on TradingView</a>.</p>';
     };
     widget.appendChild(script);
+  }
+
+  function mountWorkspaceCompanyChart() {
+    var target = app.querySelector('#ws-company-chart');
+    if (!target || target.dataset.loaded === 'yes') return;
+    target.dataset.loaded = 'yes';
+    var company = selectedMarketCompany();
+    var container = document.createElement('div');
+    container.className = 'tradingview-widget-container';
+    container.style.height = '100%';
+    container.style.width = '100%';
+    var chart = document.createElement('div');
+    chart.className = 'tradingview-widget-container__widget';
+    chart.style.height = 'calc(100% - 28px)';
+    chart.style.width = '100%';
+    var attribution = document.createElement('div');
+    attribution.className = 'tradingview-widget-copyright';
+    attribution.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow noreferrer" target="_blank">Charts by TradingView</a>';
+    container.appendChild(chart);
+    container.appendChild(attribution);
+    target.replaceChildren(container);
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
+    script.textContent = JSON.stringify({
+      symbols: [[company.name + '|' + company.tv]],
+      chartOnly: false, width: '100%', height: '100%',
+      locale: 'en', colorTheme: 'light', autosize: true,
+      showVolume: true, showMA: false, hideDateRanges: false,
+      hideMarketStatus: false, hideSymbolLogo: false,
+      scalePosition: 'right', scaleMode: 'Normal', fontFamily: 'Inter, sans-serif',
+      fontSize: '11', noTimeScale: false,
+      valuesTracking: '1', changeMode: 'price-and-percent',
+      chartType: 'area', lineWidth: 2,
+      dateRanges: ['1d|1','1m|30','3m|60','12m|1D','all|1M']
+    });
+    script.onerror = function () {
+      target.innerHTML = '<p class="ws-empty">Chart unavailable. Open the instrument on TradingView using the link below.</p>';
+    };
+    container.appendChild(script);
+  }
+
+  function refreshWorkspaceNews() {
+    if (state.view !== 'trading') return;
+    var overview = app.querySelector('#ws-market-headlines');
+    if (overview) overview.innerHTML = marketWorkspaceNewsHtml(marketRelatedNews(null,''),12);
+    var company = app.querySelector('#ws-company-news');
+    if (company) company.innerHTML = marketWorkspaceNewsHtml(marketRelatedNews(selectedMarketCompany(),''),24);
+    var full = app.querySelector('#ws-news-results');
+    if (full) full.innerHTML = marketWorkspaceNewsHtml(
+      state.marketNewsFocus === 'watchlist' ? marketRelatedNewsForWatchlist() :
+        marketRelatedNews(null,state.marketSearch),45);
+  }
+
+  function showWorkspaceSearchResults() {
+    var dropdown = app.querySelector('#ws-search-results');
+    var input = app.querySelector('#ws-company-search');
+    if (!dropdown || !input) return;
+    dropdown.innerHTML = marketSearchResultsHtml();
+    dropdown.hidden = false;
+    input.setAttribute('aria-expanded','true');
+  }
+
+  function hideWorkspaceSearchResults() {
+    var dropdown = app.querySelector('#ws-search-results');
+    var input = app.querySelector('#ws-company-search');
+    if (dropdown) dropdown.hidden = true;
+    if (input) input.setAttribute('aria-expanded','false');
   }
 
   function mountExchangeMap() {
@@ -1748,8 +1817,7 @@
           } else render();
         }
         if (state.view === 'trading' && !state.reading) {
-          var newsContent = app.querySelector('#market-news-content');
-          if (newsContent) newsContent.innerHTML = marketNewsHtml();
+          refreshWorkspaceNews();
         }
         refreshPublisherMap();
       });
@@ -2527,6 +2595,7 @@
     mountPublisherMap();
     mountExchangeMap();
     mountTradingViewMarkets();
+    mountWorkspaceCompanyChart();
     updateReadProgress();
     updateSiteScrollTone();
     if (opts && opts.focus) {
@@ -2555,6 +2624,51 @@
     var id = t.getAttribute('data-id');
     if (act !== 'headermenu') state.utilityOpen = null;
     switch (act) {
+      case 'wstab':
+        if (['overview','company','news','map'].indexOf(id) < 0) break;
+        state.marketWorkspaceTab = id;
+        hideWorkspaceSearchResults();
+        render();
+        break;
+      case 'wscompany':
+        var selectedCompany = MARKET_DIRECTORY.find(function (c) { return c.ticker === id; });
+        if (!selectedCompany) break;
+        state.marketSelectedCompany = selectedCompany.ticker;
+        state.marketWorkspaceTab = 'company';
+        state.marketSearch = '';
+        render();
+        break;
+      case 'wsmarket':
+        if (MARKETS.some(function (m) { return m.id === id; })) {
+          state.tradingMarket = id;
+          state.marketOpen = id;
+          render({ focus: 'market-dialog' });
+        }
+        break;
+      case 'wswatch':
+        var watchCompany = MARKET_DIRECTORY.find(function (c) { return c.ticker === id; });
+        if (!watchCompany) break;
+        var watchAt = state.marketWatch.indexOf(watchCompany.name);
+        if (watchAt < 0) state.marketWatch.push(watchCompany.name);
+        else state.marketWatch.splice(watchAt,1);
+        state.marketWatch = state.marketWatch.slice(0,32);
+        persist();
+        render();
+        break;
+      case 'wssearchnews':
+        state.marketWorkspaceTab = 'news';
+        state.marketNewsFocus = 'all';
+        hideWorkspaceSearchResults();
+        render();
+        break;
+      case 'wsnewsfilter':
+        if (id !== 'all' && id !== 'watchlist') break;
+        state.marketNewsFocus = id;
+        app.querySelectorAll('[data-act="wsnewsfilter"]').forEach(function (button) {
+          button.setAttribute('aria-pressed', String(button.getAttribute('data-id') === id));
+        });
+        refreshWorkspaceNews();
+        break;
       case 'terminalmarket':
       case 'exchangefocus':
         if (MARKETS.some(function (m) { return m.id === id; })) {
@@ -2868,6 +2982,12 @@
   app.addEventListener('pointerdown', exploreMarketPointer);
 
   app.addEventListener('input', function (e) {
+    if (e.target.id === 'ws-company-search') {
+      state.marketSearch = e.target.value.slice(0,120);
+      showWorkspaceSearchResults();
+      if (state.marketWorkspaceTab === 'news' && state.marketNewsFocus === 'all') refreshWorkspaceNews();
+      return;
+    }
     if (e.target.id === 'src-q') {
       state.srcQuery = e.target.value;
       var box = document.getElementById('src-list');
@@ -2888,6 +3008,29 @@
     }
   });
 
+  app.addEventListener('keydown', function (e) {
+    if (e.target.id !== 'ws-company-search') return;
+    if (e.key === 'Escape') { hideWorkspaceSearchResults(); return; }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      var found = MARKET_DIRECTORY.filter(function (c) { return matchesMarketCompany(c,state.marketSearch); });
+      if (found.length === 1) {
+        state.marketSelectedCompany = found[0].ticker;
+        state.marketWorkspaceTab = 'company';
+        state.marketSearch = '';
+      } else {
+        state.marketWorkspaceTab = 'news';
+        state.marketNewsFocus = 'all';
+      }
+      render();
+    }
+  });
+  app.addEventListener('focusin', function (e) {
+    if (e.target.id === 'ws-company-search') showWorkspaceSearchResults();
+  });
+  app.addEventListener('click', function (e) {
+    if (!e.target.closest('.ws-search-area')) hideWorkspaceSearchResults();
+  });
   app.addEventListener('submit', function (e) { e.preventDefault(); });
   app.addEventListener('error', function (e) {
     var target = e.target;
