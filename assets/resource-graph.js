@@ -164,7 +164,10 @@
     }).join('');
     var nodes=graph.nodes.map(function(n){
       var p=l.positions[n.id];
-      return '<g class="rg-svg-node rg-'+n.type+(n.id===active?' rg-selected':'')+'" data-rg-node="'+escapeText(n.id)+'" tabindex="0" role="button" aria-label="Inspect '+escapeText(n.label)+'"><rect x="'+p.x+'" y="'+p.y+'" width="166" height="50" rx="10"/><text x="'+(p.x+12)+'" y="'+(p.y+18)+'" class="rg-node-type">'+escapeText(n.type)+'</text><text x="'+(p.x+12)+'" y="'+(p.y+36)+'">'+escapeText(n.label.length>23?n.label.slice(0,21)+'…':n.label)+'</text></g>';
+      var newsStatus=evidence&&evidence[n.id], dotColor=newsStatus&&newsStatus.status==='contested'?'#b55b48':
+        newsStatus&&newsStatus.octalCorroboration!=null?'#22885a':'#abb6ad';
+      return '<g class="rg-svg-node rg-'+n.type+(n.id===active?' rg-selected':'')+'" data-rg-node="'+escapeText(n.id)+'" tabindex="0" role="button" aria-label="Inspect '+escapeText(n.label)+'"><rect x="'+p.x+'" y="'+p.y+'" width="166" height="50" rx="10"/><text x="'+(p.x+12)+'" y="'+(p.y+18)+'" class="rg-node-type">'+escapeText(n.type)+'</text><text x="'+(p.x+12)+'" y="'+(p.y+36)+'">'+escapeText(n.label.length>23?n.label.slice(0,21)+'…':n.label)+'</text><title>'+escapeText(n.label+' — '+candidateLabel(n.id)+'; relationships unverified')+
+        '</title><circle cx="'+(p.x+151)+'" cy="'+(p.y+14)+'" r="5" fill="'+dotColor+'" /></g>';
     }).join('');
     return '<svg class="rg-canvas" viewBox="0 0 '+l.width+' '+l.height+'" width="'+l.width+'" height="'+l.height+'" role="group" aria-label="Interactive economic production and resource dependency network"><defs><marker id="rg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#789286"/></marker></defs>'+paths+nodes+'</svg>';
   }
@@ -194,7 +197,7 @@
       '<label>Relation<select id="rg-relation">'+options(Object.keys(RELATIONS),'requires')+'</select></label>'+
       '<label>To<select id="rg-to">'+graph.nodes.map(function(n){return '<option value="'+escapeText(n.id)+'">'+escapeText(n.label)+'</option>';}).join('')+'</select></label>'+
       '<button type="button" data-rg="connect">Connect nodes</button></div>'+
-      '<div class="rg-main"><div class="rg-graph-wrap"><div class="rg-scroll" tabindex="0" aria-label="Scroll resource network horizontally">'+svg()+'</div><div class="rg-legend"><span>● Primary</span><span>● Process</span><span>● Secondary</span><span>● Company</span><span>● Financial</span></div></div>'+
+      '<div class="rg-main"><div class="rg-graph-wrap"><div class="rg-scroll" tabindex="0" aria-label="Scroll resource network horizontally">'+svg()+'</div><div class="rg-legend"><span>● Primary</span><span>● Process</span><span>● Secondary</span><span>● Company</span><span>● Financial</span><span>Green dot: corroboration candidate</span><span>Red dot: contested</span><span>Grey dot: unknown</span></div></div>'+
       '<aside class="rg-inspector" id="rg-inspector">'+inspector()+'</aside></div>'+
       '<p class="rg-notice" role="status" id="rg-notice">'+escapeText(notice||'Select a node to inspect its dependencies; add resources or connect nodes to edit.')+'</p>'+
       '<div class="rg-footer"><span>'+graph.nodes.length+' nodes · '+graph.edges.length+' connections</span><button type="button" data-rg="export">Export JSON</button></div></section>';
