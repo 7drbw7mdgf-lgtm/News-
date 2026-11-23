@@ -1018,3 +1018,46 @@ body.reader-focus .dashboard-body {
   .ws-widget-head > span:not(.ws-widget-actions) { display:none; }
   .ws-search-area > button { font-size:10px; padding-inline:7px; }
 }
+
+
+/* PHEME-8 economic resource network: desktop + touch-friendly mobile. */
+.rg-workspace { display:flex; flex-direction:column; gap:16px; padding:18px; background:var(--surface,#fff); color:var(--ink,#25352f); border:1px solid var(--rule-soft,#ddd); border-radius:16px; min-width:0; }
+.rg-header { display:flex; align-items:start; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.rg-header h2 { margin:0 0 5px; font-size:clamp(18px,2vw,24px); }
+.rg-header p,.rg-disclaimer { margin:0; font-size:13px; color:var(--ink-muted,#6b7871); line-height:1.45; }
+.rg-tag { background:#e3e9e4; color:#30584a; border-radius:30px; padding:7px 11px; font-size:11px; font-weight:700; white-space:nowrap; }
+.rg-toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:10px; padding:12px; border:1px solid var(--rule-soft,#ddd); border-radius:12px; background:#fff; }
+.rg-toolbar label,.rg-label { display:grid; gap:5px; min-width:130px; flex:1; font-size:12px; font-weight:600; color:#435249; }
+.rg-toolbar input,.rg-toolbar select,.rg-label input,.rg-label select { min-height:41px; min-width:0; width:100%; padding:8px 10px; border:1px solid #ccd6ce; background:#fff; color:#273930; border-radius:8px; font:inherit; }
+.rg-toolbar button,.rg-inspector-actions button,.rg-footer button { min-height:42px; border:1px solid #547c6a; background:#2f5d50; color:#fff; font-weight:700; font-size:12px; padding:8px 12px; border-radius:9px; cursor:pointer; }
+.rg-toolbar button[data-rg="reset"],.rg-footer button { background:#fff; color:#2f5d50; }
+.rg-main { display:grid; grid-template-columns:minmax(0,1fr) 270px; gap:14px; align-items:stretch; }
+.rg-graph-wrap { min-width:0; overflow:hidden; border:1px solid #d4ded6; border-radius:12px; background:#f9faf8; }
+.rg-scroll { max-height:590px; min-height:400px; overflow:auto; scrollbar-width:thin; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.rg-canvas { display:block; max-width:none; font-family:Inter,system-ui,sans-serif; }
+.rg-edge { fill:none; stroke:#799185; stroke-width:1.8; opacity:.77; }
+.rg-svg-node { cursor:pointer; outline:none; }
+.rg-svg-node rect { fill:#fff; stroke:#93a69b; stroke-width:1.4; }
+.rg-svg-node text { font-size:13px; font-weight:600; fill:#1e3128; pointer-events:none; }
+.rg-svg-node .rg-node-type { font-size:10px; font-weight:600; text-transform:uppercase; fill:#677d70; }
+.rg-svg-node.rg-primary rect { fill:#f4eae0; stroke:#b7997a; }
+.rg-svg-node.rg-secondary rect { fill:#e6eff9; stroke:#7197b9; }
+.rg-svg-node.rg-process rect { fill:#edf0e9; stroke:#8b9f81; }
+.rg-svg-node.rg-company rect { fill:#e3eee6; stroke:#59846a; }
+.rg-svg-node.rg-financial rect { fill:#f0e7f3; stroke:#9e79ad; }
+.rg-svg-node.rg-selected rect,.rg-svg-node:focus rect { stroke:#275c49; stroke-width:3; }
+.rg-legend { display:flex; flex-wrap:wrap; gap:9px; font-size:11px; color:#65786c; padding:11px 13px; }
+.rg-inspector { background:#fff; border:1px solid #d4ded6; border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:12px; min-width:0; }
+.rg-inspector-title { display:flex; justify-content:space-between; align-items:center; gap:5px; font-weight:700; font-size:14px; }
+.rg-inspector-title span { color:#64786b; font-size:11px; font-weight:500; }
+.rg-inspector h3 { margin:5px 0 0; font-size:12px; }
+.rg-inspector-actions { display:flex; gap:6px; flex-wrap:wrap; }
+.rg-inspector-actions .rg-danger { background:#fff4f2; border-color:#bb766f; color:#993c32; }
+.rg-rel-list { list-style:none; padding:0; margin:0; display:grid; gap:6px; }
+.rg-rel-list li { display:flex; align-items:center; gap:7px; justify-content:space-between; border-bottom:1px solid #edf0ed; padding:7px 0; font-size:12px; }
+.rg-rel-list em { font-size:10px; color:#72867b; font-style:normal; }
+.rg-rel-list button { background:transparent; border:0; font-size:18px; color:#a4524c; cursor:pointer; min-width:25px; min-height:30px; }
+.rg-notice,.rg-footer { margin:0; color:#566b5f; font-size:12px; }
+.rg-footer { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+@media(max-width:900px) { .rg-main { grid-template-columns:minmax(0,1fr); } .rg-scroll { min-height:320px; max-height:470px; } .rg-inspector { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); } .rg-inspector-title { grid-column:1/-1; } .rg-inspector h3 { margin-top:0; } }
+@media(max-width:680px) { .rg-workspace { padding:11px; gap:12px; } .rg-toolbar { gap:8px; padding:9px; } .rg-toolbar label { flex:1 1 125px; min-width:0; } .rg-toolbar button { flex:1 1 120px; } .rg-inspector { display:flex; padding:11px; } .rg-scroll { max-height:390px; min-height:290px; } .rg-legend { gap:7px; } }
