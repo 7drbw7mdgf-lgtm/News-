@@ -901,3 +901,11 @@ body.reader-focus .dashboard-body {
 @media(prefers-reduced-motion:reduce) {
   .ws-widget,.ws-expand-button { transition:none!important; }
 }
+
+
+.ws-data-disclosure { margin:0 0 9px; padding:8px 11px; border-left:3px solid #9e8351; border-radius:3px 7px 7px 3px; background:#9e83510e; color:var(--ink-muted); font:500 10px/1.5 var(--sans); }
+.ws-watch-entry { display:flex; align-items:stretch; border-bottom:1px solid var(--rule-soft); }
+.ws-watch-entry .ws-watch-row { min-width:0; flex:1; border-bottom:0; }
+.ws-watch-remove { width:38px; min-width:38px; border:0; border-left:1px solid var(--rule-soft); color:var(--ink-muted); background:transparent; font:500 22px/1 var(--sans); }
+.ws-watch-remove:hover,.ws-watch-remove:focus-visible { background:#aa4a3314; color:#9d3928; outline-offset:-2px; }
+@media(max-width:600px) { .ws-data-disclosure { font-size:10px; } }
