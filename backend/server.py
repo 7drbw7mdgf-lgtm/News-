@@ -255,7 +255,7 @@ class Handler(BaseHTTPRequestHandler):
             self.respond({
                 "article": key,
                 "engine": "PHEME-8",
-                "model": "octal-min-max-lukasiewicz-v1",
+                "model": "octal-normalized-multiplication-and-filtering-v2",
                 "inference": OCTAL.infer_from_corroboration(assessed),
             })
             return
