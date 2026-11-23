@@ -54,6 +54,10 @@ resource_evidence_spec = importlib.util.spec_from_file_location("pheme_resource_
 RESOURCE_EVIDENCE = importlib.util.module_from_spec(resource_evidence_spec)
 resource_evidence_spec.loader.exec_module(RESOURCE_EVIDENCE)
 
+scenario_spec = importlib.util.spec_from_file_location("pheme_scenario", ROOT / "backend" / "resource_scenario.py")
+SCENARIO = importlib.util.module_from_spec(scenario_spec)
+scenario_spec.loader.exec_module(SCENARIO)
+
 
 def read_cached():
     global ITEMS
@@ -270,6 +274,15 @@ class Handler(BaseHTTPRequestHandler):
                 "model": "octal-normalized-multiplication-and-filtering-v2",
                 "inference": OCTAL.infer_from_corroboration(assessed),
             })
+            return
+        if path.path == "/v1/resource-scenario":
+            source = (query.get("shock") or ["gas"])[0]
+            try:
+                delta = float((query.get("percent") or ["20"])[0])
+                graph = SCENARIO.demo_graph(RESOURCE_GRAPH.EXAMPLE)
+                self.respond(SCENARIO.simulate(graph, source, delta, RESOURCE_GRAPH.validate))
+            except (ValueError, TypeError):
+                self.respond({"error": "Invalid resource shock or percentage (-100 to 100)"}, 400)
             return
         if path.path == "/v1/resource-evidence":
             node = (query.get("node") or [None])[0]
