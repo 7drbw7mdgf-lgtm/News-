@@ -783,3 +783,11 @@ body.reader-focus .dashboard-body {
 .ws-company-switch button[aria-pressed=true] { background:var(--blue); color:#fff; border-color:var(--blue); }
 .ws-company-switch button:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
 .ws-company-chart .tradingview-widget-container { overflow:hidden; }
+
+
+.ws-discover-panel { height:clamp(440px,70vh,760px); }
+.ws-stock-screener { flex:1; min-height:0; overflow:hidden; }
+.ws-stock-screener .tradingview-widget-container { width:100%; }
+.ws-stock-screener .tradingview-widget-copyright { padding:5px 12px; font:500 10px/1.4 var(--sans); }
+.ws-stock-screener .tradingview-widget-copyright a { color:var(--blue); }
+.ws-discover-link { color:var(--blue); font-weight:700; justify-content:center; }
