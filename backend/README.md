@@ -41,19 +41,26 @@ The `backend/corroboration.py` module scans source-attributed RSS titles and des
 
 When there are zero qualifying external reports, the result remains **unverified**, not `0₈` or false. One independent supporting publisher produces provisional `4₈`, two produce `5₈`, and three or more produce `6₈`. Contradicting publications produce `contested` with no numeric grade. These are strictly *corroboration coverage levels*, not evidence that the event occurred, publisher truthfulness, market-move probability or investment advice. `7₈` is deliberately not assigned without primary-source verification, which this prototype does not implement. Related reporting can share a wire, ownership or original source even with different headlines. The rule-based extractor is incomplete and should be replaced or reviewed against annotated articles before using for any real-world decision. No trading or broker API is connected.
 
-## Pheme-8 octal inference (Element 2)
+## Pheme-8 multiplication and evidence filtering (Element 2, v2)
 
-The pure Python `backend/octal_engine.py` implements an explicit eight-valued algebra, with legal values `0₈` to `7₈` and a **separate null / unknown state**:
+`backend/octal_engine.py` now uses **octal multiplication**, not Boolean, NAND, AND, OR, NOT, or implication gates. Each input carries a discrete strength `0..7`, or `None` for unavailable evidence. Mathematically the normalized combination of `n` corroboration values is:
 
-- `AND8(a,b) = min(a,b)`
-- `OR8(a,b) = max(a,b)`
-- `NOT8(a) = 7-a`
-- `IMPLIES8(a,b) = min(7,7-a+b)` (finite Łukasiewicz implication)
+```text
+raw = round_half_up(7 × ∏(value_i / 7))
+    = round_half_up(∏(value_i) / 7^(n-1))
+```
 
-These are mathematically specified *evidence-strength* operations, not classical Boolean gates. Any operand that is unknown causes the result to be unknown. The engine evaluates a validated, bounded JSON syntax tree rather than Python expressions and emits a tree showing input and intermediate octal values.
+The engine calculates the *whole* product as an exact integer rational before rounding once. Quantizing after every pair would introduce rounding-order dependence. For example `6₈ × 5₈ × 4₈ = round(120/49) = 2₈`, whereas `7₈ × 7₈ = 7₈`. These represent **coverage strength under a chosen aggregation rule**, not independent probabilities.
 
-`/v1/infer` calls the cross-source `/v1/corroborate` process for a cached article and combines the eligible extracted propositions with `AND8` by default. **Contested** propositions veto a numeric result, **unverified, speculative, stale, or unsupported** propositions produce `null`, and a numeric result is returned only if all premises have qualifying cross-publisher corroboration.
+The default pipeline is:
 
-This deliberately conservative default does not assume that multiple distinct economic events are causally linked. The result is not a truth probability, buy/sell signal, source-reliability score or brokerage instruction. No live execution exists.
+1. **Input filter:** each proposition must have fresh, corroborated evidence, no contradiction, and a source corroboration grade of at least `4₈`. Unknown and unverified evidence remain distinct from numeric `0₈`. All required premises must pass.
+2. **MULTIPLY8:** multiply normalized strengths without arbitrary operator gates. Return a numeric result and exact fraction in the trace.
+3. **Output filter:** only expose the resulting score as `octalResult` when it reaches `4₈`. Otherwise report `status=filtered` and include `rawOctalResult` for audit. Do not silently omit weak premises.
+4. **Execution:** always disabled; no broker orders or trading recommendations.
 
-Running the checks: `python3 -m unittest discover -s scripts -p 'test_octal_engine.py'`.
+The process returns the complete input assessment, filter reasons, multiplication trace and threshold. The default thresholds can be configured via the pure-Python function arguments and are **not externally user-adjustable in the live API** in this version.
+
+`GET /v1/infer?url=<publisher-article-url>` wraps this process using `/v1/corroborate` inputs. The upstream RSS/keyword matching and publisher independence checks remain prototypes, so the result is not an established source-reliability score, truth probability or indication of asset direction.
+
+Regression tests: `python3 -m unittest discover -s scripts -p 'test_octal_engine.py'`.
