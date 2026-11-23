@@ -1,5 +1,6 @@
-"""Unit tests for PHEME-8 eight-valued logic and safe inference."""
+"""Regression tests for PHEME-8 multiplication and evidence filtering."""
 import importlib.util
+import itertools
 import unittest
 from pathlib import Path
 
@@ -8,67 +9,92 @@ engine = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(engine)
 
 
+def claim(value, state="cross-source-support", contradictions=0):
+    return {"key":"bank-of-england:rate_cut", "status":state,
+            "octalCorroboration":value, "supportingPublishers":3,
+            "contradictingPublishers":contradictions, "supporting":[], "contradicting":[]}
+
+
 class OctalEngineTests(unittest.TestCase):
-    def test_operator_truth_tables(self):
-        for a in range(8):
-            self.assertEqual(engine.negate(a), 7 - a)
-            self.assertEqual(engine.negate(engine.negate(a)), a)
-            for b in range(8):
-                self.assertEqual(engine.conjunction(a,b), min(a,b))
-                self.assertEqual(engine.disjunction(a,b), max(a,b))
-                self.assertEqual(engine.implies(a,b), min(7,7-a+b))
-                self.assertEqual(engine.conjunction(a,b),engine.conjunction(b,a))
-                self.assertEqual(engine.disjunction(a,b),engine.disjunction(b,a))
+    def test_multiplication_range_and_exact_formula(self):
+        for a,b in itertools.product(range(8), repeat=2):
+            self.assertEqual(engine.multiply(a,b), (2*a*b+7)//14)
+            self.assertEqual(engine.multiply(a,b),engine.multiply(b,a))
+        self.assertEqual(engine.multiply(7,7),7)
+        self.assertEqual(engine.multiply(7,4),4)
+        self.assertEqual(engine.multiply(0,7),0)
+        self.assertEqual(engine.multiply(5,6),4)
 
-    def test_unknown_is_not_false(self):
-        self.assertIsNone(engine.conjunction(None,7))
-        self.assertIsNone(engine.disjunction(None,0))
-        self.assertIsNone(engine.negate(None))
-        self.assertIsNone(engine.implies(None,7))
+    def test_many_inputs_round_only_once(self):
+        self.assertEqual(engine.multiply_many([6,5,4]), 2)
+        self.assertEqual(engine.multiply_many([7,7,7]), 7)
+        self.assertEqual(engine.multiply_many([7,4]),4)
+        for values in itertools.product(range(8), repeat=3):
+            for order in itertools.permutations(values):
+                self.assertEqual(engine.multiply_many(order),engine.multiply_many(values))
+        trail=engine.evaluate_product([6,5,4])
+        self.assertEqual(trail["exact"],{"numerator":120,"denominator":49})
 
-    def test_rejects_boolean_out_of_range_and_injection(self):
-        for v in (-1,8,True,False,3.5,"7"):
+    def test_unknown_never_equals_zero(self):
+        self.assertIsNone(engine.multiply(None, 7))
+        self.assertIsNone(engine.multiply_many([7,None,4]))
+        self.assertEqual(engine.multiply_many([0,7]),0)
+
+    def test_rejects_invalid_input(self):
+        for value in (-1,8,False,True,3.5,"7"):
             with self.assertRaises(ValueError):
-                engine.checked(v)
+                engine.checked(value)
         with self.assertRaises(ValueError):
-            engine.evaluate({"op":"VAR","name":"__import__('os')"}, {"P1":7})
+            engine.multiply_many([])
         with self.assertRaises(ValueError):
-            engine.evaluate({"op":"AND8","args":[{"op":"VAR","name":"P1"}]}, {"P1":7})
+            engine.multiply_many([7]*9)
+        with self.assertRaises(ValueError):
+            engine.threshold(True)
 
-    def test_associativity(self):
-        for a in range(8):
-            for b in range(8):
-                for c in range(8):
-                    self.assertEqual(engine.conjunction(engine.conjunction(a,b),c), engine.conjunction(a,engine.conjunction(b,c)))
-
-    def test_supported_inference_has_trace_and_no_order(self):
-        result = engine.infer_from_corroboration({"propositions":[
-            {"key":"bank-of-england:rate_cut","status":"cross-source-support","octalCorroboration":6,"supportingPublishers":3,"contradictingPublishers":0,"supporting":[]},
-            {"key":"uk:inflation_down","status":"limited-cross-source-support","octalCorroboration":4,"supportingPublishers":1,"contradictingPublishers":0,"supporting":[]}
-        ]})
-        self.assertEqual(result["octalResult"],4)
-        self.assertEqual(result["trace"]["op"],"AND8")
+    def test_successful_inference(self):
+        result=engine.infer_from_corroboration({"propositions":[claim(7),claim(7)]})
         self.assertEqual(result["status"],"supported")
+        self.assertEqual(result["octalResult"],7)
+        self.assertEqual(result["operator"],"MULTIPLY8")
+        self.assertEqual(result["trace"]["pipeline"],["INPUT_FILTER","MULTIPLY8","OUTPUT_FILTER"])
         self.assertEqual(result["execution"],"disabled")
 
-    def test_contested_forces_unknown(self):
-        result = engine.infer_from_corroboration({"propositions":[
-            {"key":"uk:inflation_down","status":"contested","octalCorroboration":6,"supportingPublishers":4,"contradictingPublishers":1}
-        ]})
+    def test_multiplication_can_fail_output_filter(self):
+        result=engine.infer_from_corroboration({"propositions":[claim(5),claim(5)]})
+        self.assertEqual(result["status"],"filtered")
+        self.assertEqual(result["rawOctalResult"],4)
+        self.assertIsNone(result["octalResult"])
+        self.assertFalse(result["trace"]["outputFilter"]["pass"])
+
+    def test_input_filter_does_not_silently_drop_weak_premise(self):
+        result=engine.infer_from_corroboration({"propositions":[claim(7),claim(3)]})
+        self.assertEqual(result["status"],"filtered")
+        self.assertIsNone(result["rawOctalResult"])
+        self.assertEqual(result["trace"]["filters"][1]["reason"],"below-input-floor")
+
+    def test_conflict_vetoes_inference(self):
+        result=engine.infer_from_corroboration({"propositions":[claim(7),claim(5,"contested",1)]})
         self.assertEqual(result["status"],"contested")
         self.assertIsNone(result["octalResult"])
+        self.assertEqual(result["execution"],"disabled")
 
-    def test_unverified_is_not_zero(self):
-        result = engine.infer_from_corroboration({"propositions":[
-            {"key":"uk:inflation_down","status":"unverified","octalCorroboration":None,"supportingPublishers":0}
-        ]})
+    def test_missing_stale_unverified_are_unknown(self):
+        for state in ["unverified","unresolved","stale"]:
+            result=engine.infer_from_corroboration({"propositions":[claim(None,state)]})
+            self.assertEqual(result["status"],"unknown")
+            self.assertIsNone(result["octalResult"])
+
+    def test_configurable_thresholds(self):
+        result=engine.infer_from_corroboration({"propositions":[claim(4),claim(4)]},
+                                                input_floor=4,output_floor=2)
+        self.assertEqual(result["octalResult"],2)
+        with self.assertRaises(ValueError):
+            engine.infer_from_corroboration({"propositions":[claim(7)]},input_floor=8)
+
+    def test_no_propositions(self):
+        result=engine.infer_from_corroboration({"propositions":[]})
         self.assertEqual(result["status"],"unknown")
-        self.assertIsNone(result["octalResult"])
 
-    def test_no_propositions_is_unknown(self):
-        result = engine.infer_from_corroboration({"propositions":[]})
-        self.assertEqual(result["status"],"unknown")
-        self.assertIsNone(result["octalResult"])
 
-if __name__ == "__main__":
+if __name__=="__main__":
     unittest.main()
