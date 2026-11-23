@@ -1,143 +1,167 @@
-"""PHEME-8: auditable eight-valued inference over corroborated propositions.
+"""PHEME-8: octal evidence multiplication followed by explicit filtering.
 
-The output is *proposition corroboration strength*, not probability of truth,
-financial sentiment, trade direction or an instruction to a broker.
-Unknown is a distinct value (None), never 0. Conflicted inputs veto inference.
+This is a *corroboration aggregation prototype*. Multiplying octal intensities
+does not make them independent probabilities and does not establish truth,
+market direction, execution suitability, or predicted returns.
+
+Values 0..7 are integers; None is an explicit unknown. All calculations are
+integer-exact until the final quantization. No broker execution.
 """
-from collections import Counter
 
 MIN_OCTAL = 0
 MAX_OCTAL = 7
-OPERATORS = ("AND8", "OR8", "NOT8", "IMPLIES8")
+DEFAULT_INPUT_FLOOR = 4
+DEFAULT_OUTPUT_FLOOR = 4
+MAX_INPUTS = 8
 
 
 def checked(value):
     if value is None:
         return None
-    if isinstance(value, bool) or not isinstance(value, int) or not MIN_OCTAL <= value <= MAX_OCTAL:
-        raise ValueError("Octal evidence must be an integer from 0 to 7 or null (unknown)")
+    if isinstance(value, bool) or not isinstance(value, int) or not 0 <= value <= 7:
+        raise ValueError("Octal evidence must be an integer 0..7 or None (unknown)")
     return value
 
 
-def negate(value):
-    value = checked(value)
-    return None if value is None else 7 - value
+def threshold(value, name="threshold"):
+    if isinstance(value, bool) or not isinstance(value, int) or not 0 <= value <= 7:
+        raise ValueError(name + " must be an integer from 0 to 7")
+    return value
 
 
-def conjunction(left, right):
-    left, right = checked(left), checked(right)
-    # Strict unknown propagation: not a closed-world assumption.
-    return None if left is None or right is None else min(left, right)
+def multiply(a, b):
+    """Quantized two-input multiplication (a*b)/7, nearest integer, half-up."""
+    a, b = checked(a), checked(b)
+    return None if a is None or b is None else (2 * a * b + 7) // 14
 
 
-def disjunction(left, right):
-    left, right = checked(left), checked(right)
-    return None if left is None or right is None else max(left, right)
+def multiply_many(values):
+    """Multiply normalized intensities, rounding *once*, not after each input.
 
-
-def implies(left, right):
-    left, right = checked(left), checked(right)
-    return None if left is None or right is None else min(7, 7 - left + right)
-
-
-def evaluate(expression, variables, depth=0):
-    """Evaluate a bounded, declarative octal AST. No eval, recursion bombs or I/O."""
-    if depth > 10:
-        raise ValueError("Expression is too deep")
-    if not isinstance(expression, dict):
-        raise ValueError("Expression node must be an object")
-    operation = expression.get("op")
-    if operation == "VAR":
-        symbol = expression.get("name")
-        if not isinstance(symbol, str) or symbol not in variables:
-            raise ValueError("Unrecognised proposition symbol")
-        value = checked(variables[symbol])
-        return value, {"op": "VAR", "name": symbol, "value": value}
-    if operation not in OPERATORS:
-        raise ValueError("Unsupported octal operator")
-    children = expression.get("args")
-    count = 1 if operation == "NOT8" else 2
-    if not isinstance(children, list) or len(children) != count:
-        raise ValueError("Incorrect operator arity")
-    evaluated = [evaluate(x, variables, depth + 1) for x in children]
-    vals = [x[0] for x in evaluated]
-    result = {
-        "AND8": lambda: conjunction(*vals),
-        "OR8": lambda: disjunction(*vals),
-        "NOT8": lambda: negate(*vals),
-        "IMPLIES8": lambda: implies(*vals),
-    }[operation]()
-    return result, {"op": operation, "inputs": [x[1] for x in evaluated], "value": result}
-
-
-def infer_from_corroboration(result):
-    """Lift an article's cross-publisher assessments into a safe logical report.
-
-    The default rule is AND8 of all extracted propositions. It describes
-    corroboration completeness, not causal proof or a trading signal.
+    For n scores: round_half_up(7 * Π(value_i / 7)).
+    Per-step rounding would make the result depend on arbitrary grouping.
     """
+    values = list(values)
+    if not values or len(values) > MAX_INPUTS:
+        raise ValueError("Expected 1..8 evidence inputs")
+    for value in values:
+        checked(value)
+    if any(value is None for value in values):
+        return None
+    numerator = 1
+    for value in values:
+        numerator *= value
+    denominator = 7 ** (len(values) - 1)
+    return (2 * numerator + denominator) // (2 * denominator)
+
+
+def evaluate_product(values):
+    """Return an audit trail for the aggregate, preserving exact fractions."""
+    values = list(values)
+    result = multiply_many(values)
+    if result is None:
+        return {"operator": "MULTIPLY8", "values": values, "exact": None,
+                "value": None, "quantization": "round-half-up-once"}
+    numerator = 1
+    for value in values:
+        numerator *= value
+    denominator = 7 ** (len(values) - 1)
+    return {"operator": "MULTIPLY8", "values": values,
+            "exact": {"numerator": numerator, "denominator": denominator},
+            "value": result, "quantization": "round-half-up-once"}
+
+
+def infer_from_corroboration(result, input_floor=DEFAULT_INPUT_FLOOR,
+                             output_floor=DEFAULT_OUTPUT_FLOOR):
+    """Filter unreliable premises *before* multiplication, filter aggregate after.
+
+    The filter never silently removes a weak premise to inflate the result:
+    it blocks the compound inference with a full trace instead.
+    """
+    input_floor = threshold(input_floor, "input_floor")
+    output_floor = threshold(output_floor, "output_floor")
     propositions = result.get("propositions")
     if not isinstance(propositions, list):
         raise ValueError("Expected propositions array")
-    if not propositions:
-        return {
-            "status": "unknown", "octalResult": None, "execution": "disabled",
-            "reason": "No extractable economic propositions",
-            "inputs": [], "trace": None,
-        }
-    if len(propositions) > 8:
+    if len(propositions) > MAX_INPUTS:
         return {"status": "blocked", "octalResult": None, "execution": "disabled",
-                "reason": "Too many premises for the bounded prototype", "inputs": [], "trace": None}
+                "reason": "More than eight propositions", "inputs": [], "trace": None}
+    if not propositions:
+        return {"status": "unknown", "octalResult": None, "execution": "disabled",
+                "reason": "No extractable economic propositions", "inputs": [], "trace": None}
+
     inputs = []
     for index, claim in enumerate(propositions):
         if not isinstance(claim, dict):
             raise ValueError("Invalid proposition")
-        grade = checked(claim.get("octalCorroboration"))
+        score = checked(claim.get("octalCorroboration"))
         state = str(claim.get("status") or "")
-        if state not in ("cross-source-support", "limited-cross-source-support"):
-            grade = None  # Contested/qualified/unverified must not be coerced.
+        valid_state = state in ("cross-source-support", "limited-cross-source-support")
+        if not valid_state:
+            score = None
+        supporting = claim.get("supporting", [])
+        contradicting = claim.get("contradicting", [])
+        if not isinstance(supporting, list) or not isinstance(contradicting, list):
+            raise ValueError("Evidence records must be lists")
         inputs.append({
-            "symbol": "P" + str(index + 1),
-            "proposition": str(claim.get("key") or ""),
-            "state": state,
-            "octalValue": grade,
+            "symbol": "P" + str(index + 1), "proposition": str(claim.get("key") or ""),
+            "state": state, "octalValue": score,
             "supportingPublishers": int(claim.get("supportingPublishers") or 0),
             "contradictingPublishers": int(claim.get("contradictingPublishers") or 0),
             "supportingEvidence": [
                 {"publisher": p.get("publisher"), "url": p.get("url"), "published": p.get("published")}
-                for p in claim.get("supporting", [])[:12] if isinstance(p, dict)
+                for p in supporting[:12] if isinstance(p, dict)
             ],
             "contradictingEvidence": [
                 {"publisher": p.get("publisher"), "url": p.get("url"), "published": p.get("published")}
-                for p in claim.get("contradicting", [])[:12] if isinstance(p, dict)
+                for p in contradicting[:12] if isinstance(p, dict)
             ],
         })
-    states = Counter(x["state"] for x in inputs)
-    values = {x["symbol"]: x["octalValue"] for x in inputs}
-    expression = {"op": "VAR", "name": inputs[0]["symbol"]}
-    for inp in inputs[1:]:
-        expression = {"op": "AND8", "args": [expression, {"op": "VAR", "name": inp["symbol"]}]}
-    value, trace = evaluate(expression, values)
-    if states["contested"] > 0:
-        status, reason, value = "contested", "Contradictory reporting requires human review", None
-    elif value is None:
-        status, reason = "unknown", "One or more propositions lack eligible independent corroboration"
-    else:
-        status, reason = "supported", "All included propositions have independent publisher corroboration"
+
+    trace = {"pipeline": ["INPUT_FILTER", "MULTIPLY8", "OUTPUT_FILTER"],
+             "inputFloor": input_floor, "outputFloor": output_floor, "filters": [],
+             "multiplication": None}
+    for entry in inputs:
+        value = entry["octalValue"]
+        if entry["state"] == "contested" or entry["contradictingPublishers"] > 0:
+            passed, reason = False, "contradicted"
+        elif value is None:
+            passed, reason = False, "unknown-or-unverified"
+        elif value < input_floor:
+            passed, reason = False, "below-input-floor"
+        else:
+            passed, reason = True, "passed"
+        trace["filters"].append({"symbol": entry["symbol"], "value": value,
+                                 "pass": passed, "reason": reason})
+
+    problems = [f for f in trace["filters"] if not f["pass"]]
+    if problems:
+        state = "contested" if any(f["reason"] == "contradicted" for f in problems) else (
+            "unknown" if any(f["reason"] == "unknown-or-unverified" for f in problems) else "filtered")
+        return {
+            "status": state, "octalResult": None, "rawOctalResult": None,
+            "execution": "disabled", "operator": "MULTIPLY8",
+            "reason": "Input filtering blocked a compound inference",
+            "inputs": inputs, "trace": trace,
+            "interpretation": "Filtered corroboration evidence, not trading strength",
+        }
+
+    trace["multiplication"] = evaluate_product([entry["octalValue"] for entry in inputs])
+    aggregate = trace["multiplication"]["value"]
+    approved = aggregate >= output_floor
+    trace["outputFilter"] = {"value": aggregate, "floor": output_floor,
+                             "pass": approved, "reason": "passed" if approved else "below-output-floor"}
     return {
-        "status": status,
-        "octalResult": value,
+        "status": "supported" if approved else "filtered",
+        "octalResult": aggregate if approved else None,
+        "rawOctalResult": aggregate, "operator": "MULTIPLY8",
         "execution": "disabled",
-        "reason": reason,
-        "interpretation": "Corroboration strength only; not factual certainty, market direction or trade probability",
-        "operator": "AND8",
-        "expression": expression,
-        "inputs": inputs,
-        "trace": trace,
+        "reason": "All input and output evidence filters passed" if approved else "Compound evidence fell below output threshold",
+        "inputs": inputs, "trace": trace,
+        "interpretation": "Corroboration strength only; not probability, asset direction or a trade signal",
         "caveats": [
-            "Source overlap, wire syndication and shared primary evidence are not completely identifiable from RSS",
-            "Keyword-based proposition extraction cannot establish full semantic equivalence",
-            "An octal evidence grade is not a calibrated probability",
+            "Multiplication assumes an intentionally chosen aggregation rule, not probabilistic independence",
+            "RSS proposition extraction and publisher-independence detection remain provisional",
             "No broker orders or trade recommendations are generated",
         ],
     }
