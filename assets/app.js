@@ -284,10 +284,15 @@
       : [
           { id: 'ava', label: 'Ava', accent: 'US', tagline: 'Warm & expressive' },
           { id: 'andrew', label: 'Andrew', accent: 'US', tagline: 'Calm & conversational' },
-          { id: 'sonia', label: 'Sonia', accent: 'UK', tagline: 'British · Crisp & warm' },
-          { id: 'ryan', label: 'Ryan', accent: 'UK', tagline: 'British · Calm & clear' },
-          { id: 'emma', label: 'Emma', accent: 'US', tagline: 'Bright & natural' },
-          { id: 'brian', label: 'Brian', accent: 'US', tagline: 'Deep & thoughtful' }
+          { id: 'sonia', label: 'Sonia', accent: 'UK', tagline: 'British Southern · Crisp & warm' },
+          { id: 'ryan', label: 'Ryan', accent: 'UK', tagline: 'British Northern · Calm & clear' },
+          { id: 'libby', label: 'Libby', accent: 'UK', tagline: 'British London · Modern & friendly' },
+          { id: 'thomas', label: 'Thomas', accent: 'UK', tagline: 'British Classic · Measured & clear' },
+          { id: 'emily', label: 'Emily', accent: 'IE', tagline: 'Irish · Warm & lyrical' },
+          { id: 'vivienne', label: 'Vivienne', accent: 'FR', tagline: 'French English · Warm & expressive' },
+          { id: 'remy', label: 'Remy', accent: 'FR', tagline: 'French English · Smooth & conversational' },
+          { id: 'ximena', label: 'Ximena', accent: 'ES', tagline: 'Spanish English · Warm & natural' },
+          { id: 'alvaro', label: 'Alvaro', accent: 'ES', tagline: 'Spanish English · Castilian & clear' }
         ];
   }
 

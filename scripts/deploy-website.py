@@ -7,11 +7,13 @@ Same approach as Sparkboard's deployment:
   SHA-256, then renamed into place; nothing live is ever deleted;
 - the previous homepage is backed up and index.html is published last.
 """
+import concurrent.futures
 import ftplib
 import hashlib
 import io
 import json
 import os
+import queue
 import ssl
 import sys
 import time
@@ -145,7 +147,55 @@ def choose_root(ftp, server_dir):
             'No files were changed. Set the repository variable FTP_SERVER_DIR to htdocs and re-run.')
 
 
-def deploy(ftp, build, tag, server_dir=''):
+def upload_batch_parallel(items, password, tag, server_dir, workers=3):
+    """Upload multiple files concurrently over independent FTPS sessions with checksum verification."""
+    work = queue.Queue()
+    for item in items:
+        work.put(item)
+    done = []
+    errors = []
+
+    def worker(worker_id):
+        try:
+            wftp = connect(password)
+            if server_dir:
+                wftp.cwd(server_dir)
+        except Exception as err:
+            errors.append(err)
+            return
+        try:
+            while True:
+                try:
+                    name, data, local_hash = work.get_nowait()
+                except queue.Empty:
+                    break
+                try:
+                    if digest(read_remote(wftp, name) or b'') == local_hash:
+                        done.append((name, local_hash, False))
+                    else:
+                        atomic_write(wftp, name, data, f'{tag}-w{worker_id}')
+                        done.append((name, local_hash, True))
+                except Exception as err:
+                    errors.append(err)
+                    work.put((name, data, local_hash))
+                    break
+        finally:
+            try:
+                wftp.quit()
+            except Exception:
+                wftp.close()
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        futs = [pool.submit(worker, i) for i in range(workers)]
+        for f in futs:
+            f.result()
+    remaining = []
+    while not work.empty():
+        remaining.append(work.get_nowait())
+    return done, remaining, errors
+
+
+def deploy(ftp, build, tag, server_dir='', password=''):
     files = collect(build)  # validate everything before touching the server
     choose_root(ftp, server_dir)
     ensure_directory(ftp, BACKUP_DIR)
@@ -157,6 +207,7 @@ def deploy(ftp, build, tag, server_dir=''):
     remote_manifest = read_manifest(ftp)
     next_manifest = dict(remote_manifest)
     index = None
+    pending = []
     for name, data in files:
         if name == 'index.html':
             index = data
@@ -171,6 +222,29 @@ def deploy(ftp, build, tag, server_dir=''):
         if remote_manifest.get(name) == local_hash and remote_size(ftp, name) == len(data):
             skipped += 1
             continue
+        pending.append((name, data, local_hash))
+
+    if password and len(pending) >= 6:
+        done, remaining, _errs = upload_batch_parallel(pending, password, tag, server_dir, workers=3)
+        for name, local_hash, did_upload in done:
+            next_manifest[name] = local_hash
+            if did_upload:
+                uploaded += 1
+            else:
+                skipped += 1
+        pending = remaining
+        try:
+            ftp.voidcmd('NOOP')
+        except Exception:
+            try:
+                ftp.close()
+            except Exception:
+                pass
+            ftp = connect(password)
+            if server_dir:
+                ftp.cwd(server_dir)
+
+    for name, data, local_hash in pending:
         if digest(read_remote(ftp, name) or b'') == local_hash:
             next_manifest[name] = local_hash
             skipped += 1
@@ -190,7 +264,7 @@ def publish_with_retries(build, password, tag, server_dir, attempts=4):
     for attempt in range(1, attempts + 1):
         ftp = connect(password)
         try:
-            deploy(ftp, build, tag, server_dir)
+            deploy(ftp, build, tag, server_dir, password=password)
             return
         except transient as error:
             if attempt >= attempts:
