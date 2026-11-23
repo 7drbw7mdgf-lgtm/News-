@@ -2210,11 +2210,40 @@
       })
       .then(function (data) {
         if (!data || !data.items || typeof data.items !== 'object') throw new Error('Invalid reader cache');
-        serverReaderCache = data.items;
+        // A Railway result may already have arrived for this article.
+        serverReaderCache = Object.assign(Object.create(null), data.items, serverReaderCache || {});
         if (state.publisherArticle && !state.reading) render();
       })
       .catch(function () { serverReaderCache = Object.create(null); })
       .finally(function () { serverReaderLoading = false; });
+  }
+  // Prefer the independent Railway API for deep links and articles that
+  // have rolled out of the static deployment snapshot. A failed request
+  // leaves the existing first-party RSS cache as the fallback.
+  var remoteReaderAttempts = Object.create(null);
+  function loadRemoteReaderArticle(entry) {
+    var url = safeExternalUrl(entry && entry.url);
+    var canonical = normalizedPublisherArticleUrl(url);
+    if (!url || !canonical || remoteReaderAttempts[canonical]) return;
+    remoteReaderAttempts[canonical] = true;
+    var endpoint = 'https://pheme-reader-api-production.up.railway.app/v1/article?url=' + encodeURIComponent(url);
+    fetch(endpoint, { mode: 'cors', cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Independent reader unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || data.publisher !== entry.name || normalizedPublisherArticleUrl(data.url) !== canonical ||
+            typeof data.title !== 'string' || typeof data.status !== 'string') return;
+        if (!serverReaderCache) serverReaderCache = Object.create(null);
+        // Do not overwrite a fully licensed extraction with a metadata-only record.
+        var existing = serverReaderCache[canonical];
+        if (!existing || existing.status !== 'licensed-full-text' || data.status === 'licensed-full-text') {
+          serverReaderCache[canonical] = data;
+        }
+        if (state.publisherArticle && normalizedPublisherArticleUrl(state.publisherArticle.url) === canonical && !state.reading) render();
+      })
+      .catch(function () { /* The static cache remains the fallback. */ });
   }
   function serverArticleFor(url) {
     return serverReaderCache && serverReaderCache[normalizedPublisherArticleUrl(url)] || null;
@@ -2305,7 +2334,9 @@
 
   function loadPublisherArticleContent(entry) {
     var url = safeExternalUrl(entry && entry.url);
-    if (!url || publisherReaderCache[url]) return;
+    if (!url) return;
+    loadRemoteReaderArticle(entry);
+    if (publisherReaderCache[url]) return;
     loadServerReaderCache();
     // The server-generated licensed cache is preferred to direct client HTML.
     if (serverArticleFor(url) && serverArticleFor(url).status === 'licensed-full-text') {
