@@ -22,14 +22,26 @@ def simulate(graph, shock, percent, validator):
 
     # Enumerate all paths independently. If the same upstream shock reaches
     # a downstream metric by two routes, double-counting cannot be excluded.
+    indegree = {key: 0 for key in known}
+    for edges in outgoing.values():
+        for edge in edges:
+            indegree[edge["target"]] += 1
+    ready = [key for key, value in indegree.items() if value == 0]
+    ordered = []
+    while ready:
+        current = ready.pop(0)
+        ordered.append(current)
+        for edge in outgoing[current]:
+            target = edge["target"]
+            indegree[target] -= 1
+            if indegree[target] == 0:
+                ready.append(target)
     paths = {shock: [{"path": [shock], "changePercent": float(percent), "assumptions": []}]}
-    queue = [shock]
-    while queue:
-        current = queue.pop(0)
+    for current in ordered:
         for edge in outgoing[current]:
             target = edge["target"]
             coefficient = edge.get("passThrough")
-            if coefficient is None:
+            if coefficient is None or current not in paths:
                 continue
             if isinstance(coefficient, bool) or not isinstance(coefficient, (float, int)) or not math.isfinite(coefficient) or not 0 <= coefficient <= 1:
                 raise ValueError("Invalid pass-through coefficient")
@@ -44,12 +56,7 @@ def simulate(graph, shock, percent, validator):
                         "from": current, "to": target, "passThrough": coefficient,
                         "status": "hypothetical-user-assumption"}],
                 })
-            if not children:
-                continue
-            if target not in paths:
-                paths[target] = []
-                queue.append(target)
-            paths[target].extend(children)
+            paths.setdefault(target, []).extend(children)
             if len(paths[target]) > 120:
                 raise ValueError("Too many overlapping scenario paths")
     output = []
