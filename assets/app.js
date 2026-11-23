@@ -2198,6 +2198,28 @@
     } catch (e) { return ''; }
   }
 
+  var serverReaderCache = null;
+  var serverReaderLoading = false;
+  function loadServerReaderCache() {
+    if (serverReaderCache || serverReaderLoading) return;
+    serverReaderLoading = true;
+    fetch('assets/reader-cache/index.json' + buildCacheSuffix(), { cache: 'no-cache' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Server reader index unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !data.items || typeof data.items !== 'object') throw new Error('Invalid reader cache');
+        serverReaderCache = data.items;
+        if (state.publisherArticle && !state.reading) render();
+      })
+      .catch(function () { serverReaderCache = Object.create(null); })
+      .finally(function () { serverReaderLoading = false; });
+  }
+  function serverArticleFor(url) {
+    return serverReaderCache && serverReaderCache[normalizedPublisherArticleUrl(url)] || null;
+  }
+
   function publisherArticleFor(name, url) {
     var articles = storiesForPaper(name);
     var exact = articles.find(function (article) { return safeExternalUrl(article.url) === safeExternalUrl(url); });
@@ -2284,6 +2306,12 @@
   function loadPublisherArticleContent(entry) {
     var url = safeExternalUrl(entry && entry.url);
     if (!url || publisherReaderCache[url]) return;
+    loadServerReaderCache();
+    // The server-generated licensed cache is preferred to direct client HTML.
+    if (serverArticleFor(url) && serverArticleFor(url).status === 'licensed-full-text') {
+      publisherReaderCache[url] = { status: 'server' };
+      return;
+    }
     // A BBC deep link can arrive before the RSS feed or after it has rolled off.
     // Render a clearly labelled external preview either way.
     if (entry.name === 'BBC News' && /^https:\/\/(?:www\.)?bbc\.(?:co\.uk|com)\/news\//i.test(url)) {
@@ -2342,27 +2370,36 @@
   }
 
   function renderPublisherArticle(entry) {
-    var item = publisherArticleFor(entry.name, entry.url) || entry;
+    var serverItem = serverArticleFor(entry.url);
+    var item = publisherArticleFor(entry.name, entry.url) || serverItem || entry;
     var extraction = publisherReaderCache[safeExternalUrl(entry.url)];
-    var extracted = extraction && extraction.status === 'ready';
-    var title = (extracted && extraction.title) || item.title || entry.title || ('Latest reporting from ' + entry.name);
+    var serverFullText = serverItem && serverItem.status === 'licensed-full-text' &&
+      Array.isArray(serverItem.paragraphs) && serverItem.paragraphs.length > 0;
+    var extracted = (extraction && extraction.status === 'ready') || serverFullText;
+    var title = (extraction && extraction.status === 'ready' && extraction.title) || item.title || entry.title || ('Latest reporting from ' + entry.name);
     var summary = item.summary || entry.summary || '';
-    var published = (extracted && extraction.published) || item.published || entry.published;
+    var published = (extraction && extraction.status === 'ready' && extraction.published) || item.published || entry.published;
     var image = safeAsset(item.image || entry.image);
     var safe = safeExternalUrl(entry.url);
     return '<article class="source-reader" aria-labelledby="source-reader-title">' +
       '<div class="source-reader-top"><button type="button" class="textlink" data-act="closesourcearticle" data-name="' + esc(entry.name) + '">← Back to ' + esc(entry.name) + '</button><span class="source-reader-label">' + (extracted ? 'Article in Pheme' : 'Publisher RSS preview') + '</span></div>' +
       '<header class="source-reader-head"><p class="kicker">' + esc(entry.name) + ' · ' + (extracted ? 'Publisher article' : 'Publisher RSS') + '</p>' +
       (published ? '<time>' + esc(articlePublishedLabel(published)) + '</time>' : '') +
-      (extracted && extraction.byline ? '<p class="source-reader-byline">' + esc(extraction.byline) + '</p>' : '') +
+      (extraction && extraction.byline ? '<p class="source-reader-byline">' + esc(extraction.byline) + '</p>' : '') +
       '<h1 id="source-reader-title">' + esc(title) + '</h1></header>' +
       (image ? '<figure class="source-reader-photo"><img src="' + esc(image) + '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure>' : '') +
       '<div class="source-reader-body">' +
-      (extracted ? '<div class="source-reader-content">' + extraction.content + '</div>' : (summary ? '<p class="source-reader-summary">' + esc(summary) + '</p>' : '<p class="notice">This publisher has not supplied an RSS excerpt for this article. Open it at the publisher to read the full story.</p>')) +
-      (extracted ? '<p class="source-reader-note">Readability cleaned the publicly available article page. Restricted or paywalled text is not retrieved.</p>' :
+      (serverFullText ? '<div class="source-reader-content">' +
+        serverItem.paragraphs.map(function (paragraph) { return '<p>' + esc(paragraph) + '</p>'; }).join('') +
+        '</div>' : extraction && extraction.status === 'ready'
+        ? '<div class="source-reader-content">' + extraction.content + '</div>'
+        : (summary ? '<p class="source-reader-summary">' + esc(summary) + '</p>'
+        : '<p class="notice">No publisher RSS excerpt was supplied. Continue to the original article for full reporting.</p>')) +
+      (serverFullText ? '<p class="source-reader-note">Article text supplied through an approved publisher integration, cached on Pheme’s server. Attribution and original link retained.</p>' :
+        extracted ? '<p class="source-reader-note">Readability cleaned the publicly available article page. Restricted or paywalled text is not retrieved.</p>' :
         '<p class="source-reader-note">' +
         (extraction && extraction.status === 'external'
-          ? 'This is a publisher RSS preview, not the full BBC article. BBC News does not offer a supported cross-origin article reader for Pheme. Use the link below to read the full article on BBC News.'
+          ? 'This is a publisher RSS preview, not the full BBC article. The BBC page cannot be reproduced inside Pheme without suitable access rights. Use the link below to read it at BBC News.'
           : extraction && extraction.status === 'unavailable'
           ? 'Pheme could not retrieve this publisher’s full article. The publisher may restrict automated access. ' + (summary ? 'The available RSS excerpt is shown above.' : 'No RSS excerpt is available.')
           : 'Pheme is checking whether the publisher allows a readable version.' + (summary ? ' The RSS excerpt is shown while it loads.' : '')) +
@@ -3580,6 +3617,7 @@
   });
   render();
   loadMarketData();
+  loadServerReaderCache();
   loadPublisherFeeds();
   setInterval(loadPublisherFeeds, 5 * 60 * 1000);
   loadAudioManifest();
