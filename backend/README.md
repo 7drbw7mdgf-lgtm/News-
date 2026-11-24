@@ -130,5 +130,22 @@ Configure these private Railway service variables:
   the widget. Rotating it revokes use of the old token on subsequent requests.
 
 Each Railway instance exposes a single configured private account to holders
-of that token. Keep the account private. The integration requires no order
-permissions. Official setup is at https://helpcentre.trading212.com/hc/en-us/articles/14584770928157-Trading-212-API-key.
+of that token. The read-only configuration requires no order permissions.
+
+### Optional demo orders
+
+Set **PHEME_TRADING212_DEMO_ORDERS=true** alongside **TRADING212_ENV=demo**.
+Create a demo API key with account and positions read permissions plus
+`orders:read` and `orders:execute`. Leave the flag unset for read-only access.
+The server sends orders only to the demo host. Live accounts remain read-only.
+
+The widget accepts manual market buys and sells with extended hours disabled
+and cancellation requests for pending orders. It displays the order for
+review before requiring a second click. A preview expires after 90 seconds
+and can be consumed once. A restart invalidates previews, so the demo ordering
+service should run as a single instance. Pending order results may be cached
+for up to 10 seconds. If submission times out or the result is unknown, verify
+the order status in Trading 212 before submitting again. The widget never
+retries a brokerage write automatically.
+
+Official setup is at https://helpcentre.trading212.com/hc/en-us/articles/14584770928157-Trading-212-API-key.

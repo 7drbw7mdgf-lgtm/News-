@@ -238,6 +238,30 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(payload)
 
+    def do_POST(self):
+        path = urllib.parse.urlsplit(self.path).path
+        handlers = {
+            "/v1/trading212/orders/preview": BROKER.WIDGET.preview,
+            "/v1/trading212/orders/confirm": BROKER.WIDGET.confirm,
+        }
+        if path not in handlers:
+            return self.respond({"error": "not_found"}, 404, private=True)
+        length = self.headers.get("Content-Length", "")
+        if (not length.isascii() or not length.isdecimal() or len(length) > 4
+                or not 0 < int(length) <= 2048
+                or self.headers.get_content_type() != "application/json"
+                or self.headers.get("Transfer-Encoding")):
+            return self.respond({"error": "invalid_order"}, 400, private=True)
+        self.connection.settimeout(5)
+        try:
+            data = json.loads(self.rfile.read(int(length)))
+            if not isinstance(data, dict):
+                raise ValueError("Expected JSON object")
+        except (ValueError, RecursionError, TimeoutError):
+            return self.respond({"error": "invalid_order"}, 400, private=True)
+        status, payload = handlers[path](self.headers.get("Authorization"), data)
+        return self.respond(payload, status, private=True)
+
     def do_GET(self):
         path = urllib.parse.urlsplit(self.path)
         query = urllib.parse.parse_qs(path.query)
@@ -254,6 +278,9 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content)
             return
+        if path.path == "/v1/trading212/orders":
+            status, payload = BROKER.WIDGET.pending(self.headers.get("Authorization"))
+            return self.respond(payload, status, private=True)
         if path.path == "/v1/trading212/account":
             status, payload = BROKER.WIDGET.account(self.headers.get("Authorization"))
             self.respond(payload, status, private=True)

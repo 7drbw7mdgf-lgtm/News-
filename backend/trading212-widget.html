@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trading 212 account</title>
+<title>Trading 212 account and demo orders</title>
 <style>
 :root { color-scheme: light dark; font: 14px/1.5 system-ui, sans-serif; color: CanvasText; background: Canvas; }
 * { box-sizing: border-box; }
 body { margin: 0; padding: 16px; }
 form, .summary { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
 label { display: grid; flex: 1 1 230px; max-width: 360px; gap: 5px; }
-input, button { font: inherit; min-height: 42px; padding: 7px 11px; border: 1px solid GrayText; border-radius: 5px; }
+input, select, button { font: inherit; min-height: 42px; padding: 7px 11px; border: 1px solid GrayText; border-radius: 5px; }
 input { min-width: 0; }
 button { background: ButtonFace; color: ButtonText; }
 .summary { gap: 18px; }
@@ -22,6 +22,11 @@ table { border-collapse: collapse; width: 100%; }
 th, td { border-bottom: 1px solid GrayText; padding: 7px 4px; text-align: left; overflow-wrap: anywhere; }
 th:last-child, td:last-child { text-align: right; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+h2 { font-size: 17px; margin: 0 0 10px; }
+#demo-orders { border-top: 1px solid GrayText; margin-top: 16px; padding-top: 12px; }
+#order-controls { margin: 0; padding: 0; border: 0; min-width: 0; }
+#order-form label { flex-basis: 120px; }
+#order-review { border: 1px solid GrayText; padding: 12px; border-radius: 5px; }
 [hidden] { display: none !important; }
 </style>
 <script defer src="/trading212/widget.js"></script>
@@ -51,6 +56,35 @@ th:last-child, td:last-child { text-align: right; }
     <thead><tr><th scope="col">Instrument</th><th scope="col">Quantity</th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
+  <section id="demo-orders" hidden aria-labelledby="orders-title">
+    <h2 id="orders-title">Demo orders</h2>
+    <fieldset id="order-controls" aria-label="Demo order controls">
+      <form id="order-form" autocomplete="off">
+        <label>Trading 212 ticker
+          <input id="order-ticker" type="text" maxlength="64" pattern="[A-Za-z0-9_.\-]{1,64}" required spellcheck="false" placeholder="AAPL_US_EQ">
+        </label>
+        <label>Side
+          <select id="order-side"><option value="buy">Buy</option><option value="sell">Sell</option></select>
+        </label>
+        <label>Number of shares
+          <input id="order-quantity" type="number" min="0" step="any" required inputmode="decimal">
+        </label>
+        <button type="submit">Review market order</button>
+      </form>
+      <div class="actions"><button id="order-pending" type="button">Refresh pending orders</button></div>
+      <table id="pending-orders" hidden>
+        <caption>Pending demo orders</caption>
+        <thead><tr><th scope="col">Order</th><th scope="col">Action</th></tr></thead>
+        <tbody id="pending-rows"></tbody>
+      </table>
+      <div id="order-review" hidden>
+        <p id="order-details" tabindex="-1"></p>
+        <button id="order-confirm" type="button">Confirm</button>
+        <button id="order-back" type="button">Back</button>
+      </div>
+    </fieldset>
+    <p id="order-status" role="status" aria-live="polite"></p>
+  </section>
 </section>
 </body>
 </html>
