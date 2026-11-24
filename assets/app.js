@@ -735,19 +735,31 @@
     return '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"></path></svg>';
   }
 
-  function renderSidebar() {
-    var home = state.view === 'briefing' && state.topic === 'all';
+  function renderMainNavigation(className) {
     var savedCount = STORIES.filter(function (s) { return state.saved[s.id]; }).length;
+    var destinations = [
+      { label: 'Home', action: 'home', active: state.view === 'briefing' && state.topic === 'all', icon: navIcon('M3 10 12 3l9 7v11h-6v-7H9v7H3z') },
+      { label: 'Newspapers', view: 'papers', icon: navIcon('M4 3h16v18H4zM8 7h8M8 11h8M8 15h3m3 0h2') },
+      { label: 'Saved stories', view: 'saved', icon: ICON.bookmarkLg },
+      { label: 'Trading', view: 'trading', icon: navIcon('M3 18h3l4-7 4 4 6-10m-1 0h1v1') }
+    ];
+    return '<nav class="' + className + '" aria-label="Main">' + destinations.map(function (item) {
+      var active = !state.reading && !state.publisherArticle && (item.active || item.view === state.view);
+      var count = item.view === 'saved' && savedCount ? '<span class="sidebar-count">' + savedCount + '</span>' : '';
+      return '<button type="button" class="sidebar-link' + (active ? ' active' : '') +
+        '" data-act="' + (item.action || 'view') + '"' + (item.view ? ' data-view="' + item.view + '"' : '') +
+        (active ? ' aria-current="page"' : '') + '>' + item.icon + '<span>' + item.label + '</span>' + count + '</button>';
+    }).join('') + '</nav>';
+  }
+
+  function renderSidebar() {
     var topicFilters = [{ id: 'all', label: 'All' }].concat(D.TOPICS).map(function (topic) {
       var count = topic.id === 'all' ? CURRENT.length : CURRENT.filter(function (story) { return story.topic === topic.id; }).length;
       var on = state.view === 'briefing' && state.topic === topic.id;
       return '<button class="sidebar-topic' + (on ? ' active' : '') + '" data-act="topic" data-id="' + esc(topic.id) + '" aria-pressed="' + on + '"><span>' + esc(topic.label) + '</span><span class="sidebar-topic-count">' + count + '</span></button>';
     }).join('');
     return '<aside class="dashboard-sidebar" aria-label="Main navigation"><button class="sidebar-brand" data-act="home" aria-label="Pheme home"><img src="assets/images/pheme-logo.png" width="56" height="56" alt=""></button>' +
-      '<nav class="sidebar-nav" aria-label="Main"><button class="sidebar-link' + (home ? ' active' : '') + '" data-act="home"' + (home ? ' aria-current="page"' : '') + '>' + navIcon('M3 10 12 3l9 7v11h-6v-7H9v7H3z') + 'Home</button>' +
-      '<button class="sidebar-link' + (state.view === 'papers' ? ' active' : '') + '" data-act="view" data-view="papers">' + navIcon('M4 3h16v18H4zM8 7h8M8 11h8M8 15h3m3 0h2') + 'Newspapers</button>' +
-      '<button class="sidebar-link' + (state.view === 'saved' ? ' active' : '') + '" data-act="view" data-view="saved">' + ICON.bookmarkLg + 'Saved stories' + (savedCount ? '<span class="sidebar-count">' + savedCount + '</span>' : '') + '</button>' +
-      '<button class="sidebar-link' + (state.view === 'trading' ? ' active' : '') + '" data-act="view" data-view="trading"' + (state.view === 'trading' ? ' aria-current="page"' : '') + '>' + navIcon('M3 18h3l4-7 4 4 6-10m-1 0h1v1') + 'Trading</button></nav>' +
+      renderMainNavigation('sidebar-nav') +
       '<nav class="sidebar-topic-nav" aria-label="Filter stories by topic"><span class="sidebar-topic-heading">Topics</span>' + topicFilters + '</nav></aside>';
   }
 
@@ -804,10 +816,10 @@
       '<div class="topbar-actions">' +
       '<button class="search-toggle search-launch' + (state.searchOpen ? ' on' : '') + '" data-act="togglesearch" aria-label="Search stories" aria-expanded="' + state.searchOpen + '">' + ICON.search + '<span>Search anything…</span></button>' +
       '<span class="vsep" aria-hidden="true"></span>' +
-      '<button class="nav-link' + (isSaved ? ' on' : '') + '" data-act="view" data-view="saved" aria-pressed="' + isSaved + '">Saved' +
+      '<button class="nav-link masthead-saved' + (isSaved ? ' on' : '') + '" data-act="view" data-view="saved" aria-pressed="' + isSaved + '">Saved' +
       (savedCount ? '<span class="badge-count">' + savedCount + '</span>' : '') + '</button>' +
       '<button id="settings-toggle" class="nav-link settings-toggle" data-act="settings" aria-expanded="' + state.settingsOpen + '">Settings</button>' +
-      '</div></header></div>' +
+      '</div></header></div>' + renderMainNavigation('phone-nav wrap') +
       '<nav class="topicbar" aria-label="Pheme navigation"><div class="wrap topicbar-inner">' +
       '<div class="topic-tabs">' + topicTabs + '</div>' +
       '<div class="topic-utility">' +
@@ -1681,13 +1693,18 @@
     return results.sort(function (a,b) { return String(b.article.published||'').localeCompare(String(a.article.published||'')); });
   }
 
+  var MARKET_WORKSPACES = [
+    {id:'overview',label:'Overview'}, {id:'company',label:'Company'},
+    {id:'heatmap',label:'Heatmap'}, {id:'movers',label:'Movers & FX'}, {id:'calendar',label:'Calendar'},
+    {id:'news',label:'News'}, {id:'evidence',label:'Evidence Bot'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
+  ];
+
+  function isMarketWorkspace(id) {
+    return MARKET_WORKSPACES.some(function (workspace) { return workspace.id === id; });
+  }
+
   function renderTrading() {
-    var tabs = [
-      {id:'overview',label:'Overview'}, {id:'company',label:'Company'},
-      {id:'heatmap',label:'Heatmap'}, {id:'movers',label:'Movers & FX'}, {id:'calendar',label:'Calendar'},
-      {id:'news',label:'News'}, {id:'evidence',label:'Evidence Bot'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
-    ];
-    var tab = tabs.some(function (t) { return t.id === state.marketWorkspaceTab; }) ? state.marketWorkspaceTab : 'overview';
+    var tab = isMarketWorkspace(state.marketWorkspaceTab) ? state.marketWorkspaceTab : 'overview';
     var results = marketSearchResultsHtml();
     return '<div class="ws-shell"><header class="ws-header"><div class="ws-heading">' +
       '<div><span class="ws-kicker">PHEME / MARKET INTELLIGENCE</span><h1>Markets workspace</h1></div>' +
@@ -1700,10 +1717,10 @@
       '<button type="button" data-act="wssearchnews">Search news</button>' +
       '<div id="ws-search-results" class="ws-search-dropdown" hidden>' + results + '</div></div>' +
       '<div class="ws-mobile-toolbar"><label for="ws-mobile-section">Workspace</label><select id="ws-mobile-section" aria-label="Choose market workspace">' +
-      tabs.map(function (t) { return '<option value="' + t.id + '"' + (t.id === tab ? ' selected' : '') + '>' + t.label + '</option>'; }).join('') +
+      MARKET_WORKSPACES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === tab ? ' selected' : '') + '>' + t.label + '</option>'; }).join('') +
       '</select><span class="ws-mobile-hint">Swipe charts horizontally to inspect data</span></div>' +
       '<nav class="ws-tabs" aria-label="Market workspace sections">' +
-      tabs.map(function (t) { return '<button type="button" data-act="wstab" data-id="' + t.id +
+      MARKET_WORKSPACES.map(function (t) { return '<button type="button" data-act="wstab" data-id="' + t.id +
         '" aria-current="' + (t.id === tab ? 'page' : 'false') + '" class="' + (t.id === tab ? 'active' : '') +
         '">' + t.label + '</button>'; }).join('') + '</nav></header>' +
       '<div class="ws-panel" id="ws-active-panel">' +
@@ -1715,7 +1732,9 @@
          '<section class="ws-widget ws-half-widget"><div class="ws-widget-head"><h2>Market movers</h2><span>Gainers, losers &amp; most active</span></div>' +
          '<div id="ws-hotlists" class="ws-widget-embed"><p class="ws-empty">Loading market movers…</p></div></section>' +
          '<section class="ws-widget ws-half-widget"><div class="ws-widget-head"><h2>Forex cross rates</h2><span>GBP · USD · EUR · JPY · CHF · CAD · AUD · INR</span></div>' +
-         '<div id="ws-forex-cross" class="ws-widget-embed"><p class="ws-empty">Loading forex cross rates…</p></div></section></div>' :
+         '<p class="ws-forex-hint">Scroll sideways to see all eight currencies.</p>' +
+         '<div class="ws-forex-scroll" role="region" aria-label="Forex cross rates table" tabindex="0">' +
+         '<div id="ws-forex-cross" class="ws-widget-embed"><p class="ws-empty">Loading forex cross rates…</p></div></div></section></div>' :
        tab === 'calendar' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>Economic calendar</h2><span>Central banks, CPI, GDP &amp; jobs (UK, US, EU, JP, IN, CN)</span></div>' +
          '<div id="ws-economic-calendar" class="ws-widget-embed"><p class="ws-empty">Loading economic calendar…</p></div></section>' :
        tab === 'news' ? marketWorkspaceNews() :
@@ -1764,12 +1783,7 @@
     widget.appendChild(script);
   }
 
-  function isCompactTradingViewport() {
-    return window.matchMedia && window.matchMedia('(max-width: 680px)').matches;
-  }
-
   function mountTradingViewMarkets() {
-    var compact = isCompactTradingViewport();
     mountTradingViewBox(app.querySelector('#ws-ticker-tape'), 'embed-widget-ticker-tape.js', {
       symbols: [
         { proName: 'TVC:UKX', title: 'FTSE 100' },
@@ -1801,7 +1815,7 @@
       width: '100%',
       height: '100%',
       showSymbolLogo: true,
-      showChart: !compact,
+      showChart: true,
       tabs: [
         { title: 'Companies', originalTitle: 'Companies', symbols: [
           { s: 'NASDAQ:AAPL', d: 'Apple' },
@@ -1848,8 +1862,8 @@
       hasTopBar: true,
       isDataSetEnabled: true,
       isZoomEnabled: true,
-      hasSymbolTooltip: !compact,
-      isMonoSize: compact,
+      hasSymbolTooltip: true,
+      isMonoSize: false,
       width: '100%',
       height: '100%'
     }, 'Stock heatmap by TradingView', 'https://www.tradingview.com/heatmap/stock/');
@@ -1858,7 +1872,7 @@
       colorTheme: 'light',
       dateRange: '12M',
       exchange: 'US',
-      showChart: !compact,
+      showChart: true,
       locale: 'en',
       width: '100%',
       height: '100%',
@@ -1870,7 +1884,7 @@
     mountTradingViewBox(app.querySelector('#ws-forex-cross'), 'embed-widget-forex-cross-rates.js', {
       width: '100%',
       height: '100%',
-      currencies: compact ? ['GBP', 'USD', 'EUR', 'JPY'] : ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'],
+      currencies: ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'],
       isTransparent: false,
       colorTheme: 'light',
       locale: 'en'
@@ -1882,8 +1896,8 @@
       width: '100%',
       height: '100%',
       locale: 'en',
-      importanceFilter: compact ? '1' : '-1,0,1',
-      countryFilter: compact ? 'gb,us,eu' : 'gb,us,eu,jp,in,cn'
+      importanceFilter: '-1,0,1',
+      countryFilter: 'gb,us,eu,jp,in,cn'
     }, 'Economic calendar by TradingView', 'https://www.tradingview.com/economic-calendar/');
   }
 
@@ -1893,7 +1907,6 @@
     target.dataset.loaded = 'yes';
     var company = selectedMarketCompany();
     var mode = state.marketCompanyPanel;
-    var compact = isCompactTradingViewport();
     var container = document.createElement('div');
     container.className = 'tradingview-widget-container';
     container.style.height = '100%';
@@ -1924,9 +1937,9 @@
         style: '1',
         locale: 'en',
         allow_symbol_change: true,
-        hide_side_toolbar: compact,
-        withdateranges: !compact,
-        details: !compact,
+        hide_side_toolbar: false,
+        withdateranges: true,
+        details: true,
         calendar: false,
         support_host: 'https://www.tradingview.com'
       };
@@ -1934,12 +1947,12 @@
       script.src = base + 'embed-widget-technical-analysis.js';
       options.symbol = company.tv;
       options.interval = '1D';
-      options.showIntervalTabs = !compact;
+      options.showIntervalTabs = true;
       options.displayMode = 'single';
     } else if (mode === 'financials') {
       script.src = base + 'embed-widget-financials.js';
       options.symbol = company.tv;
-      options.displayMode = compact ? 'compact' : 'regular';
+      options.displayMode = 'regular';
     } else if (mode === 'profile') {
       script.src = base + 'embed-widget-symbol-profile.js';
       options.symbol = company.tv;
@@ -1948,7 +1961,7 @@
       options.symbols = [[company.name + '|' + company.tv]];
       options.chartOnly = false;
       options.autosize = true;
-      options.showVolume = !compact;
+      options.showVolume = true;
       options.showMA = false;
       options.hideDateRanges = false;
       options.hideMarketStatus = false;
@@ -1957,7 +1970,7 @@
       options.scaleMode = 'Normal';
       options.chartType = 'area';
       options.lineWidth = 2;
-      options.dateRanges = compact ? ['1d|1','1m|30','3m|60','12m|1D'] : ['1d|1','1m|30','3m|60','12m|1D','all|1M'];
+      options.dateRanges = ['1d|1','1m|30','3m|60','12m|1D','all|1M'];
     }
     script.textContent = JSON.stringify(options);
     script.onerror = function () {
@@ -3140,12 +3153,12 @@
   app.addEventListener('change', function (event) {
     if (!event.target || event.target.id !== 'ws-mobile-section') return;
     var next = event.target.value;
-    if (['overview','company','heatmap','movers','calendar','news','evidence','resources','map','discover'].indexOf(next) === -1 ||
+    if (!isMarketWorkspace(next) ||
         next === state.marketWorkspaceTab) return;
     closeExpandedMarketWidget();
     state.marketWorkspaceTab = next;
     hideWorkspaceSearchResults();
-    render();
+    render({ focus: 'ws-mobile-section' });
   });
 
   app.addEventListener('click', function (e) {
@@ -3188,7 +3201,7 @@
         }
         break;
       case 'wstab':
-        if (['overview','company','heatmap','movers','calendar','news','evidence','resources','map','discover'].indexOf(id) < 0) break;
+        if (!isMarketWorkspace(id)) break;
         closeExpandedMarketWidget();
         state.marketWorkspaceTab = id;
         hideWorkspaceSearchResults();
