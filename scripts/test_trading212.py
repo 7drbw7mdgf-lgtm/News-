@@ -2,6 +2,7 @@ import base64
 from http.client import HTTPConnection
 from http.server import ThreadingHTTPServer
 from io import BytesIO
+from pathlib import Path
 import json
 from threading import Thread
 import unittest
@@ -120,6 +121,11 @@ class Trading212Tests(unittest.TestCase):
             self.assertEqual(request.call_args.kwargs["body"]["quantity"], 2)
             request.assert_called_once()
 
+    def test_embed_allows_widget_submit_events(self):
+        app = (Path(server.ROOT) / "assets" / "app.js").read_text(encoding="utf-8")
+        self.assertRegex(app, r'<iframe title="Private Trading 212 account"[^>]+'
+                              r'sandbox="[^"]*\ballow-forms\b')
+
     def test_http_headers_prevent_shared_caching_and_isolate_widget(self):
         with ThreadingHTTPServer(("127.0.0.1", 0), server.Handler) as http:
             thread = Thread(target=http.serve_forever, daemon=True)
@@ -129,6 +135,7 @@ class Trading212Tests(unittest.TestCase):
                 with urlopen(root + "/trading212/widget", timeout=3) as r:
                     self.assertIn("frame-ancestors 'self' https://pheme24.online",
                                   r.headers["Content-Security-Policy"])
+                    self.assertIn("form-action 'none'", r.headers["Content-Security-Policy"])
                     self.assertIn(b"/trading212/widget.js", r.read())
                 with patch.object(server.BROKER.WIDGET, "account", return_value=(200, {"mode": "demo"})):
                     request = Request(root + "/v1/trading212/account",

@@ -1721,7 +1721,7 @@
        tab === 'news' ? marketWorkspaceNews() :
        tab === 'evidence' ? (window.PhemeEvidenceBot ? window.PhemeEvidenceBot.html() : '<p class="ws-empty">Evidence Bot unavailable.</p>') +
          '<section class="ws-widget ws-trading212"><div class="ws-widget-head"><h2>Trading 212</h2></div>' +
-         '<iframe title="Private Trading 212 account" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" ' +
+         '<iframe title="Private Trading 212 account" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms" ' +
          'src="https://pheme-reader-api-production.up.railway.app/trading212/widget"></iframe></section>' :
        tab === 'resources' ? (window.PhemeResourceGraph ? window.PhemeResourceGraph.html() : '<p>Resource graph unavailable.</p>') :
        tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
