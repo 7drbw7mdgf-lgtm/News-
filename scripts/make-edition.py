@@ -336,7 +336,54 @@ def ask_groq(e):
     return data
 
 
+def ask_local_writer(e):
+    """Call the llama.cpp CPU server started on the Actions runner."""
+    lines = []
+    for outlet, article in sorted(e['outlets'].items(), key=lambda item: item[1]['published'])[:8]:
+        lines.append(f"- {outlet} ({day_label(article['published'])}): "
+                     f"{article['title']} — {article.get('summary', '')[:350]}")
+    body = json.dumps({
+        'model': 'pheme-local',
+        'messages': [{'role': 'user', 'content': PROMPT.format(material='\n'.join(lines))}],
+        'max_tokens': 850,
+        'temperature': 0.1,
+        'response_format': {'type': 'json_object'},
+    }).encode()
+    request = urllib.request.Request('http://127.0.0.1:8087/v1/chat/completions', data=body,
+                                     headers={'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            choice = json.load(response)['choices'][0]
+        if choice.get('finish_reason') == 'length':
+            raise ValueError('Truncated completion')
+        data = json.loads(choice['message']['content'])
+        if not isinstance(data, dict):
+            raise ValueError('Expected a JSON object')
+        if data.get('same_event') is False or data.get('is_news') is False:
+            return {'reject': True}
+        for key in ('headline', 'summary', 'digest', 'topic'):
+            if not isinstance(data.get(key), str):
+                data.pop(key, None)
+        for key in ('article', 'article_sources', 'points'):
+            values = data.get(key)
+            data[key] = [item for item in values if isinstance(item, str)] if isinstance(values, list) else []
+        for key in ('agree', 'differ'):
+            values = data.get(key)
+            data[key] = [
+                item for item in values
+                if isinstance(item, dict) and isinstance(item.get('text'), str)
+                and isinstance(item.get('sources'), list)
+                and all(isinstance(source, str) for source in item['sources'])
+            ] if isinstance(values, list) else []
+        return data
+    except (OSError, KeyError, IndexError, TypeError, ValueError, AttributeError) as error:
+        print(f'Local writer rejected one completion ({type(error).__name__}).', file=sys.stderr)
+        return None
+
+
 def ask_writer(e):
+    if os.environ.get('PHEME_LOCAL_WRITER') == '1':
+        return ask_local_writer(e)
     return ask_claude(e) or ask_groq(e)
 
 
@@ -558,8 +605,11 @@ def main():
     reuse_ids(stories, coverage, previous)
     apply_editorial(stories, coverage, previous)
     missing = [s['id'] for s in stories if not article_is_ready(s)]
+    if os.environ.get('PHEME_LOCAL_WRITER') == '1':
+        print(f'Edition article checks passed for {len(stories) - len(missing)}/{len(stories)} retained stories.',
+              file=sys.stderr)
     if missing:
-        print(f'Article quality gate: {len(missing)} stories have no source-backed article. Keeping the published edition unchanged. Configure ANTHROPIC_API_KEY or GROQ_API_KEY for new articles.', file=sys.stderr)
+        print(f'Article quality gate: {len(missing)} stories have no source-backed article. Keeping the published edition unchanged. Check the configured edition writer.', file=sys.stderr)
         return 1
     rss_images = {a['url']: a['image'] for a in articles if a.get('image')}
     needs_img = [s for s in stories if not (s.get('image') or '').startswith('https://')]
@@ -592,7 +642,7 @@ def main():
             'digest': digests[:4],
             'generated': 'automatic',
             'articlePolicy': 'source-based-v1',
-            'writer': 'claude' if os.environ.get('ANTHROPIC_API_KEY') else ('groq' if os.environ.get('GROQ_API_KEY') else 'editorial-cache'),
+            'writer': 'local-qwen' if os.environ.get('PHEME_LOCAL_WRITER') == '1' else 'claude' if os.environ.get('ANTHROPIC_API_KEY') else ('groq' if os.environ.get('GROQ_API_KEY') else 'editorial-cache'),
         },
         'LEGACY_IDS': {},
     })

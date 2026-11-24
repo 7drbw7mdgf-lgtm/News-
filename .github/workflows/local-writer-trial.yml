@@ -1,0 +1,81 @@
+name: Test a keyless Pheme edition
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/local-writer-trial.yml'
+      - 'scripts/make-edition.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pheme-local-writer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  edition:
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'pheme-local-writer')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PHEME_LOCAL_WRITER: '1'
+      LLAMA_RELEASE: b12676
+      LLAMA_SHA256: c65369a8574d096d90c593fef0e77a1ba2abfdfa7e7e9426bbf8939781ef8a07
+      MODEL_REVISION: 91cad51170dc346986eccefdc2dd33a9da36ead9
+      MODEL_SHA256: 6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Collect fresh publisher feeds
+        run: python3 scripts/collect-feeds.py > "${RUNNER_TEMP}/candidates.json"
+      - name: Download and verify the model and runner
+        shell: bash
+        run: |
+          archive="${RUNNER_TEMP}/llama.tar.gz"
+          model="${RUNNER_TEMP}/pheme.gguf"
+          curl -fsSL --retry 2 --max-time 240 -o "$archive" \
+            "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_RELEASE}/llama-${LLAMA_RELEASE}-bin-ubuntu-x64.tar.gz"
+          curl -fsSL --retry 2 --max-time 240 -o "$model" \
+            "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/${MODEL_REVISION}/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+          printf '%s  %s\n' "$LLAMA_SHA256" "$archive" "$MODEL_SHA256" "$model" | sha256sum -c -
+          mkdir "${RUNNER_TEMP}/llama"
+          tar -xzf "$archive" -C "${RUNNER_TEMP}/llama" --no-same-owner
+      - name: Generate and validate a draft edition
+        shell: bash
+        run: |
+          server="$(find "${RUNNER_TEMP}/llama" -type f -name llama-server -print -quit)"
+          test -n "$server"
+          export LD_LIBRARY_PATH="$(dirname "$server")${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+          "$server" --model "${RUNNER_TEMP}/pheme.gguf" --alias pheme-local \
+            --host 127.0.0.1 --port 8087 --threads 4 --ctx-size 4096 --parallel 1 \
+            > "${RUNNER_TEMP}/llama.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=
+          for attempt in {1..45}; do
+            if curl -fsS --max-time 2 http://127.0.0.1:8087/health > /dev/null 2>&1; then
+              ready=1
+              break
+            fi
+            kill -0 "$server_pid" 2>/dev/null || break
+            sleep 2
+          done
+          if [ -z "$ready" ]; then
+            tail -40 "${RUNNER_TEMP}/llama.log"
+            exit 1
+          fi
+          set -o pipefail
+          { time python3 scripts/make-edition.py "${RUNNER_TEMP}/candidates.json"; } 2>&1 \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/build-editions.mjs
+          node scripts/build-editions.mjs --check
