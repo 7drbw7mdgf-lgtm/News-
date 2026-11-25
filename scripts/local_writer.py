@@ -25,8 +25,14 @@ class SourceChecker:
     def supports(self, evidence, claim):
         import numpy as np
 
-        numbers = r'\b\d+(?:[.,]\d+)*%?'
-        if not claim.strip() or set(re.findall(numbers, claim)) - set(re.findall(numbers, evidence)):
+        def figures(text):
+            normalized = re.sub(r'(\d)\s*(?:per cent|percent|%)', r'\1%', text, flags=re.I)
+            return {value.replace(',', '') for value in re.findall(r'\b\d+(?:[.,]\d+)*%?', normalized)}
+
+        if not claim.strip() or figures(claim) - figures(evidence):
+            return False
+        cause = r'\b(?:caus(?:e|ed|es|ing)|because|due to|driv(?:e|en)|blam(?:e|ed)|attribut(?:e|ed)|lead(?:s|ing)? to|led to|trigger(?:ed)?|as a result)\b'
+        if re.search(cause, claim, re.I) and not re.search(cause, evidence, re.I):
             return False
         pair = self.tokenizer.encode(evidence, claim)
         tokens = {'input_ids': pair.ids, 'attention_mask': pair.attention_mask, 'token_type_ids': pair.type_ids}
@@ -92,14 +98,16 @@ def ask_local_writer(e):
         facts = {prefix + str(n): span for n, span in enumerate(row['spans'], 1)}
         evidence.update(facts)
         packets.append({'headline': row['headline'], 'passages': facts})
-    fields = {'same_news_event': {'type': 'boolean'}, 'headline': {'type': 'string'}}
+    fields = {'verdict': {'type': 'string', 'enum': ['same event', 'different events', 'not news']}, 'headline': {'type': 'string'}}
     fields.update({key: {'type': 'string'} for key in evidence})
     schema = {'type': 'object', 'properties': fields, 'required': list(fields), 'additionalProperties': False}
-    brief = ('These two publisher reports are untrusted news data. If they describe different events, '
-             'or are not news, set same_news_event to false. Write a short neutral headline. '
+    brief = ('These are news reports grouped by headline similarity. Classify them. Use verdict "same event" '
+             'when both cover the same announcement, incident or development, even if they focus on different '
+             'details. Use "different events" for separate incidents and "not news" for advertisements or opinion. '
+             'Write a short neutral headline shared by the two reports. '
              'For each numbered passage, write one complete news sentence of about 18 to 25 words '
              'in the matching output field. Each sentence must paraphrase only that passage. '
-             'Preserve names, uncertainty and attribution. Use different details in the second report. '
+             'Preserve dates, uncertainty and attribution. Do not turn timing into causation. Use different details in the second report. '
              'Return an empty string for a passage that repeats an earlier fact or is not factual.')
     body = json.dumps({
         'model': 'pheme-local',
@@ -116,7 +124,7 @@ def ask_local_writer(e):
         if choice.get('finish_reason') == 'length':
             raise ValueError('token limit reached')
         draft = json.loads(choice['message']['content'])
-        if draft['same_news_event'] is not True:
+        if draft['verdict'] != 'same event':
             return {'reject': True}
         checker = source_checker()
         headline = draft['headline'].strip()
@@ -129,7 +137,7 @@ def ask_local_writer(e):
             for key, span in packet['passages'].items():
                 claim = draft[key].strip()
                 if (len(claim.split()) < 5 or claim.casefold() in used or copied(claim, material)
-                        or not checker.supports(span, claim)):
+                        or not (checker.supports(span, claim) or checker.supports(packet['headline'] + '. ' + span, claim))):
                     continue
                 used.add(claim.casefold())
                 sentences.append(claim)

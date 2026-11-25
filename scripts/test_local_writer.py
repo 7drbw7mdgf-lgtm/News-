@@ -30,7 +30,7 @@ class LocalWriterTest(unittest.TestCase):
                   'The library will use its regular newsletter to let visitors know when the new room opens.')
         first_parts = first.split('. ')
         second_parts = second.split('. ')
-        draft = {'same_news_event': True, 'headline': 'Unverified headline', 'a4': 'Unsupported assertion here today.',
+        draft = {'verdict': 'same event', 'headline': 'Unverified headline', 'a4': 'Unsupported assertion here today.',
                  'b4': ''}
         for prefix, sentences in [('a', first_parts), ('b', second_parts)]:
             for n, sentence in enumerate(sentences, 1):
