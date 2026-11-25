@@ -28,8 +28,13 @@ class LocalWriterTest(unittest.TestCase):
         second = ('The current entrance will remain open during the building work so that people can still return their books. '
                   'Staff plan to move the afternoon reading group into a different room while contractors work. '
                   'The library will use its regular newsletter to let visitors know when the new room opens.')
-        draft = {'usable': True, 'headline': 'Unverified headline', 'first_paragraph': first + ' Unsupported assertion here today.',
-                 'second_paragraph': second}
+        first_parts = first.split('. ')
+        second_parts = second.split('. ')
+        draft = {'same_news_event': True, 'headline': 'Unverified headline', 'a4': 'Unsupported assertion here today.',
+                 'b4': ''}
+        for prefix, sentences in [('a', first_parts), ('b', second_parts)]:
+            for n, sentence in enumerate(sentences, 1):
+                draft[prefix + str(n)] = sentence.rstrip('.') + '.'
         response = {'choices': [{'finish_reason': 'stop', 'message': {'content': json.dumps(draft)}}]}
         checker = Mock()
         checker.supports.side_effect = lambda text, claim: not claim.startswith(('Unverified', 'Unsupported'))
