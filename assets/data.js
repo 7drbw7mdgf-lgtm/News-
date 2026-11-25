@@ -316,40 +316,114 @@ window.DAYBREAK = {
  ],
  "STORIES": [
   {
-   "id": "thomas-markle-indicted-child-sex-abuse-material",
+   "id": "macys-thanksgiving-parade-postponed-saturday-due-expected",
    "topic": "world",
-   "source": "MyNorthwest",
+   "source": "KSTP-TV",
    "time": "25 Nov",
-   "url": "https://mynorthwest.com/national/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/4304346",
-   "headline": "Thomas Markle indicted on child sex abuse material charges",
-   "summary": "A federal grand jury in Los Angeles indicted Thomas Markle on charges of possessing child sexual abuse material, including photos of prepubescent children.",
+   "url": "https://kstp.com/ap-top-news/ap-top-news-entertainment/macys-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+   "headline": "Macy’s Thanksgiving Day Parade postponed to Saturday due to expected bad weather",
+   "summary": "NBC announced the parade will take place on Saturday, citing safety concerns for participants and spectators after discussions with city officials.",
    "points": [],
    "publishedLabel": "25 Nov 2026",
    "article": [
-    "A federal grand jury in Los Angeles indicted Thomas Markle on charges of possessing child sexual abuse material, including photos of prepubescent children. Thomas Wayne Markle, 82, faces up to 40 years in prison if convicted, as stated by Los Angeles federal prosecutor Bill Essayli. Markle was arrested in early November after federal authorities discovered dozens of illicit images, including film negatives and slides, in a Los Angeles storage facility. Court documents allege Markle also possessed such material in the Philippines, where he owns a home and some images appear to have been taken there.",
-    "Markle is expected to appear in Los Angeles court in the coming weeks. FBI agents detained Markle on November 6 after seizing a large amount of material from two storage units he rented in Los Angeles over nearly two decades. Markle came under investigation after his son, Thomas Markle Jr., reported illegal images found in his father’s belongings in Cebu City to the police in the Philippines."
+    "NBC announced the parade will take place on Saturday, citing safety concerns for participants and spectators after discussions with city officials. New York, Macy’s, and NBC have jointly decided to move the parade to Saturday due to extreme weather, prioritizing safety for all attendees. NBC will air a rerun of the 2025 Macy’s Thanksgiving Day Parade on Thursday instead of the original date.",
+    "Macy’s has postponed its Thanksgiving Day Parade to Saturday as powerful winds are forecast for New York, NBC reported Wednesday. NBC confirmed the parade will be held on Saturday, citing safety concerns and discussions with city leaders. A joint statement from the city, Macy’s, and NBC confirms the parade will be moved to Saturday due to severe weather and safety concerns."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:10:18+00:00",
+   "articleUpdatedAt": "2026-11-25T21:48:39+00:00",
    "articleSources": [
     {
-     "name": "MyNorthwest",
-     "url": "https://mynorthwest.com/national/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/4304346"
+     "name": "KSTP-TV",
+     "url": "https://kstp.com/ap-top-news/ap-top-news-entertainment/macys-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/"
     },
     {
-     "name": "GB News",
-     "url": "https://www.gbnews.com/royal/thomas-markle-charged-two-counts-posessing-chil"
+     "name": "CityNews Toronto",
+     "url": "https://toronto.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/"
     }
    ],
    "location": {
-    "label": "Manila, Philippines",
-    "shortLabel": "Manila",
-    "lat": 14.5995,
-    "lng": 120.9842
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7128,
+    "lng": -74.006
    },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a486/live/58170a20-e862-11f1-a094-5fdc692f3e33.png",
-   "imageAlt": "Mugshot of Thomas Markle in an orange shirt",
+   "image": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/2bf7/live/ebffd790-e8c5-11f1-ac76-db9e97f93d67.jpg",
+   "imageAlt": "A huge balloon depicting Minnie Mouse floats above a crowd of people in a parade, surrounded by skyscrapers in the New York cityscape.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "kilmar-abrego-garcia-self-deports-spain-legal",
+   "topic": "world",
+   "source": "American Wire News",
+   "time": "25 Nov",
+   "url": "https://americanwirenews.com/good-riddance-maryland-man-kilmar-abrego-garcia-self-deports-to-spain/",
+   "headline": "Kilmar Abrego Garcia self-deports to Spain after years of legal battles",
+   "summary": "Kilmar Abrego Garcia, known as the 'Maryland man,' voluntarily left the U.S. for Spain after a long legal struggle with the Trump administration.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Kilmar Abrego Garcia, known as the 'Maryland man,' voluntarily left the U.S. for Spain after a long legal struggle with the Trump administration. The flight departed late Tuesday, delayed multiple times due to mechanical issues, and was rerouted three times before taking off.",
+    "Kilmar Abrego Garcia, the 'Maryland dad' championed by Democrats, has left the U.S. for Spain under a government agreement after nearly two years of legal conflict. Democrats have hailed the self-deportation as a win, despite earlier claims of defending him from deportation."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-25T21:54:48+00:00",
+   "articleSources": [
+    {
+     "name": "American Wire News",
+     "url": "https://americanwirenews.com/good-riddance-maryland-man-kilmar-abrego-garcia-self-deports-to-spain/"
+    },
+    {
+     "name": "Twitchy",
+     "url": "https://twitchy.com/videos/2026/11/25/kilmar-abrego-garcia-self-deports-to-spain-after-nearly-two-years-of-legal-battles-n2434769"
+    }
+   ],
+   "location": {
+    "label": "Madrid, Spain",
+    "shortLabel": "Spain",
+    "lat": 40.4168,
+    "lng": -3.7038
+   },
+   "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8667x4875+0+446/resize/1400/quality/85/format/webp/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2Ff5%2F14%2Fc41a211243cca4495a4be2641da4%2Fgettyimages-2306544716.jpg",
+   "imageAlt": "Kilmar Abrego Garcia self-deports to Spain after years of legal battles",
+   "imageCredit": "NPR"
+  },
+  {
+   "id": "least-30-killed-blaze-vehicle-overturns-egypt",
+   "topic": "world",
+   "source": "The Express Tribune",
+   "time": "25 Nov",
+   "url": "https://tribune.com.pk/story/2642343/at-least-30-killed-in-blaze-after-vehicle-overturns-in-egypt-health-ministry-says",
+   "headline": "At least 30 killed in blaze after vehicle overturns in Egypt, health ministry says",
+   "summary": "Road accidents are common in Egypt due to speeding, weak traffic enforcement, and poor road conditions.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Road accidents are common in Egypt due to speeding, weak traffic enforcement, and poor road conditions.",
+    "A fire broke out on a major highway around Cairo on Wednesday, killing at least 30 people, Egypt’s Health Ministry said. The cause of the fire was not immediately clear, though the ministry confirmed at least 15 others were injured. Rescue workers were extracting people from burning vehicles on the Ring Road, a key route encircling Cairo. AP footage shows firefighters battling flames spreading among cars, with hundreds gathering near the Warraq district of Imbaba."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-25T21:57:33+00:00",
+   "articleSources": [
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642343/at-least-30-killed-in-blaze-after-vehicle-overturns-in-egypt-health-ministry-says"
+    },
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/world/a-fire-on-a-major-highway-surrounding-cairo-kills-at-least-30-people-egypts-health-ministry-says/4304662"
+    }
+   ],
+   "location": {
+    "label": "Cairo, Egypt",
+    "shortLabel": "Egypt",
+    "lat": 30.0444,
+    "lng": 31.2357
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/49ab/live/4933ad90-e913-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "People stand next to the wreck of a car in the aftermath of a fire that broke out on a highway in the Al-Waraq neighbourhood of Imbaba district, Giza Governorate, Cairo.",
    "imageCredit": "BBC News"
   },
   {
@@ -359,24 +433,24 @@ window.DAYBREAK = {
    "time": "24 Nov",
    "url": "https://www.theguardian.com/technology/2026/nov/24/huawei-china-convicted-deceiving-banks-stealing-us-trade-secrets",
    "headline": "China’s Huawei convicted of stealing US trade secrets",
-   "summary": "A US federal jury convicted Huawei on 10 of 12 criminal counts, including trade secret theft and bank fraud, in a case alleging deception about its Iran business.",
+   "summary": "A US federal jury convicted Huawei on 10 of 12 criminal counts, including trade secret theft and bank fraud, amid allegations of deception about its Iran operations.",
    "points": [],
    "publishedLabel": "24 Nov 2026",
    "article": [
-    "A US federal jury convicted Huawei on 10 of 12 criminal counts, including trade secret theft and bank fraud, in a case alleging deception about its Iran business.",
-    "Huawei rejected the charges as lacking legal or factual basis, while a US jury found it guilty on 10 of 12 counts related to trade secret theft and bank deception. After a three-month trial, a federal jury in Brooklyn convicted Huawei on multiple counts, including conspiracy to steal trade secrets, wire fraud, and money laundering."
+    "A US federal jury convicted Huawei on 10 of 12 criminal counts, including trade secret theft and bank fraud, amid allegations of deception about its Iran operations. Huawei and its subsidiaries were found guilty by a Brooklyn jury on 10 of 12 counts, including conspiracy to steal trade secrets and defraud US banks. Huawei was acquitted of racketeering conspiracy, which accused it of operating as a criminal enterprise.",
+    "A federal jury convicted Huawei and its subsidiaries of violating US sanctions on Iran, stealing trade secrets, and engaging in money laundering."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:14:19+00:00",
+   "articleUpdatedAt": "2026-11-25T21:59:11+00:00",
    "articleSources": [
     {
      "name": "The Guardian",
      "url": "https://www.theguardian.com/technology/2026/nov/24/huawei-china-convicted-deceiving-banks-stealing-us-trade-secrets"
     },
     {
-     "name": "Business Insider",
-     "url": "https://www.businessinsider.com/us-jury-convicted-huawei-conspiring-steal-trade-secrets-2026-11"
+     "name": "The Hill",
+     "url": "https://thehill.com/policy/technology/6242450-huawei-guilty-iran-sanctions-trade-secrets/"
     }
    ],
    "location": {
@@ -390,67 +464,30 @@ window.DAYBREAK = {
    "imageCredit": "The Guardian"
   },
   {
-   "id": "jensen-huang-reinstated-nvidia-ceo-following-input",
-   "topic": "tech",
-   "source": "Tech.eu",
-   "time": "23 Nov",
-   "url": "https://tech.eu/2026/11/23/jensen-huang-reinstated-as-nvidia-ceo-following-input-from-us-government/",
-   "headline": "Jensen Huang reinstated as Nvidia CEO following “input” from US government",
-   "summary": "Nvidia's board unanimously voted to reinstate Jensen Huang after US authorities indicated no national security risk, amid reports of a personal affair with a suspected Chinese spy.",
+   "id": "king-tides-these-exceptionally-high-tides-increasingly",
+   "topic": "world",
+   "source": "CityNews Vancouver",
+   "time": "25 Nov",
+   "url": "https://vancouver.citynews.ca/2026/11/25/what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/",
+   "headline": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
+   "summary": "The term 'king tide' is a colloquial term for exceptionally high tides, not a scientific designation.",
    "points": [],
-   "publishedLabel": "23 Nov 2026",
+   "publishedLabel": "25 Nov 2026",
    "article": [
-    "Nvidia's board unanimously voted to reinstate Jensen Huang after US authorities indicated no national security risk, amid reports of a personal affair with a suspected Chinese spy. As co-founder of Nvidia, Jensen Huang remains a central figure in the company driving AI advancements across the US tech sector.",
-    "Nvidia has reinstated Jensen Huang as CEO, president, and board director immediately, after determining with US officials that the move poses no national security risk. The board voted unanimously to reinstate Huang after discussions with him, citing his candor and leadership capabilities as key reasons, with the decision finalized Monday."
+    "The term 'king tide' is a colloquial term for exceptionally high tides, not a scientific designation. The 2026 super El Niño has raised coastal water levels, intensifying the impact of king tides.",
+    "The Bay Area is preparing for a storm system arriving on Tuesday and lasting through Wednesday with wet and windy conditions. The National Oceanic and Atmospheric Administration defines 'king tide' as a non-scientific term for exceptionally high tides. King tides typically occur from November to January, when the sun and moon align during the tidal swing, peaking around December."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:08:23+00:00",
+   "articleUpdatedAt": "2026-11-25T22:01:00+00:00",
    "articleSources": [
     {
-     "name": "Tech.eu",
-     "url": "https://tech.eu/2026/11/23/jensen-huang-reinstated-as-nvidia-ceo-following-input-from-us-government/"
+     "name": "CityNews Vancouver",
+     "url": "https://vancouver.citynews.ca/2026/11/25/what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/"
     },
     {
-     "name": "South China Morning Post",
-     "url": "https://www.scmp.com/tech/big-tech/article/3375515/nvidia-reinstates-jensen-huang-ceo-president-and-board-director"
-    }
-   ],
-   "location": {
-    "label": "Beijing, China",
-    "shortLabel": "Beijing",
-    "lat": 39.9042,
-    "lng": 116.4074
-   },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/eb5f/live/44ab16f0-e74c-11f1-99b6-a35a62fa4264.jpg",
-   "imageAlt": "A split screen image. On the left, Faisal Islam. On the right, Jensen Huang.",
-   "imageCredit": "BBC News"
-  },
-  {
-   "id": "huang-apologizes-nvidia-employees-hes-therapy",
-   "topic": "tech",
-   "source": "The Hill",
-   "time": "24 Nov",
-   "url": "https://thehill.com/policy/technology/6241274-nvidia-ceo-jensen-huang-reinstated/",
-   "headline": "Huang apologizes to Nvidia employees, says he’s in therapy: Reports",
-   "summary": "Nvidia CEO Jensen Huang apologized to employees and admitted he was in therapy daily during his first all-hands meeting after returning to the company.",
-   "points": [],
-   "publishedLabel": "24 Nov 2026",
-   "article": [
-    "Nvidia CEO Jensen Huang apologized to employees and admitted he was in therapy daily during his first all-hands meeting after returning to the company. Huang admitted to making serious mistakes and confessed to being unfaithful to his wife during a meeting with employees, as reported by The New York Times.",
-    "At Nvidia’s first all-hands meeting since CEO Jensen Huang’s return on Monday, he apologized to employees and confirmed he was attending therapy daily. Huang announced he would attend therapy daily and plan monthly feedback sessions with staff, according to attendees at the meeting on Monday."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:12:07+00:00",
-   "articleSources": [
-    {
-     "name": "The Hill",
-     "url": "https://thehill.com/policy/technology/6241274-nvidia-ceo-jensen-huang-reinstated/"
-    },
-    {
-     "name": "The Information",
-     "url": "https://www.theinformation.com/briefings/nvidia-hosts-first-all-hands-jensen-huangs-return"
+     "name": "KTVU Fox 2",
+     "url": "https://www.ktvu.com/news/king-tides-forecast-bay-area-potential-flooding-travel-impacts"
     }
    ],
    "location": {
@@ -459,35 +496,146 @@ window.DAYBREAK = {
     "lat": 37.4419,
     "lng": -122.143
    },
-   "image": "https://i.guim.co.uk/img/media/a73808018c1aee9c4e492cbde53796d16e234aa8/0_667_1218_973/master/1218.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=949179d57a8b9b15a085a25a39162ebd",
-   "imageAlt": "Huang apologizes to Nvidia employees, says he’s in therapy: Reports",
+   "image": "https://i.guim.co.uk/img/media/80d6a5ade95e2a8670b872bdca5972b45f0d2f71/335_0_3331_2666/master/3331.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=3f2a32654c39ebf5c50d67e60c05b40f",
+   "imageAlt": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
    "imageCredit": "The Guardian"
   },
   {
-   "id": "fossil-fuel-dispute-leaves-cop31-without-overarching",
-   "topic": "science",
-   "source": "New Scientist",
-   "time": "23 Nov",
-   "url": "https://www.newscientist.com/article/2600331-cop31-collapse-has-shattered-the-pretense-of-a-global-climate-consensus/?utm_campaign=RSS|NSNS&utm_content=environment&utm_medium=RSS&utm_source=NSNS",
-   "headline": "COP31 collapse has shattered the pretence of a global climate consensus",
-   "summary": "After a week of tense negotiations, COP31 concluded without agreement on 22 November, as the UK and EU refused to endorse a draft text that failed to mention fossil fuels.",
+   "id": "unclassified-cia-system-breached-cyberattack",
+   "topic": "tech",
+   "source": "The Hill",
+   "time": "25 Nov",
+   "url": "https://thehill.com/policy/national-security/6242068-cia-cyberattack-breach-report/",
+   "headline": "Unclassified CIA system breached in cyberattack",
+   "summary": "A CIA system used to review publicly available information suffered a security breach, a source familiar with the matter confirmed.",
    "points": [],
-   "publishedLabel": "23 Nov 2026",
+   "publishedLabel": "25 Nov 2026",
    "article": [
-    "After a week of tense negotiations, COP31 concluded without agreement on 22 November, as the UK and EU refused to endorse a draft text that failed to mention fossil fuels.",
-    "The failure to include fossil fuels in the draft agreement became the central point of contention. The EU led a coordinated push against the proposed text, undermining the consensus required to finalize a global climate agreement. Amid worsening climate disasters and a confirmed trajectory past 1.5°C warming, the EU and allies argued the international process was no longer adequate to meet the crisis."
+    "A CIA system used to review publicly available information suffered a security breach, a source familiar with the matter confirmed. The breach affected a system that processes data from online searches, public records, and purchased data broker sources.",
+    "The CIA and the Office of the Director of National Intelligence detected a cyber intrusion that exposed unclassified data from an open-source intelligence analysis system, according to The New York Times on Tuesday. This breach differs from recent technical outages and is confirmed to be a security incident."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:07:50+00:00",
+   "articleUpdatedAt": "2026-11-25T21:53:59+00:00",
    "articleSources": [
     {
-     "name": "New Scientist",
-     "url": "https://www.newscientist.com/article/2600331-cop31-collapse-has-shattered-the-pretense-of-a-global-climate-consensus/?utm_campaign=RSS|NSNS&utm_content=environment&utm_medium=RSS&utm_source=NSNS"
+     "name": "The Hill",
+     "url": "https://thehill.com/policy/national-security/6242068-cia-cyberattack-breach-report/"
     },
     {
-     "name": "Scroll.in",
-     "url": "https://scroll.in/article/1097247/as-cop31-talks-collapse-the-future-of-international-climate-cooperation-could-change?utm_source=rss&utm_medium=public"
+     "name": "MercoPress",
+     "url": "https://en.mercopress.com/2026/11/25/cia-and-us-intelligence-office-suffer-intrusion-exposing-unclassified-information?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss"
+    }
+   ],
+   "location": {
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7128,
+    "lng": -74.006
+   },
+   "image": "https://www.bizpacreview.com/wp-content/uploads/2026/08/5415445859_3abd462fe4_o-e1787940388335-1024x440-1.jpg",
+   "imageAlt": "Unclassified CIA system breached in cyberattack",
+   "imageCredit": "BizPac Review"
+  },
+  {
+   "id": "israeli-judges-recommend-dropping-bribery-case-netanyahu",
+   "topic": "world",
+   "source": "KFGO - 790 AM - Fargo",
+   "time": "25 Nov",
+   "url": "https://kfgo.com/2026/11/25/israeli-judges-recommend-prosecutors-drop-one-bribery-case-against-netanyahu/",
+   "headline": "Israeli judges recommend dropping one bribery case against Netanyahu",
+   "summary": "Israeli judges recommended prosecutors drop one of three cases against Prime Minister Benjamin Netanyahu, urging reconsideration of another bribery allegation.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Israeli judges recommended prosecutors drop one of three cases against Prime Minister Benjamin Netanyahu, urging reconsideration of another bribery allegation. Netanyahu was indicted in 2019 on bribery, fraud, and breach of trust, maintaining his not guilty plea in all charges. Prosecutors claim Netanyahu sought favorable coverage for himself and wife Sara on a news site run by former Bezeq chairman Shaul Elovitch.",
+    "Judges have recommended dropping one of the corruption cases against Netanyahu, offering a significant defense advantage in the ongoing trial. The move, seen as a major boost for Netanyahu amid political pressure, was welcomed by his right-wing supporters who called for the trial to conclude."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-25T22:05:10+00:00",
+   "articleSources": [
+    {
+     "name": "KFGO - 790 AM - Fargo",
+     "url": "https://kfgo.com/2026/11/25/israeli-judges-recommend-prosecutors-drop-one-bribery-case-against-netanyahu/"
+    },
+    {
+     "name": "France 24",
+     "url": "https://www.france24.com/en/in-boost-for-netanyahu-judges-question-corruption-trial-charges"
+    }
+   ],
+   "location": {
+    "label": "Jerusalem, Israel",
+    "shortLabel": "Israel",
+    "lat": 31.7683,
+    "lng": 35.2137
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d91d/live/f0a5ecf0-e8fa-11f1-99b6-a35a62fa4264.jpg",
+   "imageAlt": "Israeli Prime Minister Benjamin Netanyahu delivers a media statement at the Knesset, the Israeli parliament, in Jerusalem wearing a dark suit and dark tie.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "china-sends-foreign-astronaut-iss-rival-globalises",
+   "topic": "world",
+   "source": "The Guardian",
+   "time": "25 Nov",
+   "url": "https://www.theguardian.com/science/2026/nov/25/china-sends-first-pakistani-astronaut-into-space",
+   "headline": "China sends first foreign astronaut to ISS rival as it globalises space operations",
+   "summary": "Muhammad Zeeshan Ali, Pakistan’s first astronaut, arrived at China’s Tiangong space station in a space handshake marking a milestone in global space collaboration.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Muhammad Zeeshan Ali, Pakistan’s first astronaut, arrived at China’s Tiangong space station in a space handshake marking a milestone in global space collaboration. Muhammad Zeeshan Ali entered Tiangong space station via a hatch, greeted by crew members in what China described as its first foreign 'space handshake'.",
+    "Pakistan marked a historic milestone as Zeeshan Ali became the first of its citizens to reach China’s Tiangong space station, advancing international cooperation in space science. The Shenzhou-24 spacecraft completed a successful orbital insertion, with the CMSA confirming the launch as a full success and noting the vehicle’s planned automated docking with Tiangong within hours."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-25T22:06:27+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/science/2026/nov/25/china-sends-first-pakistani-astronaut-into-space"
+    },
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642235/shenzhou-24-carrying-pakistans-first-astronaut-docks-at-chinas-space-station"
+    }
+   ],
+   "location": {
+    "label": "Moscow, Russia",
+    "shortLabel": "Russia",
+    "lat": 55.7558,
+    "lng": 37.6173
+   },
+   "image": "https://i.guim.co.uk/img/media/04f173935b2839f52dc33177838a3752879697b5/537_46_4868_3895/master/4868.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=c03273c46275d7776777ff8cdd694f5d",
+   "imageAlt": "China sends first foreign astronaut to ISS rival as it globalises space operations",
+   "imageCredit": "The Guardian"
+  },
+  {
+   "id": "easyjet-boss-unable-rule-further-job-losses",
+   "topic": "business",
+   "source": "The Guardian",
+   "time": "25 Nov",
+   "url": "https://www.theguardian.com/business/2026/nov/25/easyjet-unable-to-rule-out-further-jobs-losses-profits-collapse-fuel-prices-iran-war",
+   "headline": "EasyJet boss unable to rule out further job losses after profits collapse by 96%",
+   "summary": "EasyJet's CEO Kenton Jarvis says further job losses are possible and some rival airlines could go bust amid rising fuel costs from the Iran war.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "EasyJet's CEO Kenton Jarvis says further job losses are possible and some rival airlines could go bust amid rising fuel costs from the Iran war. EasyJet's pre-tax profit fell 96% to £24m in the year ending September, down from £658m the prior year.",
+    "EasyJet plans to retire more than 50 ageing Airbus A319s over two years to replace them with more fuel-efficient models. EasyJet’s pre-tax profit dropped nearly 90% to £71m in the year ending September as high oil prices hurt profits. Despite the downturn, EasyJet’s total revenue rose 6% to £3.8bn, with CEO Kenton Jarvis citing the Middle East conflict as a key factor in the financial strain."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-25T21:47:59+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/business/2026/nov/25/easyjet-unable-to-rule-out-further-jobs-losses-profits-collapse-fuel-prices-iran-war"
+    },
+    {
+     "name": "City AM",
+     "url": "https://www.cityam.com/easyjet-speeds-up-scrapping-old-planes-oil-prices-profit/"
     }
    ],
    "location": {
@@ -496,109 +644,35 @@ window.DAYBREAK = {
     "lat": 51.5072,
     "lng": -0.1276
    },
-   "image": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://cloudfront-us-east-1.images.arcpublishing.com/wapo/QMSSRZNMK4YDUIZMAVA767JPXA.jpg&w=1440",
-   "imageAlt": "Fossil fuel dispute leaves COP31 without an overarching agreement",
-   "imageCredit": "Washington Post"
+   "image": "https://i.guim.co.uk/img/media/3910069696b0a90eb864e69b7c1b5c2820d07b06/194_0_2451_1961/master/2451.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=e2a2b4fd993bd7a351cedfb50ba3f1c3",
+   "imageAlt": "EasyJet boss unable to rule out further job losses after profits collapse by 96%",
+   "imageCredit": "The Guardian"
   },
   {
-   "id": "blacklist-asian-ai-firm-megaspeed-nvidia-scandal",
-   "topic": "tech",
-   "source": "Slashdot",
-   "time": "24 Nov",
-   "url": "https://slashdot.org/story/26/11/24/0252253/us-to-blacklist-asian-ai-firm-megaspeed-after-nvidia-scandal?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-   "headline": "US To Blacklist Asian AI Firm Megaspeed After Nvidia Scandal",
-   "summary": "Allegations that a former Megaspeed executive had a romantic relationship with Nvidia CEO Jensen Huang while acting as a Chinese intelligence asset prompted the Commerce Department's investigation, which began nearly two years ago.",
-   "points": [],
-   "publishedLabel": "24 Nov 2026",
-   "article": [
-    "Allegations that a former Megaspeed executive had a romantic relationship with Nvidia CEO Jensen Huang while acting as a Chinese intelligence asset prompted the Commerce Department's investigation, which began nearly two years ago. Megaspeed, a data center developer, faces a U.S. trade ban after a former executive was accused of spying for China during a relationship with Nvidia’s CEO, Jensen Huang.",
-    "The Trump administration added Megaspeed to a U.S. trade blacklist, preventing it from accessing American semiconductors and tech products following links to the Nvidia scandal. Megaspeed is now barred from receiving U.S. tech goods, software, or services without a license, as part of the Commerce Department’s entity blacklist. Semafor first reported that the Singapore-based AI infrastructure firm, known for powering AI training data centers, has been added to the U.S. entity list."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:16:34+00:00",
-   "articleSources": [
-    {
-     "name": "Slashdot",
-     "url": "https://slashdot.org/story/26/11/24/0252253/us-to-blacklist-asian-ai-firm-megaspeed-after-nvidia-scandal?utm_source=rss1.0mainlinkanon&utm_medium=feed"
-    },
-    {
-     "name": "Fox Business",
-     "url": "https://www.foxbusiness.com/politics/trump-admin-adds-megaspeed-commerce-department-trade-blacklist-after-nvidia-scandal"
-    }
-   ],
-   "location": {
-    "label": "Beijing, China",
-    "shortLabel": "Beijing",
-    "lat": 39.9042,
-    "lng": 116.4074
-   },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/4a66/live/7c413f70-e78a-11f1-a5c2-c57ab9df3111.jpg",
-   "imageAlt": "Logo of Megaspeed is pictured on a window outside one of the company's offices.",
-   "imageCredit": "BBC News"
-  },
-  {
-   "id": "illegal-migrant-among-men-arrested-break-william",
+   "id": "offer-equal-tuition-fees-eu-students-burnham",
    "topic": "uk",
-   "source": "GB News",
+   "source": "Politico Europe",
    "time": "25 Nov",
-   "url": "https://www.gbnews.com/royal/illegal-migrant-among-two-men-arrested-sandringham",
-   "headline": "‘Illegal migrant’ among two men arrested after break-in at William and Catherine’s home",
-   "summary": "Norfolk Police are investigating a break-in at Anmer Hall, a 10-bedroom retreat gifted by Queen Elizabeth II to William and Kate after their wedding.",
+   "url": "https://www.politico.eu/article/uk-will-not-offer-equal-tuition-fees-for-eu-students-says-andy-burnham/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+   "headline": "UK will not offer equal tuition fees for EU students, says Burnham",
+   "summary": "Burnham stated that equal fees for UK and EU students won’t be considered in upcoming negotiations, rejecting a proposal pushed by Kemi Badenoch.",
    "points": [],
    "publishedLabel": "25 Nov 2026",
    "article": [
-    "Norfolk Police are investigating a break-in at Anmer Hall, a 10-bedroom retreat gifted by Queen Elizabeth II to William and Kate after their wedding. One of the arrested men is believed to be Albanian, having previously submitted an asylum application that has since expired.",
-    "Police deployed dogs, drones, and a helicopter to the Sandringham estate after a call of suspicious activity was received just before 6pm on Monday. Anmer Hall, where William and Kate and their children often stay, especially during holidays, was the site of the reported break-in. The 10-bedroom Georgian manor was given to the couple by Queen Elizabeth II as a wedding gift."
+    "Burnham stated that equal fees for UK and EU students won’t be considered in upcoming negotiations, rejecting a proposal pushed by Kemi Badenoch. Burnham clarified that the UK is not adopting the EU’s negotiating stance on tuition fees, saying the idea has not been raised in British discussions.",
+    "Andy Burnham has indicated that EU students will pay higher tuition fees than UK students, as the fee agreement remains under discussion. The tuition fee issue, which was highlighted in Burnham’s Brussels statement, remains unresolved and is being given an extra six months to finalize."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:11:02+00:00",
+   "articleUpdatedAt": "2026-11-25T22:02:25+00:00",
    "articleSources": [
     {
-     "name": "GB News",
-     "url": "https://www.gbnews.com/royal/illegal-migrant-among-two-men-arrested-sandringham"
+     "name": "Politico Europe",
+     "url": "https://www.politico.eu/article/uk-will-not-offer-equal-tuition-fees-for-eu-students-says-andy-burnham/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
     },
     {
-     "name": "Dawn",
-     "url": "https://www.dawn.com/news/2046918/uk-police-arrest-two-men-after-break-in-at-williams-home"
-    }
-   ],
-   "location": {
-    "label": "Cardiff, Wales, UK",
-    "shortLabel": "Cardiff",
-    "lat": 51.4816,
-    "lng": -3.1791
-   },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/7ecc/live/c4219c10-e80a-11f1-a094-5fdc692f3e33.jpg",
-   "imageAlt": "Anmer Hall, a Georgian red brick building over three storeys, with grass and trees visible out front.",
-   "imageCredit": "BBC News"
-  },
-  {
-   "id": "u-prepares-raise-tariffs-china-others",
-   "topic": "business",
-   "source": "Political Wire",
-   "time": "24 Nov",
-   "url": "https://politicalwire.com/2026/11/24/u-s-prepares-to-raise-tariffs-on-china-and-others/",
-   "headline": "U.S. Prepares to Raise Tariffs On China and Others",
-   "summary": "U.S. Trade Representative Jamieson Greer is expected to reveal findings from a monthslong investigation into industrial subsidies from China, the EU, and 14 other nations by early next week.",
-   "points": [],
-   "publishedLabel": "24 Nov 2026",
-   "article": [
-    "U.S. Trade Representative Jamieson Greer is expected to reveal findings from a monthslong investigation into industrial subsidies from China, the EU, and 14 other nations by early next week.",
-    "The Trump administration is expected to announce new tariffs on China, the EU, and 14 other countries, according to two sources familiar with the plans. The U.S. Trade Representative’s Office is set to release results of a monthslong probe into industrial subsidies from 16 nations, with the announcement expected in the coming days. The timing of the new tariff announcement may still shift, as the White House and USTR have not commented on the plans. The proposed tariffs are part of a broader effort to replace last year’s duties that were invalidated by the Supreme Court."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:09:01+00:00",
-   "articleSources": [
-    {
-     "name": "Political Wire",
-     "url": "https://politicalwire.com/2026/11/24/u-s-prepares-to-raise-tariffs-on-china-and-others/"
-    },
-    {
-     "name": "MyNorthwest",
-     "url": "https://mynorthwest.com/national/us-ready-to-slap-tariffs-on-china-eu-and-others-over-subsidized-production-ap-sources-say/4304362"
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/uk-news/2026/nov/25/eu-nationals-will-pay-higher-tuition-fees-than-uk-students-burnham-indicates"
     }
    ],
    "location": {
@@ -607,146 +681,72 @@ window.DAYBREAK = {
     "lat": 50.8503,
     "lng": 4.3517
    },
-   "image": "https://img.etimg.com/thumb/msid-136145422,width-1200,height-900,imgsize-106224,overlay-economictimes/articleshow.jpg",
-   "imageAlt": "U.S. Prepares to Raise Tariffs On China and Others",
-   "imageCredit": "Economic Times"
-  },
-  {
-   "id": "we-make-disability-benefits-system-work-better",
-   "topic": "uk",
-   "source": "Resolution Foundation",
-   "time": "24 Nov",
-   "url": "https://www.resolutionfoundation.org/comment/can-we-make-our-disability-benefits-system-work-better-and-cost-less/",
-   "headline": "Can we make our disability benefits system work better and cost less?",
-   "summary": "The disability benefits system is under review, with critics saying it is outdated and costly, and that improvements are long overdue.",
-   "points": [],
-   "publishedLabel": "24 Nov 2026",
-   "article": [
-    "The disability benefits system is under review, with critics saying it is outdated and costly, and that improvements are long overdue. The Timms Review recommends changes to make the PIP system more humane and efficient, with over four million people affected annually. The first part of the Timms Review offers a range of improvements to the PIP claim process, some of which the government has already adopted.",
-    "The proposed reforms in the Timms Review have been criticised as minor adjustments rather than a comprehensive transformation of the system."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:14:54+00:00",
-   "articleSources": [
-    {
-     "name": "Resolution Foundation",
-     "url": "https://www.resolutionfoundation.org/comment/can-we-make-our-disability-benefits-system-work-better-and-cost-less/"
-    },
-    {
-     "name": "Channel 4 News",
-     "url": "https://www.channel4.com/news/uk-benefit-system-not-fit-for-purpose-pip-review-explained"
-    }
-   ],
-   "location": {
-    "label": "Cardiff, Wales, UK",
-    "shortLabel": "Cardiff",
-    "lat": 51.4816,
-    "lng": -3.1791
-   },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/8836/live/971a11c0-e828-11f1-8d9d-c156c75bcdb5.jpg",
-   "imageAlt": "A woman in a wheelchair sits at a desk typing on a laptop.",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/74c8/live/27d45290-e8ef-11f1-8808-1d4222955d7e.jpg",
+   "imageAlt": "Conservative leader Kemi Badenoch",
    "imageCredit": "BBC News"
   },
   {
-   "id": "shein-agrees-100-million-settlement-shopping-claims",
+   "id": "pentagon-reportedly-talks-gm-ford-scale-military",
    "topic": "business",
-   "source": "South China Morning Post",
-   "time": "25 Nov",
-   "url": "https://www.scmp.com/tech/article/3375701/shein-pay-us100-million-settle-us-shipping-customer-service-claims",
-   "headline": "Shein to pay US$100 million to settle US shipping, customer service claims",
-   "summary": "Shein will pay $100 million to settle with the US FTC over allegations it misled consumers about shipping times, product reviews, and cotton sourcing.",
-   "points": [],
-   "publishedLabel": "25 Nov 2026",
-   "article": [
-    "Shein will pay $100 million to settle with the US FTC over allegations it misled consumers about shipping times, product reviews, and cotton sourcing. Shein agreed to stop misrepresenting shipping timelines and blocking negative customer reviews as part of the settlement. The FTC will use the settlement funds to reimburse affected customers impacted by deceptive claims.",
-    "Shein has agreed to pay $100 million to resolve FTC claims that it misled US shoppers on delivery times, reviews, and product origin. The FTC's lawsuit in California alleged Shein violated consumer trust by failing to deliver on promised shipping timelines."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:12:35+00:00",
-   "articleSources": [
-    {
-     "name": "South China Morning Post",
-     "url": "https://www.scmp.com/tech/article/3375701/shein-pay-us100-million-settle-us-shipping-customer-service-claims"
-    },
-    {
-     "name": "The Next Web",
-     "url": "https://thenextweb.com/news/shein-100mn-ftc-settlement"
-    }
-   ],
-   "location": {
-    "label": "Beijing, China",
-    "shortLabel": "Beijing",
-    "lat": 39.9042,
-    "lng": 116.4074
-   },
-   "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/24/f7ba4712-b4c7-47e4-be89-5271e2a56eac/thumbnail/1200x630/03ba3ef99b558d31714844c785f305aa/gettyimages-2303688136.jpg",
-   "imageAlt": "Shein agrees to $100 million settlement over US shopping claims",
-   "imageCredit": "CBS News"
-  },
-  {
-   "id": "novembers-beaver-moon-supermoon-rises-tonight",
-   "topic": "science",
-   "source": "Space.com",
+   "source": "Fox Business",
    "time": "24 Nov",
-   "url": "https://www.space.com/stargazing/novembers-full-moon-rises-tonight-heres-how-to-see-the-beaver-moon-supermoon-nov-24-2026",
-   "headline": "November's Beaver Moon Supermoon Rises Tonight",
-   "summary": "The November full moon, known as the Beaver Moon, appears fully lit as it aligns opposite the sun in the sky.",
+   "url": "https://www.foxbusiness.com/economy/pentagon-reportedly-talks-gm-ford-scale-us-military-drone-production",
+   "headline": "Pentagon reportedly in talks with GM, Ford to scale US military drone production",
+   "summary": "Defense officials are exploring partnerships with automakers and parts suppliers like Magna International to supply drone components such as motors and sensors, according to people familiar with the matter.",
    "points": [],
    "publishedLabel": "24 Nov 2026",
    "article": [
-    "The November full moon, known as the Beaver Moon, appears fully lit as it aligns opposite the sun in the sky. The Beaver Moon is named for the time when beavers begin building lodges in preparation for winter, a tradition tied to the lunar cycle.",
-    "This full moon is part of a sequence of four consecutive supermoons, each up to 30% brighter and 14% larger than a typical full moon. A supermoon happens when the full moon reaches perigee, the closest point in its orbit to Earth. The November full moon, known as the Beaver Moon, will be a striking sight across the UK skies."
+    "Defense officials are exploring partnerships with automakers and parts suppliers like Magna International to supply drone components such as motors and sensors, according to people familiar with the matter. No deals have been finalized, and industry executives have raised concerns about profit margins and the viability of entering the weapons supply chain.",
+    "These preliminary talks are part of a broader strategy to use the automotive sector’s manufacturing expertise to meet defense supply demands. GM is considering producing drone motors, while other manufacturers may supply parts to existing drone companies, as reported by The Wall Street Journal."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:15:36+00:00",
+   "articleUpdatedAt": "2026-11-25T21:51:31+00:00",
    "articleSources": [
     {
-     "name": "Space.com",
-     "url": "https://www.space.com/stargazing/novembers-full-moon-rises-tonight-heres-how-to-see-the-beaver-moon-supermoon-nov-24-2026"
+     "name": "Fox Business",
+     "url": "https://www.foxbusiness.com/economy/pentagon-reportedly-talks-gm-ford-scale-us-military-drone-production"
     },
     {
-     "name": "HuffPost UK",
-     "url": "https://www.huffingtonpost.co.uk/entry/november-beaver-moon-when_uk_6b057a1be4b0cf294a14a7e4"
+     "name": "BizPac Review",
+     "url": "https://www.bizpacreview.com/2026/11/24/uncle-sam-looks-to-detroit-as-military-equipment-shortages-mount-report-1668838/"
     }
    ],
    "location": {
-    "label": "London, UK",
-    "shortLabel": "London",
-    "lat": 51.5072,
-    "lng": -0.1276
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7128,
+    "lng": -74.006
    },
-   "image": "https://images.euronews.com/articles/stories/10/00/74/00/1200x675_cmsv2_82ec275d-6149-5078-ab1d-c1a4d6ae05ab-10007400.jpg",
-   "imageAlt": "Watch: 'Beaver Supermoon' lights up skies around the world",
-   "imageCredit": "Euronews"
+   "image": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/08/0/0/pentagon.jpg?ve=1&tl=1",
+   "imageAlt": "Pentagon reportedly in talks with GM, Ford to scale US military drone production",
+   "imageCredit": "Fox Business"
   },
   {
    "id": "astronomers-discover-oldest-known-quasar-forming-630",
    "topic": "science",
-   "source": "The Express Tribune",
-   "time": "24 Nov",
-   "url": "https://tribune.com.pk/story/2642125/astronomers-spot-record-setting-quasar-in-the-early-universe",
-   "headline": "Astronomers discover oldest known quasar forming 630 million years after the Big Bang",
-   "summary": "Scientists believe the rapid formation of such a bright object supports the idea that early cosmic structures developed quickly.",
+   "source": "Space.com",
+   "time": "25 Nov",
+   "url": "https://www.space.com/astronomy/black-holes/dark-universe-detective-telescope-discovers-most-distant-and-ancient-supermassive-black-hole-powered-quasar",
+   "headline": "Astronomers discover the most distant and ancient quasar powered by a supermassive black hole",
+   "summary": "The Euclid space telescope has detected a quasar powered by a supermassive black hole 360 million times more massive than the Sun.",
    "points": [],
-   "publishedLabel": "24 Nov 2026",
+   "publishedLabel": "25 Nov 2026",
    "article": [
-    "Scientists believe the rapid formation of such a bright object supports the idea that early cosmic structures developed quickly.",
-    "The European Space Agency’s Euclid telescope has discovered a quasar forming just 630 million years after the Big Bang, surpassing its own earlier record. ESA researchers have published a study identifying the most distant quasar ever seen, dating back to 630 million years after the Big Bang. The quasar J1504+6252 formed 40 million years earlier than the one detected by Euclid in July."
+    "The Euclid space telescope has detected a quasar powered by a supermassive black hole 360 million times more massive than the Sun. The black hole is observed as it existed just 630 million years after the Big Bang. Its existence deepens the mystery of how supermassive black holes reached such massive sizes so early in the universe's history.",
+    "Astronomers led by Julien Wolf at the Max Planck Institute for Astronomy discovered the most distant quasar ever recorded. The object was first spotted in the Euclid Wide Survey and confirmed through ground and space-based observations."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-25T09:18:43+00:00",
+   "articleUpdatedAt": "2026-11-25T21:58:05+00:00",
    "articleSources": [
     {
-     "name": "The Express Tribune",
-     "url": "https://tribune.com.pk/story/2642125/astronomers-spot-record-setting-quasar-in-the-early-universe"
+     "name": "Space.com",
+     "url": "https://www.space.com/astronomy/black-holes/dark-universe-detective-telescope-discovers-most-distant-and-ancient-supermassive-black-hole-powered-quasar"
     },
     {
-     "name": "Popular Science",
-     "url": "https://www.popsci.com/science/oldest-quasar-euclid-telescope/"
+     "name": "Phys.org",
+     "url": "https://phys.org/news/2026-11-quasar-tightens-constraints-black-hole.html"
     }
    ],
    "location": {
@@ -1044,7 +1044,23 @@ window.DAYBREAK = {
   "Newstalk ZB": "LR",
   "Iran International": "NR",
   "LeedsLive": "C",
-  "Pulse": "NR"
+  "Pulse": "NR",
+  "Retail Dive": "C",
+  "WNYW - Fox 5 -New York": "C",
+  "Mental Floss": "C",
+  "WPIX 11": "C",
+  "Winnipeg Free Press": "C",
+  "Las Vegas Review Journal": "LR",
+  "Colorado Springs Gazette": "LR",
+  "Manchester Union leader": "LR",
+  "KUSI-TV": "C",
+  "TechRadar": "NR",
+  "WTTG - Fox 5 - DC": "C",
+  "The Federalist": "R",
+  "Twitchy": "R",
+  "Bearing Arms": "R",
+  "Fortune": "LR",
+  "Newsweek": "LR"
  },
  "QUESTIONABLE": [
   "Breitbart",
@@ -1052,740 +1068,1129 @@ window.DAYBREAK = {
   "Fox News",
   "GB News",
   "Hindustan Times",
-  "NDTV"
+  "NDTV",
+  "The Federalist"
  ],
  "COVERAGE": {
-  "jensen-huang-reinstated-nvidia-ceo-following-input": [
+  "easyjet-boss-unable-rule-further-job-losses": [
    [
-    "MarketBeat",
-    "23 Nov",
-    "https://www.marketbeat.com/articles/nvidia-brings-back-jensen-huangbut-the-boards-biggest-test-is-still-ahead/",
-    "NVIDIA Brings Back Jensen Huang—But the Board's Biggest Test Is Still Ahead"
-   ],
-   [
-    "Computer Weekly",
-    "23 Nov",
-    "https://www.computerweekly.com/news/366655121/Jensen-Huang-reinstated-as-CEO-of-Nvidia-with-backing-from-Trump",
-    "Jensen Huang reinstated as CEO of Nvidia with backing from Trump"
-   ],
-   [
-    "Washington Post",
-    "23 Nov",
-    "https://www.washingtonpost.com/technology/2026/11/23/trump-urges-nvidia-reinstate-jensen-huang-calling-him-best-thing-us/",
-    "Trump urges Nvidia to reinstate Jensen Huang, calling him ‘best thing’ for U.S."
-   ],
-   [
-    "The Post Millennial",
-    "23 Nov",
-    "https://thepostmillennial.com/news/breaking-jensen-huang-reinstated-as-nvidia-ceo",
-    "BREAKING: Jensen Huang reinstated as Nvidia CEO"
-   ],
-   [
-    "Indian Express",
-    "23 Nov",
-    "https://indianexpress.com/article/world/nvidia-reinstates-jensen-huang-as-ceo-10975318/",
-    "Nvidia reinstates Jensen Huang as CEO, days after his resignation"
-   ],
-   [
-    "The Globe and Mail",
-    "23 Nov",
-    "https://www.theglobeandmail.com/business/article-nvidia-reinstates-jensen-huang-as-ceo/",
-    "Nvidia shares soar as board reinstates CEO Jensen Huang at Trump’s urging"
-   ],
-   [
-    "South China Morning Post",
-    "23 Nov",
-    "https://www.scmp.com/tech/big-tech/article/3375515/nvidia-reinstates-jensen-huang-ceo-president-and-board-director",
-    "Nvidia reinstates Jensen Huang as CEO; Trump praises ‘correct’ decision; shares surge"
-   ],
-   [
-    "Fox Business",
-    "23 Nov",
-    "https://www.foxbusiness.com/markets/nvidia-reinstates-jensen-huang-ceo",
-    "Nvidia reinstates Jensen Huang as CEO effective immediately following US government input"
-   ],
-   [
-    "Decrypt",
-    "23 Nov",
-    "https://decrypt.co/383797/nvidia-reinstates-jensen-huang-as-ceo-days-after-board-ruled-out-his-return",
-    "Nvidia Reinstates Jensen Huang as CEO Days After Board Ruled Out His Return"
-   ],
-   [
-    "9to5Mac",
-    "23 Nov",
-    "https://9to5mac.com/2026/11/23/jensen-huang-reinstated-as-ceo-of-nvidia-despite-companys-previous-statement/",
-    "Jensen Huang reinstated as CEO of Nvidia, stock up 30%"
-   ],
-   [
-    "Legal Insurrection",
-    "23 Nov",
-    "https://legalinsurrection.com/2026/11/nvidia-board-reinstates-jensen-huang/?utm_source=rss&utm_medium=rss&utm_campaign=nvidia-board-reinstates-jensen-huang",
-    "NVIDIA Board Reinstates Jensen Huang"
-   ],
-   [
-    "The Information",
-    "23 Nov",
-    "https://www.theinformation.com/briefings/nvidia-reinstates-jensen-huang-ceo",
-    "Nvidia Reinstates Jensen Huang as CEO"
-   ],
-   [
-    "PBS NewsHour",
-    "23 Nov",
-    "https://www.pbs.org/newshour/nation/nvidia-board-unanimously-reinstates-jensen-huang-as-ceo-and-chairman",
-    "Nvidia board unanimously reinstates Jensen Huang as CEO and chairman"
-   ],
-   [
-    "Euronews",
-    "23 Nov",
-    "https://www.euronews.com/2026/11/23/nvidia-reinstates-jensen-huang-as-ceo-11-days-after-he-resigned",
-    "Nvidia closes up more than 30% after Jensen Huang returns as CEO"
-   ],
-   [
-    "CNET",
-    "23 Nov",
-    "https://www.cnet.com/tech/services-and-software/jensen-huang-reinstated-nvidia-ceo-news/",
-    "Jensen Huang Is Back as Nvidia CEO With the US Government’s Blessing"
-   ],
-   [
-    "DW News",
-    "23 Nov",
-    "https://www.dw.com/en/nvidia-reinstates-former-ceo-jensen-huang-despite-china-espionage-scandal/a-80021926?maca=en-rss-en-bus-2091-xml-mrss",
-    "Nvidia reinstates former CEO Jensen Huang despite China espionage scandal"
-   ],
-   [
-    "Investors Business Daily",
-    "23 Nov",
-    "https://www.investors.com/news/technology/nvidia-ceo-jensen-huang-returns/",
-    "Jensen Huang Is Back As Nvidia CEO. Stock Jumps."
-   ],
-   [
-    "Euractiv",
-    "23 Nov",
-    "https://www.rapporteur.com/news/nvidia-board-reinstates-jensen-huang-as-ceo/",
-    "Nvidia board reinstates Jensen Huang as CEO"
-   ],
-   [
-    "BBC News",
-    "23 Nov",
-    "https://www.bbc.co.uk/news/videos/cqze7lwdglngo?at_medium=RSS&at_campaign=rss",
-    "Nvidia reinstates CEO after affair with alleged spy"
-   ],
-   [
-    "ZDNET",
-    "23 Nov",
-    "https://www.zdnet.com/innovation/jensen-huang-is-back-as-nvidia-ceo-after-a-stunning-reversal/",
-    "Nvidia CEO Jensen Huang is back after a stunning reversal"
-   ],
-   [
-    "Tech.eu",
-    "23 Nov",
-    "https://tech.eu/2026/11/23/jensen-huang-reinstated-as-nvidia-ceo-following-input-from-us-government/",
-    "Jensen Huang reinstated as Nvidia CEO following “input” from US government"
-   ],
-   [
-    "Fast Company",
-    "23 Nov",
-    "https://www.fastcompany.com/91647524/why-nvidia-brought-jensen-huang-back-as-ceo-despite-his-scandals?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss",
-    "Why Nvidia brought Jensen Huang back as CEO despite his scandals"
-   ],
-   [
-    "Haaretz",
-    "23 Nov",
-    "https://www.haaretz.com/israel-news/tech-news/2026-11-23/ty-article/jensen-huang-reinstated-as-nvidia-ceo-following-brief-resignation-over-scandal/000001a2-08cd-d7ca-abf6-6edda57b0000",
-    "Netanyahu praises Nvidia CEO reinstatement as 'good news' for global AI industry"
-   ],
-   [
-    "Mother Jones",
-    "23 Nov",
-    "https://www.motherjones.com/politics/2026/11/nvidia-restores-jensen-huang-after-pressure-from-trump/",
-    "Nvidia Restores Huang After Pressure From Trump"
-   ],
-   [
-    "CBS News",
-    "23 Nov",
-    "https://www.cbsnews.com/video/nvidia-reinstates-jensen-huang-as-ceo-11-days-after-he-resigned/",
-    "Nvidia reinstates Jensen Huang as CEO 11 days after he resigned"
-   ],
-   [
-    "New York Observer",
-    "23 Nov",
-    "https://observer.com/2026/11/jensen-huang-nvidia-ceo-return-board-investigation/",
-    "Why Nvidia’s Board Reversed Course and Brought Jensen Huang Back as CEO"
-   ],
-   [
-    "Phys.org",
-    "23 Nov",
-    "https://techxplore.com/news/2026-11-nvidia-reinstates-huang-ceo-trump.html",
-    "Nvidia reinstates Huang as CEO after Trump intervention"
-   ],
-   [
-    "Daily Caller",
-    "23 Nov",
-    "https://dailycaller.com/2026/11/23/jensen-huang-congress-reinstated-nvidia",
-    "Both Sides Of Congress Upset Trump Put Thumb On Scale To Reinstate Jensen Huang As Nvidia CEO"
-   ],
-   [
-    "CNBC",
-    "23 Nov",
-    "https://www.cnbc.com/2026/11/23/trump-nvidia-jensen-huang-reinstatement-cnbc-interview-transcript.html",
-    "Exclusive CNBC Transcript: See how Trump 'made the deal' to reinstate Huang as Nvidia CEO"
-   ],
-   [
-    "France 24",
-    "23 Nov",
-    "https://www.france24.com/en/tv-shows/business/20261123-jensen-huang-reinstated-as-nvidia-ceo",
-    "Jensen Huang reinstated as Nvidia CEO"
-   ],
-   [
-    "The New York Times",
-    "23 Nov",
-    "https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang.html",
-    "Trump Is Said to Have Pushed to Reinstate Nvidia CEO Jensen Huang"
-   ],
-   [
-    "Business Insider",
-    "24 Nov",
-    "https://www.businessinsider.com/jensen-huang-back-nvidia-ceo-survey-2026-11",
-    "Do you think Jensen Huang should have been reinstated? Take our survey"
-   ]
-  ],
-  "u-prepares-raise-tariffs-china-others": [
-   [
-    "CoinDesk",
-    "24 Nov",
-    "https://www.coindesk.com/tech/2026/11/24/live-updates-bitcoin-pulls-back-to-usd60-000-as-stock-rally-fails-to-budge-crypto",
-    "Live updates: Bitcoin pulls back below $60,000, stock rally fades, as tariffs re-enter the picture"
-   ],
-   [
-    "Economic Times",
-    "24 Nov",
-    "https://economictimes.indiatimes.com/news/economy/foreign-trade/us-set-to-raise-tariffs-on-india-china-and-dozens-of-other-economies-over-industrial-subsidies-wsj/articleshow/136132577.cms",
-    "Trump to put more tariffs on India, China & others"
-   ],
-   [
-    "Bloomberg",
-    "24 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-24/new-trump-tariffs-won-t-top-trade-deal-levels-will-be-targeted",
-    "New Trump Tariffs Won’t Top Trade Deal Levels, Will Be Targeted"
-   ],
-   [
-    "Political Wire",
-    "24 Nov",
-    "https://politicalwire.com/2026/11/24/u-s-prepares-to-raise-tariffs-on-china-and-others/",
-    "U.S. Prepares to Raise Tariffs On China and Others"
-   ],
-   [
-    "Financial Times",
-    "24 Nov",
-    "https://www.ft.com/content/335b593d-1478-4550-ab0a-71fec6280eb0?syn-25a6b1a6=1",
-    "Trump readies raft of new tariffs on major economies"
-   ],
-   [
-    "Hindustan Times",
-    "24 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/us-stocks-face-tariff-risks-as-trump-weighs-higher-duties-on-china-india-eu-and-13-other-economies-101795537193594.html",
-    "US stocks face tariff risks as Trump weighs higher duties on China, India, EU and 13 other economies"
-   ],
-   [
-    "The Globe and Mail",
-    "24 Nov",
-    "https://www.theglobeandmail.com/business/article-trump-tariffs-excess-factory-capacity-november-24/",
-    "Trump administration set to unveil new tariffs after probe on excess factory capacity, sources say"
-   ],
-   [
-    "Indian Express",
-    "24 Nov",
-    "https://indianexpress.com/article/world/trump-set-to-unveil-new-set-of-tariffs-on-india-china-eu-13-other-trade-partners-10977228/",
-    "US likely to impose fresh set of tariffs on India, China, EU, 13 other trade partners"
-   ],
-   [
-    "MyNorthwest",
+    "City AM",
     "25 Nov",
-    "https://mynorthwest.com/national/us-ready-to-slap-tariffs-on-china-eu-and-others-over-subsidized-production-ap-sources-say/4304362",
-    "US ready to slap tariffs on China, EU and others over subsidized production, AP sources say"
-   ],
-   [
-    "The Straits Times",
-    "25 Nov",
-    "https://www.straitstimes.com/world/united-states/us-ready-to-slap-tariffs-on-china-eu-and-others-over-subsidised-production-sources",
-    "US ready to impose tariffs on China, EU and others over subsidised production: Sources"
-   ],
-   [
-    "Sky News",
-    "25 Nov",
-    "https://news.sky.com/story/donald-trump-set-to-raise-tariffs-on-16-major-economies-13616253",
-    "Donald Trump set to raise tariffs on 16 major economies"
-   ],
-   [
-    "The Hindu",
-    "25 Nov",
-    "https://www.thehindu.com/news/international/trump-administration-set-to-unveil-new-tariffs-after-probeon-excess-factory-capacity-sources/article71740905.ece",
-    "U.S. set to slap tariffs on China, EU and others after probe on excess industrial capacity: report"
-   ],
-   [
-    "CNA",
-    "25 Nov",
-    "https://www.channelnewsasia.com/east-asia/china-warns-us-against-imposing-new-tariffs-6581181",
-    "China warns US against imposing new tariffs"
-   ]
-  ],
-  "thomas-markle-indicted-child-sex-abuse-material": [
-   [
-    "WFLA - Tampa Bay",
-    "24 Nov",
-    "https://www.wfla.com/news/national/thomas-markle-sr-s-asia-trips-were-open-secret-relative-reportedly-says/",
-    "Thomas Markle Sr.'s Asia trips were open secret, relative reportedly says"
-   ],
-   [
-    "Sky News",
-    "24 Nov",
-    "https://news.sky.com/story/thomas-markle-formally-charged-in-us-over-possessing-child-sexual-abuse-material-13616074",
-    "Thomas Markle formally charged over child sexual abuse material"
-   ],
-   [
-    "Page Six",
-    "24 Nov",
-    "https://pagesix.com/2026/11/24/celebrity-news/meghan-markles-dad-thomas-indicted-on-child-porn-charges-in-california-faces-40-years-in-prison/",
-    "Meghan Markle’s dad Thomas indicted on child porn charges in California, faces 40 years in prison"
-   ],
-   [
-    "NewsNation",
-    "24 Nov",
-    "https://www.newsnationnow.com/crime/thomas-markle-indicted-charged-child-porn/",
-    "Meghan Markle's estranged father, Thomas, indicted, charged with child porn possession"
-   ],
-   [
-    "Manchester Evening News",
-    "24 Nov",
-    "https://www.manchestereveningnews.co.uk/news/world-news/meghan-markles-father-thomas-markle-34961769",
-    "Meghan Markle's father Thomas Markle with two counts of possessing child pornography"
-   ],
-   [
-    "GB News",
-    "24 Nov",
-    "https://www.gbnews.com/royal/thomas-markle-charged-two-counts-posessing-chil",
-    "Thomas Markle formally charged with two counts of possessing child sex abuse material"
-   ],
-   [
-    "Belfast Telegraph",
-    "24 Nov",
-    "https://www.belfasttelegraph.co.uk/news/uk/meghans-father-formally-charged-with-possessing-child-sex-abuse-images/a/165063267.html",
-    "Meghan’s father formally charged with possessing child sex abuse images"
-   ],
-   [
-    "The Sun",
-    "24 Nov",
-    "https://www.thesun.co.uk/news/41135741/thomas-markle-charged-twice-los-angeles-40-years-prison/",
-    "Thomas Markle charged twice for possession of ‘child sex abuse material’ in Los Angeles & could face 40 years in prison"
-   ],
-   [
-    "The Guardian",
-    "24 Nov",
-    "https://www.theguardian.com/uk-news/2026/nov/24/thomas-markle-indicted",
-    "Thomas Markle, father of Meghan, indicted over child sexual abuse material"
-   ],
-   [
-    "RTÉ News",
-    "25 Nov",
-    "https://www.rte.ie/news/world/2026/1125/1600548-thomas-markle-senior-us-court/",
-    "Markle charged with possessing child sex abuse images"
-   ],
-   [
-    "MyNorthwest",
-    "25 Nov",
-    "https://mynorthwest.com/national/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/4304346",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Toronto",
-    "25 Nov",
-    "https://toronto.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Edmonton",
-    "25 Nov",
-    "https://edmonton.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Halifax",
-    "25 Nov",
-    "https://halifax.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Vancouver",
-    "25 Nov",
-    "https://vancouver.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews - Winnipeg",
-    "25 Nov",
-    "https://winnipeg.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Montreal",
-    "25 Nov",
-    "https://montreal.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Kitchener",
-    "25 Nov",
-    "https://kitchener.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Ottawa",
-    "25 Nov",
-    "https://ottawa.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
-   ],
-   [
-    "CityNews Calgary",
-    "25 Nov",
-    "https://calgary.citynews.ca/2026/11/24/a-federal-grand-jury-indicts-thomas-markle-on-child-sex-abuse-material-charges/",
-    "A federal grand jury indicts Thomas Markle on child sex abuse material charges"
+    "https://www.cityam.com/easyjet-speeds-up-scrapping-old-planes-oil-prices-profit/",
+    "Easyjet speeds up scrapping old planes as fuel price hurts profit"
    ],
    [
     "Daily Mail",
     "25 Nov",
-    "https://www.dailymail.com/news/article-16319767/Thomas-Markle-indicted-child-pornography-charges.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-    "Thomas Markle could face 20 years in jail as he's indicted on child pornography charges after film negatives were allegedly found inside his storage unit"
+    "https://www.dailymail.com/money/markets/article-16320659/Airline-fares-rise-year-book-holidays-early-says-Easyjet-boss.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Airline fares will rise next year so book holidays early, says Easyjet boss"
    ],
    [
-    "7NEWS",
+    "This is Money",
     "25 Nov",
-    "https://7news.com.au/entertainment/royal-family/meghan-markles-dad-thomas-markle-indicted-in-us-federal-court-over-child-abuse-material-charges--c-23209339",
-    "Meghan Markle’s Dad, Thomas Markle, indicted in US federal court over child abuse material charges"
+    "https://www.thisismoney.co.uk/money/markets/article-16320659/Airline-fares-rise-year-book-holidays-early-says-Easyjet-boss.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Airline fares will rise next year so book holidays early, says Easyjet boss"
    ],
    [
-    "WTVT - Fox 13 - Tampa Bay",
+    "Financial Times",
     "25 Nov",
-    "https://www.fox13news.com/news/thomas-markle-indicted-meghan-markles-estranged-father-expected-be-transferred-california",
-    "Thomas Markle indicted: Meghan Markle's estranged father expected to be transferred to California"
+    "https://www.ft.com/content/8606f7ee-f98b-44f5-ae5a-120b696afca5?syn-25a6b1a6=1",
+    "EasyJet profits tumble 96% after fuel prices soar"
    ],
    [
-    "The Straits Times",
+    "The Guardian",
     "25 Nov",
-    "https://www.straitstimes.com/world/united-states/thomas-markle-charged-in-us-on-second-count-of-possessing-child-sexual-abuse-material",
-    "Thomas Markle charged in US on second count of possessing child sexual abuse material"
+    "https://www.theguardian.com/business/2026/nov/25/easyjet-unable-to-rule-out-further-jobs-losses-profits-collapse-fuel-prices-iran-war",
+    "EasyJet boss unable to rule out further job losses after profits collapse by 96%"
    ],
    [
-    "Hindustan Times",
+    "Yorkshire Post",
     "25 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/meghan-markle-s-father-thomas-markle-indicted-in-us-over-alleged-child-sexual-abuse-images-101795566578928.html",
-    "Meghan Markle’s father Thomas Markle indicted in US over alleged child sexual abuse images"
-   ],
-   [
-    "KTTV - Fox 11 - Los Angeles",
-    "25 Nov",
-    "https://www.foxla.com/news/thomas-markle-indicted-possession-of-child-pornography",
-    "Thomas Markle, father of Meghan Markle, indicted in LA on child pornography charge"
-   ],
-   [
-    "Toronto Sun",
-    "25 Nov",
-    "https://torontosun.com/news/world/thomas-markle-indicted-california-child-porn-charges",
-    "Thomas Markle indicted in California on possession of child porn charges"
-   ],
-   [
-    "Wales Online",
-    "25 Nov",
-    "https://www.walesonline.co.uk/news/world-news/thomas-markle-charged-child-pornography-34961798",
-    "Thomas Markle charged with child pornography and faces up to 40 years in prison"
-   ],
-   [
-    "ABC7chicago.com",
-    "25 Nov",
-    "https://abc7chicago.com/story/thomas-markle-meghan-markles-father-indicted-child-sexual-abuse-material-charges/20076917/",
-    "Thomas Markle, Meghan Markle's father, indicted on child sexual abuse material charges"
-   ],
-   [
-    "KABC - Los Angeles News",
-    "25 Nov",
-    "https://abc7.com/story/thomas-markle-meghan-markles-father-indicted-child-sexual-abuse-material-charges/20076917/",
-    "Thomas Markle, Meghan Markle's father, indicted on child sexual abuse material charges"
-   ],
-   [
-    "Breitbart",
-    "25 Nov",
-    "https://www.breitbart.com/crime/2026/11/24/grand-jury-charges-meghan-markles-father-with-child-porn-possession/",
-    "Grand Jury Charges Meghan Markle's Father with Child Porn Possession"
-   ],
-   [
-    "BBC News",
-    "25 Nov",
-    "https://www.bbc.co.uk/news/articles/crwy4egxn592o?at_medium=RSS&at_campaign=rss",
-    "Thomas Markle charged in US for possessing child sex abuse images"
-   ],
-   [
-    "The New York Times",
-    "25 Nov",
-    "https://www.nytimes.com/2026/11/24/world/europe/thomas-markle-indicted.html",
-    "Thomas Markle Indicted in US on Charges of Possession of Child Sexual Abuse Materials"
-   ],
-   [
-    "The Hindu",
-    "25 Nov",
-    "https://www.thehindu.com/news/international/thomas-markle-charged-in-us-on-second-count-of-possessing-child-sexual-abuse-material/article71740964.ece",
-    "Thomas Markle charged in U.S. on second count of possessing child sexual abuse material"
-   ],
-   [
-    "NBC News",
-    "25 Nov",
-    "https://www.nbcnews.com/video/thomas-markle-indicted-on-child-sex-abuse-material-charges-274140741786",
-    "Thomas Markle indicted on child sex abuse material charges"
-   ],
-   [
-    "Irish Independent",
-    "25 Nov",
-    "https://www.independent.ie/world-news/thomas-markle-charged-in-us-with-possessing-child-sex-abuse-material/a/165064602.html",
-    "Thomas Markle charged in US with possessing child sex abuse material"
-   ],
-   [
-    "The Journal",
-    "25 Nov",
-    "https://www.thejournal.ie/meghan-markles-father-formally-charged-with-possessing-child-sex-abuse-images-7237091-Nov2026/",
-    "Meghan Markle’s father formally charged with possessing child sex abuse images"
+    "https://www.yorkshirepost.co.uk/business/this-year-was-challenging-for-airlines-easyjet-profits-fall-on-ps244-million-fuel-cost-hit-9373285",
+    "'This year was challenging for airlines': EasyJet profits fall on £244 million fuel cost hit"
    ],
    [
     "Evening Standard",
     "25 Nov",
-    "https://www.standard.co.uk/news/world/thomas-markle-charged-sex-abuse-images-meghan-b1306281.html",
-    "Meghan’s father Thomas Markle charged with possessing child sex abuse images"
+    "https://www.standard.co.uk/business/business-news/easyjet-middle-east-europe-iran-luton-b1306405.html",
+    "EasyJet boss ‘wouldn’t be surprised’ if airlines went bust amid fuel cost crisis"
    ],
    [
-    "Metro",
+    "Belfast Telegraph",
     "25 Nov",
-    "https://metro.co.uk/2026/11/25/thomas-markle-charged-child-sex-abuse-material-with-one-victim-younger-12-29817618/",
-    "Thomas Markle charged over child sex abuse material ‘with one victim younger than 12’"
+    "https://www.belfasttelegraph.co.uk/business/uk-world/easyjet-boss-wouldnt-be-surprised-if-airlines-went-bust-amid-fuel-cost-crisis/a/165108560.html",
+    "EasyJet boss ‘wouldn’t be surprised’ if airlines went bust amid fuel cost crisis"
    ]
   ],
-  "illegal-migrant-among-men-arrested-break-william": [
+  "macys-thanksgiving-parade-postponed-saturday-due-expected": [
    [
-    "Sky News",
+    "Retail Dive",
     "24 Nov",
-    "https://news.sky.com/story/two-men-arrested-over-suspected-burglary-at-william-and-kates-norfolk-home-13615939",
-    "Two men arrested over suspected burglary at William and Kate's home"
+    "https://www.retaildive.com/news/macys-hundredth-thanksgiving-day-parade-history/875134/",
+    "The wonder and ritual of Macy’s Thanksgiving Day Parade"
    ],
    [
-    "7NEWS",
+    "American Wire News",
     "24 Nov",
-    "https://7news.com.au/entertainment/royal-family/kate-and-william-uk-home-break-in-police-investigating-after-anmer-hall-broken-into--c-23208093",
-    "Kate and William UK home break in: Police investigating after Anmer Hall broken into"
+    "https://americanwirenews.com/mother-nature-threatens-to-take-the-air-out-of-macys-historic-100th-thanksgiving-day-parade/",
+    "Mother Nature threatens to take the air out of Macy’s historic 100th Thanksgiving Day Parade"
    ],
    [
-    "Gloucestershire Live",
+    "WNYW - Fox 5 -New York",
     "24 Nov",
-    "https://www.gloucestershirelive.co.uk/news/royal-news/kate-william-house-two-arrested-11253780",
-    "'Security breach' at William and Kate's home as two arrested"
+    "https://www.fox5ny.com/news/why-giant-balloons-were-grounded-during-1971-macys-thanksgiving-day-parade",
+    "The last time the Macy's Thanksgiving Day Parade grounded its giant balloons"
    ],
    [
-    "WANE - Fort Wayne News",
+    "WFLA - Tampa Bay",
     "24 Nov",
-    "https://www.wane.com/news/crime/2-arrested-over-suspected-burglary-at-prince-william-and-kates-country-estate/",
-    "2 arrested over suspected burglary at Prince William and Kate's country estate"
+    "https://www.wfla.com/news/national/has-the-macys-thanksgiving-day-parade-ever-been-canceled/",
+    "Has the Macy's Thanksgiving Day Parade ever been canceled?"
    ],
    [
     "WGN News",
     "24 Nov",
-    "https://wgntv.com/news/2-arrested-over-suspected-burglary-at-prince-william-and-kates-country-estate/",
-    "2 arrested over suspected burglary at Prince William and Kate's country estate"
+    "https://wgntv.com/news/has-the-macys-thanksgiving-day-parade-ever-been-canceled/",
+    "Has the Macy's Thanksgiving Day Parade ever been canceled?"
    ],
    [
-    "CBS News",
+    "Mental Floss",
     "24 Nov",
-    "https://www.cbsnews.com/news/prince-william-kate-country-home-broken-into-british-media/",
-    "Prince William and Kate's country home broken into, 2 arrested"
+    "https://www.mentalfloss.com/holidays/thanksgiving/every-balloon-float-2026-macys-thanksgiving-day-parade?utm_source=RSS",
+    "Every Balloon and Float at the 2026 Macy’s Thanksgiving Day Parade (Including a Touching Tribute)"
    ],
    [
-    "Daily Caller",
-    "24 Nov",
-    "https://dailycaller.com/2026/11/24/royal-family-rocked-brazen-robbery-kate-middleton-prince-william-two-male-suspects-arrested-sandringham-estate",
-    "Police Arrest Two Suspects After Royal Robbery At Prince William, Kate Middleton’s Sandringham Estate Property"
+    "KTLA",
+    "25 Nov",
+    "https://ktla.com/news/nationworld/what-happens-macys-thanksgiving-day-parade-balloon-pops/",
+    "What happens if a Macy's Thanksgiving Day parade balloon pops?"
    ],
    [
-    "E! News",
-    "24 Nov",
-    "https://www.eonline.com/news/1438368/prince-william-kate-middletons-home-broken-into-2-men-arrested?cmpid=rss-syndicate-genericrss-us-top_stories",
-    "Arrests Made After Break-in at Prince William, Kate Middleton's Home"
+    "Economic Times",
+    "25 Nov",
+    "https://economictimes.indiatimes.com/news/international/world-news/is-macys-thanksgiving-parade-cancelled-where-to-watch-macys-thanksgiving-day-parade-2026-as-100th-edition-brings-megan-moroney-queen-latifah-devo-and-more/articleshow/136159334.cms",
+    "Is Macy's Thanksgiving Parade cancelled?"
    ],
    [
     "BBC News",
-    "24 Nov",
-    "https://www.bbc.co.uk/news/articles/cr9d7qdg24vno?at_medium=RSS&at_campaign=rss",
-    "Two arrested on suspicion of burglary at Prince and Princess of Wales's Norfolk home"
-   ],
-   [
-    "The New York Times",
-    "24 Nov",
-    "https://www.nytimes.com/2026/11/24/world/europe/prince-william-kate-home-break-in-anmer-hall-uk.html",
-    "2 Men Arrested on Suspicion of Breaking Into Prince William and Kate’s Country Home"
-   ],
-   [
-    "Evening Standard",
-    "24 Nov",
-    "https://www.standard.co.uk/news/uk/elizabeth-ii-william-and-kate-kate-prince-princess-b1306202.html",
-    "Two men arrested after William and Kate’s country mansion ‘broken into’"
-   ],
-   [
-    "Washington Post",
-    "24 Nov",
-    "https://www.washingtonpost.com/the-seven/2026/11/24/two-men-arrested-possible-burglary-home-prince-william-princess-kate/",
-    "Two men arrested in suspected burglary at Prince William’s country home"
-   ],
-   [
-    "Dawn",
     "25 Nov",
-    "https://www.dawn.com/news/2046918/uk-police-arrest-two-men-after-break-in-at-williams-home",
-    "UK police arrest two men after break-in at William’s home"
+    "https://www.bbc.co.uk/weather/articles/cr894e8dd7wqo?at_medium=RSS&at_campaign=rss",
+    "New York's annual Thanksgiving Parade threatened by approaching storm"
    ],
    [
-    "Times of India",
+    "WPIX 11",
     "25 Nov",
-    "https://timesofindia.indiatimes.com/world/uk/two-arrested-after-masked-men-break-into-prince-william-and-kate-middletons-country-home/articleshow/136145875.cms",
-    "Two arrested after masked men break into Prince William and Kate’s country home"
+    "https://pix11.com/news/will-the-macys-thanksgiving-parade-have-inflated-balloons/",
+    "Will the Macy’s Thanksgiving parade have inflated balloons?"
    ],
    [
-    "GB News",
+    "WJW - Cleveland News",
     "25 Nov",
-    "https://www.gbnews.com/royal/illegal-migrant-among-two-men-arrested-sandringham",
-    "‘Illegal migrant’ among two men arrested after break-in at William and Catherine’s home"
-   ]
-  ],
-  "huang-apologizes-nvidia-employees-hes-therapy": [
-   [
-    "Wired",
-    "24 Nov",
-    "https://www.wired.com/story/jensen-huang-apologizes-to-nvidia-employees-in-first-all-hands-since-his-return/",
-    "Jensen Huang Apologizes to Nvidia Employees in First All-Hands Since His Return"
-   ],
-   [
-    "The Information",
-    "24 Nov",
-    "https://www.theinformation.com/briefings/nvidia-hosts-first-all-hands-jensen-huangs-return",
-    "Jensen Huang Apologizes to Employees and Says He’s in Therapy"
-   ],
-   [
-    "Business Insider",
-    "24 Nov",
-    "https://www.businessinsider.com/jensen-huang-faces-nvidia-employees-first-all-hands-since-comeback-2026-11",
-    "Jensen Huang tells Nvidia employees he's in therapy in first all-hands since his comeback"
-   ],
-   [
-    "Political Wire",
-    "24 Nov",
-    "https://politicalwire.com/2026/11/24/jensen-huang-tells-staff-he-is-in-therapy/",
-    "Jensen Huang Tells Staff He Is in Therapy"
-   ],
-   [
-    "The Verge",
-    "24 Nov",
-    "https://www.theverge.com/tech/1041571/jensen-huang-all-hands-nvidia-apology",
-    "Jensen Huang reportedly tells Nvidia staff it’s ‘not true’ Trump got him rehired"
-   ],
-   [
-    "The Wall Street Journal",
-    "24 Nov",
-    "https://www.wsj.com/tech/huang-tells-staff-he-is-in-therapy-apologizes-in-nvidia-town-hall-b79647f0?mod=rss_Technology",
-    "Huang Tells Staff He Is in Therapy, Apologizes in Nvidia Town Hall"
-   ],
-   [
-    "Hindustan Times",
-    "24 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/jensen-huang-apologises-to-nvidia-staff-at-hardest-company-meeting-denies-government-pressure-behind-return-101795546924335.html",
-    "Jensen Huang apologises to Nvidia staff at 'hardest company meeting', says he is attending daily therapy"
-   ],
-   [
-    "The Guardian",
-    "24 Nov",
-    "https://www.theguardian.com/technology/2026/nov/24/jensen-huang-nvidia-apologizes-staff",
-    "Nvidia CEO Jensen Huang apologizes to staff: ‘I made some terrible mistakes’"
-   ],
-   [
-    "The Straits Times",
-    "24 Nov",
-    "https://www.straitstimes.com/world/united-states/nvidias-jensen-huang-apologises-to-staff-says-he-is-in-therapy-reports",
-    "Nvidia’s Jensen Huang apologises to staff, says he’s in daily therapy"
-   ],
-   [
-    "The New York Times",
-    "24 Nov",
-    "https://www.nytimes.com/2026/11/24/technology/jensen-huang-apology-nvidia-ceo.html",
-    "Jensen Huang Apologizes to Nvidia Employees, Says He Is in Therapy"
-   ],
-   [
-    "South China Morning Post",
-    "24 Nov",
-    "https://www.scmp.com/news/world/united-states-canada/article/3375675/nvidias-jensen-huang-apologises-staff-says-he-therapy",
-    "Nvidia’s Jensen Huang says he is in therapy, as comeback rally fades"
-   ],
-   [
-    "The Hill",
-    "24 Nov",
-    "https://thehill.com/policy/technology/6241274-nvidia-ceo-jensen-huang-reinstated/",
-    "Huang apologizes to Nvidia employees, says he’s in therapy: Reports"
-   ],
-   [
-    "The Journal",
-    "24 Nov",
-    "https://www.thejournal.ie/jensen-huang-therapy-7236994-Nov2026/",
-    "Jensen Huang apologises to staff and says he is in therapy"
-   ],
-   [
-    "Bloomberg",
-    "25 Nov",
-    "https://www.bloomberg.com/news/audio/2026-11-25/us-readies-tariff-hike-huang-apologizes-to-nvidia-staff-more",
-    "US Readies Tariff Hike, Huang Apologizes to Nvidia Staff, More"
-   ],
-   [
-    "RTÉ News",
-    "25 Nov",
-    "https://www.rte.ie/news/business/2026/1125/1600553-nvidia-us/",
-    "Huang apologises to Nvidia staff as comeback rally fades"
-   ],
-   [
-    "The Hindu",
-    "25 Nov",
-    "https://www.thehindu.com/news/international/nvidias-jensen-huang-says-he-is-in-therapy-as-comeback-rally-fades/article71740890.ece",
-    "Nvidia's Jensen Huang says he is in therapy as comeback rally fades"
-   ],
-   [
-    "The Express Tribune",
-    "25 Nov",
-    "https://tribune.com.pk/story/2642247/nvidias-huang-said-he-violated-code-of-conduct-source-says",
-    "Nvidia's Huang said he violated code of conduct, source says"
-   ],
-   [
-    "RNZ",
-    "25 Nov",
-    "https://www.rnz.co.nz/news/business/2772690/nvidia-ceo-jensen-huang-apologises-to-staff-reportedly-says-he-s-in-daily-therapy",
-    "Nvidia CEO Jensen Huang apologises to staff, reportedly says he's in daily therapy"
+    "https://fox8.com/news/could-wind-ground-balloons-in-the-macys-thanksgiving-parade/",
+    "Macy's Thanksgiving Parade postponed due to 'severe weather'"
    ],
    [
     "Daily Mail",
     "25 Nov",
-    "https://www.dailymail.com/news/article-16320539/Nvidias-Jensen-Huang-says-Trump-return-tells-staff-therapy-terrible-mistakes-hour-long-mea-culpa.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-    "Nvidia's Jensen Huang says Trump had NOTHING to do with his return as he tells staff he is in therapy and made 'terrible mistakes' in hour-long mea culpa"
-   ]
-  ],
-  "chinas-huawei-convicted-stealing-trade-secrets": [
+    "https://www.dailymail.com/sciencetech/article-16321491/macys-thanksgiving-parade-balloons-new-york.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Macy's Thanksgiving Day Parade balloons face 'significant risk' of grounding for first time in 55 years"
+   ],
    [
-    "The Straits Times",
-    "24 Nov",
-    "https://www.straitstimes.com/world/united-states/chinas-huawei-convicted-at-us-criminal-trial-stemming-from-iran-business",
-    "China’s Huawei convicted in sprawling US criminal trial over Iran business"
+    "NBC News",
+    "25 Nov",
+    "https://www.nbcnews.com/news/us-news/macys-thanksgiving-day-parade-weather-delay-rcna611355",
+    "Macy’s Thanksgiving Day Parade pushed back to Saturday due to weather"
+   ],
+   [
+    "The Sun",
+    "25 Nov",
+    "https://www.thesun.co.uk/news/41152752/macys-parade-postponed-noreaster-nyc/",
+    "Macy’s Thanksgiving Day Parade POSTPONED due to weather for 1st time in 100yr history as Nor’easter barrels towards NYC"
+   ],
+   [
+    "The US Sun",
+    "25 Nov",
+    "https://www.the-sun.com/news/17359508/macys-parade-postponed-noreaster-nyc/",
+    "Macy’s Thanksgiving Day Parade POSTPONED due to weather for 1st time in 100yr history as Nor’easter barrels towards NYC"
+   ],
+   [
+    "NewsNation",
+    "25 Nov",
+    "https://www.newsnationnow.com/us-news/northeast/macys-thanksgiving-day-parade-postponed/",
+    "Live: Macy's Thanksgiving Day Parade postponed due to storm"
+   ],
+   [
+    "ABC7chicago.com",
+    "25 Nov",
+    "https://abc7chicago.com/story/will-macys-thanksgiving-day-parade-balloons-fly-new-york-city-weighs-earlier-start-amid-storm-threat/20079303/",
+    "NYC Macy's Thanksgiving Day parade postponed due to weather"
+   ],
+   [
+    "ABC7 New York",
+    "25 Nov",
+    "https://abc7ny.com/story/will-macys-thanksgiving-day-parade-balloons-fly-new-york-city-weighs-earlier-start-amid-storm-threat/20079303/",
+    "NYC Macy's Thanksgiving Day parade postponed due to weather"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "25 Nov",
+    "https://abc7.com/story/will-macys-thanksgiving-day-parade-balloons-fly-new-york-city-weighs-earlier-start-amid-storm-threat/20079303/",
+    "NYC Macy's Thanksgiving Day parade postponed due to weather"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/homenews/state-watch/6243709-nyc-macys-parade-set-saturday/",
+    "New York delays Macy’s Thanksgiving parade because of severe weather"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/us-news/2026/nov/25/macys-thanksgiving-day-parade-postponed-weather",
+    "New York City’s Macy’s Thanksgiving Day parade postponed due to weather"
+   ],
+   [
+    "KSTP-TV",
+    "25 Nov",
+    "https://kstp.com/ap-top-news/ap-top-news-entertainment/macys-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Toronto",
+    "25 Nov",
+    "https://toronto.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Edmonton",
+    "25 Nov",
+    "https://edmonton.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Halifax",
+    "25 Nov",
+    "https://halifax.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Vancouver",
+    "25 Nov",
+    "https://vancouver.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews - Winnipeg",
+    "25 Nov",
+    "https://winnipeg.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Montreal",
+    "25 Nov",
+    "https://montreal.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Kitchener",
+    "25 Nov",
+    "https://kitchener.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Ottawa",
+    "25 Nov",
+    "https://ottawa.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Calgary",
+    "25 Nov",
+    "https://calgary.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "Winnipeg Free Press",
+    "25 Nov",
+    "https://www.winnipegfreepress.com/arts-and-life/entertainment/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather",
+    "Macy’s Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "The Post Millennial",
+    "25 Nov",
+    "https://thepostmillennial.com/culture/breaking-macy-s-thanksgiving-day-parade-postponed-due-to-weather-for-first-time-ever",
+    "BREAKING: Macy's Thanksgiving Day Parade postponed due to weather for first time ever"
+   ],
+   [
+    "Off The Press",
+    "25 Nov",
+    "https://offthepress.com/r/184783?c=rss",
+    "Macy's pushes 100th Thanksgiving Day parade to Saturday over incoming storm"
+   ],
+   [
+    "KFGO - 790 AM - Fargo",
+    "25 Nov",
+    "https://kfgo.com/2026/11/25/macys-thanksgiving-day-parade-postponed-due-to-storm-projections-us-media-reports/",
+    "Macy’s Thanksgiving Day Parade postponed due to storm projections, US media reports"
+   ],
+   [
+    "Las Vegas Review Journal",
+    "25 Nov",
+    "https://www.reviewjournal.com/news/nation-and-world/macys-announces-thanksgiving-day-parade-postponed-due-to-expected-bad-weather-3919368/",
+    "Macy’s announces Thanksgiving Day Parade postponed due to expected bad weather"
+   ],
+   [
+    "Investing.com",
+    "25 Nov",
+    "https://www.investing.com/news/stock-market-news/macys-thanksgiving-day-parade-postponed-due-to-storm-projections-us-media-reports-5051483",
+    "Macy’s Thanksgiving Day Parade postponed due to storm projections, US media reports"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/macys-thanksgiving-day-parade-in-nyc-postponed-to-saturday-due-to-bad-weather-forecast-101795641318971.html",
+    "Macy’s Thanksgiving Day Parade in NYC postponed to Saturday due to bad weather forecast"
+   ],
+   [
+    "Colorado Springs Gazette",
+    "25 Nov",
+    "https://gazette.com/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday"
+   ],
+   [
+    "Manchester Union leader",
+    "25 Nov",
+    "https://www.unionleader.com/news/nation-world/macys-thanksgiving-day-parade-postponed-032330d1",
+    "Macy's Thanksgiving Day Parade postponed"
    ],
    [
     "Bloomberg",
-    "24 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-24/huawei-found-guilty-of-us-criminal-charges-in-landmark-case",
-    "Huawei Found Guilty of US Criminal Charges in Landmark Case"
+    "25 Nov",
+    "https://www.bloomberg.com/news/audio/2026-11-25/stocks-close-mixed-report-macy-s-thanksgiving-parade-postponed",
+    "Stocks Close Mixed, Report: Macy's Thanksgiving Parade Postponed"
    ],
+   [
+    "Business Insider",
+    "25 Nov",
+    "https://www.businessinsider.com/macys-thanksgiving-day-parade-postponed-until-saturday-due-to-weather-2026-11",
+    "Macy's Thanksgiving Day parade postponed for the first time in its history"
+   ],
+   [
+    "CNBC",
+    "25 Nov",
+    "https://www.cnbc.com/2026/11/25/macys-thanksgiving-day-parade-postponed.html",
+    "Macy's postpones Thanksgiving Day Parade due to severe weather"
+   ],
+   [
+    "ABC News (US)",
+    "25 Nov",
+    "https://abcnews.com/US/macys-thanksgiving-day-parade-postponed-sources/story?id=138452401",
+    "Macy's Thanksgiving Day parade postponed due to weather"
+   ],
+   [
+    "Axios",
+    "25 Nov",
+    "https://www.axios.com/2026/11/25/macys-thanksgiving-parade-2026-balloons-weather",
+    "Macy's Thanksgiving parade postponed for the first time in the event's history"
+   ],
+   [
+    "PBS NewsHour",
+    "25 Nov",
+    "https://www.pbs.org/newshour/nation/macys-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather",
+    "Macy's Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "25 Nov",
+    "https://wtop.com/national/2026/11/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "KUSI-TV",
+    "25 Nov",
+    "https://fox5sandiego.com/news/world-news/ap-international/ap-macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "The Wall Street Journal",
+    "25 Nov",
+    "https://www.wsj.com/us-news/climate-environment/macys-postpones-its-thanksgiving-day-parade-until-saturday-261dc15c?mod=pls_whats_news_us_business_f",
+    "Macy’s Postpones Its Thanksgiving Day Parade Until Saturday"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/united-states/macys-thanksgiving-day-parade-postponed-due-to-storm-projections-us-media-reports",
+    "Macy’s Thanksgiving Day Parade postponed due to storm projections, US media reports"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "25 Nov",
+    "https://www.wane.com/top-stories/macys-thanksgiving-day-parade-postponed/",
+    "Macy's Thanksgiving Day Parade postponed"
+   ],
+   [
+    "Toledo Blade",
+    "25 Nov",
+    "https://www.toledoblade.com/news/nation/2026/11/25/100th-macys-thanksgiving-day-parade-moved-saturday-due-projected-storm/stories/20261125123",
+    "100th Macy’s Thanksgiving Day Parade moved to Saturday due to projected storm"
+   ]
+  ],
+  "pentagon-reportedly-talks-gm-ford-scale-military": [
+   [
+    "The Wall Street Journal",
+    "24 Nov",
+    "https://www.wsj.com/politics/national-security/ford-general-motors-military-drones-c082d202?mod=pls_whats_news_us_business_f",
+    "Pentagon in Talks With General Motors and Ford to Make Military Drones"
+   ],
+   [
+    "Fox Business",
+    "24 Nov",
+    "https://www.foxbusiness.com/economy/pentagon-reportedly-talks-gm-ford-scale-us-military-drone-production",
+    "Pentagon reportedly in talks with GM, Ford to scale US military drone production"
+   ],
+   [
+    "Citizen Free Press",
+    "24 Nov",
+    "https://citizenfreepress.com/breaking/pentagon-in-talks-with-ford-and-gm-to-build-military-drones-and-vehicles/",
+    "Pentagon in talks with Ford and GM to build military drones and vehicles."
+   ],
+   [
+    "BizPac Review",
+    "24 Nov",
+    "https://www.bizpacreview.com/2026/11/24/uncle-sam-looks-to-detroit-as-military-equipment-shortages-mount-report-1668838/",
+    "Uncle Sam looks to Detroit as military equipment shortages mount: Report"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/newsletters/defense-national-security/6241645-pentagon-ford-military-vehicles/",
+    "Pentagon talking with Ford to supply military vehicles"
+   ],
+   [
+    "Oilprice.com",
+    "25 Nov",
+    "https://oilprice.com/Energy/Energy-General/The-Pentagon-Wants-Detroit-to-Build-Americas-Next-Drone-Army.html",
+    "The Pentagon Wants Detroit to Build America's Next Drone Army"
+   ]
+  ],
+  "unclassified-cia-system-breached-cyberattack": [
+   [
+    "BizPac Review",
+    "24 Nov",
+    "https://www.bizpacreview.com/2026/11/24/even-the-cia-cant-withstand-the-tidal-wave-of-cyber-attacks-1668848/",
+    "Even the CIA can’t withstand the tidal wave of cyber attacks"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "24 Nov",
+    "https://www.wane.com/top-stories/an-unclassified-cia-system-was-breached-in-a-cyberattack-ap-source-says/",
+    "An unclassified CIA system was breached in a cyberattack, AP source says"
+   ],
+   [
+    "End Time Headlines",
+    "24 Nov",
+    "https://endtimeheadlines.org/2026/11/cia-office-of-the-director-of-national-intelligence-struck-by-cyberattack-on-same-day-as-fbi/",
+    "CIA, Office of the Director of National Intelligence struck by cyberattack on same day as FBI"
+   ],
+   [
+    "The Post Millennial",
+    "24 Nov",
+    "https://thepostmillennial.com/news/breaking-cia-unclassified-system-breached-in-cyberattack-report",
+    "BREAKING: CIA unclassified system breached in cyberattack: report"
+   ],
+   [
+    "SecurityWeek",
+    "24 Nov",
+    "https://www.securityweek.com/an-unclassified-cia-system-was-breached-in-a-cyberattack-ap-source-says/",
+    "An Unclassified CIA System Was Breached in a Cyberattack, AP Source Says"
+   ],
+   [
+    "Breitbart",
+    "24 Nov",
+    "https://www.breitbart.com/politics/2026/11/24/cia-suffers-from-cybersecurity-breach-of-unclassified-information/",
+    "CIA Suffers from Cybersecurity Breach of Unclassified Information"
+   ],
+   [
+    "Legal Insurrection",
+    "24 Nov",
+    "https://legalinsurrection.com/2026/11/cia-intelligence-platform-breached-as-federal-cybersecurity-concerns-mount/?utm_source=rss&utm_medium=rss&utm_campaign=cia-intelligence-platform-breached-as-federal-cybersecurity-concerns-mount",
+    "CIA Intelligence Platform Breached as Federal Cybersecurity Concerns Mount"
+   ],
+   [
+    "Political Wire",
+    "24 Nov",
+    "https://politicalwire.com/2026/11/24/intelligence-agencies-hacked-in-cybersecurity-breach/",
+    "Intelligence Agencies Hacked in Cybersecurity Breach"
+   ],
+   [
+    "Cointelegraph",
+    "24 Nov",
+    "https://cointelegraph.com/news/hackers-breach-cia-intelligence-network-in-latest-us-cyberattack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "Hackers breach CIA intelligence network in latest US cyberattack"
+   ],
+   [
+    "MercoPress",
+    "25 Nov",
+    "https://en.mercopress.com/2026/11/25/cia-and-us-intelligence-office-suffer-intrusion-exposing-unclassified-information?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "CIA and US intelligence office suffer intrusion exposing unclassified information"
+   ],
+   [
+    "Slashdot",
+    "25 Nov",
+    "https://it.slashdot.org/story/26/11/25/0056232/us-spy-agencies-suffer-breach-of-some-unclassified-information?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "US Spy Agencies Suffer Breach of Some Unclassified Information"
+   ],
+   [
+    "The Hindu",
+    "25 Nov",
+    "https://www.thehindu.com/news/international/us-cia-odni-suffer-cybersecurity-breach-of-some-unclassified-information-nyt-reports/article71740185.ece",
+    "U.S. CIA, ODNI suffer cybersecurity breach of some unclassified information, NYT reports"
+   ],
+   [
+    "BleepingComputer",
+    "25 Nov",
+    "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/",
+    "Hackers reportedly breached CIA intelligence analysis system"
+   ],
+   [
+    "Phys.org",
+    "25 Nov",
+    "https://techxplore.com/news/2026-11-unclassified-cia-breached-cyberattack.html",
+    "An unclassified CIA system was breached in a cyberattack"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/national-security/6242068-cia-cyberattack-breach-report/",
+    "Unclassified CIA system breached in cyberattack"
+   ],
+   [
+    "TechRadar",
+    "25 Nov",
+    "https://www.techradar.com/pro/security/hackers-breach-cia-system-in-possible-artex-cyberattack-and-leak-unclassified-data",
+    "Hackers breach CIA system in possible ARTEX cyberattack and leak unclassified data"
+   ]
+  ],
+  "kilmar-abrego-garcia-self-deports-spain-legal": [
+   [
+    "WTTG - Fox 5 - DC",
+    "24 Nov",
+    "https://www.fox5dc.com/news/kilmar-abrego-garcia-el-salvador-native-who-was-wrongfully-deported-self-deports-spain",
+    "Kilmar Abrego Garcia, El Salvador native who was wrongfully deported, self-deports to Spain"
+   ],
+   [
+    "NBC News",
+    "24 Nov",
+    "https://www.nbcnews.com/news/us-news/kilmar-abrego-garcia-rcna611215",
+    "Kilmar Abrego Garcia lands in Spain a ‘free man’ after deportation battle"
+   ],
+   [
+    "Powerline",
+    "25 Nov",
+    "https://www.powerlineblog.com/archives/2026/11/maryland-man-self-deports-to-spain.php",
+    "Maryland Man self-deports to Spain"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/international/6241572-kilmar-abrego-garcia-self-deports/",
+    "Van Hollen: Abrego Garcia leaving US, ‘will be safe’ amid self-deportation reports"
+   ],
+   [
+    "Breitbart",
+    "25 Nov",
+    "https://www.breitbart.com/immigration/2026/11/24/kilmar-abrego-garcia-avoids-deportation-liberia-leaving-spain/",
+    "Kilmar Abrego Garcia Avoids Deportation to Liberia by Leaving for Spain Voluntarily"
+   ],
+   [
+    "Daily Caller",
+    "25 Nov",
+    "https://dailycaller.com/2026/11/24/kilmar-abrego-garcia-self-deports-spain-ms13",
+    "Kilmar Abrego Garcia Self-Deports After 20 Months As Face Of Trump’s Deportation Campaign"
+   ],
+   [
+    "Washington Post",
+    "25 Nov",
+    "https://www.washingtonpost.com/immigration/2026/11/24/kilmar-abrego-garcia/",
+    "Kilmar Abrego García arrives in Spain, ending deportation battle with U.S."
+   ],
+   [
+    "NPR",
+    "25 Nov",
+    "https://www.npr.org/2026/11/25/g-s1-155493/up-first-newsletter-iowa-detonation-kilmar-abrego-garcia-nvidia-jensen-huang",
+    "Army to detonate tons of lead azide after delays. And, Abrego Garcia leaves U.S."
+   ],
+   [
+    "American Wire News",
+    "25 Nov",
+    "https://americanwirenews.com/good-riddance-maryland-man-kilmar-abrego-garcia-self-deports-to-spain/",
+    "Good riddance! ‘Maryland man’ Kilmar Abrego Garcia self-deports to Spain"
+   ],
+   [
+    "BizPac Review",
+    "25 Nov",
+    "https://www.bizpacreview.com/2026/11/25/good-riddance-maryland-man-kilmar-abrego-garcia-self-deports-to-spain-1668890/",
+    "Good riddance! ‘Maryland man’ Kilmar Abrego Garcia self-deports to Spain"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/europe/salvadoran-migrant-kilmar-abrego-garcia-lands-in-spain-after-us-departure-deal",
+    "Salvadoran migrant Kilmar Abrego Garcia lands in Spain after US departure deal"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/news/article-16320401/Kilmar-Abrego-Garcia-self-deports-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Kilmar Abrego Garcia self-deports to Spain for remainder of Trump's term after he was jailed in Salvadoran prison over 'administrative error'"
+   ],
+   [
+    "Hot Air",
+    "25 Nov",
+    "https://hotair.com/ed-morrissey/2026/11/25/kilmar-was-here-maryland-man-self-deports-n3821360",
+    "Kilmar Was Here: 'Maryland Man' Self-Deports"
+   ],
+   [
+    "Legal Insurrection",
+    "25 Nov",
+    "https://legalinsurrection.com/2026/11/kilmar-abrego-garcia-self-deports-arrives-in-spain/?utm_source=rss&utm_medium=rss&utm_campaign=kilmar-abrego-garcia-self-deports-arrives-in-spain",
+    "Kilmar Abrego Garcia Self Deports, Arrives in Spain"
+   ],
+   [
+    "The Federalist",
+    "25 Nov",
+    "https://thefederalist.com/2026/11/25/sen-chris-van-hollen-just-cant-quit-alleged-human-trafficker-kilmar-abrego-garcia/?utm_source=rss&utm_medium=rss&utm_campaign=sen-chris-van-hollen-just-cant-quit-alleged-human-trafficker-kilmar-abrego-garcia",
+    "Sen. Chris Van Hollen Just Can’t Quit Alleged ‘Human Trafficker’ Kilmar Abrego Garcia"
+   ],
+   [
+    "Conservative Review",
+    "25 Nov",
+    "https://www.conservativereview.com/sen-chris-van-hollen-just-cant-quit-alleged-human-trafficker-kilmar-abrego-garcia-2678527672.html",
+    "Sen. Chris Van Hollen Just Can’t Quit Alleged ‘Human Trafficker’ Kilmar Abrego Garcia"
+   ],
+   [
+    "NewsNation",
+    "25 Nov",
+    "https://www.newsnationnow.com/us-news/immigration/abrego-garcia-spain-trump/",
+    "Kilmar Abrego Garcia to remain in Spain as he 'waits out' Trump presidency"
+   ],
+   [
+    "The Post Millennial",
+    "25 Nov",
+    "https://thepostmillennial.com/news/kilmar-abrego-garcia-self-deports-to-spain",
+    "Kilmar Abrego Garcia self-deports to Spain"
+   ],
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-25/abrego-garcia-can-breathe-freely-after-he-arrives-in-spain",
+    "Abrego Garcia Can ‘Breathe Freely’ After He Arrives in Spain"
+   ],
+   [
+    "ABC7chicago.com",
+    "25 Nov",
+    "https://abc7chicago.com/story/kilmar-abrego-garcia-leaves-us-deporting-spain/20076629/",
+    "Kilmar Abrego Garcia leaves the US, self-deporting to Spain"
+   ],
+   [
+    "ABC7 New York",
+    "25 Nov",
+    "https://abc7ny.com/story/kilmar-abrego-garcia-leaves-us-deporting-spain/20076629/",
+    "Kilmar Abrego Garcia leaves the US, self-deporting to Spain"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "25 Nov",
+    "https://abc7.com/story/kilmar-abrego-garcia-leaves-us-deporting-spain/20076629/",
+    "Kilmar Abrego Garcia leaves the US, self-deporting to Spain"
+   ],
+   [
+    "Twitchy",
+    "25 Nov",
+    "https://twitchy.com/videos/2026/11/25/kilmar-abrego-garcia-self-deports-to-spain-after-nearly-two-years-of-legal-battles-n2434769",
+    "Kilmar Abrego Garcia Self-Deports to Spain After Nearly Two Years of Legal Battles"
+   ],
+   [
+    "RedState",
+    "25 Nov",
+    "https://redstate.com/videos/2026/11/25/kilmar-abrego-garcia-self-deports-to-spain-after-nearly-two-years-of-legal-battles-n2209803",
+    "Kilmar Abrego Garcia Self-Deports to Spain After Nearly Two Years of Legal Battles"
+   ],
+   [
+    "Bearing Arms",
+    "25 Nov",
+    "https://bearingarms.com/videos/2026/11/25/kilmar-abrego-garcia-self-deports-to-spain-after-nearly-two-years-of-legal-battles-n1234616",
+    "Kilmar Abrego Garcia Self-Deports to Spain After Nearly Two Years of Legal Battles"
+   ]
+  ],
+  "least-30-killed-blaze-vehicle-overturns-egypt": [
+   [
+    "The Express Tribune",
+    "25 Nov",
+    "https://tribune.com.pk/story/2642343/at-least-30-killed-in-blaze-after-vehicle-overturns-in-egypt-health-ministry-says",
+    "At least 30 killed in blaze after vehicle overturns in Egypt, health ministry says"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/middle-east/at-least-30-killed-in-blaze-after-vehicle-overturns-in-egypt-health-ministry-says",
+    "At least 30 killed in blaze after vehicle overturns in Egypt, health ministry says"
+   ],
+   [
+    "Al Jazeera English",
+    "25 Nov",
+    "https://www.aljazeera.com/news/2026/11/25/at-least-30-killed-in-egypt-vehicle-fire-health-ministry-says?traffic_source=rss",
+    "At least 30 killed in Egypt vehicle fire, health ministry says"
+   ],
+   [
+    "MyNorthwest",
+    "25 Nov",
+    "https://mynorthwest.com/world/a-fire-on-a-major-highway-surrounding-cairo-kills-at-least-30-people-egypts-health-ministry-says/4304662",
+    "A fire on a major highway surrounding Cairo kills at least 30 people, Egypt’s Health Ministry says"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/at-least-30-killed-15-injured-as-petroleum-carrying-vehicle-overturns-and-catches-fire-near-cairo-101795633683961.html",
+    "At least 30 killed, 15 injured as petroleum-carrying vehicle overturns and catches fire near Cairo"
+   ],
+   [
+    "NDTV",
+    "25 Nov",
+    "https://www.ndtv.com/world-news/30-killed-in-fire-in-cairos-densely-populated-area-12377651#publisher=newsstand",
+    "30 Killed In Fire In Cairo's Densely Populated Area"
+   ],
+   [
+    "Times of India",
+    "25 Nov",
+    "https://timesofindia.indiatimes.com/world/rest-of-world/30-killed-15-injured-in-deadly-blaze-on-cairo-ring-road-after-fuel-vehicle-overturns/articleshow/136171820.cms",
+    "Egypt highway inferno kills 30 after fuel tanker overturns"
+   ],
+   [
+    "India Today",
+    "25 Nov",
+    "https://www.indiatoday.in/world/story/30-killed-15-injured-as-vehicle-carrying-petroleum-products-overturns-catches-fire-in-egypt-3047042-2026-11-26?utm_source=rss",
+    "30 killed, 15 injured after a petroleum tanker overturned and caught fire in Egypt"
+   ],
+   [
+    "The West Australian",
+    "25 Nov",
+    "https://thewest.com.au/news/conflict/blaze-kills-at-least-30-after-cairo-truck-overturns-c-23214555",
+    "Blaze kills at least 30 after Cairo truck overturns"
+   ],
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/at-least-30-killed-in-highway-fire-in-cairo-district",
+    "At least 30 killed in highway fire in Cairo district"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/news/world-news/dozens-killed-as-fuel-tanker-crash-ignites-massive-fire-on-major-road-near-cairo/a/165118480.html",
+    "Dozens killed as fuel tanker crash ignites massive fire on major road near Cairo"
+   ],
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-25/egypt-road-accident-kills-at-least-30-in-greater-cairo",
+    "Egypt Road Accident Kills at Least 30 in Greater Cairo"
+   ],
+   [
+    "Daily Mirror",
+    "25 Nov",
+    "https://www.mirror.co.uk/news/world-news/cairo-fire-egypt-crash-latest-37916003",
+    "Cairo fire: At least 30 dead after fuel tanker overturns and sparks fireball on motorway"
+   ],
+   [
+    "Sydney Morning Herald",
+    "25 Nov",
+    "https://www.smh.com.au/world/africa/dozens-of-people-killed-in-egypt-highway-blaze-after-vehicle-overturns-20261126-p61hdo.html?ref=rss&utm_medium=rss&utm_source=rss_feed",
+    "At least 30 people killed in massive blaze as fuel tanker crashes on Egypt highway"
+   ],
+   [
+    "The Age",
+    "25 Nov",
+    "https://www.theage.com.au/world/africa/dozens-of-people-killed-in-egypt-highway-blaze-after-vehicle-overturns-20261126-p61hdo.html?ref=rss&utm_medium=rss&utm_source=rss_feed",
+    "At least 30 people killed in massive blaze as fuel tanker crashes on Egypt highway"
+   ],
+   [
+    "Al-Monitor",
+    "25 Nov",
+    "https://www.al-monitor.com/originals/2026/11/egypt-says-30-dead-cairo-fire-after-fuel-truck-overturns",
+    "Egypt says 30 dead in Cairo fire after fuel truck overturns"
+   ],
+   [
+    "7NEWS",
+    "25 Nov",
+    "https://7news.com.au/news/world/blaze-kills-at-least-30-after-cairo-truck-overturns-c-23214561",
+    "Blaze kills at least 30 after Cairo truck overturns"
+   ],
+   [
+    "ABC7chicago.com",
+    "25 Nov",
+    "https://abc7chicago.com/story/fire-major-highway-surrounding-cairo-kills-least-30-people-egypts-health-ministry-says/20081051/",
+    "A fire on a major highway surrounding Cairo kills at least 30 people, Egypt’s Health Ministry says"
+   ],
+   [
+    "ABC7 New York",
+    "25 Nov",
+    "https://abc7ny.com/story/fire-major-highway-surrounding-cairo-kills-least-30-people-egypts-health-ministry-says/20081051/",
+    "A fire on a major highway surrounding Cairo kills at least 30 people, Egypt’s Health Ministry says"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "25 Nov",
+    "https://abc7.com/story/fire-major-highway-surrounding-cairo-kills-least-30-people-egypts-health-ministry-says/20081051/",
+    "A fire on a major highway surrounding Cairo kills at least 30 people, Egypt’s Health Ministry says"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "25 Nov",
+    "https://wtop.com/world/2026/11/a-fire-that-broke-out-on-a-major-highway-surrounding-cairo-has-killed-at-least-30-people-egypts-health-ministry-says/",
+    "Fuel tanker crash ignites a massive fire on a highway surrounding Cairo, killing at least 31 people"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/articles/cqy7rn30v314o?at_medium=RSS&at_campaign=rss",
+    "At least 30 killed in massive fire as fuel tanker crashes on Cairo highway"
+   ],
+   [
+    "The New York Times",
+    "25 Nov",
+    "https://www.nytimes.com/2026/11/25/world/middleeast/road-fire-near-cairo-kills-dozens-after-petroleum-laden-truck-crashes.html",
+    "Road Fire Near Cairo Kills Dozens After Petroleum-Laden Truck Crashes"
+   ],
+   [
+    "The Jerusalem Post",
+    "25 Nov",
+    "https://www.jpost.com/middle-east/article-916157",
+    "At least 30 killed in blaze after vehicle overturns in Egypt, health ministry says"
+   ]
+  ],
+  "king-tides-these-exceptionally-high-tides-increasingly": [
+   [
+    "Citizen Free Press",
+    "24 Nov",
+    "https://citizenfreepress.com/breaking/king-tides-take-aim-at-entire-california-coast/",
+    "King Tides take aim at entire California coast."
+   ],
+   [
+    "KTVU Fox 2",
+    "24 Nov",
+    "https://www.ktvu.com/news/king-tides-forecast-bay-area-potential-flooding-travel-impacts",
+    "King Tides forecast for the Bay Area: Potential flooding and travel impacts"
+   ],
+   [
+    "Phys.org",
+    "24 Nov",
+    "https://phys.org/news/2026-11-california-braces-triple-threat-huge.html",
+    "California braces for triple flooding threat of huge tides, El Niño, warm oceans"
+   ],
+   [
+    "The Globe and Mail",
+    "24 Nov",
+    "https://www.theglobeandmail.com/canada/article-bc-coast-flood-warnings-king-tides-storm-surge/",
+    "Storm surge, king tides prompt flood warnings for coastal B.C."
+   ],
+   [
+    "PBS NewsHour",
+    "24 Nov",
+    "https://www.pbs.org/newshour/nation/west-coast-king-tides-could-break-decades-old-records-and-flood-communities",
+    "West Coast king tides could break decades-old records and flood communities"
+   ],
+   [
+    "The Guardian",
+    "24 Nov",
+    "https://www.theguardian.com/weather/2026/nov/24/california-coast-flooding-thanksgiving-travel",
+    "California ‘king tides’ stress test San Francisco as low-lying areas flood"
+   ],
+   [
+    "Inside Climate News",
+    "25 Nov",
+    "https://insideclimatenews.org/news/24112026/san-francisco-bay-area-coastal-flooding/",
+    "San Francisco Bay Area Braces for Record Coastal Flooding"
+   ],
+   [
+    "KUSI-TV",
+    "25 Nov",
+    "https://fox5sandiego.com/news/local-news/coastal/king-tide-flooding-san-diego-mission-beach/",
+    "King tide hits Mission Beach as crews prepare for potential deluge through holiday"
+   ],
+   [
+    "KTTV - Fox 11 - Los Angeles",
+    "25 Nov",
+    "https://www.foxla.com/news/close-look-how-newport-harbor-is-adapting-rising-king-tides",
+    "Close look at how Newport Harbor is adapting to rising King tides"
+   ],
+   [
+    "KTLA",
+    "25 Nov",
+    "https://ktla.com/news/local-news/king-tides-set-to-rock-southern-california-coast-throughout-thanksgiving-holiday/",
+    "King tides set to rock Southern California coast throughout Thanksgiving holiday"
+   ],
+   [
+    "Live Science",
+    "25 Nov",
+    "https://www.livescience.com/planet-earth/rivers-oceans/california-braces-for-triple-flooding-threat-as-king-tides-overlap-with-super-el-nino",
+    "California braces for triple flooding threat as 'king tides' overlap with 'super' El Niño"
+   ],
+   [
+    "CityNews Vancouver",
+    "25 Nov",
+    "https://vancouver.citynews.ca/2026/11/25/what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/",
+    "What are king tides? These exceptionally high tides are increasingly flooding coastal communities"
+   ],
+   [
+    "Newsweek",
+    "25 Nov",
+    "https://www.newsweek.com/king-tide-flooding-dampers-thanksgiving-feast-from-coast-to-coast-12767754",
+    "King Tide Flooding Dampers Thanksgiving Feast From Coast to Coast"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/pacifica-pier-partially-collapses-as-huge-waves-pound-california-coast-videos-surface-101795635508011.html",
+    "Pacifica Pier partially collapses as huge waves pound California coast, videos surface"
+   ],
+   [
+    "Off The Press",
+    "25 Nov",
+    "https://offthepress.com/r/184749?c=rss",
+    "Video shows Pacifica Pier collapse as king tides batter Northern California landmark"
+   ],
+   [
+    "ABC7chicago.com",
+    "25 Nov",
+    "https://abc7.com/post/what-are-king-tides-exceptionally-high-increasingly-california-flooding-coastal-communities/20080948/",
+    "What are king tides? These exceptionally high tides are increasingly flooding coastal communities"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "25 Nov",
+    "https://wtop.com/national/2026/11/king-tides-and-strong-waves-destroy-part-of-pacifica-pier-as-officials-warn-of-coastal-flooding/",
+    "King tides and strong waves destroy part of Pacifica pier as officials warn of coastal flooding"
+   ],
+   [
+    "Winnipeg Free Press",
+    "25 Nov",
+    "https://www.winnipegfreepress.com/arts-and-life/life/greenpage/2026/11/25/king-tides-and-strong-waves-destroy-part-of-pacifica-pier-as-officials-warn-of-coastal-flooding",
+    "King tides and strong waves destroy part of Pacifica pier as officials warn of coastal flooding"
+   ]
+  ],
+  "offer-equal-tuition-fees-eu-students-burnham": [
+   [
+    "Guido Fawkes",
+    "25 Nov",
+    "https://order-order.com/2026/11/25/watch-burnham-says-tuition-fee-deal-wont-be-put-on-the-table/",
+    "WATCH: Burnham Says Tuition Fee Reduction “Won’t Be Put on the Table”"
+   ],
+   [
+    "Evening Standard",
+    "25 Nov",
+    "https://www.standard.co.uk/news/politics/andy-burnham-prime-minister-brussels-commons-b1306363.html",
+    "Reduction in tuition fees for EU students ‘won’t be on the table’, says Burnham"
+   ],
+   [
+    "City AM",
+    "25 Nov",
+    "https://www.cityam.com/burnham-says-eu-deal-removed-threat-of-made-in-europe-scheme-in-clash-with-badenoch/",
+    "Burnham says EU deal ‘removed threat’ of Made in Europe scheme in clash with Badenoch"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/europe/andy-burnham-says-britain-wont-offer-domestic-tuition-fees-to-eu-students",
+    "Andy Burnham says Britain won’t offer domestic tuition fees to EU students"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/news/article-16321489/Andy-Burnham-wriggles-cave-EU-demands-cut-price-student-tuition-fees-promises-higher-Brits.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Andy Burnham wriggles over whether he will cave to EU demands for cut-price student tuition fees... but promises they will be higher than for Brits"
+   ],
+   [
+    "Politico Europe",
+    "25 Nov",
+    "https://www.politico.eu/article/uk-will-not-offer-equal-tuition-fees-for-eu-students-says-andy-burnham/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "UK will not offer equal tuition fees for EU students, says Burnham"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/articles/cw4gn8lxj5r1o?at_medium=RSS&at_campaign=rss",
+    "Badenoch challenges Burnham over university fees for EU students"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/uk-news/2026/nov/25/eu-nationals-will-pay-higher-tuition-fees-than-uk-students-burnham-indicates",
+    "EU nationals will pay higher tuition fees than UK students, Burnham indicates"
+   ]
+  ],
+  "israeli-judges-recommend-dropping-bribery-case-netanyahu": [
+   [
+    "Haaretz",
+    "24 Nov",
+    "https://www.haaretz.com/israel-news/israel-politics/2026-11-24/ty-article/.premium/netanyahu-the-negotiator-proves-he-is-no-partner/000001a2-0c3b-d221-a3e3-0d3f0b850000",
+    "Netanyahu the negotiator proves he is no partner"
+   ],
+   [
+    "The Jerusalem Post",
+    "25 Nov",
+    "https://www.jpost.com/israel-news/crime-in-israel/article-916054",
+    "Netanyahu trial judges suggest dropping Case 4000, reconsider Case 2000 as A-G attends hearing"
+   ],
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-25/netanyahu-trial-judges-urge-two-cases-be-shelved-or-reviewed",
+    "Netanyahu Trial Judges Urge Two Cases Be Shelved or Reviewed"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/middle-east/israels-netanyahu-trial-judges-urge-two-cases-be-shelved-or-reviewed",
+    "Israel’s Netanyahu trial judges urge two cases be shelved or reviewed"
+   ],
+   [
+    "RTÉ News",
+    "25 Nov",
+    "https://www.rte.ie/news/2026/1125/1600664-benjamin-netanyahu-court/",
+    "Israeli judges question Netanyahu corruption charges"
+   ],
+   [
+    "Al-Monitor",
+    "25 Nov",
+    "https://www.al-monitor.com/originals/2026/11/netanyahu-demands-graft-trial-end-judges-urge-key-charges-dropped-what-know",
+    "Netanyahu demands graft trial end as judges urge key charges dropped: What to know"
+   ],
+   [
+    "CNA",
+    "25 Nov",
+    "https://www.channelnewsasia.com/world/israel-gaza-netanyahu-eisenkot-6582466",
+    "Israeli lawmakers advance Oct 7 inquiry opposed by Netanyahu"
+   ],
+   [
+    "France 24",
+    "25 Nov",
+    "https://www.france24.com/en/in-boost-for-netanyahu-judges-question-corruption-trial-charges",
+    "In boost for Netanyahu, judges question corruption trial charges"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/articles/cxj05mv723r2o?at_medium=RSS&at_campaign=rss",
+    "Israeli judges recommend dropping most serious charges against Netanyahu"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/israeli-judges-recommend-prosecutors-drop-one-bribery-case-against-netanyahu-101795637466095.html",
+    "Israeli judges recommend prosecutors drop one bribery case against Netanyahu"
+   ],
+   [
+    "KFGO - 790 AM - Fargo",
+    "25 Nov",
+    "https://kfgo.com/2026/11/25/israeli-judges-recommend-prosecutors-drop-one-bribery-case-against-netanyahu/",
+    "Israeli judges recommend prosecutors drop one bribery case against Netanyahu"
+   ],
+   [
+    "Al Jazeera English",
+    "25 Nov",
+    "https://www.aljazeera.com/news/2026/11/25/netanyahu-says-corruption-trial-must-end-as-court-suggests-dropping-case?traffic_source=rss",
+    "Netanyahu says corruption trial ‘must end’ as court suggests dropping case"
+   ],
+   [
+    "The New York Times",
+    "25 Nov",
+    "https://www.nytimes.com/2026/11/25/world/middleeast/judges-israel-corruption-case-netanyahu.html",
+    "Judges in Israel Suggest Dropping Key Corruption Case Against Netanyahu"
+   ]
+  ],
+  "china-sends-foreign-astronaut-iss-rival-globalises": [
+   [
+    "Nature News",
+    "24 Nov",
+    "https://www.nature.com/articles/d41586-026-03829-y",
+    "Pakistani astronaut to become first foreign visitor to China’s space station"
+   ],
+   [
+    "Phys.org",
+    "24 Nov",
+    "https://phys.org/news/2026-11-china-unveils-space-mission-crew.html",
+    "China unveils new space mission crew, with a Pakistani astronaut set to board its space station"
+   ],
+   [
+    "Space.com",
+    "24 Nov",
+    "https://www.space.com/space-exploration/international-space-station/russia-progress-97-cargo-launch-international-space-station",
+    "Russia launches Progress 97 cargo ship to the International Space Station (video)"
+   ],
+   [
+    "The Express Tribune",
+    "25 Nov",
+    "https://tribune.com.pk/story/2642235/shenzhou-24-carrying-pakistans-first-astronaut-docks-at-chinas-space-station",
+    "'Pakistan has begun its journey beyond the stars': Shenzhou-24 carrying Zeeshan Ali docks at China's space station"
+   ],
+   [
+    "CBS News",
+    "25 Nov",
+    "https://www.cbsnews.com/news/china-launches-shenzhou-24-spacecraft/",
+    "China launches first foreign astronaut to its space station"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/china-launches-pakistani-astronaut-into-space-aboard-its-long-march-2f-rocket-tiangong-space-station-shenzhou-24-mission-101795569133172.html",
+    "China launches Pakistani astronaut into space aboard its Long March 2F rocket"
+   ],
+   [
+    "Indian Express",
+    "25 Nov",
+    "https://indianexpress.com/article/world/china-shenzhou-24-pakistani-astronaut-muhammad-zeeshan-tiangong-video-10977380/",
+    "Pakistan’s first astronaut lifts off aboard China’s Shenzhou-24 spacecraft: VIDEO"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/videos/cmz74l0yzzvyo?at_medium=RSS&at_campaign=rss",
+    "Moment Chinese space mission lifts off with first Pakistan astronaut aboard"
+   ],
+   [
+    "VnExpress International",
+    "25 Nov",
+    "https://e.vnexpress.net/news/news/china-rocket-blasts-off-on-shenzhou-24-mission-5148611.html",
+    "China rocket blasts off on Shenzhou-24 mission"
+   ],
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/china-sends-first-foreign-astronaut-to-its-space-station-as-pakistani-joins-shenzhou-24-cr",
+    "China sends first foreign astronaut to its space station as Pakistani joins Shenzhou 24 crew"
+   ],
+   [
+    "The Hindu",
+    "25 Nov",
+    "https://www.thehindu.com/sci-tech/science/chinas-shenzhou-24-space-flight-takes-off-with-pakistani-national-as-first-foreign-astronaut/article71740891.ece",
+    "China launches crewed spaceship carrying first Pakistani astronaut to its space station"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/science/2026/nov/25/china-sends-first-pakistani-astronaut-into-space",
+    "China sends first foreign astronaut to ISS rival as it globalises space operations"
+   ],
+   [
+    "The Globe and Mail",
+    "25 Nov",
+    "https://www.theglobeandmail.com/canada/article-canadian-astronaut-joshua-kutryk-welcomes-baby/",
+    "Canadian astronaut aboard space station welcomes baby girl born on Earth"
+   ]
+  ],
+  "chinas-huawei-convicted-stealing-trade-secrets": [
    [
     "Sky News",
     "24 Nov",
@@ -1799,46 +2204,10 @@ window.DAYBREAK = {
     "China’s Huawei convicted of stealing US trade secrets"
    ],
    [
-    "PBS NewsHour",
-    "24 Nov",
-    "https://www.pbs.org/newshour/nation/u-s-jury-finds-chinese-tech-giant-huawei-guilty-of-conspiracy-to-steal-trade-secrets-bank-fraud",
-    "U.S. jury finds Chinese tech giant Huawei guilty of conspiracy to steal trade secrets, bank fraud"
-   ],
-   [
-    "Daily Caller",
-    "24 Nov",
-    "https://dailycaller.com/2026/11/24/chinese-telecom-giant-huawei-guilty-of-stealing-us-trade-secrets-bank-fraud",
-    "Chinese Telecom Giant Huawei Found Guilty Of Stealing US Trade Secrets, Bank Fraud"
-   ],
-   [
     "The Globe and Mail",
     "24 Nov",
     "https://www.theglobeandmail.com/world/article-huawei-conspiracy-trade-secrets/",
     "Huawei guilty of conspiracy to steal trade secrets, U.S. jury finds"
-   ],
-   [
-    "Hindustan Times",
-    "24 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/us-jury-convicts-huawei-of-trade-secrets-theft-conspiracy-iran-related-bank-fraud-101795556193549.html",
-    "US jury convicts Huawei of trade secrets theft conspiracy, Iran-related bank fraud"
-   ],
-   [
-    "The Journal",
-    "24 Nov",
-    "https://www.thejournal.ie/huawei-conviction-trade-secrets-stealing-7236992-Nov2026/",
-    "US jury convicts China tech giant Huawei of stealing trade secrets"
-   ],
-   [
-    "Interesting Engineering",
-    "24 Nov",
-    "https://interestingengineering.com/culture/chinese-giant-huawei-guilty-us-trade-secrets",
-    "Chinese giant Huawei found guilty of stealing US trade secrets in espionage case"
-   ],
-   [
-    "The Verge",
-    "24 Nov",
-    "https://www.theverge.com/tech/1041820/huawei-guilty-trade-secrets-trial",
-    "Huawei found guilty of stealing trade secrets"
    ],
    [
     "Financial Times",
@@ -1859,12 +2228,6 @@ window.DAYBREAK = {
     "China’s Huawei Convicted of Fraud in U.S. Criminal Trial"
    ],
    [
-    "Al-Monitor",
-    "24 Nov",
-    "https://www.al-monitor.com/originals/2026/11/chinas-huawei-convicted-sprawling-us-criminal-trial-over-iran-business",
-    "China's Huawei convicted in sprawling US criminal trial over Iran business"
-   ],
-   [
     "The Hindu",
     "24 Nov",
     "https://www.thehindu.com/sci-tech/technology/chinese-tech-giant-huawei-is-guilty-of-conspiracy-to-steal-trade-secrets-us-jury-finds/article71740060.ece",
@@ -1875,24 +2238,6 @@ window.DAYBREAK = {
     "24 Nov",
     "https://citizenfreepress.com/breaking/huawei-found-guilty-of-stealing-u-s-trade-secrets/",
     "Huawei found guilty of stealing U.S. trade secrets."
-   ],
-   [
-    "France 24",
-    "24 Nov",
-    "https://www.france24.com/en/americas/20261124-new-york-jury-convicts-huawei-of-stealing-trade-secrets",
-    "New York jury convicts Huawei of stealing trade secrets"
-   ],
-   [
-    "Hot Air",
-    "25 Nov",
-    "https://hotair.com/john-s-2/2026/11/24/doj-gets-a-symbolic-win-against-huawei-and-chinese-theft-n3821336",
-    "DOJ Gets a Symbolic Win Against Huawei and Chinese Theft"
-   ],
-   [
-    "Newstalk ZB",
-    "25 Nov",
-    "https://www.newstalkzb.co.nz/news/business/chinese-tech-giant-huawei-found-guilty-of-us-criminal-charges-in-landmark-case/",
-    "Chinese tech giant Huawei found guilty of US criminal charges in landmark case"
    ],
    [
     "Indian Express",
@@ -1907,22 +2252,16 @@ window.DAYBREAK = {
     "U.S. jury convicts Huawei in a criminal trial over fraud and trade secrets"
    ],
    [
-    "The Express Tribune",
+    "Hindustan Times",
     "25 Nov",
-    "https://tribune.com.pk/story/2642249/chinas-huawei-convicted-in-sprawling-us-criminal-trial-over-iran-business",
-    "China's Huawei convicted in sprawling US criminal trial over Iran business"
-   ],
-   [
-    "BBC News",
-    "25 Nov",
-    "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&at_campaign=rss",
-    "Huawei found guilty of stealing US trade secrets but acquitted of racketeering"
+    "https://www.hindustantimes.com/world-news/huawei-says-us-conviction-against-chinese-company-has-no-legal-or-factual-merit-trade-secrets-iran-bank-fraud-rico-charges-101795575522827.html",
+    "Huawei says US conviction against Chinese company has no ‘legal or factual merit’"
    ],
    [
     "Iran International",
     "25 Nov",
     "https://www.iranintl.com/en/202611251744",
-    "China’s Huawei convicted in US trial over covert business with Iran"
+    "Huawei convicted over covert Iran business behind Tehran's internet controls"
    ],
    [
     "Android Authority",
@@ -1937,256 +2276,64 @@ window.DAYBREAK = {
     "Huawei hits back at US conviction, says verdict ‘without legal or factual merit’"
    ],
    [
-    "Irish Independent",
+    "Time",
     "25 Nov",
-    "https://www.independent.ie/world-news/chinese-tech-giant-huawei-convicted-of-stealing-trade-secrets-in-us-trial/a/165064819.html",
-    "Chinese tech giant Huawei convicted of stealing trade secrets in US trial"
-   ],
-   [
-    "Investing.com",
-    "25 Nov",
-    "https://www.investing.com/news/economy-news/chinas-huawei-convicted-at-us-criminal-trial-stemming-from-iran-business-5048943",
-    "China’s Huawei convicted in sprawling US criminal trial over Iran business"
-   ],
-   [
-    "Business Insider",
-    "25 Nov",
-    "https://www.businessinsider.com/us-jury-convicted-huawei-conspiring-steal-trade-secrets-2026-11",
-    "A US jury convicted Chinese tech giant Huawei of conspiring to steal trade secrets"
-   ]
-  ],
-  "we-make-disability-benefits-system-work-better": [
-   [
-    "Daily Mirror",
-    "23 Nov",
-    "https://www.mirror.co.uk/news/politics/stephen-timms-pip-disability-benefit-37905282",
-    "Standard PIP payments should be replaced and system not fit for purpose, warns minister"
-   ],
-   [
-    "i News",
-    "23 Nov",
-    "https://inews.co.uk/news/politics/motability-cars-restricted-under-25s-benefits-shake-up-4911248",
-    "How PIP claimants could lose access to Motability cars under benefits reform"
-   ],
-   [
-    "Guido Fawkes",
-    "24 Nov",
-    "https://order-order.com/2026/11/24/labours-welfare-review-recommendations-set-to-cost-taxpayer-5-billion-extra-per-year/",
-    "Labour’s Welfare Review Recommendations Set to Cost Taxpayer £5 Billion Extra Per Year"
-   ],
-   [
-    "The Guardian",
-    "24 Nov",
-    "https://www.theguardian.com/uk-news/2026/nov/24/ministers-approve-fast-track-disability-payments-in-england-and-wales",
-    "Ministers approve fast-track disability payments in England and Wales"
-   ],
-   [
-    "LeedsLive",
-    "24 Nov",
-    "https://www.leeds-live.co.uk/news/uk-world-news/dwp-urged-introduce-fast-track-34959104",
-    "DWP urged to introduce fast-track PIP process for 2 groups of claimants"
-   ],
-   [
-    "The Week UK",
-    "24 Nov",
-    "https://theweek.com/politics/why-is-it-so-hard-to-get-disability-benefits-right",
-    "Why is it so hard to get disability benefits right?"
-   ],
-   [
-    "Yorkshire Post",
-    "24 Nov",
-    "https://www.yorkshirepost.co.uk/news/politics/major-pip-review-calls-for-full-system-reform-of-disability-benefit-9371294",
-    "Pip review: major report calls for ‘full system reform’ which could lead to less money for some"
-   ],
-   [
-    "Resolution Foundation",
-    "24 Nov",
-    "https://www.resolutionfoundation.org/comment/can-we-make-our-disability-benefits-system-work-better-and-cost-less/",
-    "Can we make our disability benefits system work better and cost less?"
-   ],
-   [
-    "Evening Standard",
-    "24 Nov",
-    "https://www.standard.co.uk/news/politics/stephen-timms-press-association-resolution-foundation-andy-burnham-stephen-b1306191.html",
-    "Some Pip claimants might receive less in ‘rebalancing’, says review co-chair"
-   ],
-   [
-    "Pulse",
-    "24 Nov",
-    "https://www.pulsetoday.co.uk/news/clinical-areas/musculoskeletal-rheumatology-sports-medicine/people-applying-for-pip-should-not-pay-gps-to-provide-additional-evidence-review-says/",
-    "People applying for PIP ‘should not pay GPs to provide additional evidence’, review says"
+    "https://time.com/article/2026/11/25/huawei-guilty-crimes-fraud-conspiracy-sanctions-us-china/",
+    "China’s Huawei Convicted in U.S. Over Bank Fraud, Iran Ties"
    ],
    [
     "BBC News",
-    "24 Nov",
-    "https://www.bbc.co.uk/news/articles/cm4gn6gn9057o?at_medium=RSS&at_campaign=rss",
-    "Disability benefit review calls for closer link with claimant costs"
-   ],
-   [
-    "Channel 4 News",
-    "24 Nov",
-    "https://www.channel4.com/news/uk-benefit-system-not-fit-for-purpose-pip-review-explained",
-    "UK benefit system ‘not fit for purpose’ – PIP review explained"
-   ],
-   [
-    "Birmingham Mail",
     "25 Nov",
-    "https://www.birminghammail.co.uk/news/cost-of-living/666000-pip-claimants-most-risk-34961836",
-    "666,000 PIP claimants most at risk from DWP shake-up after Timms Review"
-   ]
-  ],
-  "novembers-beaver-moon-supermoon-rises-tonight": [
-   [
-    "Time",
-    "23 Nov",
-    "https://time.com/article/2026/11/23/thanksgiving-beaver-supermoon-what-to-know/",
-    "What to Know About The Supermoon Appearing This Thanksgiving Week"
+    "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&at_campaign=rss",
+    "Huawei found guilty of stealing US trade secrets but acquitted of racketeering"
    ],
    [
-    "Space.com",
-    "24 Nov",
-    "https://www.space.com/stargazing/novembers-full-moon-rises-tonight-heres-how-to-see-the-beaver-moon-supermoon-nov-24-2026",
-    "November's full moon rises tonight! Here's how to see the Beaver Moon supermoon"
-   ],
-   [
-    "HuffPost UK",
-    "24 Nov",
-    "https://www.huffingtonpost.co.uk/entry/november-beaver-moon-when_uk_6b057a1be4b0cf294a14a7e4",
-    "The November Beaver Moon Is On Its Way. Here’s When To See It In The UK"
-   ],
-   [
-    "Daily Mail",
-    "24 Nov",
-    "https://www.dailymail.com/sciencetech/article-16318179/supermoons-skies-lunar-satellite-brighter-larger.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-    "Look up tonight for something super! The first of four consecutive supermoons will light up skies - as our lunar satellite appears 30% brighter and 14% larger than usual"
-   ],
-   [
-    "RNZ",
-    "24 Nov",
-    "https://www.rnz.co.nz/news/science-and-technology/2769735/spectacular-showing-may-linger-for-beaver-supermoon",
-    "'Spectacular' showing may linger for beaver supermoon"
-   ],
-   [
-    "Euronews",
+    "Fortune",
     "25 Nov",
-    "https://www.euronews.com/video/2026/11/25/watch-beaver-supermoon-lights-up-skies-around-the-world",
-    "Watch: 'Beaver Supermoon' lights up skies around the world"
-   ]
-  ],
-  "blacklist-asian-ai-firm-megaspeed-nvidia-scandal": [
-   [
-    "Citizen Free Press",
-    "23 Nov",
-    "https://citizenfreepress.com/breaking/u-s-investigates-megaspeed-and-alice-huang/",
-    "U.S. investigates Megaspeed and Alice Huang."
-   ],
-   [
-    "The New York Times",
-    "23 Nov",
-    "https://www.nytimes.com/2026/11/17/business/economy/megaspeed-investigation-trump-doj.html",
-    "Facing Criticism, Trump Administration Says It’s Investigating Megaspeed"
-   ],
-   [
-    "The Information",
-    "23 Nov",
-    "https://www.theinformation.com/briefings/trump-administration-will-add-nvidia-linked-megaspeed-trade-blacklist",
-    "Trump Administration Adds Nvidia-linked Megaspeed to Trade Blacklist"
-   ],
-   [
-    "TechCrunch",
-    "23 Nov",
-    "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/",
-    "Megaspeed, the company at the center of the Jensen Huang scandal, appears headed for a US blacklist"
-   ],
-   [
-    "The Globe and Mail",
-    "23 Nov",
-    "https://www.theglobeandmail.com/business/article-us-blacklists-megaspeed-nvidia-jensen-huang/",
-    "U.S. blacklists Megaspeed, Singapore-based chip firm linked to Nvidia scandal"
+    "https://fortune.com/2026/11/25/huawei-us-trial-racketeering-china-national-champion/",
+    "Huawei convicted on 10 counts in U.S. trial, but verdict is unlikely to slow China’s ‘national champion’"
    ],
    [
     "Fox Business",
-    "23 Nov",
-    "https://www.foxbusiness.com/politics/trump-admin-adds-megaspeed-commerce-department-trade-blacklist-after-nvidia-scandal",
-    "Trump admin adds Megaspeed to Commerce Department trade blacklist after Nvidia scandal"
+    "25 Nov",
+    "https://www.foxbusiness.com/fox-news-tech/federal-jury-convicts-huawei-stealing-us-trade-secrets-violating-iran-sanctions",
+    "Federal jury convicts Huawei of stealing US trade secrets, violating Iran sanctions"
+   ],
+   [
+    "Conservative Review",
+    "25 Nov",
+    "https://www.conservativereview.com/chinese-tech-giant-federally-convicted-of-defrauding-us-conspiracy-to-steal-trade-secrets-2678525207.html",
+    "Chinese tech giant federally convicted of defrauding US, conspiracy to steal trade secrets"
+   ],
+   [
+    "TechRadar",
+    "25 Nov",
+    "https://www.techradar.com/pro/huawei-found-guilty-of-attempting-to-steal-us-trade-secrets",
+    "Huawei found guilty of attempting to steal US trade secrets - but not guilty of conspiracy to obstruct justice or racketeeting"
    ],
    [
     "The Hill",
-    "23 Nov",
-    "https://thehill.com/policy/technology/6238594-commerce-blacklists-megaspeed-nvidia/",
-    "Commerce Department adds Megaspeed to trade blacklist amid Nvidia scandal"
+    "25 Nov",
+    "https://thehill.com/policy/technology/6242450-huawei-guilty-iran-sanctions-trade-secrets/",
+    "Huawei found guilty in trade secrets theft case"
    ],
    [
-    "BBC News",
-    "23 Nov",
-    "https://www.bbc.co.uk/news/articles/cv98xpg5dg5zo?at_medium=RSS&at_campaign=rss",
-    "US to blacklist Asian AI firm Megaspeed after Nvidia scandal"
-   ],
-   [
-    "Washington Post",
-    "24 Nov",
-    "https://www.washingtonpost.com/technology/2026/11/23/trump-administration-blacklists-megaspeed-key-firm-nvidia-scandal/",
-    "Trump administration blacklists Megaspeed, key firm in Nvidia scandal"
-   ],
-   [
-    "Indian Express",
-    "24 Nov",
-    "https://indianexpress.com/article/world/hours-after-jensen-huang-returns-to-nvidia-trump-sanctions-singapores-megaspeed-10975793/",
-    "Hours after Jensen Huang returns to Nvidia, Trump blacklists Singapore’s Megaspeed: Report"
-   ],
-   [
-    "CNBC",
-    "24 Nov",
-    "https://www.cnbc.com/2026/11/24/us-adds-megaspeed-to-trade-blacklist-over-export-control-concerns-.html",
-    "U.S. adds Megaspeed to trade blacklist over export control concerns amid Nvidia controversy"
-   ],
-   [
-    "South China Morning Post",
-    "24 Nov",
-    "https://www.scmp.com/tech/tech-war/article/3375556/us-places-megaspeed-blacklist-jensen-huang-returns-helm-nvidia",
-    "US places Megaspeed on blacklist as Jensen Huang returns to helm of Nvidia"
-   ],
-   [
-    "Slashdot",
-    "24 Nov",
-    "https://slashdot.org/story/26/11/24/0252253/us-to-blacklist-asian-ai-firm-megaspeed-after-nvidia-scandal?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-    "US To Blacklist Asian AI Firm Megaspeed After Nvidia Scandal"
-   ],
-   [
-    "Political Wire",
-    "24 Nov",
-    "https://politicalwire.com/2026/11/24/the-real-nvidia-scandal/",
-    "The Real Nvidia Scandal"
-   ],
-   [
-    "Breitbart",
-    "24 Nov",
-    "https://www.breitbart.com/tech/2026/11/24/commerce-department-blacklists-megaspeed-the-company-at-the-heart-of-jensen-huangs-china-spy-scandal/",
-    "Commerce Department Blacklists Megaspeed, the Company at the Heart of Jensen Huang's China Spy Scandal"
+    "Ars Technica",
+    "25 Nov",
+    "https://arstechnica.com/tech-policy/2026/11/jury-convicts-huawei-of-stealing-us-trade-secrets-evading-iran-sanctions/",
+    "Guilty: Huawei faces steep penalties for stealing T-Mobile, Cisco trade secrets"
    ],
    [
     "Livemint",
-    "24 Nov",
-    "https://www.livemint.com/companies/news/megaspeed-blacklisted-by-us-over-alleged-nvidia-chip-diversion-to-china-heres-what-it-means-11795527414065.html",
-    "Megaspeed blacklisted by US over alleged Nvidia chip diversion to China; Here's what it means"
-   ],
-   [
-    "The Verge",
-    "24 Nov",
-    "https://www.theverge.com/policy/1041270/nvidia-megaspeed-commerce-dept-entity-list",
-    "US Commerce Department adds Megaspeed to trade blacklist as Huang retakes control of Nvidia"
-   ],
-   [
-    "The Hindu",
-    "24 Nov",
-    "https://www.thehindu.com/news/international/us-blacklists-megaspeed-chip-firm-linked-to-nvidia-scandal/article71739692.ece",
-    "U.S. blacklists Megaspeed chip firm linked to Nvidia scandal"
-   ],
-   [
-    "Taipei Times",
     "25 Nov",
-    "https://www.taipeitimes.com/News/biz/archives/2026/11/25/2003868323",
-    "US blacklists Alibaba subsidiary and Megaspeed linked to Nvidia scandal"
+    "https://www.livemint.com/companies/why-huawei-convicted-in-us-how-its-iran-business-triggered-7-yr-legal-battle-what-it-means-for-china-s-tech-goals-11795627748235.html",
+    "Why Huawei convicted in US? How its Iran business triggered 7-yr legal battle - what it means for China’s tech goals"
+   ],
+   [
+    "Slashdot",
+    "25 Nov",
+    "https://yro.slashdot.org/story/26/11/25/0742222/huawei-is-guilty-of-conspiracy-to-steal-trade-secrets-a-us-jury-finds?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "Huawei Is Guilty of Conspiracy To Steal Trade Secrets, a US Jury Finds"
    ]
   ],
   "astronomers-discover-oldest-known-quasar-forming-630": [
@@ -2209,188 +2356,28 @@ window.DAYBREAK = {
     "Newly found farthest quasar from Earth is also oldest known to man"
    ],
    [
-    "The Express Tribune",
-    "24 Nov",
-    "https://tribune.com.pk/story/2642125/astronomers-spot-record-setting-quasar-in-the-early-universe",
-    "Astronomers spot record-setting quasar in the early universe"
-   ],
-   [
-    "Big Think",
-    "24 Nov",
-    "https://bigthink.com/series/the-big-think-interview/telescopes-universe-past/",
-    "The universe built its own telescope out of space and time"
-   ],
-   [
     "The Globe and Mail",
     "24 Nov",
     "https://www.theglobeandmail.com/canada/science/article-astronomers-spot-oldest-known-quasar/",
     "Astronomers spot record-setting quasar in the early universe"
    ],
    [
-    "NDTV",
+    "India Today",
     "25 Nov",
-    "https://www.ndtv.com/world-news/astronomers-spot-oldest-known-quasar-in-universe-12371908#publisher=newsstand",
-    "Astronomers Spot Oldest-Known Quasar In Universe"
-   ]
-  ],
-  "fossil-fuel-dispute-leaves-cop31-without-overarching": [
-   [
-    "Axios",
-    "23 Nov",
-    "https://www.axios.com/2026/11/23/un-climate-talks-meltdown-aftermath",
-    "UN climate meltdown raises new doubts about talks"
+    "https://www.indiatoday.in/science/story/dun-aonghasa-quasar-solar-masses-scientists-universe-space-esa-black-hole-3046622-2026-11-25?utm_source=rss",
+    "Astronomers spot oldest-known quasar powered by black hole. What is it?"
    ],
    [
-    "Inside Climate News",
-    "23 Nov",
-    "https://insideclimatenews.org/news/23112026/inside-climate-podcast-glimmers-of-hope/",
-    "Climate Hope"
-   ],
-   [
-    "NPR",
-    "23 Nov",
-    "https://www.npr.org/2026/11/23/g-s1-155021/up-first-newsletter-midterms-house-ai-stocks-poland-nato-cop31",
-    "Democrats win House by largest margin in 50 years. And, COP31 ends with no deal"
-   ],
-   [
-    "DW News",
-    "23 Nov",
-    "https://www.dw.com/en/cop-deadlock-prompts-calls-for-a-reset-of-climate-diplomacy/a-80020494?maca=en-rss_en_environment-22607-xml-mrss",
-    "COP deadlock prompts calls for a reset of climate diplomacy"
-   ],
-   [
-    "The Globe and Mail",
-    "23 Nov",
-    "https://www.theglobeandmail.com/canada/video-cop31-talks-end-without-an-overarching-un-climate-deal/",
-    "COP31 talks end without an overarching UN climate deal"
-   ],
-   [
-    "New Scientist",
-    "23 Nov",
-    "https://www.newscientist.com/article/2600331-cop31-collapse-has-shattered-the-pretense-of-a-global-climate-consensus/?utm_campaign=RSS|NSNS&utm_content=environment&utm_medium=RSS&utm_source=NSNS",
-    "COP31 collapse has shattered the pretence of a global climate consensus"
-   ],
-   [
-    "Ars Technica",
-    "23 Nov",
-    "https://arstechnica.com/science/2026/11/cop31-ends-in-failure-as-countries-split-over-fossil-fuels-climate-finance/",
-    "COP31 ends in failure as countries split over fossil fuels, climate finance"
-   ],
-   [
-    "The New York Times",
-    "23 Nov",
-    "https://www.nytimes.com/2026/11/23/climate/cop31-collapse-what-next.html",
-    "COP31 Climate Talks Broke Down. Now What?"
-   ],
-   [
-    "Scroll.in",
-    "23 Nov",
-    "https://scroll.in/article/1097247/as-cop31-talks-collapse-the-future-of-international-climate-cooperation-could-change?utm_source=rss&utm_medium=public",
-    "As COP31 talks collapse, the future of international climate cooperation could change"
-   ],
-   [
-    "Time",
-    "23 Nov",
-    "https://time.com/article/2026/11/23/cop31-failure-new-phase-climate-action/",
-    "The Failed U.N. COP31 Deal Reveals a New Reality for Climate Action"
-   ],
-   [
-    "Mongabay",
-    "23 Nov",
-    "https://news.mongabay.com/short-article/2026/11/analysis-the-collapse-of-un-climate-talks-over-fossil-fuels-was-years-in-the-making/",
-    "Analysis: The collapse of UN climate talks, over fossil fuels, was years in the making"
-   ],
-   [
-    "American Wire News",
-    "23 Nov",
-    "https://americanwirenews.com/al-gore-erupts-after-un-climate-summit-collapses-critics-point-to-93-private-jets-and-cry-hypocrisy/",
-    "Al Gore erupts after UN climate summit collapses — critics point to 93 private jets and cry hypocrisy"
-   ],
-   [
-    "Grist",
-    "23 Nov",
-    "https://grist.org/cop31/how-cop31-became-climate-diplomacys-darkest-moment/",
-    "How COP31 became climate diplomacy’s ‘darkest moment’"
-   ],
-   [
-    "Washington Post",
-    "23 Nov",
-    "https://www.washingtonpost.com/world/2026/11/23/collapse-un-summit-intensifies-calls-new-approach-climate-talks/",
-    "Collapse of U.N. summit intensifies calls for new approach to climate talks"
-   ],
-   [
-    "Armstrong Economics",
-    "24 Nov",
-    "https://www.armstrongeconomics.com/world-news/climate/the-climate-agenda-collapses-as-the-world-confronts-an-energy-crisis/",
-    "The Climate Agenda Collapses as the World Confronts an Energy Crisis"
-   ],
-   [
-    "The Hindu",
-    "24 Nov",
-    "https://www.thehindu.com/sci-tech/energy-and-environment/cop31-fails-to-agree-on-climate-deal-in-chaotic-finale/article71731651.ece",
-    "COP31 talks fail as EU, others reject any climate deal without language on a fossil fuel phase-out"
-   ],
-   [
-    "Smithsonian Magazine",
-    "24 Nov",
-    "https://www.smithsonianmag.com/science-nature/the-six-biggest-takeaways-from-cop31-which-ended-without-an-agreement-after-talks-broke-down-180989933/",
-    "The Six Biggest Takeaways From COP31, Which Ended Without an Agreement After Talks Broke Down"
-   ],
-   [
-    "Environment + Energy – The Conversation",
-    "24 Nov",
-    "https://theconversation.com/the-silver-lining-of-the-cop31-flop-climate-coalitions-will-rise-and-the-shift-away-from-fossil-fuels-will-accelerate-297294",
-    "The silver lining of the COP31 flop? Climate coalitions will rise – and the shift away from fossil fuels will accelerate"
-   ],
-   [
-    "The Scotsman",
+    "Space.com",
     "25 Nov",
-    "https://www.scotsman.com/news/opinion/columnists/the-huge-silver-lining-of-the-collapse-of-cop31-climate-change-talks-9368192",
-    "The massive silver lining of the collapse of COP31 climate change talks – Ian Johnston"
-   ]
-  ],
-  "shein-agrees-100-million-settlement-shopping-claims": [
-   [
-    "Bloomberg",
-    "24 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-24/us-ftc-sues-shein-for-allegedly-deceiving-consumers-on-products",
-    "Shein to Pay $100 Million to End US Deceptive Marketing Case"
+    "https://www.space.com/astronomy/black-holes/dark-universe-detective-telescope-discovers-most-distant-and-ancient-supermassive-black-hole-powered-quasar",
+    "Astronomers discover the most distant and ancient supermassive black hole-powered quasar in the universe"
    ],
    [
-    "KSTP-TV",
-    "24 Nov",
-    "https://kstp.com/kstp-news/business-news/shein-to-pay-100-million-to-settle-federal-trade-commission-allegations-over-deceptive-practices/",
-    "Shein to pay $100 million to settle Federal Trade Commission allegations over deceptive practices"
-   ],
-   [
-    "The Wall Street Journal",
-    "24 Nov",
-    "https://www.wsj.com/business/retail/shein-to-pay-100-million-to-settle-ftc-claims-of-unfair-customer-service-1d294269?mod=pls_whats_news_us_business_f",
-    "Shein to Pay $100 Million to Settle FTC Claims of Unfair Customer Service"
-   ],
-   [
-    "CBS News",
-    "24 Nov",
-    "https://www.cbsnews.com/news/shein-100-million-ftc-deceptive-practices-settlement/",
-    "Shein to pay $100 million to settle claims it deceived customers"
-   ],
-   [
-    "South China Morning Post",
+    "Live Science",
     "25 Nov",
-    "https://www.scmp.com/tech/article/3375701/shein-pay-us100-million-settle-us-shipping-customer-service-claims",
-    "Shein to pay US$100 million to settle US shipping, customer service claims"
-   ],
-   [
-    "Seeking Alpha",
-    "25 Nov",
-    "https://seekingalpha.com/news/4676431-chinese-fast-fashion-giant-shein-to-pay-100m-to-settle-ftc-allegations?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-    "Chinese fast-fashion giant Shein to pay $100M to settle FTC allegations"
-   ],
-   [
-    "The Next Web",
-    "25 Nov",
-    "https://thenextweb.com/news/shein-100mn-ftc-settlement",
-    "Shein to pay $100M to settle US claims it misled shoppers"
+    "https://www.livescience.com/space/astronomy/james-webb-and-euclid-telescopes-discover-record-breaking-quasar-at-the-edge-of-the-universe",
+    "James Webb and Euclid telescopes discover record-breaking black hole at the edge of the universe"
    ]
   ]
  },
@@ -2399,12 +2386,12 @@ window.DAYBREAK = {
   "dateLabel": "Wednesday 25 November 2026",
   "range": "23–25 Nov",
   "rangeLong": "23–25 November 2026",
-  "lastRun": "25 Nov 2026, 09:18",
+  "lastRun": "25 Nov 2026, 22:06",
   "digest": [
-   "Thomas Markle indicted on child sex abuse material charges (MyNorthwest)",
-   "China’s Huawei convicted of stealing US trade secrets (The Guardian)",
-   "Jensen Huang reinstated as Nvidia CEO following “input” from US government (Tech.eu)",
-   "Huang apologizes to Nvidia employees, says he’s in therapy: Reports (The Hill)"
+   "Macy’s Thanksgiving Day Parade postponed to Saturday due to expected bad weather (KSTP-TV)",
+   "Kilmar Abrego Garcia self-deports to Spain after years of legal battles (American Wire News)",
+   "At least 30 killed in blaze after vehicle overturns in Egypt, health ministry says (The Express Tribune)",
+   "China’s Huawei convicted of stealing US trade secrets (The Guardian)"
   ],
   "generated": "automatic",
   "articlePolicy": "source-based-v1",
