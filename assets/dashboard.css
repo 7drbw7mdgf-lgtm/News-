@@ -1132,3 +1132,33 @@ body.reader-focus .dashboard-body {
 .ws-trading212 iframe { display: block; width: 100%; height: 420px; border: 0; }
 .ws-trading212.ws-expanded iframe { flex: 1; min-height: 0; }
 #evidence-bot.ws-expanded .evidence-bot-body { min-height: 0; overflow-y: auto; }
+
+/* Octal Engine in the Markets workspace */
+.octal-body { padding:clamp(16px,3vw,32px); }
+.octal-label { display:block; margin:0 0 8px; color:var(--ink-muted); font:650 14px/1.4 var(--sans); }
+.octal-controls { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+.octal-controls select,.octal-controls button {
+  border:1px solid var(--rule); border-radius:7px; padding:10px 14px; min-height:44px; font:600 15px/1.4 var(--sans);
+}
+.octal-controls select { flex:1 1 240px; min-width:0; width:100%; background:var(--surface); color:var(--ink); }
+.octal-controls button { background:var(--blue); color:var(--surface); }
+.octal-controls button:disabled { opacity:.55; cursor:default; }
+.octal-verdict { display:grid; grid-template-columns:3fr 2fr; align-items:center; gap:24px; padding:24px 0; border-block:1px solid var(--rule); }
+.octal-verdict h3 { margin:0; font:600 clamp(28px,3vw,42px)/1.14 var(--serif); }
+.octal-verdict p:not(.octal-label),.octal-claims p,.octal-body li { font:400 15px/1.55 var(--sans); }
+.octal-scale { display:grid; grid-template-columns:repeat(8,1fr); border:1px solid var(--rule); border-radius:6px; overflow:hidden; }
+.octal-scale span { padding:8px 0; text-align:center; font:600 16px var(--sans); }
+.octal-scale span + span { border-inline-start:1px solid var(--rule); }
+.octal-scale .selected { background:var(--blue); color:var(--surface); }
+.octal-claims h3 { margin:20px 0 10px; font:650 22px var(--serif); }
+.octal-body details { border-bottom:1px solid var(--rule-soft); overflow-wrap:anywhere; }
+.octal-body summary { padding:13px 2px; cursor:pointer; font:550 16px/1.5 var(--sans); }
+.octal-body summary strong,.octal-body summary small { color:var(--blue); margin-inline:6px; }
+.octal-body summary:focus-visible { outline:2px solid var(--blue); }
+@media (max-width:680px) {
+  .octal-verdict { grid-template-columns:minmax(0,1fr); gap:12px; }
+  .octal-controls button { flex-grow:1; }
+}
+.octal-headline { margin:20px 0; max-width:76ch; }
+.octal-headline h3 { font:650 clamp(24px,3vw,36px)/1.15 var(--serif); margin:0; }
+.octal-headline a { color:var(--ink); text-decoration-thickness:1px; text-underline-offset:4px; }
