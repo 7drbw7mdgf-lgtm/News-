@@ -1,0 +1,1477 @@
+{
+ "TOPICS": [
+  {
+   "id": "uk",
+   "label": "UK"
+  },
+  {
+   "id": "world",
+   "label": "World"
+  },
+  {
+   "id": "science",
+   "label": "Science"
+  },
+  {
+   "id": "tech",
+   "label": "Tech"
+  },
+  {
+   "id": "business",
+   "label": "Business"
+  },
+  {
+   "id": "finance",
+   "label": "Finance"
+  }
+ ],
+ "CATS": {
+  "uk": {
+   "label": "UK news",
+   "topic": "uk"
+  },
+  "world": {
+   "label": "World news",
+   "topic": "world"
+  },
+  "science": {
+   "label": "Science",
+   "topic": "science"
+  },
+  "tech": {
+   "label": "Tech",
+   "topic": "tech"
+  },
+  "business": {
+   "label": "Business",
+   "topic": "business"
+  }
+ },
+ "CATALOG": [
+  [
+   "telegraph",
+   "The Telegraph",
+   "uk",
+   true
+  ],
+  [
+   "bbc",
+   "BBC News",
+   "uk",
+   false
+  ],
+  [
+   "guardian",
+   "The Guardian",
+   "uk",
+   false
+  ],
+  [
+   "times",
+   "The Times",
+   "uk",
+   true
+  ],
+  [
+   "independent",
+   "The Independent",
+   "uk",
+   false
+  ],
+  [
+   "sky",
+   "Sky News",
+   "uk",
+   false
+  ],
+  [
+   "reuters",
+   "Reuters",
+   "world",
+   false
+  ],
+  [
+   "ap",
+   "Associated Press",
+   "world",
+   false
+  ],
+  [
+   "nyt",
+   "The New York Times",
+   "world",
+   true
+  ],
+  [
+   "politico",
+   "Politico Europe",
+   "world",
+   false
+  ],
+  [
+   "economist",
+   "The Economist",
+   "business",
+   true
+  ],
+  [
+   "ft",
+   "Financial Times",
+   "business",
+   true
+  ],
+  [
+   "bloomberg",
+   "Bloomberg",
+   "business",
+   true
+  ],
+  [
+   "wsj",
+   "The Wall Street Journal",
+   "business",
+   true
+  ],
+  [
+   "newscientist",
+   "New Scientist",
+   "science",
+   true
+  ],
+  [
+   "naturenews",
+   "Nature News",
+   "science",
+   false
+  ],
+  [
+   "stat",
+   "STAT",
+   "science",
+   false
+  ],
+  [
+   "ars",
+   "Ars Technica",
+   "tech",
+   false
+  ],
+  [
+   "verge",
+   "The Verge",
+   "tech",
+   false
+  ],
+  [
+   "wired",
+   "Wired",
+   "tech",
+   true
+  ]
+ ],
+ "LEAN": {
+  "L": [
+   "Left",
+   "Left"
+  ],
+  "LL": [
+   "Lean left",
+   "Left-Center"
+  ],
+  "C": [
+   "Centre",
+   "Least Biased"
+  ],
+  "LR": [
+   "Lean right",
+   "Right-Center"
+  ],
+  "R": [
+   "Right",
+   "Right"
+  ],
+  "S": [
+   "Science",
+   "Pro-Science (not rated left–right)"
+  ],
+  "P": [
+   "Primary",
+   "Primary source, not a news outlet"
+  ],
+  "NR": [
+   "Unrated",
+   "No Media Bias/Fact Check rating found"
+  ],
+  "NC": [
+   "Unchecked",
+   "Rating not looked up yet"
+  ]
+ },
+ "FOLLOWED": [
+  {
+   "name": "BBC News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Guardian",
+   "topic": "uk"
+  },
+  {
+   "name": "Sky News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Telegraph",
+   "topic": "uk"
+  },
+  {
+   "name": "Daily Mail",
+   "topic": "uk"
+  },
+  {
+   "name": "ITV News",
+   "topic": "uk"
+  },
+  {
+   "name": "RTÉ News",
+   "topic": "uk"
+  },
+  {
+   "name": "Financial Times",
+   "topic": "finance"
+  },
+  {
+   "name": "The Economist",
+   "topic": "finance"
+  },
+  {
+   "name": "CNBC",
+   "topic": "finance"
+  },
+  {
+   "name": "City AM",
+   "topic": "finance"
+  },
+  {
+   "name": "The New York Times",
+   "topic": "world"
+  },
+  {
+   "name": "NPR",
+   "topic": "world"
+  },
+  {
+   "name": "Fox News",
+   "topic": "world"
+  },
+  {
+   "name": "Al Jazeera English",
+   "topic": "world"
+  },
+  {
+   "name": "France 24",
+   "topic": "world"
+  },
+  {
+   "name": "DW News",
+   "topic": "world"
+  },
+  {
+   "name": "Politico Europe",
+   "topic": "world"
+  },
+  {
+   "name": "Euronews",
+   "topic": "world"
+  },
+  {
+   "name": "South China Morning Post",
+   "topic": "world"
+  },
+  {
+   "name": "Nature News",
+   "topic": "science"
+  },
+  {
+   "name": "New Scientist",
+   "topic": "science"
+  },
+  {
+   "name": "ScienceDaily",
+   "topic": "science"
+  },
+  {
+   "name": "TechCrunch",
+   "topic": "tech"
+  },
+  {
+   "name": "The Verge",
+   "topic": "tech"
+  },
+  {
+   "name": "Ars Technica",
+   "topic": "tech"
+  }
+ ],
+ "STORIES": [
+  {
+   "id": "ofgem-sets-january-cap-2-166-typical",
+   "topic": "uk",
+   "source": "City AM",
+   "time": "25 Nov",
+   "url": "https://www.cityam.com/energy-bills-set-to-rocket-26-per-cent-in-major-blow-to-uk-households/",
+   "headline": "Ofgem sets January cap at £2,166 for a typical household",
+   "summary": "Ofgem’s January price cap takes the annual cost of typical household gas and electricity use in Great Britain from £1,723 to £2,166.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Ofgem’s January price cap takes the annual cost of typical household gas and electricity use in Great Britain from £1,723 to £2,166. The £443 difference is an illustration based on typical consumption. What a household actually pays depends on how much energy it uses, as well as the standing charges.",
+    "The new rates take effect on 1 January in England, Scotland and Wales. It is the third quarterly rise in succession. The Guardian linked the latest increase to higher wholesale gas prices. Separately, the government has announced a £100 payment towards energy costs for around 20 million households in January."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "City AM",
+     "url": "https://www.cityam.com/energy-bills-set-to-rocket-26-per-cent-in-major-blow-to-uk-households/"
+    },
+    {
+     "name": "Metro",
+     "url": "https://metro.co.uk/2026/11/25/energy-bills-will-soar-443-a-year-weeks-29817691/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/money/2026/nov/25/energy-bills-in-great-britain-to-rise-ofgem-price-cap"
+    }
+   ],
+   "image": "https://ichef.bbci.co.uk/images/ic/1024x576/p0ppnhnr.jpg",
+   "imageAlt": "Ofgem sets January cap at £2,166 for a typical household",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "pakistani-astronaut-reaches-tiangong-aboard-shenzhou-24",
+   "topic": "world",
+   "source": "Dawn",
+   "time": "25 Nov",
+   "url": "https://www.dawn.com/news/2046974/in-pictures-pakistani-astronaut-zeeshan-alis-ascent-to-space-aboard-shenzhou-24-as-it-happened",
+   "headline": "Pakistani astronaut reaches Tiangong aboard Shenzhou-24",
+   "summary": "Muhammad Zeeshan Ali reached China’s Tiangong space station on Wednesday, becoming the first Pakistani astronaut to visit it.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Muhammad Zeeshan Ali reached China’s Tiangong space station on Wednesday, becoming the first Pakistani astronaut to visit it. Dawn reported that the Shenzhou-24 spacecraft docked three hours and 38 minutes after launch. People gathered at Pakistan’s space agency headquarters in Islamabad to follow the flight.",
+    "Ali is the payload specialist on a three-person crew. Commander Tang Hongbo and flight engineer Wu Yi joined him for the launch from Jiuquan aboard a Long March rocket. The Times of India reported that Ali is expected to carry out scientific experiments during a short stay on the station."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "Dawn",
+     "url": "https://www.dawn.com/news/2046974/in-pictures-pakistani-astronaut-zeeshan-alis-ascent-to-space-aboard-shenzhou-24-as-it-happened"
+    },
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642023/zeeshan-ali-to-be-pakistans-first-astronaut-in-space-aboard-shenzhou-24"
+    },
+    {
+     "name": "Times of India",
+     "url": "https://timesofindia.indiatimes.com/science/pak-astronaut-ali-reaches-chinas-tiangong-station/articleshow/136152904.cms"
+    }
+   ],
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/4b78/live/6330c460-e889-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "A split image of a spaceship blasting off and an astronaut smiling in a space suit.",
+   "imageCredit": "BBC News",
+   "location": {
+    "label": "Jiuquan Satellite Launch Centre, China",
+    "shortLabel": "Jiuquan launch site",
+    "lat": 40.96,
+    "lng": 100.29
+   }
+  },
+  {
+   "id": "fossil-fuel-dispute-leaves-cop31-without-overarching",
+   "topic": "science",
+   "source": "Scroll.in",
+   "time": "23 Nov",
+   "url": "https://scroll.in/article/1097247/as-cop31-talks-collapse-the-future-of-international-climate-cooperation-could-change?utm_source=rss&utm_medium=public",
+   "headline": "Fossil fuel dispute leaves COP31 without an overarching agreement",
+   "summary": "Negotiations at the COP31 summit in Antalya ran two days beyond their planned finish and ended without agreement on an overarching statement.",
+   "points": [],
+   "publishedLabel": "23 Nov 2026",
+   "article": [
+    "Negotiations at the COP31 summit in Antalya ran two days beyond their planned finish and ended without agreement on an overarching statement. The draft put forward by the Turkish and Australian conveners omitted fossil fuels. The European Union and other participants withheld the consensus needed to adopt it.",
+    "The outcome leaves a specific gap. Countries have used closing statements to set a political direction, but the formal Paris Agreement process can continue without one. Its procedures still include national emissions pledges on a five-year cycle. Analyses in Scroll.in and The Conversation identified the treatment of oil, gas and coal as the division the talks failed to resolve."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "Scroll.in",
+     "url": "https://scroll.in/article/1097247/as-cop31-talks-collapse-the-future-of-international-climate-cooperation-could-change?utm_source=rss&utm_medium=public"
+    },
+    {
+     "name": "Environment + Energy – The Conversation",
+     "url": "https://theconversation.com/the-silver-lining-of-the-cop31-flop-climate-coalitions-will-rise-and-the-shift-away-from-fossil-fuels-will-accelerate-297294"
+    }
+   ],
+   "image": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://cloudfront-us-east-1.images.arcpublishing.com/wapo/QMSSRZNMK4YDUIZMAVA767JPXA.jpg&w=1440",
+   "imageAlt": "Fossil fuel dispute leaves COP31 without an overarching agreement",
+   "imageCredit": "Washington Post",
+   "location": {
+    "label": "Antalya, Türkiye",
+    "shortLabel": "Antalya",
+    "lat": 36.9,
+    "lng": 30.7
+   }
+  },
+  {
+   "id": "microsoft-orders-engineering-review-november-cloud-outage",
+   "topic": "tech",
+   "source": "The Express Tribune",
+   "time": "24 Nov",
+   "url": "https://tribune.com.pk/story/2642123/microsoft-declares-code-red-after-historic-outage-internal-memos-show",
+   "headline": "Microsoft orders engineering review after November cloud outage",
+   "summary": "Microsoft has put work on preventing and recovering from major outages at the top of its engineering agenda, according to internal memos reviewed by Reuters.",
+   "points": [],
+   "publishedLabel": "24 Nov 2026",
+   "article": [
+    "Microsoft has put work on preventing and recovering from major outages at the top of its engineering agenda, according to internal memos reviewed by Reuters. A disruption spanning 12 and 13 November left customers without Exchange Online email and also affected Outlook, Teams and other Microsoft 365 services.",
+    "Microsoft traced the failure to a Windows scaling defect introduced in July. The response exposed another problem. Engineers exchanged thousands of messages across separate chats while diagnostic information sat in different tracking systems. The internal review calls for work on recovering services more quickly and containing problems within geographic regions."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642123/microsoft-declares-code-red-after-historic-outage-internal-memos-show"
+    },
+    {
+     "name": "SiliconANGLE",
+     "url": "https://siliconangle.com/2026/11/24/microsoft-declares-internal-code-red-after-nearly-24-hour-microsoft-365-outage/"
+    },
+    {
+     "name": "Slashdot",
+     "url": "https://it.slashdot.org/story/26/11/24/1859221/microsoft-declares-code-red-after-historic-outage?utm_source=rss1.0mainlinkanon&utm_medium=feed"
+    }
+   ],
+   "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Microsoft_CDOC_featured-1152x648.jpg",
+   "imageAlt": "Microsoft Security Operations Center",
+   "imageCredit": "Ars Technica"
+  },
+  {
+   "id": "meta-brings-muse-assistant",
+   "topic": "tech",
+   "source": "MacRumors",
+   "time": "24 Nov",
+   "url": "https://www.macrumors.com/2026/11/24/metas-muse-personal-ai-agent-launches-in-the-uk/",
+   "headline": "Meta brings its Muse assistant to the UK",
+   "summary": "Meta has launched Muse in the UK after introducing the assistant in the United States in September.",
+   "points": [],
+   "publishedLabel": "24 Nov 2026",
+   "article": [
+    "Meta has launched Muse in the UK after introducing the assistant in the United States in September. Users can give it tasks such as finding a journey or shopping for a present, either through its own app or on WhatsApp. Meta names retailers including Currys and Marks & Spencer among its UK partners.",
+    "The service can use payment credentials through Stripe’s Link wallet. Meta says users choose which accounts Muse can access and approve important actions before it proceeds. The Guardian reported that UK regulators are following the launch over privacy and consumer protection."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "MacRumors",
+     "url": "https://www.macrumors.com/2026/11/24/metas-muse-personal-ai-agent-launches-in-the-uk/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/technology/2026/nov/24/meta-launches-muse-uk-ai-agent-do-christmas-shopping"
+    }
+   ],
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/1e19/live/7721db50-e819-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "A man walks past an advert for Meta Muse on the New York Subway",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "shein-agrees-100-million-settlement-shopping-claims",
+   "topic": "business",
+   "source": "South China Morning Post",
+   "time": "25 Nov",
+   "url": "https://www.scmp.com/tech/article/3375701/shein-pay-us100-million-settle-us-shipping-customer-service-claims",
+   "headline": "Shein agrees to $100 million settlement over US shopping claims",
+   "summary": "Shein has agreed to pay $100 million to settle US Federal Trade Commission allegations about delivery promises, customer reviews and the origin of cotton in some products.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Shein has agreed to pay $100 million to settle US Federal Trade Commission allegations about delivery promises, customer reviews and the origin of cotton in some products. The commission filed its complaint in California. The money is intended to reimburse customers, according to the South China Morning Post.",
+    "The commission said some cotton presented to shoppers as US-grown came from China, and that the origin of cotton in other items could not be traced. The settlement also addresses what customers see before buying. Shein agreed to give accurate shipping information and to stop blocking negative reviews."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "South China Morning Post",
+     "url": "https://www.scmp.com/tech/article/3375701/shein-pay-us100-million-settle-us-shipping-customer-service-claims"
+    },
+    {
+     "name": "The Next Web",
+     "url": "https://thenextweb.com/news/shein-100mn-ftc-settlement"
+    },
+    {
+     "name": "KSTP-TV",
+     "url": "https://kstp.com/kstp-news/business-news/shein-to-pay-100-million-to-settle-federal-trade-commission-allegations-over-deceptive-practices/"
+    }
+   ],
+   "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/24/f7ba4712-b4c7-47e4-be89-5271e2a56eac/thumbnail/1200x630/03ba3ef99b558d31714844c785f305aa/gettyimages-2303688136.jpg",
+   "imageAlt": "Shein agrees to $100 million settlement over US shopping claims",
+   "imageCredit": "CBS News"
+  },
+  {
+   "id": "amazon-plans-car-reservations-purchases-completed-dealerships",
+   "topic": "uk",
+   "source": "Retail Gazette",
+   "time": "25 Nov",
+   "url": "https://www.retailgazette.co.uk/blog/2026/11/amazon-takes-on-auto-trader-as-it-prepares-to-sell-cars-in-the-uk/",
+   "headline": "Amazon plans UK car reservations with purchases completed at dealerships",
+   "summary": "Amazon plans to bring its vehicle marketplace to Britain in early 2027, its first expansion for the service outside the United States.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Amazon plans to bring its vehicle marketplace to Britain in early 2027, its first expansion for the service outside the United States. Hyundai is the first manufacturer named for the launch. Used cars from the dealership group Vertu Motors are also due to appear on the site.",
+    "Shoppers will be able to compare specifications and prices, explore financing and get an estimate for a trade-in. A customer can then reserve a car through Amazon and visit the dealer to finish the purchase and collect it. Dealers will set the selling prices themselves."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "Retail Gazette",
+     "url": "https://www.retailgazette.co.uk/blog/2026/11/amazon-takes-on-auto-trader-as-it-prepares-to-sell-cars-in-the-uk/"
+    },
+    {
+     "name": "Techmeme",
+     "url": "https://www.techmeme.com/261125/p4#a261125p4"
+    }
+   ],
+   "image": "https://images.wsj.net/im-98590525/social",
+   "imageAlt": "Amazon Autos Plans to Launch Services in U.K. in Early 2027",
+   "imageCredit": "The Wall Street Journal"
+  },
+  {
+   "id": "easyjet-brings-forward-aircraft-retirements-fuel-costs",
+   "topic": "business",
+   "source": "City AM",
+   "time": "25 Nov",
+   "url": "https://www.cityam.com/easyjet-speeds-up-scrapping-old-planes-oil-prices-profit/",
+   "headline": "EasyJet brings forward aircraft retirements as fuel costs bite",
+   "summary": "EasyJet plans to retire more than 50 Airbus A319 aircraft over the next two years and replace them with larger, more fuel-efficient planes.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "EasyJet plans to retire more than 50 Airbus A319 aircraft over the next two years and replace them with larger, more fuel-efficient planes. The carrier reported £71 million in pre-tax profit for the year to the end of September, a fall of almost 90 per cent.",
+    "Chief executive Kenton Jarvis said the conflict in the Middle East had affected both demand and fuel prices. Alongside the fleet changes, the airline said it had secured prices below the current jet fuel spot price for almost 70 per cent of its fuel contracts. The results come after shareholders approved a proposed takeover by Apollo."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "editorial",
+   "articleUpdatedAt": "2026-11-25T08:52:19+00:00",
+   "articleSources": [
+    {
+     "name": "City AM",
+     "url": "https://www.cityam.com/easyjet-speeds-up-scrapping-old-planes-oil-prices-profit/"
+    },
+    {
+     "name": "Bloomberg",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-25/easyjet-profit-hit-by-middle-east-war-as-apollo-takeover-looms"
+    }
+   ],
+   "image": "https://static.standard.co.uk/2026/11/25/07/ead868bd6bc6b7249bdf0dcfd21f4a60Y29udGVudHNlYXJjaGFwaSwxNzk1Njc5MTk3-2.82984096.jpg?crop=5:3,smart&auto=webp&quality=75&width=1200",
+   "imageAlt": "EasyJet brings forward aircraft retirements as fuel costs bite",
+   "imageCredit": "Evening Standard"
+  }
+ ],
+ "OUTLETS": {
+  "ITV News": "LR",
+  "RTÉ News": "C",
+  "Euronews": "LL",
+  "Times Higher Education": "NR",
+  "ScienceDaily": "S",
+  "EconoTimes": "NC",
+  "LHCb paper (arXiv)": "P",
+  "Bloomberg": "LL",
+  "TechCrunch": "LL",
+  "Latin Times": "LL",
+  "The Tech Portal": "NC",
+  "IBTimes UK": "LL",
+  "ONS (official statistics)": "P",
+  "Al Jazeera English": "LL",
+  "CNN": "LL",
+  "CBC News": "LL",
+  "PBS NewsHour": "LL",
+  "Truthout": "L",
+  "Gizmodo": "L",
+  "Archaeology Magazine": "NC",
+  "Sci.News": "NC",
+  "Axios": "LL",
+  "Reuters": "C",
+  "CBS News": "LR",
+  "CNBC": "LL",
+  "The Daily Beast": "L",
+  "Townhall": "R",
+  "City AM": "NR",
+  "Central Banking": "NC",
+  "Bank of England (speech)": "P",
+  "Ukrainska Pravda": "LL",
+  "TVP World": "NR",
+  "Euromaidan Press": "NC",
+  "Popular Science": "S",
+  "New Atlas": "S",
+  "SciTechDaily": "S",
+  "Quartz": "LL",
+  "Daily Voice": "NC",
+  "Portsmouth News": "NC",
+  "BusinessCloud": "NC",
+  "The Irish News": "LL",
+  "BMA (union statement)": "P",
+  "Phys.org": "S",
+  "Sky & Telescope": "S",
+  "IntoMobile": "NC",
+  "Tesla North": "NC",
+  "NewsBytes": "NC",
+  "Express & Star": "NR",
+  "BBC News": "LL",
+  "The Guardian": "LL",
+  "Sky News": "C",
+  "The Telegraph": "LR",
+  "Daily Mail": "R",
+  "Financial Times": "C",
+  "The Economist": "C",
+  "France 24": "C",
+  "DW News": "LL",
+  "Politico Europe": "LL",
+  "NPR": "LL",
+  "The New York Times": "LL",
+  "Fox News": "R",
+  "South China Morning Post": "LL",
+  "Times of India": "LR",
+  "MercoPress": "LL",
+  "Nature News": "S",
+  "New Scientist": "S",
+  "The Verge": "LL",
+  "Ars Technica": "C",
+  "Wired": "LL",
+  "MarketWatch": "LR",
+  "ABC News Australia": "LL",
+  "Techmeme": "NR",
+  "End Time Headlines": "LR",
+  "Political Wire": "C",
+  "Hindustan Times": "LL",
+  "Investing.com": "C",
+  "7NEWS": "C",
+  "The Hill": "C",
+  "BleepingComputer": "C",
+  "WGN News": "C",
+  "WANE - Fort Wayne News": "C",
+  "WFLA - Tampa Bay": "C",
+  "NewsNation": "LR",
+  "Greek Reporter": "R",
+  "Breitbart": "R",
+  "Middle East Eye": "LL",
+  "KSTP-TV": "C",
+  "MyNorthwest": "LR",
+  "CityNews Toronto": "C",
+  "CityNews Edmonton": "C",
+  "CityNews Halifax": "C",
+  "CityNews Vancouver": "C",
+  "CityNews - Winnipeg": "C",
+  "CityNews Montreal": "C",
+  "CityNews Kitchener": "C",
+  "CityNews Ottawa": "C",
+  "CityNews Calgary": "C",
+  "Dallas Express": "R",
+  "Daily Caller": "R",
+  "WJW - Cleveland News": "C",
+  "Global News": "LL",
+  "KTLA": "C",
+  "Legal Insurrection": "R",
+  "The West Australian": "LR",
+  "NBC News": "LL",
+  "Citizen Free Press": "R",
+  "The Journal": "LL",
+  "Washington Post": "LL",
+  "RedState": "R",
+  "Washington Examiner": "LR",
+  "The Hindu": "LL",
+  "Hot Air": "R",
+  "ABC News (US)": "LL",
+  "Washington's Top News (WTOP)": "C",
+  "Scientific American": "S",
+  "Tom's Hardware": "NR",
+  "Simon Willison": "NR",
+  "Live Science": "S",
+  "The Wall Street Journal": "LR",
+  "SiliconANGLE": "NR",
+  "Decrypt": "NR",
+  "The Information": "C",
+  "Slashdot": "NR",
+  "Japan Times": "C",
+  "GB News": "R",
+  "The Decoder": "NR",
+  "The Globe and Mail": "LR",
+  "Engadget": "LL",
+  "Nottinghamshire Post": "C",
+  "Wales Online": "LL",
+  "Evening Standard": "LR",
+  "The Straits Times": "LR",
+  "Irish Mirror": "LL",
+  "E! News": "C",
+  "India Today": "LR",
+  "Sydney Morning Herald": "LL",
+  "The Age": "LL",
+  "KTTV - Fox 11 - Los Angeles": "C",
+  "KTVU Fox 2": "C",
+  "The Post Millennial": "R",
+  "KABC - Los Angeles News": "C",
+  "American Wire News": "R",
+  "BizPac Review": "R",
+  "Taipei Times": "LL",
+  "Fast Company": "LL",
+  "The Conversation UK": "C",
+  "HuffPost UK": "NR",
+  "Investors Business Daily": "R",
+  "Inc.com": "C",
+  "Slate": "L",
+  "Digital Trends": "C",
+  "Fox Business": "LR",
+  "The Citizen": "LR",
+  "Armstrong Economics": "R",
+  "Yorkshire Post": "C",
+  "Conservative Review": "R",
+  "WFLD - Fox 32 - Chicago": "C",
+  "Channel 4 News": "NR",
+  "Al-Monitor": "LL",
+  "NDTV": "LR",
+  "Military.com": "C",
+  "Euractiv": "LL",
+  "i News": "LL",
+  "CNA": "C",
+  "SOFREP": "LR",
+  "Defense One": "C",
+  "The Sun": "R",
+  "The US Sun": "R",
+  "The Express Tribune": "C",
+  "Irish Independent": "LR",
+  "Rappler": "LL",
+  "KFGO - 790 AM - Fargo": "LR",
+  "Daily Mirror": "LL",
+  "Off The Press": "R",
+  "Livemint": "C",
+  "MoneyWeek": "NR",
+  "Naked Capitalism": "LL",
+  "Jacobin": "L",
+  "Times of Malta": "C",
+  "The Local France": "LL",
+  "Dawn": "LL",
+  "Android Authority": "NR",
+  "9to5Mac": "NR",
+  "ZDNET": "C",
+  "CNET": "C",
+  "The Hacker News": "NR",
+  "Daily Express": "R",
+  "Belfast Live": "C",
+  "Metro": "LL",
+  "Belfast Telegraph": "NR",
+  "The Sun - Nigeria": "LR",
+  "Guido Fawkes": "R",
+  "The Herald": "LL",
+  "Manchester Evening News": "LL",
+  "Hello Magazine": "C",
+  "Birmingham Mail": "LL",
+  "The Week UK": "L",
+  "9to5Google": "NR",
+  "Mother Jones": "LL",
+  "MacRumors": "NR",
+  "The New American": "R",
+  "Inside Climate News": "LL",
+  "New York Observer": "LR",
+  "Space.com": "S",
+  "Eos": "NR",
+  "How-To Geek": "C",
+  "Oilprice.com": "C",
+  "Medical Xpress": "S",
+  "MarketBeat": "C",
+  "The Next Web": "LL",
+  "The Rio Times": "LR",
+  "CoinDesk": "NR",
+  "The Block": "NR",
+  "Nautilus": "S",
+  "Big Think": "C",
+  "Toledo Blade": "LR",
+  "Mexico News Daily": "LL",
+  "New York Post": "LR",
+  "The Jerusalem Post": "LR",
+  "Mongabay": "LL",
+  "RNZ": "C",
+  "US Top News and Analysis": "LL",
+  "Institute for Government": "P",
+  "Toronto Sun": "R",
+  "This is Money": "LR",
+  "Benzinga": "C",
+  "Kiplinger": "C",
+  "Haaretz": "L",
+  "Derbyshire Live": "C",
+  "DublinLive": "C",
+  "WITI - FOX 6 - Milwaukee": "C",
+  "Bristol Post": "C",
+  "WOFL Fox 35 Orlando": "C",
+  "PlymouthLive": "C",
+  "Latest Science News -- ScienceDaily": "S",
+  "ABC7 New York": "C",
+  "Cointelegraph": "NR",
+  "Forbes": "C",
+  "Freightwaves": "NR",
+  "ONS": "P",
+  "Retail Gazette": "NR",
+  "SecurityWeek": "NR",
+  "ABC7chicago.com": "C",
+  "Indian Express": "LL",
+  "Premium Times": "LL",
+  "UnHerd": "LR",
+  "Powerline": "R",
+  "Mashable": "L",
+  "PCWorld": "NR",
+  "Irish Sun": "R",
+  "Seeking Alpha": "LR",
+  "Money Crashers": "C",
+  "SomersetLive": "C",
+  "Liverpool Echo": "C",
+  "Hull Daily Mail": "C",
+  "North Wales Live": "C",
+  "Gloucestershire Live": "C",
+  "Leicester Mercury": "LR",
+  "Spiked Magazine": "R",
+  "Electrek": "LL",
+  "InsideEVs": "LL",
+  "Motley Fool UK": "NR",
+  "Economic Times": "LR",
+  "Business Insider": "LL",
+  "Resolution Foundation": "NR",
+  "VnExpress International": "NR",
+  "Scroll.in": "LL",
+  "Time": "LL",
+  "Grist": "LL",
+  "Daily Maverick": "C",
+  "Environment + Energy – The Conversation": "C",
+  "The Scotsman": "C",
+  "The Register": "C",
+  "Finextra": "C"
+ },
+ "QUESTIONABLE": [
+  "Breitbart",
+  "Economic Times",
+  "Fox News",
+  "GB News",
+  "Hindustan Times",
+  "NDTV"
+ ],
+ "COVERAGE": {
+  "ofgem-sets-january-cap-2-166-typical": [
+   [
+    "Resolution Foundation",
+    "24 Nov",
+    "https://www.resolutionfoundation.org/comment/worried-about-next-weeks-price-cap-heres-what-it-means-for-january/",
+    "Worried about next week’s price cap? Here’s what it means for January"
+   ],
+   [
+    "Daily Express",
+    "24 Nov",
+    "https://www.express.co.uk/news/politics/2268931/burnham-blasted-lethal-winter-threat",
+    "Andy Burnham blasted over 'lethal' winter threat to pensioners as energy bills soar"
+   ],
+   [
+    "BBC News",
+    "24 Nov",
+    "https://www.bbc.co.uk/sounds/play/m0034nms?at_medium=RSS&at_campaign=rss",
+    "Scotcast - How to stop our energy bills rising"
+   ],
+   [
+    "Evening Standard",
+    "24 Nov",
+    "https://www.standard.co.uk/business/business-news/ofgem-energy-bills-vat-campaigners-households-b1306213.html",
+    "Energy price shock for millions of households to be revealed"
+   ],
+   [
+    "GB News",
+    "24 Nov",
+    "https://www.gbnews.com/politics/pensioner-chancellor-fear-heating-news",
+    "Pensioner asks Chancellor ‘would you walk in our footsteps?’ as she admits fears over surging heating costs"
+   ],
+   [
+    "Nottinghamshire Post",
+    "25 Nov",
+    "https://www.nottinghampost.com/news/uk-world-news/ofgem-announce-january-energy-price-11254673",
+    "Ofgem to announce January energy price price cap as household bills set to rise by £443"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/money/2026/nov/25/energy-bills-in-great-britain-to-rise-ofgem-price-cap",
+    "Energy bills in Great Britain to rise 26% in January, lifting annual bills over £2,000"
+   ],
+   [
+    "Manchester Evening News",
+    "25 Nov",
+    "https://www.manchestereveningnews.co.uk/news/uk-news/uk-households-energy-bills-soar-34961457",
+    "UK energy bills to soar by 26% as households to pay £443 more a year, Ofgem says"
+   ],
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-25/uk-energy-bills-rise-26-with-war-fueling-cost-of-living-squeeze",
+    "UK Energy Bills Rise 26% as War Fuels Cost-of-Living Squeeze"
+   ],
+   [
+    "Birmingham Mail",
+    "25 Nov",
+    "https://www.birminghammail.co.uk/news/cost-of-living/energy-bills-rise-443-january-34961905",
+    "Energy bills to rise £443 from January 1 with new Ofgem price cap announced"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/business/uk-world/misery-for-households-as-energy-bills-to-jump-26-in-january/a/165065601.html",
+    "Misery for households as energy bills to jump 26% in January"
+   ],
+   [
+    "Metro",
+    "25 Nov",
+    "https://metro.co.uk/2026/11/25/energy-bills-will-soar-443-a-year-weeks-29817691/",
+    "Your energy bills will soar by £443 a year in weeks"
+   ],
+   [
+    "City AM",
+    "25 Nov",
+    "https://www.cityam.com/energy-bills-set-to-rocket-26-per-cent-in-major-blow-to-uk-households/",
+    "Energy bills set to rocket 26 per cent in major blow to UK households"
+   ],
+   [
+    "Yorkshire Post",
+    "25 Nov",
+    "https://www.yorkshirepost.co.uk/business/energy-price-cap-will-rise-by-26-from-january-1-for-typical-household-says-ofgem-9372417",
+    "Energy bills to rise by 26% from January causing misery for millions"
+   ],
+   [
+    "Financial Times",
+    "25 Nov",
+    "https://www.ft.com/content/e9dea6f2-dcf8-4ec5-96ec-0415694bf897?syn-25a6b1a6=1",
+    "British household energy bills to soar 26% from January"
+   ],
+   [
+    "HuffPost UK",
+    "25 Nov",
+    "https://www.huffingtonpost.co.uk/entry/donald-trumps-war-iran-gas-bills-soar_uk_6b0690eee4b01d8bd1da626f",
+    "'Nightmare Before Christmas': Donald Trump's War In Iran Sends Gas Bills Soaring"
+   ],
+   [
+    "North Wales Live",
+    "25 Nov",
+    "https://www.dailypost.co.uk/news/north-wales-news/households-misery-energy-bills-jump-34962113",
+    "Households misery as energy bills to jump 26% in January"
+   ]
+  ],
+  "pakistani-astronaut-reaches-tiangong-aboard-shenzhou-24": [
+   [
+    "Indian Express",
+    "23 Nov",
+    "https://indianexpress.com/article/world/pakistani-astronaut-china-shenzhou-24-mission-10975128/",
+    "Pakistani astronaut to make history as first foreigner aboard China’s space station"
+   ],
+   [
+    "The Express Tribune",
+    "24 Nov",
+    "https://tribune.com.pk/story/2642023/zeeshan-ali-to-be-pakistans-first-astronaut-in-space-aboard-shenzhou-24",
+    "'I carry the name of Pakistan on my shoulder': Zeeshan Ali set for historic spaceflight aboard China's Shenzhou-24"
+   ],
+   [
+    "CBS News",
+    "25 Nov",
+    "https://www.cbsnews.com/news/china-launches-shenzhou-24-spacecraft/",
+    "China launches first foreign astronaut to its space station"
+   ],
+   [
+    "Off The Press",
+    "25 Nov",
+    "https://offthepress.com/r/184375?c=rss",
+    "China launches first foreign astronaut to its space station"
+   ],
+   [
+    "Japan Times",
+    "25 Nov",
+    "https://www.japantimes.co.jp/news/2026/11/25/asia-pacific/china-shenzhou-24-space-pakistan/",
+    "China’s Shenzhou-24 space flight launches with first Pakistani national on board"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/china-launches-pakistani-astronaut-into-space-aboard-its-long-march-2f-rocket-tiangong-space-station-shenzhou-24-mission-101795569133172.html",
+    "China launches Pakistani astronaut into space aboard its Long March 2F rocket"
+   ],
+   [
+    "Al Jazeera English",
+    "25 Nov",
+    "https://www.aljazeera.com/video/newsfeed/2026/11/25/pakistani-astronaut-launches-into-space-aboard-chinese-rocket?traffic_source=rss",
+    "Pakistani astronaut launches into space aboard Chinese rocket"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/videos/cmz74l0yzzvyo?at_medium=RSS&at_campaign=rss",
+    "Moment Chinese space mission lifts off with first Pakistan astronaut aboard"
+   ],
+   [
+    "VnExpress International",
+    "25 Nov",
+    "https://e.vnexpress.net/news/news/china-rocket-blasts-off-on-shenzhou-24-mission-5148611.html",
+    "China rocket blasts off on Shenzhou-24 mission"
+   ],
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/china-sends-first-foreign-astronaut-to-its-space-station-as-pakistani-joins-shenzhou-24-cr",
+    "China sends first foreign astronaut to its space station as Pakistani joins Shenzhou 24 crew"
+   ],
+   [
+    "The Hindu",
+    "25 Nov",
+    "https://www.thehindu.com/sci-tech/science/chinas-shenzhou-24-space-flight-takes-off-with-pakistani-national-as-first-foreign-astronaut/article71740891.ece",
+    "China launches crewed spaceship carrying first Pakistani astronaut to its space station"
+   ],
+   [
+    "Irish Independent",
+    "25 Nov",
+    "https://www.independent.ie/world-news/pakistans-first-astronaut-boards-chinas-space-station-in-historic-moment/a/165065302.html",
+    "Pakistan's first astronaut boards China’s space station in historic moment"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "25 Nov",
+    "https://wtop.com/world/2026/11/china-launches-the-shenzhou-24-spacecraft-carrying-pakistani-astronaut-its-first-foreign-crew-member/",
+    "China launches Shenzhou 24 spacecraft carrying 2 Chinese and 1 Pakistani astronaut"
+   ],
+   [
+    "Dawn",
+    "25 Nov",
+    "https://www.dawn.com/news/2046974/in-pictures-pakistani-astronaut-zeeshan-alis-ascent-to-space-aboard-shenzhou-24-as-it-happened",
+    "In pictures: Pakistani astronaut Zeeshan Ali’s ascent to space aboard Shenzhou-24 as it happened"
+   ],
+   [
+    "Times of India",
+    "25 Nov",
+    "https://timesofindia.indiatimes.com/science/pak-astronaut-ali-reaches-chinas-tiangong-station/articleshow/136152904.cms",
+    "Pak astronaut Ali reaches China’s Tiangong station"
+   ]
+  ],
+  "fossil-fuel-dispute-leaves-cop31-without-overarching": [
+   [
+    "Axios",
+    "23 Nov",
+    "https://www.axios.com/2026/11/23/un-climate-talks-meltdown-aftermath",
+    "UN climate meltdown raises new doubts about talks"
+   ],
+   [
+    "Inside Climate News",
+    "23 Nov",
+    "https://insideclimatenews.org/news/23112026/inside-climate-podcast-glimmers-of-hope/",
+    "Climate Hope"
+   ],
+   [
+    "Scroll.in",
+    "23 Nov",
+    "https://scroll.in/article/1097247/as-cop31-talks-collapse-the-future-of-international-climate-cooperation-could-change?utm_source=rss&utm_medium=public",
+    "As COP31 talks collapse, the future of international climate cooperation could change"
+   ],
+   [
+    "Time",
+    "23 Nov",
+    "https://time.com/article/2026/11/23/cop31-failure-new-phase-climate-action/",
+    "The Failed U.N. COP31 Deal Reveals a New Reality for Climate Action"
+   ],
+   [
+    "Mongabay",
+    "23 Nov",
+    "https://news.mongabay.com/short-article/2026/11/analysis-the-collapse-of-un-climate-talks-over-fossil-fuels-was-years-in-the-making/",
+    "Analysis: The collapse of UN climate talks, over fossil fuels, was years in the making"
+   ],
+   [
+    "American Wire News",
+    "23 Nov",
+    "https://americanwirenews.com/al-gore-erupts-after-un-climate-summit-collapses-critics-point-to-93-private-jets-and-cry-hypocrisy/",
+    "Al Gore erupts after UN climate summit collapses — critics point to 93 private jets and cry hypocrisy"
+   ],
+   [
+    "Grist",
+    "23 Nov",
+    "https://grist.org/cop31/how-cop31-became-climate-diplomacys-darkest-moment/",
+    "How COP31 became climate diplomacy’s ‘darkest moment’"
+   ],
+   [
+    "Washington Post",
+    "23 Nov",
+    "https://www.washingtonpost.com/world/2026/11/23/collapse-un-summit-intensifies-calls-new-approach-climate-talks/",
+    "Collapse of U.N. summit intensifies calls for new approach to climate talks"
+   ],
+   [
+    "Armstrong Economics",
+    "24 Nov",
+    "https://www.armstrongeconomics.com/world-news/climate/the-climate-agenda-collapses-as-the-world-confronts-an-energy-crisis/",
+    "The Climate Agenda Collapses as the World Confronts an Energy Crisis"
+   ],
+   [
+    "The Hindu",
+    "24 Nov",
+    "https://www.thehindu.com/sci-tech/energy-and-environment/cop31-fails-to-agree-on-climate-deal-in-chaotic-finale/article71731651.ece",
+    "COP31 talks fail as EU, others reject any climate deal without language on a fossil fuel phase-out"
+   ],
+   [
+    "The Conversation UK",
+    "24 Nov",
+    "https://theconversation.com/climate-summits-need-radical-reform-heres-how-to-transform-global-negotiations-297316",
+    "Climate summits need radical reform – here’s how to transform global negotiations"
+   ],
+   [
+    "Daily Maverick",
+    "24 Nov",
+    "https://www.dailymaverick.co.za/article/2026-11-24-economic-view-the-climate-change-summit-nobody-mourns/",
+    "Business Reflection: Economic view — The climate change summit nobody mourns"
+   ],
+   [
+    "Environment + Energy – The Conversation",
+    "24 Nov",
+    "https://theconversation.com/the-silver-lining-of-the-cop31-flop-climate-coalitions-will-rise-and-the-shift-away-from-fossil-fuels-will-accelerate-297294",
+    "The silver lining of the COP31 flop? Climate coalitions will rise – and the shift away from fossil fuels will accelerate"
+   ],
+   [
+    "The Scotsman",
+    "25 Nov",
+    "https://www.scotsman.com/news/opinion/columnists/the-huge-silver-lining-of-the-collapse-of-cop31-climate-change-talks-9368192",
+    "The massive silver lining of the collapse of COP31 climate change talks – Ian Johnston"
+   ]
+  ],
+  "microsoft-orders-engineering-review-november-cloud-outage": [
+   [
+    "The Register",
+    "23 Nov",
+    "https://www.theregister.com/columnists/2026/11/23/when-microsoft-apple-and-the-faa-cant-keep-it-up-its-a-system-of-a-down/5311363",
+    "When Microsoft, Apple, and the FAA can't keep it up, it's a system of a down"
+   ],
+   [
+    "The Express Tribune",
+    "24 Nov",
+    "https://tribune.com.pk/story/2642123/microsoft-declares-code-red-after-historic-outage-internal-memos-show",
+    "Microsoft declares 'Code Red' after historic outage, internal memos show"
+   ],
+   [
+    "Investors Business Daily",
+    "24 Nov",
+    "https://www.investors.com/research/microsoft-msft-stock-buy-now-november-2026-2/",
+    "Microsoft Stock Jumps In Nvidia-Fueled Tech Surge; Is Microsoft A Buy Now?"
+   ],
+   [
+    "New York Observer",
+    "24 Nov",
+    "https://observer.com/2026/11/ai-software-vulnerabilities-technology-leadership/",
+    "Why Major Technology Systems Keep Experiencing Outages, and What Leaders Should Do"
+   ],
+   [
+    "Hindustan Times",
+    "24 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/microsoft-declares-code-red-for-m365-core-service-health-following-global-outage-internal-memos-show-101795536819661.html",
+    "Microsoft declares ‘Code Red’ for M365 core service health following global Outlook outage, internal memos show"
+   ],
+   [
+    "Slashdot",
+    "24 Nov",
+    "https://it.slashdot.org/story/26/11/24/1859221/microsoft-declares-code-red-after-historic-outage?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "Microsoft Declares 'Code Red' After Historic Outage"
+   ],
+   [
+    "7NEWS",
+    "24 Nov",
+    "https://7news.com.au/technology/microsoft-sends-code-red-alert-to-staff-after-historic-outage-exposes-companys-vulnerabilities-c-23208775",
+    "Microsoft sends ‘Code Red’ alert to staff after historic outage exposes company’s vulnerabilities"
+   ],
+   [
+    "Ars Technica",
+    "24 Nov",
+    "https://arstechnica.com/gadgets/2026/11/microsofts-historic-cloud-outage-exposed-an-engineering-fog-of-war/",
+    "Microsoft's historic cloud outage exposed an engineering “fog of war”"
+   ],
+   [
+    "Washington Examiner",
+    "24 Nov",
+    "https://www.washingtonexaminer.com/policy/technology/4814499/microsoft-code-red-response-outlook-outages/",
+    "Microsoft goes ‘Code Red’ on its response after industry-wide outages left customers in the dark"
+   ],
+   [
+    "SiliconANGLE",
+    "24 Nov",
+    "https://siliconangle.com/2026/11/24/microsoft-declares-internal-code-red-after-nearly-24-hour-microsoft-365-outage/",
+    "Microsoft declares internal Code Red after nearly 24-hour Microsoft 365 outage"
+   ],
+   [
+    "The Hindu",
+    "25 Nov",
+    "https://www.thehindu.com/sci-tech/technology/microsoft-declares-code-red-after-historic-outage-internal-memos-show/article71740915.ece",
+    "Microsoft declares ‘Code Red’ after historic outage, internal memos show"
+   ],
+   [
+    "Livemint",
+    "25 Nov",
+    "https://www.livemint.com/companies/what-is-code-red-declared-microsoft-after-historic-outlook-teams-outage-on-november-explained-11795577119032.html",
+    "What is ‘Code Red’ declared by Microsoft after historic Outlook, Teams outage on Nov 12-13? Explained"
+   ],
+   [
+    "End Time Headlines",
+    "25 Nov",
+    "https://endtimeheadlines.org/2026/11/microsoft-has-just-declared-a-code-red-after-suffering-the-most-damaging-outage-in-its-history/",
+    "Microsoft has just declared a ‘Code Red’ after suffering the most damaging outage in its history"
+   ]
+  ],
+  "meta-brings-muse-assistant": [
+   [
+    "MarketBeat",
+    "23 Nov",
+    "https://www.marketbeat.com/articles/big-banks-are-restricting-ai-agents-what-it-means-for-metas-muse/",
+    "Big Banks Are Restricting AI Agents: What It Means for Meta's Muse"
+   ],
+   [
+    "BBC News",
+    "24 Nov",
+    "https://www.bbc.co.uk/news/articles/c9gkld2l38y6o?at_medium=RSS&at_campaign=rss",
+    "Helpful but awkward: My week with Meta's Muse ahead of its UK launch"
+   ],
+   [
+    "Retail Gazette",
+    "24 Nov",
+    "https://www.retailgazette.co.uk/blog/2026/11/everything-you-need-to-know-about-metas-agentic-muse-launch/",
+    "Everything you need to know about Meta’s agentic Muse launch"
+   ],
+   [
+    "MacRumors",
+    "24 Nov",
+    "https://www.macrumors.com/2026/11/24/metas-muse-personal-ai-agent-launches-in-the-uk/",
+    "Meta's Muse Personal AI Agent Launches in the UK"
+   ],
+   [
+    "Euractiv",
+    "24 Nov",
+    "https://www.rapporteur.com/news/irish-privacy-regulator-in-talks-with-meta-over-eu-launch-of-muse/",
+    "Irish privacy regulator in talks with Meta over EU launch of Muse"
+   ],
+   [
+    "Fox Business",
+    "24 Nov",
+    "https://www.foxbusiness.com/fox-news-food-drink/metas-muse-can-now-shop-groceries-through-gopuff-deliver-minutes",
+    "Meta's Muse can now shop for groceries through Gopuff and deliver them in minutes"
+   ],
+   [
+    "9to5Mac",
+    "24 Nov",
+    "https://9to5mac.com/2026/11/24/muse-safety-debate-continues-as-the-ai-agent-rolls-out-in-the-uk/",
+    "Muse safety debate continues as the AI agent rolls out in the UK"
+   ],
+   [
+    "The Guardian",
+    "24 Nov",
+    "https://www.theguardian.com/technology/2026/nov/24/meta-launches-muse-uk-ai-agent-do-christmas-shopping",
+    "Meta launches Muse in UK – the AI agent that can do your Christmas shopping"
+   ],
+   [
+    "TechCrunch",
+    "24 Nov",
+    "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/",
+    "Meta brings its Muse AI assistant directly into Instagram DMs"
+   ],
+   [
+    "Engadget",
+    "24 Nov",
+    "https://www.engadget.com/2326663/meta-is-bringing-muse-to-instagram/",
+    "Meta is bringing Muse to Instagram"
+   ],
+   [
+    "The Next Web",
+    "24 Nov",
+    "https://thenextweb.com/news/meta-muse-instagram-dms-saves-plans",
+    "You can now DM Meta’s Muse on Instagram to turn saves into plans"
+   ],
+   [
+    "Finextra",
+    "24 Nov",
+    "https://www.finextra.com/newsarticle/48807/as-metas-muse-arrives-in-the-uk-fca-issues-agentic-ai-warning-to-tech-firms?utm_medium=rssfinextra&utm_source=finextrafeed",
+    "As Meta's Muse arrives in the UK, FCA issues agentic AI warning to tech firms"
+   ],
+   [
+    "Techmeme",
+    "25 Nov",
+    "https://www.techmeme.com/261124/p53#a261124p53",
+    "Sources: Muse boosts Meta's ad business by prompting Instagram users to organize saved posts in Muse, reducing shopping friction and increasing advertisers' ROI (Julia Boorstin/CNBC)"
+   ]
+  ],
+  "shein-agrees-100-million-settlement-shopping-claims": [
+   [
+    "Bloomberg",
+    "24 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-24/us-ftc-sues-shein-for-allegedly-deceiving-consumers-on-products",
+    "Shein to Pay $100 Million to End US Deceptive Marketing Case"
+   ],
+   [
+    "KSTP-TV",
+    "24 Nov",
+    "https://kstp.com/kstp-news/business-news/shein-to-pay-100-million-to-settle-federal-trade-commission-allegations-over-deceptive-practices/",
+    "Shein to pay $100 million to settle Federal Trade Commission allegations over deceptive practices"
+   ],
+   [
+    "The Wall Street Journal",
+    "24 Nov",
+    "https://www.wsj.com/business/retail/shein-to-pay-100-million-to-settle-ftc-claims-of-unfair-customer-service-1d294269?mod=pls_whats_news_us_business_f",
+    "Shein to Pay $100 Million to Settle FTC Claims of Unfair Customer Service"
+   ],
+   [
+    "CBS News",
+    "24 Nov",
+    "https://www.cbsnews.com/news/shein-100-million-ftc-deceptive-practices-settlement/",
+    "Shein to pay $100 million to settle claims it deceived customers"
+   ],
+   [
+    "Financial Times",
+    "25 Nov",
+    "https://www.ft.com/content/0128d44e-8ca1-49b8-868b-b8fe0e4824c6?syn-25a6b1a6=1",
+    "Shein to pay $100mn to resolve US allegations that it deceived customers"
+   ],
+   [
+    "South China Morning Post",
+    "25 Nov",
+    "https://www.scmp.com/tech/article/3375701/shein-pay-us100-million-settle-us-shipping-customer-service-claims",
+    "Shein to pay US$100 million to settle US shipping, customer service claims"
+   ],
+   [
+    "Seeking Alpha",
+    "25 Nov",
+    "https://seekingalpha.com/news/4676431-chinese-fast-fashion-giant-shein-to-pay-100m-to-settle-ftc-allegations?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "Chinese fast-fashion giant Shein to pay $100M to settle FTC allegations"
+   ],
+   [
+    "Retail Gazette",
+    "25 Nov",
+    "https://www.retailgazette.co.uk/blog/2026/11/shein-to-pay-100m-over-misleading-cotton-claims-and-customer-complaints/",
+    "Shein to pay $100m over misleading cotton claims and customer complaints"
+   ],
+   [
+    "The Next Web",
+    "25 Nov",
+    "https://thenextweb.com/news/shein-100mn-ftc-settlement",
+    "Shein to pay $100M to settle US claims it misled shoppers"
+   ]
+  ],
+  "amazon-plans-car-reservations-purchases-completed-dealerships": [
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-25/amazon-targets-uk-car-buyers-being-reeled-in-by-chinese-brands",
+    "Amazon Targets UK Car Buyers Being Reeled In by Chinese Brands"
+   ],
+   [
+    "Evening Standard",
+    "25 Nov",
+    "https://www.standard.co.uk/business/business-news/amazon-silicon-valley-press-association-vertu-motors-hyundai-b1306280.html",
+    "Amazon to sell cars online in UK from next year"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/business/uk-world/amazon-to-sell-cars-online-in-uk-from-next-year/a/165064351.html",
+    "Amazon to sell cars online in UK from next year"
+   ],
+   [
+    "CNA",
+    "25 Nov",
+    "https://www.channelnewsasia.com/business/amazon-launch-amazon-autos-in-uk-in-early-2027-in-first-expansion-beyond-us-6580851",
+    "Amazon to launch Amazon Autos in UK in early 2027 in first expansion beyond US"
+   ],
+   [
+    "Techmeme",
+    "25 Nov",
+    "https://www.techmeme.com/261125/p4#a261125p4",
+    "Amazon plans to start selling cars online in the UK in early 2027, expanding beyond the US, where it offers new and used cars from 35 brands in 150+ cities (Jamie Nimmo/Bloomberg)"
+   ],
+   [
+    "The Wall Street Journal",
+    "25 Nov",
+    "https://www.wsj.com/business/autos/amazon-autos-plans-to-launch-services-in-u-k-in-early-2027-a637c131?mod=pls_whats_news_us_business_f",
+    "Amazon Autos Plans to Launch Services in U.K. in Early 2027"
+   ],
+   [
+    "Retail Gazette",
+    "25 Nov",
+    "https://www.retailgazette.co.uk/blog/2026/11/amazon-takes-on-auto-trader-as-it-prepares-to-sell-cars-in-the-uk/",
+    "Amazon takes on Auto Trader as it prepares to sell cars in the UK"
+   ]
+  ],
+  "easyjet-brings-forward-aircraft-retirements-fuel-costs": [
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-25/easyjet-profit-hit-by-middle-east-war-as-apollo-takeover-looms",
+    "EasyJet Profit Hit By Iran War as Apollo Takeover Looms"
+   ],
+   [
+    "Investing.com",
+    "25 Nov",
+    "https://www.investing.com/news/stock-market-news/easyjet-posts-annual-profit-miss-on-fuel-costs-ahead-of-apollo-takeover-5049859",
+    "EasyJet posts annual profit miss on fuel costs ahead of Apollo takeover"
+   ],
+   [
+    "City AM",
+    "25 Nov",
+    "https://www.cityam.com/easyjet-speeds-up-scrapping-old-planes-oil-prices-profit/",
+    "Easyjet speeds up scrapping old planes as fuel price hurts profit"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/business/uk-world/easyjet-profits-plunge-on-244-million-fuel-cost-hit/a/165066891.html",
+    "EasyJet profits plunge on £244 million fuel cost hit"
+   ],
+   [
+    "Financial Times",
+    "25 Nov",
+    "https://www.ft.com/content/8606f7ee-f98b-44f5-ae5a-120b696afca5?syn-25a6b1a6=1",
+    "EasyJet profits tumble 96% after fuel prices soar"
+   ],
+   [
+    "Evening Standard",
+    "25 Nov",
+    "https://www.standard.co.uk/business/business-news/easyjet-middle-east-iran-luton-b1306294.html",
+    "EasyJet profits plunge on £244 million fuel cost hit"
+   ]
+  ]
+ },
+ "META": {
+  "editionId": "2026-11-25",
+  "dateLabel": "Wednesday 25 November 2026",
+  "range": "23–25 Nov",
+  "rangeLong": "23–25 November 2026",
+  "lastRun": "25 Nov 2026, 08:52",
+  "digest": [
+   "Ofgem sets January cap at £2,166 for a typical household (City AM)",
+   "Pakistani astronaut reaches Tiangong aboard Shenzhou-24 (Dawn)",
+   "Fossil fuel dispute leaves COP31 without an overarching agreement (Scroll.in)",
+   "Microsoft orders engineering review after November cloud outage (The Express Tribune)"
+  ],
+  "generated": "assisted",
+  "articlePolicy": "source-based-v1",
+  "writer": "source-reviewed briefing"
+ },
+ "LEGACY_IDS": {}
+}
