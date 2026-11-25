@@ -1693,10 +1693,114 @@
     return results.sort(function (a,b) { return String(b.article.published||'').localeCompare(String(a.article.published||'')); });
   }
 
+  var octal = {url: '', report: null, request: 0, loading: false, message: '', result: null};
+
+  function octalReportOptions() {
+    var reports = marketRelatedNews(null, '');
+    if (octal.report && !reports.some(function (item) { return item.article.url === octal.url; })) {
+      reports.unshift(octal.report);
+    }
+    return '<option value="">' + (reports.length ? 'Choose a market report' : 'No market reports available yet') +
+      '</option>' + reports.map(function (item) {
+        return '<option value="' + esc(item.article.url) + '"' + (octal.url === item.article.url ? ' selected' : '') +
+          '>' + esc(item.publisher + ' · ' + item.article.title) + '</option>';
+      }).join('');
+  }
+
+  function octalSources(title, records) {
+    if (!records.length) return '';
+    return '<h4>' + title + '</h4><ul>' + records.map(function (record) {
+      var url = safeExternalUrl(record.url);
+      var name = esc(record.publisher || 'Publisher');
+      return '<li>' + (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
+        name + '</a>' : name) + (record.published ? ' · ' + esc(articlePublishedLabel(record.published)) : '') + '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function octalOutput() {
+    var result = octal.result;
+    var statuses = {supported:'Supported', contested:'Contested', filtered:'Filtered', unknown:'Unknown', blocked:'Blocked'};
+    var score = result && result.octalResult;
+    var rail = Array.from({length:8}, function (_, i) {
+      return '<span' + (score === i ? ' class="selected"' : '') + '>' + i + '</span>';
+    }).join('');
+    var trace = result && result.trace;
+    var report = octal.report;
+    var headline = report ? '<header class="octal-headline"><p class="octal-label">' +
+      esc(report.publisher) + ' · ' + esc(articlePublishedLabel(report.article.published)) +
+      '</p><h3><a href="' + esc(safeExternalUrl(report.article.url)) + '" target="_blank" rel="noopener noreferrer">' +
+      esc(report.article.title) + '</a></h3></header>' : '';
+    return headline + '<section class="octal-verdict"><div><p class="octal-label">Corroboration</p><h3>' +
+      (result ? statuses[result.status] : octal.loading ? 'Analysing…' : octal.message ? 'Unavailable' : 'Awaiting analysis') +
+      '</h3><p>' + esc(result ? result.reason : octal.message || (octal.loading ? 'Checking publisher evidence.' :
+      'Select a report and run the engine to check its economic claims.')) + '</p></div>' +
+      '<div class="octal-meter"><p class="octal-label">' + (Number.isInteger(score) ? 'Evidence level ' + score + ' of 7' : 'Evidence level unscored') +
+      '</p><div class="octal-scale" aria-hidden="true">' + rail + '</div></div></section>' +
+      (result && result.inputs.length ? '<section class="octal-claims"><h3>Claims and sources</h3>' +
+      result.inputs.map(function (claim, index) {
+        var gate = trace && trace.filters[index];
+        return '<details><summary><strong>' + esc(claim.symbol) + '</strong> ' +
+          esc(claim.proposition.replace(/[-_]/g, ' ').replace(':', ' · ')) +
+          '<small>' + esc(gate ? gate.reason.replace(/-/g, ' ') : claim.state) + '</small></summary>' +
+          '<p>Input strength · ' + (claim.octalValue == null ? 'Unscored' : esc(claim.octalValue) + ' / 7') +
+          '</p><p>Supporting publishers · ' + esc(claim.supportingPublishers) + ' &nbsp; Contradicting publishers · ' +
+          esc(claim.contradictingPublishers) + '</p>' + octalSources('Supporting reports', claim.supportingEvidence) +
+          octalSources('Contradicting reports', claim.contradictingEvidence) + '</details>';
+      }).join('') + '</section>' : '') +
+      (trace ? '<details class="octal-trace"><summary>Calculation trace</summary><ol><li>Required input level · ' +
+        esc(trace.inputFloor) + '</li><li>Normalised product · ' + (trace.multiplication ?
+        esc(trace.multiplication.exact.numerator) + ' / ' + esc(trace.multiplication.exact.denominator) +
+        ' rounded to ' + esc(result.rawOctalResult) : 'Skipped after input filtering') +
+        '</li><li>Required output level · ' + esc(trace.outputFloor) + '</li></ol></details>' : '');
+  }
+
+  function octalWorkspace() {
+    return '<section class="ws-widget" id="octal-engine"><div class="ws-widget-head"><h2>Octal Engine</h2></div>' +
+      '<div class="ws-widget-scroll octal-body"><label class="octal-label" for="octal-reports">Publisher report</label>' +
+      '<div class="octal-controls"><select id="octal-reports">' + octalReportOptions() +
+      '</select><button type="button" id="octal-run"' + (!octal.url || octal.loading ? ' disabled' : '') +
+      '>Run analysis</button></div><div id="octal-output" aria-live="polite">' + octalOutput() + '</div></div></section>';
+  }
+
+  function updateOctal() {
+    var output = app.querySelector('#octal-output');
+    if (!output) return;
+    output.innerHTML = octalOutput();
+    app.querySelector('#octal-run').disabled = !octal.url || octal.loading;
+  }
+
+  app.addEventListener('click', async function (event) {
+    if (event.target.id !== 'octal-run' || !octal.url || octal.loading) return;
+    var request = ++octal.request;
+    octal.loading = true;
+    octal.result = null;
+    octal.message = '';
+    updateOctal();
+    try {
+      var response = await fetch('https://pheme-reader-api-production.up.railway.app/v1/infer?url=' +
+        encodeURIComponent(octal.url), {signal: AbortSignal.timeout(20000)});
+      if (!response.ok) {
+        if (request === octal.request) octal.message = response.status === 404 ?
+        'This report is outside the verified cache. Choose another report or retry later.' :
+        'The engine is unavailable. Run the analysis again to retry.';
+        return;
+      }
+      var data = await response.json();
+      if (request !== octal.request) return;
+      if (!data.inference || !Array.isArray(data.inference.inputs) ||
+          !['supported','contested','filtered','unknown','blocked'].includes(data.inference.status)) throw Error();
+      octal.result = data.inference;
+    } catch (error) {
+      if (request === octal.request) octal.message = 'Analysis could not finish. Run it again to retry.';
+    } finally {
+      if (request === octal.request) { octal.loading = false; updateOctal(); }
+    }
+  });
+
   var MARKET_WORKSPACES = [
     {id:'overview',label:'Overview'}, {id:'company',label:'Company'},
     {id:'heatmap',label:'Heatmap'}, {id:'movers',label:'Movers & FX'}, {id:'calendar',label:'Calendar'},
-    {id:'news',label:'News'}, {id:'evidence',label:'Evidence Bot'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
+    {id:'news',label:'News'}, {id:'octal',label:'Octal Engine'}, {id:'evidence',label:'Evidence Bot'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
   ];
 
   function isMarketWorkspace(id) {
@@ -1738,6 +1842,7 @@
        tab === 'calendar' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>Economic calendar</h2><span>Central banks, CPI, GDP &amp; jobs (UK, US, EU, JP, IN, CN)</span></div>' +
          '<div id="ws-economic-calendar" class="ws-widget-embed"><p class="ws-empty">Loading economic calendar…</p></div></section>' :
        tab === 'news' ? marketWorkspaceNews() :
+       tab === 'octal' ? octalWorkspace() :
        tab === 'evidence' ? (window.PhemeEvidenceBot ? window.PhemeEvidenceBot.html() : '<p class="ws-empty">Evidence Bot unavailable.</p>') +
          '<section class="ws-widget ws-trading212"><div class="ws-widget-head"><h2>Trading 212</h2></div>' +
          '<iframe title="Private Trading 212 account" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms" ' +
@@ -2012,6 +2117,8 @@
 
   function refreshWorkspaceNews() {
     if (state.view !== 'trading') return;
+    var reports = app.querySelector('#octal-reports');
+    if (reports) reports.innerHTML = octalReportOptions();
     var overview = app.querySelector('#ws-market-headlines');
     if (overview) overview.innerHTML = marketWorkspaceNewsHtml(marketRelatedNews(null,''),12);
     var company = app.querySelector('#ws-company-news');
@@ -3151,6 +3258,16 @@
 
   /* ---------- events ---------- */
   app.addEventListener('change', function (event) {
+    if (event.target && event.target.id === 'octal-reports') {
+      octal.url = event.target.value;
+      octal.report = marketRelatedNews(null, '').find(function (item) { return item.article.url === octal.url; });
+      octal.result = null;
+      octal.message = '';
+      octal.loading = false;
+      octal.request++;
+      updateOctal();
+      return;
+    }
     if (!event.target || event.target.id !== 'ws-mobile-section') return;
     var next = event.target.value;
     if (!isMarketWorkspace(next) ||
