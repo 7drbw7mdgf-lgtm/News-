@@ -21,6 +21,7 @@ import math
 import os
 import re
 import sys
+import time
 import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -449,6 +450,9 @@ def write_story(e, taken):
         return None
     source_names = [name for name in (gen.get('article_sources') or []) if isinstance(name, str) and name in e['outlets']] if isinstance(gen, dict) else []
     if gen and gen.get('headline') and gen.get('summary') and not gen.get('insufficient_material') and article_is_ready(gen) and source_names:
+        if os.environ.get('PHEME_LOCAL_WRITER') == '1':
+            lead = source_names[0]
+            la = e['outlets'][lead]
         headline = gen['headline'].strip()[:110]
         summary = gen['summary'].strip()
         points = [p.strip() for p in gen.get('points', []) if isinstance(p, str) and p.strip()][:3]
@@ -541,14 +545,17 @@ def main():
     previous = json.loads(editions[-1].read_text()) if editions else {}
     FOLLOWED.update(f['name'] for f in previous.get('FOLLOWED', []))
     taken, stories, coverage, digests, outlets, questionable = set(), [], {}, [], {}, set()
-    selected = choose(events)
     local = os.environ.get('PHEME_LOCAL_WRITER') == '1'
+    selected = choose(events)
     if local:
         # Give each desk a turn before filling the remaining CPU writer slots.
         desks = [[event for event in selected if event['topic'] == topic] for topic in QUOTA]
         selected = [desk[index] for index in range(len(selected)) for desk in desks if index < len(desk)]
+        ranked_ids = {id(event) for event in selected}
+        selected.extend(event for event in events if id(event) not in ranked_ids)
+    deadline = time.monotonic() + 38 * 60
     for e in selected:
-        if local and len(stories) >= 12:
+        if local and (len(stories) >= 12 or time.monotonic() >= deadline):
             break
         written = write_story(e, taken)
         if not written:
@@ -557,6 +564,8 @@ def main():
         if local and not (story.get('articleSources') and article_is_ready(story)):
             continue
         stories.append(story)
+        if local:
+            print(f'Accepted story {len(stories)}/12: {story["headline"]}', file=sys.stderr, flush=True)
         coverage[story['id']] = cov
         digests.append(digest)
         for o, r in e['ratings'].items():
