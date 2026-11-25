@@ -1,11 +1,21 @@
 name: Build a keyless Pheme edition
 
 on:
+  schedule:
+    - cron: '15 0,6,12,18 * * *'
+      timezone: Europe/London
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/local-writer-trial.yml'
+      - 'scripts/make-edition.py'
+      - 'scripts/local_writer.py'
   pull_request:
     branches: [main]
     paths:
       - '.github/workflows/local-writer-trial.yml'
       - 'scripts/make-edition.py'
+      - 'scripts/local_writer.py'
   workflow_dispatch:
     inputs:
       publish:
@@ -18,21 +28,22 @@ permissions:
 
 concurrency:
   group: pheme-local-writer-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   edition:
     if: |
-      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
-      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'pheme-local-writer')
+      (github.ref == 'refs/heads/main' && github.event_name != 'pull_request') ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.base.ref == 'main')
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 55
     env:
       PHEME_LOCAL_WRITER: '1'
       LLAMA_RELEASE: b12676
       LLAMA_SHA256: c65369a8574d096d90c593fef0e77a1ba2abfdfa7e7e9426bbf8939781ef8a07
-      MODEL_REVISION: 91cad51170dc346986eccefdc2dd33a9da36ead9
-      MODEL_SHA256: 6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e
+      MODEL_REVISION: ae44f08e1392f39c0e474af10c3ff8355c8b6688
+      CHECKER_REVISION: 6bc2a55c7c0f7e2bc68de60bb248e523e2612abb
+      MODEL_SHA256: 2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,6 +54,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Check article filtering
+        run: python -m unittest discover -s scripts -p 'test_local_writer.py'
       - name: Collect fresh publisher feeds
         run: python3 scripts/collect-feeds.py > "${RUNNER_TEMP}/candidates.json"
       - name: Download and verify the model and runner
@@ -53,10 +66,23 @@ jobs:
           curl -fsSL --retry 2 --max-time 240 -o "$archive" \
             "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_RELEASE}/llama-${LLAMA_RELEASE}-bin-ubuntu-x64.tar.gz"
           curl -fsSL --retry 2 --max-time 240 -o "$model" \
-            "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/${MODEL_REVISION}/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+            "https://huggingface.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF/resolve/${MODEL_REVISION}/Qwen_Qwen3-4B-Instruct-2507-Q4_K_M.gguf"
           printf '%s  %s\n' "$LLAMA_SHA256" "$archive" "$MODEL_SHA256" "$model" | sha256sum -c -
           mkdir "${RUNNER_TEMP}/llama"
           tar -xzf "$archive" -C "${RUNNER_TEMP}/llama" --no-same-owner
+      - name: Install the source checker
+        shell: bash
+        run: |
+          python -m pip install --disable-pip-version-check 'onnxruntime==1.23.2' 'tokenizers==0.22.1'
+          cd "$RUNNER_TEMP"
+          url="https://huggingface.co/Xenova/nli-deberta-v3-small/resolve/${CHECKER_REVISION}"
+          curl -fsSL --retry 2 --max-time 180 -o model_quantized.onnx "$url/onnx/model_quantized.onnx"
+          curl -fsSL --retry 2 --max-time 120 -o tokenizer.json "$url/tokenizer.json"
+          sha256sum -c <<'SUMS'
+          4edae6adf6ef735d3983a052113e8a235da2e9ac6a6cadf33f3fc088117e6051  model_quantized.onnx
+          a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df  tokenizer.json
+          SUMS
+          echo "PHEME_SOURCE_CHECKER=$RUNNER_TEMP" >> "$GITHUB_ENV"
       - name: Generate and validate a draft edition
         shell: bash
         run: |
@@ -88,7 +114,7 @@ jobs:
           node scripts/build-editions.mjs --check
 
       - name: Stage the validated edition for publishing
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish)
         shell: bash
         run: |
           mapfile -t editions < <(git ls-files -mo --exclude-standard -- editions/)
@@ -99,7 +125,7 @@ jobs:
           mkdir "$RUNNER_TEMP/validated-edition"
           cp -- "${editions[0]}" "$RUNNER_TEMP/validated-edition/"
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish)
         with:
           name: validated-pheme-edition
           path: ${{ runner.temp }}/validated-edition/*.json
@@ -108,7 +134,7 @@ jobs:
 
   publish:
     needs: edition
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish)
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -156,7 +182,12 @@ jobs:
             exit 0
           fi
           git commit -m "Keyless edition $(TZ=Europe/London date '+%Y-%m-%d %H:%M') [skip ci]"
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [[ "$attempt" == 3 ]]; then exit 1; fi
+            sleep 3
+          done
           echo 'pushed=true' >> "$GITHUB_OUTPUT"
       - name: Publish on Fasthosts
         if: steps.commit.outputs.pushed == 'true'

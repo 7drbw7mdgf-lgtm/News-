@@ -11,11 +11,9 @@ Steps
 3. Rate every outlet with Media Bias/Fact Check (scripts/ratings.py).
 4. Rank events by how many outlets covered them, how recent they are and how
    much of the political spectrum covered them; pick a balanced set per topic.
-5. Write each story. If ANTHROPIC_API_KEY is set, Claude writes an original,
-   neutral headline, summary, key points, a place for the map and a comparison
-   of where outlets agree or differ, using only the collected headlines and
-   descriptions. Without a key, the lead outlet's headline is shown with
-   attribution and the summary lists who covered it; no publisher text is copied.
+5. Draft source-linked articles using the selected writer. The scheduled CPU
+   writer works from publisher excerpts, skipping stories it cannot substantiate.
+   Publish only after the edition satisfies the minimum story and article checks.
 """
 import datetime
 import json
@@ -23,6 +21,7 @@ import math
 import os
 import re
 import sys
+import time
 import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -30,6 +29,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ratings  # noqa: E402
+from local_writer import ask_local_writer  # noqa: E402
 from native_articles import article_is_ready, apply_editorial  # noqa: E402
 from story_images import enrich_stories  # noqa: E402
 
@@ -336,51 +336,6 @@ def ask_groq(e):
     return data
 
 
-def ask_local_writer(e):
-    """Call the llama.cpp CPU server started on the Actions runner."""
-    lines = []
-    for outlet, article in sorted(e['outlets'].items(), key=lambda item: item[1]['published'])[:8]:
-        lines.append(f"- {outlet} ({day_label(article['published'])}): "
-                     f"{article['title']} — {article.get('summary', '')[:350]}")
-    body = json.dumps({
-        'model': 'pheme-local',
-        'messages': [{'role': 'user', 'content': PROMPT.format(material='\n'.join(lines))}],
-        'max_tokens': 850,
-        'temperature': 0.1,
-        'response_format': {'type': 'json_object'},
-    }).encode()
-    request = urllib.request.Request('http://127.0.0.1:8087/v1/chat/completions', data=body,
-                                     headers={'Content-Type': 'application/json'})
-    try:
-        with urllib.request.urlopen(request, timeout=90) as response:
-            choice = json.load(response)['choices'][0]
-        if choice.get('finish_reason') == 'length':
-            raise ValueError('Truncated completion')
-        data = json.loads(choice['message']['content'])
-        if not isinstance(data, dict):
-            raise ValueError('Expected a JSON object')
-        if data.get('same_event') is False or data.get('is_news') is False:
-            return {'reject': True}
-        for key in ('headline', 'summary', 'digest', 'topic'):
-            if not isinstance(data.get(key), str):
-                data.pop(key, None)
-        for key in ('article', 'article_sources', 'points'):
-            values = data.get(key)
-            data[key] = [item for item in values if isinstance(item, str)] if isinstance(values, list) else []
-        for key in ('agree', 'differ'):
-            values = data.get(key)
-            data[key] = [
-                item for item in values
-                if isinstance(item, dict) and isinstance(item.get('text'), str)
-                and isinstance(item.get('sources'), list)
-                and all(isinstance(source, str) for source in item['sources'])
-            ] if isinstance(values, list) else []
-        return data
-    except (OSError, KeyError, IndexError, TypeError, ValueError, AttributeError) as error:
-        print(f'Local writer rejected one completion ({type(error).__name__}).', file=sys.stderr)
-        return None
-
-
 def ask_writer(e):
     if os.environ.get('PHEME_LOCAL_WRITER') == '1':
         return ask_local_writer(e)
@@ -495,6 +450,9 @@ def write_story(e, taken):
         return None
     source_names = [name for name in (gen.get('article_sources') or []) if isinstance(name, str) and name in e['outlets']] if isinstance(gen, dict) else []
     if gen and gen.get('headline') and gen.get('summary') and not gen.get('insufficient_material') and article_is_ready(gen) and source_names:
+        if os.environ.get('PHEME_LOCAL_WRITER') == '1':
+            lead = source_names[0]
+            la = e['outlets'][lead]
         headline = gen['headline'].strip()[:110]
         summary = gen['summary'].strip()
         points = [p.strip() for p in gen.get('points', []) if isinstance(p, str) and p.strip()][:3]
@@ -587,18 +545,37 @@ def main():
     previous = json.loads(editions[-1].read_text()) if editions else {}
     FOLLOWED.update(f['name'] for f in previous.get('FOLLOWED', []))
     taken, stories, coverage, digests, outlets, questionable = set(), [], {}, [], {}, set()
-    for e in choose(events):
+    local = os.environ.get('PHEME_LOCAL_WRITER') == '1'
+    selected = choose(events)
+    if local:
+        # Give each desk a turn before filling the remaining CPU writer slots.
+        desks = [[event for event in selected if event['topic'] == topic] for topic in QUOTA]
+        selected = [desk[index] for index in range(len(selected)) for desk in desks if index < len(desk)]
+        ranked_ids = {id(event) for event in selected}
+        selected.extend(event for event in events if id(event) not in ranked_ids)
+    deadline = time.monotonic() + 38 * 60
+    for e in selected:
+        if local and (len(stories) >= 12 or time.monotonic() >= deadline):
+            break
         written = write_story(e, taken)
         if not written:
             continue
         story, cov, digest = written
+        if local and not (story.get('articleSources') and article_is_ready(story)):
+            continue
         stories.append(story)
+        if local:
+            print(f'Accepted story {len(stories)}/12: {story["headline"]}', file=sys.stderr, flush=True)
         coverage[story['id']] = cov
         digests.append(digest)
         for o, r in e['ratings'].items():
             outlets[o] = r['code']
             if r['questionable']:
                 questionable.add(o)
+    if local:
+        ranks = {row['url']: e['score'] for e in selected for row in e['outlets'].values()}
+        stories.sort(key=lambda story: ranks[story['url']], reverse=True)
+        print(f'{len(stories)} validated local stories available.', file=sys.stderr)
     if len(stories) < int(os.environ.get('PHEME_MIN_STORIES', '8')):
         print('Too few multi-outlet stories; keeping the previous edition.', file=sys.stderr)
         return 1

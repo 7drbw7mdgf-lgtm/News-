@@ -1,11 +1,7 @@
 name: Build Pheme edition
 
-# Every 6 hours: collect the 500 feeds, group articles into multi-outlet
-# stories, write today's edition, commit it and publish the site.
+# On-demand edition with hosted writers. Scheduled editions use the keyless CPU runner.
 on:
-  schedule:
-    - cron: '15 0,6,12,18 * * *'
-      timezone: Europe/London
   workflow_dispatch:
 
 permissions:

@@ -1127,6 +1127,42 @@
       '<p class="small">Edition: ' + esc(D.META.rangeLong) + ' · Updated ' + esc(D.META.lastRun) + '.</p>';
   }
 
+  function newerPublisherHeadlines() {
+    if (!publisherFeed || !publisherFeed.publishers) return '';
+    var today = new Date();
+    var londonDate = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/London' });
+    if (londonDate.format(today) <= D.META.editionId) return '';
+    var rows = [];
+    Object.keys(publisherFeed.publishers).forEach(function (name) {
+      var newest = null;
+      storiesForPaper(name).forEach(function (article) {
+        var timestamp = Date.parse(article.published);
+        if (Number.isFinite(timestamp) && timestamp <= today.getTime() && (!newest || timestamp > newest.time)) {
+          newest = { article: article, name: name, time: timestamp };
+        }
+      });
+      if (newest && londonDate.format(newest.time) > D.META.editionId) rows.push(newest);
+    });
+    var titles = new Set();
+    var cards = rows.sort(function (a, b) { return b.time - a.time; }).filter(function (row) {
+      var title = row.article.title.trim().toLowerCase();
+      if (!title || titles.has(title)) return false;
+      titles.add(title);
+      return true;
+    }).slice(0, 6).map(function (row) {
+      var published = new Date(row.time).toLocaleString('en-GB', {
+        day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London'
+      });
+      return '<article class="quick-story"><div class="quick-story-copy"><h3>' +
+        nativePublisherArticleLink(row.article, row.name, row.article.title, 'storybtn') +
+        '</h3><div class="quick-meta"><span class="publisher-tag">' + esc(row.name) +
+        '</span><time datetime="' + esc(row.article.published) + '">' + esc(published) + '</time></div></div></article>';
+    });
+    return cards.length ? '<section class="headline-section" aria-labelledby="publisher-latest-title">' +
+      '<div class="dashboard-section-head"><h2 id="publisher-latest-title">Latest from publishers</h2></div>' +
+      '<div class="quick-grid">' + cards.join('') + '</div></section>' : '';
+  }
+
   function renderBriefing() {
     var isSaved = state.view === 'saved';
     var list = (isSaved ? STORIES : CURRENT).filter(function (s) {
@@ -1160,7 +1196,8 @@
     });
     var displayed = quick.concat(featured).map(function (s) { return s.id; });
     var remaining = list.filter(function (s) { return displayed.indexOf(s.id) === -1; });
-    return renderChannels() + '<section class="headline-section" aria-labelledby="headlines-title"><div class="dashboard-section-head"><h2 id="headlines-title">Latest edition headlines</h2><span>' + list.length + ' stories · ' + esc(D.META.range) + '</span></div><div class="quick-grid">' + quick.map(renderQuickStory).join('') + '</div></section>' +
+    return renderChannels() + '<div id="publisher-headline-updates">' + newerPublisherHeadlines() + '</div>' +
+      '<section class="headline-section" aria-labelledby="headlines-title"><div class="dashboard-section-head"><h2 id="headlines-title">Latest edition headlines</h2><span>' + list.length + ' stories · ' + esc(D.META.range) + '</span></div><div class="quick-grid">' + quick.map(renderQuickStory).join('') + '</div></section>' +
       '<section class="featured-section" aria-labelledby="featured-title"><div class="dashboard-section-head"><h2 id="featured-title">Featured stories</h2><span>A view across the topics</span></div><div class="news-card-grid">' + featured.map(renderDashboardCard).join('') + '</div></section>' +
       (remaining.length ? '<section class="more-section" aria-labelledby="more-title"><div class="dashboard-section-head"><h2 id="more-title">More in your briefing</h2><span>' + remaining.length + ' more stories</span></div><div class="news-card-grid">' + remaining.map(renderDashboardCard).join('') + '</div></section>' : '');
   }
@@ -2168,6 +2205,8 @@
       .catch(function () { publisherFeedError = true; })
       .finally(function () {
         publisherFeedLoading = false;
+        var updates = app.querySelector('#publisher-headline-updates');
+        if (updates) updates.innerHTML = newerPublisherHeadlines();
         if (state.view === 'papers' && !state.reading) {
           var track = app.querySelector('#paper-provider-track');
           if (track && app.querySelector('#paper-article-content')) {
