@@ -188,6 +188,10 @@
   state.readingSource = sourceForStory(state.reading, route.get('source'));
   var routePublisher = route.get('publisher');
   var routeArticle = safeExternalUrl(route.get('article'));
+  if (!routePublisher && !state.reading && route.get('workspace') === 'octal') {
+    state.view = 'trading';
+    state.marketWorkspaceTab = 'octal';
+  }
   if (routePublisher) {
     state.view = 'papers';
     state.paper = routePublisher;
@@ -478,6 +482,10 @@
     if (publisher) { state.view = 'papers'; state.paper = publisher; }
     state.reading = byId[id] ? id : null;
     if (state.reading && !publisher) state.view = 'briefing';
+    if (!publisher && !state.reading && params.get('workspace') === 'octal') {
+      state.view = 'trading';
+      state.marketWorkspaceTab = 'octal';
+    }
     state.readingSource = sourceForStory(state.reading, params.get('source'));
     if (!state.reading) state.readerFocus = false;
     state.aaOpen = false;
@@ -1733,11 +1741,18 @@
   var MARKET_WORKSPACES = [
     {id:'overview',label:'Overview'}, {id:'company',label:'Company'},
     {id:'heatmap',label:'Heatmap'}, {id:'movers',label:'Movers & FX'}, {id:'calendar',label:'Calendar'},
-    {id:'news',label:'News'}, {id:'evidence',label:'Evidence Bot'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
+    {id:'news',label:'News'}, {id:'octal',label:'Octal Bot'}, {id:'evidence',label:'Evidence Bot'}, {id:'resources',label:'Resource network'}, {id:'map',label:'World map'}, {id:'discover',label:'Discover'}
   ];
 
   function isMarketWorkspace(id) {
     return MARKET_WORKSPACES.some(function (workspace) { return workspace.id === id; });
+  }
+
+  function trading212Widget(note) {
+    return '<section class="ws-widget ws-trading212"><div class="ws-widget-head"><h2>Trading 212</h2></div>' +
+      (note ? '<p class="octal-broker-note">Unlock the private widget to preview and confirm a manual demo order.</p>' : '') +
+      '<iframe title="Private Trading 212 account" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms" ' +
+      'src="https://pheme-reader-api-production.up.railway.app/trading212/widget"></iframe></section>';
   }
 
   function renderTrading() {
@@ -1775,10 +1790,9 @@
        tab === 'calendar' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>Economic calendar</h2><span>Central banks, CPI, GDP &amp; jobs (UK, US, EU, JP, IN, CN)</span></div>' +
          '<div id="ws-economic-calendar" class="ws-widget-embed"><p class="ws-empty">Loading economic calendar…</p></div></section>' :
        tab === 'news' ? marketWorkspaceNews() :
+       tab === 'octal' ? (window.PhemeOctalBot ? window.PhemeOctalBot.html(trading212Widget(true)) : '<p class="ws-empty">Octal Bot unavailable.</p>') :
        tab === 'evidence' ? (window.PhemeEvidenceBot ? window.PhemeEvidenceBot.html() : '<p class="ws-empty">Evidence Bot unavailable.</p>') +
-         '<section class="ws-widget ws-trading212"><div class="ws-widget-head"><h2>Trading 212</h2></div>' +
-         '<iframe title="Private Trading 212 account" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms" ' +
-         'src="https://pheme-reader-api-production.up.railway.app/trading212/widget"></iframe></section>' :
+         trading212Widget(false) :
        tab === 'resources' ? (window.PhemeResourceGraph ? window.PhemeResourceGraph.html() : '<p>Resource graph unavailable.</p>') :
        tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
          '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
@@ -3123,6 +3137,14 @@
   }
 
   function render(opts) {
+    var params = new URLSearchParams(location.search);
+    var onOctal = state.view === 'trading' && state.marketWorkspaceTab === 'octal' && !state.reading && !state.publisherArticle;
+    var octalUrl = params.get('workspace') === 'octal';
+    if (onOctal !== octalUrl) {
+      if (onOctal) params.set('workspace', 'octal');
+      else params.delete('workspace');
+      history.replaceState(null, '', location.pathname + (params.size ? '?' + params.toString() : '') + (location.hash || ''));
+    }
     document.body.classList.toggle('market-chart-open', !!state.marketOpen);
     var previousMarkets = document.getElementById('market-widgets');
     var previousTicker = document.getElementById('ws-ticker-tape');
@@ -3170,6 +3192,7 @@
     if (state.view === 'trading') loadCompanyDirectory();
     if (state.view === 'trading' && state.marketWorkspaceTab === 'resources' && window.PhemeResourceGraph) window.PhemeResourceGraph.refresh(false);
     if (window.PhemeEvidenceBot) window.PhemeEvidenceBot.mount();
+    if (window.PhemeOctalBot) window.PhemeOctalBot.mount();
     mountWorldMap();
     mountPublisherMap();
     mountExchangeMap();

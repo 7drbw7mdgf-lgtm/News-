@@ -41,8 +41,10 @@ function boot(width) {
       };
     }
   };
+  const location = {search: '', pathname: '/'};
+  const history = {replaceState(_state, _title, url) { location.search = new URL(url, 'https://pheme24.online').search; }};
   const context = vm.createContext({
-    window, document, location: {search: '', pathname: '/'}, URL, URLSearchParams,
+    window, document, location, history, URL, URLSearchParams,
     setInterval() {}, fetch: () => new Promise(() => {})
   });
   for (const file of ['assets/data.js', 'assets/app.js']) {
@@ -75,7 +77,7 @@ test('phone navigation exposes the same destinations as the desktop sidebar', ()
   assert.match(ui.html(), /Markets workspace/);
   const picker = ui.html().match(/<select id="ws-mobile-section"[^>]*>(.*?)<\/select>/s)[1];
   const options = [...picker.matchAll(/<option value="([^"]+)"/g)].map(match => match[1]);
-  assert.deepEqual(options, ['overview', 'company', 'heatmap', 'movers', 'calendar', 'news', 'evidence', 'resources', 'map', 'discover']);
+  assert.deepEqual(options, ['overview', 'company', 'heatmap', 'movers', 'calendar', 'news', 'octal', 'evidence', 'resources', 'map', 'discover']);
   for (const workspace of options) {
     ui.select(workspace);
     assert.ok(ui.html().includes('<option value="' + workspace + '" selected>'), workspace);
