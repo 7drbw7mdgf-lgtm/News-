@@ -1,0 +1,2917 @@
+{
+ "TOPICS": [
+  {
+   "id": "uk",
+   "label": "UK"
+  },
+  {
+   "id": "world",
+   "label": "World"
+  },
+  {
+   "id": "science",
+   "label": "Science"
+  },
+  {
+   "id": "tech",
+   "label": "Tech"
+  },
+  {
+   "id": "business",
+   "label": "Business"
+  },
+  {
+   "id": "finance",
+   "label": "Finance"
+  }
+ ],
+ "CATS": {
+  "uk": {
+   "label": "UK news",
+   "topic": "uk"
+  },
+  "world": {
+   "label": "World news",
+   "topic": "world"
+  },
+  "science": {
+   "label": "Science",
+   "topic": "science"
+  },
+  "tech": {
+   "label": "Tech",
+   "topic": "tech"
+  },
+  "business": {
+   "label": "Business",
+   "topic": "business"
+  }
+ },
+ "CATALOG": [
+  [
+   "telegraph",
+   "The Telegraph",
+   "uk",
+   true
+  ],
+  [
+   "bbc",
+   "BBC News",
+   "uk",
+   false
+  ],
+  [
+   "guardian",
+   "The Guardian",
+   "uk",
+   false
+  ],
+  [
+   "times",
+   "The Times",
+   "uk",
+   true
+  ],
+  [
+   "independent",
+   "The Independent",
+   "uk",
+   false
+  ],
+  [
+   "sky",
+   "Sky News",
+   "uk",
+   false
+  ],
+  [
+   "reuters",
+   "Reuters",
+   "world",
+   false
+  ],
+  [
+   "ap",
+   "Associated Press",
+   "world",
+   false
+  ],
+  [
+   "nyt",
+   "The New York Times",
+   "world",
+   true
+  ],
+  [
+   "politico",
+   "Politico Europe",
+   "world",
+   false
+  ],
+  [
+   "economist",
+   "The Economist",
+   "business",
+   true
+  ],
+  [
+   "ft",
+   "Financial Times",
+   "business",
+   true
+  ],
+  [
+   "bloomberg",
+   "Bloomberg",
+   "business",
+   true
+  ],
+  [
+   "wsj",
+   "The Wall Street Journal",
+   "business",
+   true
+  ],
+  [
+   "newscientist",
+   "New Scientist",
+   "science",
+   true
+  ],
+  [
+   "naturenews",
+   "Nature News",
+   "science",
+   false
+  ],
+  [
+   "stat",
+   "STAT",
+   "science",
+   false
+  ],
+  [
+   "ars",
+   "Ars Technica",
+   "tech",
+   false
+  ],
+  [
+   "verge",
+   "The Verge",
+   "tech",
+   false
+  ],
+  [
+   "wired",
+   "Wired",
+   "tech",
+   true
+  ]
+ ],
+ "LEAN": {
+  "L": [
+   "Left",
+   "Left"
+  ],
+  "LL": [
+   "Lean left",
+   "Left-Center"
+  ],
+  "C": [
+   "Centre",
+   "Least Biased"
+  ],
+  "LR": [
+   "Lean right",
+   "Right-Center"
+  ],
+  "R": [
+   "Right",
+   "Right"
+  ],
+  "S": [
+   "Science",
+   "Pro-Science (not rated left–right)"
+  ],
+  "P": [
+   "Primary",
+   "Primary source, not a news outlet"
+  ],
+  "NR": [
+   "Unrated",
+   "No Media Bias/Fact Check rating found"
+  ],
+  "NC": [
+   "Unchecked",
+   "Rating not looked up yet"
+  ]
+ },
+ "FOLLOWED": [
+  {
+   "name": "BBC News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Guardian",
+   "topic": "uk"
+  },
+  {
+   "name": "Sky News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Telegraph",
+   "topic": "uk"
+  },
+  {
+   "name": "Daily Mail",
+   "topic": "uk"
+  },
+  {
+   "name": "ITV News",
+   "topic": "uk"
+  },
+  {
+   "name": "RTÉ News",
+   "topic": "uk"
+  },
+  {
+   "name": "Financial Times",
+   "topic": "finance"
+  },
+  {
+   "name": "The Economist",
+   "topic": "finance"
+  },
+  {
+   "name": "CNBC",
+   "topic": "finance"
+  },
+  {
+   "name": "City AM",
+   "topic": "finance"
+  },
+  {
+   "name": "The New York Times",
+   "topic": "world"
+  },
+  {
+   "name": "NPR",
+   "topic": "world"
+  },
+  {
+   "name": "Fox News",
+   "topic": "world"
+  },
+  {
+   "name": "Al Jazeera English",
+   "topic": "world"
+  },
+  {
+   "name": "France 24",
+   "topic": "world"
+  },
+  {
+   "name": "DW News",
+   "topic": "world"
+  },
+  {
+   "name": "Politico Europe",
+   "topic": "world"
+  },
+  {
+   "name": "Euronews",
+   "topic": "world"
+  },
+  {
+   "name": "South China Morning Post",
+   "topic": "world"
+  },
+  {
+   "name": "Nature News",
+   "topic": "science"
+  },
+  {
+   "name": "New Scientist",
+   "topic": "science"
+  },
+  {
+   "name": "ScienceDaily",
+   "topic": "science"
+  },
+  {
+   "name": "TechCrunch",
+   "topic": "tech"
+  },
+  {
+   "name": "The Verge",
+   "topic": "tech"
+  },
+  {
+   "name": "Ars Technica",
+   "topic": "tech"
+  }
+ ],
+ "STORIES": [
+  {
+   "id": "macys-thanksgiving-parade-postponed-saturday-due-expected",
+   "topic": "world",
+   "source": "WPIX 11",
+   "time": "25 Nov",
+   "url": "https://pix11.com/news/local-news/macys-thanksgiving-parade-postponed/",
+   "headline": "Macy's Thanksgiving Day Parade postponed to Saturday due to bad weather",
+   "summary": "Officials have postponed the 100th Macy's Thanksgiving Day Parade because of inclement weather.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Officials have postponed the 100th Macy's Thanksgiving Day Parade because of inclement weather. The parade will be held on Saturday, with Mayor Zohran Mamdani confirming the decision was made jointly with Macy's and city agencies.",
+    "The Macy’s Thanksgiving Day Parade is being postponed as strong winds are expected in New York during the event, according to NBC. The city, Macy’s, and NBC jointly announced the parade’s move to Saturday for safety reasons amid extreme weather. NBC will air a rerun of the 2025 parade on Thursday instead of the original Thanksgiving Day broadcast."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:23:47+00:00",
+   "articleSources": [
+    {
+     "name": "WPIX 11",
+     "url": "https://pix11.com/news/local-news/macys-thanksgiving-parade-postponed/"
+    },
+    {
+     "name": "CityNews Toronto",
+     "url": "https://toronto.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/"
+    }
+   ],
+   "location": {
+    "label": "Chicago, Illinois, USA",
+    "shortLabel": "Chicago",
+    "lat": 41.8781,
+    "lng": -87.6298
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/2bf7/live/ebffd790-e8c5-11f1-ac76-db9e97f93d67.jpg",
+   "imageAlt": "A huge balloon depicting Minnie Mouse floats above a crowd of people in a parade, surrounded by skyscrapers in the New York cityscape.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "army-calls-detonation-bomb-chemicals-iowa-success",
+   "topic": "world",
+   "source": "Washington's Top News (WTOP)",
+   "time": "26 Nov",
+   "url": "https://wtop.com/national/2026/11/us-stockpile-of-unstable-and-dangerous-lead-azide-scheduled-for-detonation-in-iowa/",
+   "headline": "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume",
+   "summary": "Earthen barriers and water/foam were used to contain the blast at two bunkers holding 5 tons of lead azide, with officials saying these measures absorbed most of the explosion's impact.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "Earthen barriers and water/foam were used to contain the blast at two bunkers holding 5 tons of lead azide, with officials saying these measures absorbed most of the explosion's impact. EPA air monitors detected no lead in the air around the plant, and a cellphone alert advised residents it was safe to resume normal activities.",
+    "Videos showed a smoke plume rising hundreds of feet and drifting south before dissipating quickly. The Army confirmed all barrels were destroyed without secondary explosions or damage to infrastructure."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:27:18+00:00",
+   "articleSources": [
+    {
+     "name": "Washington's Top News (WTOP)",
+     "url": "https://wtop.com/national/2026/11/us-stockpile-of-unstable-and-dangerous-lead-azide-scheduled-for-detonation-in-iowa/"
+    },
+    {
+     "name": "The Verge",
+     "url": "https://www.theverge.com/science/1042109/us-army-detonation-lead-azide-explosives-iowa-ammunition-plant"
+    }
+   ],
+   "location": {
+    "label": "St. Louis, Missouri, USA",
+    "shortLabel": "St. Louis",
+    "lat": 38.627,
+    "lng": -90.1994
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9049/live/be474ac0-e8f9-11f1-b8b0-a95064d74c5f.jpg",
+   "imageAlt": "Debris is seen overtop trees",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "duran-duran-guitarist-andy-taylor-dies-65",
+   "topic": "world",
+   "source": "CityNews Toronto",
+   "time": "25 Nov",
+   "url": "https://toronto.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+   "headline": "Duran Duran guitarist Andy Taylor dies at 65",
+   "summary": "Andy Taylor, the original guitarist of Duran Duran, has died at 65, known for hits like 'Hungry Like the Wolf' and 'The Reflex' that helped launch MTV.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Andy Taylor, the original guitarist of Duran Duran, has died at 65, known for hits like 'Hungry Like the Wolf' and 'The Reflex' that helped launch MTV. Taylor's family and bandmates confirmed his death on social media and the band's official website, stating he was 65. His guitar work and dry wit helped shape the band’s global sound and grounded their music during their rise to fame.",
+    "Taylor died peacefully at home on Monday, following a long battle with prostate cancer, according to a statement from the band. Duran Duran said Andy was a foundational member, present from the band’s very beginning."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:34:04+00:00",
+   "articleSources": [
+    {
+     "name": "CityNews Toronto",
+     "url": "https://toronto.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/"
+    },
+    {
+     "name": "HuffPost UK",
+     "url": "https://www.huffingtonpost.co.uk/entry/andy-taylor-duran-duran-dies_uk_6b07df18e4b01d8bd1db912d"
+    }
+   ],
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/56bd/live/2b3554c0-80eb-11ef-bf00-b142e9860253.jpg",
+   "imageAlt": "Andy Taylor is photographed in dark glasses speaking into a microphone",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "approves-spacex-plan-deploy-million-data-centre",
+   "topic": "science",
+   "source": "The Express Tribune",
+   "time": "25 Nov",
+   "url": "https://tribune.com.pk/story/2642328/us-approves-spacex-plan-to-deploy-one-million-data-center-satellites",
+   "headline": "US approves SpaceX plan to deploy one million data centre satellites",
+   "summary": "The US Federal Communications Commission authorized SpaceX to launch up to one million satellites designed to function as data centers in orbit.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "The US Federal Communications Commission authorized SpaceX to launch up to one million satellites designed to function as data centers in orbit. The FCC's approval marks the first such authorization in US history, enabling SpaceX to build its Starmind constellation for processing large-scale data on Earth. Spacex's plan to place AI-powered data centers in space aims to meet rising demand for computing power driven by artificial intelligence.",
+    "The Trump administration approved SpaceX’s deployment of 1 million satellites intended to serve as space-based data centers, sparking scientific skepticism and concern. SpaceX’s orbital compute modules, part of the 'Starmind' constellation, will process vast data volumes for Earth-based use, with Chairman Brendan Carr stating the move brings humanity closer to harnessing solar power. The FCC’s detailed order requires SpaceX to deploy at least one space station by 2033, with incremental additions planned through 2040."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:25:29+00:00",
+   "articleSources": [
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642328/us-approves-spacex-plan-to-deploy-one-million-data-center-satellites"
+    },
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/national/fcc-says-spacex-can-deploy-1-million-satellites-for-data-centers-in-space-scientists-are-skeptical/4304759"
+    }
+   ],
+   "location": {
+    "label": "San Francisco Bay Area, USA",
+    "shortLabel": "California",
+    "lat": 37.4419,
+    "lng": -122.143
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5383/live/4c315c90-e968-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "SpaceX Starship Ship 42 is caught in the arms of the launch tower as it returns from flight on November 14, 2026 in Starbase, Texas.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "king-tides-these-exceptionally-high-tides-increasingly",
+   "topic": "world",
+   "source": "CityNews Vancouver",
+   "time": "25 Nov",
+   "url": "https://vancouver.citynews.ca/2026/11/25/what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/",
+   "headline": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
+   "summary": "King tides, the highest tides of the year, are increasingly flooding coastal areas as sea levels rise.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "King tides, the highest tides of the year, are increasingly flooding coastal areas as sea levels rise. The term 'king tide' is a colloquial term used to describe exceptionally high tides, not a scientific phenomenon. The 2026 super El Niño event has elevated coastal water levels and intensified king tide impacts. Oceanographer Alec Bogdanoff explains that tides vary by location, making the definition of a king tide complex and location-specific.",
+    "King tides combined with powerful waves damaged part of a pier in Pacifica, Northern California, on Wednesday, with officials warning of further coastal flooding. A video captured a large wave destroying a section of the Pacifica pier and hurling it into the ocean. Beachfront properties in Pacifica, south of San Francisco, began experiencing flooding as king tides arrived this week."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:37:17+00:00",
+   "articleSources": [
+    {
+     "name": "CityNews Vancouver",
+     "url": "https://vancouver.citynews.ca/2026/11/25/what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/"
+    },
+    {
+     "name": "Washington's Top News (WTOP)",
+     "url": "https://wtop.com/national/2026/11/king-tides-and-strong-waves-destroy-part-of-pacifica-pier-as-officials-warn-of-coastal-flooding/"
+    }
+   ],
+   "location": {
+    "label": "San Francisco Bay Area, USA",
+    "shortLabel": "California",
+    "lat": 37.4419,
+    "lng": -122.143
+   },
+   "image": "https://i.guim.co.uk/img/media/80d6a5ade95e2a8670b872bdca5972b45f0d2f71/335_0_3331_2666/master/3331.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=3f2a32654c39ebf5c50d67e60c05b40f",
+   "imageAlt": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
+   "imageCredit": "The Guardian"
+  },
+  {
+   "id": "least-30-killed-blaze-vehicle-overturns-egypt",
+   "topic": "world",
+   "source": "The Guardian",
+   "time": "26 Nov",
+   "url": "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway",
+   "headline": "At least 31 killed in fire after fuel tanker crash on Cairo highway",
+   "summary": "A fuel tanker crash on Cairo's ring road ignited a massive fire, killing at least 31 people and injuring 21 others, according to Egyptian authorities.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "A fuel tanker crash on Cairo's ring road ignited a massive fire, killing at least 31 people and injuring 21 others, according to Egyptian authorities. A fire on Cairo's ring road injured at least 21 people and destroyed over two dozen vehicles and motorcycles, as reported by the health ministry.",
+    "A fuel truck overturned on a busy highway in Cairo, sparking a fire that killed at least 31 people, the health ministry confirmed. Footage from AFP showed a massive fireball and thick smoke over Cairo's Al-Waraq area, with residents fleeing as surrounding buildings remained unharmed."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:39:40+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway"
+    },
+    {
+     "name": "Al-Monitor",
+     "url": "https://www.al-monitor.com/originals/2026/11/egypt-says-31-dead-cairo-fire-after-fuel-truck-overturns"
+    }
+   ],
+   "location": {
+    "label": "Cairo, Egypt",
+    "shortLabel": "Egypt",
+    "lat": 30.0444,
+    "lng": 31.2357
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/49ab/live/4933ad90-e913-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "People stand next to the wreck of a car in the aftermath of a fire that broke out on a highway in the Al-Waraq neighbourhood of Imbaba district, Giza Governorate, Cairo.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "do-work-poundland-tell-youre-affected-administration",
+   "topic": "uk",
+   "source": "The Guardian",
+   "time": "25 Nov",
+   "url": "https://www.theguardian.com/business/2026/nov/25/do-you-work-for-poundland-tell-us-how-youre-affected-by-its-administration",
+   "headline": "Do you work for Poundland? Tell us how you’re affected by its administration",
+   "summary": "Poundland has gone into administration, putting 12,000 jobs at risk as it faces collapse in the run-up to Christmas.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Poundland has gone into administration, putting 12,000 jobs at risk as it faces collapse in the run-up to Christmas.",
+    "Poundland collapsed into administration after failed rescue efforts, risking around 11,000 jobs and 600 stores ahead of Christmas. The company’s board appointed administrators after a three-month sale effort failed to find a viable buyer for the business. Owner Gordon Brothers stated that talks with potential buyers for the full business or parts of its store assets will continue under administration. The collapse occurs just 17 months after Gordon Brothers bought Poundland from Pepco Group for £1, following months of closures and growing political criticism over management."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:27:53+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/business/2026/nov/25/do-you-work-for-poundland-tell-us-how-youre-affected-by-its-administration"
+    },
+    {
+     "name": "Retail Gazette",
+     "url": "https://www.retailgazette.co.uk/blog/2026/11/poundland-collapses-into-administration-putting-11000-jobs-at-risk/"
+    }
+   ],
+   "location": {
+    "label": "West Midlands, UK",
+    "shortLabel": "Midlands",
+    "lat": 52.4862,
+    "lng": -1.8904
+   },
+   "image": "https://i.guim.co.uk/img/media/4b1cc1069c8b6314edc3f544b9dcf5ac43d41f76/158_0_4307_3445/master/4307.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=f40a044775d1742eba21c953c3c99e4d",
+   "imageAlt": "Do you work for Poundland? Tell us how you’re affected by its administration",
+   "imageCredit": "The Guardian"
+  },
+  {
+   "id": "chinas-huawei-convicted-stealing-trade-secrets",
+   "topic": "tech",
+   "source": "The Guardian",
+   "time": "24 Nov",
+   "url": "https://www.theguardian.com/technology/2026/nov/24/huawei-china-convicted-deceiving-banks-stealing-us-trade-secrets",
+   "headline": "China’s Huawei convicted of stealing US trade secrets",
+   "summary": "A US federal jury convicted Huawei on 10 of 12 criminal counts, including trade secret theft and bank fraud, amid allegations of deception about its Iran operations.",
+   "points": [],
+   "publishedLabel": "24 Nov 2026",
+   "article": [
+    "A US federal jury convicted Huawei on 10 of 12 criminal counts, including trade secret theft and bank fraud, amid allegations of deception about its Iran operations. Huawei and its subsidiaries were found guilty by a Brooklyn jury on 10 of 12 counts, including conspiracy to steal trade secrets and defraud US banks. Huawei was acquitted of racketeering conspiracy, which accused it of operating as a criminal enterprise.",
+    "A federal jury convicted Huawei and its subsidiaries of violating US sanctions on Iran, stealing trade secrets, and engaging in money laundering."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:29:19+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/technology/2026/nov/24/huawei-china-convicted-deceiving-banks-stealing-us-trade-secrets"
+    },
+    {
+     "name": "The Hill",
+     "url": "https://thehill.com/policy/technology/6242450-huawei-guilty-iran-sanctions-trade-secrets/"
+    }
+   ],
+   "location": {
+    "label": "Tehran, Iran",
+    "shortLabel": "Iran",
+    "lat": 35.6892,
+    "lng": 51.389
+   },
+   "image": "https://i.guim.co.uk/img/media/c705226e3d7b0501675e456628ff5a522b977f05/651_0_3257_2606/master/3257.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=4c3cf7958c06bb24dd2ccdf0b4f31159",
+   "imageAlt": "China’s Huawei convicted of stealing US trade secrets",
+   "imageCredit": "The Guardian"
+  },
+  {
+   "id": "1password-breach-exposes-customer-names-emails-passwords",
+   "topic": "tech",
+   "source": "Slashdot",
+   "time": "26 Nov",
+   "url": "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+   "headline": "1Password breach exposes customer names and emails, but not passwords",
+   "summary": "1Password confirmed a hacker breached its internal systems on November 19 via an employee's corporate GitHub account, pushing malicious code to servers.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "1Password confirmed a hacker breached its internal systems on November 19 via an employee's corporate GitHub account, pushing malicious code to servers. Customer names, email addresses, account creation dates, and login timestamps were stolen, but passwords in vaults remained inaccessible and app functionality is unaffected. It remains unclear how the attacker accessed the employee's account, and 1Password has not yet responded to questions about the breach details. The company has not disclosed whether it notified affected customers or how many were impacted, though it serves millions of users and over 200,000 businesses.",
+    "1Password reported that a hacker accessed backend systems and stole customer names and email addresses. The attacker used the compromised account to access source code and inject malicious code into backend services to extract customer data."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:32:35+00:00",
+   "articleSources": [
+    {
+     "name": "Slashdot",
+     "url": "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed"
+    },
+    {
+     "name": "The Verge",
+     "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak"
+    }
+   ],
+   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STKB339_1PASSWORD.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+   "imageAlt": "Vector illustration of the 1Password logo.",
+   "imageCredit": "The Verge"
+  },
+  {
+   "id": "unclassified-cia-system-breached-cyberattack",
+   "topic": "tech",
+   "source": "The Hill",
+   "time": "25 Nov",
+   "url": "https://thehill.com/policy/national-security/6242068-cia-cyberattack-breach-report/",
+   "headline": "Unclassified CIA system breached in cyberattack",
+   "summary": "A CIA system used to review open-source information was compromised in a security breach, according to a source familiar with the matter.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "A CIA system used to review open-source information was compromised in a security breach, according to a source familiar with the matter. A system analyzing publicly available data from online searches, public records, and data brokers was breached, exposing unclassified intelligence material.",
+    "Hackers infiltrated unclassified intelligence-analysis systems across multiple US agencies, extracting open-source data without compromising classified information; Chinese involvement is under investigation, with ARTEX platform suspected. Multiple US officials confirmed that attackers accessed an open-source intelligence network, harvesting publicly available data to build actionable intelligence narratives."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:38:31+00:00",
+   "articleSources": [
+    {
+     "name": "The Hill",
+     "url": "https://thehill.com/policy/national-security/6242068-cia-cyberattack-breach-report/"
+    },
+    {
+     "name": "TechRadar",
+     "url": "https://www.techradar.com/pro/security/hackers-breach-cia-system-in-possible-artex-cyberattack-and-leak-unclassified-data"
+    }
+   ],
+   "location": {
+    "label": "Beijing, China",
+    "shortLabel": "Beijing",
+    "lat": 39.9042,
+    "lng": 116.4074
+   },
+   "image": "https://www.bizpacreview.com/wp-content/uploads/2026/08/5415445859_3abd462fe4_o-e1787940388335-1024x440-1.jpg",
+   "imageAlt": "Unclassified CIA system breached in cyberattack",
+   "imageCredit": "BizPac Review"
+  },
+  {
+   "id": "pentagon-reportedly-talks-gm-ford-scale-military",
+   "topic": "business",
+   "source": "Fox Business",
+   "time": "24 Nov",
+   "url": "https://www.foxbusiness.com/economy/pentagon-reportedly-talks-gm-ford-scale-us-military-drone-production",
+   "headline": "Pentagon reportedly in talks with GM, Ford to scale US military drone production",
+   "summary": "Defense officials are exploring partnerships with automakers and parts suppliers like Magna International to supply drone components such as motors and sensors, according to people familiar with the matter.",
+   "points": [],
+   "publishedLabel": "24 Nov 2026",
+   "article": [
+    "Defense officials are exploring partnerships with automakers and parts suppliers like Magna International to supply drone components such as motors and sensors, according to people familiar with the matter. No deals have been finalized, and industry executives have raised concerns about profit margins and the viability of entering the weapons supply chain.",
+    "These preliminary talks are part of a broader strategy to use the automotive sector’s manufacturing expertise to meet defense supply demands. GM is considering producing drone motors, while other manufacturers may supply parts to existing drone companies, as reported by The Wall Street Journal."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:39:13+00:00",
+   "articleSources": [
+    {
+     "name": "Fox Business",
+     "url": "https://www.foxbusiness.com/economy/pentagon-reportedly-talks-gm-ford-scale-us-military-drone-production"
+    },
+    {
+     "name": "BizPac Review",
+     "url": "https://www.bizpacreview.com/2026/11/24/uncle-sam-looks-to-detroit-as-military-equipment-shortages-mount-report-1668838/"
+    }
+   ],
+   "location": {
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7128,
+    "lng": -74.006
+   },
+   "image": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/08/0/0/pentagon.jpg?ve=1&tl=1",
+   "imageAlt": "Pentagon reportedly in talks with GM, Ford to scale US military drone production",
+   "imageCredit": "Fox Business"
+  },
+  {
+   "id": "astronomers-discover-oldest-known-quasar-forming-630",
+   "topic": "science",
+   "source": "Universe Today",
+   "time": "25 Nov",
+   "url": "https://www.universetoday.com/articles/euclids-record-setting-quasar-probes-black-hole-formation",
+   "headline": "Euclid's Record-Setting Quasar Probes Black Hole Formation",
+   "summary": "The ESA's Euclid Space Telescope has detected a quasar at redshift z=8.13, forming about 630 million years after the Big Bang.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "The ESA's Euclid Space Telescope has detected a quasar at redshift z=8.13, forming about 630 million years after the Big Bang. This quasar is 40 million years older than the previous record holder, advancing understanding of early black hole formation.",
+    "Four months after its previous discovery, Euclid has found a quasar even farther back in time, setting a new record. Researchers have published a discovery of the most distant quasar ever seen, dated to just 630 million years after the Big Bang."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-26T08:31:52+00:00",
+   "articleSources": [
+    {
+     "name": "Universe Today",
+     "url": "https://www.universetoday.com/articles/euclids-record-setting-quasar-probes-black-hole-formation"
+    },
+    {
+     "name": "Popular Science",
+     "url": "https://www.popsci.com/science/oldest-quasar-euclid-telescope/"
+    }
+   ],
+   "location": {
+    "label": "Austin, Texas, USA",
+    "shortLabel": "Texas",
+    "lat": 30.2672,
+    "lng": -97.7431
+   },
+   "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/24/4e399b9b-1941-49c0-bd6b-3634a8226cb2/thumbnail/1200x630/30b118d4f25e6adb06c5393fffd253ff/ap26327705747464.jpg",
+   "imageAlt": "Astronomers discover oldest known quasar forming 630 million years after the Big Bang",
+   "imageCredit": "CBS News"
+  }
+ ],
+ "OUTLETS": {
+  "ITV News": "LR",
+  "RTÉ News": "C",
+  "Euronews": "LL",
+  "Times Higher Education": "NR",
+  "ScienceDaily": "S",
+  "EconoTimes": "NC",
+  "LHCb paper (arXiv)": "P",
+  "Bloomberg": "LL",
+  "TechCrunch": "LL",
+  "Latin Times": "LL",
+  "The Tech Portal": "NC",
+  "IBTimes UK": "LL",
+  "ONS (official statistics)": "P",
+  "Al Jazeera English": "LL",
+  "CNN": "LL",
+  "CBC News": "LL",
+  "PBS NewsHour": "LL",
+  "Truthout": "L",
+  "Gizmodo": "L",
+  "Archaeology Magazine": "NC",
+  "Sci.News": "NC",
+  "Axios": "LL",
+  "Reuters": "C",
+  "CBS News": "LR",
+  "CNBC": "LL",
+  "The Daily Beast": "L",
+  "Townhall": "R",
+  "City AM": "NR",
+  "Central Banking": "NC",
+  "Bank of England (speech)": "P",
+  "Ukrainska Pravda": "LL",
+  "TVP World": "NR",
+  "Euromaidan Press": "NC",
+  "Popular Science": "S",
+  "New Atlas": "S",
+  "SciTechDaily": "S",
+  "Quartz": "LL",
+  "Daily Voice": "NC",
+  "Portsmouth News": "NC",
+  "BusinessCloud": "NC",
+  "The Irish News": "LL",
+  "BMA (union statement)": "P",
+  "Phys.org": "S",
+  "Sky & Telescope": "S",
+  "IntoMobile": "NC",
+  "Tesla North": "NC",
+  "NewsBytes": "NC",
+  "Express & Star": "NR",
+  "BBC News": "LL",
+  "The Guardian": "LL",
+  "Sky News": "C",
+  "The Telegraph": "LR",
+  "Daily Mail": "R",
+  "Financial Times": "C",
+  "The Economist": "C",
+  "France 24": "C",
+  "DW News": "LL",
+  "Politico Europe": "LL",
+  "NPR": "LL",
+  "The New York Times": "LL",
+  "Fox News": "R",
+  "South China Morning Post": "LL",
+  "Times of India": "LR",
+  "MercoPress": "LL",
+  "Nature News": "S",
+  "New Scientist": "S",
+  "The Verge": "LL",
+  "Ars Technica": "C",
+  "Wired": "LL",
+  "MarketWatch": "LR",
+  "ABC News Australia": "LL",
+  "Techmeme": "NR",
+  "End Time Headlines": "LR",
+  "Political Wire": "C",
+  "Hindustan Times": "LL",
+  "Investing.com": "C",
+  "7NEWS": "C",
+  "The Hill": "C",
+  "BleepingComputer": "C",
+  "WGN News": "C",
+  "WANE - Fort Wayne News": "C",
+  "WFLA - Tampa Bay": "C",
+  "NewsNation": "LR",
+  "Greek Reporter": "R",
+  "Breitbart": "R",
+  "Middle East Eye": "LL",
+  "KSTP-TV": "C",
+  "MyNorthwest": "LR",
+  "CityNews Toronto": "C",
+  "CityNews Edmonton": "C",
+  "CityNews Halifax": "C",
+  "CityNews Vancouver": "C",
+  "CityNews - Winnipeg": "C",
+  "CityNews Montreal": "C",
+  "CityNews Kitchener": "C",
+  "CityNews Ottawa": "C",
+  "CityNews Calgary": "C",
+  "Dallas Express": "R",
+  "Daily Caller": "R",
+  "WJW - Cleveland News": "C",
+  "Global News": "LL",
+  "KTLA": "C",
+  "Legal Insurrection": "R",
+  "The West Australian": "LR",
+  "NBC News": "LL",
+  "Citizen Free Press": "R",
+  "The Journal": "LL",
+  "Washington Post": "LL",
+  "RedState": "R",
+  "Washington Examiner": "LR",
+  "The Hindu": "LL",
+  "Hot Air": "R",
+  "ABC News (US)": "LL",
+  "Washington's Top News (WTOP)": "C",
+  "Scientific American": "S",
+  "Tom's Hardware": "NR",
+  "Simon Willison": "NR",
+  "Live Science": "S",
+  "The Wall Street Journal": "LR",
+  "SiliconANGLE": "NR",
+  "Decrypt": "NR",
+  "The Information": "C",
+  "Slashdot": "NR",
+  "Japan Times": "C",
+  "GB News": "R",
+  "The Decoder": "NR",
+  "The Globe and Mail": "LR",
+  "Engadget": "LL",
+  "Nottinghamshire Post": "C",
+  "Wales Online": "LL",
+  "Evening Standard": "LR",
+  "The Straits Times": "LR",
+  "Irish Mirror": "LL",
+  "E! News": "C",
+  "India Today": "LR",
+  "Sydney Morning Herald": "LL",
+  "The Age": "LL",
+  "KTTV - Fox 11 - Los Angeles": "C",
+  "KTVU Fox 2": "C",
+  "The Post Millennial": "R",
+  "KABC - Los Angeles News": "C",
+  "American Wire News": "R",
+  "BizPac Review": "R",
+  "Taipei Times": "LL",
+  "Fast Company": "LL",
+  "The Conversation UK": "C",
+  "HuffPost UK": "NR",
+  "Investors Business Daily": "R",
+  "Inc.com": "C",
+  "Slate": "L",
+  "Digital Trends": "C",
+  "Fox Business": "LR",
+  "The Citizen": "LR",
+  "Armstrong Economics": "R",
+  "Yorkshire Post": "C",
+  "Conservative Review": "R",
+  "WFLD - Fox 32 - Chicago": "C",
+  "Channel 4 News": "NR",
+  "Al-Monitor": "LL",
+  "NDTV": "LR",
+  "Military.com": "C",
+  "Euractiv": "LL",
+  "i News": "LL",
+  "CNA": "C",
+  "SOFREP": "LR",
+  "Defense One": "C",
+  "The Sun": "R",
+  "The US Sun": "R",
+  "The Express Tribune": "C",
+  "Irish Independent": "LR",
+  "Rappler": "LL",
+  "KFGO - 790 AM - Fargo": "LR",
+  "Daily Mirror": "LL",
+  "Off The Press": "R",
+  "Livemint": "C",
+  "MoneyWeek": "NR",
+  "Naked Capitalism": "LL",
+  "Jacobin": "L",
+  "Times of Malta": "C",
+  "The Local France": "LL",
+  "Dawn": "LL",
+  "Android Authority": "NR",
+  "9to5Mac": "NR",
+  "ZDNET": "C",
+  "CNET": "C",
+  "The Hacker News": "NR",
+  "Daily Express": "R",
+  "Belfast Live": "C",
+  "Metro": "LL",
+  "Belfast Telegraph": "NR",
+  "The Sun - Nigeria": "LR",
+  "Guido Fawkes": "R",
+  "The Herald": "LL",
+  "Manchester Evening News": "LL",
+  "Hello Magazine": "C",
+  "Birmingham Mail": "LL",
+  "The Week UK": "L",
+  "9to5Google": "NR",
+  "Mother Jones": "LL",
+  "MacRumors": "NR",
+  "The New American": "R",
+  "Inside Climate News": "LL",
+  "New York Observer": "LR",
+  "Space.com": "S",
+  "Eos": "NR",
+  "How-To Geek": "C",
+  "Oilprice.com": "C",
+  "Medical Xpress": "S",
+  "MarketBeat": "C",
+  "The Next Web": "LL",
+  "The Rio Times": "LR",
+  "CoinDesk": "NR",
+  "The Block": "NR",
+  "Nautilus": "S",
+  "Big Think": "C",
+  "Toledo Blade": "LR",
+  "Mexico News Daily": "LL",
+  "New York Post": "LR",
+  "The Jerusalem Post": "LR",
+  "Mongabay": "LL",
+  "RNZ": "C",
+  "US Top News and Analysis": "LL",
+  "Institute for Government": "P",
+  "Toronto Sun": "R",
+  "This is Money": "LR",
+  "Benzinga": "C",
+  "Kiplinger": "C",
+  "Haaretz": "L",
+  "Derbyshire Live": "C",
+  "DublinLive": "C",
+  "WITI - FOX 6 - Milwaukee": "C",
+  "Bristol Post": "C",
+  "WOFL Fox 35 Orlando": "C",
+  "PlymouthLive": "C",
+  "Latest Science News -- ScienceDaily": "S",
+  "ABC7 New York": "C",
+  "Cointelegraph": "NR",
+  "Forbes": "C",
+  "Freightwaves": "NR",
+  "ONS": "P",
+  "Retail Gazette": "NR",
+  "SecurityWeek": "NR",
+  "ABC7chicago.com": "C",
+  "Indian Express": "LL",
+  "Premium Times": "LL",
+  "UnHerd": "LR",
+  "Powerline": "R",
+  "Mashable": "L",
+  "PCWorld": "NR",
+  "Irish Sun": "R",
+  "Seeking Alpha": "LR",
+  "Money Crashers": "C",
+  "SomersetLive": "C",
+  "Liverpool Echo": "C",
+  "Hull Daily Mail": "C",
+  "North Wales Live": "C",
+  "Gloucestershire Live": "C",
+  "Leicester Mercury": "LR",
+  "Spiked Magazine": "R",
+  "Electrek": "LL",
+  "InsideEVs": "LL",
+  "Motley Fool UK": "NR",
+  "Economic Times": "LR",
+  "Business Insider": "LL",
+  "Resolution Foundation": "NR",
+  "VnExpress International": "NR",
+  "Scroll.in": "LL",
+  "Time": "LL",
+  "Grist": "LL",
+  "Daily Maverick": "C",
+  "Environment + Energy – The Conversation": "C",
+  "The Scotsman": "C",
+  "The Register": "C",
+  "Finextra": "C",
+  "Smithsonian Magazine": "S",
+  "Computer Weekly": "NR",
+  "Tech.eu": "NR",
+  "Page Six": "LR",
+  "WTVT - Fox 13 - Tampa Bay": "C",
+  "Interesting Engineering": "S",
+  "Newstalk ZB": "LR",
+  "Iran International": "NR",
+  "LeedsLive": "C",
+  "Pulse": "NR",
+  "Retail Dive": "C",
+  "WNYW - Fox 5 -New York": "C",
+  "Mental Floss": "C",
+  "WPIX 11": "C",
+  "Winnipeg Free Press": "C",
+  "Las Vegas Review Journal": "LR",
+  "Colorado Springs Gazette": "LR",
+  "Manchester Union leader": "LR",
+  "KUSI-TV": "C",
+  "TechRadar": "NR",
+  "WTTG - Fox 5 - DC": "C",
+  "The Federalist": "R",
+  "Twitchy": "R",
+  "Bearing Arms": "R",
+  "Fortune": "LR",
+  "Newsweek": "LR",
+  "GeekWire": "C",
+  "The Guardian US": "LL",
+  "American Council on Science and Health (ACSH)": "LR",
+  "KSAZ - Fox 10 Phoenix": "C",
+  "Stoke-On-Trent Live": "C",
+  "Universe Today": "S",
+  "Irish Examiner": "LL"
+ },
+ "QUESTIONABLE": [
+  "Breitbart",
+  "Economic Times",
+  "Fox News",
+  "GB News",
+  "Hindustan Times",
+  "NDTV",
+  "The Federalist"
+ ],
+ "COVERAGE": {
+  "approves-spacex-plan-deploy-million-data-centre": [
+   [
+    "Space.com",
+    "24 Nov",
+    "https://www.space.com/space-exploration/launches-spacecraft/spacex-launches-secretive-spy-satellites-from-california-for-us-space-force-video",
+    "SpaceX launches secretive spy satellites from California for US Space Force (video)"
+   ],
+   [
+    "The Express Tribune",
+    "25 Nov",
+    "https://tribune.com.pk/story/2642328/us-approves-spacex-plan-to-deploy-one-million-data-center-satellites",
+    "US approves SpaceX plan to deploy one million data centre satellites"
+   ],
+   [
+    "Cointelegraph",
+    "25 Nov",
+    "https://cointelegraph.com/news/fcc-authorizes-spacex-1m-satellites-orbital-ai-data-centers?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "FCC authorizes SpaceX to deploy 1M satellites for orbital AI data centers"
+   ],
+   [
+    "The Verge",
+    "25 Nov",
+    "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+    "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space"
+   ],
+   [
+    "Sky News",
+    "25 Nov",
+    "https://news.sky.com/story/us-authorises-elon-musks-spacex-to-deploy-one-million-satellites-to-space-13616493",
+    "US authorises SpaceX to deploy one million satellites to space"
+   ],
+   [
+    "The Sun",
+    "25 Nov",
+    "https://www.thesun.co.uk/news/41156071/elon-musk-data-centers-space/",
+    "Data centers in SPACE are on the way! Elon Musk wins approval for ‘constellation’ of 1m satellites to host AI tech"
+   ],
+   [
+    "Decrypt",
+    "25 Nov",
+    "https://decrypt.co/383991/elon-musk-spacex-fcc-approval-ai-data-centers-space",
+    "Elon Musk’s SpaceX Gets FCC Approval to Launch AI Data Centers in Space"
+   ],
+   [
+    "Ars Technica",
+    "25 Nov",
+    "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/",
+    "The FCC has authorized SpaceX to deploy 1 million satellites"
+   ],
+   [
+    "Livemint",
+    "25 Nov",
+    "https://www.livemint.com/companies/spacex-receives-government-approval-to-launch-space-data-centers-11795632238029.html",
+    "SpaceX Receives Government Approval to Launch Space Data Centers"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/fcc-approves-spacex-plan-to-launch-up-to-1-million-ai-data-centre-satellites-in-space-report-101795632162979.html",
+    "FCC approves SpaceX plan to launch up to 1 million AI data centre satellites in space: Report"
+   ],
+   [
+    "Fox Business",
+    "25 Nov",
+    "https://www.foxbusiness.com/politics/data-centers-space-fcc-clears-spacex-1m-satellites-extend-americas-lead-superintelligence",
+    "‘Data centers in space’: FCC clears SpaceX for 1M satellites to ‘extend America’s lead in superintelligence’"
+   ],
+   [
+    "The Wall Street Journal",
+    "25 Nov",
+    "https://www.wsj.com/business/fcc-authorizes-spacex-to-build-1-million-data-centers-in-space-0eb20ee7?mod=pls_whats_news_us_business_f",
+    "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers"
+   ],
+   [
+    "Gizmodo",
+    "25 Nov",
+    "https://gizmodo.com/feds-approve-spacexs-ai-data-center-satellites-all-1-million-of-them-2000845526",
+    "Feds Approve SpaceX’s AI Data Center Satellites—All 1 Million of Them"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/technology/6243528-fcc-approves-spacex-orbital-ai-data-centers/",
+    "FCC approves SpaceX’s plan to launch up to 1 million data centers into space"
+   ],
+   [
+    "CNET",
+    "25 Nov",
+    "https://www.cnet.com/science/space/the-fcc-approved-a-million-spacex-satellites-for-data-centers-in-space/",
+    "The FCC Approved a Million SpaceX Satellites for Data Centers in Space"
+   ],
+   [
+    "TechCrunch",
+    "25 Nov",
+    "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
+    "FCC approves SpaceX plan to put AI data centers in space"
+   ],
+   [
+    "CBS News",
+    "25 Nov",
+    "https://www.cbsnews.com/news/spacex-fcc-approval-data-centers-space/",
+    "FCC approves SpaceX plan for 1 million data center satellites"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/united-states/us-clears-spacex-to-launch-up-to-one-million-orbital-data-centre-satellites",
+    "US clears SpaceX to launch up to one million orbital data centre satellites"
+   ],
+   [
+    "Political Wire",
+    "25 Nov",
+    "https://politicalwire.com/2026/11/25/spacex-gets-approval-for-one-million-orbital-data-centers/",
+    "SpaceX Gets Approval for One Million Orbital Data Centers"
+   ],
+   [
+    "Interesting Engineering",
+    "25 Nov",
+    "https://interestingengineering.com/space/spacex-million-satellites-data-centers-fcc",
+    "SpaceX wins FCC approval for one million satellites to build data centers in space"
+   ],
+   [
+    "SiliconANGLE",
+    "25 Nov",
+    "https://siliconangle.com/2026/11/25/fcc-clears-spacex-to-put-up-to-1-million-starmind-data-centers-in-space/",
+    "FCC clears SpaceX to put up to 1 million Starmind data centers in space"
+   ],
+   [
+    "MyNorthwest",
+    "25 Nov",
+    "https://mynorthwest.com/national/fcc-says-spacex-can-deploy-1-million-satellites-for-data-centers-in-space-scientists-are-skeptical/4304759",
+    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss",
+    "US approves SpaceX plan to send a million data satellites to space"
+   ],
+   [
+    "GeekWire",
+    "26 Nov",
+    "https://www.geekwire.com/2026/fcc-clears-spacex-million-satellites-starmind-data-center/",
+    "FCC clears SpaceX to put up to a million satellites in orbit for Starmind data center network"
+   ],
+   [
+    "NDTV",
+    "26 Nov",
+    "https://www.ndtv.com/world-news/us-clears-spacex-to-launch-1-million-satellites-for-data-centers-in-space-12377997#publisher=newsstand",
+    "Elon Musk's SpaceX Gets Nod To Launch 1 Million Satellites For Space Data Centres"
+   ],
+   [
+    "Japan Times",
+    "26 Nov",
+    "https://www.japantimes.co.jp/news/2026/11/26/world/spacex-space-data-centers/",
+    "SpaceX wins U.S. government approval to launch space data centers"
+   ],
+   [
+    "CNBC",
+    "26 Nov",
+    "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
+    "SpaceX wins FCC approval to deploy 1 million orbital data center satellites"
+   ],
+   [
+    "France 24",
+    "26 Nov",
+    "https://www.france24.com/en/technology/20261126-us-authorizes-spacex-to-launch-up-to-one-million-satellites-for-orbital-data-centers",
+    "US authorises SpaceX to launch up to one million satellites for orbital data centres"
+   ],
+   [
+    "Breitbart",
+    "26 Nov",
+    "https://www.breitbart.com/tech/2026/11/25/fcc-approves-spacex-request-1-million-data-centers-space/",
+    "FCC Approves SpaceX Request for 1 Million Data Centers in Space"
+   ],
+   [
+    "Newsweek",
+    "26 Nov",
+    "https://www.newsweek.com/fcc-approves-1-million-spacex-satellites-as-china-ai-race-heats-up-12769380",
+    "FCC Approves 1 Million SpaceX Satellites as China AI Race Heats Up"
+   ],
+   [
+    "End Time Headlines",
+    "26 Nov",
+    "https://endtimeheadlines.org/2026/11/elon-musk-gets-approval-for-1-million-constellation-satellites-to-host-ai-technology/",
+    "Elon Musk gets approval for 1 MILLION ‘constellation’ satellites to host AI technology"
+   ],
+   [
+    "Irish Independent",
+    "26 Nov",
+    "https://www.independent.ie/world-news/us-authorises-elon-musks-spacex-to-deploy-a-million-satellites-for-data-centres-in-space/a/165123394.html",
+    "US authorises Elon Musk’s SpaceX to deploy a million satellites for data centres in space"
+   ],
+   [
+    "NPR",
+    "26 Nov",
+    "https://www.npr.org/2026/11/26/g-s1-155940/fcc-spacex-satellites-data-centers-in-space",
+    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+   ],
+   [
+    "Slashdot",
+    "26 Nov",
+    "https://tech.slashdot.org/story/26/11/25/1936200/spacex-wins-fcc-approval-to-deploy-1-million-orbital-data-center-satellites?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "SpaceX Wins FCC Approval To Deploy 1 Million Orbital Data Center Satellites"
+   ]
+  ],
+  "army-calls-detonation-bomb-chemicals-iowa-success": [
+   [
+    "End Time Headlines",
+    "24 Nov",
+    "https://endtimeheadlines.org/2026/11/americans-told-to-stay-indoors-as-army-cleared-to-detonate-10000-pounds-of-explosives-in-iowa-with-latest-projection-mapping-toxic-fallout/",
+    "Americans told to stay indoors as Army cleared to detonate 10,000 pounds of explosives in Iowa… with latest projection mapping toxic fallout"
+   ],
+   [
+    "The Post Millennial",
+    "24 Nov",
+    "https://thepostmillennial.com/news/us-army-cleared-to-detonate-old-bomb-materials-in-iowa-before-they-explode-accidentally",
+    "US Army cleared to detonate old bomb materials in Iowa before they explode accidentally"
+   ],
+   [
+    "Legal Insurrection",
+    "24 Nov",
+    "https://legalinsurrection.com/2026/11/appeals-court-clears-way-for-army-to-detonate-explosives-stockpile-in-iowa/?utm_source=rss&utm_medium=rss&utm_campaign=appeals-court-clears-way-for-army-to-detonate-explosives-stockpile-in-iowa",
+    "Appeals Court Clears Way for Army to Detonate Explosives Stockpile in Iowa"
+   ],
+   [
+    "Mongabay",
+    "24 Nov",
+    "https://news.mongabay.com/short-article/2026/11/army-entire-u-s-stockpile-of-lead-azide-is-at-iowa-plant-and-set-to-be-detonated-wednesday-morning/",
+    "Army: Entire U.S. stockpile of lead azide is at Iowa plant and set to be detonated Wednesday morning"
+   ],
+   [
+    "Citizen Free Press",
+    "24 Nov",
+    "https://citizenfreepress.com/breaking/lead-explosive-detonation-to-happen-tomorrow/",
+    "Lead explosive detonation to happen tomorrow."
+   ],
+   [
+    "NPR",
+    "24 Nov",
+    "https://www.npr.org/2026/11/24/nx-s1-6052351/heres-the-public-health-guidance-for-possible-lead-exposure-in-iowa",
+    "Here's the public health guidance for possible lead exposure in Iowa"
+   ],
+   [
+    "The Guardian US",
+    "24 Nov",
+    "https://www.theguardian.com/us-news/2026/nov/24/iowa-illinois-missouri-hazardous-bomb-explosion-blast-prep-thanksgiving",
+    "Iowans anxious over lead detonation: ‘We had only five days of warning’"
+   ],
+   [
+    "The New American",
+    "24 Nov",
+    "https://thenewamerican.com/us/armys-iowa-lead-detonation-risks-to-americas-food-supply-waterways-and-public-health/",
+    "Army’s Iowa Lead Detonation: Risks to America’s Food Supply, Waterways, and Public Health"
+   ],
+   [
+    "Inside Climate News",
+    "24 Nov",
+    "https://insideclimatenews.org/news/24112026/iowa-lead-blast-health-impacts/",
+    "Iowa Lead Blast Will Have Lasting Health Impacts"
+   ],
+   [
+    "Grist",
+    "24 Nov",
+    "https://grist.org/grist-news/what-to-know-about-the-armys-plan-to-detonate-5-tons-of-lead-in-iowa/",
+    "What to know about the Army’s lead detonation in Iowa"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "25 Nov",
+    "https://www.wfla.com/news/national/detonation-of-unstable-lead-azide-in-iowa-scheduled-for-wednesday-what-to-know/",
+    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/sciencetech/article-16318037/army-iowa-explosives-detonation-toxic-fallout.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Thanksgiving nightmare for thousands of families facing up to 48 hours trapped inside their homes as Army prepares to detonate 10,000 pounds of explosives sparking toxic fallout fears"
+   ],
+   [
+    "WGN News",
+    "25 Nov",
+    "https://wgntv.com/news/iowa/detonation-of-unstable-lead-azide-in-iowa-scheduled-for-wednesday-morning-what-to-know/",
+    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/homenews/state-watch/6241997-911-attorney-iowa-lead-azide-detonation-insane/",
+    "Army plan to detonate lead azide in Iowa ‘insane’: Attorney"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "25 Nov",
+    "https://www.wane.com/news/national-world/detonation-of-unstable-lead-azide-in-iowa-scheduled-for-wednesday-morning-what-to-know/",
+    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
+   ],
+   [
+    "PBS NewsHour",
+    "25 Nov",
+    "https://www.pbs.org/newshour/nation/watch-live-army-expected-to-carry-out-controlled-detonation-of-iowa-lead-azide-stockpile",
+    "WATCH: Army carries out controlled detonation of Iowa lead azide stockpile amid concerns"
+   ],
+   [
+    "Scientific American",
+    "25 Nov",
+    "https://www.scientificamerican.com/article/the-u-s-army-is-blowing-up-five-tons-of-toxic-lead-azide-in-iowa/",
+    "The U.S. Army is blowing up five tons of toxic lead azide in Iowa"
+   ],
+   [
+    "American Council on Science and Health (ACSH)",
+    "25 Nov",
+    "https://www.acsh.org/news/2026/11/25/lead-azide-boom-or-bust-army-chose-boom-did-it-get-it-right-50489",
+    "Lead azide: Boom or bust? The Army chose boom. Did it get it right?"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/iowa-explosion-today-us-army-begins-controlled-detonation-of-lead-azide-barrels-at-storage-bunkers-101795618749731.html",
+    "Iowa explosion: US Army completes lead azide detonation as residents await all-clear alert"
+   ],
+   [
+    "Ars Technica",
+    "25 Nov",
+    "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/",
+    "Lead azide detonation sends clouds over Iowa as questions of health risks swirl"
+   ],
+   [
+    "Indian Express",
+    "25 Nov",
+    "https://indianexpress.com/article/world/us-news/us-army-controlled-detonation-lead-azide-stockpile-iowa-ammunition-plant-10978507/",
+    "Watch: US Army detonates 5 tons of toxic explosives as lead dust fears grip Iowa"
+   ],
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/video-shows-massive-explosion-as-us-army-destroys-entire-stockpile-of-lead-azide",
+    "Video shows massive explosion as US Army destroys entire stockpile of lead azide"
+   ],
+   [
+    "Military.com",
+    "25 Nov",
+    "https://www.military.com/army-blows-up-bomb-chemicals-in-iowa-despite-fears-a-toxic-plume-could-endanger-residents",
+    "Army Blows Up Bomb Chemicals in Iowa Despite Fears a Toxic Plume Could Endanger Residents"
+   ],
+   [
+    "Axios",
+    "25 Nov",
+    "https://www.axios.com/2026/11/25/iowa-army-lead-detonation",
+    "Army detonates Iowa explosives amid toxic lead fears"
+   ],
+   [
+    "RTÉ News",
+    "25 Nov",
+    "https://www.rte.ie/news/us/2026/1125/1600659-toxic-explosives-iowa/",
+    "Contamination fears after US army detonates explosives"
+   ],
+   [
+    "Space.com",
+    "25 Nov",
+    "https://www.space.com/technology/aerospace/nasa-sends-planes-to-monitor-us-armys-lead-detonation-irresponsible-to-compare-it-to-chernobyl-agency-chief-says",
+    "NASA sends planes to monitor US Army's lead detonation. 'Irresponsible' to compare it to Chernobyl, agency chief says"
+   ],
+   [
+    "RedState",
+    "25 Nov",
+    "https://redstate.com/wardclark/2026/11/25/the-army-had-a-dangerous-problem-in-iowa-and-one-very-explosive-solution-n2209790",
+    "The Army Had a Dangerous Problem in Iowa and One Very Explosive Solution"
+   ],
+   [
+    "Toledo Blade",
+    "25 Nov",
+    "https://www.toledoblade.com/news/nation/2026/11/25/us-stockpile-of-unstable-and-dangerous-lead-azide-scheduled-for-detonation-in-iowa-1/stories/20261125105",
+    "Army blows up bomb chemicals in Iowa despite fears a toxic plume could endanger residents"
+   ],
+   [
+    "Slashdot",
+    "25 Nov",
+    "https://news.slashdot.org/story/26/11/25/0524224/those-five-tons-of-bomb-making-chemicals-in-iowa-will-be-detonated-wednesday-morning?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "Those Five Tons of Bomb-Making Chemicals in Iowa Will Be Detonated Wednesday Morning"
+   ],
+   [
+    "KSAZ - Fox 10 Phoenix",
+    "25 Nov",
+    "https://www.fox10phoenix.com/news/army-blows-up-bomb-making-chemicals-teens-charged-chandler-home-invasion-morning-news-brief",
+    "Army blows up bomb-making chemicals; teens charged in Chandler home invasion l Morning News Brief"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/us-news/live/2026/nov/25/iowa-lead-azide-detonation-army-explosion-bomb-live-updates",
+    "US Army calls Iowa lead detonation a ‘huge success’ and says threat of spontaneous explosions has been ‘eliminated’ – as it happened"
+   ],
+   [
+    "Gizmodo",
+    "25 Nov",
+    "https://gizmodo.com/the-u-s-army-just-blew-up-nearly-five-tons-of-toxic-explosives-in-iowa-2000845426",
+    "The U.S. Army Just Blew Up Nearly Five Tons of Toxic Explosives in Iowa"
+   ],
+   [
+    "Wired",
+    "25 Nov",
+    "https://www.wired.com/story/iowa-lead-detonation-real-monitoring-work-begins/",
+    "The Iowa Lead Detonation Happened. Now the Real Work Begins to Study It"
+   ],
+   [
+    "The Verge",
+    "25 Nov",
+    "https://www.theverge.com/science/1042109/us-army-detonation-lead-azide-explosives-iowa-ammunition-plant",
+    "EPA reports ‘zero’ airborne lead following controlled Army detonation in Iowa"
+   ],
+   [
+    "Fox News",
+    "25 Nov",
+    "https://www.foxnews.com/health/doctors-warn-lead-exposure-health-risks-controversial-army-detonation-iowa",
+    "Doctors warn of lead exposure health risks after controversial Army detonation in Iowa"
+   ],
+   [
+    "7NEWS",
+    "25 Nov",
+    "https://7news.com.au/news/united-states/army-calls-detonation-of-bomb-chemicals-in-iowa-a-success-after-earlier-fears-of-a-toxic-plume-c-23214793",
+    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/united-states/us-army-declares-success-in-detonation-of-lead-based-explosives-stockpile-in-iowa",
+    "US Army declares success in detonation of lead-based explosives stockpile in Iowa"
+   ],
+   [
+    "Political Wire",
+    "25 Nov",
+    "https://politicalwire.com/2026/11/25/white-house-blindsided-by-lead-based-explosives-in-iowa/",
+    "White House Blindsided by Lead-Based Explosives in Iowa"
+   ],
+   [
+    "NBC News",
+    "26 Nov",
+    "https://www.nbcnews.com/nightly-news/video/tons-of-toxic-chemicals-detonate-in-iowa-274197061831",
+    "Tons of toxic chemicals detonate in Iowa"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/cwg7l5ve251ko?at_medium=RSS&at_campaign=rss",
+    "US Army says controlled blast of explosives in Iowa was 'huge success'"
+   ],
+   [
+    "NDTV",
+    "26 Nov",
+    "https://www.ndtv.com/world-news/us-army-has-detonated-5-ton-of-lead-azide-in-iowa-heres-what-to-know-12378069#publisher=newsstand",
+    "US Army Has Detonated 5-Ton Of Lead Azide In Iowa. Here's What To Know"
+   ],
+   [
+    "Washington Examiner",
+    "26 Nov",
+    "https://www.washingtonexaminer.com/policy/energy-and-environment/4816027/fema-all-clear-airborne-lead-iowa-blast/",
+    "FEMA issues all-clear as signs indicate no airborne lead after Iowa blast"
+   ],
+   [
+    "Off The Press",
+    "26 Nov",
+    "https://offthepress.com/r/184896?c=rss",
+    "Federal officials lift shelter-in-place order after Iowa lead azide detonation"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/us-army-declares-success-in-detonation-of-lead-based-explosives-stockpile-in-iowa/article71745045.ece",
+    "U.S. Army declares success in detonation of lead-based explosives stockpile in Iowa"
+   ],
+   [
+    "ABC7chicago.com",
+    "26 Nov",
+    "https://abc7chicago.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
+    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
+   ],
+   [
+    "ABC7 New York",
+    "26 Nov",
+    "https://abc7ny.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
+    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "26 Nov",
+    "https://abc7.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
+    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
+   ],
+   [
+    "WFLD - Fox 32 - Chicago",
+    "26 Nov",
+    "https://www.fox32chicago.com/news/whats-iowa-lead-detonation-mean-food-safety-heres-what-officials-say",
+    "Did the Iowa lead detonation impact food safety? Here’s what officials say"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "26 Nov",
+    "https://wtop.com/national/2026/11/us-stockpile-of-unstable-and-dangerous-lead-azide-scheduled-for-detonation-in-iowa/",
+    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
+   ],
+   [
+    "Irish Independent",
+    "26 Nov",
+    "https://www.independent.ie/world-news/explainer-what-we-know-about-us-army-detonation-of-toxic-explosive-chemicals-in-iowa-amid-local-protests/a/165123952.html",
+    "Explainer: What we know about US Army detonation of toxic explosive chemicals in Iowa amid local protests"
+   ]
+  ],
+  "do-work-poundland-tell-youre-affected-administration": [
+   [
+    "Sky News",
+    "24 Nov",
+    "https://news.sky.com/story/us-investor-staple-street-backs-last-gasp-german-bid-for-poundland-13616017",
+    "US investor Staple Street backs last-gasp German bid for Poundland"
+   ],
+   [
+    "RTÉ News",
+    "25 Nov",
+    "https://www.rte.ie/news/business/2026/1125/1600647-time-running-out-for-poundland/",
+    "Dealz owner Poundland enters administration"
+   ],
+   [
+    "City AM",
+    "25 Nov",
+    "https://www.cityam.com/poundland-collapses-into-administration/",
+    "Poundland collapses into administration"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/business/2026/nov/25/do-you-work-for-poundland-tell-us-how-youre-affected-by-its-administration",
+    "Do you work for Poundland? Tell us how you’re affected by its administration"
+   ],
+   [
+    "The Herald",
+    "25 Nov",
+    "https://www.heraldscotland.com/news/26763078.poundland-falls-administration-11-000-jobs-risk/?ref=rss",
+    "Poundland falls into administration after last ditch efforts with 11,000 jobs at risk"
+   ],
+   [
+    "Retail Gazette",
+    "25 Nov",
+    "https://www.retailgazette.co.uk/blog/2026/11/poundland-collapses-into-administration-putting-11000-jobs-at-risk/",
+    "Poundland collapses into administration putting 11,000 jobs at risk"
+   ],
+   [
+    "Stoke-On-Trent Live",
+    "25 Nov",
+    "https://www.stokesentinel.co.uk/news/stoke-on-trent-news/live-updates-poundland-administration-11255740",
+    "Live updates as Poundland in administration"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/videos/ckregn0gq2ydo?at_medium=RSS&at_campaign=rss",
+    "Why has Poundland collapsed and what happens next?"
+   ],
+   [
+    "Belfast Live",
+    "25 Nov",
+    "https://www.belfastlive.co.uk/whats-on/shopping/dealz-operator-poundland-collapses-administration-34966469",
+    "Dealz operator Poundland collapses into administration putting 11,000 jobs at risk"
+   ],
+   [
+    "PlymouthLive",
+    "25 Nov",
+    "https://www.plymouthherald.co.uk/news/uk-world-news/poundland-falls-administration-11000-jobs-11255809",
+    "Poundland falls into administration with 11,000 jobs at risk after takeover deal collapses"
+   ],
+   [
+    "Evening Standard",
+    "25 Nov",
+    "https://www.standard.co.uk/business/business-news/poundland-andy-burnham-jonathan-reynolds-government-mps-b1306402.html",
+    "Poundland falls into administration with 11,000 jobs at risk"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/news/article-16321815/Poundland-collapses-administration-jobs-risk.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Poundland collapses into administration putting as many as 12,000 jobs at risk weeks before Christmas"
+   ],
+   [
+    "The Journal",
+    "25 Nov",
+    "https://www.thejournal.ie/dealz-administration-7238092-Nov2026/",
+    "Thousands of jobs at risk as Dealz owner goes into administration"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/business/uk-world/every-effort-needed-to-save-northern-ireland-poundland-jobs-economy-minister/a/165121313.html",
+    "Every effort needed to save Northern Ireland Poundland jobs – Economy Minister"
+   ],
+   [
+    "Manchester Evening News",
+    "25 Nov",
+    "https://www.manchestereveningnews.co.uk/news/greater-manchester-news/prime-minister-andy-burnham-offers-34967223",
+    "Prime Minister Andy Burnham offers support to Poundland employees"
+   ],
+   [
+    "Financial Times",
+    "25 Nov",
+    "https://www.ft.com/content/cfa5222e-c629-4f8c-8d32-d4723e13b7f4?syn-25a6b1a6=1",
+    "Poundland collapses into administration"
+   ],
+   [
+    "Euronews",
+    "26 Nov",
+    "https://www.euronews.com/2026/11/26/uk-discounter-poundland-enters-administration-with-11000-jobs-at-risk",
+    "UK discounter Poundland enters administration with 11,000 jobs at risk"
+   ]
+  ],
+  "1password-breach-exposes-customer-names-emails-passwords": [
+   [
+    "TechCrunch",
+    "25 Nov",
+    "https://techcrunch.com/2026/11/25/todoist-confirms-6-of-customers-details-were-stolen-in-data-breach/",
+    "Todoist confirms 6% of customers’ details were stolen in data breach"
+   ],
+   [
+    "The Verge",
+    "25 Nov",
+    "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
+    "1Password breach leaked customer names and emails, but not passwords"
+   ],
+   [
+    "Business Insider",
+    "25 Nov",
+    "https://www.businessinsider.com/1password-cybersecurity-incident-warns-of-phishing-attempts-2026-11",
+    "1Password warns of phishing attempts after a hacker gained access to customer information"
+   ],
+   [
+    "Decrypt",
+    "25 Nov",
+    "https://decrypt.co/384002/1password-breach-vaults-phishing-emails",
+    "The 1Password Breach Didn’t Touch Your Vault. The Phishing Emails Might"
+   ],
+   [
+    "MacRumors",
+    "25 Nov",
+    "https://www.macrumors.com/2026/11/25/1password-security-breach/",
+    "1Password Security Breach: What Was Accessed and What Wasn't"
+   ],
+   [
+    "BleepingComputer",
+    "25 Nov",
+    "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
+    "1Password customer data stolen after employee GitHub account breach"
+   ],
+   [
+    "SiliconANGLE",
+    "25 Nov",
+    "https://siliconangle.com/2026/11/25/attacker-used-1password-employees-github-account-to-copy-customer-records/",
+    "Attacker used 1Password employee’s GitHub account to copy customer records"
+   ],
+   [
+    "9to5Mac",
+    "25 Nov",
+    "https://9to5mac.com/2026/11/25/1password-confirms-security-incident-heres-what-you-need-to-know/",
+    "1Password confirms security incident, here’s what you need to know"
+   ],
+   [
+    "Slashdot",
+    "26 Nov",
+    "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "1Password Breach Leaked Customer Names and Emails, But Passwords Are Safe"
+   ],
+   [
+    "The Hacker News",
+    "26 Nov",
+    "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
+    "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach"
+   ],
+   [
+    "Cointelegraph",
+    "26 Nov",
+    "https://cointelegraph.com/news/1password-hacker-stole-customer-names-and-emails-but-vaults-safe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "1Password hacker stole customer names and emails, but vaults safe"
+   ],
+   [
+    "Android Authority",
+    "26 Nov",
+    "https://www.androidauthority.com/1password-data-breach-3739555/",
+    "1Password confirms hackers stole customer data, but not their passwords"
+   ],
+   [
+    "Digital Trends",
+    "26 Nov",
+    "https://www.digitaltrends.com/computing/1password-discloses-a-backend-breach-says-vaults-remain-secure/",
+    "1Password discloses a backend breach, says vaults remain secure"
+   ]
+  ],
+  "duran-duran-guitarist-andy-taylor-dies-65": [
+   [
+    "RTÉ News",
+    "25 Nov",
+    "https://www.rte.ie/entertainment/2026/1125/1600695-andy-taylor-former-duran-duran-guitarist-dies-aged-65/",
+    "Andy Taylor, Duran Duran guitarist, dies aged 65"
+   ],
+   [
+    "Sky News",
+    "25 Nov",
+    "https://news.sky.com/story/duran-duran-guitarist-andy-taylor-has-died-aged-65-13616421",
+    "Simon Le Bon pays tribute to Duran Duran guitarist Andy Taylor"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/entertainment/news/duran-duran-guitarist-andy-taylor-dies-aged-65-after-prostate-cancer-battle/a/165120660.html",
+    "Duran Duran guitarist Andy Taylor dies aged 65 after prostate cancer battle"
+   ],
+   [
+    "Evening Standard",
+    "25 Nov",
+    "https://www.standard.co.uk/culture/film/duran-duran-tracey-wilson-simon-le-bon-b1306439.html",
+    "Duran Duran guitarist Andy Taylor dies aged 65 after prostate cancer battle"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/music/2026/nov/25/andy-taylor-duran-duran-guitarist-dead",
+    "Andy Taylor, guitarist in Duran Duran, dies aged 65"
+   ],
+   [
+    "Irish Mirror",
+    "25 Nov",
+    "https://www.irishmirror.ie/showbiz/celebrity-news/duran-duran-guitarist-dies-aged-37916144",
+    "Duran Duran guitarist dies aged 65 after prostate cancer battle"
+   ],
+   [
+    "CityNews Toronto",
+    "25 Nov",
+    "https://toronto.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Edmonton",
+    "25 Nov",
+    "https://edmonton.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Halifax",
+    "25 Nov",
+    "https://halifax.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Vancouver",
+    "25 Nov",
+    "https://vancouver.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews - Winnipeg",
+    "25 Nov",
+    "https://winnipeg.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Montreal",
+    "25 Nov",
+    "https://montreal.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Kitchener",
+    "25 Nov",
+    "https://kitchener.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Ottawa",
+    "25 Nov",
+    "https://ottawa.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "CityNews Calgary",
+    "25 Nov",
+    "https://calgary.citynews.ca/2026/11/25/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "Liverpool Echo",
+    "25 Nov",
+    "https://www.liverpoolecho.co.uk/news/showbiz-news/duran-duran-star-dies-aged-34967410",
+    "Duran Duran star dies aged 65 after health battle"
+   ],
+   [
+    "Metro",
+    "25 Nov",
+    "https://metro.co.uk/2026/11/25/duran-durans-andy-taylor-dies-aged-65-cancer-battle-29820672/",
+    "Sir Rod Stewart leads tribute to Duran Duran’s Andy Taylor after his death aged 65"
+   ],
+   [
+    "Page Six",
+    "25 Nov",
+    "https://pagesix.com/2026/11/25/celebrity-news/duran-duran-guitarist-andy-taylors-cause-of-death-revealed-after-his-passing-at-65/",
+    "Duran Duran guitarist Andy Taylor’s cause of death revealed after his passing at 65"
+   ],
+   [
+    "The Journal",
+    "25 Nov",
+    "https://www.thejournal.ie/andy-taylor-death-7238286-Nov2026/",
+    "Duran Duran guitarist Andy Taylor dies aged 65"
+   ],
+   [
+    "Bristol Post",
+    "25 Nov",
+    "https://www.bristolpost.co.uk/news/celebs-tv/duran-duran-star-dies-aged-11255998",
+    "Duran Duran star dies aged 65 after prostate cancer battle"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "25 Nov",
+    "https://www.wfla.com/entertainment-news/celebrity-news/duran-duran-guitarist-andy-taylor-dies-at-65/",
+    "Duran Duran guitarist Andy Taylor dies at 65"
+   ],
+   [
+    "MyNorthwest",
+    "25 Nov",
+    "https://mynorthwest.com/entertainment-news/andy-taylor-guitarist/4304728",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/articles/c0666rn4l5vo?at_medium=RSS&at_campaign=rss",
+    "Andy Taylor: Duran Duran's livewire guitarist who was a true Wild Boy"
+   ],
+   [
+    "7NEWS",
+    "25 Nov",
+    "https://7news.com.au/entertainment/guitarist-for-english-pop-rock-icons-duran-duran-andy-taylor-dies-aged-65-c-23214827",
+    "Guitarist for English pop-rock icons Duran Duran Andy Taylor dies aged 65"
+   ],
+   [
+    "KTLA",
+    "25 Nov",
+    "https://ktla.com/entertainment/andy-taylor-duran-duran-guitarist-dies-at-65/",
+    "Andy Taylor, Duran Duran guitarist, dies at 65"
+   ],
+   [
+    "The Hindu",
+    "25 Nov",
+    "https://www.thehindu.com/entertainment/music/andy-taylor-guitarist-of-new-wave-icons-duran-duran-dies-at-65/article71744266.ece",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "WJW - Cleveland News",
+    "25 Nov",
+    "https://fox8.com/news/nexstar-media-wire/duran-duran-guitarist-andy-taylor-dies-at-65/",
+    "Duran Duran guitarist Andy Taylor dies at 65"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/duran-duran-guitarist-and-songwriter-andy-taylor-dies-at-65",
+    "Duran Duran guitarist and songwriter Andy Taylor dies at 65"
+   ],
+   [
+    "Washington Post",
+    "25 Nov",
+    "https://www.washingtonpost.com/entertainment/music/2026/11/25/andy-taylor-versatile-guitarist-duran-duran-dies-65/",
+    "Andy Taylor, versatile guitarist for Duran Duran, dies at 65"
+   ],
+   [
+    "ABC7chicago.com",
+    "25 Nov",
+    "https://abc7.com/post/andy-taylor-guitarist-new-wave-icons-duran-dies-65-battle-prostate-cancer/20081436/",
+    "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65"
+   ],
+   [
+    "Newstalk ZB",
+    "25 Nov",
+    "https://www.newstalkzb.co.nz/news/entertainment/duran-duran-guitarist-andy-taylor-dies-after-stage-four-prostate-cancer-battle/",
+    "Duran Duran guitarist Andy Taylor dies after stage four prostate cancer battle"
+   ],
+   [
+    "France 24",
+    "25 Nov",
+    "https://www.france24.com/en/culture/20261125-duran-duran-guitarist-andy-taylor-dies-aged-65",
+    "Duran Duran guitarist Andy Taylor dies aged 65"
+   ],
+   [
+    "Forbes",
+    "25 Nov",
+    "https://www.forbes.com/sites/timlammers/2026/11/25/andy-taylor-original-guitarist-for-duran-duran-dies-at-65/",
+    "Andy Taylor, Guitarist For Duran Duran, Dies At 65"
+   ],
+   [
+    "Birmingham Mail",
+    "25 Nov",
+    "https://www.birminghammail.co.uk/news/midlands-news/andy-taylor-duran-duran-dies-34967544",
+    "Duran Duran star Andy Taylor dies aged 65 after illness as Birmingham band pays tribute to icon"
+   ],
+   [
+    "Citizen Free Press",
+    "26 Nov",
+    "https://citizenfreepress.com/breaking/andy-taylor-guitarist-for-duran-duran-passes-away-at-65/",
+    "Andy Taylor guitarist for Duran Duran passes away at 65."
+   ],
+   [
+    "CBS News",
+    "26 Nov",
+    "https://www.cbsnews.com/news/andy-taylor-guitarist-duran-duran-dies-age-65/",
+    "Andy Taylor, longtime Duran Duran guitarist, dies at 65"
+   ],
+   [
+    "Daily Mirror",
+    "26 Nov",
+    "https://www.mirror.co.uk/3am/celebrity-news/prostate-cancer-symptoms-andy-taylor-37916436",
+    "Prostate cancer warning signs and symptoms after Duran Duran guitarist Andy Taylor's battle"
+   ],
+   [
+    "Irish Examiner",
+    "26 Nov",
+    "https://www.irishexaminer.com/lifestyle/artsandculture/arid-41942634.html",
+    "Tributes paid to Duran Duran guitarist Andy Taylor, 65, after his death"
+   ],
+   [
+    "HuffPost UK",
+    "26 Nov",
+    "https://www.huffingtonpost.co.uk/entry/andy-taylor-duran-duran-dies_uk_6b07df18e4b01d8bd1db912d",
+    "Duran Duran Guitarist Andy Taylor Has Died, Aged 65"
+   ],
+   [
+    "Times of Malta",
+    "26 Nov",
+    "https://timesofmalta.com/article/duran-duran-guitarist-andy-taylor-sound-1980s-dies-65.1137675",
+    "Duran Duran guitarist Andy Taylor, sound of the 1980s, dies at 65"
+   ]
+  ],
+  "macys-thanksgiving-parade-postponed-saturday-due-expected": [
+   [
+    "Retail Dive",
+    "24 Nov",
+    "https://www.retaildive.com/news/macys-hundredth-thanksgiving-day-parade-history/875134/",
+    "The wonder and ritual of Macy’s Thanksgiving Day Parade"
+   ],
+   [
+    "American Wire News",
+    "24 Nov",
+    "https://americanwirenews.com/mother-nature-threatens-to-take-the-air-out-of-macys-historic-100th-thanksgiving-day-parade/",
+    "Mother Nature threatens to take the air out of Macy’s historic 100th Thanksgiving Day Parade"
+   ],
+   [
+    "WNYW - Fox 5 -New York",
+    "24 Nov",
+    "https://www.fox5ny.com/news/why-giant-balloons-were-grounded-during-1971-macys-thanksgiving-day-parade",
+    "The last time the Macy's Thanksgiving Day Parade grounded its giant balloons"
+   ],
+   [
+    "Mental Floss",
+    "24 Nov",
+    "https://www.mentalfloss.com/holidays/thanksgiving/every-balloon-float-2026-macys-thanksgiving-day-parade?utm_source=RSS",
+    "Every Balloon and Float at the 2026 Macy’s Thanksgiving Day Parade (Including a Touching Tribute)"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/weather/articles/cr894e8dd7wqo?at_medium=RSS&at_campaign=rss",
+    "New York's annual Thanksgiving Parade threatened by approaching storm"
+   ],
+   [
+    "WFLD - Fox 32 - Chicago",
+    "25 Nov",
+    "https://www.fox32chicago.com/news/chicago-thanksgiving-day-parade-2026-street-closures",
+    "Chicago Thanksgiving Day Parade 2026: Street closures, route and safety tips"
+   ],
+   [
+    "WJW - Cleveland News",
+    "25 Nov",
+    "https://fox8.com/news/could-wind-ground-balloons-in-the-macys-thanksgiving-parade/",
+    "Macy's Thanksgiving Parade postponed due to 'severe weather'"
+   ],
+   [
+    "NBC News",
+    "25 Nov",
+    "https://www.nbcnews.com/news/us-news/macys-thanksgiving-day-parade-weather-delay-rcna611355",
+    "Macy’s Thanksgiving Day Parade pushed back to Saturday due to weather"
+   ],
+   [
+    "The Sun",
+    "25 Nov",
+    "https://www.thesun.co.uk/news/41152752/macys-parade-postponed-noreaster-nyc/",
+    "Macy’s Thanksgiving Day Parade POSTPONED due to weather for 1st time in 100yr history as Nor’easter barrels towards NYC"
+   ],
+   [
+    "WPIX 11",
+    "25 Nov",
+    "https://pix11.com/news/local-news/macys-thanksgiving-parade-postponed/",
+    "Macy's Thanksgiving Day Parade postponed"
+   ],
+   [
+    "NewsNation",
+    "25 Nov",
+    "https://www.newsnationnow.com/us-news/northeast/macys-thanksgiving-day-parade-postponed/",
+    "Macy's Thanksgiving Day Parade moved to Saturday over weather concerns"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "25 Nov",
+    "https://www.wfla.com/news/national/macys-thanksgiving-day-parade-postponed-due-to-weather-report/",
+    "Macy’s Thanksgiving Day Parade postponed due to weather: report"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/homenews/state-watch/6243709-nyc-macys-parade-set-saturday/",
+    "New York delays Macy’s Thanksgiving parade because of severe weather"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/us-news/2026/nov/25/macys-thanksgiving-day-parade-postponed-weather",
+    "New York City’s Macy’s Thanksgiving Day parade postponed due to weather"
+   ],
+   [
+    "CityNews Toronto",
+    "25 Nov",
+    "https://toronto.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Edmonton",
+    "25 Nov",
+    "https://edmonton.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Halifax",
+    "25 Nov",
+    "https://halifax.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Vancouver",
+    "25 Nov",
+    "https://vancouver.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews - Winnipeg",
+    "25 Nov",
+    "https://winnipeg.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Montreal",
+    "25 Nov",
+    "https://montreal.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Kitchener",
+    "25 Nov",
+    "https://kitchener.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Ottawa",
+    "25 Nov",
+    "https://ottawa.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "CityNews Calgary",
+    "25 Nov",
+    "https://calgary.citynews.ca/2026/11/25/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "The Post Millennial",
+    "25 Nov",
+    "https://thepostmillennial.com/culture/breaking-macy-s-thanksgiving-day-parade-postponed-due-to-weather-for-first-time-ever",
+    "BREAKING: Macy's Thanksgiving Day Parade postponed due to weather for first time ever"
+   ],
+   [
+    "Las Vegas Review Journal",
+    "25 Nov",
+    "https://www.reviewjournal.com/news/nation-and-world/macys-announces-thanksgiving-day-parade-postponed-due-to-expected-bad-weather-3919368/",
+    "Macy’s announces Thanksgiving Day Parade postponed due to expected bad weather"
+   ],
+   [
+    "WGN News",
+    "25 Nov",
+    "https://wgntv.com/news/national/macys-thanksgiving-day-parade-postponed/",
+    "Macy’s announces Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/macys-thanksgiving-day-parade-in-nyc-postponed-to-saturday-due-to-bad-weather-forecast-101795641318971.html",
+    "Macy’s Thanksgiving Day Parade in NYC postponed to Saturday due to bad weather forecast"
+   ],
+   [
+    "Manchester Union leader",
+    "25 Nov",
+    "https://www.unionleader.com/news/nation-world/macys-thanksgiving-day-parade-postponed-032330d1",
+    "Macy's Thanksgiving Day Parade postponed"
+   ],
+   [
+    "Axios",
+    "25 Nov",
+    "https://www.axios.com/2026/11/25/macys-thanksgiving-parade-2026-balloons-weather",
+    "Macy's Thanksgiving parade postponed for the first time in the event's history"
+   ],
+   [
+    "PBS NewsHour",
+    "25 Nov",
+    "https://www.pbs.org/newshour/nation/macys-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather",
+    "Macy's Thanksgiving Day Parade postponed to Saturday due to expected bad weather"
+   ],
+   [
+    "KTLA",
+    "25 Nov",
+    "https://ktla.com/news/nationworld/macys-thanksgiving-parade-postponed-for-first-time/",
+    "Macy’s Thanksgiving Parade postponed for first time"
+   ],
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/united-states/macys-thanksgiving-day-parade-postponed-due-to-storm-projections-us-media-reports",
+    "Macy’s Thanksgiving Day Parade in New York City postponed due to storm projections"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "25 Nov",
+    "https://www.wane.com/top-stories/macys-thanksgiving-day-parade-postponed/",
+    "Macy's Thanksgiving Day Parade postponed"
+   ],
+   [
+    "Toledo Blade",
+    "25 Nov",
+    "https://www.toledoblade.com/news/nation/2026/11/25/100th-macys-thanksgiving-day-parade-moved-saturday-due-projected-storm/stories/20261125123",
+    "100th Macy’s Thanksgiving Day Parade moved to Saturday due to projected storm"
+   ],
+   [
+    "Belfast Telegraph",
+    "25 Nov",
+    "https://www.belfasttelegraph.co.uk/news/world-news/macys-thanksgiving-day-parade-postponed-until-saturday-as-high-winds-expected/a/165120846.html",
+    "Macy’s Thanksgiving Day Parade postponed until Saturday as high winds expected"
+   ],
+   [
+    "Twitchy",
+    "25 Nov",
+    "https://twitchy.com/justmindy/2026/11/25/macys-parade-cancelled-n2434772",
+    "Historic First: Macy’s Cancels Thanksgiving Morning Parade, Moves 100th Anniversary to Saturday"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/sciencetech/article-16321491/macys-thanksgiving-parade-balloons-new-york.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Macy's Thanksgiving Day Parade balloons face 'significant risk' of grounding for first time in 55 years"
+   ],
+   [
+    "Breitbart",
+    "25 Nov",
+    "https://www.breitbart.com/weather/2026/11/25/macys-100th-thanksgiving-day-parade-postponed-due-to-severe-weather/",
+    "Macy's 100th Thanksgiving Day Parade Postponed Due to Severe Weather"
+   ],
+   [
+    "Bloomberg",
+    "25 Nov",
+    "https://www.bloomberg.com/news/audio/2026-11-25/macy-s-thanksgiving-parade-postponed-nvidia-may-face-rating-cut",
+    "Macy's Thanksgiving Parade Postponed, Nvidia May Face Rating Cut"
+   ],
+   [
+    "Washington Examiner",
+    "25 Nov",
+    "https://www.washingtonexaminer.com/news/entertainment/4815798/macys-thanksgiving-day-parade-postponed/",
+    "Nor’easter pushes Macy’s Thanksgiving Day Parade to Saturday in historic first"
+   ],
+   [
+    "CNBC",
+    "25 Nov",
+    "https://www.cnbc.com/2026/11/25/macys-thanksgiving-day-parade-postponed.html",
+    "Macy's postpones Thanksgiving Day Parade due to severe weather"
+   ],
+   [
+    "Citizen Free Press",
+    "25 Nov",
+    "https://citizenfreepress.com/breaking/macys-thanksgiving-parade-postponed-due-to-weather/",
+    "Macy’s Thanksgiving parade postponed due to weather."
+   ],
+   [
+    "E! News",
+    "25 Nov",
+    "https://www.eonline.com/news/1438419/macys-thanksgiving-day-parade-postponed-to-saturday-due-to-new-york-storm?cmpid=rss-syndicate-genericrss-us-top_stories",
+    "Macy’s Thanksgiving Day Parade Postponed for First Time In History"
+   ],
+   [
+    "Forbes",
+    "25 Nov",
+    "https://www.forbes.com/sites/katehardcastle/2026/11/25/macys-thanksgiving-day-parade-postponed-in-historic-first-disrupting-retails-biggest-weekend/",
+    "Macy’s Thanksgiving Day Parade Postponed In Historic First, Disrupting Retail’s Biggest Weekend"
+   ],
+   [
+    "ABC7 New York",
+    "25 Nov",
+    "https://abc7ny.com/post/macys-thanksgiving-day-parade-2026-lineup-time-balloons-route-inflation-more/20027422/",
+    "Macy's Thanksgiving Day Parade 2026 postponed to Saturday: Time, lineup, route and more"
+   ],
+   [
+    "CBS News",
+    "25 Nov",
+    "https://www.cbsnews.com/video/112526-cbs-evening-news/",
+    "11/25: CBS Evening News"
+   ],
+   [
+    "ABC7chicago.com",
+    "26 Nov",
+    "https://abc7chicago.com/story/will-macys-thanksgiving-day-parade-balloons-fly-new-york-city-weighs-earlier-start-amid-storm-threat/20079303/",
+    "Macy's Thanksgiving Day parade postponed due to weather for 1st time in 100-year history"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "26 Nov",
+    "https://abc7.com/story/will-macys-thanksgiving-day-parade-balloons-fly-new-york-city-weighs-earlier-start-amid-storm-threat/20079303/",
+    "Macy's Thanksgiving Day parade postponed due to weather for 1st time in 100-year history"
+   ],
+   [
+    "France 24",
+    "26 Nov",
+    "https://www.france24.com/en/americas/20261126-powerful-us-storm-forces-historic-postponement-of-thanksgiving-day-parade-in-new-york",
+    "Powerful US storm forces historic postponement of New York's Thanksgiving Day Parade"
+   ],
+   [
+    "RTÉ News",
+    "26 Nov",
+    "https://www.rte.ie/news/us/2026/1126/1600707-thanksgiving-parade-us/",
+    "Macy's postpones Thanksgiving Day parade over major storm"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/bad-weather-postpones-macys-100th-thanksgiving-day-parade-for-first-time-ever/article71745030.ece",
+    "Bad weather postpones Macy’s 100th Thanksgiving Day Parade for first time ever"
+   ],
+   [
+    "Daily Caller",
+    "26 Nov",
+    "https://dailycaller.com/2026/11/25/macys-thanksgiving-parade-postponed-noreaster-new-york-city",
+    "Macy’s Thanksgiving Parade Postponed For First Time Ever"
+   ],
+   [
+    "RedState",
+    "26 Nov",
+    "https://redstate.com/jenniferoo/2026/11/25/macys-thanksgiving-day-parade-postponed-due-to-weather-and-safety-concerns-n2209810",
+    "Macy's Thanksgiving Day Parade Postponed Due to Weather and Safety Concerns"
+   ],
+   [
+    "ABC News (US)",
+    "26 Nov",
+    "https://abcnews.com/US/macys-thanksgiving-day-parade-postponed-sources/story?id=138452401",
+    "Macy's Thanksgiving Day parade postponed for weather for 1st time in 100-year history"
+   ],
+   [
+    "Times of India",
+    "26 Nov",
+    "https://timesofindia.indiatimes.com/world/us/storm-hits-new-york-macys-100th-thanksgiving-parade-postponed-for-first-time/articleshow/136177443.cms",
+    "Storm hits New York: Macy’s 100th Thanksgiving parade postponed for first time"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "26 Nov",
+    "https://wtop.com/national/2026/11/macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Bad weather postpones Macy’s Thanksgiving Day Parade for first time ever"
+   ],
+   [
+    "KUSI-TV",
+    "26 Nov",
+    "https://fox5sandiego.com/news/world-news/ap-international/ap-macys-announces-thanksgiving-day-parade-postponed-to-saturday-due-to-expected-bad-weather/",
+    "Bad weather postpones Macy’s Thanksgiving Day Parade for first time ever"
+   ],
+   [
+    "Business Insider",
+    "26 Nov",
+    "https://www.businessinsider.com/florida-mom-planned-macy-thanksgiving-parade-bucket-list-trip-2026-11",
+    "I brought my family to New York for the Thanksgiving Day Parade. It's been on my bucket list since I was a kid, but now I won’t get to see it."
+   ],
+   [
+    "Irish Independent",
+    "26 Nov",
+    "https://www.independent.ie/world-news/new-yorks-iconic-thanksgiving-day-parade-postponed-amid-weather-alert/a/165123688.html",
+    "New York's iconic Thanksgiving Day Parade postponed amid weather alert"
+   ],
+   [
+    "The Journal",
+    "26 Nov",
+    "https://www.thejournal.ie/new-york-postpones-macys-thanksgiving-day-parade-over-major-storm-7238427-Nov2026/",
+    "New York postpones Macy's Thanksgiving Day parade to Saturday over major storm"
+   ],
+   [
+    "The Jerusalem Post",
+    "26 Nov",
+    "https://www.jpost.com/international/article-916174",
+    "Macy's Thanksgiving Day Parade postponed due to weather for first time in 100 years"
+   ]
+  ],
+  "king-tides-these-exceptionally-high-tides-increasingly": [
+   [
+    "Phys.org",
+    "24 Nov",
+    "https://phys.org/news/2026-11-california-braces-triple-threat-huge.html",
+    "California braces for triple flooding threat of huge tides, El Niño, warm oceans"
+   ],
+   [
+    "The Globe and Mail",
+    "24 Nov",
+    "https://www.theglobeandmail.com/canada/article-bc-coast-flood-warnings-king-tides-storm-surge/",
+    "Storm surge, king tides prompt flood warnings for coastal B.C."
+   ],
+   [
+    "PBS NewsHour",
+    "24 Nov",
+    "https://www.pbs.org/newshour/nation/west-coast-king-tides-could-break-decades-old-records-and-flood-communities",
+    "West Coast king tides could break decades-old records and flood communities"
+   ],
+   [
+    "The Guardian",
+    "24 Nov",
+    "https://www.theguardian.com/weather/2026/nov/24/california-coast-flooding-thanksgiving-travel",
+    "California ‘king tides’ stress test San Francisco as low-lying areas flood"
+   ],
+   [
+    "KUSI-TV",
+    "25 Nov",
+    "https://fox5sandiego.com/news/local-news/coastal/king-tide-flooding-san-diego-mission-beach/",
+    "King tide hits Mission Beach as crews prepare for potential deluge through holiday"
+   ],
+   [
+    "KTTV - Fox 11 - Los Angeles",
+    "25 Nov",
+    "https://www.foxla.com/news/close-look-how-newport-harbor-is-adapting-rising-king-tides",
+    "Close look at how Newport Harbor is adapting to rising King tides"
+   ],
+   [
+    "KTLA",
+    "25 Nov",
+    "https://ktla.com/news/nationworld/cannon-beach-king-tides-man-dog-swept-surf/",
+    "Man, dog swept into surf by king tide after police warning"
+   ],
+   [
+    "KTVU Fox 2",
+    "25 Nov",
+    "https://www.ktvu.com/news/crews-pump-flooded-san-francisco-power-vaults-ahead-king-tides",
+    "Crews pump flooded San Francisco power vaults ahead of king tides"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "25 Nov",
+    "https://www.wfla.com/top-videos/video-shows-man-and-dog-swept-into-surf-amid-powerful-king-tides-in-oregon/",
+    "Video shows man and dog swept into surf amid powerful king tides in Oregon"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "25 Nov",
+    "https://www.wane.com/top-stories/video-shows-man-and-dog-swept-into-surf-amid-powerful-king-tides-in-oregon/",
+    "Video shows man and dog swept into surf amid powerful king tides in Oregon"
+   ],
+   [
+    "Live Science",
+    "25 Nov",
+    "https://www.livescience.com/planet-earth/rivers-oceans/california-braces-for-triple-flooding-threat-as-king-tides-overlap-with-super-el-nino",
+    "California braces for triple flooding threat as 'king tides' overlap with 'super' El Niño"
+   ],
+   [
+    "CityNews Vancouver",
+    "25 Nov",
+    "https://vancouver.citynews.ca/2026/11/25/what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/",
+    "What are king tides? These exceptionally high tides are increasingly flooding coastal communities"
+   ],
+   [
+    "WGN News",
+    "25 Nov",
+    "https://wgntv.com/news/video-shows-man-and-dog-swept-into-surf-amid-powerful-king-tides-in-oregon/",
+    "Video shows man and dog swept into surf amid powerful king tides in Oregon"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/pacifica-pier-partially-collapses-as-huge-waves-pound-california-coast-videos-surface-101795635508011.html",
+    "Pacifica Pier partially collapses as huge waves pound California coast, videos surface"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/news/article-16321227/dog-walker-tide-wave-Oregons-Beach.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Dog walker and his pet filmed being sucked into Pacific Ocean by huge 'king tide' wave after ignoring cops' warning to stay away from shore"
+   ],
+   [
+    "Newstalk ZB",
+    "26 Nov",
+    "https://www.newstalkzb.co.nz/news/world/california-king-tides-bring-huge-waves-flooding-and-evacuations-along-the-coast/",
+    "California king tides bring huge waves, flooding and evacuations along the coast"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/ckn806qq760po?at_medium=RSS&at_campaign=rss",
+    "California warns of flooding as King Tides peak over Thanksgiving"
+   ],
+   [
+    "Al Jazeera English",
+    "26 Nov",
+    "https://www.aljazeera.com/gallery/2026/11/26/photos-storms-and-an-el-nino-charged-king-tide-batter-californias-coast?traffic_source=rss",
+    "Photos: Storms and an El Nino-charged king tide batter California’s coast"
+   ],
+   [
+    "Las Vegas Review Journal",
+    "26 Nov",
+    "https://www.reviewjournal.com/news/nation-and-world/part-of-california-pier-destroyed-by-waves-photos-3919463/",
+    "Part of California pier destroyed by waves — PHOTOS"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "26 Nov",
+    "https://wtop.com/national/2026/11/king-tides-and-strong-waves-destroy-part-of-pacifica-pier-as-officials-warn-of-coastal-flooding/",
+    "King tides and strong waves destroy part of Pacifica pier as officials warn of coastal flooding"
+   ],
+   [
+    "The Straits Times",
+    "26 Nov",
+    "https://www.straitstimes.com/world/united-states/king-tide-waves-batter-california-coast-soaking-san-francisco",
+    "‘King tide’ waves batter California coast, soaking San Francisco"
+   ],
+   [
+    "Euronews",
+    "26 Nov",
+    "https://www.euronews.com/video/2026/11/26/king-tides-and-powerful-waves-destroy-pier-and-flood-homes-in-california",
+    "King tides and powerful waves destroy pier and flood homes in California"
+   ]
+  ],
+  "least-30-killed-blaze-vehicle-overturns-egypt": [
+   [
+    "The Straits Times",
+    "25 Nov",
+    "https://www.straitstimes.com/world/middle-east/at-least-30-killed-in-blaze-after-vehicle-overturns-in-egypt-health-ministry-says",
+    "At least 30 killed in blaze after vehicle overturns in Egypt, health ministry says"
+   ],
+   [
+    "Hindustan Times",
+    "25 Nov",
+    "https://www.hindustantimes.com/world-news/at-least-30-killed-15-injured-as-petroleum-carrying-vehicle-overturns-and-catches-fire-near-cairo-101795633683961.html",
+    "At least 30 killed, 15 injured as petroleum-carrying vehicle overturns and catches fire near Cairo"
+   ],
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/at-least-30-killed-in-highway-fire-in-cairo-district",
+    "At least 30 killed in highway fire in Cairo district"
+   ],
+   [
+    "Al-Monitor",
+    "25 Nov",
+    "https://www.al-monitor.com/originals/2026/11/egypt-says-31-dead-cairo-fire-after-fuel-truck-overturns",
+    "Egypt says 31 dead in Cairo fire after fuel truck overturns"
+   ],
+   [
+    "7NEWS",
+    "25 Nov",
+    "https://7news.com.au/news/world/blaze-kills-at-least-30-after-cairo-truck-overturns-c-23214561",
+    "Blaze kills at least 30 after Cairo truck overturns"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "25 Nov",
+    "https://abc7.com/story/fire-major-highway-surrounding-cairo-kills-least-30-people-egypts-health-ministry-says/20081051/",
+    "A fire on a major highway surrounding Cairo kills at least 30 people, Egypt’s Health Ministry says"
+   ],
+   [
+    "The New York Times",
+    "25 Nov",
+    "https://www.nytimes.com/2026/11/25/world/middleeast/road-fire-near-cairo-kills-dozens-after-petroleum-laden-truck-crashes.html",
+    "Road Fire Near Cairo Kills Dozens After Petroleum-Laden Truck Crashes"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/articles/cqy7rn30v314o?at_medium=RSS&at_campaign=rss",
+    "Thirty-one killed in massive fire as fuel tanker crashes on Cairo highway"
+   ],
+   [
+    "Indian Express",
+    "25 Nov",
+    "https://indianexpress.com/article/world/cairo-highway-fire-fuel-tanker-crash-10978836/",
+    "Fuel tanker crash ignites a massive fire on a highway surrounding Cairo, killing at least 31 people"
+   ],
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway",
+    "At least 31 killed as fuel tanker crash ignites large fire on Cairo highway"
+   ],
+   [
+    "CBS News",
+    "26 Nov",
+    "https://www.cbsnews.com/news/egypt-fuel-tanker-crash-cairo-highway-fire/",
+    "At least 31 killed after fuel tanker crashes and catches fire near Cairo"
+   ],
+   [
+    "Off The Press",
+    "26 Nov",
+    "https://offthepress.com/r/184882?c=rss",
+    "Fuel tanker crash sparks fire near Cairo, killing at least 31"
+   ],
+   [
+    "France 24",
+    "26 Nov",
+    "https://www.france24.com/en/africa/20261126-at-least-31-killed-in-cairo-fire-after-fuel-truck-overturns-on-busy-highway",
+    "At least 31 killed in Cairo fire after fuel truck overturns on busy highway"
+   ],
+   [
+    "Daily Mail",
+    "26 Nov",
+    "https://www.dailymail.com/news/article-16322365/30-dead-Cairo-truck-carrying-fuel-overturns-sparks-inferno.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "At least 31 dead in Cairo after truck carrying fuel overturns and sparks massive inferno"
+   ],
+   [
+    "Daily Maverick",
+    "26 Nov",
+    "https://www.dailymaverick.co.za/article/2026-11-26-thirty-one-killed-in-fire-after-vehicle-overturns-in-egypt/",
+    "Thirty-one killed in fire after vehicle overturns in Egypt"
+   ],
+   [
+    "Irish Independent",
+    "26 Nov",
+    "https://www.independent.ie/world-news/dozens-killed-as-fuel-tanker-crash-ignites-massive-fire-on-major-road-near-egyptian-capital-cairo/a/165123201.html",
+    "Dozens killed as fuel tanker crash ignites massive fire on major road near Egyptian capital Cairo"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/fuel-tanker-crash-ignites-massive-fire-on-highway-surrounding-cairo/article71744262.ece",
+    "Fuel tanker crash ignites massive fire on highway surrounding Cairo, killing at least 31 people"
+   ],
+   [
+    "The Journal",
+    "26 Nov",
+    "https://www.thejournal.ie/egypt-says-31-dead-cairo-fire-fuel-truck-overturns-on-busy-road-7238412-Nov2026/",
+    "Egypt says 31 people dead in Cairo fire after fuel truck overturns on busy road"
+   ],
+   [
+    "The Age",
+    "26 Nov",
+    "https://www.theage.com.au/world/multiple-people-killed-in-egypt-petrol-fire-20261126-p61hdz.html?ref=rss&utm_medium=rss&utm_source=rss_feed",
+    "Multiple people killed in Egypt petrol fire"
+   ],
+   [
+    "Dawn",
+    "26 Nov",
+    "https://www.dawn.com/news/2047191/egypt-says-31-dead-in-cairo-fire-after-fuel-truck-overturns",
+    "Egypt says 31 dead in Cairo fire after fuel truck overturns"
+   ]
+  ],
+  "chinas-huawei-convicted-stealing-trade-secrets": [
+   [
+    "Sky News",
+    "24 Nov",
+    "https://news.sky.com/story/chinese-tech-giant-guilty-of-plotting-to-steal-trade-secrets-and-bank-fraud-13616130",
+    "Huawei guilty of plotting to steal trade secrets and bank fraud"
+   ],
+   [
+    "The Guardian",
+    "24 Nov",
+    "https://www.theguardian.com/technology/2026/nov/24/huawei-china-convicted-deceiving-banks-stealing-us-trade-secrets",
+    "China’s Huawei convicted of stealing US trade secrets"
+   ],
+   [
+    "The Globe and Mail",
+    "24 Nov",
+    "https://www.theglobeandmail.com/world/article-huawei-conspiracy-trade-secrets/",
+    "Huawei guilty of conspiracy to steal trade secrets, U.S. jury finds"
+   ],
+   [
+    "Financial Times",
+    "24 Nov",
+    "https://www.ft.com/content/6c64b8b8-531c-4eea-8fd0-90c4c4967ab9?syn-25a6b1a6=1",
+    "Huawei convicted in US trial that exposed corporate espionage and sanctions evasion"
+   ],
+   [
+    "The Wall Street Journal",
+    "24 Nov",
+    "https://www.wsj.com/business/telecom/chinas-huawei-convicted-of-fraud-in-u-s-criminal-trial-20e17ac3?mod=rss_Technology",
+    "China’s Huawei Convicted of Fraud in U.S. Criminal Trial"
+   ],
+   [
+    "The Hindu",
+    "24 Nov",
+    "https://www.thehindu.com/sci-tech/technology/chinese-tech-giant-huawei-is-guilty-of-conspiracy-to-steal-trade-secrets-us-jury-finds/article71740060.ece",
+    "Chinese tech giant Huawei is guilty of conspiracy to steal trade secrets, U.S. jury finds"
+   ],
+   [
+    "Citizen Free Press",
+    "24 Nov",
+    "https://citizenfreepress.com/breaking/huawei-found-guilty-of-stealing-u-s-trade-secrets/",
+    "Huawei found guilty of stealing U.S. trade secrets."
+   ],
+   [
+    "Indian Express",
+    "25 Nov",
+    "https://indianexpress.com/article/world/us-jury-convicts-huawei-trade-secrets-iran-acquits-racketeering-10977363/",
+    "China’s Huawei convicted of stealing trade secrets and deceiving banks over Iran business"
+   ],
+   [
+    "CNBC",
+    "25 Nov",
+    "https://www.cnbc.com/2026/11/25/huawei-fraud-trade-trial.html",
+    "U.S. jury convicts Huawei in a criminal trial over fraud and trade secrets"
+   ],
+   [
+    "Iran International",
+    "25 Nov",
+    "https://www.iranintl.com/en/202611251744",
+    "Huawei convicted over covert Iran business behind Tehran's internet controls"
+   ],
+   [
+    "Android Authority",
+    "25 Nov",
+    "https://www.androidauthority.com/huawei-us-guilty-verdict-3739157/",
+    "HUAWEI found guilty of conspiracy to steal trade secrets in the US"
+   ],
+   [
+    "The Citizen",
+    "25 Nov",
+    "https://www.citizen.co.za/lifestyle/technology/huawei-hits-back-us-conviction-calls-verdict-without-legal-or-factual-merit/",
+    "Huawei hits back at US conviction, says verdict ‘without legal or factual merit’"
+   ],
+   [
+    "Time",
+    "25 Nov",
+    "https://time.com/article/2026/11/25/huawei-guilty-crimes-fraud-conspiracy-sanctions-us-china/",
+    "China’s Huawei Convicted in U.S. Over Bank Fraud, Iran Ties"
+   ],
+   [
+    "BBC News",
+    "25 Nov",
+    "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&at_campaign=rss",
+    "Huawei found guilty of stealing US trade secrets but acquitted of racketeering"
+   ],
+   [
+    "Fox Business",
+    "25 Nov",
+    "https://www.foxbusiness.com/fox-news-tech/federal-jury-convicts-huawei-stealing-us-trade-secrets-violating-iran-sanctions",
+    "Federal jury convicts Huawei of stealing US trade secrets, violating Iran sanctions"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/technology/6242450-huawei-guilty-iran-sanctions-trade-secrets/",
+    "Huawei found guilty in trade secrets theft case"
+   ],
+   [
+    "Ars Technica",
+    "25 Nov",
+    "https://arstechnica.com/tech-policy/2026/11/jury-convicts-huawei-of-stealing-us-trade-secrets-evading-iran-sanctions/",
+    "Guilty: Huawei faces steep penalties for stealing T-Mobile, Cisco trade secrets"
+   ],
+   [
+    "Livemint",
+    "25 Nov",
+    "https://www.livemint.com/companies/why-huawei-convicted-in-us-how-its-iran-business-triggered-7-yr-legal-battle-what-it-means-for-china-s-tech-goals-11795627748235.html",
+    "Why Huawei convicted in US? How its Iran business triggered 7-yr legal battle - what it means for China’s tech goals"
+   ],
+   [
+    "Slashdot",
+    "25 Nov",
+    "https://yro.slashdot.org/story/26/11/25/0742222/huawei-is-guilty-of-conspiracy-to-steal-trade-secrets-a-us-jury-finds?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "Huawei Is Guilty of Conspiracy To Steal Trade Secrets, a US Jury Finds"
+   ]
+  ],
+  "unclassified-cia-system-breached-cyberattack": [
+   [
+    "BizPac Review",
+    "24 Nov",
+    "https://www.bizpacreview.com/2026/11/24/even-the-cia-cant-withstand-the-tidal-wave-of-cyber-attacks-1668848/",
+    "Even the CIA can’t withstand the tidal wave of cyber attacks"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "24 Nov",
+    "https://www.wane.com/top-stories/an-unclassified-cia-system-was-breached-in-a-cyberattack-ap-source-says/",
+    "An unclassified CIA system was breached in a cyberattack, AP source says"
+   ],
+   [
+    "End Time Headlines",
+    "24 Nov",
+    "https://endtimeheadlines.org/2026/11/cia-office-of-the-director-of-national-intelligence-struck-by-cyberattack-on-same-day-as-fbi/",
+    "CIA, Office of the Director of National Intelligence struck by cyberattack on same day as FBI"
+   ],
+   [
+    "The Post Millennial",
+    "24 Nov",
+    "https://thepostmillennial.com/news/breaking-cia-unclassified-system-breached-in-cyberattack-report",
+    "BREAKING: CIA unclassified system breached in cyberattack: report"
+   ],
+   [
+    "SecurityWeek",
+    "24 Nov",
+    "https://www.securityweek.com/an-unclassified-cia-system-was-breached-in-a-cyberattack-ap-source-says/",
+    "An Unclassified CIA System Was Breached in a Cyberattack, AP Source Says"
+   ],
+   [
+    "Legal Insurrection",
+    "24 Nov",
+    "https://legalinsurrection.com/2026/11/cia-intelligence-platform-breached-as-federal-cybersecurity-concerns-mount/?utm_source=rss&utm_medium=rss&utm_campaign=cia-intelligence-platform-breached-as-federal-cybersecurity-concerns-mount",
+    "CIA Intelligence Platform Breached as Federal Cybersecurity Concerns Mount"
+   ],
+   [
+    "Cointelegraph",
+    "24 Nov",
+    "https://cointelegraph.com/news/hackers-breach-cia-intelligence-network-in-latest-us-cyberattack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "Hackers breach CIA intelligence network in latest US cyberattack"
+   ],
+   [
+    "Slashdot",
+    "25 Nov",
+    "https://it.slashdot.org/story/26/11/25/0056232/us-spy-agencies-suffer-breach-of-some-unclassified-information?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "US Spy Agencies Suffer Breach of Some Unclassified Information"
+   ],
+   [
+    "The Hindu",
+    "25 Nov",
+    "https://www.thehindu.com/news/international/us-cia-odni-suffer-cybersecurity-breach-of-some-unclassified-information-nyt-reports/article71740185.ece",
+    "U.S. CIA, ODNI suffer cybersecurity breach of some unclassified information, NYT reports"
+   ],
+   [
+    "BleepingComputer",
+    "25 Nov",
+    "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/",
+    "Hackers reportedly breached CIA intelligence analysis system"
+   ],
+   [
+    "Phys.org",
+    "25 Nov",
+    "https://techxplore.com/news/2026-11-unclassified-cia-breached-cyberattack.html",
+    "An unclassified CIA system was breached in a cyberattack"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/national-security/6242068-cia-cyberattack-breach-report/",
+    "Unclassified CIA system breached in cyberattack"
+   ],
+   [
+    "TechRadar",
+    "25 Nov",
+    "https://www.techradar.com/pro/security/hackers-breach-cia-system-in-possible-artex-cyberattack-and-leak-unclassified-data",
+    "Hackers breach CIA system in possible ARTEX cyberattack and leak unclassified data"
+   ]
+  ],
+  "pentagon-reportedly-talks-gm-ford-scale-military": [
+   [
+    "The Wall Street Journal",
+    "24 Nov",
+    "https://www.wsj.com/politics/national-security/ford-general-motors-military-drones-c082d202?mod=pls_whats_news_us_business_f",
+    "Pentagon in Talks With General Motors and Ford to Make Military Drones"
+   ],
+   [
+    "Fox Business",
+    "24 Nov",
+    "https://www.foxbusiness.com/economy/pentagon-reportedly-talks-gm-ford-scale-us-military-drone-production",
+    "Pentagon reportedly in talks with GM, Ford to scale US military drone production"
+   ],
+   [
+    "Citizen Free Press",
+    "24 Nov",
+    "https://citizenfreepress.com/breaking/pentagon-in-talks-with-ford-and-gm-to-build-military-drones-and-vehicles/",
+    "Pentagon in talks with Ford and GM to build military drones and vehicles."
+   ],
+   [
+    "BizPac Review",
+    "24 Nov",
+    "https://www.bizpacreview.com/2026/11/24/uncle-sam-looks-to-detroit-as-military-equipment-shortages-mount-report-1668838/",
+    "Uncle Sam looks to Detroit as military equipment shortages mount: Report"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/newsletters/defense-national-security/6241645-pentagon-ford-military-vehicles/",
+    "Pentagon talking with Ford to supply military vehicles"
+   ],
+   [
+    "Oilprice.com",
+    "25 Nov",
+    "https://oilprice.com/Energy/Energy-General/The-Pentagon-Wants-Detroit-to-Build-Americas-Next-Drone-Army.html",
+    "The Pentagon Wants Detroit to Build America's Next Drone Army"
+   ]
+  ],
+  "astronomers-discover-oldest-known-quasar-forming-630": [
+   [
+    "Popular Science",
+    "24 Nov",
+    "https://www.popsci.com/science/oldest-quasar-euclid-telescope/",
+    "Oldest known quasar formed 630 million years after the big bang"
+   ],
+   [
+    "CBS News",
+    "24 Nov",
+    "https://www.cbsnews.com/news/quasar-farthest-oldest-found/",
+    "Newly found farthest quasar from Earth is also oldest known to man"
+   ],
+   [
+    "The Globe and Mail",
+    "24 Nov",
+    "https://www.theglobeandmail.com/canada/science/article-astronomers-spot-oldest-known-quasar/",
+    "Astronomers spot record-setting quasar in the early universe"
+   ],
+   [
+    "Space.com",
+    "25 Nov",
+    "https://www.space.com/astronomy/black-holes/dark-universe-detective-telescope-discovers-most-distant-and-ancient-supermassive-black-hole-powered-quasar",
+    "Astronomers discover the most distant and ancient supermassive black hole-powered quasar in the universe"
+   ],
+   [
+    "Live Science",
+    "25 Nov",
+    "https://www.livescience.com/space/astronomy/james-webb-and-euclid-telescopes-discover-record-breaking-quasar-at-the-edge-of-the-universe",
+    "James Webb and Euclid telescopes discover record-breaking black hole at the edge of the universe"
+   ],
+   [
+    "Universe Today",
+    "25 Nov",
+    "https://www.universetoday.com/articles/euclids-record-setting-quasar-probes-black-hole-formation",
+    "Euclid's Record-Setting Quasar Probes Black Hole Formation"
+   ]
+  ]
+ },
+ "META": {
+  "editionId": "2026-11-26",
+  "dateLabel": "Thursday 26 November 2026",
+  "range": "24–26 Nov",
+  "rangeLong": "24–26 November 2026",
+  "lastRun": "26 Nov 2026, 08:39",
+  "digest": [
+   "Macy's Thanksgiving Day Parade postponed to Saturday due to bad weather (WPIX 11)",
+   "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume (Washington's Top News (WTOP))",
+   "Duran Duran guitarist Andy Taylor dies at 65 (CityNews Toronto)",
+   "US approves SpaceX plan to deploy one million data centre satellites (The Express Tribune)"
+  ],
+  "generated": "automatic",
+  "articlePolicy": "source-based-v1",
+  "writer": "local-qwen"
+ },
+ "LEGACY_IDS": {}
+}
