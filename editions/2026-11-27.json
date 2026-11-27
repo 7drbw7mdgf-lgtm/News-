@@ -315,104 +315,30 @@
  ],
  "STORIES": [
   {
-   "id": "army-calls-detonation-bomb-chemicals-iowa-success",
+   "id": "hackers-breach-air-force-flagship-cloud-computing",
    "topic": "world",
-   "source": "Ars Technica",
-   "time": "25 Nov",
-   "url": "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/",
-   "headline": "Lead azide detonation sends clouds over Iowa as questions of health risks swirl",
-   "summary": "Residents were advised to evacuate near the site and shelter in place farther away, with officials urging them to close windows, turn off fans, and recirculate indoor air.",
+   "source": "Dawn",
+   "time": "27 Nov",
+   "url": "https://www.dawn.com/news/2047476/hackers-breach-us-air-force-flagship-cloud-one-computing-platform",
+   "headline": "Hackers breach US Air Force flagship Cloud One computing platform",
+   "summary": "Hackers have reportedly breached the US Air Force’s Cloud One cloud platform, potentially exposing sensitive tactical, personnel, and logistics data.",
    "points": [],
-   "publishedLabel": "25 Nov 2026",
+   "publishedLabel": "27 Nov 2026",
    "article": [
-    "Residents were advised to evacuate near the site and shelter in place farther away, with officials urging them to close windows, turn off fans, and recirculate indoor air. Local media captured the plume from two earth-covered containers that were detonated simultaneously at the site.",
-    "Officials stated the chemicals were unstable and posed a risk of uncontrolled explosion if disturbed, necessitating the controlled blast. FEMA advised residents within 20 miles to remain sheltered to avoid inhaling lead dust, with the EPA confirming its presence before, during, and after the detonation to ensure public safety."
+    "Hackers have reportedly breached the US Air Force’s Cloud One cloud platform, potentially exposing sensitive tactical, personnel, and logistics data. The breach was uncovered recently during a system upgrade and has caused widespread disruption across the platform. The identity of the hackers, the extent of the intrusion, and data theft remain unknown. The Air Force declined to comment on the security status or vulnerabilities of the Cloud One system.",
+    "US Air Force’s Cloud One platform has been compromised by hackers, according to sources familiar with the matter, raising concerns over sensitive data exposure. The breach was detected during a recent system upgrade and has disrupted operations across the platform. Details about the hackers, the breach’s scope, and data loss remain unconfirmed. The Air Force stated it does not comment on the security or operational status of specific systems."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T08:44:15+00:00",
+   "articleUpdatedAt": "2026-11-27T21:20:51+00:00",
    "articleSources": [
     {
-     "name": "Ars Technica",
-     "url": "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/"
+     "name": "Dawn",
+     "url": "https://www.dawn.com/news/2047476/hackers-breach-us-air-force-flagship-cloud-one-computing-platform"
     },
-    {
-     "name": "Fox News",
-     "url": "https://www.foxnews.com/health/doctors-warn-lead-exposure-health-risks-controversial-army-detonation-iowa"
-    }
-   ],
-   "location": {
-    "label": "Austin, Texas, USA",
-    "shortLabel": "Texas",
-    "lat": 30.2672,
-    "lng": -97.7431
-   },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9049/live/be474ac0-e8f9-11f1-b8b0-a95064d74c5f.jpg",
-   "imageAlt": "Debris is seen overtop trees",
-   "imageCredit": "BBC News"
-  },
-  {
-   "id": "trump-administration-determined-jensen-huang-national-security",
-   "topic": "tech",
-   "source": "The Express Tribune",
-   "time": "26 Nov",
-   "url": "https://tribune.com.pk/story/2642446/how-the-trump-administration-determined-jensen-huang-is-not-a-national-security-threat",
-   "headline": "How the Trump administration determined Jensen Huang is not a national security threat",
-   "summary": "The US Justice Department did not formally investigate Jensen Huang before President Trump pushed for his return as Nvidia CEO, despite ongoing probes into Nvidia’s clients linked to China.",
-   "points": [],
-   "publishedLabel": "26 Nov 2026",
-   "article": [
-    "The US Justice Department did not formally investigate Jensen Huang before President Trump pushed for his return as Nvidia CEO, despite ongoing probes into Nvidia’s clients linked to China. Attorney General Todd Blanche determined there was no evidence Jensen Huang violated laws based on investigations into Super Micro and Megaspeed International, both suspected of chip smuggling to China. Blanche’s conclusion that Huang posed no national security threat was key in informing Trump and Vice President Vance that no such risk existed. Congress members from both parties have criticized the move, arguing it’s premature to dismiss national security risks tied to Nvidia and its CEO.",
-    "Jensen Huang returned to Nvidia just 11 days after resigning, pledging to be a better CEO in his second role. Nvidia’s board cited input from senior U.S. government officials as the reason for its unanimous decision to reinstate Huang. Nvidia had previously ruled out Huang’s return, raising questions about why a U.S. president intervened so directly in the company’s leadership."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T08:42:01+00:00",
-   "articleSources": [
     {
      "name": "The Express Tribune",
-     "url": "https://tribune.com.pk/story/2642446/how-the-trump-administration-determined-jensen-huang-is-not-a-national-security-threat"
-    },
-    {
-     "name": "Scroll.in",
-     "url": "https://scroll.in/article/1097304/ai-bubble-us-stock-market-among-reasons-why-trump-convinced-nvidia-to-rehire-jensen-huang?utm_source=rss&utm_medium=public"
-    }
-   ],
-   "location": {
-    "label": "Beijing, China",
-    "shortLabel": "Beijing",
-    "lat": 39.9042,
-    "lng": 116.4074
-   },
-   "image": "https://www.rte.ie/images/00256935-1600.jpg",
-   "imageAlt": "How the Trump administration determined Jensen Huang is not a national security threat",
-   "imageCredit": "RTÉ News"
-  },
-  {
-   "id": "approves-spacex-plan-deploy-million-data-centre",
-   "topic": "tech",
-   "source": "The Verge",
-   "time": "25 Nov",
-   "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
-   "headline": "FCC approves SpaceX's plan to launch up to 1 million AI satellites under the Starmind initiative",
-   "summary": "This marks the first regulatory approval for a full constellation of AI satellites in space, with Google and Blue Origin also exploring similar concepts.",
-   "points": [],
-   "publishedLabel": "25 Nov 2026",
-   "article": [
-    "This marks the first regulatory approval for a full constellation of AI satellites in space, with Google and Blue Origin also exploring similar concepts. SpaceX must deploy at least one satellite by 2033 and reach the 1 million satellite milestone by 2040, according to FCC requirements.",
-    "The FCC has authorized SpaceX to launch up to 1 million Starmind satellites designed to function as orbital AI data centers. SpaceX aims to begin launches in 2027, with full operational capability expected by 2040. While Google and Blue Origin are developing space-based AI infrastructure, BCG forecasts that orbital data centers will remain more expensive than ground-based alternatives."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T08:46:41+00:00",
-   "articleSources": [
-    {
-     "name": "The Verge",
-     "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
-    },
-    {
-     "name": "The Decoder",
-     "url": "https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/"
+     "url": "https://tribune.com.pk/story/2642653/hackers-breach-us-air-force-flagship-cloud-one-computing-platform"
     }
    ],
    "location": {
@@ -421,66 +347,35 @@
     "lat": 37.4419,
     "lng": -122.143
    },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5383/live/4c315c90-e968-11f1-a094-5fdc692f3e33.jpg",
-   "imageAlt": "SpaceX Starship Ship 42 is caught in the arms of the launch tower as it returns from flight on November 14, 2026 in Starbase, Texas.",
-   "imageCredit": "BBC News"
+   "image": "https://i.guim.co.uk/img/media/b78bd09c92d89960e79cab8a33338868663794eb/171_0_1706_1365/master/1706.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=0540f9b74f59c65d1f65a63e5e9ef2f6",
+   "imageAlt": "Hackers breach US Air Force flagship Cloud One computing platform",
+   "imageCredit": "The Guardian"
   },
   {
-   "id": "1password-breach-exposes-customer-names-emails-passwords",
-   "topic": "tech",
-   "source": "Slashdot",
-   "time": "26 Nov",
-   "url": "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-   "headline": "1Password breach exposes customer names and emails, but not passwords",
-   "summary": "Customer names, email addresses, account creation dates, and login timestamps were stolen, but passwords in vaults remained inaccessible and app functionality is unaffected.",
-   "points": [],
-   "publishedLabel": "26 Nov 2026",
-   "article": [
-    "Customer names, email addresses, account creation dates, and login timestamps were stolen, but passwords in vaults remained inaccessible and app functionality is unaffected. It remains unclear how the attacker obtained the employee's corporate account, and 1Password has not yet responded to questions about the breach details. The company has not disclosed whether it notified affected customers or how many were impacted, though it serves millions of users and over 200,000 businesses.",
-    "1Password reported that a hacker accessed its backend systems and stole customer names and email addresses. The attacker used the compromised account to access backend services and download customer data by pushing malicious code to the system."
-   ],
-   "articleStatus": "ready",
-   "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T08:53:43+00:00",
-   "articleSources": [
-    {
-     "name": "Slashdot",
-     "url": "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed"
-    },
-    {
-     "name": "The Verge",
-     "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak"
-    }
-   ],
-   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STKB339_1PASSWORD.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-   "imageAlt": "Vector illustration of the 1Password logo.",
-   "imageCredit": "The Verge"
-  },
-  {
-   "id": "federal-judge-blocks-fcc-reviewing-abcs-licenses",
+   "id": "parts-clean-power-outages-being-restored-thanksgiving",
    "topic": "world",
-   "source": "The Verge",
-   "time": "26 Nov",
-   "url": "https://www.theverge.com/policy/1043116/fcc-disney-abc-broadcast-licenses-review-early-judge-block",
-   "headline": "Federal judge blocks the FCC from reviewing ABC’s licenses early",
-   "summary": "US District Judge Loren AliKhan blocked the FCC from reviewing ABC’s licenses early, rejecting its attempt to dismiss the network’s First Amendment lawsuit.",
+   "source": "CityNews Kitchener",
+   "time": "27 Nov",
+   "url": "https://kitchener.citynews.ca/2026/11/27/parts-of-the-us-clean-up-power-outages-being-restored-after-thanksgiving-storm-soaks-east-coast/",
+   "headline": "Parts of the US clean up, power outages being restored after Thanksgiving storm soaks East Coast",
+   "summary": "Heavy rain over flooded East Coast communities eased Friday, with power slowly restored to hundreds of thousands as high-tide flooding threats remained.",
    "points": [],
-   "publishedLabel": "26 Nov 2026",
+   "publishedLabel": "27 Nov 2026",
    "article": [
-    "US District Judge Loren AliKhan blocked the FCC from reviewing ABC’s licenses early, rejecting its attempt to dismiss the network’s First Amendment lawsuit. The judge found ABC likely to succeed on its retaliation claim, noting the FCC’s early renewal demand came despite no license renewal scheduled until 2028.",
-    "Judge Loren L AliKhan blocked the FCC from taking further action against ABC’s licenses after the network sued in August over an early renewal demand. The FCC cited a DEI investigation as justification for early renewal, but ABC argued it was being punished for editorial content critical of the Trump administration."
+    "Heavy rain over flooded East Coast communities eased Friday, with power slowly restored to hundreds of thousands as high-tide flooding threats remained. Holiday storms disrupted travel, toppled trees and power lines, and prompted water rescues from New York to Virginia.",
+    "The storms disrupted travel, downed trees and power lines, and triggered water rescues from New York to Virginia. Cold rain affected the Midwest, Ohio Valley, and Lower Great Lakes, while a separate storm in the Northwest brought rain to coastal Oregon."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T08:58:40+00:00",
+   "articleUpdatedAt": "2026-11-27T21:24:18+00:00",
    "articleSources": [
     {
-     "name": "The Verge",
-     "url": "https://www.theverge.com/policy/1043116/fcc-disney-abc-broadcast-licenses-review-early-judge-block"
+     "name": "CityNews Kitchener",
+     "url": "https://kitchener.citynews.ca/2026/11/27/parts-of-the-us-clean-up-power-outages-being-restored-after-thanksgiving-storm-soaks-east-coast/"
     },
     {
-     "name": "The Guardian",
-     "url": "https://www.theguardian.com/us-news/2026/nov/25/brendan-carr-fcc-abc-licenses"
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/national/heavy-rain-winds-down-as-power-remains-out-for-hundreds-of-thousands-on-the-east-coast/4305127"
     }
    ],
    "location": {
@@ -489,35 +384,109 @@
     "lat": 40.7128,
     "lng": -74.006
    },
-   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25840497/STKP211_BRENDAN_CARR_B.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-   "imageAlt": "Digital photo illustration of FCC chair Brendan Carr.",
-   "imageCredit": "The Verge"
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5163/live/6a7c75a0-ea2f-11f1-b33b-b39c81e690e4.jpg",
+   "imageAlt": "A man walks as he pulls the hood of a plastic poncho, which is blowing in the wind, tight around his face",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "macys-thanksgiving-parade-postponed-time-history",
+   "topic": "world",
+   "source": "WANE - Fort Wayne News",
+   "time": "25 Nov",
+   "url": "https://www.wane.com/top-stories/macys-thanksgiving-day-parade-postponed/",
+   "headline": "Macy's Thanksgiving Day Parade postponed for the first time in its history",
+   "summary": "The event will be rescheduled to Saturday, with Mayor Zohran Mamdani confirming the decision was made jointly with Macy's and city agencies.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "The event will be rescheduled to Saturday, with Mayor Zohran Mamdani confirming the decision was made jointly with Macy's and city agencies.",
+    "Macy's confirmed the parade's first-ever postponement in its history, announced Wednesday. A looming nor'easter has forced the cancellation of the planned record 100 inflatables, with safety being the top priority. Macy's cited safety concerns and consulted with city partners before deciding to move the parade, as stated to NBC. Macy's thanked volunteers, performers, and partners for their contributions to the annual event."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T21:27:13+00:00",
+   "articleSources": [
+    {
+     "name": "WANE - Fort Wayne News",
+     "url": "https://www.wane.com/top-stories/macys-thanksgiving-day-parade-postponed/"
+    },
+    {
+     "name": "Axios",
+     "url": "https://www.axios.com/2026/11/25/macys-thanksgiving-parade-2026-balloons-weather"
+    }
+   ],
+   "location": {
+    "label": "Chicago, Illinois, USA",
+    "shortLabel": "Chicago",
+    "lat": 41.8781,
+    "lng": -87.6298
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/257b/live/9b91c8f0-ea72-11f1-99a1-253766e7ad8b.jpg",
+   "imageAlt": "Split screen. Left, Tom Turkey float is seen. Right, man reacting to parade being cancelled.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "dwp-shuts-down-online-services-cyber-incident",
+   "topic": "uk",
+   "source": "The Register",
+   "time": "27 Nov",
+   "url": "https://www.theregister.com/security/2026/11/27/british-social-security-system-techies-yank-services-offline-following-cyber-incident/5312522",
+   "headline": "UK DWP shuts down online services amid cyber incident",
+   "summary": "On Friday morning, the DWP announced a precautionary shutdown of certain online services after identifying a cyber incident impacting its systems.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "On Friday morning, the DWP announced a precautionary shutdown of certain online services after identifying a cyber incident impacting its systems. The DWP is collaborating with the National Cyber Security Centre and GC3 to investigate the cyber incident and restore services swiftly. Benefit and pension payments continue as scheduled, and users are advised to retry accessing services later.",
+    "Individuals attempting to verify their state pension or apply for disability benefits or universal credit were unable to do so on Friday morning. DWP officials confirm that financial payments will continue to be processed normally despite the system outage."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T21:21:31+00:00",
+   "articleSources": [
+    {
+     "name": "The Register",
+     "url": "https://www.theregister.com/security/2026/11/27/british-social-security-system-techies-yank-services-offline-following-cyber-incident/5312522"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/society/2026/nov/27/callout-dwp-cyber-incident-benefits-pensions-offline-uk"
+    }
+   ],
+   "location": {
+    "label": "Kyiv, Ukraine",
+    "shortLabel": "Ukraine",
+    "lat": 50.4501,
+    "lng": 30.5234
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c16d/live/d01bdb90-958d-11f1-b8bb-1b597db1ad66.jpg",
+   "imageAlt": "A logo reading Department for Work & Pensions",
+   "imageCredit": "BBC News"
   },
   {
    "id": "zelenskyy-criticises-trumps-friendly-gesture-towards-putin",
    "topic": "world",
-   "source": "Ukrainska Pravda",
+   "source": "GB News",
    "time": "27 Nov",
-   "url": "https://www.pravda.com.ua/eng/news/2026/11/27/8064888/",
-   "headline": "Zelenskyy criticises Trump's friendly gesture towards Putin",
-   "summary": "President Zelenskyy condemned Trump's friendly greeting of Putin, comparing the Russian leader to Hitler and calling him an aggressor and murderer.",
+   "url": "https://www.gbnews.com/news/world/volodymyr-zelensky-donald-trump-vladimir-putin-ties-friends-with-hitler",
+   "headline": "Ukrainian President Zelenskyy criticizes Donald Trump for describing Vladimir Putin as a friend",
+   "summary": "Trump called Putin 'my friend' during the meeting, a remark Zelensky condemned as dangerously similar to befriending a wartime aggressor.",
    "points": [],
    "publishedLabel": "27 Nov 2026",
    "article": [
-    "President Zelenskyy condemned Trump's friendly greeting of Putin, comparing the Russian leader to Hitler and calling him an aggressor and murderer. In a BBC interview, Zelenskyy said it was strange that Trump referred to Putin as a friend, likening the gesture to calling Hitler a friend. Zelenskyy stated that Putin, as an aggressor and killer, cannot be a friend, emphasizing the moral impossibility of such a relationship. He drew a direct parallel between Trump’s description of Putin as a friend and the historical inaccuracy of calling Hitler a friend during WWII.",
-    "Zelenskyy reiterated that Putin is an aggressor and killer and cannot be a friend when questioned about Trump’s remarks. Ukraine sees Trump’s alliance with Putin as a serious threat, and Europe worries about the implications of a US leader fostering such ties in a world without stable leadership."
+    "Trump called Putin 'my friend' during the meeting, a remark Zelensky condemned as dangerously similar to befriending a wartime aggressor.",
+    "Zelenskyy criticized Trump for comparing his friendship with Putin to befriending Adolf Hitler during World War II. The Ukrainian president spoke to the BBC after Trump met Putin in China last week, highlighting the 'strange' nature of their relationship. Trump shared a photo of the meeting with a caption reading 'My friend,' which drew global outrage given Putin's ongoing attacks on Ukraine. The incident is seen as evidence that Trump may prioritize ending the war by forcing Ukraine to surrender rather than pressuring Putin to stop the invasion."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T09:01:44+00:00",
+   "articleUpdatedAt": "2026-11-27T21:34:10+00:00",
    "articleSources": [
     {
-     "name": "Ukrainska Pravda",
-     "url": "https://www.pravda.com.ua/eng/news/2026/11/27/8064888/"
+     "name": "GB News",
+     "url": "https://www.gbnews.com/news/world/volodymyr-zelensky-donald-trump-vladimir-putin-ties-friends-with-hitler"
     },
     {
-     "name": "i News",
-     "url": "https://inews.co.uk/news/world/two-reasons-trumps-strange-putin-friendship-alarming-europe-4934998"
+     "name": "HuffPost UK",
+     "url": "https://www.huffingtonpost.co.uk/entry/volodymyr-zelenskyy-ukraine-donald-trump-putin_uk_6b093f14e4b01f494a037db9"
     }
    ],
    "location": {
@@ -531,104 +500,178 @@
    "imageCredit": "BBC News"
   },
   {
-   "id": "least-30-killed-blaze-vehicle-overturns-egypt",
+   "id": "army-calls-detonation-bomb-chemicals-iowa-success",
    "topic": "world",
-   "source": "The Guardian",
+   "source": "WFLD - Fox 32 - Chicago",
    "time": "26 Nov",
-   "url": "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway",
-   "headline": "Fuel tanker crash on Cairo ring road ignites massive fire, killing at least 31 people",
-   "summary": "A fuel tanker crash on a highway around Cairo ignited a huge fire on Wednesday, killing at least 31 people according to Egyptian authorities.",
+   "url": "https://www.fox32chicago.com/news/whats-iowa-lead-detonation-mean-food-safety-heres-what-officials-say",
+   "headline": "Did the Iowa lead detonation impact food safety? Here’s what officials say",
+   "summary": "Post-explosion EPA testing found no toxic airborne lead above nearby farms, homes, and businesses.",
    "points": [],
    "publishedLabel": "26 Nov 2026",
    "article": [
-    "A fuel tanker crash on a highway around Cairo ignited a huge fire on Wednesday, killing at least 31 people according to Egyptian authorities. A blaze on the ring road, a major highway around Cairo, injured at least 21 people and left over two dozen vehicles and motorcycles charred, as reported by the health ministry.",
-    "Traffic on the Ring Road resumed normal by Thursday after most wreckage was cleared. Salah Ahmed, a microbus driver, described the inferno as 'God’s hellfire' in a statement to The Associated Press."
+    "Post-explosion EPA testing found no toxic airborne lead above nearby farms, homes, and businesses. EPA crews are now gathering soil and water samples to assess potential lead contamination. Given that Iowa farmers supply about 8% of the nation’s food, food safety concerns remain under scrutiny.",
+    "The U.S. Army has declared the detonation of its aging lead azide stockpile a success. However, criticism persists over the federal government’s communication timeline and transparency. EPA personnel conducted field sampling of schools, playgrounds, churches, and homes on Thursday. Over 1,500 samples of air, water, soil, and dust were collected prior to the detonation."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T09:02:25+00:00",
+   "articleUpdatedAt": "2026-11-27T21:36:01+00:00",
    "articleSources": [
     {
-     "name": "The Guardian",
-     "url": "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway"
+     "name": "WFLD - Fox 32 - Chicago",
+     "url": "https://www.fox32chicago.com/news/whats-iowa-lead-detonation-mean-food-safety-heres-what-officials-say"
     },
     {
-     "name": "Fox News",
-     "url": "https://www.foxnews.com/world/egypt-detains-driver-suspected-causing-cairo-fuel-tanker-crash-inferno-left-31-dead"
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/national/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification/4305205"
     }
    ],
    "location": {
-    "label": "Cairo, Egypt",
-    "shortLabel": "Egypt",
-    "lat": 30.0444,
-    "lng": 31.2357
+    "label": "Washington, D.C., USA",
+    "shortLabel": "Washington, D.C.",
+    "lat": 38.9072,
+    "lng": -77.0369
    },
-   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/49ab/live/4933ad90-e913-11f1-a094-5fdc692f3e33.jpg",
-   "imageAlt": "People stand next to the wreck of a car in the aftermath of a fire that broke out on a highway in the Al-Waraq neighbourhood of Imbaba district, Giza Governorate, Cairo.",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9049/live/be474ac0-e8f9-11f1-b8b0-a95064d74c5f.jpg",
+   "imageAlt": "Debris is seen overtop trees",
    "imageCredit": "BBC News"
   },
   {
-   "id": "apple-removes-minimaxs-talkie-ai-chatbot-app",
-   "topic": "tech",
-   "source": "Fox Business",
-   "time": "26 Nov",
-   "url": "https://www.foxbusiness.com/technology/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-sexual-messages-kids",
-   "headline": "Apple removes MiniMax's Talkie AI chatbot from App Store amid reports of inappropriate messages to children",
-   "summary": "Despite an 18+ rating and age restrictions for users under 14 or 16 in certain countries, Talkie's self-reporting age verification has drawn criticism from child safety advocates.",
+   "id": "u-encouraged-iraq-venezuela-leave-opec-sources",
+   "topic": "world",
+   "source": "Oilprice.com",
+   "time": "27 Nov",
+   "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Pushed-Iraq-and-Venezuela-to-Consider-Quitting-OPEC-Sources-Say.html",
+   "headline": "U.S. Encouraged Iraq and Venezuela to Leave OPEC, Sources Say",
+   "summary": "The Trump administration sought to boost oil output in Iraq and Venezuela, fearing OPEC quotas would restrict production growth.",
    "points": [],
-   "publishedLabel": "26 Nov 2026",
+   "publishedLabel": "27 Nov 2026",
    "article": [
-    "Despite an 18+ rating and age restrictions for users under 14 or 16 in certain countries, Talkie's self-reporting age verification has drawn criticism from child safety advocates.",
-    "Apple removed MiniMax's Talkie chatbot from its App Store this week after reports alleged that AI characters sent sexualized messages to minors. Talkie, launched in 2023, features a range of AI companions with romantic themes, raising concerns over its suitability for younger users. MiniMax's Chinese version, Xingye, is also under scrutiny, as ABC News and the Bureau of Investigative Journalism reported inappropriate messages to children. The app maintains an 18+ rating on both Apple and Google platforms, with age restrictions for users under 14 or 16 depending on the region."
+    "The Trump administration sought to boost oil output in Iraq and Venezuela, fearing OPEC quotas would restrict production growth.",
+    "Chevron’s stock performance reflects investor concerns over potential OPEC membership changes and the company’s global exploration expansion. A Reuters report states the Trump administration blocked Venezuela from paying its annual OPEC dues and urged both nations to consider leaving the cartel. Saudi Crown Prince Mohammed bin Salman advised Washington against pressuring Venezuela further, while Iraq’s oil ministry persuaded Prime Minister Ali Faleh al-Zaidi to stay in OPEC."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T09:10:17+00:00",
+   "articleUpdatedAt": "2026-11-27T21:37:54+00:00",
    "articleSources": [
     {
-     "name": "Fox Business",
-     "url": "https://www.foxbusiness.com/technology/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-sexual-messages-kids"
+     "name": "Oilprice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Pushed-Iraq-and-Venezuela-to-Consider-Quitting-OPEC-Sources-Say.html"
     },
     {
-     "name": "The Express Tribune",
-     "url": "https://tribune.com.pk/story/2642440/apple-pulls-minimax-ai-chatbot-from-app-store-over-child-safety-concerns"
+     "name": "Benzinga",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63669011/whats-going-on-with-chevron-stock-on-friday"
     }
    ],
    "location": {
-    "label": "Beijing, China",
-    "shortLabel": "Beijing",
-    "lat": 39.9042,
-    "lng": 116.4074
+    "label": "Caracas, Venezuela",
+    "shortLabel": "Caracas",
+    "lat": 10.4806,
+    "lng": -66.9036
    },
-   "image": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/11/0/0/minimax-shanghai-reuters.jpg?ve=1&tl=1",
-   "imageAlt": "Apple removes MiniMax's Talkie AI chatbot from App Store amid reports of inappropriate messages to children",
-   "imageCredit": "Fox Business"
+   "image": "https://img.etimg.com/thumb/msid-136222262,width-1200,height-900,imgsize-57438,overlay-etmarkets/articleshow.jpg",
+   "imageAlt": "U.S. Encouraged Iraq and Venezuela to Leave OPEC, Sources Say",
+   "imageCredit": "Economic Times"
   },
   {
-   "id": "number-neets-rises-young-women-exit-labour",
-   "topic": "uk",
-   "source": "City AM",
-   "time": "26 Nov",
-   "url": "https://www.cityam.com/number-of-neets-rises-as-young-women-exit-labour-market/",
-   "headline": "Number of Neets rises as young women exit labour market",
-   "summary": "The Office for National Statistics reported a 22,000 decrease in Neets between July and September compared to the previous three-month period.",
+   "id": "mexico-files-formal-complaint-dea-tip-line",
+   "topic": "world",
+   "source": "MyNorthwest",
+   "time": "27 Nov",
+   "url": "https://mynorthwest.com/world/mexico-files-formal-complaint-to-us-over-dea-tip-line/4305181",
+   "headline": "Mexico files formal complaint to US over DEA tip line",
+   "summary": "Sheinbaum emphasized that Mexico’s relationship with the U.S. is one of coordination, not subordination, in her daily briefing.",
    "points": [],
-   "publishedLabel": "26 Nov 2026",
+   "publishedLabel": "27 Nov 2026",
    "article": [
-    "The Office for National Statistics reported a 22,000 decrease in Neets between July and September compared to the previous three-month period. The total number of economically inactive young people rose by 22,000 to 596,000, with Ben Harrison of the Work Foundation noting a growing gap in trends between young men and women.",
-    "The Office for National Statistics confirmed a 22,000 decline in Neets between July and September, bringing the total to 959,000, as ministers prepare sweeping reforms following Alan Milburn’s report on youth and work."
+    "Sheinbaum emphasized that Mexico’s relationship with the U.S. is one of coordination, not subordination, in her daily briefing. The complaint comes amid U.S. pressure on Mexico to strengthen its anti-cartel efforts, with Trump administration officials pushing for increased cooperation. The U.S. has publicly offered to deploy troops in Mexico, a move Sheinbaum has explicitly rejected.",
+    "President Claudia Sheinbaum criticized DEA officials for their tip line, asserting it constitutes interference in Mexico’s domestic law enforcement. Sheinbaum stated that the DEA has ample domestic responsibilities and should focus on its own country, according to AP."
    ],
    "articleStatus": "ready",
    "articleOrigin": "generated",
-   "articleUpdatedAt": "2026-11-27T09:15:46+00:00",
+   "articleUpdatedAt": "2026-11-27T21:39:31+00:00",
    "articleSources": [
     {
-     "name": "City AM",
-     "url": "https://www.cityam.com/number-of-neets-rises-as-young-women-exit-labour-market/"
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/world/mexico-files-formal-complaint-to-us-over-dea-tip-line/4305181"
+    },
+    {
+     "name": "The Hill",
+     "url": "https://thehill.com/policy/international/6244966-sheinbaum-rebukes-dea-tip-line/"
+    }
+   ],
+   "location": {
+    "label": "Guasave, Sinaloa, Mexico",
+    "shortLabel": "Sinaloa",
+    "lat": 25.5747,
+    "lng": -108.4718
+   },
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/reuters_6b09bc8a-1795800202.jpg?resize=1920%2C1440",
+   "imageAlt": "Mexico files complaint with US over DEA tip line on alleged drug dealers",
+   "imageCredit": "Al Jazeera English"
+  },
+  {
+   "id": "iran-accuses-ukraine-false-flag-drone-attack",
+   "topic": "world",
+   "source": "American Wire News",
+   "time": "27 Nov",
+   "url": "https://americanwirenews.com/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump/",
+   "headline": "Iran accuses Ukraine of false flag drone attack in Kuwait to draw attention from Trump",
+   "summary": "Iran's former nuclear negotiator Mohammad Marandi claimed Ukrainian forces operate in the Middle East, supporting the theory that the Kuwait strike was a false flag orchestrated by Ukraine.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Iran's former nuclear negotiator Mohammad Marandi claimed Ukrainian forces operate in the Middle East, supporting the theory that the Kuwait strike was a false flag orchestrated by Ukraine.",
+    "Iran accused Ukraine of orchestrating a drone attack in Kuwait to gain favor with President Trump, asserting it was a false flag operation. Iran denied responsibility for a drone strike in Kuwait that killed two Italian defense workers and injured two others, accusing Ukraine of staging the attack to provoke U.S. attention. Mohammad Marandi, Iran’s former nuclear adviser, stated Ukrainian operatives are active in northern Iraq and Syria, supporting the claim that the Kuwait strike was a false flag."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T21:40:51+00:00",
+   "articleSources": [
+    {
+     "name": "American Wire News",
+     "url": "https://americanwirenews.com/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump/"
+    },
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/world/iran-accuses-zelenskyy-false-flag-kuwait-drone-strike-op-get-trumps-attention"
+    }
+   ],
+   "location": {
+    "label": "Brussels, Belgium",
+    "shortLabel": "Brussels",
+    "lat": 50.8503,
+    "lng": 4.3517
+   },
+   "image": "https://images.euronews.com/articles/stories/10/00/96/94/1200x675_cmsv2_fa3c62fc-42f2-57a0-9dbc-8a89c9865556-10009694.jpg",
+   "imageAlt": "Passenger flights diverted as Kuwait army intercepts Iranian drone attack",
+   "imageCredit": "Euronews"
+  },
+  {
+   "id": "huw-edwards-appear-channel-4-documentary-addressing",
+   "topic": "uk",
+   "source": "HuffPost UK",
+   "time": "27 Nov",
+   "url": "https://www.huffingtonpost.co.uk/entry/channel-4-huw-edwards-controversy-documentary_uk_6b093d4ee4b01f494a037bbe",
+   "headline": "Huw Edwards to appear in Channel 4 documentary addressing his conviction and fall from grace",
+   "summary": "Channel 4’s documentary on Huw Edwards, titled Huw Edwards – Guilty, has sparked controversy ahead of its release.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Channel 4’s documentary on Huw Edwards, titled Huw Edwards – Guilty, has sparked controversy ahead of its release. A trailer showing Huw Edwards confronting questions about his downfall has ignited debate over whether the platforming is appropriate. Huw Edwards exited court in September 2024, and three former BBC News sources have expressed discomfort with the documentary’s approach.",
+    "Huw Edwards will speak publicly for the first time about his 2024 conviction for indecent images of children in a Channel 4 documentary focused on his fall from grace. The documentary, Huw Edwards – Guilty, describes a 'stark exploration' of Edwards’s life following grooming allegations and a 2024 conviction with a six-month prison sentence suspended for two years."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T21:29:41+00:00",
+   "articleSources": [
+    {
+     "name": "HuffPost UK",
+     "url": "https://www.huffingtonpost.co.uk/entry/channel-4-huw-edwards-controversy-documentary_uk_6b093d4ee4b01f494a037bbe"
     },
     {
      "name": "The Guardian",
-     "url": "https://www.theguardian.com/society/2026/nov/26/neets-uk-young-people-education-employment-training-andy-burnham"
+     "url": "https://www.theguardian.com/media/2026/nov/26/huw-edwards-documentary-channel-4-crimes-conviction"
     }
    ],
    "location": {
@@ -637,8 +680,82 @@
     "lat": 51.5072,
     "lng": -0.1276
    },
-   "image": "https://i.guim.co.uk/img/media/5ed2a70981b6249eff2491c184d3503f49eccad9/1_340_3616_2893/master/3616.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=fa3e09b8ca9855ea77974bccab50ba3b",
-   "imageAlt": "Number of Neets rises as young women exit labour market",
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d51b/live/6e67b490-ea66-11f1-a828-d384c0290f6b.jpg",
+   "imageAlt": "Huw Edwards in a suit and dark glasses flanked by a police officer and protesters outside a court hearing in 2024",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "los-angeles-schools-disable-googles-ai-overviews",
+   "topic": "tech",
+   "source": "Washington's Top News (WTOP)",
+   "time": "27 Nov",
+   "url": "https://wtop.com/national/2026/11/as-google-threatens-to-cut-schools-search-access-los-angeles-blocks-ai-features/",
+   "headline": "Los Angeles schools disable Google’s AI Overviews on student devices",
+   "summary": "Los Angeles school districts have blocked Google’s AI-generated search summaries on school-issued devices, considering a full exit from Google products without a permanent AI solution.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Los Angeles school districts have blocked Google’s AI-generated search summaries on school-issued devices, considering a full exit from Google products without a permanent AI solution. As the largest district to remove AI Overviews, Los Angeles Unified is now the leading school system to sideline Google’s AI tools in education. The district has not officially announced the change, and the decision was made without prior public notice, according to Schools Beyond Screens LA leaders.",
+    "Google claims schools that disable AI entirely will lose access to search, prompting some districts to develop workarounds or explore alternative search engines."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T21:35:24+00:00",
+   "articleSources": [
+    {
+     "name": "Washington's Top News (WTOP)",
+     "url": "https://wtop.com/national/2026/11/as-google-threatens-to-cut-schools-search-access-los-angeles-blocks-ai-features/"
+    },
+    {
+     "name": "The Next Web",
+     "url": "https://thenextweb.com/news/la-schools-disable-google-ai-overviews-search-standoff"
+    }
+   ],
+   "location": {
+    "label": "San Francisco Bay Area, USA",
+    "shortLabel": "California",
+    "lat": 37.4419,
+    "lng": -122.143
+   },
+   "image": "https://nypost.com/wp-content/uploads/sites/2/2026/11/crop-42170222.jpg?quality=75&strip=all&w=1200",
+   "imageAlt": "Los Angeles schools disable Google’s AI Overviews on student devices",
+   "imageCredit": "Off The Press"
+  },
+  {
+   "id": "net-migration-reaches-lowest-level-30",
+   "topic": "uk",
+   "source": "Channel 4 News",
+   "time": "26 Nov",
+   "url": "https://www.channel4.com/news/uk-net-migration-falls-to-lowest-level-in-30-years",
+   "headline": "UK net migration reaches lowest level in 30 years",
+   "summary": "Net migration has dropped to its lowest point in three decades, excluding pandemic years, amid a sharp decline in asylum seekers.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "Net migration has dropped to its lowest point in three decades, excluding pandemic years, amid a sharp decline in asylum seekers. The government attributes the drop to stricter visa policies and tighter enforcement of illegal entry routes, though critics argue the situation is not as positive as claimed.",
+    "Net migration to the UK has reached its lowest level since 1997, according to new statistics released this week. Net migration is now 92% lower than its peak of 944,000 recorded in the year ending March 2023."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T21:36:39+00:00",
+   "articleSources": [
+    {
+     "name": "Channel 4 News",
+     "url": "https://www.channel4.com/news/uk-net-migration-falls-to-lowest-level-in-30-years"
+    },
+    {
+     "name": "i News",
+     "url": "https://inews.co.uk/news/uk-migration-figures-compare-europe-4935460"
+    }
+   ],
+   "location": {
+    "label": "Brussels, Belgium",
+    "shortLabel": "Brussels",
+    "lat": 50.8503,
+    "lng": 4.3517
+   },
+   "image": "https://i.guim.co.uk/img/media/ea5e95ac0fd2b916b7acdbd7a3c2351e5463c97a/243_0_1994_1596/master/1994.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=d34ca1e06ce8027edb9a208da097554d",
+   "imageAlt": "UK net migration reaches lowest level in 30 years",
    "imageCredit": "The Guardian"
   }
  ],
@@ -954,7 +1071,14 @@
   "The Conversation": "C",
   "Hacker News": "C",
   "MakeUseOf": "C",
-  "Newsbusters": "R"
+  "Newsbusters": "R",
+  "Organiser": "R",
+  "The Record": "NR",
+  "Glasgow Live": "C",
+  "Villages-News": "LR",
+  "KDFW - Fox 4 - Dallas-Fort Worth": "C",
+  "Williamsport Sun-Gazette": "LR",
+  "Jewish News Syndicate": "LR"
  },
  "QUESTIONABLE": [
   "Breitbart",
@@ -966,520 +1090,1246 @@
   "The Federalist"
  ],
  "COVERAGE": {
-  "trump-administration-determined-jensen-huang-national-security": [
-   [
-    "The New York Times",
-    "25 Nov",
-    "https://www.nytimes.com/2026/11/25/business/dealbook/nvidia-huang-ai-rally.html",
-    "Why the Nvidia Rally Fizzled"
-   ],
-   [
-    "TechCrunch",
-    "25 Nov",
-    "https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/",
-    "The questions Jensen Huang and Nvidia will still have to answer about Megaspeed"
-   ],
-   [
-    "Political Wire",
-    "25 Nov",
-    "https://politicalwire.com/2026/11/25/the-jensen-huang-scandal-has-it-all/",
-    "The Jensen Huang Scandal Has It All"
-   ],
-   [
-    "CNBC",
-    "25 Nov",
-    "https://www.cnbc.com/2026/11/24/jensen-huang-nvidia-employee-meeting.html",
-    "Jensen Huang tells staff that Nvidia doesn't need a succession plan"
-   ],
-   [
-    "The Hill",
-    "25 Nov",
-    "https://thehill.com/policy/technology/6242120-jesse-watters-trump-nvidia-huang-benefits/",
-    "Watters: Trump can now use Huang like ‘cash register’"
-   ],
-   [
-    "South China Morning Post",
-    "25 Nov",
-    "https://www.scmp.com/tech/big-tech/article/3375795/nvidias-jensen-huang-back-will-he-still-be-regular-visitor-china",
-    "Nvidia’s Jensen Huang is back – but will he still be a regular visitor to China?"
-   ],
-   [
-    "Scroll.in",
-    "25 Nov",
-    "https://scroll.in/article/1097304/ai-bubble-us-stock-market-among-reasons-why-trump-convinced-nvidia-to-rehire-jensen-huang?utm_source=rss&utm_medium=public",
-    "Why did Trump meddle with Nvidia to ‘convince’ it to rehire Jensen Huang?"
-   ],
-   [
-    "Daily Maverick",
-    "25 Nov",
-    "https://www.dailymaverick.co.za/video/2026-11-25-watch-jensen-huangs-return-puts-nvidia-back-in-focus/",
-    "Watch – Jensen Huang’s Return Puts NVIDIA Back in Focus"
-   ],
-   [
-    "Slashdot",
-    "25 Nov",
-    "https://hardware.slashdot.org/story/26/11/25/0757217/tuesday-jensen-huang-said-nvidia-doesnt-need-a-succession-plan-and-that-hes-in-therapy?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-    "Tuesday Jensen Huang Said Nvidia Doesn't Need a Succession Plan, and that He's in Therapy"
-   ],
-   [
-    "Powerline",
-    "25 Nov",
-    "https://www.powerlineblog.com/archives/2026/11/huang-and-nvidia-its-not-that-complicated.php",
-    "Huang and Nvidia: It’s Not That Complicated"
-   ],
-   [
-    "Decrypt",
-    "25 Nov",
-    "https://decrypt.co/384001/what-happened-alice-huang-nvidia-spy-scandal",
-    "What Happened to Alice Huang, the Woman at the Center of Nvidia’s Scandal?"
-   ],
-   [
-    "The Wall Street Journal",
-    "25 Nov",
-    "https://www.wsj.com/finance/stocks/jensen-huang-trump-and-the-11-days-that-rocked-nvidia-604fff0b?mod=pls_whats_news_us_business_f",
-    "Jensen Huang, Trump and the 11 Days That Rocked Nvidia"
-   ],
-   [
-    "The Bulwark",
-    "25 Nov",
-    "https://www.thebulwark.com/p/fox-correspondent-calls-bs-on-trumps",
-    "The Jensen Huang Spy Scandal Just Got Stranger"
-   ],
-   [
-    "SiliconANGLE",
-    "25 Nov",
-    "https://siliconangle.com/2026/11/25/us-intelligence-agencies-reportedly-brief-congress-about-alice-huang/",
-    "US intelligence agencies reportedly brief Congress about Alice Huang"
-   ],
+  "hackers-breach-air-force-flagship-cloud-computing": [
    [
     "The Express Tribune",
-    "26 Nov",
-    "https://tribune.com.pk/story/2642446/how-the-trump-administration-determined-jensen-huang-is-not-a-national-security-threat",
-    "How the Trump administration determined Jensen Huang is not a national security threat"
-   ],
-   [
-    "Fast Company",
-    "26 Nov",
-    "https://www.fastcompany.com/91648541/ai-may-not-be-a-bubble-but-the-way-were-financing-it-might-be?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss",
-    "AI may not be a bubble. But the way we’re financing it might be"
-   ],
-   [
-    "Livemint",
-    "26 Nov",
-    "https://www.livemint.com/companies/news/nvidia-board-s-flip-flop-on-jensen-huang-as-ceo-puts-its-aa-credit-rating-at-risk-why-s-p-is-considering-a-downgrad-11795685706714.html",
-    "Nvidia reinstated Jensen Huang as CEO. Now S&P may downgrade its AA credit rating"
-   ],
-   [
-    "NewsNation",
-    "26 Nov",
-    "https://www.newsnationnow.com/business/tech/ai/jensen-huang-ai-safety-innovation/",
-    "How Jensen Huang sees AI safety, innovation"
-   ],
-   [
-    "MarketWatch",
     "27 Nov",
-    "https://www.marketwatch.com/story/we-are-living-in-perilous-times-if-nvidias-jensen-huang-dictates-your-401-k-balance-e0942d1e?mod=mw_rss_topstories",
-    "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance"
+    "https://tribune.com.pk/story/2642653/hackers-breach-us-air-force-flagship-cloud-one-computing-platform",
+    "Hackers breach US Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "Dawn",
+    "27 Nov",
+    "https://www.dawn.com/news/2047476/hackers-breach-us-air-force-flagship-cloud-one-computing-platform",
+    "Hackers breach US Air Force flagship Cloud One computing platform"
    ],
    [
     "Bloomberg",
     "27 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-27/trump-jensen-huang-ceo-second-term-at-nvidia",
-    "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia"
+    "https://www.bloomberg.com/news/articles/2026-11-27/hackers-breached-us-air-force-s-cloud-platform",
+    "Hackers Breached US Air Force’s Cloud Platform, Reuters Says"
    ],
    [
-    "The Hindu",
+    "Indian Express",
     "27 Nov",
-    "https://www.thehindu.com/sci-tech/technology/jensen-huang-needs-a-new-playbook-for-his-second-innings-at-nvidia/article71745086.ece",
-    "Jensen Huang needs a new playbook for his second innings at Nvidia"
+    "https://indianexpress.com/article/world/us-news/hackers-breach-us-air-force-cloud-one-platform-cyber-command-10981280/",
+    "Hackers breach US Air Force’s Cloud One platform; Cyber Command called in: Report"
    ],
    [
-    "NDTV",
+    "End Time Headlines",
     "27 Nov",
-    "https://www.ndtv.com/world-news/donald-trump-insists-nvidia-ceo-jensen-huang-not-security-threat-12382721#publisher=newsstand",
-    "\"He's Absolutely Fine\": Trump Insists Jensen Huang Not Security Threat"
-   ],
-   [
-    "Hindustan Times",
-    "27 Nov",
-    "https://www.hindustantimes.com/world-news/us-news/i-think-he-s-absolutely-fine-donald-trump-once-again-defends-nvidia-ceo-jensen-huang-amid-spy-concerns-101795738082579.html",
-    "‘I think he’s absolutely fine’: Trump once again defends Nvidia CEO Jensen Huang amid spy concerns"
+    "https://endtimeheadlines.org/2026/11/us-air-force-hacked-in-major-security-breach-exposing-one-of-militarys-biggest-data-platforms/",
+    "US Air Force hacked in major security breach exposing one of military’s biggest data platforms"
    ],
    [
     "The Straits Times",
     "27 Nov",
-    "https://www.straitstimes.com/world/united-states/trump-insists-nvidia-ceo-jensen-huang-not-a-security-threat",
-    "Trump insists Nvidia CEO Jensen Huang not a security threat"
+    "https://www.straitstimes.com/world/united-states/hackers-breach-us-air-force-flagship-cloud-one-computing-platform1",
+    "Hackers breach US Air Force flagship Cloud One computing platform"
    ],
    [
-    "Financial Times",
+    "Hindustan Times",
     "27 Nov",
-    "https://www.ft.com/content/2a98efa0-2c2d-47e3-99a9-e00fbe699c34?syn-25a6b1a6=1",
-    "‘A changed man.’ How will Jensen Huang lead Nvidia now?"
+    "https://www.hindustantimes.com/world-news/us-news/us-air-force-flagship-cloud-one-computing-platform-hacked-says-report-101795779139897.html",
+    "US Air Force flagship Cloud One computing platform hacked, says report"
    ],
    [
-    "RTÉ News",
+    "Techmeme",
     "27 Nov",
-    "https://www.rte.ie/news/world/2026/1127/1600850-nvidia-ceo-huang-not-a-security-threat-trump/",
-    "Nvidia CEO Huang not a security threat - Trump"
+    "https://www.techmeme.com/261127/p4#a261127p4",
+    "Sources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications (Reuters)"
+   ],
+   [
+    "Haaretz",
+    "27 Nov",
+    "https://www.haaretz.com/us-news/2026-11-27/ty-article/hackers-breach-one-of-pentagons-top-systems-access-u-s-air-force-data-radars/000001a2-1ce1-d0a2-afb7-5efbaab20000",
+    "Hackers breach one of Pentagon's top systems, access U.S. Air Force data, radars"
+   ],
+   [
+    "The Post Millennial",
+    "27 Nov",
+    "https://thepostmillennial.com/news/breaking-hackers-break-into-us-air-force-cloud-platform-report",
+    "BREAKING: Hackers break into US Air Force cloud platform: report"
+   ],
+   [
+    "Daily Mail",
+    "27 Nov",
+    "https://www.dailymail.com/news/article-16326671/Now-hackers-breach-US-Air-Force-important-online-database-military-didnt-realize-did-routine-maintenance.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Now hackers breach US Air Force most important online database... and military didn't even realize until they did routine maintenance"
+   ],
+   [
+    "Breitbart",
+    "27 Nov",
+    "https://www.breitbart.com/tech/2026/11/27/report-hackers-breach-air-forces-cloud-one-computing-platform/",
+    "Report: Hackers Breach Air Force's 'Cloud One' Computing Platform"
+   ],
+   [
+    "Digital Trends",
+    "27 Nov",
+    "https://www.digitaltrends.com/computing/hackers-reportedly-cracked-a-major-us-military-cloud-putting-sensitive-systems-at-risk/",
+    "Hackers reportedly cracked a major US military cloud, putting sensitive systems at risk"
+   ],
+   [
+    "The Hill",
+    "27 Nov",
+    "https://thehill.com/policy/defense/6245197-air-force-cloud-one-hack/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "Gizmodo",
+    "27 Nov",
+    "https://gizmodo.com/hackers-broke-into-the-u-s-air-forces-cloud-systems-2000846174",
+    "Hackers Broke Into the U.S. Air Force’s Cloud Systems"
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/technology/2026/nov/27/hackers-breach-us-air-force-cloud-computing",
+    "Hackers reportedly breach US air force’s flagship cloud computing platform"
+   ],
+   [
+    "RedState",
+    "27 Nov",
+    "https://redstate.com/wardclark/2026/11/27/cloud-nine-not-for-the-air-force-after-hackers-breach-its-flagship-platform-n2209847",
+    "Cloud Nine? Not for the Air Force After Reports That Hackers Breached Its Flagship Platform"
    ],
    [
     "Forbes",
     "27 Nov",
-    "https://www.forbes.com/sites/siladityaray/2026/11/27/trump-says-wednesdays-stock-selloff-had-him-a-little-concerned-as-he-defends-nvidia-ceo-huang-again/",
-    "Trump Says Wednesday’s Stock Selloff Had Him ‘A Little Concerned’ As He Defends Nvidia CEO Huang Again"
+    "https://www.forbes.com/sites/saradorn/2026/11/27/air-forces-cloud-one-platform-hacked-report-says/",
+    "Air Force’s Cloud One Platform Hacked, Report Says"
    ],
    [
-    "Fox Business",
+    "BleepingComputer",
     "27 Nov",
-    "https://www.foxbusiness.com/politics/trump-doubles-down-support-nvidia-ceo-amid-national-security-concerns",
-    "Trump doubles down on support for Nvidia CEO amid national security concerns"
+    "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+    "US Air Force cloud platform reportedly hacked in latest federal breach"
    ],
    [
-    "Irish Independent",
+    "Economic Times",
     "27 Nov",
-    "https://www.independent.ie/world-news/was-the-woman-at-the-centre-of-the-nvidia-alleged-spy-scandal-an-agent-of-influence-for-china/a/165185689.html",
-    "Was the woman at the centre of the Nvidia alleged spy scandal an ‘agent of influence’ for China?"
-   ]
-  ],
-  "federal-judge-blocks-fcc-reviewing-abcs-licenses": [
+    "https://economictimes.indiatimes.com/news/international/world-news/us-air-force-hacking-what-is-cloud-one-inside-the-microsoft-amazon-google-and-oracle-linked-platform-that-stores-military-data/articleshow/136226788.cms",
+    "US Air Force platform that tracks missiles hacked"
+   ],
    [
     "NBC News",
-    "26 Nov",
-    "https://www.nbcnews.com/business/media/judge-blocks-fcc-review-abc-station-licenses-now-rcna601892",
-    "Judge blocks FCC review of ABC station licenses for now"
+    "27 Nov",
+    "https://www.nbcnews.com/news/us-news/hackers-attack-penetrate-air-forces-computing-platform-rcna611559",
+    "Hackers attack and penetrate Air Force’s computing platform"
    ],
    [
-    "Newsbusters",
+    "Organiser",
+    "27 Nov",
+    "https://organiser.org/2026/11/27/429348/international/cyber-attack-hits-us-air-force-cloud-platform-sensitive-military-data-and-operations-potentially-exposed-to-hackers/",
+    "Cyber attack hits US Air Force cloud platform; Sensitive military data and operations potentially exposed to hackers"
+   ],
+   [
+    "The Hindu",
+    "27 Nov",
+    "https://www.thehindu.com/news/international/hackers-breach-us-air-force-flagship-cloud-one-computing-platform/article71750783.ece",
+    "Hackers breach U.S. Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "The Decoder",
+    "27 Nov",
+    "https://the-decoder.com/hackers-breached-the-us-air-forces-flagship-cloud-one-platform-report-says/",
+    "Hackers breached the US Air Force's flagship Cloud One platform, report says"
+   ],
+   [
+    "Engadget",
+    "27 Nov",
+    "https://www.engadget.com/2329586/hackers-reportedly-infiltrated-the-air-force-cloud-systems/",
+    "Hackers reportedly infiltrated the Air Force's cloud systems"
+   ],
+   [
+    "Legal Insurrection",
+    "27 Nov",
+    "https://legalinsurrection.com/2026/11/report-hackers-infiltrate-air-force-cloud-system-disrupt-operations/?utm_source=rss&utm_medium=rss&utm_campaign=report-hackers-infiltrate-air-force-cloud-system-disrupt-operations",
+    "Report: Hackers Infiltrate Air Force Cloud System, Disrupt Operations"
+   ],
+   [
+    "WPIX 11",
+    "27 Nov",
+    "https://pix11.com/news/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "MercoPress",
+    "27 Nov",
+    "https://en.mercopress.com/2026/11/27/us-air-force-cloud-platform-hacked-reuters-reports?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "US Air Force cloud platform hacked, Reuters reports"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "27 Nov",
+    "https://www.wfla.com/news/national/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "Political Wire",
+    "27 Nov",
+    "https://politicalwire.com/2026/11/27/hackers-breach-the-air-forces-cloud-computing-program/",
+    "Hackers Breach the Air Force’s Cloud Computing Program"
+   ],
+   [
+    "Conservative Review",
+    "27 Nov",
+    "https://www.conservativereview.com/air-force-gets-hacked-compromising-defense-radar-missile-and-bomb-location-data-2678548499.html",
+    "Air Force gets hacked, compromising defense radar, missile, and bomb location data"
+   ],
+   [
+    "Decrypt",
+    "27 Nov",
+    "https://decrypt.co/384174/us-air-force-hack-cloud-system-air-defense-munitions-data",
+    "Hackers Hit US Air Force Cloud System Running Air-Defense and Munitions Data"
+   ],
+   [
+    "The West Australian",
+    "27 Nov",
+    "https://thewest.com.au/news/conflict/hackers-breach-us-air-force-flagship-computing-platform-c-23224192",
+    "Hackers breach US Air Force flagship computing platform"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/local/hackers-air-force-military/4305174",
+    "Hackers breach Air Force computing platform used for sensitive military information"
+   ],
+   [
+    "The Information",
+    "27 Nov",
+    "https://www.theinformation.com/briefings/hackers-breach-u-s-air-force-cloud-latest-high-profile-cyberattack",
+    "Hackers Breach U.S. Air Force Cloud in Latest High-Profile Cyberattack"
+   ],
+   [
+    "Dallas Express",
+    "27 Nov",
+    "https://dallasexpress.com/business-markets/reported-air-force-cloud-one-breach-raises-questions-over-454-9-million-modernization-contract/",
+    "Reported Air Force Cloud One Breach Raises Questions Over $454.9 Million Modernization Contract"
+   ],
+   [
+    "Military.com",
+    "27 Nov",
+    "https://www.military.com/us-air-force-computing-platform-breached-by-hackers-report",
+    "Air Force Cloud Platform Breached by Hackers, Putting Sensitive Data at Risk: Report"
+   ],
+   [
+    "KTLA",
+    "27 Nov",
+    "https://ktla.com/news/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-report-12386831#publisher=newsstand",
+    "Hackers Breach US Air Force Flagship Cloud One Computing Platform: Report"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "27 Nov",
+    "https://www.wane.com/hill-politics/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "Interesting Engineering",
+    "27 Nov",
+    "https://interestingengineering.com/military/us-air-force-cloud-one-cyberattack",
+    "Hackers target US Air Force’s Cloud One platform in major cybersecurity breach"
+   ],
+   [
+    "CNBC",
+    "27 Nov",
+    "https://www.cnbc.com/2026/11/27/hackers-breach-us-air-force-flagship-cloud-one-computing-platform.html",
+    "Hackers breach U.S. Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "The Sun - Nigeria",
+    "27 Nov",
+    "https://thesun.ng/hackers-breach-us-air-force-cloud-platform-military-data-at-risk/",
+    "Hackers breach US Air Force cloud platform, military data at risk"
+   ],
+   [
+    "WJW - Cleveland News",
+    "27 Nov",
+    "https://fox8.com/news/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ]
+  ],
+  "dwp-shuts-down-online-services-cyber-incident": [
+   [
+    "The Record",
+    "27 Nov",
+    "https://therecord.media/uk-department-work-pensions-cyber-incident",
+    "British government takes services offline following ‘cyber incident’"
+   ],
+   [
+    "Nottinghamshire Post",
+    "27 Nov",
+    "https://www.nottinghampost.com/news/uk-world-news/dwp-removes-online-services-amid-11257945",
+    "DWP removes some online services amid cyber incident"
+   ],
+   [
+    "The Herald",
+    "27 Nov",
+    "https://www.heraldscotland.com/news/26767941.department-work-pensions-offline-cyber-incident/?ref=rss",
+    "Department for Work and Pensions systems offline after 'cyber incident'"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/europe/uk-pensions-department-hit-by-cyber-incident",
+    "UK pensions department hit by ‘serious’ cyber incident, minister says"
+   ],
+   [
+    "The Next Web",
+    "27 Nov",
+    "https://thenextweb.com/news/dwp-cyber-incident-services-offline",
+    "UK benefits department hit by cyber incident, takes services offline"
+   ],
+   [
+    "Computer Weekly",
+    "27 Nov",
+    "https://www.computerweekly.com/news/366655538/Investigation-underway-into-DWP-cyber-security-incident-as-services-taken-offline",
+    "Investigation underway into DWP cyber incident as services taken offline"
+   ],
+   [
+    "The Register",
+    "27 Nov",
+    "https://www.theregister.com/security/2026/11/27/british-social-security-system-techies-yank-services-offline-following-cyber-incident/5312522",
+    "British social security system techies yank services offline following 'cyber incident'"
+   ],
+   [
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/uk-pensions-department-hit-by-cyber-incident-some-services-taken-offline-12384788#publisher=newsstand",
+    "UK Pensions Department Hit By 'Cyber Incident', Some Services Taken Offline"
+   ],
+   [
+    "Glasgow Live",
+    "27 Nov",
+    "https://www.glasgowlive.co.uk/news/dwp-universal-credit-state-pension-34974837",
+    "DWP Universal Credit and state pension update after 'cyber incident'"
+   ],
+   [
+    "City AM",
+    "27 Nov",
+    "https://www.cityam.com/dwp-takes-services-offline-after-cyber-incident/",
+    "DWP takes services offline after cyber incident"
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/society/2026/nov/27/callout-dwp-cyber-incident-benefits-pensions-offline-uk",
+    "Tell us: have you been affected by the DWP ‘cyber incident’"
+   ],
+   [
+    "Liverpool Echo",
+    "27 Nov",
+    "https://www.liverpoolecho.co.uk/news/uk-world-news/dwp-services-down-live-updates-34973486",
+    "UK government announces DWP 'cyber incident' live as services down"
+   ],
+   [
+    "Evening Standard",
+    "27 Nov",
+    "https://www.standard.co.uk/news/politics/pat-mcfadden-department-for-work-and-pensions-government-gchq-national-cyber-security-centre-b1306685.html",
+    "No evidence ‘malicious actor’ targeted other departments after DWP incident"
+   ],
+   [
+    "BBC News",
+    "27 Nov",
+    "https://www.bbc.co.uk/news/articles/ck1l0e946dqmo?at_medium=RSS&at_campaign=rss",
+    "What we know about Department for Work and Pensions 'cyber incident'"
+   ],
+   [
+    "Wales Online",
+    "27 Nov",
+    "https://www.walesonline.co.uk/news/uk-news/dwp-payments-update-given-minister-34976140",
+    "DWP payments update given by minister after Friday cyber incident"
+   ],
+   [
+    "Guido Fawkes",
+    "27 Nov",
+    "https://order-order.com/2026/11/27/mcfadden-no-evidence-personal-details-compromised-by-serious-dwp-cyber-incident/",
+    "McFadden: ‘No Evidence’ Personal Details Compromised by ‘Serious’ DWP Cyber Incident"
+   ],
+   [
+    "Daily Mail",
+    "27 Nov",
+    "https://www.dailymail.com/news/article-16326157/Cyber-incident-Department-Work-Pensions-services-taken-offline.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "'Cyber incident' hits Department for Work and Pensions: Universal Credit portal down and 'pensioners locked out of accounts' as some services taken offline"
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/uk-pension-agency-takes-systems-offline-after-cyber-incident",
+    "UK Pension Agency Takes Systems Offline After Cyber Incident"
+   ],
+   [
+    "Times of India",
+    "27 Nov",
+    "https://timesofindia.indiatimes.com/world/uk/uks-department-for-work-and-pensions-takes-nearly-all-its-online-services-offline-after-a-cyber-incident-hitting-universal-credit-pip-and-pension-applications-while-benefit-payments-continue/articleshow/136223523.cms",
+    "UK DWP takes online services offline after cyber incident, but benefit payments continue"
+   ],
+   [
+    "Financial Times",
+    "27 Nov",
+    "https://www.ft.com/content/6ab1172b-4f27-49f5-ad53-b384df82da77?syn-25a6b1a6=1",
+    "Wave of cyber incidents rattles western economies"
+   ]
+  ],
+  "parts-clean-power-outages-being-restored-thanksgiving": [
+   [
+    "Breitbart",
     "26 Nov",
-    "https://www.newsbusters.org/blogs/nb/nicholas-fondacaro/2026/11/25/liberal-federal-judge-sneaks-preliminary-injunction-against",
-    "Liberal Federal Judge Sneaks in Preliminary Injunction Against FCC"
+    "https://www.breitbart.com/weather/2026/11/26/video-thanksgiving-storms-hit-u-s-threatening-travelers-and-knocking-out-power/",
+    "VIDEO: Thanksgiving Storms Hit U.S., Threatening Travelers and Knocking Out Power"
+   ],
+   [
+    "WTTG - Fox 5 - DC",
+    "26 Nov",
+    "https://www.fox5dc.com/news/thousands-without-power-dc-maryland-virginia-thanksgiving-storm",
+    "Over 33,700 still without power in DC, Maryland, Northern Virginia amid storm"
+   ],
+   [
+    "WNYW - Fox 5 -New York",
+    "26 Nov",
+    "https://www.fox5ny.com/news/thanksgiving-storm-damages-power-outages-what-we-know",
+    "Thanksgiving storm knocks out power to over 250k, floods Tri-State area"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "26 Nov",
+    "https://www.wane.com/top-stories/thousands-without-power-on-thanksgiving/",
+    "Thousands without power on Thanksgiving"
+   ],
+   [
+    "Euronews",
+    "26 Nov",
+    "https://www.euronews.com/2026/11/26/thanksgiving-storms-flood-us-coasts-and-disrupt-holiday-travel",
+    "Thanksgiving storms flood US coasts and disrupt holiday travel"
    ],
    [
     "The Hill",
     "26 Nov",
-    "https://thehill.com/regulation/court-battles/6244298-judge-blocks-fcc-from-early-renewal-of-abc-licenses/",
-    "Judge blocks FCC from early renewal of ABC licenses"
+    "https://thehill.com/policy/energy-environment/6244928-thanksgiving-storm-flight-delays-power-outages/",
+    "Thanksgiving storms ground DC flights, knock out power for more than 850K"
    ],
    [
-    "Washington Post",
+    "MercoPress",
     "26 Nov",
-    "https://www.washingtonpost.com/business/2026/11/25/judge-halts-fcc-review-abc-licenses-saying-it-probably-violates-first-amendment/",
-    "Judge halts FCC review of ABC licenses, saying it probably violates First Amendment"
-   ],
-   [
-    "Political Wire",
-    "26 Nov",
-    "https://politicalwire.com/2026/11/25/judge-halts-fcc-review-of-abc-licenses/",
-    "Judge Halts FCC Review of ABC Licenses"
-   ],
-   [
-    "The Guardian",
-    "26 Nov",
-    "https://www.theguardian.com/us-news/2026/nov/25/brendan-carr-fcc-abc-licenses",
-    "Judge blocks Brendan Carr-led FCC from taking any further action against ABC’s licenses"
-   ],
-   [
-    "The Wall Street Journal",
-    "26 Nov",
-    "https://www.wsj.com/business/media/judge-says-fcc-must-stop-abc-license-review-3748d619?mod=pls_whats_news_us_business_f",
-    "Judge Says FCC Must Stop ABC License Review"
-   ],
-   [
-    "NPR",
-    "26 Nov",
-    "https://www.npr.org/2026/11/26/nx-s1-6000576/fcc-disney-abc-first-amendment-trump-brendan-carr",
-    "U.S. Judge rules FCC violated ABC's free speech rights to please Trump"
-   ],
-   [
-    "Time",
-    "26 Nov",
-    "https://time.com/article/2026/11/26/fcc-abc-disney-broadcast-license-early-review-judge-injunction/",
-    "‘Not a Close Case’: Judge Strikes Down Trump Administration’s Targeting of ABC"
-   ],
-   [
-    "Breitbart",
-    "26 Nov",
-    "https://www.breitbart.com/entertainment/2026/11/26/biden-appointed-judge-halts-fccs-early-review-of-abcs-broadcast-licenses/",
-    "Biden-Appointed Judge Halts FCC’s Early Review of ABC's Broadcast Licenses"
+    "https://en.mercopress.com/2026/11/26/storms-on-both-us-coasts-leave-840-000-without-power-and-disrupt-thanksgiving-travel?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "Storms on both US coasts leave 840,000 without power and disrupt Thanksgiving travel"
    ],
    [
     "PBS NewsHour",
     "26 Nov",
-    "https://www.pbs.org/newshour/nation/judge-blocks-fcc-from-early-license-review-for-abc-which-network-says-has-had-a-chilling-effect",
-    "Judge blocks FCC from early license review for ABC, which network says has had a chilling effect"
+    "https://www.pbs.org/newshour/show/stormy-thanksgiving-weather-causes-delays-and-damages-for-many-americans",
+    "Stormy Thanksgiving weather causes delays and damages for many Americans"
    ],
    [
-    "The Verge",
-    "26 Nov",
-    "https://www.theverge.com/policy/1043116/fcc-disney-abc-broadcast-licenses-review-early-judge-block",
-    "Federal judge blocks the FCC from reviewing ABC’s licenses early"
-   ],
-   [
-    "The New York Times",
+    "Hindustan Times",
     "27 Nov",
-    "https://www.nytimes.com/2026/11/25/business/media/disney-fcc-abc-ruling.html",
-    "Judge Blocks F.C.C. From Targeting Disney’s Local ABC Licenses"
-   ]
-  ],
-  "zelenskyy-criticises-trumps-friendly-gesture-towards-putin": [
+    "https://www.hindustantimes.com/world-news/us-news/us-storm-brings-severe-flooding-power-outages-on-thanksgiving-new-jersey-new-york-pennsylvania-virginia-and-missouri-watch-videos-and-photos-101795744663822.html",
+    "Thanksgiving Day storms leave at least 900,000 homes without power, many parts of US see severe flooding"
+   ],
+   [
+    "Daily Mail",
+    "27 Nov",
+    "https://www.dailymail.com/sciencetech/article-16324363/thanksgiving-storms-power-blackout.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Thanksgiving travel nightmare as monster storms disrupt thousands of US flights and FAA warns of ground stops"
+   ],
+   [
+    "WPIX 11",
+    "27 Nov",
+    "https://pix11.com/news/local-news/crews-work-to-restore-electricity-across-nyc-nj-due-to-thanksgiving-storm/",
+    "Crews work to restore electricity across NYC, NJ due to Thanksgiving storm"
+   ],
+   [
+    "RTÉ News",
+    "27 Nov",
+    "https://www.rte.ie/news/2026/1127/1600848-us-storms/",
+    "Thanksgiving Day storm disrupts flights on US East Coast"
+   ],
    [
     "BBC News",
-    "26 Nov",
-    "https://www.bbc.co.uk/news/videos/cm9309nwk7x9o?at_medium=RSS&at_campaign=rss",
-    "Zelensky questions 'strange' Trump-Putin friendship in BBC interview"
-   ],
-   [
-    "Times of India",
-    "26 Nov",
-    "https://timesofindia.indiatimes.com/world/europe/he-cant-be-a-friend-zelensky-calls-trumps-putin-bonhomie-strange-questions-support-for-ukraine/articleshow/136205617.cms",
-    "'Very strange': Zelenskyy questions Trump's Putin bonhomie, US support for Ukraine"
-   ],
-   [
-    "Off The Press",
-    "26 Nov",
-    "https://offthepress.com/r/185146?c=rss",
-    "Zelenskyy calls Trump's friendship with 'killer' Putin 'strange'"
-   ],
-   [
-    "Newsweek",
     "27 Nov",
-    "https://www.newsweek.com/zelensky-rips-trump-over-putin-embrace-compares-it-to-befriending-hitler-12772292",
-    "Zelensky Rips Trump Over Putin Embrace, Compares It to Befriending Hitler"
+    "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&at_campaign=rss",
+    "Major Thanksgiving storm brings flooding, flight delays across US"
    ],
    [
-    "Ukrainska Pravda",
+    "NBC News",
     "27 Nov",
-    "https://www.pravda.com.ua/eng/news/2026/11/27/8064888/",
-    "It's like calling Hitler a friend: Zelenskyy outraged by Trump's friendly embrace of Putin"
+    "https://www.nbcnews.com/news/us-news/much-country-thanksgiving-featured-nasty-weather-rcna611521",
+    "Hundreds of thousands still without power after severe Thanksgiving weather"
+   ],
+   [
+    "The Journal",
+    "27 Nov",
+    "https://www.thejournal.ie/us-thanksgiving-storm-7239695-Nov2026/",
+    "Flights cancelled and hundreds of thousands without power as major storm batters the US"
+   ],
+   [
+    "Dawn",
+    "27 Nov",
+    "https://www.dawn.com/news/2047460/major-storm-batters-us-on-thanksgiving-holiday",
+    "Major storm batters US on Thanksgiving holiday"
+   ],
+   [
+    "Sky News",
+    "27 Nov",
+    "https://news.sky.com/story/hundreds-of-thousands-still-without-power-after-storms-hit-us-on-thanksgiving-13617158",
+    "Powerful storm knocks out power and disrupts flights in US - as major Thanksgiving event cancelled"
+   ],
+   [
+    "ABC7chicago.com",
+    "27 Nov",
+    "https://abc7.com/post/severe-weather-heavy-rain-wind-flooding-hit-us-thanksgiving-snarling-holiday-travel-knocking-power/20089852/",
+    "Heavy rain, wind, flooding hit much of US on Thanksgiving, snarling holiday travel"
+   ],
+   [
+    "ABC7 New York",
+    "27 Nov",
+    "https://abc7ny.com/story/new-york-declares-emergency-thanksgiving-storm-threatens-east-coast/20087144/",
+    "New York declares emergency as Thanksgiving storm threatens East Coast"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "27 Nov",
+    "https://abc7.com/story/new-york-declares-emergency-thanksgiving-storm-threatens-east-coast/20087144/",
+    "New York declares emergency as Thanksgiving storm threatens East Coast"
+   ],
+   [
+    "Indian Express",
+    "27 Nov",
+    "https://indianexpress.com/article/world/us-news/us-thanksgiving-storm-power-outages-flight-cancellations-macys-parade-postponed-10980773/",
+    "Thanksgiving storm disrupts US: Over 900,000 without power, thousands of flights affected"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/national/heavy-rain-winds-down-as-power-remains-out-for-hundreds-of-thousands-on-the-east-coast/4305127",
+    "Heavy rain winds down as power remains out for hundreds of thousands on the East Coast"
+   ],
+   [
+    "CityNews Kitchener",
+    "27 Nov",
+    "https://kitchener.citynews.ca/2026/11/27/parts-of-the-us-clean-up-power-outages-being-restored-after-thanksgiving-storm-soaks-east-coast/",
+    "Parts of the US clean up, power outages being restored after Thanksgiving storm soaks East Coast"
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/dangerous-nor-easter-storm-triggers-widespread-power-outages",
+    "Power Outages, Flood Risks Linger as Storm Leaves East Coast"
+   ],
+   [
+    "End Time Headlines",
+    "27 Nov",
+    "https://endtimeheadlines.org/2026/11/east-coast-storms-knock-out-power-to-million-customers/",
+    "East Coast storms knock out power to million customers"
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/us-news/2026/nov/27/heavy-rain-wind-flooding-us-thanksgiving",
+    "Eastern US recovers from storms that snarled Thanksgiving travel as flooding continues"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/united-states/hundreds-of-thousands-out-of-power-in-us-after-thanksgiving-storm",
+    "Hundreds of thousands out of power in US after Thanksgiving storm"
+   ],
+   [
+    "CNA",
+    "27 Nov",
+    "https://www.channelnewsasia.com/world/thanksgiving-us-east-coast-weather-power-outage-6588506",
+    "Parts of the US clean up, power outages being restored after Thanksgiving storm soaks East Coast"
+   ],
+   [
+    "NewsNation",
+    "27 Nov",
+    "https://www.newsnationnow.com/weather/no-power-thanksgiving-storms/",
+    "Thousands still without power after Thanksgiving storms"
+   ],
+   [
+    "The Jerusalem Post",
+    "27 Nov",
+    "https://www.jpost.com/environment-and-climate-change/article-916340",
+    "Power outage leaves 600,000 without electricity in US, after largest Thanksgiving storm in decades"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "27 Nov",
+    "https://www.wfla.com/news/national/heavy-rain-wind-and-floods-hammer-us-on-thanksgiving-many-homes-businesses-still-without-power/",
+    "Heavy rain, wind and floods hammer US on Thanksgiving; many homes, businesses still without power"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "27 Nov",
+    "https://wtop.com/national/2026/11/heavy-rain-winds-down-as-power-remains-out-for-hundreds-of-thousands-on-the-east-coast/",
+    "Parts of the US clean up, power outages being restored after Thanksgiving storm soaks East Coast"
+   ],
+   [
+    "KUSI-TV",
+    "27 Nov",
+    "https://fox5sandiego.com/news/world-news/ap-international/ap-heavy-rain-winds-down-as-power-remains-out-for-hundreds-of-thousands-on-the-east-coast/",
+    "Parts of the US clean up, power outages being restored after Thanksgiving storm soaks East Coast"
+   ],
+   [
+    "Manchester Union leader",
+    "27 Nov",
+    "https://www.unionleader.com/weather/power-outages-flood-risks-linger-as-storm-leaves-east-coast-ae516fde",
+    "Power outages, flood risks linger as storm leaves East Coast"
+   ],
+   [
+    "ABC News (US)",
+    "27 Nov",
+    "https://abcnews.com/US/millions-clean-after-massive-thanksgiving-storms-flood-streets/story?id=138484179",
+    "Millions clean up after massive Thanksgiving storms on East Coast"
+   ]
+  ],
+  "macys-thanksgiving-parade-postponed-time-history": [
+   [
+    "Axios",
+    "25 Nov",
+    "https://www.axios.com/2026/11/25/macys-thanksgiving-parade-2026-balloons-weather",
+    "Macy's Thanksgiving parade postponed for the first time in the event's history"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "25 Nov",
+    "https://www.wane.com/top-stories/macys-thanksgiving-day-parade-postponed/",
+    "Macy's Thanksgiving Day Parade postponed"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/sciencetech/article-16321491/macys-thanksgiving-parade-balloons-new-york.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Macy's Thanksgiving Day Parade balloons face 'significant risk' of grounding for first time in 55 years"
+   ],
+   [
+    "WNYW - Fox 5 -New York",
+    "25 Nov",
+    "https://www.fox5ny.com/news/last-time-macys-thanksgiving-day-parade-canceled",
+    "The last time the Macy’s Thanksgiving Day Parade was canceled"
+   ],
+   [
+    "CNBC",
+    "25 Nov",
+    "https://www.cnbc.com/2026/11/25/macys-thanksgiving-day-parade-postponed.html",
+    "Macy's postpones Thanksgiving Day Parade due to severe weather"
+   ],
+   [
+    "Retail Dive",
+    "25 Nov",
+    "https://www.retaildive.com/news/macys-100th-thanksgiving-day-parade-postponed/875808/",
+    "‘Heartbroken’: Macy’s 100th Thanksgiving Day parade postponed"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/bad-weather-postpones-macys-100th-thanksgiving-day-parade-for-first-time-ever/article71745030.ece",
+    "Bad weather postpones Macy’s 100th Thanksgiving Day Parade for first time ever"
+   ],
+   [
+    "WGN News",
+    "26 Nov",
+    "https://wgntv.com/news/illinois/marching-illini-navigating-next-steps-after-macys-thanksgiving-day-parade-postponed/",
+    "Marching Illini navigating next steps after Macy’s Thanksgiving Day Parade postponed"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "26 Nov",
+    "https://www.wfla.com/news/hillsborough-county/local-families-in-limbo-after-performers-find-out-macys-thanksgiving-day-parade-is-postponed/",
+    "Local families in limbo after performers find out Macy's Thanksgiving Day Parade is postponed"
+   ],
+   [
+    "Indian Express",
+    "26 Nov",
+    "https://indianexpress.com/article/world/us-news/macys-thanksgiving-parade-postponed-weather-storm-us-flights-delayed-10979214/",
+    "Thanksgiving weather in US: Storm snarls, delayed flights, postponed Macy’s parade"
+   ],
+   [
+    "NBC News",
+    "26 Nov",
+    "https://www.today.com/video/macy-s-thanksgiving-day-parade-postponed-for-first-time-ever-274220101982",
+    "Macy’s Thanksgiving Day Parade Postponed for First Time Ever"
+   ],
+   [
+    "The Post Millennial",
+    "26 Nov",
+    "https://thepostmillennial.com/culture/macy-s-faces-usd1-7-million-price-tag-to-inflate-thanksgiving-day-parade-balloons-twice-after",
+    "Macy's faces $1.7 MILLION price tag to inflate Thanksgiving Day parade balloons TWICE after Mamdani postpones it"
+   ],
+   [
+    "NewsNation",
+    "26 Nov",
+    "https://www.newsnationnow.com/us-news/holidays/macys-thanksgiving-day-parade-hawaii-band-cost/",
+    "Macy's Thanksgiving Day parade delay will cost Hawaii band $700,000"
+   ],
+   [
+    "Breitbart",
+    "26 Nov",
+    "https://www.breitbart.com/science/2026/11/26/report-nyc-macys-faces-1-7-million-bill-reinflate-parade-balloons-amid-high-helium-prices/",
+    "Report -- NYC: Macy's Faces $1.7 Million Bill to Reinflate Parade Balloons amid High Helium Prices"
+   ],
+   [
+    "ABC7 New York",
+    "26 Nov",
+    "https://abc7ny.com/story/bands-drum-support-show-goes-postponed-macys-thanksgiving-parade/20086499/",
+    "Bands drum up support so the show goes on for postponed Macy's Thanksgiving parade"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "26 Nov",
+    "https://abc7.com/story/bands-drum-support-show-goes-postponed-macys-thanksgiving-parade/20086499/",
+    "Bands drum up support so the show goes on for postponed Macy's Thanksgiving parade"
+   ],
+   [
+    "Villages-News",
+    "26 Nov",
+    "https://www.villages-news.com/2026/11/26/villagers-visit-today-show-extend-nyc-trip-to-watch-first-ever-weather-delayed-macys-thanksgiving-day-parade/",
+    "Villagers visit ‘Today’ show, extend NYC trip to watch first-ever weather delayed Macy’s Thanksgiving Day Parade"
+   ],
+   [
+    "CBS News",
+    "27 Nov",
+    "https://www.cbsnews.com/news/macys-thanksgiving-parade-marching-bands-delay-cost/",
+    "High school band raises $350K to stay for Macy's Thanksgiving parade"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/texas-high-school-marching-band-raises-350-000-to-stay-in-new-york-city-after-macy-s-thanksgiving-parade-delay-101795742505832.html",
+    "Texas high school marching band raises $350,000 to stay in New York City after Macy’s Thanksgiving Parade delay"
+   ],
+   [
+    "WITI - FOX 6 - Milwaukee",
+    "27 Nov",
+    "https://www.fox6now.com/news/slinger-wisconsin-teens-scramble-adjust-travel-macys-thanksgiving-day-parade",
+    "Wisconsin teens scramble to adjust travel for Macy's Thanksgiving Day Parade"
+   ],
+   [
+    "KDFW - Fox 4 - Dallas-Fort Worth",
+    "27 Nov",
+    "https://www.fox4news.com/news/flower-mound-drill-team-scrambles-extend-new-york-stay-after-historic-macys-parade-postponement",
+    "Flower Mound drill team scrambles to extend New York stay after historic Macy’s parade postponement"
+   ],
+   [
+    "WJW - Cleveland News",
+    "27 Nov",
+    "https://fox8.com/news/howland-native-prepares-to-dance-in-macys-thanksgiving-day-parade/",
+    "Howland native prepares to dance in Macy's Thanksgiving Day Parade"
+   ],
+   [
+    "BBC News",
+    "27 Nov",
+    "https://www.bbc.co.uk/news/videos/cmx29qd8ew4xo?at_medium=RSS&at_campaign=rss",
+    "'Can't control the weather': Sadness as Macy's Thanksgiving parade postponed"
+   ],
+   [
+    "Williamsport Sun-Gazette",
+    "27 Nov",
+    "https://www.sungazette.com/news/top-news/2026/11/the-macys-thanksgiving-parade-is-postponed-what-happens-to-its-expansive-roster-of-performers/",
+    "The Macy’s Thanksgiving parade is postponed. What happens to its expansive roster of performers?"
+   ],
+   [
+    "The Hill",
+    "27 Nov",
+    "https://thehill.com/homenews/state-watch/6245658-macys-thanksgiving-day-parade-weather-delay-hawaii-band/",
+    "Weather delay will cost $700,000 for Hawaii All-Star band performing at Macy’s Thanksgiving Day parade"
+   ]
+  ],
+  "huw-edwards-appear-channel-4-documentary-addressing": [
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/media/2026/nov/26/huw-edwards-documentary-channel-4-crimes-conviction",
+    "Huw Edwards discusses his fall from grace for Channel 4 documentary"
+   ],
+   [
+    "Daily Mail",
+    "27 Nov",
+    "https://www.dailymail.com/news/article-16325051/The-Morning-Poll-appropriate-Channel-4-Huw-Edwards-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "The Morning Poll: Is it appropriate for Channel 4 to give Huw Edwards a documentary?"
+   ],
+   [
+    "HuffPost UK",
+    "27 Nov",
+    "https://www.huffingtonpost.co.uk/entry/channel-4-huw-edwards-controversy-documentary_uk_6b093d4ee4b01f494a037bbe",
+    "Channel 4's New Huw Edwards Documentary Is Already Sparking Controversy"
    ],
    [
     "Daily Mirror",
     "27 Nov",
-    "https://www.mirror.co.uk/news/world-news/zelensky-trump-putin-strange-friendship-37920768",
-    "Zelensky questions Trump's 'strange' friendship with Putin after bizarre change to NATO statement"
+    "https://www.mirror.co.uk/news/politics/huw-edwards-documentary-channel4-tv-37921041",
+    "Huw Edwards documentary row grows as PM has 'no interest' in hearing from disgraced newsreader"
+   ],
+   [
+    "The Journal",
+    "27 Nov",
+    "https://www.thejournal.ie/huw-edwards-channel-4-documentary-7239831-Nov2026/",
+    "Channel 4 defends Huw Edwards doc amid criticism it could be 'incredibly traumatic' for victims"
+   ],
+   [
+    "BBC News",
+    "27 Nov",
+    "https://www.bbc.co.uk/news/articles/c60mdl2y2w3do?at_medium=RSS&at_campaign=rss",
+    "'We have no interest in hearing from Huw Edwards', Downing Street says"
+   ],
+   [
+    "Evening Standard",
+    "27 Nov",
+    "https://www.standard.co.uk/news/uk/huw-edwards-rosie-duffield-anna-turley-emma-hardy-the-observer-b1306663.html",
+    "Huw Edwards documentary ‘holds him to account’, says Channel 4"
+   ],
+   [
+    "i News",
+    "27 Nov",
+    "https://inews.co.uk/opinion/sex-offender-huw-edwards-arch-manipulator-4935427",
+    "Sex offender Huw Edwards has proved himself an arch manipulator… again"
+   ],
+   [
+    "The Sun",
+    "27 Nov",
+    "https://www.thesun.co.uk/news/41176124/huw-edwards-acting-victim-blasts-furious-mum/",
+    "Huw Edwards is abusing us all over again & ‘acting like the victim’, blasts furious mum of teen he shamelessly groomed"
+   ],
+   [
+    "Channel 4 News",
+    "27 Nov",
+    "https://www.channel4.com/news/huw-edwards-campaigners-hit-out-at-planned-documentary-following-disgraced-sex-offender",
+    "Huw Edwards: Campaigners hit out at planned documentary following disgraced sex offender"
+   ],
+   [
+    "Irish Sun",
+    "27 Nov",
+    "https://www.thesun.ie/news/17983245/huw-edwards-denies-paedophile-claims/",
+    "Shameless Huw Edwards denies being a paedophile despite being caught with sickening child abuse images"
+   ]
+  ],
+  "los-angeles-schools-disable-googles-ai-overviews": [
+   [
+    "Phys.org",
+    "27 Nov",
+    "https://techxplore.com/news/2026-11-google-threatens-schools-access-los.html",
+    "As Google threatens to cut schools' search access, Los Angeles blocks AI features"
+   ],
+   [
+    "Fast Company",
+    "27 Nov",
+    "https://www.fastcompany.com/91649464/it-was-talk-playground-googles-ai-features-blocked-la-school-officials?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss",
+    "‘It was the talk of the playground’: Google’s AI features blocked by L.A. school officials"
+   ],
+   [
+    "PBS NewsHour",
+    "27 Nov",
+    "https://www.pbs.org/newshour/education/as-google-threatens-to-cut-schools-search-access-los-angeles-blocks-ai-features",
+    "Los Angeles schools block Google's AI features, consider dropping tech giant's products"
+   ],
+   [
+    "The Next Web",
+    "27 Nov",
+    "https://thenextweb.com/news/la-schools-disable-google-ai-overviews-search-standoff",
+    "Los Angeles schools switch off Google’s AI Overviews on student laptops"
+   ],
+   [
+    "Off The Press",
+    "27 Nov",
+    "https://offthepress.com/r/185326?c=rss",
+    "Los Angeles school district disables Google's AI Overview on school devices"
+   ],
+   [
+    "KTLA",
+    "27 Nov",
+    "https://ktla.com/news/ap-us-news/ap-as-google-threatens-to-cut-schools-search-access-los-angeles-blocks-ai-features/",
+    "Los Angeles schools block Google's AI features, consider dropping tech giant's products"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "27 Nov",
+    "https://wtop.com/national/2026/11/as-google-threatens-to-cut-schools-search-access-los-angeles-blocks-ai-features/",
+    "Los Angeles schools block Google’s AI features, consider dropping tech giant’s products"
+   ]
+  ],
+  "net-migration-reaches-lowest-level-30": [
+   [
+    "Daily Mirror",
+    "26 Nov",
+    "https://www.mirror.co.uk/news/politics/net-migration-labour-tories-braverman-37917177",
+    "Net migration drops by more than 90% since Reform UK's Suella Braverman was Home Secretary"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/uk-net-migration-falls-to-lowest-since-1997-indians-largest-foreign-group-entering-and-leaving-the-country/article71746576.ece",
+    "U.K. net migration falls to lowest since 1997; Indians largest foreign group entering and leaving the country"
+   ],
+   [
+    "The New York Times",
+    "26 Nov",
+    "https://www.nytimes.com/2026/11/26/world/europe/uk-net-migration-data.html",
+    "Net Migration to U.K. Falls to Lowest Level Since 1997, Excluding Pandemic"
+   ],
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/uk-news/2026/nov/26/how-much-sharp-fall-uk-immigration-labour-policies",
+    "How much of the sharp fall in UK immigration is due to Labour’s policies?"
+   ],
+   [
+    "Channel 4 News",
+    "26 Nov",
+    "https://www.channel4.com/news/uk-net-migration-falls-to-lowest-level-in-30-years",
+    "UK net migration falls to lowest level in 30 years"
+   ],
+   [
+    "The Week UK",
+    "27 Nov",
+    "https://theweek.com/politics/net-migration-plummets-has-labour-solved-immigration-issue",
+    "Net migration plummets: has Labour solved immigration issue?"
+   ],
+   [
+    "i News",
+    "27 Nov",
+    "https://inews.co.uk/news/uk-migration-figures-compare-europe-4935460",
+    "How UK migration figures compare to France, Spain and the rest of Europe"
+   ],
+   [
+    "The Conversation UK",
+    "27 Nov",
+    "https://theconversation.com/how-the-uks-net-migration-figure-hit-its-target-after-years-of-government-promises-297787",
+    "How the UK’s net migration figure hit its target after years of government promises"
+   ]
+  ],
+  "u-encouraged-iraq-venezuela-leave-opec-sources": [
+   [
+    "The Wall Street Journal",
+    "26 Nov",
+    "https://www.wsj.com/business/energy-oil/oil-prices-mixed-as-traders-weigh-middle-east-supply-risks-opec-meeting-c234598a?mod=pls_whats_news_us_business_f",
+    "Oil Prices Rise as Traders Weigh Middle East Supply Risks, OPEC+ Meeting"
+   ],
+   [
+    "Japan Times",
+    "27 Nov",
+    "https://www.japantimes.co.jp/business/2026/11/27/opec-2027-output-talks/",
+    "OPEC+ facing tricky talks on 2027 output and capacity targets"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/united-states/us-pushed-venezuela-iraq-to-consider-leaving-opec-sources-say",
+    "US pushed Venezuela, Iraq to consider leaving OPEC, sources say"
+   ],
+   [
+    "Daily Maverick",
+    "27 Nov",
+    "https://www.dailymaverick.co.za/article/2026-11-27-us-pushed-venezuela-iraq-to-consider-leaving-opec-sources-say/",
+    "US pushed Venezuela, Iraq to consider leaving OPEC, sources say"
+   ],
+   [
+    "Economic Times",
+    "27 Nov",
+    "https://economictimes.indiatimes.com/markets/commodities/crude-oil-prices-near-97-as-west-asia-tensions-revive-supply-fears-opec-meeting-in-focus/articleshow/136222227.cms",
+    "Crude oil prices near $97 as West Asia tensions revive supply fears; OPEC+ meeting in focus"
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/iraq-talking-to-opec-about-its-production-ceiling-minister-says",
+    "Iraq Pushes OPEC for More Leeway as Group Heads Into Meeting"
+   ],
+   [
+    "Benzinga",
+    "27 Nov",
+    "https://www.benzinga.com/trading-ideas/movers/26/11/63669011/whats-going-on-with-chevron-stock-on-friday",
+    "What's Going On With Chevron Stock On Friday?"
+   ],
+   [
+    "Oilprice.com",
+    "27 Nov",
+    "https://oilprice.com/Latest-Energy-News/World-News/US-Pushed-Iraq-and-Venezuela-to-Consider-Quitting-OPEC-Sources-Say.html",
+    "U.S. Encouraged Iraq and Venezuela to Leave OPEC, Sources Say"
+   ],
+   [
+    "Al-Monitor",
+    "27 Nov",
+    "https://www.al-monitor.com/originals/2026/11/opec-expected-hold-q1-2027-output-steady-amid-disputes",
+    "OPEC+ expected to hold Q1 2027 output steady amid disputes"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/iraq-seeks-higher-oil-production-limit-from-opec-ahead-of-sunday-meeting-101795811868796.html",
+    "Iraq seeks higher oil production limit from OPEC ahead of Sunday meeting"
+   ]
+  ],
+  "mexico-files-formal-complaint-dea-tip-line": [
+   [
+    "The Hill",
+    "26 Nov",
+    "https://thehill.com/policy/international/6244966-sheinbaum-rebukes-dea-tip-line/",
+    "Mexican leader rebukes US over DEA tip line, claims ‘interference’"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/mexico-files-complaint-with-us-over-dea-tip-line-on-alleged-drug-traffickers-corrupt-officials",
+    "Mexico files complaint with US over DEA tip line on alleged drug traffickers, corrupt officials"
+   ],
+   [
+    "Al Jazeera English",
+    "27 Nov",
+    "https://www.aljazeera.com/news/2026/11/27/mexico-files-complaint-with-us-over-tip-line-on-alleged-drug-traffickers?traffic_source=rss",
+    "Mexico files complaint with US over DEA tip line on alleged drug dealers"
+   ],
+   [
+    "Mexico News Daily",
+    "27 Nov",
+    "https://mexiconewsdaily.com/politics/mexico-files-formal-complaint-over-deas-sinaloa-tip-lines-fridays-mananera-recapped/",
+    "Mexico files formal complaint over DEA’s Sinaloa tip lines: Friday’s mañanera recapped"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/world/mexico-files-formal-complaint-to-us-over-dea-tip-line/4305181",
+    "Mexico files formal complaint to US over DEA tip line"
+   ],
+   [
+    "CityNews Kitchener",
+    "27 Nov",
+    "https://kitchener.citynews.ca/2026/11/27/mexico-files-formal-complaint-to-us-over-dea-tip-line/",
+    "Mexico files formal complaint to US over DEA tip line"
+   ],
+   [
+    "ABC7chicago.com",
+    "27 Nov",
+    "https://abc7.com/post/mexico-files-formal-complaint-us-dea-tip-line/20091323/",
+    "Mexico files formal complaint to US over DEA tip line for anonymous reports"
+   ],
+   [
+    "ABC News (US)",
+    "27 Nov",
+    "https://abcnews.com/International/wireStory/mexico-files-formal-complaint-us-dea-tip-line-138484649",
+    "Mexico files formal complaint to US over DEA tip line"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/mexico-files-formal-complaint-with-us-over-dea-tip-line-targeting-cartel-members-and-corrupt-officials-101795805544103.html",
+    "Mexico files formal complaint with US over DEA tip line targeting cartel members and corrupt officials"
+   ],
+   [
+    "Washington Post",
+    "27 Nov",
+    "https://www.washingtonpost.com/world/2026/11/27/mexico-condemns-dea-tip-line-asking-people-report-corrupt-officials-sinaloa/",
+    "Mexico condemns DEA tip line asking people to report corrupt officials in Sinaloa"
+   ]
+  ],
+  "iran-accuses-ukraine-false-flag-drone-attack": [
+   [
+    "Haaretz",
+    "26 Nov",
+    "https://www.haaretz.com/middle-east-news/2026-11-26/ty-article/.premium/kuwait-army-says-four-hurt-in-iranian-attack-on-vital-site/000001a2-17f8-dfd9-a5b7-1ffc56950000",
+    "Two Italians killed in Iranian drone attack on Kuwait's 'vital site'"
+   ],
+   [
+    "Euronews",
+    "26 Nov",
+    "https://www.euronews.com/2026/11/26/civilian-flights-diverted-as-kuwait-army-intercepts-iranian-drone-attack",
+    "Passenger flights diverted as Kuwait army intercepts Iranian drone attack"
+   ],
+   [
+    "Washington Post",
+    "26 Nov",
+    "https://www.washingtonpost.com/world/2026/11/26/two-italians-killed-kuwait-strained-iran-ramps-up-attacks/",
+    "Two Italians killed in Kuwait as a strained Iran ramps up attacks"
+   ],
+   [
+    "Jewish News Syndicate",
+    "26 Nov",
+    "https://www.jns.org/news/world/israeli-fm-expresses-deep-sorrow-over-italians-killed-in-kuwait-drone-attack",
+    "Israeli FM expresses 'deep sorrow' over Italians killed in Kuwait drone attack"
+   ],
+   [
+    "The New York Times",
+    "26 Nov",
+    "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+    "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say"
+   ],
+   [
+    "Iran International",
+    "26 Nov",
+    "https://www.iranintl.com/en/202611267797",
+    "Iran faces global condemnation over Kuwait attack that killed two Italians"
+   ],
+   [
+    "Fox News",
+    "26 Nov",
+    "https://www.foxnews.com/world/iran-accuses-zelenskyy-false-flag-kuwait-drone-strike-op-get-trumps-attention",
+    "Iran accuses Zelenskyy of 'false flag' Kuwait drone strike op to get Trump's attention"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/drone-attack-kuwait-us-iran-war-death-november-27-2026/article71748337.ece",
+    "Two Italians killed in drone attack in Kuwait"
+   ],
+   [
+    "CNBC",
+    "27 Nov",
+    "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
+    "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’"
+   ],
+   [
+    "CBS News",
+    "27 Nov",
+    "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
+    "Iran accused of carrying out drone attack killing 2 Italians in Kuwait"
+   ],
+   [
+    "American Wire News",
+    "27 Nov",
+    "https://americanwirenews.com/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump/",
+    "Iran blames Zelenskyy for Kuwait drone attack, says it was a ‘false flag’ op aimed at Trump"
+   ],
+   [
+    "BizPac Review",
+    "27 Nov",
+    "https://www.bizpacreview.com/2026/11/27/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump-1669030/",
+    "Iran blames Zelenskyy for Kuwait drone attack, says it was a ‘false flag’ op aimed at Trump"
+   ],
+   [
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/kuwait-summons-iranian-ambassador-after-drone-attack-kills-2-12386112#publisher=newsstand",
+    "Kuwait Summons Iranian Ambassador After Drone Attack Kills 2"
+   ]
+  ],
+  "zelenskyy-criticises-trumps-friendly-gesture-towards-putin": [
+   [
+    "RTÉ News",
+    "27 Nov",
+    "https://www.rte.ie/news/2026/1127/1600845-trump-putin-ukraine/",
+    "Putin can't be a friend, he's like Hitler - Zelensky"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/putin-extends-his-war-to-europe-he-s-not-our-friend-101795748819456.html",
+    "Putin Extends His War to Europe—He’s Not Our “Friend”"
    ],
    [
     "The Hill",
     "27 Nov",
     "https://thehill.com/policy/international/6245089-zelensky-calls-for-us-peace-progress/",
-    "Zelensky on Trump calling Putin ‘friend’: ‘Same as somebody saying about Hitler’ in WWII"
+    "Zelensky on Trump calling Putin ‘friend’: Same as somebody saying that ‘about Hitler’ in WWII"
    ],
    [
-    "i News",
+    "Indian Express",
     "27 Nov",
-    "https://inews.co.uk/news/world/two-reasons-trumps-strange-putin-friendship-alarming-europe-4934998",
-    "Two reasons Trump’s ‘strange’ Putin friendship is alarming Europe"
+    "https://indianexpress.com/article/world/us-iran-saudi-houthi-war-live-updates-italians-killed-kuwait-attack-trump-russia-ukraine-10980525/",
+    "Russia-Ukraine War Live Updates: Zelenskyy urges US pressure on Putin, questions Trump’s ‘my friend’ remark"
    ],
    [
-    "Irish Independent",
+    "The Straits Times",
     "27 Nov",
-    "https://www.independent.ie/world-news/zelensky-says-he-found-it-strange-that-trump-called-putin-my-friend/a/165184306.html",
-    "Zelensky says he found it ‘strange’ that Trump called Putin ‘my friend’"
+    "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-compares-trumps-friendship-with-putin-to-friendship-with-hitler",
+    "Ukraine’s Zelensky compares Trump’s friendship with Putin to friendship with Hitler"
+   ],
+   [
+    "HuffPost UK",
+    "27 Nov",
+    "https://www.huffingtonpost.co.uk/entry/volodymyr-zelenskyy-ukraine-donald-trump-putin_uk_6b093f14e4b01f494a037db9",
+    "Ukraine's Volodymyr Zelenskyy Lays Into Trump's 'Strange' Friendship To Putin"
+   ],
+   [
+    "The West Australian",
+    "27 Nov",
+    "https://thewest.com.au/news/conflict/trumps-friend-remark-for-putin-strange-zelenskiy-c-23223818",
+    "Trump's 'friend' remark for Putin strange: Zelenskiy"
+   ],
+   [
+    "Washington Post",
+    "27 Nov",
+    "https://www.washingtonpost.com/world/2026/11/27/trump-defends-putin-friendship-that-zelensky-calls-strange/",
+    "Trump defends Putin friendship that Zelensky calls ‘strange’"
+   ],
+   [
+    "GB News",
+    "27 Nov",
+    "https://www.gbnews.com/news/world/volodymyr-zelensky-donald-trump-vladimir-putin-ties-friends-with-hitler",
+    "Volodymyr Zelensky tells Donald Trump that his ties to Vladimir Putin are like 'being friends with Hitler'"
+   ],
+   [
+    "7NEWS",
+    "27 Nov",
+    "https://7news.com.au/news/conflict/zelensky-blasts-trumps-friend-comments-about-putin-as-ukraine-tensions-grow-c-23223854",
+    "Zelensky blasts Trump’s ‘friend’ comments about Putin as Ukraine tensions grow"
+   ],
+   [
+    "PBS NewsHour",
+    "27 Nov",
+    "https://www.pbs.org/newshour/world/zelenskyy-urges-the-u-s-to-pressure-putin-calling-trumps-my-friend-remark-strange",
+    "Zelenskyy urges the U.S. to pressure Putin, calling Trump's 'my friend' remark strange"
+   ],
+   [
+    "CBS News",
+    "27 Nov",
+    "https://www.cbsnews.com/news/zelenskyy-trump-calling-putin-friend-like-hitler-viewed-friend-wwii/",
+    "Zelenskyy: Trump calling Putin a friend like calling Hitler a friend"
+   ],
+   [
+    "ABC News (US)",
+    "27 Nov",
+    "https://abcnews.com/International/wireStory/zelenskyy-urges-us-pressure-putin-calling-trumps-friend-138478386",
+    "Zelenskyy urges the US to pressure Putin, calling Trump’s 'my friend' remark strange"
    ],
    [
     "Daily Mail",
     "27 Nov",
     "https://www.dailymail.com/news/article-16326061/Zelensky-criticises-Trump-calling-Putin-friend-like-saying-youre-friends-Hitler.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
     "Zelensky criticises Trump for calling Putin his 'friend': 'It's like saying you're friends with Hitler'"
-   ]
-  ],
-  "apple-removes-minimaxs-talkie-ai-chatbot-app": [
-   [
-    "South China Morning Post",
-    "25 Nov",
-    "https://www.scmp.com/tech/tech-trends/article/3375791/minimax-chatbot-talkie-removed-apple-app-store-over-alleged-sexual-content",
-    "MiniMax chatbot Talkie removed from Apple App Store over alleged sexual content"
    ],
    [
-    "The Express Tribune",
-    "26 Nov",
-    "https://tribune.com.pk/story/2642440/apple-pulls-minimax-ai-chatbot-from-app-store-over-child-safety-concerns",
-    "Apple pulls MiniMax AI chatbot from App Store over child safety concerns"
-   ],
-   [
-    "9to5Mac",
-    "26 Nov",
-    "https://9to5mac.com/2026/11/25/apple-pulls-popular-chinese-ai-chatbot-from-the-app-store-amid-child-safety-concerns/",
-    "Apple pulls popular Chinese AI chatbot from the App Store amid child safety concerns"
-   ],
-   [
-    "Fox Business",
-    "26 Nov",
-    "https://www.foxbusiness.com/technology/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-sexual-messages-kids",
-    "Apple pulls Chinese-developed AI chatbot from App Store over reports of sexual messages to kids"
-   ],
-   [
-    "New York Post",
+    "Political Wire",
     "27 Nov",
-    "https://nypost.com/2026/11/27/business/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-of-sexual-messages-to-kids/",
-    "Apple pulls Chinese-developed AI chatbot from App Store over reports of sexual messages to kids"
+    "https://politicalwire.com/2026/11/27/zelensky-likens-putin-friend-talk-to-hitler/",
+    "Zelensky Likens Putin ‘Friend’ Talk to Hitler"
    ],
    [
-    "Off The Press",
+    "CNA",
     "27 Nov",
-    "https://offthepress.com/r/185197?c=rss",
-    "Apple pulls Chinese-developed AI chatbot Talkie from App Store over reports of sexual messages to kids"
-   ]
-  ],
-  "number-neets-rises-young-women-exit-labour": [
-   [
-    "The Conversation UK",
-    "25 Nov",
-    "https://theconversation.com/solving-the-neet-crisis-may-come-with-a-price-tag-the-government-cant-afford-297332",
-    "Solving the Neet crisis may come with a price tag the government can’t afford"
+    "https://www.channelnewsasia.com/world/zelenskyy-trump-russia-ukraine-putin-us-friend-6588296",
+    "Zelenskyy urges the US to pressure Putin, calling Trump’s 'my friend' remark strange"
    ],
    [
-    "Daily Mail",
-    "25 Nov",
-    "https://www.dailymail.com/money/financial-planning/article-16296453/How-Neets-delaying-parents-retirements-Forty-somethings-stop-work-seven-years-later-cost-supporting-family.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-    "How Neets are delaying their parents' retirements: Over-40s think they will have to stop work seven years later"
-   ],
-   [
-    "This is Money",
-    "25 Nov",
-    "https://www.thisismoney.co.uk/money/financial-planning/article-16296453/How-Neets-delaying-parents-retirements-Forty-somethings-stop-work-seven-years-later-cost-supporting-family.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-    "How Neets are delaying their parents' retirements: Over-40s think they will have to stop work seven years later"
-   ],
-   [
-    "ONS",
-    "26 Nov",
-    "https://www.ons.gov.uk/releases/youngpeoplenotineducationemploymentortrainingneetuknovember2026",
-    "Young people not in education, employment or training (NEET), UK: November 2026"
-   ],
-   [
-    "City AM",
-    "26 Nov",
-    "https://www.cityam.com/number-of-neets-rises-as-young-women-exit-labour-market/",
-    "Number of Neets rises as young women exit labour market"
-   ],
-   [
-    "Evening Standard",
-    "26 Nov",
-    "https://www.standard.co.uk/news/politics/alan-milburn-neets-pat-mcfadden-tuc-british-chambers-of-commerce-b1306570.html",
-    "Number of young people classed as Neet falls but women more likely to be out of work, figures show"
-   ],
-   [
-    "The Guardian",
-    "26 Nov",
-    "https://www.theguardian.com/society/2026/nov/26/neets-uk-young-people-education-employment-training-andy-burnham",
-    "Number of Neets in UK falls below a million as Burnham pushes to tackle crisis"
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/volodymyr-zelensky-denounces-trump-for-calling-putin-friend-12386938#publisher=newsstand",
+    "\"Strange\", \"Killer\": Zelensky Denounces Trump For Calling Putin 'Friend'"
    ]
   ],
   "army-calls-detonation-bomb-chemicals-iowa-success": [
-   [
-    "The Hill",
-    "25 Nov",
-    "https://thehill.com/homenews/state-watch/6241997-911-attorney-iowa-lead-azide-detonation-insane/",
-    "Army plan to detonate lead azide in Iowa ‘insane’: Attorney"
-   ],
-   [
-    "WANE - Fort Wayne News",
-    "25 Nov",
-    "https://www.wane.com/news/national-world/detonation-of-unstable-lead-azide-in-iowa-scheduled-for-wednesday-morning-what-to-know/",
-    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
-   ],
-   [
-    "PBS NewsHour",
-    "25 Nov",
-    "https://www.pbs.org/newshour/nation/watch-live-army-expected-to-carry-out-controlled-detonation-of-iowa-lead-azide-stockpile",
-    "WATCH: Army carries out controlled detonation of Iowa lead azide stockpile amid concerns"
-   ],
-   [
-    "End Time Headlines",
-    "25 Nov",
-    "https://endtimeheadlines.org/2026/11/maps-show-iowa-lead-dust-plume-drifting-southwest-into-missouri-wednesday-after-detonation/",
-    "Maps show Iowa lead dust plume drifting southwest into Missouri Wednesday after detonation"
-   ],
-   [
-    "Scientific American",
-    "25 Nov",
-    "https://www.scientificamerican.com/article/the-u-s-army-is-blowing-up-five-tons-of-toxic-lead-azide-in-iowa/",
-    "The U.S. Army is blowing up five tons of toxic lead azide in Iowa"
-   ],
-   [
-    "American Council on Science and Health (ACSH)",
-    "25 Nov",
-    "https://www.acsh.org/news/2026/11/25/lead-azide-boom-or-bust-army-chose-boom-did-it-get-it-right-50489",
-    "Lead azide: Boom or bust? The Army chose boom. Did it get it right?"
-   ],
-   [
-    "Ars Technica",
-    "25 Nov",
-    "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/",
-    "Lead azide detonation sends clouds over Iowa as questions of health risks swirl"
-   ],
-   [
-    "Euronews",
-    "25 Nov",
-    "https://www.euronews.com/2026/11/25/video-shows-massive-explosion-as-us-army-destroys-entire-stockpile-of-lead-azide",
-    "Video shows massive explosion as US Army destroys entire stockpile of lead azide"
-   ],
-   [
-    "Axios",
-    "25 Nov",
-    "https://www.axios.com/2026/11/25/iowa-army-lead-detonation",
-    "Army detonates Iowa explosives amid toxic lead fears"
-   ],
-   [
-    "Space.com",
-    "25 Nov",
-    "https://www.space.com/technology/aerospace/nasa-sends-planes-to-monitor-us-armys-lead-detonation-irresponsible-to-compare-it-to-chernobyl-agency-chief-says",
-    "NASA sends planes to monitor US Army's lead detonation. 'Irresponsible' to compare it to Chernobyl, agency chief says"
-   ],
-   [
-    "KSAZ - Fox 10 Phoenix",
-    "25 Nov",
-    "https://www.fox10phoenix.com/news/army-blows-up-bomb-making-chemicals-teens-charged-chandler-home-invasion-morning-news-brief",
-    "Army blows up bomb-making chemicals; teens charged in Chandler home invasion l Morning News Brief"
-   ],
-   [
-    "The Post Millennial",
-    "25 Nov",
-    "https://thepostmillennial.com/news/breaking-officials-say-zero-lead-detected-in-air-after-successful-detonation-of-bomb-making",
-    "BREAKING: Officials say zero lead detected in air after successful detonation of bomb making materials in Iowa"
-   ],
-   [
-    "The Guardian",
-    "25 Nov",
-    "https://www.theguardian.com/us-news/live/2026/nov/25/iowa-lead-azide-detonation-army-explosion-bomb-live-updates",
-    "US Army calls Iowa lead detonation a ‘huge success’ and says threat of spontaneous explosions has been ‘eliminated’ – as it happened"
-   ],
-   [
-    "Mongabay",
-    "25 Nov",
-    "https://news.mongabay.com/short-article/2026/11/army-blows-up-bomb-chemicals-in-iowa-despite-fears-a-toxic-plume-could-endanger-residents/",
-    "Army blows up bomb chemicals in Iowa despite fears a toxic plume could endanger residents"
-   ],
-   [
-    "The Bulwark",
-    "25 Nov",
-    "https://www.thebulwark.com/p/trump-plays-politics-as-iowa-experiences",
-    "Trump Plays Politics as Iowa Experiences a Toxic Explosion | Morning Shots"
-   ],
-   [
-    "Daily Mail",
-    "25 Nov",
-    "https://www.dailymail.com/sciencetech/article-16321515/Army-detonates-nearly-10-000-pounds-toxic-explosives-Iowa-unleashing-pressure-wave-cloud-fuels-fallout-fears.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-    "Army detonates nearly 10,000 pounds of toxic explosives in Iowa unleashing pressure wave as thick cloud fuels fallout fears"
-   ],
-   [
-    "Wired",
-    "25 Nov",
-    "https://www.wired.com/story/iowa-lead-detonation-real-monitoring-work-begins/",
-    "The Iowa Lead Detonation Happened. Now the Real Work Begins to Study It"
-   ],
-   [
-    "Fox News",
-    "25 Nov",
-    "https://www.foxnews.com/health/doctors-warn-lead-exposure-health-risks-controversial-army-detonation-iowa",
-    "Doctors warn of lead exposure health risks after controversial Army detonation in Iowa"
-   ],
    [
     "Inside Climate News",
     "25 Nov",
     "https://insideclimatenews.org/news/25112026/iowa-lead-explosives-health-risks-close-to-zero/",
     "After Detonating Five Tons of Lead Explosives in Iowa, Army Says Health Risks Are ‘Close to Zero’"
+   ],
+   [
+    "End Time Headlines",
+    "25 Nov",
+    "https://endtimeheadlines.org/2026/11/they-want-you-to-believe-no-lead-detected-in-the-atmosphere/",
+    "They Want You To Believe NO LEAD detected in the atmosphere"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/homenews/administration/6241678-live-updates-trump-army-lead-azide-thanksgiving-2026/",
+    "Live updates: Army calls Iowa detonation ‘successful’; Thanksgiving storm delays Macy’s parade"
    ],
    [
     "Political Wire",
@@ -1500,22 +2350,10 @@
     "U.S. Army declares success in detonation of lead-based explosives stockpile in Iowa"
    ],
    [
-    "BBC News",
-    "26 Nov",
-    "https://www.bbc.co.uk/news/articles/cwg7l5ve251ko?at_medium=RSS&at_campaign=rss",
-    "US Army says controlled blast of explosives in Iowa was 'huge success'"
-   ],
-   [
     "Legal Insurrection",
     "26 Nov",
     "https://legalinsurrection.com/2026/11/armys-iowa-detonation-of-lead-azide-explosives-caved-inward-perfectly/?utm_source=rss&utm_medium=rss&utm_campaign=armys-iowa-detonation-of-lead-azide-explosives-caved-inward-perfectly",
     "Army’s Iowa Detonation of Lead Azide Explosives ‘Caved Inward Perfectly’"
-   ],
-   [
-    "NBC News",
-    "26 Nov",
-    "https://www.nbcnews.com/news/us-news/army-says-detonation-bomb-chemicals-iowa-success-rcna611434",
-    "Iowa residents mark Thanksgiving with lingering fears after chemical detonation"
    ],
    [
     "SOFREP",
@@ -1524,406 +2362,34 @@
     "Why the Army Had No Choice but to Blow Up 9,700 Pounds of Lead Azide in Iowa"
    ],
    [
-    "ABC7chicago.com",
+    "KSTP-TV",
     "26 Nov",
-    "https://abc7chicago.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
-    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
-   ],
-   [
-    "KABC - Los Angeles News",
-    "26 Nov",
-    "https://abc7.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
-    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
-   ],
-   [
-    "Breitbart",
-    "26 Nov",
-    "https://www.breitbart.com/environment/2026/11/26/vance-blames-obama-for-iowa-lead-detonation-the-can-had-been-kicked-down-the-road/",
-    "JD Vance Blames Obama Admin for Iowa Lead Detonation: 'the Can Had Been Kicked Down the Road'"
-   ],
-   [
-    "Bloomberg",
-    "26 Nov",
-    "https://www.bloomberg.com/news/articles/2026-11-26/epa-says-new-tests-find-no-airborne-lead-after-army-s-iowa-blast",
-    "EPA Says Tests Find No Airborne Lead After Army’s Iowa Blast"
-   ],
-   [
-    "MyNorthwest",
-    "26 Nov",
-    "https://mynorthwest.com/national/epa-expects-iowa-lead-detonation-results-soon/4305035",
-    "EPA expects Iowa lead detonation results soon"
-   ],
-   [
-    "Taipei Times",
-    "27 Nov",
-    "https://www.taipeitimes.com/News/world/archives/2026/11/27/2003868504",
-    "US Army detonates bomb chemicals, says area is safe"
-   ],
-   [
-    "Off The Press",
-    "27 Nov",
-    "https://offthepress.com/r/185162?c=rss",
-    "EPA expects Iowa lead detonation sample results soon"
-   ],
-   [
-    "WJW - Cleveland News",
-    "27 Nov",
-    "https://fox8.com/news/test-results-from-samples-taken-after-iowa-lead-detonation-are-expected-soon-epa-says/",
+    "https://kstp.com/ap-top-news/ap-top-news-us-headlines/test-results-from-samples-taken-after-iowa-lead-detonation-are-expected-soon-epa-says/",
     "Test results from samples taken after Iowa lead detonation are expected soon, EPA says"
-   ]
-  ],
-  "approves-spacex-plan-deploy-million-data-centre": [
-   [
-    "The Verge",
-    "25 Nov",
-    "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
-    "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space"
-   ],
-   [
-    "Sky News",
-    "25 Nov",
-    "https://news.sky.com/story/us-authorises-elon-musks-spacex-to-deploy-one-million-satellites-to-space-13616493",
-    "US authorises SpaceX to deploy one million satellites to space"
-   ],
-   [
-    "Decrypt",
-    "25 Nov",
-    "https://decrypt.co/383991/elon-musk-spacex-fcc-approval-ai-data-centers-space",
-    "Elon Musk’s SpaceX Gets FCC Approval to Launch AI Data Centers in Space"
-   ],
-   [
-    "Ars Technica",
-    "25 Nov",
-    "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/",
-    "The FCC has authorized SpaceX to deploy 1 million satellites"
-   ],
-   [
-    "Space.com",
-    "25 Nov",
-    "https://www.space.com/space-exploration/launches-spacecraft/green-light-for-starmind-spacex-gets-approval-to-deploy-1-million-ai-satellites",
-    "Green light for Starmind: SpaceX gets approval to deploy 1 million AI satellites"
-   ],
-   [
-    "Fox Business",
-    "25 Nov",
-    "https://www.foxbusiness.com/politics/data-centers-space-fcc-clears-spacex-1m-satellites-extend-americas-lead-superintelligence",
-    "‘Data centers in space’: FCC clears SpaceX for 1M satellites to ‘extend America’s lead in superintelligence’"
-   ],
-   [
-    "The Wall Street Journal",
-    "25 Nov",
-    "https://www.wsj.com/business/fcc-authorizes-spacex-to-build-1-million-data-centers-in-space-0eb20ee7?mod=pls_whats_news_us_business_f",
-    "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers"
-   ],
-   [
-    "The Hill",
-    "25 Nov",
-    "https://thehill.com/policy/technology/6243528-fcc-approves-spacex-orbital-ai-data-centers/",
-    "FCC approves SpaceX’s plan to launch up to 1 million data centers into space"
-   ],
-   [
-    "CNET",
-    "25 Nov",
-    "https://www.cnet.com/science/space/the-fcc-approved-a-million-spacex-satellites-for-data-centers-in-space/",
-    "The FCC Approved a Million SpaceX Satellites for Data Centers in Space"
-   ],
-   [
-    "TechCrunch",
-    "25 Nov",
-    "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
-    "FCC approves SpaceX plan to put AI data centers in space"
-   ],
-   [
-    "CBS News",
-    "25 Nov",
-    "https://www.cbsnews.com/news/spacex-fcc-approval-data-centers-space/",
-    "FCC approves SpaceX plan for 1 million data center satellites"
-   ],
-   [
-    "Political Wire",
-    "25 Nov",
-    "https://politicalwire.com/2026/11/25/spacex-gets-approval-for-one-million-orbital-data-centers/",
-    "SpaceX Gets Approval for One Million Orbital Data Centers"
-   ],
-   [
-    "SiliconANGLE",
-    "25 Nov",
-    "https://siliconangle.com/2026/11/25/fcc-clears-spacex-to-put-up-to-1-million-starmind-data-centers-in-space/",
-    "FCC clears SpaceX to put up to 1 million Starmind data centers in space"
-   ],
-   [
-    "GeekWire",
-    "26 Nov",
-    "https://www.geekwire.com/2026/fcc-clears-spacex-million-satellites-starmind-data-center/",
-    "FCC clears SpaceX to put up to a million satellites in orbit for Starmind data center network"
-   ],
-   [
-    "CNBC",
-    "26 Nov",
-    "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
-    "SpaceX wins FCC approval to deploy 1 million orbital data center satellites"
-   ],
-   [
-    "End Time Headlines",
-    "26 Nov",
-    "https://endtimeheadlines.org/2026/11/elon-musk-gets-approval-for-1-million-constellation-satellites-to-host-ai-technology/",
-    "Elon Musk gets approval for 1 MILLION ‘constellation’ satellites to host AI technology"
-   ],
-   [
-    "NPR",
-    "26 Nov",
-    "https://www.npr.org/2026/11/26/g-s1-155940/fcc-spacex-satellites-data-centers-in-space",
-    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
-   ],
-   [
-    "Slashdot",
-    "26 Nov",
-    "https://tech.slashdot.org/story/26/11/25/1936200/spacex-wins-fcc-approval-to-deploy-1-million-orbital-data-center-satellites?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-    "SpaceX Wins FCC Approval To Deploy 1 Million Orbital Data Center Satellites"
-   ],
-   [
-    "BBC News",
-    "26 Nov",
-    "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss",
-    "Musk's plan to send a million SpaceX data satellites into space approved"
-   ],
-   [
-    "Phys.org",
-    "26 Nov",
-    "https://phys.org/news/2026-11-fcc-spacex-deploy-million-satellites.html",
-    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
-   ],
-   [
-    "Engadget",
-    "26 Nov",
-    "https://www.engadget.com/2329071/spacex-gets-fcc-approval-to-deploy-1-million-satellites-for-its-ai-orbital-data-center/",
-    "SpaceX gets FCC approval to deploy 1 million satellites for its AI orbital data center"
-   ],
-   [
-    "The Decoder",
-    "26 Nov",
-    "https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/",
-    "FCC clears SpaceX to deploy up to 1 million Starmind satellites for orbital AI data centers by 2040"
-   ],
-   [
-    "Washington Post",
-    "26 Nov",
-    "https://www.washingtonpost.com/technology/2026/11/26/fcc-approves-1-million-spacex-data-centers-space-astronomers-are-dismayed/",
-    "FCC approves 1 million SpaceX data centers in space. Astronomers are dismayed."
-   ],
-   [
-    "The Guardian",
-    "26 Nov",
-    "https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest",
-    "Can Elon Musk really put AI datacentres in space? - The Latest"
    ],
    [
     "PBS NewsHour",
     "26 Nov",
-    "https://www.pbs.org/newshour/nation/fcc-says-spacex-can-deploy-1-million-satellites-for-data-centers-in-space-scientists-are-skeptical",
-    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+    "https://www.pbs.org/newshour/show/news-wrap-epa-reports-zero-airborne-lead-in-iowa",
+    "News Wrap: EPA reports 'zero' airborne lead in Iowa"
    ],
    [
-    "Channel 4 News",
-    "26 Nov",
-    "https://www.channel4.com/news/trump-approves-musks-plan-for-data-centres-in-space",
-    "Trump approves Musk’s plan for data centres in space"
-   ],
-   [
-    "ABC7chicago.com",
-    "26 Nov",
-    "https://abc7.com/post/fcc-says-spacex-can-deploy-1-million-satellites-data-centers-space-scientists-are-skeptical/20087081/",
-    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
-   ],
-   [
-    "The Conversation",
-    "26 Nov",
-    "https://theconversation.com/elon-musk-has-approval-to-launch-1-million-satellites-an-astronomer-explains-how-this-would-impact-the-sky-297646",
-    "Elon Musk has approval to launch 1 million satellites. An astronomer explains how this would impact the sky"
-   ],
-   [
-    "RNZ",
+    "The Guardian US",
     "27 Nov",
-    "https://www.rnz.co.nz/news/science-and-technology/2827264/elon-musk-s-1-million-starmind-satellites-a-land-grab-auckland-professor-says",
-    "Elon Musk's 1 million 'Starmind' satellites a 'land grab', Auckland professor says"
-   ]
-  ],
-  "1password-breach-exposes-customer-names-emails-passwords": [
-   [
-    "TechCrunch",
-    "25 Nov",
-    "https://techcrunch.com/2026/11/25/todoist-confirms-6-of-customers-details-were-stolen-in-data-breach/",
-    "Todoist confirms 6% of customers’ details were stolen in data breach"
+    "https://www.theguardian.com/commentisfree/2026/nov/27/army-lead-poison-bomb-iowa",
+    "The US army just detonated a poison bomb over Iowa | Steven Donziger"
    ],
    [
-    "Hacker News",
-    "25 Nov",
-    "https://1password.com/blog/update-on-nov-2026-security-incident",
-    "1Password Security Incident"
-   ],
-   [
-    "The Verge",
-    "25 Nov",
-    "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
-    "1Password breach leaked customer names and emails, but not passwords"
-   ],
-   [
-    "MacRumors",
-    "25 Nov",
-    "https://www.macrumors.com/2026/11/25/1password-security-breach/",
-    "1Password Security Breach: What Was Accessed and What Wasn't"
-   ],
-   [
-    "Decrypt",
-    "25 Nov",
-    "https://decrypt.co/384002/1password-breach-vaults-phishing-emails",
-    "The 1Password Breach Didn’t Touch Your Vault. The Phishing Emails Might"
-   ],
-   [
-    "BleepingComputer",
-    "25 Nov",
-    "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
-    "1Password customer data stolen after employee GitHub account breach"
-   ],
-   [
-    "SiliconANGLE",
-    "25 Nov",
-    "https://siliconangle.com/2026/11/25/attacker-used-1password-employees-github-account-to-copy-customer-records/",
-    "Attacker used 1Password employee’s GitHub account to copy customer records"
-   ],
-   [
-    "9to5Mac",
-    "25 Nov",
-    "https://9to5mac.com/2026/11/25/1password-confirms-security-incident-heres-what-you-need-to-know/",
-    "1Password confirms security incident, here’s what you need to know"
-   ],
-   [
-    "Slashdot",
-    "26 Nov",
-    "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-    "1Password Breach Leaked Customer Names and Emails, But Passwords Are Safe"
-   ],
-   [
-    "Cointelegraph",
-    "26 Nov",
-    "https://cointelegraph.com/news/1password-hacker-stole-customer-names-and-emails-but-vaults-safe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "1Password hacker stole customer names and emails, but vaults safe"
-   ],
-   [
-    "Android Authority",
-    "26 Nov",
-    "https://www.androidauthority.com/1password-data-breach-3739555/",
-    "1Password confirms hackers stole customer data, but not their passwords"
-   ],
-   [
-    "Digital Trends",
-    "26 Nov",
-    "https://www.digitaltrends.com/computing/1password-discloses-a-backend-breach-says-vaults-remain-secure/",
-    "1Password discloses a backend breach, says vaults remain secure"
-   ],
-   [
-    "SecurityWeek",
-    "26 Nov",
-    "https://www.securityweek.com/1password-breach-exposes-customer-data-internal-source-code/",
-    "1Password Breach Exposes Customer Data, Internal Source Code"
-   ],
-   [
-    "The Hacker News",
-    "26 Nov",
-    "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
-    "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach"
-   ],
-   [
-    "The Register",
-    "26 Nov",
-    "https://www.theregister.com/security/2026/11/26/hackers-help-themselves-to-1passwords-source-code-and-customer-data/5312317",
-    "Hackers help themselves to 1Password's source code and customer data"
-   ],
-   [
-    "Engadget",
-    "26 Nov",
-    "https://www.engadget.com/2329013/1password-hacked-but-users-vaults-are-safe/",
-    "1Password says it was hacked but users' vaults are safe"
-   ],
-   [
-    "MakeUseOf",
+    "MyNorthwest",
     "27 Nov",
-    "https://www.makeuseof.com/1password-hackers-customer-names-emails-github/",
-    "1Password breach exposed your email and name, but your vault is safe"
-   ]
-  ],
-  "least-30-killed-blaze-vehicle-overturns-egypt": [
-   [
-    "Euronews",
-    "25 Nov",
-    "https://www.euronews.com/2026/11/25/at-least-30-killed-in-highway-fire-in-cairo-district",
-    "At least 30 killed in highway fire in Cairo district"
+    "https://mynorthwest.com/national/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification/4305205",
+    "Army deems lead azide detonation a success but criticism lingers over notification"
    ],
    [
-    "The Guardian",
-    "26 Nov",
-    "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway",
-    "At least 31 killed as fuel tanker crash ignites large fire on Cairo highway"
-   ],
-   [
-    "The Hindu",
-    "26 Nov",
-    "https://www.thehindu.com/news/international/fuel-tanker-crash-ignites-massive-fire-on-highway-surrounding-cairo/article71744262.ece",
-    "Fuel tanker crash ignites massive fire on highway surrounding Cairo, killing at least 31 people"
-   ],
-   [
-    "CBS News",
-    "26 Nov",
-    "https://www.cbsnews.com/news/egypt-fuel-tanker-explosion-deaths-giza-cairo/",
-    "Fuel tanker explosion kills 31 on Egyptian highway"
-   ],
-   [
-    "BBC News",
-    "26 Nov",
-    "https://www.bbc.co.uk/news/articles/c3gre90l0g45o?at_medium=RSS&at_campaign=rss",
-    "Egyptian authorities arrest motorist over tanker crash that killed 31"
-   ],
-   [
-    "The Citizen",
-    "26 Nov",
-    "https://www.citizen.co.za/news/news-world/news-africa/egypt-prosecutors-announce-arrest-of-man-over-deadly-truck-disaster/",
-    "Egypt prosecutors announce arrest of man over deadly truck disaster"
-   ],
-   [
-    "Fox News",
-    "26 Nov",
-    "https://www.foxnews.com/world/egypt-detains-driver-suspected-causing-cairo-fuel-tanker-crash-inferno-left-31-dead",
-    "Egypt detains driver suspected of causing Cairo fuel tanker crash and inferno that left 31 dead"
-   ],
-   [
-    "The Straits Times",
-    "26 Nov",
-    "https://www.straitstimes.com/world/middle-east/egyptians-mourn-demand-accountability-after-deadly-tanker-explosion-kills-31",
-    "Egyptians mourn, demand accountability after deadly tanker explosion kills 31"
-   ],
-   [
-    "Al-Monitor",
-    "26 Nov",
-    "https://www.al-monitor.com/originals/2026/11/egyptians-mourn-demand-accountability-after-deadly-tanker-explosion-kills-31",
-    "Egyptians mourn, demand accountability after deadly tanker explosion kills 31"
-   ],
-   [
-    "Sky News",
-    "26 Nov",
-    "https://news.sky.com/story/driver-of-car-suspected-of-causing-fuel-tanker-to-overturn-in-egypt-detained-13616933",
-    "Driver suspected of causing tanker crash in Egypt that killed 31 detained"
-   ],
-   [
-    "ABC7chicago.com",
-    "26 Nov",
-    "https://abc7.com/post/egypt-detains-driver-suspected-causing-cairo-tanker-crash-triggered-massive-fire-killed-31/20086998/",
-    "Egypt detains driver suspected of causing Cairo tanker crash that triggered inferno, killed 31"
-   ],
-   [
-    "Times of India",
+    "Washington's Top News (WTOP)",
     "27 Nov",
-    "https://timesofindia.indiatimes.com/world/middle-east/cairo-fuel-tanker-inferno-driver-suspect-held-after-explosion-left-31-dead/articleshow/136206334.cms",
-    "Cairo fuel tanker inferno: Driver suspect held after explosion left 31 dead"
+    "https://wtop.com/national/2026/11/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification/",
+    "Army deems lead azide detonation a success but criticism lingers over notification"
    ]
   ]
  },
@@ -1932,12 +2398,12 @@
   "dateLabel": "Friday 27 November 2026",
   "range": "25–28 Nov",
   "rangeLong": "25–28 November 2026",
-  "lastRun": "27 Nov 2026, 09:16",
+  "lastRun": "27 Nov 2026, 21:41",
   "digest": [
-   "Lead azide detonation sends clouds over Iowa as questions of health risks swirl (Ars Technica)",
-   "How the Trump administration determined Jensen Huang is not a national security threat (The Express Tribune)",
-   "FCC approves SpaceX's plan to launch up to 1 million AI satellites under the Starmind initiative (The Verge)",
-   "1Password breach exposes customer names and emails, but not passwords (Slashdot)"
+   "Hackers breach US Air Force flagship Cloud One computing platform (Dawn)",
+   "Parts of the US clean up, power outages being restored after Thanksgiving storm soaks East Coast (CityNews Kitchener)",
+   "Macy's Thanksgiving Day Parade postponed for the first time in its history (WANE - Fort Wayne News)",
+   "UK DWP shuts down online services amid cyber incident (The Register)"
   ],
   "generated": "automatic",
   "articlePolicy": "source-based-v1",
