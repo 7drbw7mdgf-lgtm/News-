@@ -50,8 +50,13 @@ jobs:
           python3 -m unittest discover -s scripts -p 'test_trading212.py'
           node --check scripts/scrape-indian-express.mjs
           python3 scripts/update-markets.py --check
+          python3 scripts/update-forex.py --check
+          python3 scripts/check-economic-calendar.py
+          python3 -m unittest discover -s scripts -p 'test_update_forex.py'
+          python3 -m unittest discover -s scripts -p 'test_economic_calendar.py'
+          python3 -m unittest discover -s scripts -p 'test_company_markets.py'
           node --check assets/data.js
-          python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py scripts/collect-feeds.py scripts/make-edition.py scripts/story_images.py scripts/build-audio.py scripts/build-publisher-feeds.py scripts/collect-company-markets.py scripts/build-static-news.py scripts/build-company-directory.py scripts/build-publisher-reader.py backend/server.py backend/corroboration.py backend/octal_engine.py backend/primary_costs.py backend/resource_graph.py backend/resource_evidence.py backend/resource_scenario.py
+          python3 -m py_compile scripts/deploy-website.py scripts/verify-website.py scripts/collect-feeds.py scripts/make-edition.py scripts/story_images.py scripts/build-audio.py scripts/build-publisher-feeds.py scripts/collect-company-markets.py scripts/update-forex.py scripts/check-economic-calendar.py scripts/build-static-news.py scripts/build-company-directory.py scripts/build-publisher-reader.py backend/server.py backend/corroboration.py backend/octal_engine.py backend/primary_costs.py backend/resource_graph.py backend/resource_evidence.py backend/resource_scenario.py
           mkdir -p build/static-verify
           cp index.html build/static-verify/
           python3 scripts/build-static-news.py build/static-verify

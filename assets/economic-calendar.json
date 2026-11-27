@@ -1,0 +1,415 @@
+{
+ "checkedAt": "2026-11-27",
+ "note": "Scheduled dates published by each central bank or statistics office. Dates can change; follow the source link to confirm. Times are local to the issuer.",
+ "regions": {
+  "UK": "United Kingdom",
+  "US": "United States",
+  "EU": "Euro area",
+  "JP": "Japan",
+  "IN": "India"
+ },
+ "events": [
+  {
+   "date": "2026-12-04",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — November 2026",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2026-12-04",
+   "region": "IN",
+   "type": "central-bank",
+   "title": "Reserve Bank of India policy decision (MPC)",
+   "source": "Reserve Bank of India",
+   "sourceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62422",
+   "note": "Meeting 2–4 Dec"
+  },
+  {
+   "date": "2026-12-09",
+   "region": "US",
+   "type": "central-bank",
+   "title": "Federal Reserve rate decision (FOMC)",
+   "source": "Federal Reserve",
+   "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "time": "14:00",
+   "timezone": "America/New_York",
+   "note": "Meeting 8–9 Dec · with economic projections"
+  },
+  {
+   "date": "2026-12-10",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — November 2026",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2026-12-17",
+   "region": "UK",
+   "type": "central-bank",
+   "title": "Bank of England rate decision (MPC)",
+   "source": "Bank of England",
+   "sourceUrl": "https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+   "time": "12:00",
+   "timezone": "Europe/London"
+  },
+  {
+   "date": "2026-12-17",
+   "region": "EU",
+   "type": "central-bank",
+   "title": "ECB monetary policy decision",
+   "source": "European Central Bank",
+   "sourceUrl": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+   "time": "14:15",
+   "timezone": "Europe/Berlin",
+   "note": "Meeting 16–17 Dec · press conference follows"
+  },
+  {
+   "date": "2026-12-18",
+   "region": "JP",
+   "type": "central-bank",
+   "title": "Bank of Japan policy decision",
+   "source": "Bank of Japan",
+   "sourceUrl": "https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm",
+   "note": "Meeting 17–18 Dec · announcement time varies"
+  },
+  {
+   "date": "2027-01-08",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — December 2026",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-01-13",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — December 2026",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-01-22",
+   "region": "JP",
+   "type": "central-bank",
+   "title": "Bank of Japan policy decision",
+   "source": "Bank of Japan",
+   "sourceUrl": "https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm",
+   "note": "Meeting 21–22 Jan · with Outlook Report"
+  },
+  {
+   "date": "2027-01-27",
+   "region": "US",
+   "type": "central-bank",
+   "title": "Federal Reserve rate decision (FOMC)",
+   "source": "Federal Reserve",
+   "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "time": "14:00",
+   "timezone": "America/New_York",
+   "note": "Meeting 26–27 Jan"
+  },
+  {
+   "date": "2027-02-04",
+   "region": "UK",
+   "type": "central-bank",
+   "title": "Bank of England rate decision (MPC)",
+   "source": "Bank of England",
+   "sourceUrl": "https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+   "time": "12:00",
+   "timezone": "Europe/London",
+   "note": "With Monetary Policy Report"
+  },
+  {
+   "date": "2027-02-04",
+   "region": "EU",
+   "type": "central-bank",
+   "title": "ECB monetary policy decision",
+   "source": "European Central Bank",
+   "sourceUrl": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+   "time": "14:15",
+   "timezone": "Europe/Berlin",
+   "note": "Meeting 3–4 Feb · press conference follows"
+  },
+  {
+   "date": "2027-02-05",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — January 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-02-05",
+   "region": "IN",
+   "type": "central-bank",
+   "title": "Reserve Bank of India policy decision (MPC)",
+   "source": "Reserve Bank of India",
+   "sourceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62422",
+   "note": "Meeting 3–5 Feb"
+  },
+  {
+   "date": "2027-02-11",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — January 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-03-05",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — February 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-03-10",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — February 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-03-17",
+   "region": "US",
+   "type": "central-bank",
+   "title": "Federal Reserve rate decision (FOMC)",
+   "source": "Federal Reserve",
+   "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "time": "14:00",
+   "timezone": "America/New_York",
+   "note": "Meeting 16–17 Mar"
+  },
+  {
+   "date": "2027-03-18",
+   "region": "UK",
+   "type": "central-bank",
+   "title": "Bank of England rate decision (MPC)",
+   "source": "Bank of England",
+   "sourceUrl": "https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+   "time": "12:00",
+   "timezone": "Europe/London"
+  },
+  {
+   "date": "2027-03-18",
+   "region": "EU",
+   "type": "central-bank",
+   "title": "ECB monetary policy decision",
+   "source": "European Central Bank",
+   "sourceUrl": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+   "time": "14:15",
+   "timezone": "Europe/Berlin",
+   "note": "Meeting 17–18 Mar · press conference follows"
+  },
+  {
+   "date": "2027-04-02",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — March 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-04-13",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — March 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-04-28",
+   "region": "US",
+   "type": "central-bank",
+   "title": "Federal Reserve rate decision (FOMC)",
+   "source": "Federal Reserve",
+   "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "time": "14:00",
+   "timezone": "America/New_York",
+   "note": "Meeting 27–28 Apr"
+  },
+  {
+   "date": "2027-04-29",
+   "region": "UK",
+   "type": "central-bank",
+   "title": "Bank of England rate decision (MPC)",
+   "source": "Bank of England",
+   "sourceUrl": "https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+   "time": "12:00",
+   "timezone": "Europe/London",
+   "note": "With Monetary Policy Report"
+  },
+  {
+   "date": "2027-04-29",
+   "region": "EU",
+   "type": "central-bank",
+   "title": "ECB monetary policy decision",
+   "source": "European Central Bank",
+   "sourceUrl": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+   "time": "14:15",
+   "timezone": "Europe/Berlin",
+   "note": "Meeting 28–29 Apr · press conference follows"
+  },
+  {
+   "date": "2027-05-07",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — April 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-05-12",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — April 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-06-04",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — May 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-06-09",
+   "region": "US",
+   "type": "central-bank",
+   "title": "Federal Reserve rate decision (FOMC)",
+   "source": "Federal Reserve",
+   "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "time": "14:00",
+   "timezone": "America/New_York",
+   "note": "Meeting 8–9 Jun"
+  },
+  {
+   "date": "2027-06-10",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — May 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-06-10",
+   "region": "EU",
+   "type": "central-bank",
+   "title": "ECB monetary policy decision",
+   "source": "European Central Bank",
+   "sourceUrl": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+   "time": "14:15",
+   "timezone": "Europe/Berlin",
+   "note": "Meeting 9–10 Jun · press conference follows"
+  },
+  {
+   "date": "2027-06-16",
+   "region": "UK",
+   "type": "data",
+   "title": "UK consumer price inflation — May 2027",
+   "source": "Office for National Statistics",
+   "sourceUrl": "https://www.ons.gov.uk/releases/consumerpriceinflationukmay2027",
+   "time": "07:00",
+   "timezone": "Europe/London",
+   "note": "Provisional ONS date"
+  },
+  {
+   "date": "2027-06-17",
+   "region": "UK",
+   "type": "central-bank",
+   "title": "Bank of England rate decision (MPC)",
+   "source": "Bank of England",
+   "sourceUrl": "https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+   "time": "12:00",
+   "timezone": "Europe/London"
+  },
+  {
+   "date": "2027-07-02",
+   "region": "US",
+   "type": "data",
+   "title": "US jobs report (Employment Situation) — June 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-07-14",
+   "region": "US",
+   "type": "data",
+   "title": "US consumer prices (CPI) — June 2027",
+   "source": "US Bureau of Labor Statistics",
+   "sourceUrl": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "time": "08:30",
+   "timezone": "America/New_York"
+  },
+  {
+   "date": "2027-07-22",
+   "region": "EU",
+   "type": "central-bank",
+   "title": "ECB monetary policy decision",
+   "source": "European Central Bank",
+   "sourceUrl": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+   "time": "14:15",
+   "timezone": "Europe/Berlin",
+   "note": "Meeting 21–22 Jul · press conference follows"
+  },
+  {
+   "date": "2027-07-28",
+   "region": "US",
+   "type": "central-bank",
+   "title": "Federal Reserve rate decision (FOMC)",
+   "source": "Federal Reserve",
+   "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "time": "14:00",
+   "timezone": "America/New_York",
+   "note": "Meeting 27–28 Jul"
+  },
+  {
+   "date": "2027-07-29",
+   "region": "UK",
+   "type": "central-bank",
+   "title": "Bank of England rate decision (MPC)",
+   "source": "Bank of England",
+   "sourceUrl": "https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+   "time": "12:00",
+   "timezone": "Europe/London",
+   "note": "With Monetary Policy Report"
+  }
+ ]
+}

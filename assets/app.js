@@ -45,7 +45,9 @@
     publisherArticle: null,
     settingsOpen: false, searchOpen: false, utilityOpen: null, srcQuery: '', query: '',
     headerPrefs: { showClock: true, markets: ['london', 'newyork', 'shanghai'] },
-    marketOpen: null, marketRange: '6M', marketHover: null, tradingMarket: 'london', marketNewsFocus: 'all', marketWatch: ['Apple', 'Microsoft', 'Nvidia'], marketWorkspaceTab: 'overview', marketSearch: '', marketSelectedCompany: 'AAPL', marketCompanyPanel: 'chart',
+    marketOpen: null, marketRange: '6M', marketHover: null, tradingMarket: 'london', marketNewsFocus: 'all', marketWatch: ['Apple', 'Microsoft', 'Nvidia'], marketWorkspaceTab: 'overview', marketSearch: '', marketSelectedCompany: 'AAPL', marketCompanyPanel: 'profile',
+    monitorRange: '3M', heatRange: '1D', calRegion: 'all', calType: 'all', calPast: false,
+    discover: { q: '', exchange: '', sector: '', sort: '', page: 0 },
     saved: {}, added: {}, highlights: {},
     readerPrefs: { theme: 'newsprint', size: 'md', font: 'serif', measure: 'focused', voice: 'ava', rate: 1 },
     readerFocus: false, aaOpen: false, covFilter: 'all', copiedId: null,
@@ -1510,6 +1512,7 @@
           if (drop && !drop.hidden) drop.innerHTML = marketSearchResultsHtml();
           var wl = app.querySelector('#ws-watchlist-content');
           if (wl) wl.innerHTML = marketWorkspaceWatchlist();
+          if (state.marketWorkspaceTab === 'discover' && !state.reading && !state.publisherArticle) render();
         }
       })
       .catch(function () { companyDirectoryState = 'error'; });
@@ -1586,17 +1589,17 @@
     var hasExact = found.some(function (c) { return c.ticker.toUpperCase() === rawUpper || c.tv.toUpperCase() === rawUpper; });
     var customRow = looksLikeSymbol && !hasExact
       ? '<button type="button" class="ws-search-hit ws-discover-link" data-act="wscompanycustom" data-id="' + esc(rawUpper) + '">' +
-        '<span class="ws-ticker">' + esc(rawUpper) + '</span><span>Open symbol directly on TradingView<small>Chart, technicals, financials &amp; news</small></span></button>'
+        '<span class="ws-ticker">' + esc(rawUpper) + '</span><span>Open ' + esc(rawUpper) + ' in Pheme<small>Profile and related news</small></span></button>'
       : '';
     var loadingNote = companyDirectoryState === 'loading'
       ? '<div class="ws-search-empty">Loading full global directory (7,800+ companies)…</div>'
       : '';
     return loadingNote +
       (found.length ? found.map(marketSearchResult).join('') :
-        (customRow ? '' : '<div class="ws-search-empty">No matching company name found. Try a ticker symbol (e.g. SHEL, LSE:RR., NSE:RELIANCE, CRWD) or open the screener.</div>')) +
+        (customRow ? '' : '<div class="ws-search-empty">No matching company. Try a ticker such as SHEL, RR. or NVDA, or browse the company directory.</div>')) +
       customRow +
       '<button class="ws-search-hit ws-discover-link" type="button" data-act="wstab" data-id="discover">' +
-      'Browse the stock screener ↗</button>';
+      'Browse the company directory →</button>';
   }
 
   function marketSearchResult(company) {
@@ -1641,7 +1644,7 @@
       var a = item.article;
       return '<article class="ws-news-row">' +
         '<div class="ws-news-byline">' + esc(item.publisher) + ' · ' + esc(articlePublishedLabel(a.published)) + '</div>' +
-        '<a href="' + esc(safeExternalUrl(a.url)) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title) + '</a>' +
+        nativePublisherArticleLink(a, item.publisher, a.title, 'ws-news-link') +
         '</article>';
     }).join('');
   }
@@ -1651,9 +1654,11 @@
       return MARKET_DIRECTORY.find(function (company) { return company.tv === name || company.name === name || company.ticker === name; });
     }).filter(Boolean);
     return saved.length ? saved.map(function (company) {
+      var quote = companyQuote(company.ticker);
       return '<div class="ws-watch-entry"><button type="button" class="ws-watch-row" data-act="wscompany" data-id="' + esc(company.tv) +
         '" aria-label="Open ' + esc(company.name) + ' company details"><strong>' + esc(company.ticker) + '</strong><span>' + esc(company.name) +
-        '</span><span class="ws-watch-arrow" aria-hidden="true">↗</span></button>' +
+        '<small>' + esc(company.exchange) + ' · ' + esc(company.sector) + '</small></span>' +
+        (quote ? '<span class="ws-watch-price">' + marketNumber(quote.price) + '<em class="' + moveClass(quote.changePercent) + '">' + signedPct(quote.changePercent) + '</em></span>' : '') + '</button>' +
         '<button type="button" class="ws-watch-remove" data-act="wsremove" data-id="' + esc(company.tv) +
         '" aria-label="Remove ' + esc(company.name) + ' from watchlist" title="Remove from watchlist">×</button></div>';
     }).join('') : '<p class="ws-empty">Your watchlist is empty. Search for a company to add it.</p>';
@@ -1665,7 +1670,7 @@
     var count = app.querySelector('#ws-watch-count');
     if (count) count.textContent = state.marketWatch.length + ' saved';
     var chosen = selectedMarketCompany();
-    var star = app.querySelector('[data-act="wswatch"]');
+    var star = app.querySelector('.ws-star-button[data-act="wswatch"]');
     if (star && chosen) {
       var active = state.marketWatch.some(function (name) { return name === chosen.tv || name === chosen.name; });
       star.setAttribute('aria-pressed', String(active));
@@ -1723,80 +1728,557 @@
     });
   }
 
-  function marketWorkspaceOverview() {
-    var mini = MARKETS.map(function (m) {
-      var series = marketPoints(m.id), last = series[series.length-1];
-      return '<button type="button" class="ws-index-cell" data-act="wsmarket" data-id="' + esc(m.id) + '">' +
-        '<span>' + esc(m.index) + '</span>' +
-        (last ? '<strong>' + marketNumber(last.close) + '</strong><small>' + esc(marketDate(last.date)) + ' · daily close</small>' :
-          '<strong>—</strong><small>Data pending</small>') + '</button>';
+  /* ---------- Trading: native Pheme widgets (no third-party embeds) ----------
+     Licence-safe sources only: daily index closes (markets.json), ECB euro
+     reference rates (forex.json), an official-source economic calendar
+     (economic-calendar.json) and Pheme's publisher feeds. Company prices come
+     only from company-market-data.json, which is empty until a feed licensed for
+     public display is switched on. */
+  var forexData = null, forexState = 'idle';
+  var calendarData = null, calendarState = 'idle';
+  var companyMarketState = 'idle';
+  var FX_CODES = ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'];
+  var FX_PAIRS = [['GBP','USD'], ['EUR','GBP'], ['EUR','USD'], ['USD','JPY'], ['GBP','EUR'], ['USD','CHF'], ['AUD','USD'], ['USD','CAD'], ['USD','INR'], ['USD','CNY']];
+  var SERIES_COLOURS = ['#2F5D50', '#B5651D', '#5B6FA8', '#9C4F7D'];
+  var LICENSED_SYMBOLS = ['AAPL', 'MSFT', 'NVDA', 'TSLA', 'GOOGL', 'AMZN'];
+
+  function loadTradingData() {
+    function load(path, done, fail) {
+      fetch(path + buildCacheSuffix(), { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error(path); return r.json(); })
+        .then(done).catch(fail).finally(function () { if (state.view === 'trading' && !state.reading && !state.publisherArticle) render(); });
+    }
+    if (forexState === 'idle') {
+      forexState = 'loading';
+      load('assets/forex.json', function (d) {
+        if (!d || !Array.isArray(d.days) || d.days.length < 2) throw new Error('forex');
+        forexData = d; forexState = 'ready';
+      }, function () { forexState = 'error'; });
+    }
+    if (calendarState === 'idle') {
+      calendarState = 'loading';
+      load('assets/economic-calendar.json', function (d) {
+        if (!d || !Array.isArray(d.events)) throw new Error('calendar');
+        calendarData = d; calendarState = 'ready';
+      }, function () { calendarState = 'error'; });
+    }
+    if (companyMarketState === 'idle') {
+      companyMarketState = 'loading';
+      load('assets/company-market-data.json', function (d) {
+        if (!d || !d.status) throw new Error('company');
+        companyMarketData = d; companyMarketState = 'ready';
+      }, function () { companyMarketState = 'error'; });
+    }
+  }
+
+  function companyDataLicensed() { return !!(companyMarketData && companyMarketData.status === 'available'); }
+  function companyQuote(ticker) { return companyDataLicensed() && companyMarketData.quotes && companyMarketData.quotes[ticker] || null; }
+  function companyHistory(ticker) {
+    var h = companyDataLicensed() && companyMarketData.history && companyMarketData.history[ticker];
+    return Array.isArray(h) && h.length > 1 ? h : null;
+  }
+  function companyProfile(ticker) { return companyDataLicensed() && companyMarketData.profiles && companyMarketData.profiles[ticker] || null; }
+
+  function licenceNotice(what) {
+    return '<div class="ws-licence"><strong>' + esc(what) + ' aren’t shown yet</strong>' +
+      '<p>Pheme only publishes company prices from a data feed licensed for public display. This fills in automatically once that feed is switched on' +
+      (companyDataLicensed() ? '; it currently covers ' + LICENSED_SYMBOLS.join(', ') + '.' : '.') + '</p></div>';
+  }
+
+  /* --- numbers and series --- */
+  function pctChange(from, to) { return from ? (to / from - 1) * 100 : 0; }
+  function signedPct(v, digits) {
+    if (!Number.isFinite(v)) return '—';
+    var d = digits === undefined ? 2 : digits, shown = Math.abs(v).toFixed(d);
+    if (Number(shown) === 0) return (0).toFixed(d) + '%';
+    return (v > 0 ? '+' : '−') + shown + '%';
+  }
+  function moveClass(v) { return v >= 0.005 ? 'is-up' : v <= -0.005 ? 'is-down' : 'is-flat'; }
+  function fxNumber(v) {
+    var digits = v >= 100 ? 2 : v >= 10 ? 3 : 4;
+    return v.toLocaleString('en-GB', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  }
+  function fxRate(day, base, quote) {
+    var b = base === 'EUR' ? 1 : day.rates[base], q = quote === 'EUR' ? 1 : day.rates[quote];
+    return b && q ? q / b : NaN;
+  }
+  function fxSeries(base, quote) {
+    if (!forexData) return [];
+    return forexData.days.map(function (d) { return { date: d.date, close: fxRate(d, base, quote) }; })
+      .filter(function (p) { return Number.isFinite(p.close) && p.close > 0; });
+  }
+  function pointsSince(points, days) {
+    if (!points.length) return points;
+    var cutoff = new Date(points[points.length - 1].date + 'T00:00:00Z');
+    cutoff.setUTCDate(cutoff.getUTCDate() - days);
+    var iso = cutoff.toISOString().slice(0, 10);
+    return points.filter(function (p) { return p.date >= iso; });
+  }
+  var PERIOD_DAYS = { '1D': 1, '1W': 7, '1M': 30, '3M': 91, '6M': 182, '1Y': 366 };
+  function periodChange(points, period) {
+    if (points.length < 2) return NaN;
+    var last = points[points.length - 1];
+    if (period === '1D') return pctChange(points[points.length - 2].close, last.close);
+    var span = pointsSince(points, PERIOD_DAYS[period] || 30);
+    return span.length > 1 ? pctChange(span[0].close, last.close) : NaN;
+  }
+
+  /* An instrument is anything with a daily series: indices and currency pairs. */
+  function tradingInstruments() {
+    var list = MARKETS.map(function (m) {
+      return { id: 'idx-' + m.id, kind: 'Index', name: m.index, short: m.index, place: m.city, points: marketPoints(m.id), market: m.id, digits: 2 };
+    });
+    if (forexData) FX_PAIRS.forEach(function (pair) {
+      list.push({ id: 'fx-' + pair.join(''), kind: 'Currency', name: pair[0] + '/' + pair[1], short: pair[0] + '/' + pair[1], place: 'ECB reference', points: fxSeries(pair[0], pair[1]), fx: true });
+    });
+    return list.filter(function (i) { return i.points.length > 1; });
+  }
+  function instrumentValue(inst) {
+    var last = inst.points[inst.points.length - 1];
+    return last ? (inst.fx ? fxNumber(last.close) : marketNumber(last.close)) : '—';
+  }
+
+  /* --- charts (SVG, no libraries) --- */
+  function spark(points) {
+    var sample = points.slice(-30);
+    if (sample.length < 2) return '';
+    var cls = moveClass(pctChange(sample[0].close, sample[sample.length - 1].close));
+    var g = chartGeometry(sample, 120, 32, { left: 1, right: 1, top: 3, bottom: 3 });
+    return '<svg class="ws-spark ' + (cls || '') + '" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true"><path d="' + g.line + '" fill="none" stroke="currentColor" stroke-width="1.6" vector-effect="non-scaling-stroke"></path></svg>';
+  }
+
+  function narrowChart() {
+    try { return window.matchMedia('(max-width: 680px)').matches; } catch (e) { return false; }
+  }
+
+  function comparisonChart(seriesList, rangeKey, label) {
+    var days = PERIOD_DAYS[rangeKey] || 91;
+    var sets = seriesList.map(function (s) {
+      var pts = pointsSince(s.points, days);
+      if (pts.length < 2) return null;
+      var base = pts[0].close;
+      return { name: s.name, colour: s.colour, pts: pts.map(function (p) { return { date: p.date, v: (p.close / base - 1) * 100 }; }) };
+    }).filter(Boolean);
+    if (!sets.length) return '<p class="ws-empty">' + (marketLoadFailed ? 'Index data is temporarily unavailable.' : 'Loading daily closes…') + '</p>';
+    var all = sets.reduce(function (a, s) { return a.concat(s.pts.map(function (p) { return p.v; })); }, [0]);
+    var min = Math.min.apply(null, all), max = Math.max.apply(null, all);
+    var pad = (max - min) * 0.12 || 1; min -= pad; max += pad;
+    var dates = sets.reduce(function (a, s) { return a.concat(s.pts.map(function (p) { return p.date; })); }, []).sort();
+    var d0 = Date.parse(dates[0]), d1 = Date.parse(dates[dates.length - 1]) || d0 + 1;
+    var W = narrowChart() ? 380 : 760, H = narrowChart() ? 260 : 300, L = 46, R = 14, T = 14, B = 30;
+    function x(date) { return L + (Date.parse(date) - d0) / Math.max(1, d1 - d0) * (W - L - R); }
+    function y(v) { return T + (max - v) / (max - min) * (H - T - B); }
+    var ticks = [];
+    var step = (max - min) / 4;
+    for (var i = 0; i <= 4; i++) ticks.push(max - step * i);
+    var grid = ticks.map(function (v) {
+      return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v).toFixed(1) + '" y2="' + y(v).toFixed(1) + '" class="ws-grid-line"></line>' +
+        '<text x="' + (L - 8) + '" y="' + (y(v) + 4).toFixed(1) + '" text-anchor="end" class="ws-axis">' + signedPct(v, 1) + '</text>';
+    }).join('') + '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(0).toFixed(1) + '" y2="' + y(0).toFixed(1) + '" class="ws-zero-line"></line>';
+    var lines = sets.map(function (s) {
+      var d = s.pts.map(function (p, n) { return (n ? 'L' : 'M') + x(p.date).toFixed(1) + ',' + y(p.v).toFixed(1); }).join(' ');
+      return '<path d="' + d + '" fill="none" stroke="' + s.colour + '" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"></path>';
     }).join('');
-    return '<p class="ws-data-disclosure">Index cards: completed daily closes · Market sessions: indicative weekday schedules, excluding holidays · Embedded prices: exchange-dependent delays</p>' +
-      renderExchangeSessions() +
-      '<section class="ws-market-strip" aria-label="Major world indices">' + mini + '</section>' +
-      '<div class="ws-dashboard-grid"><section class="ws-widget ws-widget-chart">' +
-      '<div class="ws-widget-head"><h2>Market monitor</h2><span>TradingView · prices may be delayed</span></div>' +
-      '<div id="tv-market-overview" class="tv-market-overview ws-tv-overview" aria-label="Embedded TradingView markets overview">' +
-      '<p class="ws-empty">Connecting to TradingView…</p></div></section>' +
-      '<div class="ws-sidebar-stack"><section class="ws-widget ws-widget-watch">' +
-      '<div class="ws-widget-head"><h2>Watchlist</h2><span id="ws-watch-count">' + state.marketWatch.length + ' saved</span></div>' +
-      '<div class="ws-widget-scroll" id="ws-watchlist-content">' + marketWorkspaceWatchlist() + '</div></section>' +
-      '<section class="ws-widget ws-widget-headlines"><div class="ws-widget-head"><h2>Market headlines</h2>' +
-      '<button data-act="wstab" data-id="news">All news ↗</button></div>' +
-      '<div class="ws-widget-scroll" id="ws-market-headlines">' +
-      marketWorkspaceNewsHtml(marketRelatedNews(null,''),12) + '</div></section></div></div>';
+    var axis = '<text x="' + L + '" y="' + (H - 8) + '" class="ws-axis">' + esc(marketDate(dates[0], true)) + '</text>' +
+      '<text x="' + (W - R) + '" y="' + (H - 8) + '" text-anchor="end" class="ws-axis">' + esc(marketDate(dates[dates.length - 1], true)) + '</text>';
+    var legend = '<ul class="ws-legend">' + sets.map(function (s) {
+      var end = s.pts[s.pts.length - 1].v;
+      return '<li><span class="ws-swatch" style="background:' + s.colour + '"></span>' + esc(s.name) + ' <strong class="' + moveClass(end) + '">' + signedPct(end) + '</strong></li>';
+    }).join('') + '</ul>';
+    return legend + '<svg class="ws-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(label) + '">' + grid + lines + axis + '</svg>';
+  }
+
+  function priceChart(points, label, digits) {
+    if (points.length < 2) return '<p class="ws-empty">Not enough data for a chart.</p>';
+    var W = narrowChart() ? 380 : 760, H = narrowChart() ? 240 : 280;
+    var g = chartGeometry(points, W, H, { left: 64, right: 14, top: 14, bottom: 30 });
+    var fmt = digits === 'fx' ? fxNumber : marketNumber;
+    var grid = [0, 1, 2, 3].map(function (n) {
+      var yy = 14 + n * (H - 44) / 3, v = g.max - n / 3 * (g.max - g.min);
+      return '<line x1="64" x2="' + (W - 14) + '" y1="' + yy.toFixed(1) + '" y2="' + yy.toFixed(1) + '" class="ws-grid-line"></line><text x="56" y="' + (yy + 4).toFixed(1) + '" text-anchor="end" class="ws-axis">' + fmt(v) + '</text>';
+    }).join('');
+    return '<svg class="ws-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(label) + '">' + grid +
+      '<path d="' + g.area + '" class="ws-area"></path><path d="' + g.line + '" fill="none" class="ws-line" vector-effect="non-scaling-stroke"></path>' +
+      '<text x="64" y="' + (H - 8) + '" class="ws-axis">' + esc(marketDate(points[0].date, true)) + '</text>' +
+      '<text x="' + (W - 14) + '" y="' + (H - 8) + '" text-anchor="end" class="ws-axis">' + esc(marketDate(points[points.length - 1].date, true)) + '</text></svg>';
+  }
+
+  function rangeButtons(act, current, options) {
+    return '<div class="ws-segmented" role="group" aria-label="Time range">' + options.map(function (r) {
+      return '<button type="button" data-act="' + act + '" data-id="' + r + '" aria-pressed="' + (current === r) + '">' + r + '</button>';
+    }).join('') + '</div>';
+  }
+
+  function widget(title, sub, body, cls, extraHead) {
+    return '<section class="ws-widget ' + (cls || '') + '"><div class="ws-widget-head"><div><h2>' + esc(title) + '</h2>' +
+      (sub ? '<p>' + sub + '</p>' : '') + '</div>' + (extraHead || '') + '</div><div class="ws-widget-body">' + body + '</div></section>';
+  }
+
+  function sourceLine() {
+    var bits = [];
+    if (marketData) bits.push('Index closes: <a href="https://finance.yahoo.com/" target="_blank" rel="noopener noreferrer">Yahoo Finance</a>');
+    if (forexData) bits.push('Currencies: <a href="' + esc(forexData.sourceUrl) + '" target="_blank" rel="noopener noreferrer">ECB reference rates</a>, ' + esc(marketDate(forexData.asOf)));
+    return bits.length ? '<p class="ws-sources">' + bits.join(' · ') + ' · Daily data, not a live feed.</p>' : '';
+  }
+
+  /* --- header ticker (static strip, scrolls sideways on small screens) --- */
+  function tradingTicker() {
+    var items = tradingInstruments().slice(0, 10);
+    if (!items.length) return '<div class="ws-ticker-strip"><span class="ws-ticker-loading">' + (marketLoadFailed ? 'Market data unavailable' : 'Loading market data…') + '</span></div>';
+    return '<div class="ws-ticker-strip" role="list" aria-label="Latest daily closes">' + items.map(function (inst) {
+      var ch = periodChange(inst.points, '1D');
+      return '<span class="ws-ticker-item" role="listitem"><span>' + esc(inst.short) + '</span><strong>' + instrumentValue(inst) + '</strong><em class="' + moveClass(ch) + '">' + signedPct(ch) + '</em></span>';
+    }).join('') + '</div>';
+  }
+
+  /* --- Overview --- */
+  function indexCards() {
+    return '<div class="ws-index-row">' + MARKETS.map(function (m) {
+      var pts = marketPoints(m.id), last = pts[pts.length - 1], ch = periodChange(pts, '1D');
+      return '<button type="button" class="ws-index-card" data-act="wsmarket" data-id="' + esc(m.id) + '" aria-label="Open ' + esc(m.index) + ' chart">' +
+        '<span class="ws-index-name">' + esc(m.index) + '<small>' + esc(m.city) + '</small></span>' +
+        (last ? '<strong>' + marketNumber(last.close) + '</strong><span class="ws-index-meta"><em class="' + moveClass(ch) + '">' + signedPct(ch) + '</em> ' + esc(marketDate(last.date)) + ' close</span>' + spark(pts) :
+          '<strong>—</strong><span class="ws-index-meta">' + (marketLoadFailed ? 'Unavailable' : 'Loading…') + '</span>') + '</button>';
+    }).join('') + '</div>';
+  }
+
+  function currencyTable(limit) {
+    if (!forexData) return '<p class="ws-empty">' + (forexState === 'error' ? 'Currency reference rates are being collected for the first time and will appear after the next update.' : 'Loading currency rates…') + '</p>';
+    return '<table class="ws-table ws-fx-table"><thead><tr><th scope="col">Pair</th><th scope="col" class="num">Rate</th><th scope="col" class="num">Day</th><th scope="col" class="num">Month</th></tr></thead><tbody>' +
+      FX_PAIRS.slice(0, limit || FX_PAIRS.length).map(function (pair) {
+        var pts = fxSeries(pair[0], pair[1]), last = pts[pts.length - 1];
+        var d = periodChange(pts, '1D'), m = periodChange(pts, '1M');
+        return '<tr><th scope="row">' + esc(pair[0] + '/' + pair[1]) + '</th><td class="num">' + (last ? fxNumber(last.close) : '—') +
+          '</td><td class="num ' + moveClass(d) + '">' + signedPct(d) + '</td><td class="num ' + moveClass(m) + '">' + signedPct(m) + '</td></tr>';
+      }).join('') + '</tbody></table>';
+  }
+
+  function upcomingEvents(limit) {
+    if (!calendarData) return '<p class="ws-empty">' + (calendarState === 'error' ? 'Calendar unavailable.' : 'Loading calendar…') + '</p>';
+    var today = new Date().toISOString().slice(0, 10);
+    var next = calendarData.events.filter(function (e) { return e.date >= today; }).slice(0, limit);
+    if (!next.length) return '<p class="ws-empty">No scheduled events listed yet.</p>';
+    return '<ol class="ws-agenda">' + next.map(calendarRow).join('') + '</ol>';
+  }
+
+  function marketWorkspaceOverview() {
+    var monitor = comparisonChart(MARKETS.map(function (m, i) { return { name: m.index, colour: SERIES_COLOURS[i], points: marketPoints(m.id) }; }),
+      state.monitorRange, 'Index performance over ' + state.monitorRange + ', rebased to zero at the start of the period');
+    return indexCards() + renderExchangeSessions() +
+      '<div class="ws-grid">' +
+      widget('Market monitor', 'Index performance since the start of the period', monitor, 'ws-span-8', rangeButtons('wsmonitorrange', state.monitorRange, ['1M', '3M', '6M', '1Y'])) +
+      widget('Currencies', 'ECB euro reference rates, converted', currencyTable(7) + '<button type="button" class="ws-text-button" data-act="wstab" data-id="movers">All cross rates →</button>', 'ws-span-4') +
+      widget('Market headlines', 'Latest business and finance reporting from Pheme’s publishers', '<div id="ws-market-headlines">' + marketWorkspaceNewsHtml(marketRelatedNews(null, ''), 9) + '</div>', 'ws-span-8',
+        '<button type="button" class="ws-text-button" data-act="wstab" data-id="news">All news →</button>') +
+      '<div class="ws-span-4 ws-stack">' +
+      widget('Watchlist', '<span id="ws-watch-count">' + state.marketWatch.length + ' saved</span>', '<div id="ws-watchlist-content">' + marketWorkspaceWatchlist() + '</div>', '') +
+      widget('Coming up', 'Scheduled central bank and data releases', upcomingEvents(3) + '<button type="button" class="ws-text-button" data-act="wstab" data-id="calendar">Full calendar →</button>', '') +
+      '</div></div>' + sourceLine();
+  }
+
+  /* --- Company --- */
+  var COMPANY_PANELS = [{ id: 'profile', name: 'Profile' }, { id: 'chart', name: 'Price' }, { id: 'technicals', name: 'Technicals' }, { id: 'financials', name: 'Financials' }];
+
+  function sma(points, n) {
+    if (points.length < n) return NaN;
+    return points.slice(-n).reduce(function (a, p) { return a + p.close; }, 0) / n;
+  }
+  function rsi(points, n) {
+    if (points.length <= n) return NaN;
+    var gain = 0, loss = 0, recent = points.slice(-(n + 1));
+    for (var i = 1; i < recent.length; i++) {
+      var d = recent[i].close - recent[i - 1].close;
+      if (d > 0) gain += d; else loss -= d;
+    }
+    if (!loss) return 100;
+    return 100 - 100 / (1 + gain / loss);
+  }
+  function factList(rows) {
+    rows = rows.filter(function (r) { return r[1] !== '' && r[1] !== null && r[1] !== undefined && r[1] !== '—'; });
+    return '<dl class="ws-facts">' + rows.map(function (r) { return '<div><dt>' + esc(r[0]) + '</dt><dd>' + r[1] + '</dd></div>'; }).join('') + '</dl>';
+  }
+  function bigNumber(v) {
+    if (!Number.isFinite(v)) return '—';
+    var units = [[1e12, ' tn'], [1e9, ' bn'], [1e6, ' m']];
+    for (var i = 0; i < units.length; i++) if (Math.abs(v) >= units[i][0]) return (v / units[i][0]).toFixed(1) + units[i][1];
+    return v.toLocaleString('en-GB');
+  }
+
+  function companyPanel(company) {
+    var history = companyHistory(company.ticker), profile = companyProfile(company.ticker), quote = companyQuote(company.ticker);
+    switch (state.marketCompanyPanel) {
+      case 'technicals':
+        if (!history) return licenceNotice('Technical indicators');
+        var last = history[history.length - 1].close, year = pointsSince(history, 366);
+        var hi = Math.max.apply(null, year.map(function (p) { return p.close; })), lo = Math.min.apply(null, year.map(function (p) { return p.close; }));
+        var vs = function (n) { var m = sma(history, n); return Number.isFinite(m) ? marketNumber(m) + ' <span class="' + moveClass(last - m) + '">' + (last >= m ? 'above' : 'below') + '</span>' : '—'; };
+        var r = rsi(history, 14);
+        return factList([
+          ['Last close', marketNumber(last)], ['20-day average', vs(20)], ['50-day average', vs(50)], ['200-day average', vs(200)],
+          ['RSI (14 days)', Number.isFinite(r) ? r.toFixed(0) + (r >= 70 ? ' · overbought zone' : r <= 30 ? ' · oversold zone' : '') : '—'],
+          ['52-week high', marketNumber(hi)], ['52-week low', marketNumber(lo)],
+          ['1 month', '<span class="' + moveClass(periodChange(history, '1M')) + '">' + signedPct(periodChange(history, '1M')) + '</span>'],
+          ['1 year', '<span class="' + moveClass(periodChange(history, '1Y')) + '">' + signedPct(periodChange(history, '1Y')) + '</span>']
+        ]) + '<p class="ws-note">Calculated by Pheme from daily closes. Indicators describe past prices; they are not advice.</p>';
+      case 'financials':
+        if (!profile) return licenceNotice('Company financials');
+        return factList([
+          ['Market value', profile.marketCap ? bigNumber(profile.marketCap) + (quote && quote.currency ? ' ' + esc(quote.currency) : '') : '—'],
+          ['Beta', Number.isFinite(profile.beta) ? profile.beta.toFixed(2) : '—'], ['Last dividend', Number.isFinite(profile.lastDividend) ? marketNumber(profile.lastDividend) : '—'],
+          ['52-week range', esc(profile.range52w || '')], ['Employees', Number.isFinite(profile.employees) ? profile.employees.toLocaleString('en-GB') : '—']
+        ]) + '<p class="ws-note">Source: ' + esc(profile.source || 'licensed provider') + '.</p>';
+      case 'profile':
+        return factList([
+          ['Ticker', esc(company.ticker)], ['Exchange', esc(company.exchange)], ['Sector', esc(profile && profile.sector || company.sector)],
+          ['Industry', esc(profile && profile.industry || '')], ['Country', esc(profile && profile.country || '')], ['Chief executive', esc(profile && profile.ceo || '')],
+          ['Website', profile && profile.website ? '<a href="' + esc(profile.website) + '" target="_blank" rel="noopener noreferrer">' + esc(profile.website.replace(/^https:\/\//, '')) + '</a>' : '']
+        ]) + (profile && profile.description ? '<p class="ws-company-about">' + esc(profile.description) + '</p>' : '<p class="ws-note">From Pheme’s company directory. A fuller profile appears once licensed company data is switched on.</p>');
+      default:
+        if (!history) return licenceNotice('Share prices');
+        var pts = pointsSince(history, PERIOD_DAYS[state.monitorRange] || 91);
+        var lastPt = history[history.length - 1], day = periodChange(history, '1D');
+        return '<div class="ws-price-head"><strong>' + marketNumber(lastPt.close) + (quote && quote.currency ? ' <small>' + esc(quote.currency) + '</small>' : '') + '</strong>' +
+          '<span class="' + moveClass(day) + '">' + signedPct(day) + ' on the day</span><span>Close ' + esc(marketDate(lastPt.date, true)) + '</span></div>' +
+          rangeButtons('wsmonitorrange', state.monitorRange, ['1M', '3M', '6M', '1Y']) + priceChart(pts, company.name + ' daily closes') +
+          '<p class="ws-note">Daily closes from ' + esc(quote && quote.source || 'a licensed provider') + '. Not a live price.</p>';
+    }
   }
 
   function marketWorkspaceCompany() {
     var company = selectedMarketCompany();
     var watched = state.marketWatch.indexOf(company.tv) !== -1 || state.marketWatch.indexOf(company.name) !== -1;
-    var profile = companyMarketData && companyMarketData.status === 'available' &&
-      companyMarketData.profiles && companyMarketData.profiles[company.ticker];
-    return '<div class="ws-company-header"><div><span class="ws-kicker">' + esc(company.tv) + '</span><h2>' + esc(company.name) + '</h2>' +
-      '<p>' + esc(profile && profile.sector || company.sector) + ' · ' + esc(company.exchange) +
-      ' · Company information is indicative; check the source for financial fundamentals.</p></div>' +
-      '<button class="ws-star-button" data-act="wswatch" data-id="' + esc(company.tv) + '" aria-pressed="' +
-      watched + '">' + (watched ? '★ In watchlist' : '☆ Add to watchlist') + '</button></div>' +
-      '<div class="ws-company-layout"><section class="ws-widget ws-widget-company-chart">' +
-      '<div class="ws-widget-head ws-company-widget-head"><h3>Company intelligence</h3><span>TradingView · may be delayed</span></div>' +
-      '<div class="ws-company-switch" role="group" aria-label="Company data views">' +
-      [{id:'chart',name:'Chart'},{id:'advanced',name:'Advanced'},{id:'technicals',name:'Technicals'},{id:'financials',name:'Financials'},{id:'profile',name:'Profile'}].map(function (option) {
-        var active = state.marketCompanyPanel === option.id;
-        return '<button type="button" data-act="wscompanypanel" data-id="' + option.id +
-          '" aria-pressed="' + active + '">' + option.name + '</button>';
-      }).join('') + '</div>' +
-      '<div class="ws-company-chart" id="ws-company-chart" aria-label="Company TradingView information"><p class="ws-empty">Loading provider information…</p></div>' +
-      '<div class="ws-widget-foot"><a href="https://www.tradingview.com/symbols/' +
-      encodeURIComponent(company.exchange) + '-' + encodeURIComponent(company.ticker.replace('.','')) +
-      '/" target="_blank" rel="noopener noreferrer">Open instrument on TradingView ↗</a></div></section>' +
-      '<section class="ws-widget ws-widget-company-news"><div class="ws-widget-head"><h3>Related company news</h3>' +
-      '<span>Original publisher RSS</span></div><div class="ws-widget-scroll" id="ws-company-news">' +
-      marketWorkspaceNewsHtml(marketRelatedNews(company,''),24) + '</div></section></div>';
+    var panel = COMPANY_PANELS.some(function (p) { return p.id === state.marketCompanyPanel; }) ? state.marketCompanyPanel : 'profile';
+    state.marketCompanyPanel = panel;
+    var mentions = marketRelatedNews(company, '');
+    return '<div class="ws-company-header"><div><span class="ws-kicker">' + esc(company.ticker) + ' · ' + esc(company.exchange) + '</span><h2>' + esc(company.name) + '</h2>' +
+      '<p>' + esc(company.sector) + ' · ' + mentions.length + ' recent ' + (mentions.length === 1 ? 'article mentions' : 'articles mention') + ' this company</p></div>' +
+      '<button type="button" class="ws-star-button" data-act="wswatch" data-id="' + esc(company.tv) + '" aria-pressed="' + watched + '">' + (watched ? '★ In watchlist' : '☆ Add to watchlist') + '</button></div>' +
+      '<div class="ws-grid">' +
+      '<section class="ws-widget ws-span-8"><div class="ws-widget-head"><div class="ws-company-switch" role="group" aria-label="Company views">' +
+      COMPANY_PANELS.map(function (o) { return '<button type="button" data-act="wscompanypanel" data-id="' + o.id + '" aria-pressed="' + (panel === o.id) + '">' + o.name + '</button>'; }).join('') +
+      '</div></div><div class="ws-widget-body" id="ws-company-panel">' + companyPanel(company) + '</div></section>' +
+      widget('In the news', 'Reporting that mentions ' + esc(company.name), '<div class="ws-scroll" id="ws-company-news">' + marketWorkspaceNewsHtml(mentions, 24) + '</div>', 'ws-span-4') +
+      '</div>';
   }
 
+  /* --- Heatmap --- */
+  function heatColour(v) {
+    if (!Number.isFinite(v)) return 'var(--paper-alt)';
+    var t = Math.min(1, Math.abs(v) / 3);
+    return v >= 0 ? 'hsl(162 ' + Math.round(25 + 45 * t) + '% ' + Math.round(88 - 50 * t) + '%)' : 'hsl(348 ' + Math.round(25 + 45 * t) + '% ' + Math.round(90 - 48 * t) + '%)';
+  }
+  function heatTiles(items) {
+    return '<div class="ws-heat">' + items.map(function (it) {
+      var v = it.change, dark = Number.isFinite(v) && Math.abs(v) >= 2.6;
+      return '<' + (it.act ? 'button type="button" data-act="' + it.act + '" data-id="' + esc(it.id) + '"' : 'div') + ' class="ws-heat-tile' + (dark ? ' is-strong' : '') + '" style="background:' + heatColour(v) + '">' +
+        '<span>' + esc(it.label) + '</span><strong>' + signedPct(v) + '</strong><small>' + esc(it.sub || '') + '</small></' + (it.act ? 'button' : 'div') + '>';
+    }).join('') + '</div>';
+  }
+  function marketWorkspaceHeatmap() {
+    var period = state.heatRange;
+    var indices = MARKETS.map(function (m) { return { id: m.id, act: 'wsmarket', label: m.index, sub: m.city, change: periodChange(marketPoints(m.id), period) }; });
+    var fx = forexData ? FX_CODES.filter(function (c) { return c !== 'GBP'; }).concat(['CNY']).map(function (c) {
+      // Positive means the pound bought more of that currency over the period.
+      return { label: 'GBP/' + c, sub: 'Pound vs ' + c, change: periodChange(fxSeries('GBP', c), period) };
+    }) : [];
+    var quotes = companyDataLicensed() ? Object.keys(companyMarketData.quotes || {}).map(function (t) {
+      var q = companyMarketData.quotes[t];
+      return { id: t, act: 'wscompany', label: t, sub: q.name, change: q.changePercent };
+    }) : [];
+    return '<div class="ws-toolbar"><p>Colour shows the change over the period: <span class="is-up">green rose</span>, <span class="is-down">red fell</span>. Stronger colour means a bigger move (±3% or more is darkest).</p>' +
+      rangeButtons('wsheatrange', period, ['1D', '1W', '1M', '3M']) + '</div>' +
+      '<div class="ws-grid">' +
+      widget('Stock indices', 'Completed daily closes', heatTiles(indices), 'ws-span-12') +
+      widget('The pound against other currencies', 'ECB reference rates', fx.length ? heatTiles(fx) : currencyTable(), 'ws-span-12') +
+      widget('Companies', 'Daily move', quotes.length ? heatTiles(quotes) : licenceNotice('Company price moves'), 'ws-span-12') +
+      '</div>' + sourceLine();
+  }
+
+  /* --- Movers & FX --- */
+  function crossRateMatrix() {
+    if (!forexData) return currencyTable();
+    var day = forexData.days[forexData.days.length - 1];
+    return '<div class="ws-table-scroll" role="region" aria-label="Cross rates table" tabindex="0"><table class="ws-table ws-matrix"><caption>One unit of the row currency in the column currency · ' + esc(marketDate(day.date, true)) + '</caption><thead><tr><th scope="col"></th>' +
+      FX_CODES.map(function (c) { return '<th scope="col" class="num">' + c + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      FX_CODES.map(function (row) {
+        return '<tr><th scope="row">' + row + '</th>' + FX_CODES.map(function (col) {
+          return row === col ? '<td class="num is-self">—</td>' : '<td class="num">' + fxNumber(fxRate(day, row, col)) + '</td>';
+        }).join('') + '</tr>';
+      }).join('') + '</tbody></table></div>';
+  }
+  function moversList() {
+    var list = tradingInstruments().map(function (i) { return { inst: i, change: periodChange(i.points, '1D') }; })
+      .filter(function (m) { return Number.isFinite(m.change); })
+      .sort(function (a, b) { return Math.abs(b.change) - Math.abs(a.change); });
+    if (!list.length) return '<p class="ws-empty">Loading…</p>';
+    var maxAbs = Math.max.apply(null, list.map(function (m) { return Math.abs(m.change); })) || 1;
+    return '<ol class="ws-movers">' + list.map(function (m) {
+      var w = Math.max(2, Math.abs(m.change) / maxAbs * 100);
+      return '<li><span class="ws-mover-name">' + esc(m.inst.short) + '<small>' + esc(m.inst.kind) + ' · ' + instrumentValue(m.inst) + '</small></span>' +
+        '<span class="ws-mover-bar"><i class="' + moveClass(m.change) + '" style="width:' + w.toFixed(1) + '%"></i></span><strong class="' + moveClass(m.change) + '">' + signedPct(m.change) + '</strong></li>';
+    }).join('') + '</ol>';
+  }
+  function marketWorkspaceMovers() {
+    var quotes = companyDataLicensed() ? Object.keys(companyMarketData.quotes || {}).map(function (t) { return companyMarketData.quotes[t]; })
+      .filter(function (q) { return Number.isFinite(q.changePercent); }).sort(function (a, b) { return b.changePercent - a.changePercent; }) : [];
+    return '<div class="ws-grid">' +
+      widget('Biggest moves', 'Latest daily change, indices and currencies', moversList(), 'ws-span-5') +
+      widget('Cross rates', 'Derived from ECB euro reference rates', crossRateMatrix(), 'ws-span-7') +
+      widget('Company movers', 'Gainers and fallers', quotes.length ? '<ol class="ws-movers">' + quotes.map(function (q) {
+        return '<li><span class="ws-mover-name">' + esc(q.symbol) + '<small>' + esc(q.name) + '</small></span><span></span><strong class="' + moveClass(q.changePercent) + '">' + signedPct(q.changePercent) + '</strong></li>';
+      }).join('') + '</ol>' : licenceNotice('Company gainers and fallers'), 'ws-span-12') +
+      '</div>' + sourceLine();
+  }
+
+  /* --- Calendar --- */
+  function zonedTime(date, time, zone) {
+    // Find the instant whose wall-clock time in `zone` is date+time.
+    var guess = Date.parse(date + 'T' + time + ':00Z');
+    for (var i = 0; i < 2; i++) {
+      var parts = {};
+      new Intl.DateTimeFormat('en-GB', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+        .formatToParts(new Date(guess)).forEach(function (p) { parts[p.type] = p.value; });
+      var shown = Date.parse(parts.year + '-' + parts.month + '-' + parts.day + 'T' + parts.hour + ':' + parts.minute + ':00Z');
+      guess += Date.parse(date + 'T' + time + ':00Z') - shown;
+    }
+    return new Date(guess);
+  }
+  function ukTime(d) {
+    try { return d.toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit' }); } catch (e) { return ''; }
+  }
+  var REGION_FLAGS = { UK: 'UK', US: 'US', EU: 'EA', JP: 'JP', IN: 'IN', CN: 'CN' };
+  function daysUntil(date) {
+    var today = new Date(new Date().toISOString().slice(0, 10) + 'T00:00:00Z');
+    return Math.round((Date.parse(date + 'T00:00:00Z') - today) / 86400000);
+  }
+  function calendarRow(e) {
+    var when = '';
+    if (e.time && e.timezone) {
+      var instant = zonedTime(e.date, e.time, e.timezone);
+      var uk = ukTime(instant);
+      when = e.timezone === 'Europe/London' ? e.time + ' UK' : e.time + ' local · ' + uk + ' UK';
+    }
+    var n = daysUntil(e.date);
+    var due = n === 0 ? 'Today' : n === 1 ? 'Tomorrow' : n > 1 ? 'In ' + n + ' days' : '';
+    var day = new Date(e.date + 'T12:00:00Z');
+    return '<li class="ws-event' + (n < 0 ? ' is-past' : '') + '"><time datetime="' + esc(e.date) + '"><span>' + day.toLocaleDateString('en-GB', { weekday: 'short', timeZone: 'UTC' }) + '</span><strong>' + day.getUTCDate() + '</strong><span>' + day.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' }) + '</span></time>' +
+      '<div><span class="ws-event-tags"><b class="ws-region">' + esc(REGION_FLAGS[e.region] || e.region) + '</b>' + (e.type === 'central-bank' ? 'Rate decision' : 'Data release') + (due ? ' · ' + due : '') + '</span>' +
+      '<strong>' + esc(e.title) + '</strong>' +
+      '<small>' + (when ? esc(when) + ' · ' : '') + (e.note ? esc(e.note) + ' · ' : '') + '<a href="' + esc(e.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(e.source) + ' ↗</a></small></div></li>';
+  }
+  function marketWorkspaceCalendar() {
+    if (!calendarData) return '<p class="ws-empty">' + (calendarState === 'error' ? 'The calendar could not be loaded.' : 'Loading calendar…') + '</p>';
+    var today = new Date().toISOString().slice(0, 10);
+    var regions = calendarData.regions || {};
+    var events = calendarData.events.filter(function (e) {
+      return (state.calRegion === 'all' || e.region === state.calRegion) &&
+        (state.calType === 'all' || e.type === state.calType) && (state.calPast || e.date >= today);
+    });
+    var months = [], byMonth = {};
+    events.forEach(function (e) {
+      var key = e.date.slice(0, 7);
+      if (!byMonth[key]) { byMonth[key] = []; months.push(key); }
+      byMonth[key].push(e);
+    });
+    var chip = function (act, id, label, current) { return '<button type="button" data-act="' + act + '" data-id="' + esc(id) + '" aria-pressed="' + (current === id) + '">' + esc(label) + '</button>'; };
+    return '<div class="ws-toolbar ws-cal-filters"><div class="ws-segmented" role="group" aria-label="Region">' + chip('wscalregion', 'all', 'All regions', state.calRegion) +
+      Object.keys(regions).map(function (r) { return chip('wscalregion', r, regions[r], state.calRegion); }).join('') + '</div>' +
+      '<div class="ws-segmented" role="group" aria-label="Event type">' + chip('wscaltype', 'all', 'Everything', state.calType) + chip('wscaltype', 'central-bank', 'Rate decisions', state.calType) + chip('wscaltype', 'data', 'Data releases', state.calType) + '</div>' +
+      '<label class="ws-check"><input type="checkbox" data-act="wscalpast"' + (state.calPast ? ' checked' : '') + '> Show past events</label></div>' +
+      '<div class="ws-calendar">' + (months.length ? months.map(function (key) {
+        return '<section class="ws-month"><h3>' + new Date(key + '-15T12:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }) + '</h3><ol class="ws-agenda">' + byMonth[key].map(calendarRow).join('') + '</ol></section>';
+      }).join('') : '<p class="ws-empty">No events match these filters.</p>') + '</div>' +
+      '<p class="ws-sources">' + esc(calendarData.note || '') + ' Last checked ' + esc(marketDate(calendarData.checkedAt, true)) + '.</p>';
+  }
+
+  /* --- News --- */
   function marketWorkspaceNews() {
-    return '<section class="ws-widget ws-news-workspace"><div class="ws-widget-head"><h2>Company & market news</h2>' +
-      '<span>Last available RSS articles · link to original</span></div>' +
-      '<div class="ws-news-filter"><button data-act="wsnewsfilter" data-id="all" aria-pressed="' +
-      (state.marketNewsFocus === 'all') + '">All financial news</button>' +
-      '<button data-act="wsnewsfilter" data-id="watchlist" aria-pressed="' +
-      (state.marketNewsFocus === 'watchlist') + '">My watchlist</button></div>' +
-      '<div class="ws-widget-scroll" id="ws-news-results">' +
-      marketWorkspaceNewsHtml(state.marketNewsFocus === 'watchlist' ?
-        marketRelatedNewsForWatchlist() : marketRelatedNews(null,state.marketSearch),45) +
-      '</div></section>';
+    return widget('Business & markets news', 'Latest articles from Pheme’s publishers. Search above to filter by company or keyword.',
+      '<div class="ws-segmented ws-news-filter" role="group" aria-label="News filter">' +
+      '<button type="button" data-act="wsnewsfilter" data-id="all" aria-pressed="' + (state.marketNewsFocus === 'all') + '">All business news</button>' +
+      '<button type="button" data-act="wsnewsfilter" data-id="watchlist" aria-pressed="' + (state.marketNewsFocus === 'watchlist') + '">My watchlist</button></div>' +
+      '<div id="ws-news-results" class="ws-news-columns">' + marketWorkspaceNewsHtml(state.marketNewsFocus === 'watchlist' ? marketRelatedNewsForWatchlist() : marketRelatedNews(null, state.marketSearch), 45) + '</div>', 'ws-news-workspace');
   }
 
   function marketRelatedNewsForWatchlist() {
-    var results=[], seen=Object.create(null);
+    var results = [], seen = Object.create(null);
     state.marketWatch.forEach(function (name) {
-      var company=MARKET_DIRECTORY.find(function (c) { return c.tv === name || c.name === name || c.ticker === name; });
+      var company = MARKET_DIRECTORY.find(function (c) { return c.tv === name || c.name === name || c.ticker === name; });
       if (!company) return;
-      marketRelatedNews(company,'').forEach(function (item) {
-        if (!seen[item.article.url]) { seen[item.article.url]=true; results.push(item); }
+      marketRelatedNews(company, '').forEach(function (item) {
+        if (!seen[item.article.url]) { seen[item.article.url] = true; results.push(item); }
       });
     });
-    return results.sort(function (a,b) { return String(b.article.published||'').localeCompare(String(a.article.published||'')); });
+    return results.sort(function (a, b) { return String(b.article.published || '').localeCompare(String(a.article.published || '')); });
+  }
+
+  /* --- World map --- */
+  function marketWorkspaceMap() {
+    var list = EXCHANGE_SESSIONS.map(function (ex) {
+      var st = exchangeSessionState(ex), m = MARKETS.find(function (x) { return x.id === ex.id || (ex.id === 'mumbai' && x.id === 'india'); });
+      var pts = m ? marketPoints(m.id) : [], last = pts[pts.length - 1], ch = periodChange(pts, '1D');
+      return '<li><span class="ws-dot' + (st.open ? ' is-open' : '') + '" aria-hidden="true"></span><div><strong>' + esc(ex.name) + ' <small>' + esc(ex.code) + '</small></strong>' +
+        '<span>' + esc(st.label) + ' · ' + esc(st.time) + ' local · ' + esc(ex.hours) + '</span></div>' +
+        (last ? '<button type="button" data-act="wsmarket" data-id="' + esc(m.id) + '"><span>' + esc(m.index) + '</span><strong>' + marketNumber(last.close) + '</strong><em class="' + moveClass(ch) + '">' + signedPct(ch) + '</em></button>' : '') + '</li>';
+    }).join('');
+    return '<div class="ws-grid">' +
+      '<section class="ws-widget ws-span-8 ws-map-panel"><div class="ws-widget-head"><div><h2>World exchanges</h2><p>Select a pin for the exchange and its index</p></div></div>' +
+      '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Map of stock exchanges"></div></section>' +
+      widget('Trading sessions', 'Usual weekday hours, excluding holidays', '<ul class="ws-exchange-list">' + list + '</ul>', 'ws-span-4') +
+      '</div>';
+  }
+
+  /* --- Discover (native company directory screener) --- */
+  var DISCOVER_PAGE = 40;
+  function discoverMatches() {
+    var q = state.discover.q.trim().toLowerCase();
+    var list = MARKET_DIRECTORY.filter(function (c) {
+      return (!state.discover.exchange || c.exchange === state.discover.exchange) &&
+        (!state.discover.sector || c.sector === state.discover.sector) &&
+        (!q || c.search.indexOf(q) !== -1);
+    });
+    var key = state.discover.sort;
+    if (key === 'name' || key === 'ticker' || key === 'exchange' || key === 'sector') {
+      list = list.slice().sort(function (a, b) { return String(a[key]).localeCompare(String(b[key])); });
+    }
+    return list;
+  }
+  function optionsFor(field, current, label) {
+    var counts = Object.create(null);
+    MARKET_DIRECTORY.forEach(function (c) { counts[c[field]] = (counts[c[field]] || 0) + 1; });
+    return '<option value="">' + esc(label) + '</option>' + Object.keys(counts).sort().map(function (v) {
+      return '<option value="' + esc(v) + '"' + (v === current ? ' selected' : '') + '>' + esc(v) + ' (' + counts[v] + ')</option>';
+    }).join('');
+  }
+  function discoverRows() {
+    var all = discoverMatches();
+    var pages = Math.max(1, Math.ceil(all.length / DISCOVER_PAGE));
+    var page = Math.min(state.discover.page, pages - 1);
+    var rows = all.slice(page * DISCOVER_PAGE, (page + 1) * DISCOVER_PAGE);
+    var licensed = companyDataLicensed();
+    return '<p class="ws-result-count" aria-live="polite">' + all.length.toLocaleString('en-GB') + ' compan' + (all.length === 1 ? 'y' : 'ies') +
+      (companyDirectoryState === 'loading' ? ' · loading the full directory…' : '') + '</p>' +
+      '<div class="ws-table-scroll"><table class="ws-table ws-discover-table"><thead><tr>' +
+      [['ticker', 'Ticker'], ['name', 'Company'], ['exchange', 'Exchange'], ['sector', 'Sector']].map(function (c) {
+        return '<th scope="col"><button type="button" data-act="wsdiscoversort" data-id="' + c[0] + '" aria-pressed="' + (state.discover.sort === c[0]) + '">' + c[1] + '</button></th>';
+      }).join('') + (licensed ? '<th scope="col" class="num">Price</th>' : '') + '<th scope="col"><span class="sr-only">Watchlist</span></th></tr></thead><tbody>' +
+      rows.map(function (c) {
+        var watched = state.marketWatch.indexOf(c.tv) !== -1 || state.marketWatch.indexOf(c.name) !== -1;
+        var q = licensed && companyQuote(c.ticker);
+        return '<tr><td><button type="button" class="ws-link-button ws-ticker" data-act="wscompany" data-id="' + esc(c.tv) + '">' + esc(c.ticker) + '</button></td>' +
+          '<td><button type="button" class="ws-link-button" data-act="wscompany" data-id="' + esc(c.tv) + '">' + esc(c.name) + '</button></td><td>' + esc(c.exchange) + '</td><td>' + esc(c.sector) + '</td>' +
+          (licensed ? '<td class="num">' + (q ? marketNumber(q.price) : '—') + '</td>' : '') +
+          '<td class="num"><button type="button" class="ws-star" data-act="wswatch" data-id="' + esc(c.tv) + '" aria-pressed="' + watched + '" aria-label="' + (watched ? 'Remove ' : 'Add ') + esc(c.name) + (watched ? ' from' : ' to') + ' watchlist">' + (watched ? '★' : '☆') + '</button></td></tr>';
+      }).join('') + '</tbody></table></div>' +
+      (pages > 1 ? '<div class="ws-pager"><button type="button" data-act="wsdiscoverpage" data-id="' + (page - 1) + '"' + (page ? '' : ' disabled') + '>← Previous</button><span>Page ' + (page + 1) + ' of ' + pages + '</span>' +
+        '<button type="button" data-act="wsdiscoverpage" data-id="' + (page + 1) + '"' + (page < pages - 1 ? '' : ' disabled') + '>Next →</button></div>' : '');
+  }
+  function marketWorkspaceDiscover() {
+    return widget('Company directory', 'Browse ' + MARKET_DIRECTORY.length.toLocaleString('en-GB') + ' listed companies by exchange and sector' + (companyDataLicensed() ? '' : '. Prices appear here once licensed company data is switched on.'),
+      '<div class="ws-toolbar ws-discover-filters"><label><span>Search</span><input id="ws-discover-q" type="search" autocomplete="off" placeholder="Name, ticker or keyword" value="' + esc(state.discover.q) + '"></label>' +
+      '<label><span>Exchange</span><select id="ws-discover-exchange">' + optionsFor('exchange', state.discover.exchange, 'All exchanges') + '</select></label>' +
+      '<label><span>Sector</span><select id="ws-discover-sector">' + optionsFor('sector', state.discover.sector, 'All sectors') + '</select></label></div>' +
+      '<div id="ws-discover-results">' + discoverRows() + '</div>', 'ws-discover-panel');
   }
 
   var MARKET_WORKSPACES = [
@@ -1810,322 +2292,55 @@
   }
 
   function trading212Widget(note) {
-    return '<section class="ws-widget ws-trading212"><div class="ws-widget-head"><h2>Trading 212</h2></div>' +
-      (note ? '<p class="octal-broker-note">Unlock the private widget to preview and confirm a manual demo order.</p>' : '') +
+    return '<section class="ws-widget ws-trading212"><div class="ws-widget-head"><div><h2>Trading 212</h2>' +
+      (note ? '<p>Unlock the private widget to preview and confirm a manual demo order.</p>' : '') + '</div></div>' +
       '<iframe title="Private Trading 212 account" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms" ' +
       'src="https://pheme-reader-api-production.up.railway.app/trading212/widget"></iframe></section>';
   }
 
   function renderTrading() {
+    loadTradingData();
     var tab = isMarketWorkspace(state.marketWorkspaceTab) ? state.marketWorkspaceTab : 'overview';
     var results = marketSearchResultsHtml();
-    return '<div class="ws-shell"><header class="ws-header"><div class="ws-heading">' +
-      '<div><span class="ws-kicker">PHEME / MARKET INTELLIGENCE</span><h1>Markets workspace</h1></div>' +
-      '<span class="ws-provider-pill">Data from publisher RSS &amp; TradingView</span></div>' +
-      '<div id="ws-ticker-tape" class="ws-ticker-tape" aria-label="Live market ticker tape"><p class="ws-empty">Loading ticker tape…</p></div>' +
-      '<div class="ws-search-area"><label class="sr-only" for="ws-company-search">Search any company, ticker or news</label>' +
-      '<span aria-hidden="true" class="ws-search-icon">⌕</span>' +
-      '<input id="ws-company-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search any company or ticker (e.g. Shell, Rolls-Royce, LSE:RR., NVDA, Reliance)…" value="' +
+    var panel =
+      tab === 'overview' ? marketWorkspaceOverview() :
+      tab === 'company' ? marketWorkspaceCompany() :
+      tab === 'heatmap' ? marketWorkspaceHeatmap() :
+      tab === 'movers' ? marketWorkspaceMovers() :
+      tab === 'calendar' ? marketWorkspaceCalendar() :
+      tab === 'news' ? marketWorkspaceNews() :
+      tab === 'octal' ? (window.PhemeOctalBot ? window.PhemeOctalBot.html(trading212Widget(true)) : '<p class="ws-empty">Octal Bot unavailable.</p>') :
+      tab === 'evidence' ? (window.PhemeEvidenceBot ? window.PhemeEvidenceBot.html() : '<p class="ws-empty">Evidence Bot unavailable.</p>') + trading212Widget(false) :
+      tab === 'resources' ? (window.PhemeResourceGraph ? window.PhemeResourceGraph.html() : '<p class="ws-empty">Resource network unavailable.</p>') :
+      tab === 'map' ? marketWorkspaceMap() : marketWorkspaceDiscover();
+    return '<div class="ws-shell"><header class="ws-header">' +
+      '<div class="ws-heading"><div><h1>Markets</h1><p>Stock indices, currencies and the economic calendar, with business news from Pheme’s publishers.</p></div>' +
+      '<div class="ws-search-area"><label class="sr-only" for="ws-company-search">Search companies</label>' +
+      '<span aria-hidden="true" class="ws-search-icon">' + ICON.search + '</span>' +
+      '<input id="ws-company-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search a company or ticker" value="' +
       esc(state.marketSearch) + '" aria-controls="ws-search-results" aria-expanded="false">' +
-      '<button type="button" data-act="wssearchnews">Search news</button>' +
-      '<div id="ws-search-results" class="ws-search-dropdown" hidden>' + results + '</div></div>' +
-      '<div class="ws-mobile-toolbar"><label for="ws-mobile-section">Workspace</label><select id="ws-mobile-section" aria-label="Choose market workspace">' +
+      '<button type="button" data-act="wssearchnews">News</button>' +
+      '<div id="ws-search-results" class="ws-search-dropdown" hidden>' + results + '</div></div></div>' +
+      tradingTicker() +
+      '<div class="ws-mobile-toolbar"><label for="ws-mobile-section">Section</label><select id="ws-mobile-section" aria-label="Choose market section">' +
       MARKET_WORKSPACES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === tab ? ' selected' : '') + '>' + t.label + '</option>'; }).join('') +
-      '</select><span class="ws-mobile-hint">Swipe charts horizontally to inspect data</span></div>' +
-      '<nav class="ws-tabs" aria-label="Market workspace sections">' +
-      MARKET_WORKSPACES.map(function (t) { return '<button type="button" data-act="wstab" data-id="' + t.id +
-        '" aria-current="' + (t.id === tab ? 'page' : 'false') + '" class="' + (t.id === tab ? 'active' : '') +
-        '">' + t.label + '</button>'; }).join('') + '</nav></header>' +
-      '<div class="ws-panel" id="ws-active-panel">' +
-      (tab === 'overview' ? marketWorkspaceOverview() :
-       tab === 'company' ? marketWorkspaceCompany() :
-       tab === 'heatmap' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>S&amp;P 500 sector heatmap</h2><span>Sized by market cap · coloured by daily move</span></div>' +
-         '<div id="ws-stock-heatmap" class="ws-widget-embed"><p class="ws-empty">Loading sector heatmap…</p></div></section>' :
-       tab === 'movers' ? '<div class="ws-two-col">' +
-         '<section class="ws-widget ws-half-widget"><div class="ws-widget-head"><h2>Market movers</h2><span>Gainers, losers &amp; most active</span></div>' +
-         '<div id="ws-hotlists" class="ws-widget-embed"><p class="ws-empty">Loading market movers…</p></div></section>' +
-         '<section class="ws-widget ws-half-widget"><div class="ws-widget-head"><h2>Forex cross rates</h2><span>GBP · USD · EUR · JPY · CHF · CAD · AUD · INR</span></div>' +
-         '<p class="ws-forex-hint">Scroll sideways to see all eight currencies.</p>' +
-         '<div class="ws-forex-scroll" role="region" aria-label="Forex cross rates table" tabindex="0">' +
-         '<div id="ws-forex-cross" class="ws-widget-embed"><p class="ws-empty">Loading forex cross rates…</p></div></div></section></div>' :
-       tab === 'calendar' ? '<section class="ws-widget ws-full-widget"><div class="ws-widget-head"><h2>Economic calendar</h2><span>Central banks, CPI, GDP &amp; jobs (UK, US, EU, JP, IN, CN)</span></div>' +
-         '<div id="ws-economic-calendar" class="ws-widget-embed"><p class="ws-empty">Loading economic calendar…</p></div></section>' :
-       tab === 'news' ? marketWorkspaceNews() :
-       tab === 'octal' ? (window.PhemeOctalBot ? window.PhemeOctalBot.html(trading212Widget(true)) : '<p class="ws-empty">Octal Bot unavailable.</p>') :
-       tab === 'evidence' ? (window.PhemeEvidenceBot ? window.PhemeEvidenceBot.html() : '<p class="ws-empty">Evidence Bot unavailable.</p>') +
-         trading212Widget(false) :
-       tab === 'resources' ? (window.PhemeResourceGraph ? window.PhemeResourceGraph.html() : '<p>Resource graph unavailable.</p>') :
-       tab === 'map' ? '<section class="ws-widget ws-map-panel"><div class="ws-widget-head"><h2>World exchanges</h2><span>Location pins; historical index data where available</span></div>' +
-         '<div id="exchange-world-map" class="exchange-world-map ws-exchange-map" role="region" aria-label="Global stock exchanges"></div>' +
-         '<p class="ws-widget-foot">Exchange pins do not imply real-time market data. Indices show completed daily closes.</p></section>' :
-       '<section class="ws-widget ws-discover-panel"><div class="ws-widget-head"><h2>Discover US-listed stocks</h2><span>TradingView stock screener · independent provider</span></div>' +
-         '<div id="ws-stock-screener" class="ws-stock-screener"><p class="ws-empty">Loading stock screener…</p></div>' +
-         '<p class="ws-widget-foot">Use the screener to explore more stocks. Pheme’s integrated company news currently searches its built-in directory.</p></section>') +
-      '</div></div>';
+      '</select></div>' +
+      '<nav class="ws-tabs" aria-label="Market sections">' +
+      MARKET_WORKSPACES.map(function (t) {
+        return '<button type="button" data-act="wstab" data-id="' + t.id + '"' + (t.id === tab ? ' aria-current="page" class="active"' : '') + '>' + t.label + '</button>';
+      }).join('') + '</nav></header>' +
+      '<div class="ws-panel ws-panel-' + tab + '" id="ws-active-panel">' + panel + '</div></div>';
   }
 
-  function mountTradingViewBox(box, scriptFile, config, creditLabel, fallbackUrl) {
-    if (!box || box.getAttribute('data-tv-loaded') === 'yes') return;
-    box.setAttribute('data-tv-loaded', 'yes');
-    var widget = document.createElement('div');
-    widget.className = 'tradingview-widget-container';
-    widget.style.width = '100%';
-    widget.style.height = '100%';
-    var canvas = document.createElement('div');
-    canvas.className = 'tradingview-widget-container__widget';
-    canvas.style.width = '100%';
-    canvas.style.height = creditLabel ? 'calc(100% - 28px)' : '100%';
-    widget.appendChild(canvas);
-    if (creditLabel) {
-      var credit = document.createElement('div');
-      credit.className = 'tradingview-widget-copyright';
-      credit.innerHTML = '<a href="' + esc(fallbackUrl || 'https://www.tradingview.com/markets/') + '" target="_blank" rel="noopener nofollow noreferrer">' + esc(creditLabel) + '</a>';
-      widget.appendChild(credit);
-    }
-    box.replaceChildren(widget);
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = 'https://s3.tradingview.com/external-embedding/' + scriptFile;
-    script.textContent = JSON.stringify(config);
-    script.onerror = function () {
-      box.removeAttribute('data-tv-loaded');
-      box.innerHTML = '<p class="ws-empty">Widget unavailable right now. <a href="' + esc(fallbackUrl || 'https://www.tradingview.com/markets/') + '" target="_blank" rel="noopener noreferrer">Open on TradingView ↗</a></p>';
-    };
-    widget.appendChild(script);
-  }
-
-  function mountTradingViewMarkets() {
-    mountTradingViewBox(app.querySelector('#ws-ticker-tape'), 'embed-widget-ticker-tape.js', {
-      symbols: [
-        { proName: 'TVC:UKX', title: 'FTSE 100' },
-        { proName: 'SP:SPX', title: 'S&P 500' },
-        { proName: 'NASDAQ:NDX', title: 'NASDAQ 100' },
-        { proName: 'NSE:NIFTY', title: 'NIFTY 50' },
-        { proName: 'TVC:GOLD', title: 'Gold' },
-        { proName: 'TVC:UKOIL', title: 'Brent Oil' },
-        { proName: 'FX:GBPUSD', title: 'GBP/USD' },
-        { proName: 'FX:EURUSD', title: 'EUR/USD' },
-        { proName: 'BITSTAMP:BTCUSD', title: 'Bitcoin' },
-        { proName: 'NASDAQ:AAPL', title: 'Apple' },
-        { proName: 'NASDAQ:NVDA', title: 'Nvidia' },
-        { proName: 'NASDAQ:MSFT', title: 'Microsoft' }
-      ],
-      showSymbolLogo: true,
-      isTransparent: false,
-      displayMode: 'adaptive',
-      colorTheme: 'light',
-      locale: 'en'
-    }, '', 'https://www.tradingview.com/markets/');
-
-    mountTradingViewBox(app.querySelector('#tv-market-overview'), 'embed-widget-market-overview.js', {
-      colorTheme: 'light',
-      dateRange: '3M',
-      locale: 'en',
-      isTransparent: false,
-      showFloatingTooltip: true,
-      width: '100%',
-      height: '100%',
-      showSymbolLogo: true,
-      showChart: true,
-      tabs: [
-        { title: 'Companies', originalTitle: 'Companies', symbols: [
-          { s: 'NASDAQ:AAPL', d: 'Apple' },
-          { s: 'NASDAQ:MSFT', d: 'Microsoft' },
-          { s: 'NASDAQ:NVDA', d: 'Nvidia' },
-          { s: 'NASDAQ:TSLA', d: 'Tesla' },
-          { s: 'NASDAQ:GOOGL', d: 'Alphabet' },
-          { s: 'NASDAQ:AMZN', d: 'Amazon' }
-        ] },
-        { title: 'Global indices', originalTitle: 'Global indices', symbols: [
-          { s: 'TVC:UKX', d: 'FTSE 100 · UK' },
-          { s: 'SP:SPX', d: 'S&P 500 · US' },
-          { s: 'NASDAQ:NDX', d: 'NASDAQ 100 · US' },
-          { s: 'NSE:NIFTY', d: 'NIFTY 50 · India' },
-          { s: 'SSE:000001', d: 'Shanghai Composite · China' },
-          { s: 'TVC:NI225', d: 'Nikkei 225 · Japan' }
-        ] },
-        { title: 'Commodities', originalTitle: 'Commodities', symbols: [
-          { s: 'TVC:GOLD', d: 'Gold Spot' },
-          { s: 'TVC:SILVER', d: 'Silver Spot' },
-          { s: 'TVC:UKOIL', d: 'Brent Crude Oil' },
-          { s: 'TVC:USOIL', d: 'WTI Crude Oil' },
-          { s: 'NYMEX:NG1!', d: 'Natural Gas' }
-        ] },
-        { title: 'Forex', originalTitle: 'Forex', symbols: [
-          { s: 'FX:GBPUSD', d: 'GBP / USD' },
-          { s: 'FX:EURUSD', d: 'EUR / USD' },
-          { s: 'FX:EURGBP', d: 'EUR / GBP' },
-          { s: 'FX:USDJPY', d: 'USD / JPY' },
-          { s: 'FX_IDC:USDINR', d: 'USD / INR' }
-        ] }
-      ]
-    }, 'Market data by TradingView', 'https://www.tradingview.com/markets/');
-
-    mountTradingViewBox(app.querySelector('#ws-stock-heatmap'), 'embed-widget-stock-heatmap.js', {
-      exchanges: [],
-      dataSource: 'SPX500',
-      grouping: 'sector',
-      blockSize: 'market_cap_basic',
-      blockColor: 'change',
-      locale: 'en',
-      symbolUrl: '',
-      colorTheme: 'light',
-      hasTopBar: true,
-      isDataSetEnabled: true,
-      isZoomEnabled: true,
-      hasSymbolTooltip: true,
-      isMonoSize: false,
-      width: '100%',
-      height: '100%'
-    }, 'Stock heatmap by TradingView', 'https://www.tradingview.com/heatmap/stock/');
-
-    mountTradingViewBox(app.querySelector('#ws-hotlists'), 'embed-widget-hotlists.js', {
-      colorTheme: 'light',
-      dateRange: '12M',
-      exchange: 'US',
-      showChart: true,
-      locale: 'en',
-      width: '100%',
-      height: '100%',
-      isTransparent: false,
-      showSymbolLogo: true,
-      showFloatingTooltip: true
-    }, 'Market movers by TradingView', 'https://www.tradingview.com/markets/stocks-usa/market-movers-gainers/');
-
-    mountTradingViewBox(app.querySelector('#ws-forex-cross'), 'embed-widget-forex-cross-rates.js', {
-      width: '100%',
-      height: '100%',
-      currencies: ['GBP', 'USD', 'EUR', 'JPY', 'CHF', 'CAD', 'AUD', 'INR'],
-      isTransparent: false,
-      colorTheme: 'light',
-      locale: 'en'
-    }, 'Forex rates by TradingView', 'https://www.tradingview.com/markets/currencies/');
-
-    mountTradingViewBox(app.querySelector('#ws-economic-calendar'), 'embed-widget-events.js', {
-      colorTheme: 'light',
-      isTransparent: false,
-      width: '100%',
-      height: '100%',
-      locale: 'en',
-      importanceFilter: '-1,0,1',
-      countryFilter: 'gb,us,eu,jp,in,cn'
-    }, 'Economic calendar by TradingView', 'https://www.tradingview.com/economic-calendar/');
-  }
-
-  function mountWorkspaceCompanyChart() {
-    var target = app.querySelector('#ws-company-chart');
-    if (!target || target.dataset.loaded === 'yes') return;
-    target.dataset.loaded = 'yes';
-    var company = selectedMarketCompany();
-    var mode = state.marketCompanyPanel;
-    var container = document.createElement('div');
-    container.className = 'tradingview-widget-container';
-    container.style.height = '100%';
-    container.style.width = '100%';
-    var chart = document.createElement('div');
-    chart.className = 'tradingview-widget-container__widget';
-    chart.style.height = 'calc(100% - 28px)';
-    chart.style.width = '100%';
-    var attribution = document.createElement('div');
-    attribution.className = 'tradingview-widget-copyright';
-    attribution.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow noreferrer" target="_blank">Company data by TradingView</a>';
-    container.appendChild(chart);
-    container.appendChild(attribution);
-    target.replaceChildren(container);
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    var base = 'https://s3.tradingview.com/external-embedding/';
-    var options = { colorTheme:'light', isTransparent:false, locale:'en', width:'100%', height:'100%' };
-    if (mode === 'advanced') {
-      script.src = base + 'embed-widget-advanced-chart.js';
-      options = {
-        autosize: true,
-        symbol: company.tv,
-        interval: 'D',
-        timezone: 'Europe/London',
-        theme: 'light',
-        style: '1',
-        locale: 'en',
-        allow_symbol_change: true,
-        hide_side_toolbar: false,
-        withdateranges: true,
-        details: true,
-        calendar: false,
-        support_host: 'https://www.tradingview.com'
-      };
-    } else if (mode === 'technicals') {
-      script.src = base + 'embed-widget-technical-analysis.js';
-      options.symbol = company.tv;
-      options.interval = '1D';
-      options.showIntervalTabs = true;
-      options.displayMode = 'single';
-    } else if (mode === 'financials') {
-      script.src = base + 'embed-widget-financials.js';
-      options.symbol = company.tv;
-      options.displayMode = 'regular';
-    } else if (mode === 'profile') {
-      script.src = base + 'embed-widget-symbol-profile.js';
-      options.symbol = company.tv;
-    } else {
-      script.src = base + 'embed-widget-symbol-overview.js';
-      options.symbols = [[company.name + '|' + company.tv]];
-      options.chartOnly = false;
-      options.autosize = true;
-      options.showVolume = true;
-      options.showMA = false;
-      options.hideDateRanges = false;
-      options.hideMarketStatus = false;
-      options.hideSymbolLogo = false;
-      options.scalePosition = 'right';
-      options.scaleMode = 'Normal';
-      options.chartType = 'area';
-      options.lineWidth = 2;
-      options.dateRanges = ['1d|1','1m|30','3m|60','12m|1D','all|1M'];
-    }
-    script.textContent = JSON.stringify(options);
-    script.onerror = function () {
-      target.innerHTML = '<p class="ws-empty">This TradingView view is unavailable. Try another tab or open the company on TradingView.</p>';
-    };
-    container.appendChild(script);
-  }
-
-  function mountWorkspaceScreener() {
-    var target = app.querySelector('#ws-stock-screener');
-    if (!target || target.dataset.loaded === 'yes') return;
-    target.dataset.loaded = 'yes';
-    var container = document.createElement('div');
-    container.className = 'tradingview-widget-container';
-    container.style.height = '100%';
-    container.style.width = '100%';
-    var content = document.createElement('div');
-    content.className = 'tradingview-widget-container__widget';
-    content.style.height = 'calc(100% - 28px)';
-    var brand = document.createElement('div');
-    brand.className = 'tradingview-widget-copyright';
-    brand.innerHTML = '<a href="https://www.tradingview.com/markets/stocks-usa/market-movers-all-stocks/" rel="noopener nofollow noreferrer" target="_blank">Stock screener by TradingView</a>';
-    container.appendChild(content);
-    container.appendChild(brand);
-    target.replaceChildren(container);
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
-    script.textContent = JSON.stringify({
-      market:'america', showToolbar:true, defaultColumn:'overview',
-      defaultScreen:'general', isTransparent:false, locale:'en',
-      colorTheme:'light', width:'100%', height:'100%'
-    });
-    script.onerror = function () {
-      target.innerHTML = '<p class="ws-empty">The screener could not load. <a href="https://www.tradingview.com/markets/stocks-usa/" target="_blank" rel="noopener noreferrer">Explore markets on TradingView</a>.</p>';
-    };
-    container.appendChild(script);
+  function refreshDiscoverResults() {
+    var box = app.querySelector('#ws-discover-results');
+    if (box) box.innerHTML = discoverRows();
   }
 
   function refreshWorkspaceNews() {
     if (state.view !== 'trading') return;
     var overview = app.querySelector('#ws-market-headlines');
-    if (overview) overview.innerHTML = marketWorkspaceNewsHtml(marketRelatedNews(null,''),12);
+    if (overview) overview.innerHTML = marketWorkspaceNewsHtml(marketRelatedNews(null,''),9);
     var company = app.querySelector('#ws-company-news');
     if (company) company.innerHTML = marketWorkspaceNewsHtml(marketRelatedNews(selectedMarketCompany(),''),24);
     var full = app.querySelector('#ws-news-results');
@@ -3158,7 +3373,7 @@
   /* Workspace widget controls: enlarge dense third-party embeds without a page reload. */
   function enhanceMarketWidgets() {
     if (state.view !== 'trading' || state.reading) return;
-    app.querySelectorAll('.ws-panel .ws-widget').forEach(function (widget, idx) {
+    app.querySelectorAll('.ws-panel .ws-map-panel, #octal-bot .ws-widget, #evidence-bot').forEach(function (widget, idx) {
       var head = widget.querySelector(':scope > .ws-widget-head');
       if (!head || head.querySelector('[data-act="wsexpand"]')) return;
       var heading = head.querySelector('h2,h3');
@@ -3253,9 +3468,6 @@
     mountWorldMap();
     mountPublisherMap();
     mountExchangeMap();
-    mountTradingViewMarkets();
-    mountWorkspaceCompanyChart();
-    mountWorkspaceScreener();
     enhanceMarketWidgets();
     updateReadProgress();
     updateSiteScrollTone();
@@ -3270,6 +3482,12 @@
 
   /* ---------- events ---------- */
   app.addEventListener('change', function (event) {
+    if (event.target && (event.target.id === 'ws-discover-exchange' || event.target.id === 'ws-discover-sector')) {
+      state.discover[event.target.id === 'ws-discover-exchange' ? 'exchange' : 'sector'] = event.target.value;
+      state.discover.page = 0;
+      refreshDiscoverResults();
+      return;
+    }
     if (!event.target || event.target.id !== 'ws-mobile-section') return;
     var next = event.target.value;
     if (!isMarketWorkspace(next) ||
@@ -3327,17 +3545,33 @@
         render();
         break;
       case 'wscompanypanel':
-        if (['chart','advanced','technicals','financials','profile'].indexOf(id) < 0) break;
+        if (!COMPANY_PANELS.some(function (p) { return p.id === id; })) break;
         state.marketCompanyPanel = id;
-        var companyWidget = app.querySelector('#ws-company-chart');
-        if (companyWidget) {
-          companyWidget.dataset.loaded = '';
-          companyWidget.innerHTML = '<p class="ws-empty">Loading company information…</p>';
-        }
         app.querySelectorAll('[data-act="wscompanypanel"]').forEach(function (button) {
           button.setAttribute('aria-pressed', String(button.getAttribute('data-id') === id));
         });
-        mountWorkspaceCompanyChart();
+        var companyPanelBox = app.querySelector('#ws-company-panel');
+        if (companyPanelBox) companyPanelBox.innerHTML = companyPanel(selectedMarketCompany());
+        else render();
+        break;
+      case 'wsmonitorrange':
+        if (!PERIOD_DAYS[id]) break;
+        state.monitorRange = id; render(); break;
+      case 'wsheatrange':
+        if (!PERIOD_DAYS[id]) break;
+        state.heatRange = id; render(); break;
+      case 'wscalregion':
+        state.calRegion = id === 'all' || (calendarData && calendarData.regions && calendarData.regions[id]) ? id : 'all'; render(); break;
+      case 'wscaltype':
+        state.calType = ['all', 'central-bank', 'data'].indexOf(id) !== -1 ? id : 'all'; render(); break;
+      case 'wscalpast':
+        state.calPast = !!t.checked; render(); break;
+      case 'wsdiscoversort':
+        state.discover.sort = state.discover.sort === id ? '' : id; state.discover.page = 0; refreshDiscoverResults(); break;
+      case 'wsdiscoverpage':
+        state.discover.page = Math.max(0, Number(id) || 0); refreshDiscoverResults();
+        var discoverTop = app.querySelector('.ws-discover-panel');
+        if (discoverTop && discoverTop.scrollIntoView) discoverTop.scrollIntoView({ block: 'start', behavior: 'smooth' });
         break;
       case 'wscompany':
         var selectedCompany = findMarketCompany(id);
@@ -3374,6 +3608,7 @@
         state.marketWatch = state.marketWatch.slice(0,32);
         persist();
         updateMarketWatchlistInPlace();
+        refreshDiscoverResults();
         break;
       case 'wssearchnews':
         state.marketWorkspaceTab = 'news';
@@ -3701,6 +3936,11 @@
   app.addEventListener('pointerdown', exploreMarketPointer);
 
   app.addEventListener('input', function (e) {
+    if (e.target.id === 'ws-discover-q') {
+      state.discover.q = e.target.value.slice(0, 80); state.discover.page = 0;
+      refreshDiscoverResults();
+      return;
+    }
     if (e.target.id === 'ws-company-search') {
       state.marketSearch = e.target.value.slice(0,120);
       showWorkspaceSearchResults();

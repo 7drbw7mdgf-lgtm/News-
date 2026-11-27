@@ -14,10 +14,13 @@ snapshots from vendor APIs, so **this is not a real-time trading WebSocket**.
    - `FMP_API_KEY` (optional, company profile enrichment only)
 4. **Only when the public display licence is confirmed**, add a GitHub Actions
    repository variable `PHEME_MARKET_DATA_PUBLIC_DISPLAY` with value `approved`.
-5. Trigger `Refresh Pheme market charts` with workflow_dispatch, check its logs,
+5. The collector then also fetches about a year of daily closes per symbol
+   (`history`), which powers the Company tab's price chart and technicals.
+   Each symbol costs one extra Twelve Data request per run.
+6. Trigger `Refresh Pheme market charts` with workflow_dispatch, check its logs,
    and confirm the deployed `assets/company-market-data.json` has status
    `available`. If no quote is supplied, no quote appears in the UI.
-6. Confirm the latest `Deploy website to Fasthosts` workflow passed verification.
+7. Confirm the latest `Deploy website to Fasthosts` workflow passed verification.
 
 ## Privacy, caching and claims
 

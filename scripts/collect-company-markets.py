@@ -67,6 +67,29 @@ def get_twelve_data_quotes(secret):
     return quotes
 
 
+def get_twelve_data_history(secret, outputsize=260):
+    """Daily closes for the price chart and technicals (one request per symbol)."""
+    history = {}
+    for symbol in COMPANIES:
+        try:
+            response = get_json("https://api.twelvedata.com/time_series", {
+                "symbol": symbol, "interval": "1day", "outputsize": outputsize, "apikey": secret,
+            })
+            values = response.get("values") if isinstance(response, dict) and response.get("status") != "error" else None
+            points = []
+            for row in values or []:
+                close = numeric(row.get("close"))
+                date = str(row.get("datetime") or "")[:10]
+                if close is not None and close > 0 and len(date) == 10:
+                    points.append({"date": date, "close": close})
+            points.sort(key=lambda p: p["date"])
+            if len(points) >= 30:
+                history[symbol] = points
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            print("::warning::Twelve Data history for {} unavailable: {}".format(symbol, type(error).__name__))
+    return history
+
+
 def get_fmp_profiles(secret):
     profiles = {}
     for symbol in COMPANIES:
@@ -83,6 +106,14 @@ def get_fmp_profiles(secret):
                 "industry": str(p.get("industry") or "")[:90],
                 "exchange": str(p.get("exchangeShortName") or "")[:30],
                 "marketCap": numeric(p.get("marketCap")),
+                "beta": numeric(p.get("beta")),
+                "lastDividend": numeric(p.get("lastDividend") or p.get("lastDiv")),
+                "range52w": str(p.get("range") or "")[:40],
+                "country": str(p.get("country") or "")[:60],
+                "ceo": str(p.get("ceo") or "")[:90],
+                "employees": numeric(p.get("fullTimeEmployees")),
+                "website": str(p.get("website") or "")[:120] if str(p.get("website") or "").startswith("https://") else "",
+                "description": str(p.get("description") or "")[:700],
                 "source": "Financial Modeling Prep",
             }
         except (OSError, ValueError, KeyError, TypeError) as error:
@@ -103,6 +134,7 @@ def main():
         "message": "Public display of vendor quotes requires appropriate licensing and API configuration.",
         "symbols": COMPANIES,
         "quotes": {},
+        "history": {},
         "profiles": {},
     }
     if allowed:
@@ -111,9 +143,10 @@ def main():
                 result["quotes"] = get_twelve_data_quotes(twelve_key)
             except (OSError, ValueError, KeyError, TypeError) as error:
                 print("::warning::Twelve Data not available: " + type(error).__name__)
+            result["history"] = get_twelve_data_history(twelve_key)
         if fmp_key:
             result["profiles"] = get_fmp_profiles(fmp_key)
-        if result["quotes"] or result["profiles"]:
+        if result["quotes"] or result["history"] or result["profiles"]:
             result["status"] = "available"
             result["message"] = "Licensed provider snapshots. Verify individual quote timestamps and exchange delays."
         else:
@@ -128,8 +161,8 @@ def main():
         except (ValueError, OSError):
             pass
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Market provider integration: {}. Quotes: {}. Profiles: {}.".format(
-        result["status"], len(result["quotes"]), len(result["profiles"])))
+    print("Market provider integration: {}. Quotes: {}. Histories: {}. Profiles: {}.".format(
+        result["status"], len(result["quotes"]), len(result["history"]), len(result["profiles"])))
     return 0
 
 

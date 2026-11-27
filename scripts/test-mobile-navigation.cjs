@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const test = require('node:test');
 const vm = require('node:vm');
 
-function boot(width, search = '') {
+function boot(width, search = '', files = {}) {
   const events = {};
   const embeds = {};
   const classList = { add() {}, remove() {}, toggle() {} };
@@ -51,7 +51,11 @@ function boot(width, search = '') {
   };
   const context = vm.createContext({
     window, document, location, history, URL, URLSearchParams,
-    setInterval() {}, fetch: () => new Promise(() => {})
+    setInterval() {}, setTimeout, fetch: url => {
+      const path = String(url).split('?')[0];
+      if (!(path in files)) return new Promise(() => {});
+      return Promise.resolve({ ok: true, json: () => Promise.resolve(files[path]) });
+    }
   });
   for (const file of ['assets/data.js', 'assets/app.js']) {
     vm.runInContext(fs.readFileSync(file, 'utf8'), context, {filename: file});
@@ -82,7 +86,7 @@ test('phone navigation exposes the same destinations as the desktop sidebar', ()
   assert.equal(phone, main);
   assert.match(phone, /Home.*Newspapers.*Saved stories.*Trading/s);
   ui.click({'data-act': 'view', 'data-view': 'trading'});
-  assert.match(ui.html(), /Markets workspace/);
+  assert.match(ui.html(), /<h1>Markets<\/h1>/);
   const picker = ui.html().match(/<select id="ws-mobile-section"[^>]*>(.*?)<\/select>/s)[1];
   const options = [...picker.matchAll(/<option value="([^"]+)"/g)].map(match => match[1]);
   assert.deepEqual(options, ['overview', 'company', 'heatmap', 'movers', 'calendar', 'news', 'octal', 'evidence', 'resources', 'map', 'discover']);
@@ -94,27 +98,71 @@ test('phone navigation exposes the same destinations as the desktop sidebar', ()
   assert.match(ui.html(), /title="Private Trading 212 account"/);
 });
 
-test('Trading embeds request the same datasets and controls on phone and desktop', () => {
-  const layouts = [boot(360), boot(1440)];
-  for (const ui of layouts) ui.click({'data-act': 'view', 'data-view': 'trading'});
-  const select = (workspace, embed) => {
-    layouts[0].select(workspace);
-    layouts[1].click({'data-act': 'wstab', 'data-id': workspace});
-    const [phone, desktop] = layouts.map(ui => ui.config(embed));
-    assert.deepEqual(phone, desktop);
-    return phone;
-  };
-  assert.equal(select('overview', '#tv-market-overview').showChart, true);
-  assert.equal(select('movers', '#ws-forex-cross').currencies.length, 8);
-  assert.equal(layouts[0].config('#ws-hotlists').showChart, true);
-  const calendar = select('calendar', '#ws-economic-calendar');
-  assert.equal(calendar.countryFilter, 'gb,us,eu,jp,in,cn');
-  assert.equal(calendar.importanceFilter, '-1,0,1');
-  assert.ok(select('company', '#ws-company-chart').dateRanges.includes('all|1M'));
-  for (const ui of layouts) ui.click({'data-act': 'wscompanypanel', 'data-id': 'advanced'});
-  const [phone, desktop] = layouts.map(ui => ui.config('#ws-company-chart'));
-  assert.deepEqual(phone, desktop);
-  assert.equal(phone.hide_side_toolbar, false);
+const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
+const DATA = {
+  'assets/markets.json': read('assets/markets.json'),
+  'assets/economic-calendar.json': read('assets/economic-calendar.json'),
+  'assets/company-market-data.json': read('assets/company-market-data.json')
+};
+const tick = () => new Promise(resolve => setImmediate(resolve));
+async function settle() { for (let i = 0; i < 6; i++) await tick(); }
+
+test('every Trading section renders natively with no third-party embeds', async () => {
+  const ui = boot(1440, '?view=trading', DATA);
+  await settle();
+  for (const section of ['overview', 'company', 'heatmap', 'movers', 'calendar', 'news', 'octal', 'evidence', 'resources', 'map', 'discover']) {
+    ui.click({'data-act': 'wstab', 'data-id': section});
+    const html = ui.html();
+    assert.doesNotMatch(html, /tradingview/i, section);
+    assert.match(html, new RegExp('ws-panel-' + section), section);
+  }
+});
+
+test('Overview draws the index monitor and upcoming official events', async () => {
+  const ui = boot(1440, '?view=trading', DATA);
+  await settle();
+  const html = ui.html();
+  assert.match(html, /Market monitor/);
+  assert.match(html, /<svg class="ws-chart"[^>]*aria-label="Index performance over 3M/);
+  assert.match(html, /FTSE 100/);
+  assert.match(html, /Coming up/);
+  ui.click({'data-act': 'wsmonitorrange', 'data-id': '1Y'});
+  assert.match(ui.html(), /aria-label="Index performance over 1Y/);
+});
+
+test('Company price panels wait for licensed data instead of embedding a provider', async () => {
+  const ui = boot(1440, '?view=trading&workspace=company&company=AAPL', DATA);
+  await settle();
+  assert.match(ui.html(), /data-act="wscompanypanel" data-id="profile" aria-pressed="true"/);
+  // The harness DOM does not reflect in-place panel swaps, so force a full render after switching.
+  const rerender = view => view.click({'data-act': 'wsmonitorrange', 'data-id': '3M'});
+  ui.click({'data-act': 'wscompanypanel', 'data-id': 'chart'});
+  rerender(ui);
+  assert.match(ui.html(), /Share prices aren’t shown yet/);
+  const licensed = boot(1440, '?view=trading&workspace=company&company=AAPL', Object.assign({}, DATA, {
+    'assets/company-market-data.json': { status: 'available', quotes: { AAPL: { symbol: 'AAPL', name: 'Apple', price: 200, changePercent: 1.2, currency: 'USD', source: 'Twelve Data' } },
+      history: { AAPL: Array.from({length: 60}, (_, i) => ({ date: new Date(Date.UTC(2026, 8, 1 + i)).toISOString().slice(0, 10), close: 150 + i })) }, profiles: {} }
+  }));
+  await settle();
+  licensed.click({'data-act': 'wscompanypanel', 'data-id': 'chart'});
+  rerender(licensed);
+  assert.match(licensed.html(), /<svg class="ws-chart"[^>]*aria-label="Apple daily closes"/);
+  licensed.click({'data-act': 'wscompanypanel', 'data-id': 'technicals'});
+  rerender(licensed);
+  assert.match(licensed.html(), /20-day average/);
+});
+
+test('Calendar lists only official sources and filters by region and type', async () => {
+  const ui = boot(1440, '?view=trading&workspace=calendar', DATA);
+  await settle();
+  const links = [...ui.html().matchAll(/<a href="(https:[^"]+)" target="_blank"/g)].map(m => new URL(m[1]).hostname);
+  assert.ok(links.length > 5);
+  for (const host of links) assert.match(host, /federalreserve\.gov|bankofengland\.co\.uk|ecb\.europa\.eu|boj\.or\.jp|rbi\.org\.in|bls\.gov|ons\.gov\.uk/);
+  ui.click({'data-act': 'wscalregion', 'data-id': 'UK'});
+  assert.doesNotMatch(ui.html(), /Federal Reserve rate decision/);
+  assert.match(ui.html(), /Bank of England rate decision/);
+  ui.click({'data-act': 'wscaltype', 'data-id': 'data'});
+  assert.doesNotMatch(ui.html(), /Bank of England rate decision/);
 });
 
 test('each view has its own address', () => {

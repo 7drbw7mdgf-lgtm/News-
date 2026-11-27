@@ -66,6 +66,22 @@ The market strip uses native SVG sparklines for the FTSE 100, S&P 500 and Shangh
 
 Headlines, comparison citations and coverage links open Pheme’s native reader. An outlet selection can be shared using `?story=EVENT-ID&source=OUTLET-NAME`. Publisher article links use the native reader to show the publisher page when it can be extracted, while Pheme’s own briefing remains clearly identified as Pheme’s work.
 
+### Markets (Trading view)
+
+Every Markets widget is drawn by Pheme itself (SVG and HTML in `assets/app.js`, styles in `assets/trading.css`); no third-party widgets are embedded. All eleven sections stay: Overview, Company, Heatmap, Movers & FX, Calendar, News, Octal Bot, Evidence Bot, Resource network, World map and Discover.
+
+| Data | File | Source | Refreshed by |
+| --- | --- | --- | --- |
+| Index closes (FTSE 100, S&P 500, Shanghai Composite, NIFTY 50) | `assets/markets.json` | Yahoo Finance daily closes | `scripts/update-markets.py` |
+| Currency rates (GBP, USD, EUR, JPY, CHF, CAD, AUD, INR, CNY) | `assets/forex.json` | ECB euro reference rates, reuse permitted with attribution | `scripts/update-forex.py` |
+| Economic calendar | `assets/economic-calendar.json` | Official schedules from the Fed, BoE, ECB, BoJ, RBI, BLS and ONS, each linked | Edited by hand; `scripts/check-economic-calendar.py` validates it and warns when it runs low |
+| Company prices, history, profiles | `assets/company-market-data.json` | Twelve Data / FMP, **only** when `PHEME_MARKET_DATA_PUBLIC_DISPLAY=approved` | `scripts/collect-company-markets.py` |
+| Company directory | `assets/companies.json` | Pheme's directory (name, exchange, sector) | `scripts/build-company-directory.py` |
+
+`.github/workflows/markets.yml` runs the collectors every six hours and redeploys when anything changes. Until the licence flag is approved, company price, technicals, financials, heatmap and movers panels say so rather than showing data; they fill in automatically once licensed data is published (see `docs/market-data-setup.md`).
+
+To extend the calendar, add events with a `sourceUrl` on the issuing body's own site; the check rejects other sources.
+
 ### Publisher pages in the native reader
 
 The deployment workflow runs `scripts/scrape-indian-express.mjs` on GitHub Actions at deploy time and every six hours. It reads only Indian Express article URLs already present in the current `assets/data.js` edition, fetches public pages without login cookies, limits each response to 8 MiB and follows up to three HTTPS redirects on the same host. Successful pages are deployed as same-origin JSON assets; Mozilla Readability extracts the page in the browser and Pheme sanitizes the result before rendering it. The scraper does not bypass subscriber restrictions. If a page is denied or unavailable, Pheme shows the available RSS excerpt and publisher link.
