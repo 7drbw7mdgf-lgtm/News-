@@ -1,0 +1,1947 @@
+{
+ "TOPICS": [
+  {
+   "id": "uk",
+   "label": "UK"
+  },
+  {
+   "id": "world",
+   "label": "World"
+  },
+  {
+   "id": "science",
+   "label": "Science"
+  },
+  {
+   "id": "tech",
+   "label": "Tech"
+  },
+  {
+   "id": "business",
+   "label": "Business"
+  },
+  {
+   "id": "finance",
+   "label": "Finance"
+  }
+ ],
+ "CATS": {
+  "uk": {
+   "label": "UK news",
+   "topic": "uk"
+  },
+  "world": {
+   "label": "World news",
+   "topic": "world"
+  },
+  "science": {
+   "label": "Science",
+   "topic": "science"
+  },
+  "tech": {
+   "label": "Tech",
+   "topic": "tech"
+  },
+  "business": {
+   "label": "Business",
+   "topic": "business"
+  }
+ },
+ "CATALOG": [
+  [
+   "telegraph",
+   "The Telegraph",
+   "uk",
+   true
+  ],
+  [
+   "bbc",
+   "BBC News",
+   "uk",
+   false
+  ],
+  [
+   "guardian",
+   "The Guardian",
+   "uk",
+   false
+  ],
+  [
+   "times",
+   "The Times",
+   "uk",
+   true
+  ],
+  [
+   "independent",
+   "The Independent",
+   "uk",
+   false
+  ],
+  [
+   "sky",
+   "Sky News",
+   "uk",
+   false
+  ],
+  [
+   "reuters",
+   "Reuters",
+   "world",
+   false
+  ],
+  [
+   "ap",
+   "Associated Press",
+   "world",
+   false
+  ],
+  [
+   "nyt",
+   "The New York Times",
+   "world",
+   true
+  ],
+  [
+   "politico",
+   "Politico Europe",
+   "world",
+   false
+  ],
+  [
+   "economist",
+   "The Economist",
+   "business",
+   true
+  ],
+  [
+   "ft",
+   "Financial Times",
+   "business",
+   true
+  ],
+  [
+   "bloomberg",
+   "Bloomberg",
+   "business",
+   true
+  ],
+  [
+   "wsj",
+   "The Wall Street Journal",
+   "business",
+   true
+  ],
+  [
+   "newscientist",
+   "New Scientist",
+   "science",
+   true
+  ],
+  [
+   "naturenews",
+   "Nature News",
+   "science",
+   false
+  ],
+  [
+   "stat",
+   "STAT",
+   "science",
+   false
+  ],
+  [
+   "ars",
+   "Ars Technica",
+   "tech",
+   false
+  ],
+  [
+   "verge",
+   "The Verge",
+   "tech",
+   false
+  ],
+  [
+   "wired",
+   "Wired",
+   "tech",
+   true
+  ]
+ ],
+ "LEAN": {
+  "L": [
+   "Left",
+   "Left"
+  ],
+  "LL": [
+   "Lean left",
+   "Left-Center"
+  ],
+  "C": [
+   "Centre",
+   "Least Biased"
+  ],
+  "LR": [
+   "Lean right",
+   "Right-Center"
+  ],
+  "R": [
+   "Right",
+   "Right"
+  ],
+  "S": [
+   "Science",
+   "Pro-Science (not rated left–right)"
+  ],
+  "P": [
+   "Primary",
+   "Primary source, not a news outlet"
+  ],
+  "NR": [
+   "Unrated",
+   "No Media Bias/Fact Check rating found"
+  ],
+  "NC": [
+   "Unchecked",
+   "Rating not looked up yet"
+  ]
+ },
+ "FOLLOWED": [
+  {
+   "name": "BBC News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Guardian",
+   "topic": "uk"
+  },
+  {
+   "name": "Sky News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Telegraph",
+   "topic": "uk"
+  },
+  {
+   "name": "Daily Mail",
+   "topic": "uk"
+  },
+  {
+   "name": "ITV News",
+   "topic": "uk"
+  },
+  {
+   "name": "RTÉ News",
+   "topic": "uk"
+  },
+  {
+   "name": "Financial Times",
+   "topic": "finance"
+  },
+  {
+   "name": "The Economist",
+   "topic": "finance"
+  },
+  {
+   "name": "CNBC",
+   "topic": "finance"
+  },
+  {
+   "name": "City AM",
+   "topic": "finance"
+  },
+  {
+   "name": "The New York Times",
+   "topic": "world"
+  },
+  {
+   "name": "NPR",
+   "topic": "world"
+  },
+  {
+   "name": "Fox News",
+   "topic": "world"
+  },
+  {
+   "name": "Al Jazeera English",
+   "topic": "world"
+  },
+  {
+   "name": "France 24",
+   "topic": "world"
+  },
+  {
+   "name": "DW News",
+   "topic": "world"
+  },
+  {
+   "name": "Politico Europe",
+   "topic": "world"
+  },
+  {
+   "name": "Euronews",
+   "topic": "world"
+  },
+  {
+   "name": "South China Morning Post",
+   "topic": "world"
+  },
+  {
+   "name": "Nature News",
+   "topic": "science"
+  },
+  {
+   "name": "New Scientist",
+   "topic": "science"
+  },
+  {
+   "name": "ScienceDaily",
+   "topic": "science"
+  },
+  {
+   "name": "TechCrunch",
+   "topic": "tech"
+  },
+  {
+   "name": "The Verge",
+   "topic": "tech"
+  },
+  {
+   "name": "Ars Technica",
+   "topic": "tech"
+  }
+ ],
+ "STORIES": [
+  {
+   "id": "army-calls-detonation-bomb-chemicals-iowa-success",
+   "topic": "world",
+   "source": "Ars Technica",
+   "time": "25 Nov",
+   "url": "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/",
+   "headline": "Lead azide detonation sends clouds over Iowa as questions of health risks swirl",
+   "summary": "Residents were advised to evacuate near the site and shelter in place farther away, with officials urging them to close windows, turn off fans, and recirculate indoor air.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "Residents were advised to evacuate near the site and shelter in place farther away, with officials urging them to close windows, turn off fans, and recirculate indoor air. Local media captured the plume from two earth-covered containers that were detonated simultaneously at the site.",
+    "Officials stated the chemicals were unstable and posed a risk of uncontrolled explosion if disturbed, necessitating the controlled blast. FEMA advised residents within 20 miles to remain sheltered to avoid inhaling lead dust, with the EPA confirming its presence before, during, and after the detonation to ensure public safety."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T08:44:15+00:00",
+   "articleSources": [
+    {
+     "name": "Ars Technica",
+     "url": "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/"
+    },
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/health/doctors-warn-lead-exposure-health-risks-controversial-army-detonation-iowa"
+    }
+   ],
+   "location": {
+    "label": "Austin, Texas, USA",
+    "shortLabel": "Texas",
+    "lat": 30.2672,
+    "lng": -97.7431
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9049/live/be474ac0-e8f9-11f1-b8b0-a95064d74c5f.jpg",
+   "imageAlt": "Debris is seen overtop trees",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "trump-administration-determined-jensen-huang-national-security",
+   "topic": "tech",
+   "source": "The Express Tribune",
+   "time": "26 Nov",
+   "url": "https://tribune.com.pk/story/2642446/how-the-trump-administration-determined-jensen-huang-is-not-a-national-security-threat",
+   "headline": "How the Trump administration determined Jensen Huang is not a national security threat",
+   "summary": "The US Justice Department did not formally investigate Jensen Huang before President Trump pushed for his return as Nvidia CEO, despite ongoing probes into Nvidia’s clients linked to China.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "The US Justice Department did not formally investigate Jensen Huang before President Trump pushed for his return as Nvidia CEO, despite ongoing probes into Nvidia’s clients linked to China. Attorney General Todd Blanche determined there was no evidence Jensen Huang violated laws based on investigations into Super Micro and Megaspeed International, both suspected of chip smuggling to China. Blanche’s conclusion that Huang posed no national security threat was key in informing Trump and Vice President Vance that no such risk existed. Congress members from both parties have criticized the move, arguing it’s premature to dismiss national security risks tied to Nvidia and its CEO.",
+    "Jensen Huang returned to Nvidia just 11 days after resigning, pledging to be a better CEO in his second role. Nvidia’s board cited input from senior U.S. government officials as the reason for its unanimous decision to reinstate Huang. Nvidia had previously ruled out Huang’s return, raising questions about why a U.S. president intervened so directly in the company’s leadership."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T08:42:01+00:00",
+   "articleSources": [
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642446/how-the-trump-administration-determined-jensen-huang-is-not-a-national-security-threat"
+    },
+    {
+     "name": "Scroll.in",
+     "url": "https://scroll.in/article/1097304/ai-bubble-us-stock-market-among-reasons-why-trump-convinced-nvidia-to-rehire-jensen-huang?utm_source=rss&utm_medium=public"
+    }
+   ],
+   "location": {
+    "label": "Beijing, China",
+    "shortLabel": "Beijing",
+    "lat": 39.9042,
+    "lng": 116.4074
+   },
+   "image": "https://www.rte.ie/images/00256935-1600.jpg",
+   "imageAlt": "How the Trump administration determined Jensen Huang is not a national security threat",
+   "imageCredit": "RTÉ News"
+  },
+  {
+   "id": "approves-spacex-plan-deploy-million-data-centre",
+   "topic": "tech",
+   "source": "The Verge",
+   "time": "25 Nov",
+   "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+   "headline": "FCC approves SpaceX's plan to launch up to 1 million AI satellites under the Starmind initiative",
+   "summary": "This marks the first regulatory approval for a full constellation of AI satellites in space, with Google and Blue Origin also exploring similar concepts.",
+   "points": [],
+   "publishedLabel": "25 Nov 2026",
+   "article": [
+    "This marks the first regulatory approval for a full constellation of AI satellites in space, with Google and Blue Origin also exploring similar concepts. SpaceX must deploy at least one satellite by 2033 and reach the 1 million satellite milestone by 2040, according to FCC requirements.",
+    "The FCC has authorized SpaceX to launch up to 1 million Starmind satellites designed to function as orbital AI data centers. SpaceX aims to begin launches in 2027, with full operational capability expected by 2040. While Google and Blue Origin are developing space-based AI infrastructure, BCG forecasts that orbital data centers will remain more expensive than ground-based alternatives."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T08:46:41+00:00",
+   "articleSources": [
+    {
+     "name": "The Verge",
+     "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+    },
+    {
+     "name": "The Decoder",
+     "url": "https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/"
+    }
+   ],
+   "location": {
+    "label": "San Francisco Bay Area, USA",
+    "shortLabel": "California",
+    "lat": 37.4419,
+    "lng": -122.143
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5383/live/4c315c90-e968-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "SpaceX Starship Ship 42 is caught in the arms of the launch tower as it returns from flight on November 14, 2026 in Starbase, Texas.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "1password-breach-exposes-customer-names-emails-passwords",
+   "topic": "tech",
+   "source": "Slashdot",
+   "time": "26 Nov",
+   "url": "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+   "headline": "1Password breach exposes customer names and emails, but not passwords",
+   "summary": "Customer names, email addresses, account creation dates, and login timestamps were stolen, but passwords in vaults remained inaccessible and app functionality is unaffected.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "Customer names, email addresses, account creation dates, and login timestamps were stolen, but passwords in vaults remained inaccessible and app functionality is unaffected. It remains unclear how the attacker obtained the employee's corporate account, and 1Password has not yet responded to questions about the breach details. The company has not disclosed whether it notified affected customers or how many were impacted, though it serves millions of users and over 200,000 businesses.",
+    "1Password reported that a hacker accessed its backend systems and stole customer names and email addresses. The attacker used the compromised account to access backend services and download customer data by pushing malicious code to the system."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T08:53:43+00:00",
+   "articleSources": [
+    {
+     "name": "Slashdot",
+     "url": "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed"
+    },
+    {
+     "name": "The Verge",
+     "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak"
+    }
+   ],
+   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STKB339_1PASSWORD.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+   "imageAlt": "Vector illustration of the 1Password logo.",
+   "imageCredit": "The Verge"
+  },
+  {
+   "id": "federal-judge-blocks-fcc-reviewing-abcs-licenses",
+   "topic": "world",
+   "source": "The Verge",
+   "time": "26 Nov",
+   "url": "https://www.theverge.com/policy/1043116/fcc-disney-abc-broadcast-licenses-review-early-judge-block",
+   "headline": "Federal judge blocks the FCC from reviewing ABC’s licenses early",
+   "summary": "US District Judge Loren AliKhan blocked the FCC from reviewing ABC’s licenses early, rejecting its attempt to dismiss the network’s First Amendment lawsuit.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "US District Judge Loren AliKhan blocked the FCC from reviewing ABC’s licenses early, rejecting its attempt to dismiss the network’s First Amendment lawsuit. The judge found ABC likely to succeed on its retaliation claim, noting the FCC’s early renewal demand came despite no license renewal scheduled until 2028.",
+    "Judge Loren L AliKhan blocked the FCC from taking further action against ABC’s licenses after the network sued in August over an early renewal demand. The FCC cited a DEI investigation as justification for early renewal, but ABC argued it was being punished for editorial content critical of the Trump administration."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T08:58:40+00:00",
+   "articleSources": [
+    {
+     "name": "The Verge",
+     "url": "https://www.theverge.com/policy/1043116/fcc-disney-abc-broadcast-licenses-review-early-judge-block"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/us-news/2026/nov/25/brendan-carr-fcc-abc-licenses"
+    }
+   ],
+   "location": {
+    "label": "New York, USA",
+    "shortLabel": "New York",
+    "lat": 40.7128,
+    "lng": -74.006
+   },
+   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25840497/STKP211_BRENDAN_CARR_B.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+   "imageAlt": "Digital photo illustration of FCC chair Brendan Carr.",
+   "imageCredit": "The Verge"
+  },
+  {
+   "id": "zelenskyy-criticises-trumps-friendly-gesture-towards-putin",
+   "topic": "world",
+   "source": "Ukrainska Pravda",
+   "time": "27 Nov",
+   "url": "https://www.pravda.com.ua/eng/news/2026/11/27/8064888/",
+   "headline": "Zelenskyy criticises Trump's friendly gesture towards Putin",
+   "summary": "President Zelenskyy condemned Trump's friendly greeting of Putin, comparing the Russian leader to Hitler and calling him an aggressor and murderer.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "President Zelenskyy condemned Trump's friendly greeting of Putin, comparing the Russian leader to Hitler and calling him an aggressor and murderer. In a BBC interview, Zelenskyy said it was strange that Trump referred to Putin as a friend, likening the gesture to calling Hitler a friend. Zelenskyy stated that Putin, as an aggressor and killer, cannot be a friend, emphasizing the moral impossibility of such a relationship. He drew a direct parallel between Trump’s description of Putin as a friend and the historical inaccuracy of calling Hitler a friend during WWII.",
+    "Zelenskyy reiterated that Putin is an aggressor and killer and cannot be a friend when questioned about Trump’s remarks. Ukraine sees Trump’s alliance with Putin as a serious threat, and Europe worries about the implications of a US leader fostering such ties in a world without stable leadership."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T09:01:44+00:00",
+   "articleSources": [
+    {
+     "name": "Ukrainska Pravda",
+     "url": "https://www.pravda.com.ua/eng/news/2026/11/27/8064888/"
+    },
+    {
+     "name": "i News",
+     "url": "https://inews.co.uk/news/world/two-reasons-trumps-strange-putin-friendship-alarming-europe-4934998"
+    }
+   ],
+   "location": {
+    "label": "Kyiv, Ukraine",
+    "shortLabel": "Ukraine",
+    "lat": 50.4501,
+    "lng": 30.5234
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/1e73/live/90642570-ea33-11f1-99b6-a35a62fa4264.jpg",
+   "imageAlt": "Volodymyr Zelensky in a gold and blue ballroom.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "least-30-killed-blaze-vehicle-overturns-egypt",
+   "topic": "world",
+   "source": "The Guardian",
+   "time": "26 Nov",
+   "url": "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway",
+   "headline": "Fuel tanker crash on Cairo ring road ignites massive fire, killing at least 31 people",
+   "summary": "A fuel tanker crash on a highway around Cairo ignited a huge fire on Wednesday, killing at least 31 people according to Egyptian authorities.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "A fuel tanker crash on a highway around Cairo ignited a huge fire on Wednesday, killing at least 31 people according to Egyptian authorities. A blaze on the ring road, a major highway around Cairo, injured at least 21 people and left over two dozen vehicles and motorcycles charred, as reported by the health ministry.",
+    "Traffic on the Ring Road resumed normal by Thursday after most wreckage was cleared. Salah Ahmed, a microbus driver, described the inferno as 'God’s hellfire' in a statement to The Associated Press."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T09:02:25+00:00",
+   "articleSources": [
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway"
+    },
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/world/egypt-detains-driver-suspected-causing-cairo-fuel-tanker-crash-inferno-left-31-dead"
+    }
+   ],
+   "location": {
+    "label": "Cairo, Egypt",
+    "shortLabel": "Egypt",
+    "lat": 30.0444,
+    "lng": 31.2357
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/49ab/live/4933ad90-e913-11f1-a094-5fdc692f3e33.jpg",
+   "imageAlt": "People stand next to the wreck of a car in the aftermath of a fire that broke out on a highway in the Al-Waraq neighbourhood of Imbaba district, Giza Governorate, Cairo.",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "apple-removes-minimaxs-talkie-ai-chatbot-app",
+   "topic": "tech",
+   "source": "Fox Business",
+   "time": "26 Nov",
+   "url": "https://www.foxbusiness.com/technology/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-sexual-messages-kids",
+   "headline": "Apple removes MiniMax's Talkie AI chatbot from App Store amid reports of inappropriate messages to children",
+   "summary": "Despite an 18+ rating and age restrictions for users under 14 or 16 in certain countries, Talkie's self-reporting age verification has drawn criticism from child safety advocates.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "Despite an 18+ rating and age restrictions for users under 14 or 16 in certain countries, Talkie's self-reporting age verification has drawn criticism from child safety advocates.",
+    "Apple removed MiniMax's Talkie chatbot from its App Store this week after reports alleged that AI characters sent sexualized messages to minors. Talkie, launched in 2023, features a range of AI companions with romantic themes, raising concerns over its suitability for younger users. MiniMax's Chinese version, Xingye, is also under scrutiny, as ABC News and the Bureau of Investigative Journalism reported inappropriate messages to children. The app maintains an 18+ rating on both Apple and Google platforms, with age restrictions for users under 14 or 16 depending on the region."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T09:10:17+00:00",
+   "articleSources": [
+    {
+     "name": "Fox Business",
+     "url": "https://www.foxbusiness.com/technology/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-sexual-messages-kids"
+    },
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642440/apple-pulls-minimax-ai-chatbot-from-app-store-over-child-safety-concerns"
+    }
+   ],
+   "location": {
+    "label": "Beijing, China",
+    "shortLabel": "Beijing",
+    "lat": 39.9042,
+    "lng": 116.4074
+   },
+   "image": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/11/0/0/minimax-shanghai-reuters.jpg?ve=1&tl=1",
+   "imageAlt": "Apple removes MiniMax's Talkie AI chatbot from App Store amid reports of inappropriate messages to children",
+   "imageCredit": "Fox Business"
+  },
+  {
+   "id": "number-neets-rises-young-women-exit-labour",
+   "topic": "uk",
+   "source": "City AM",
+   "time": "26 Nov",
+   "url": "https://www.cityam.com/number-of-neets-rises-as-young-women-exit-labour-market/",
+   "headline": "Number of Neets rises as young women exit labour market",
+   "summary": "The Office for National Statistics reported a 22,000 decrease in Neets between July and September compared to the previous three-month period.",
+   "points": [],
+   "publishedLabel": "26 Nov 2026",
+   "article": [
+    "The Office for National Statistics reported a 22,000 decrease in Neets between July and September compared to the previous three-month period. The total number of economically inactive young people rose by 22,000 to 596,000, with Ben Harrison of the Work Foundation noting a growing gap in trends between young men and women.",
+    "The Office for National Statistics confirmed a 22,000 decline in Neets between July and September, bringing the total to 959,000, as ministers prepare sweeping reforms following Alan Milburn’s report on youth and work."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-27T09:15:46+00:00",
+   "articleSources": [
+    {
+     "name": "City AM",
+     "url": "https://www.cityam.com/number-of-neets-rises-as-young-women-exit-labour-market/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/society/2026/nov/26/neets-uk-young-people-education-employment-training-andy-burnham"
+    }
+   ],
+   "location": {
+    "label": "London, UK",
+    "shortLabel": "London",
+    "lat": 51.5072,
+    "lng": -0.1276
+   },
+   "image": "https://i.guim.co.uk/img/media/5ed2a70981b6249eff2491c184d3503f49eccad9/1_340_3616_2893/master/3616.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=fa3e09b8ca9855ea77974bccab50ba3b",
+   "imageAlt": "Number of Neets rises as young women exit labour market",
+   "imageCredit": "The Guardian"
+  }
+ ],
+ "OUTLETS": {
+  "ITV News": "LR",
+  "RTÉ News": "C",
+  "Euronews": "LL",
+  "Times Higher Education": "NR",
+  "ScienceDaily": "S",
+  "EconoTimes": "NC",
+  "LHCb paper (arXiv)": "P",
+  "Bloomberg": "LL",
+  "TechCrunch": "LL",
+  "Latin Times": "LL",
+  "The Tech Portal": "NC",
+  "IBTimes UK": "LL",
+  "ONS (official statistics)": "P",
+  "Al Jazeera English": "LL",
+  "CNN": "LL",
+  "CBC News": "LL",
+  "PBS NewsHour": "LL",
+  "Truthout": "L",
+  "Gizmodo": "L",
+  "Archaeology Magazine": "NC",
+  "Sci.News": "NC",
+  "Axios": "LL",
+  "Reuters": "C",
+  "CBS News": "LR",
+  "CNBC": "LL",
+  "The Daily Beast": "L",
+  "Townhall": "R",
+  "City AM": "NR",
+  "Central Banking": "NC",
+  "Bank of England (speech)": "P",
+  "Ukrainska Pravda": "LL",
+  "TVP World": "NR",
+  "Euromaidan Press": "NC",
+  "Popular Science": "S",
+  "New Atlas": "S",
+  "SciTechDaily": "S",
+  "Quartz": "LL",
+  "Daily Voice": "NC",
+  "Portsmouth News": "NC",
+  "BusinessCloud": "NC",
+  "The Irish News": "LL",
+  "BMA (union statement)": "P",
+  "Phys.org": "S",
+  "Sky & Telescope": "S",
+  "IntoMobile": "NC",
+  "Tesla North": "NC",
+  "NewsBytes": "NC",
+  "Express & Star": "NR",
+  "BBC News": "LL",
+  "The Guardian": "LL",
+  "Sky News": "C",
+  "The Telegraph": "LR",
+  "Daily Mail": "R",
+  "Financial Times": "C",
+  "The Economist": "C",
+  "France 24": "C",
+  "DW News": "LL",
+  "Politico Europe": "LL",
+  "NPR": "LL",
+  "The New York Times": "LL",
+  "Fox News": "R",
+  "South China Morning Post": "LL",
+  "Times of India": "LR",
+  "MercoPress": "LL",
+  "Nature News": "S",
+  "New Scientist": "S",
+  "The Verge": "LL",
+  "Ars Technica": "C",
+  "Wired": "LL",
+  "MarketWatch": "LR",
+  "ABC News Australia": "LL",
+  "Techmeme": "NR",
+  "End Time Headlines": "LR",
+  "Political Wire": "C",
+  "Hindustan Times": "LL",
+  "Investing.com": "C",
+  "7NEWS": "C",
+  "The Hill": "C",
+  "BleepingComputer": "C",
+  "WGN News": "C",
+  "WANE - Fort Wayne News": "C",
+  "WFLA - Tampa Bay": "C",
+  "NewsNation": "LR",
+  "Greek Reporter": "R",
+  "Breitbart": "R",
+  "Middle East Eye": "LL",
+  "KSTP-TV": "C",
+  "MyNorthwest": "LR",
+  "CityNews Toronto": "C",
+  "CityNews Edmonton": "C",
+  "CityNews Halifax": "C",
+  "CityNews Vancouver": "C",
+  "CityNews - Winnipeg": "C",
+  "CityNews Montreal": "C",
+  "CityNews Kitchener": "C",
+  "CityNews Ottawa": "C",
+  "CityNews Calgary": "C",
+  "Dallas Express": "R",
+  "Daily Caller": "R",
+  "WJW - Cleveland News": "C",
+  "Global News": "LL",
+  "KTLA": "C",
+  "Legal Insurrection": "R",
+  "The West Australian": "LR",
+  "NBC News": "LL",
+  "Citizen Free Press": "R",
+  "The Journal": "LL",
+  "Washington Post": "LL",
+  "RedState": "R",
+  "Washington Examiner": "LR",
+  "The Hindu": "LL",
+  "Hot Air": "R",
+  "ABC News (US)": "LL",
+  "Washington's Top News (WTOP)": "C",
+  "Scientific American": "S",
+  "Tom's Hardware": "NR",
+  "Simon Willison": "NR",
+  "Live Science": "S",
+  "The Wall Street Journal": "LR",
+  "SiliconANGLE": "NR",
+  "Decrypt": "NR",
+  "The Information": "C",
+  "Slashdot": "NR",
+  "Japan Times": "C",
+  "GB News": "R",
+  "The Decoder": "NR",
+  "The Globe and Mail": "LR",
+  "Engadget": "LL",
+  "Nottinghamshire Post": "C",
+  "Wales Online": "LL",
+  "Evening Standard": "LR",
+  "The Straits Times": "LR",
+  "Irish Mirror": "LL",
+  "E! News": "C",
+  "India Today": "LR",
+  "Sydney Morning Herald": "LL",
+  "The Age": "LL",
+  "KTTV - Fox 11 - Los Angeles": "C",
+  "KTVU Fox 2": "C",
+  "The Post Millennial": "R",
+  "KABC - Los Angeles News": "C",
+  "American Wire News": "R",
+  "BizPac Review": "R",
+  "Taipei Times": "LL",
+  "Fast Company": "LL",
+  "The Conversation UK": "C",
+  "HuffPost UK": "NR",
+  "Investors Business Daily": "R",
+  "Inc.com": "C",
+  "Slate": "L",
+  "Digital Trends": "C",
+  "Fox Business": "LR",
+  "The Citizen": "LR",
+  "Armstrong Economics": "R",
+  "Yorkshire Post": "C",
+  "Conservative Review": "R",
+  "WFLD - Fox 32 - Chicago": "C",
+  "Channel 4 News": "NR",
+  "Al-Monitor": "LL",
+  "NDTV": "LR",
+  "Military.com": "C",
+  "Euractiv": "LL",
+  "i News": "LL",
+  "CNA": "C",
+  "SOFREP": "LR",
+  "Defense One": "C",
+  "The Sun": "R",
+  "The US Sun": "R",
+  "The Express Tribune": "C",
+  "Irish Independent": "LR",
+  "Rappler": "LL",
+  "KFGO - 790 AM - Fargo": "LR",
+  "Daily Mirror": "LL",
+  "Off The Press": "R",
+  "Livemint": "C",
+  "MoneyWeek": "NR",
+  "Naked Capitalism": "LL",
+  "Jacobin": "L",
+  "Times of Malta": "C",
+  "The Local France": "LL",
+  "Dawn": "LL",
+  "Android Authority": "NR",
+  "9to5Mac": "NR",
+  "ZDNET": "C",
+  "CNET": "C",
+  "The Hacker News": "NR",
+  "Daily Express": "R",
+  "Belfast Live": "C",
+  "Metro": "LL",
+  "Belfast Telegraph": "NR",
+  "The Sun - Nigeria": "LR",
+  "Guido Fawkes": "R",
+  "The Herald": "LL",
+  "Manchester Evening News": "LL",
+  "Hello Magazine": "C",
+  "Birmingham Mail": "LL",
+  "The Week UK": "L",
+  "9to5Google": "NR",
+  "Mother Jones": "LL",
+  "MacRumors": "NR",
+  "The New American": "R",
+  "Inside Climate News": "LL",
+  "New York Observer": "LR",
+  "Space.com": "S",
+  "Eos": "NR",
+  "How-To Geek": "C",
+  "Oilprice.com": "C",
+  "Medical Xpress": "S",
+  "MarketBeat": "C",
+  "The Next Web": "LL",
+  "The Rio Times": "LR",
+  "CoinDesk": "NR",
+  "The Block": "NR",
+  "Nautilus": "S",
+  "Big Think": "C",
+  "Toledo Blade": "LR",
+  "Mexico News Daily": "LL",
+  "New York Post": "LR",
+  "The Jerusalem Post": "LR",
+  "Mongabay": "LL",
+  "RNZ": "C",
+  "US Top News and Analysis": "LL",
+  "Institute for Government": "P",
+  "Toronto Sun": "R",
+  "This is Money": "LR",
+  "Benzinga": "C",
+  "Kiplinger": "C",
+  "Haaretz": "L",
+  "Derbyshire Live": "C",
+  "DublinLive": "C",
+  "WITI - FOX 6 - Milwaukee": "C",
+  "Bristol Post": "C",
+  "WOFL Fox 35 Orlando": "C",
+  "PlymouthLive": "C",
+  "Latest Science News -- ScienceDaily": "S",
+  "ABC7 New York": "C",
+  "Cointelegraph": "NR",
+  "Forbes": "C",
+  "Freightwaves": "NR",
+  "ONS": "P",
+  "Retail Gazette": "NR",
+  "SecurityWeek": "NR",
+  "ABC7chicago.com": "C",
+  "Indian Express": "LL",
+  "Premium Times": "LL",
+  "UnHerd": "LR",
+  "Powerline": "R",
+  "Mashable": "L",
+  "PCWorld": "NR",
+  "Irish Sun": "R",
+  "Seeking Alpha": "LR",
+  "Money Crashers": "C",
+  "SomersetLive": "C",
+  "Liverpool Echo": "C",
+  "Hull Daily Mail": "C",
+  "North Wales Live": "C",
+  "Gloucestershire Live": "C",
+  "Leicester Mercury": "LR",
+  "Spiked Magazine": "R",
+  "Electrek": "LL",
+  "InsideEVs": "LL",
+  "Motley Fool UK": "NR",
+  "Economic Times": "LR",
+  "Business Insider": "LL",
+  "Resolution Foundation": "NR",
+  "VnExpress International": "NR",
+  "Scroll.in": "LL",
+  "Time": "LL",
+  "Grist": "LL",
+  "Daily Maverick": "C",
+  "Environment + Energy – The Conversation": "C",
+  "The Scotsman": "C",
+  "The Register": "C",
+  "Finextra": "C",
+  "Smithsonian Magazine": "S",
+  "Computer Weekly": "NR",
+  "Tech.eu": "NR",
+  "Page Six": "LR",
+  "WTVT - Fox 13 - Tampa Bay": "C",
+  "Interesting Engineering": "S",
+  "Newstalk ZB": "LR",
+  "Iran International": "NR",
+  "LeedsLive": "C",
+  "Pulse": "NR",
+  "Retail Dive": "C",
+  "WNYW - Fox 5 -New York": "C",
+  "Mental Floss": "C",
+  "WPIX 11": "C",
+  "Winnipeg Free Press": "C",
+  "Las Vegas Review Journal": "LR",
+  "Colorado Springs Gazette": "LR",
+  "Manchester Union leader": "LR",
+  "KUSI-TV": "C",
+  "TechRadar": "NR",
+  "WTTG - Fox 5 - DC": "C",
+  "The Federalist": "R",
+  "Twitchy": "R",
+  "Bearing Arms": "R",
+  "Fortune": "LR",
+  "Newsweek": "LR",
+  "GeekWire": "C",
+  "The Guardian US": "LL",
+  "American Council on Science and Health (ACSH)": "LR",
+  "KSAZ - Fox 10 Phoenix": "C",
+  "Stoke-On-Trent Live": "C",
+  "Universe Today": "S",
+  "Irish Examiner": "LL",
+  "The Bulwark": "LR",
+  "The Conversation": "C",
+  "Hacker News": "C",
+  "MakeUseOf": "C",
+  "Newsbusters": "R"
+ },
+ "QUESTIONABLE": [
+  "Breitbart",
+  "Economic Times",
+  "Fox News",
+  "GB News",
+  "Hindustan Times",
+  "NDTV",
+  "The Federalist"
+ ],
+ "COVERAGE": {
+  "trump-administration-determined-jensen-huang-national-security": [
+   [
+    "The New York Times",
+    "25 Nov",
+    "https://www.nytimes.com/2026/11/25/business/dealbook/nvidia-huang-ai-rally.html",
+    "Why the Nvidia Rally Fizzled"
+   ],
+   [
+    "TechCrunch",
+    "25 Nov",
+    "https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/",
+    "The questions Jensen Huang and Nvidia will still have to answer about Megaspeed"
+   ],
+   [
+    "Political Wire",
+    "25 Nov",
+    "https://politicalwire.com/2026/11/25/the-jensen-huang-scandal-has-it-all/",
+    "The Jensen Huang Scandal Has It All"
+   ],
+   [
+    "CNBC",
+    "25 Nov",
+    "https://www.cnbc.com/2026/11/24/jensen-huang-nvidia-employee-meeting.html",
+    "Jensen Huang tells staff that Nvidia doesn't need a succession plan"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/technology/6242120-jesse-watters-trump-nvidia-huang-benefits/",
+    "Watters: Trump can now use Huang like ‘cash register’"
+   ],
+   [
+    "South China Morning Post",
+    "25 Nov",
+    "https://www.scmp.com/tech/big-tech/article/3375795/nvidias-jensen-huang-back-will-he-still-be-regular-visitor-china",
+    "Nvidia’s Jensen Huang is back – but will he still be a regular visitor to China?"
+   ],
+   [
+    "Scroll.in",
+    "25 Nov",
+    "https://scroll.in/article/1097304/ai-bubble-us-stock-market-among-reasons-why-trump-convinced-nvidia-to-rehire-jensen-huang?utm_source=rss&utm_medium=public",
+    "Why did Trump meddle with Nvidia to ‘convince’ it to rehire Jensen Huang?"
+   ],
+   [
+    "Daily Maverick",
+    "25 Nov",
+    "https://www.dailymaverick.co.za/video/2026-11-25-watch-jensen-huangs-return-puts-nvidia-back-in-focus/",
+    "Watch – Jensen Huang’s Return Puts NVIDIA Back in Focus"
+   ],
+   [
+    "Slashdot",
+    "25 Nov",
+    "https://hardware.slashdot.org/story/26/11/25/0757217/tuesday-jensen-huang-said-nvidia-doesnt-need-a-succession-plan-and-that-hes-in-therapy?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "Tuesday Jensen Huang Said Nvidia Doesn't Need a Succession Plan, and that He's in Therapy"
+   ],
+   [
+    "Powerline",
+    "25 Nov",
+    "https://www.powerlineblog.com/archives/2026/11/huang-and-nvidia-its-not-that-complicated.php",
+    "Huang and Nvidia: It’s Not That Complicated"
+   ],
+   [
+    "Decrypt",
+    "25 Nov",
+    "https://decrypt.co/384001/what-happened-alice-huang-nvidia-spy-scandal",
+    "What Happened to Alice Huang, the Woman at the Center of Nvidia’s Scandal?"
+   ],
+   [
+    "The Wall Street Journal",
+    "25 Nov",
+    "https://www.wsj.com/finance/stocks/jensen-huang-trump-and-the-11-days-that-rocked-nvidia-604fff0b?mod=pls_whats_news_us_business_f",
+    "Jensen Huang, Trump and the 11 Days That Rocked Nvidia"
+   ],
+   [
+    "The Bulwark",
+    "25 Nov",
+    "https://www.thebulwark.com/p/fox-correspondent-calls-bs-on-trumps",
+    "The Jensen Huang Spy Scandal Just Got Stranger"
+   ],
+   [
+    "SiliconANGLE",
+    "25 Nov",
+    "https://siliconangle.com/2026/11/25/us-intelligence-agencies-reportedly-brief-congress-about-alice-huang/",
+    "US intelligence agencies reportedly brief Congress about Alice Huang"
+   ],
+   [
+    "The Express Tribune",
+    "26 Nov",
+    "https://tribune.com.pk/story/2642446/how-the-trump-administration-determined-jensen-huang-is-not-a-national-security-threat",
+    "How the Trump administration determined Jensen Huang is not a national security threat"
+   ],
+   [
+    "Fast Company",
+    "26 Nov",
+    "https://www.fastcompany.com/91648541/ai-may-not-be-a-bubble-but-the-way-were-financing-it-might-be?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss",
+    "AI may not be a bubble. But the way we’re financing it might be"
+   ],
+   [
+    "Livemint",
+    "26 Nov",
+    "https://www.livemint.com/companies/news/nvidia-board-s-flip-flop-on-jensen-huang-as-ceo-puts-its-aa-credit-rating-at-risk-why-s-p-is-considering-a-downgrad-11795685706714.html",
+    "Nvidia reinstated Jensen Huang as CEO. Now S&P may downgrade its AA credit rating"
+   ],
+   [
+    "NewsNation",
+    "26 Nov",
+    "https://www.newsnationnow.com/business/tech/ai/jensen-huang-ai-safety-innovation/",
+    "How Jensen Huang sees AI safety, innovation"
+   ],
+   [
+    "MarketWatch",
+    "27 Nov",
+    "https://www.marketwatch.com/story/we-are-living-in-perilous-times-if-nvidias-jensen-huang-dictates-your-401-k-balance-e0942d1e?mod=mw_rss_topstories",
+    "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance"
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/trump-jensen-huang-ceo-second-term-at-nvidia",
+    "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia"
+   ],
+   [
+    "The Hindu",
+    "27 Nov",
+    "https://www.thehindu.com/sci-tech/technology/jensen-huang-needs-a-new-playbook-for-his-second-innings-at-nvidia/article71745086.ece",
+    "Jensen Huang needs a new playbook for his second innings at Nvidia"
+   ],
+   [
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/donald-trump-insists-nvidia-ceo-jensen-huang-not-security-threat-12382721#publisher=newsstand",
+    "\"He's Absolutely Fine\": Trump Insists Jensen Huang Not Security Threat"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/i-think-he-s-absolutely-fine-donald-trump-once-again-defends-nvidia-ceo-jensen-huang-amid-spy-concerns-101795738082579.html",
+    "‘I think he’s absolutely fine’: Trump once again defends Nvidia CEO Jensen Huang amid spy concerns"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/united-states/trump-insists-nvidia-ceo-jensen-huang-not-a-security-threat",
+    "Trump insists Nvidia CEO Jensen Huang not a security threat"
+   ],
+   [
+    "Financial Times",
+    "27 Nov",
+    "https://www.ft.com/content/2a98efa0-2c2d-47e3-99a9-e00fbe699c34?syn-25a6b1a6=1",
+    "‘A changed man.’ How will Jensen Huang lead Nvidia now?"
+   ],
+   [
+    "RTÉ News",
+    "27 Nov",
+    "https://www.rte.ie/news/world/2026/1127/1600850-nvidia-ceo-huang-not-a-security-threat-trump/",
+    "Nvidia CEO Huang not a security threat - Trump"
+   ],
+   [
+    "Forbes",
+    "27 Nov",
+    "https://www.forbes.com/sites/siladityaray/2026/11/27/trump-says-wednesdays-stock-selloff-had-him-a-little-concerned-as-he-defends-nvidia-ceo-huang-again/",
+    "Trump Says Wednesday’s Stock Selloff Had Him ‘A Little Concerned’ As He Defends Nvidia CEO Huang Again"
+   ],
+   [
+    "Fox Business",
+    "27 Nov",
+    "https://www.foxbusiness.com/politics/trump-doubles-down-support-nvidia-ceo-amid-national-security-concerns",
+    "Trump doubles down on support for Nvidia CEO amid national security concerns"
+   ],
+   [
+    "Irish Independent",
+    "27 Nov",
+    "https://www.independent.ie/world-news/was-the-woman-at-the-centre-of-the-nvidia-alleged-spy-scandal-an-agent-of-influence-for-china/a/165185689.html",
+    "Was the woman at the centre of the Nvidia alleged spy scandal an ‘agent of influence’ for China?"
+   ]
+  ],
+  "federal-judge-blocks-fcc-reviewing-abcs-licenses": [
+   [
+    "NBC News",
+    "26 Nov",
+    "https://www.nbcnews.com/business/media/judge-blocks-fcc-review-abc-station-licenses-now-rcna601892",
+    "Judge blocks FCC review of ABC station licenses for now"
+   ],
+   [
+    "Newsbusters",
+    "26 Nov",
+    "https://www.newsbusters.org/blogs/nb/nicholas-fondacaro/2026/11/25/liberal-federal-judge-sneaks-preliminary-injunction-against",
+    "Liberal Federal Judge Sneaks in Preliminary Injunction Against FCC"
+   ],
+   [
+    "The Hill",
+    "26 Nov",
+    "https://thehill.com/regulation/court-battles/6244298-judge-blocks-fcc-from-early-renewal-of-abc-licenses/",
+    "Judge blocks FCC from early renewal of ABC licenses"
+   ],
+   [
+    "Washington Post",
+    "26 Nov",
+    "https://www.washingtonpost.com/business/2026/11/25/judge-halts-fcc-review-abc-licenses-saying-it-probably-violates-first-amendment/",
+    "Judge halts FCC review of ABC licenses, saying it probably violates First Amendment"
+   ],
+   [
+    "Political Wire",
+    "26 Nov",
+    "https://politicalwire.com/2026/11/25/judge-halts-fcc-review-of-abc-licenses/",
+    "Judge Halts FCC Review of ABC Licenses"
+   ],
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/us-news/2026/nov/25/brendan-carr-fcc-abc-licenses",
+    "Judge blocks Brendan Carr-led FCC from taking any further action against ABC’s licenses"
+   ],
+   [
+    "The Wall Street Journal",
+    "26 Nov",
+    "https://www.wsj.com/business/media/judge-says-fcc-must-stop-abc-license-review-3748d619?mod=pls_whats_news_us_business_f",
+    "Judge Says FCC Must Stop ABC License Review"
+   ],
+   [
+    "NPR",
+    "26 Nov",
+    "https://www.npr.org/2026/11/26/nx-s1-6000576/fcc-disney-abc-first-amendment-trump-brendan-carr",
+    "U.S. Judge rules FCC violated ABC's free speech rights to please Trump"
+   ],
+   [
+    "Time",
+    "26 Nov",
+    "https://time.com/article/2026/11/26/fcc-abc-disney-broadcast-license-early-review-judge-injunction/",
+    "‘Not a Close Case’: Judge Strikes Down Trump Administration’s Targeting of ABC"
+   ],
+   [
+    "Breitbart",
+    "26 Nov",
+    "https://www.breitbart.com/entertainment/2026/11/26/biden-appointed-judge-halts-fccs-early-review-of-abcs-broadcast-licenses/",
+    "Biden-Appointed Judge Halts FCC’s Early Review of ABC's Broadcast Licenses"
+   ],
+   [
+    "PBS NewsHour",
+    "26 Nov",
+    "https://www.pbs.org/newshour/nation/judge-blocks-fcc-from-early-license-review-for-abc-which-network-says-has-had-a-chilling-effect",
+    "Judge blocks FCC from early license review for ABC, which network says has had a chilling effect"
+   ],
+   [
+    "The Verge",
+    "26 Nov",
+    "https://www.theverge.com/policy/1043116/fcc-disney-abc-broadcast-licenses-review-early-judge-block",
+    "Federal judge blocks the FCC from reviewing ABC’s licenses early"
+   ],
+   [
+    "The New York Times",
+    "27 Nov",
+    "https://www.nytimes.com/2026/11/25/business/media/disney-fcc-abc-ruling.html",
+    "Judge Blocks F.C.C. From Targeting Disney’s Local ABC Licenses"
+   ]
+  ],
+  "zelenskyy-criticises-trumps-friendly-gesture-towards-putin": [
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/videos/cm9309nwk7x9o?at_medium=RSS&at_campaign=rss",
+    "Zelensky questions 'strange' Trump-Putin friendship in BBC interview"
+   ],
+   [
+    "Times of India",
+    "26 Nov",
+    "https://timesofindia.indiatimes.com/world/europe/he-cant-be-a-friend-zelensky-calls-trumps-putin-bonhomie-strange-questions-support-for-ukraine/articleshow/136205617.cms",
+    "'Very strange': Zelenskyy questions Trump's Putin bonhomie, US support for Ukraine"
+   ],
+   [
+    "Off The Press",
+    "26 Nov",
+    "https://offthepress.com/r/185146?c=rss",
+    "Zelenskyy calls Trump's friendship with 'killer' Putin 'strange'"
+   ],
+   [
+    "Newsweek",
+    "27 Nov",
+    "https://www.newsweek.com/zelensky-rips-trump-over-putin-embrace-compares-it-to-befriending-hitler-12772292",
+    "Zelensky Rips Trump Over Putin Embrace, Compares It to Befriending Hitler"
+   ],
+   [
+    "Ukrainska Pravda",
+    "27 Nov",
+    "https://www.pravda.com.ua/eng/news/2026/11/27/8064888/",
+    "It's like calling Hitler a friend: Zelenskyy outraged by Trump's friendly embrace of Putin"
+   ],
+   [
+    "Daily Mirror",
+    "27 Nov",
+    "https://www.mirror.co.uk/news/world-news/zelensky-trump-putin-strange-friendship-37920768",
+    "Zelensky questions Trump's 'strange' friendship with Putin after bizarre change to NATO statement"
+   ],
+   [
+    "The Hill",
+    "27 Nov",
+    "https://thehill.com/policy/international/6245089-zelensky-calls-for-us-peace-progress/",
+    "Zelensky on Trump calling Putin ‘friend’: ‘Same as somebody saying about Hitler’ in WWII"
+   ],
+   [
+    "i News",
+    "27 Nov",
+    "https://inews.co.uk/news/world/two-reasons-trumps-strange-putin-friendship-alarming-europe-4934998",
+    "Two reasons Trump’s ‘strange’ Putin friendship is alarming Europe"
+   ],
+   [
+    "Irish Independent",
+    "27 Nov",
+    "https://www.independent.ie/world-news/zelensky-says-he-found-it-strange-that-trump-called-putin-my-friend/a/165184306.html",
+    "Zelensky says he found it ‘strange’ that Trump called Putin ‘my friend’"
+   ],
+   [
+    "Daily Mail",
+    "27 Nov",
+    "https://www.dailymail.com/news/article-16326061/Zelensky-criticises-Trump-calling-Putin-friend-like-saying-youre-friends-Hitler.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Zelensky criticises Trump for calling Putin his 'friend': 'It's like saying you're friends with Hitler'"
+   ]
+  ],
+  "apple-removes-minimaxs-talkie-ai-chatbot-app": [
+   [
+    "South China Morning Post",
+    "25 Nov",
+    "https://www.scmp.com/tech/tech-trends/article/3375791/minimax-chatbot-talkie-removed-apple-app-store-over-alleged-sexual-content",
+    "MiniMax chatbot Talkie removed from Apple App Store over alleged sexual content"
+   ],
+   [
+    "The Express Tribune",
+    "26 Nov",
+    "https://tribune.com.pk/story/2642440/apple-pulls-minimax-ai-chatbot-from-app-store-over-child-safety-concerns",
+    "Apple pulls MiniMax AI chatbot from App Store over child safety concerns"
+   ],
+   [
+    "9to5Mac",
+    "26 Nov",
+    "https://9to5mac.com/2026/11/25/apple-pulls-popular-chinese-ai-chatbot-from-the-app-store-amid-child-safety-concerns/",
+    "Apple pulls popular Chinese AI chatbot from the App Store amid child safety concerns"
+   ],
+   [
+    "Fox Business",
+    "26 Nov",
+    "https://www.foxbusiness.com/technology/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-sexual-messages-kids",
+    "Apple pulls Chinese-developed AI chatbot from App Store over reports of sexual messages to kids"
+   ],
+   [
+    "New York Post",
+    "27 Nov",
+    "https://nypost.com/2026/11/27/business/apple-pulls-chinese-developed-ai-chatbot-from-app-store-over-reports-of-sexual-messages-to-kids/",
+    "Apple pulls Chinese-developed AI chatbot from App Store over reports of sexual messages to kids"
+   ],
+   [
+    "Off The Press",
+    "27 Nov",
+    "https://offthepress.com/r/185197?c=rss",
+    "Apple pulls Chinese-developed AI chatbot Talkie from App Store over reports of sexual messages to kids"
+   ]
+  ],
+  "number-neets-rises-young-women-exit-labour": [
+   [
+    "The Conversation UK",
+    "25 Nov",
+    "https://theconversation.com/solving-the-neet-crisis-may-come-with-a-price-tag-the-government-cant-afford-297332",
+    "Solving the Neet crisis may come with a price tag the government can’t afford"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/money/financial-planning/article-16296453/How-Neets-delaying-parents-retirements-Forty-somethings-stop-work-seven-years-later-cost-supporting-family.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "How Neets are delaying their parents' retirements: Over-40s think they will have to stop work seven years later"
+   ],
+   [
+    "This is Money",
+    "25 Nov",
+    "https://www.thisismoney.co.uk/money/financial-planning/article-16296453/How-Neets-delaying-parents-retirements-Forty-somethings-stop-work-seven-years-later-cost-supporting-family.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "How Neets are delaying their parents' retirements: Over-40s think they will have to stop work seven years later"
+   ],
+   [
+    "ONS",
+    "26 Nov",
+    "https://www.ons.gov.uk/releases/youngpeoplenotineducationemploymentortrainingneetuknovember2026",
+    "Young people not in education, employment or training (NEET), UK: November 2026"
+   ],
+   [
+    "City AM",
+    "26 Nov",
+    "https://www.cityam.com/number-of-neets-rises-as-young-women-exit-labour-market/",
+    "Number of Neets rises as young women exit labour market"
+   ],
+   [
+    "Evening Standard",
+    "26 Nov",
+    "https://www.standard.co.uk/news/politics/alan-milburn-neets-pat-mcfadden-tuc-british-chambers-of-commerce-b1306570.html",
+    "Number of young people classed as Neet falls but women more likely to be out of work, figures show"
+   ],
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/society/2026/nov/26/neets-uk-young-people-education-employment-training-andy-burnham",
+    "Number of Neets in UK falls below a million as Burnham pushes to tackle crisis"
+   ]
+  ],
+  "army-calls-detonation-bomb-chemicals-iowa-success": [
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/homenews/state-watch/6241997-911-attorney-iowa-lead-azide-detonation-insane/",
+    "Army plan to detonate lead azide in Iowa ‘insane’: Attorney"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "25 Nov",
+    "https://www.wane.com/news/national-world/detonation-of-unstable-lead-azide-in-iowa-scheduled-for-wednesday-morning-what-to-know/",
+    "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume"
+   ],
+   [
+    "PBS NewsHour",
+    "25 Nov",
+    "https://www.pbs.org/newshour/nation/watch-live-army-expected-to-carry-out-controlled-detonation-of-iowa-lead-azide-stockpile",
+    "WATCH: Army carries out controlled detonation of Iowa lead azide stockpile amid concerns"
+   ],
+   [
+    "End Time Headlines",
+    "25 Nov",
+    "https://endtimeheadlines.org/2026/11/maps-show-iowa-lead-dust-plume-drifting-southwest-into-missouri-wednesday-after-detonation/",
+    "Maps show Iowa lead dust plume drifting southwest into Missouri Wednesday after detonation"
+   ],
+   [
+    "Scientific American",
+    "25 Nov",
+    "https://www.scientificamerican.com/article/the-u-s-army-is-blowing-up-five-tons-of-toxic-lead-azide-in-iowa/",
+    "The U.S. Army is blowing up five tons of toxic lead azide in Iowa"
+   ],
+   [
+    "American Council on Science and Health (ACSH)",
+    "25 Nov",
+    "https://www.acsh.org/news/2026/11/25/lead-azide-boom-or-bust-army-chose-boom-did-it-get-it-right-50489",
+    "Lead azide: Boom or bust? The Army chose boom. Did it get it right?"
+   ],
+   [
+    "Ars Technica",
+    "25 Nov",
+    "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/",
+    "Lead azide detonation sends clouds over Iowa as questions of health risks swirl"
+   ],
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/video-shows-massive-explosion-as-us-army-destroys-entire-stockpile-of-lead-azide",
+    "Video shows massive explosion as US Army destroys entire stockpile of lead azide"
+   ],
+   [
+    "Axios",
+    "25 Nov",
+    "https://www.axios.com/2026/11/25/iowa-army-lead-detonation",
+    "Army detonates Iowa explosives amid toxic lead fears"
+   ],
+   [
+    "Space.com",
+    "25 Nov",
+    "https://www.space.com/technology/aerospace/nasa-sends-planes-to-monitor-us-armys-lead-detonation-irresponsible-to-compare-it-to-chernobyl-agency-chief-says",
+    "NASA sends planes to monitor US Army's lead detonation. 'Irresponsible' to compare it to Chernobyl, agency chief says"
+   ],
+   [
+    "KSAZ - Fox 10 Phoenix",
+    "25 Nov",
+    "https://www.fox10phoenix.com/news/army-blows-up-bomb-making-chemicals-teens-charged-chandler-home-invasion-morning-news-brief",
+    "Army blows up bomb-making chemicals; teens charged in Chandler home invasion l Morning News Brief"
+   ],
+   [
+    "The Post Millennial",
+    "25 Nov",
+    "https://thepostmillennial.com/news/breaking-officials-say-zero-lead-detected-in-air-after-successful-detonation-of-bomb-making",
+    "BREAKING: Officials say zero lead detected in air after successful detonation of bomb making materials in Iowa"
+   ],
+   [
+    "The Guardian",
+    "25 Nov",
+    "https://www.theguardian.com/us-news/live/2026/nov/25/iowa-lead-azide-detonation-army-explosion-bomb-live-updates",
+    "US Army calls Iowa lead detonation a ‘huge success’ and says threat of spontaneous explosions has been ‘eliminated’ – as it happened"
+   ],
+   [
+    "Mongabay",
+    "25 Nov",
+    "https://news.mongabay.com/short-article/2026/11/army-blows-up-bomb-chemicals-in-iowa-despite-fears-a-toxic-plume-could-endanger-residents/",
+    "Army blows up bomb chemicals in Iowa despite fears a toxic plume could endanger residents"
+   ],
+   [
+    "The Bulwark",
+    "25 Nov",
+    "https://www.thebulwark.com/p/trump-plays-politics-as-iowa-experiences",
+    "Trump Plays Politics as Iowa Experiences a Toxic Explosion | Morning Shots"
+   ],
+   [
+    "Daily Mail",
+    "25 Nov",
+    "https://www.dailymail.com/sciencetech/article-16321515/Army-detonates-nearly-10-000-pounds-toxic-explosives-Iowa-unleashing-pressure-wave-cloud-fuels-fallout-fears.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Army detonates nearly 10,000 pounds of toxic explosives in Iowa unleashing pressure wave as thick cloud fuels fallout fears"
+   ],
+   [
+    "Wired",
+    "25 Nov",
+    "https://www.wired.com/story/iowa-lead-detonation-real-monitoring-work-begins/",
+    "The Iowa Lead Detonation Happened. Now the Real Work Begins to Study It"
+   ],
+   [
+    "Fox News",
+    "25 Nov",
+    "https://www.foxnews.com/health/doctors-warn-lead-exposure-health-risks-controversial-army-detonation-iowa",
+    "Doctors warn of lead exposure health risks after controversial Army detonation in Iowa"
+   ],
+   [
+    "Inside Climate News",
+    "25 Nov",
+    "https://insideclimatenews.org/news/25112026/iowa-lead-explosives-health-risks-close-to-zero/",
+    "After Detonating Five Tons of Lead Explosives in Iowa, Army Says Health Risks Are ‘Close to Zero’"
+   ],
+   [
+    "Political Wire",
+    "25 Nov",
+    "https://politicalwire.com/2026/11/25/white-house-blindsided-by-lead-based-explosives-in-iowa/",
+    "White House Blindsided by Lead-Based Explosives in Iowa"
+   ],
+   [
+    "WFLD - Fox 32 - Chicago",
+    "26 Nov",
+    "https://www.fox32chicago.com/news/whats-iowa-lead-detonation-mean-food-safety-heres-what-officials-say",
+    "Did the Iowa lead detonation impact food safety? Here’s what officials say"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/us-army-declares-success-in-detonation-of-lead-based-explosives-stockpile-in-iowa/article71745045.ece",
+    "U.S. Army declares success in detonation of lead-based explosives stockpile in Iowa"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/cwg7l5ve251ko?at_medium=RSS&at_campaign=rss",
+    "US Army says controlled blast of explosives in Iowa was 'huge success'"
+   ],
+   [
+    "Legal Insurrection",
+    "26 Nov",
+    "https://legalinsurrection.com/2026/11/armys-iowa-detonation-of-lead-azide-explosives-caved-inward-perfectly/?utm_source=rss&utm_medium=rss&utm_campaign=armys-iowa-detonation-of-lead-azide-explosives-caved-inward-perfectly",
+    "Army’s Iowa Detonation of Lead Azide Explosives ‘Caved Inward Perfectly’"
+   ],
+   [
+    "NBC News",
+    "26 Nov",
+    "https://www.nbcnews.com/news/us-news/army-says-detonation-bomb-chemicals-iowa-success-rcna611434",
+    "Iowa residents mark Thanksgiving with lingering fears after chemical detonation"
+   ],
+   [
+    "SOFREP",
+    "26 Nov",
+    "https://sofrep.com/news/why-the-army-had-no-choice-but-to-blow-up-9700-pounds-of-lead-azide-in-iowa/",
+    "Why the Army Had No Choice but to Blow Up 9,700 Pounds of Lead Azide in Iowa"
+   ],
+   [
+    "ABC7chicago.com",
+    "26 Nov",
+    "https://abc7chicago.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
+    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
+   ],
+   [
+    "KABC - Los Angeles News",
+    "26 Nov",
+    "https://abc7.com/story/armys-lead-azide-detonation-set-wednesday-iowa-plant-following-delays/20078581/",
+    "Army's lead azide detonation set for Wednesday at Iowa plant following delays"
+   ],
+   [
+    "Breitbart",
+    "26 Nov",
+    "https://www.breitbart.com/environment/2026/11/26/vance-blames-obama-for-iowa-lead-detonation-the-can-had-been-kicked-down-the-road/",
+    "JD Vance Blames Obama Admin for Iowa Lead Detonation: 'the Can Had Been Kicked Down the Road'"
+   ],
+   [
+    "Bloomberg",
+    "26 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-26/epa-says-new-tests-find-no-airborne-lead-after-army-s-iowa-blast",
+    "EPA Says Tests Find No Airborne Lead After Army’s Iowa Blast"
+   ],
+   [
+    "MyNorthwest",
+    "26 Nov",
+    "https://mynorthwest.com/national/epa-expects-iowa-lead-detonation-results-soon/4305035",
+    "EPA expects Iowa lead detonation results soon"
+   ],
+   [
+    "Taipei Times",
+    "27 Nov",
+    "https://www.taipeitimes.com/News/world/archives/2026/11/27/2003868504",
+    "US Army detonates bomb chemicals, says area is safe"
+   ],
+   [
+    "Off The Press",
+    "27 Nov",
+    "https://offthepress.com/r/185162?c=rss",
+    "EPA expects Iowa lead detonation sample results soon"
+   ],
+   [
+    "WJW - Cleveland News",
+    "27 Nov",
+    "https://fox8.com/news/test-results-from-samples-taken-after-iowa-lead-detonation-are-expected-soon-epa-says/",
+    "Test results from samples taken after Iowa lead detonation are expected soon, EPA says"
+   ]
+  ],
+  "approves-spacex-plan-deploy-million-data-centre": [
+   [
+    "The Verge",
+    "25 Nov",
+    "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+    "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space"
+   ],
+   [
+    "Sky News",
+    "25 Nov",
+    "https://news.sky.com/story/us-authorises-elon-musks-spacex-to-deploy-one-million-satellites-to-space-13616493",
+    "US authorises SpaceX to deploy one million satellites to space"
+   ],
+   [
+    "Decrypt",
+    "25 Nov",
+    "https://decrypt.co/383991/elon-musk-spacex-fcc-approval-ai-data-centers-space",
+    "Elon Musk’s SpaceX Gets FCC Approval to Launch AI Data Centers in Space"
+   ],
+   [
+    "Ars Technica",
+    "25 Nov",
+    "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/",
+    "The FCC has authorized SpaceX to deploy 1 million satellites"
+   ],
+   [
+    "Space.com",
+    "25 Nov",
+    "https://www.space.com/space-exploration/launches-spacecraft/green-light-for-starmind-spacex-gets-approval-to-deploy-1-million-ai-satellites",
+    "Green light for Starmind: SpaceX gets approval to deploy 1 million AI satellites"
+   ],
+   [
+    "Fox Business",
+    "25 Nov",
+    "https://www.foxbusiness.com/politics/data-centers-space-fcc-clears-spacex-1m-satellites-extend-americas-lead-superintelligence",
+    "‘Data centers in space’: FCC clears SpaceX for 1M satellites to ‘extend America’s lead in superintelligence’"
+   ],
+   [
+    "The Wall Street Journal",
+    "25 Nov",
+    "https://www.wsj.com/business/fcc-authorizes-spacex-to-build-1-million-data-centers-in-space-0eb20ee7?mod=pls_whats_news_us_business_f",
+    "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers"
+   ],
+   [
+    "The Hill",
+    "25 Nov",
+    "https://thehill.com/policy/technology/6243528-fcc-approves-spacex-orbital-ai-data-centers/",
+    "FCC approves SpaceX’s plan to launch up to 1 million data centers into space"
+   ],
+   [
+    "CNET",
+    "25 Nov",
+    "https://www.cnet.com/science/space/the-fcc-approved-a-million-spacex-satellites-for-data-centers-in-space/",
+    "The FCC Approved a Million SpaceX Satellites for Data Centers in Space"
+   ],
+   [
+    "TechCrunch",
+    "25 Nov",
+    "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
+    "FCC approves SpaceX plan to put AI data centers in space"
+   ],
+   [
+    "CBS News",
+    "25 Nov",
+    "https://www.cbsnews.com/news/spacex-fcc-approval-data-centers-space/",
+    "FCC approves SpaceX plan for 1 million data center satellites"
+   ],
+   [
+    "Political Wire",
+    "25 Nov",
+    "https://politicalwire.com/2026/11/25/spacex-gets-approval-for-one-million-orbital-data-centers/",
+    "SpaceX Gets Approval for One Million Orbital Data Centers"
+   ],
+   [
+    "SiliconANGLE",
+    "25 Nov",
+    "https://siliconangle.com/2026/11/25/fcc-clears-spacex-to-put-up-to-1-million-starmind-data-centers-in-space/",
+    "FCC clears SpaceX to put up to 1 million Starmind data centers in space"
+   ],
+   [
+    "GeekWire",
+    "26 Nov",
+    "https://www.geekwire.com/2026/fcc-clears-spacex-million-satellites-starmind-data-center/",
+    "FCC clears SpaceX to put up to a million satellites in orbit for Starmind data center network"
+   ],
+   [
+    "CNBC",
+    "26 Nov",
+    "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
+    "SpaceX wins FCC approval to deploy 1 million orbital data center satellites"
+   ],
+   [
+    "End Time Headlines",
+    "26 Nov",
+    "https://endtimeheadlines.org/2026/11/elon-musk-gets-approval-for-1-million-constellation-satellites-to-host-ai-technology/",
+    "Elon Musk gets approval for 1 MILLION ‘constellation’ satellites to host AI technology"
+   ],
+   [
+    "NPR",
+    "26 Nov",
+    "https://www.npr.org/2026/11/26/g-s1-155940/fcc-spacex-satellites-data-centers-in-space",
+    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+   ],
+   [
+    "Slashdot",
+    "26 Nov",
+    "https://tech.slashdot.org/story/26/11/25/1936200/spacex-wins-fcc-approval-to-deploy-1-million-orbital-data-center-satellites?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "SpaceX Wins FCC Approval To Deploy 1 Million Orbital Data Center Satellites"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss",
+    "Musk's plan to send a million SpaceX data satellites into space approved"
+   ],
+   [
+    "Phys.org",
+    "26 Nov",
+    "https://phys.org/news/2026-11-fcc-spacex-deploy-million-satellites.html",
+    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+   ],
+   [
+    "Engadget",
+    "26 Nov",
+    "https://www.engadget.com/2329071/spacex-gets-fcc-approval-to-deploy-1-million-satellites-for-its-ai-orbital-data-center/",
+    "SpaceX gets FCC approval to deploy 1 million satellites for its AI orbital data center"
+   ],
+   [
+    "The Decoder",
+    "26 Nov",
+    "https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/",
+    "FCC clears SpaceX to deploy up to 1 million Starmind satellites for orbital AI data centers by 2040"
+   ],
+   [
+    "Washington Post",
+    "26 Nov",
+    "https://www.washingtonpost.com/technology/2026/11/26/fcc-approves-1-million-spacex-data-centers-space-astronomers-are-dismayed/",
+    "FCC approves 1 million SpaceX data centers in space. Astronomers are dismayed."
+   ],
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest",
+    "Can Elon Musk really put AI datacentres in space? - The Latest"
+   ],
+   [
+    "PBS NewsHour",
+    "26 Nov",
+    "https://www.pbs.org/newshour/nation/fcc-says-spacex-can-deploy-1-million-satellites-for-data-centers-in-space-scientists-are-skeptical",
+    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+   ],
+   [
+    "Channel 4 News",
+    "26 Nov",
+    "https://www.channel4.com/news/trump-approves-musks-plan-for-data-centres-in-space",
+    "Trump approves Musk’s plan for data centres in space"
+   ],
+   [
+    "ABC7chicago.com",
+    "26 Nov",
+    "https://abc7.com/post/fcc-says-spacex-can-deploy-1-million-satellites-data-centers-space-scientists-are-skeptical/20087081/",
+    "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical"
+   ],
+   [
+    "The Conversation",
+    "26 Nov",
+    "https://theconversation.com/elon-musk-has-approval-to-launch-1-million-satellites-an-astronomer-explains-how-this-would-impact-the-sky-297646",
+    "Elon Musk has approval to launch 1 million satellites. An astronomer explains how this would impact the sky"
+   ],
+   [
+    "RNZ",
+    "27 Nov",
+    "https://www.rnz.co.nz/news/science-and-technology/2827264/elon-musk-s-1-million-starmind-satellites-a-land-grab-auckland-professor-says",
+    "Elon Musk's 1 million 'Starmind' satellites a 'land grab', Auckland professor says"
+   ]
+  ],
+  "1password-breach-exposes-customer-names-emails-passwords": [
+   [
+    "TechCrunch",
+    "25 Nov",
+    "https://techcrunch.com/2026/11/25/todoist-confirms-6-of-customers-details-were-stolen-in-data-breach/",
+    "Todoist confirms 6% of customers’ details were stolen in data breach"
+   ],
+   [
+    "Hacker News",
+    "25 Nov",
+    "https://1password.com/blog/update-on-nov-2026-security-incident",
+    "1Password Security Incident"
+   ],
+   [
+    "The Verge",
+    "25 Nov",
+    "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
+    "1Password breach leaked customer names and emails, but not passwords"
+   ],
+   [
+    "MacRumors",
+    "25 Nov",
+    "https://www.macrumors.com/2026/11/25/1password-security-breach/",
+    "1Password Security Breach: What Was Accessed and What Wasn't"
+   ],
+   [
+    "Decrypt",
+    "25 Nov",
+    "https://decrypt.co/384002/1password-breach-vaults-phishing-emails",
+    "The 1Password Breach Didn’t Touch Your Vault. The Phishing Emails Might"
+   ],
+   [
+    "BleepingComputer",
+    "25 Nov",
+    "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
+    "1Password customer data stolen after employee GitHub account breach"
+   ],
+   [
+    "SiliconANGLE",
+    "25 Nov",
+    "https://siliconangle.com/2026/11/25/attacker-used-1password-employees-github-account-to-copy-customer-records/",
+    "Attacker used 1Password employee’s GitHub account to copy customer records"
+   ],
+   [
+    "9to5Mac",
+    "25 Nov",
+    "https://9to5mac.com/2026/11/25/1password-confirms-security-incident-heres-what-you-need-to-know/",
+    "1Password confirms security incident, here’s what you need to know"
+   ],
+   [
+    "Slashdot",
+    "26 Nov",
+    "https://it.slashdot.org/story/26/11/25/1940253/1password-breach-leaked-customer-names-and-emails-but-passwords-are-safe?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+    "1Password Breach Leaked Customer Names and Emails, But Passwords Are Safe"
+   ],
+   [
+    "Cointelegraph",
+    "26 Nov",
+    "https://cointelegraph.com/news/1password-hacker-stole-customer-names-and-emails-but-vaults-safe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "1Password hacker stole customer names and emails, but vaults safe"
+   ],
+   [
+    "Android Authority",
+    "26 Nov",
+    "https://www.androidauthority.com/1password-data-breach-3739555/",
+    "1Password confirms hackers stole customer data, but not their passwords"
+   ],
+   [
+    "Digital Trends",
+    "26 Nov",
+    "https://www.digitaltrends.com/computing/1password-discloses-a-backend-breach-says-vaults-remain-secure/",
+    "1Password discloses a backend breach, says vaults remain secure"
+   ],
+   [
+    "SecurityWeek",
+    "26 Nov",
+    "https://www.securityweek.com/1password-breach-exposes-customer-data-internal-source-code/",
+    "1Password Breach Exposes Customer Data, Internal Source Code"
+   ],
+   [
+    "The Hacker News",
+    "26 Nov",
+    "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
+    "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach"
+   ],
+   [
+    "The Register",
+    "26 Nov",
+    "https://www.theregister.com/security/2026/11/26/hackers-help-themselves-to-1passwords-source-code-and-customer-data/5312317",
+    "Hackers help themselves to 1Password's source code and customer data"
+   ],
+   [
+    "Engadget",
+    "26 Nov",
+    "https://www.engadget.com/2329013/1password-hacked-but-users-vaults-are-safe/",
+    "1Password says it was hacked but users' vaults are safe"
+   ],
+   [
+    "MakeUseOf",
+    "27 Nov",
+    "https://www.makeuseof.com/1password-hackers-customer-names-emails-github/",
+    "1Password breach exposed your email and name, but your vault is safe"
+   ]
+  ],
+  "least-30-killed-blaze-vehicle-overturns-egypt": [
+   [
+    "Euronews",
+    "25 Nov",
+    "https://www.euronews.com/2026/11/25/at-least-30-killed-in-highway-fire-in-cairo-district",
+    "At least 30 killed in highway fire in Cairo district"
+   ],
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/world/2026/nov/25/people-killed-fuel-tanker-crash-ignites-large-fire-cairo-highway",
+    "At least 31 killed as fuel tanker crash ignites large fire on Cairo highway"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/fuel-tanker-crash-ignites-massive-fire-on-highway-surrounding-cairo/article71744262.ece",
+    "Fuel tanker crash ignites massive fire on highway surrounding Cairo, killing at least 31 people"
+   ],
+   [
+    "CBS News",
+    "26 Nov",
+    "https://www.cbsnews.com/news/egypt-fuel-tanker-explosion-deaths-giza-cairo/",
+    "Fuel tanker explosion kills 31 on Egyptian highway"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/c3gre90l0g45o?at_medium=RSS&at_campaign=rss",
+    "Egyptian authorities arrest motorist over tanker crash that killed 31"
+   ],
+   [
+    "The Citizen",
+    "26 Nov",
+    "https://www.citizen.co.za/news/news-world/news-africa/egypt-prosecutors-announce-arrest-of-man-over-deadly-truck-disaster/",
+    "Egypt prosecutors announce arrest of man over deadly truck disaster"
+   ],
+   [
+    "Fox News",
+    "26 Nov",
+    "https://www.foxnews.com/world/egypt-detains-driver-suspected-causing-cairo-fuel-tanker-crash-inferno-left-31-dead",
+    "Egypt detains driver suspected of causing Cairo fuel tanker crash and inferno that left 31 dead"
+   ],
+   [
+    "The Straits Times",
+    "26 Nov",
+    "https://www.straitstimes.com/world/middle-east/egyptians-mourn-demand-accountability-after-deadly-tanker-explosion-kills-31",
+    "Egyptians mourn, demand accountability after deadly tanker explosion kills 31"
+   ],
+   [
+    "Al-Monitor",
+    "26 Nov",
+    "https://www.al-monitor.com/originals/2026/11/egyptians-mourn-demand-accountability-after-deadly-tanker-explosion-kills-31",
+    "Egyptians mourn, demand accountability after deadly tanker explosion kills 31"
+   ],
+   [
+    "Sky News",
+    "26 Nov",
+    "https://news.sky.com/story/driver-of-car-suspected-of-causing-fuel-tanker-to-overturn-in-egypt-detained-13616933",
+    "Driver suspected of causing tanker crash in Egypt that killed 31 detained"
+   ],
+   [
+    "ABC7chicago.com",
+    "26 Nov",
+    "https://abc7.com/post/egypt-detains-driver-suspected-causing-cairo-tanker-crash-triggered-massive-fire-killed-31/20086998/",
+    "Egypt detains driver suspected of causing Cairo tanker crash that triggered inferno, killed 31"
+   ],
+   [
+    "Times of India",
+    "27 Nov",
+    "https://timesofindia.indiatimes.com/world/middle-east/cairo-fuel-tanker-inferno-driver-suspect-held-after-explosion-left-31-dead/articleshow/136206334.cms",
+    "Cairo fuel tanker inferno: Driver suspect held after explosion left 31 dead"
+   ]
+  ]
+ },
+ "META": {
+  "editionId": "2026-11-27",
+  "dateLabel": "Friday 27 November 2026",
+  "range": "25–28 Nov",
+  "rangeLong": "25–28 November 2026",
+  "lastRun": "27 Nov 2026, 09:16",
+  "digest": [
+   "Lead azide detonation sends clouds over Iowa as questions of health risks swirl (Ars Technica)",
+   "How the Trump administration determined Jensen Huang is not a national security threat (The Express Tribune)",
+   "FCC approves SpaceX's plan to launch up to 1 million AI satellites under the Starmind initiative (The Verge)",
+   "1Password breach exposes customer names and emails, but not passwords (Slashdot)"
+  ],
+  "generated": "automatic",
+  "articlePolicy": "source-based-v1",
+  "writer": "local-qwen"
+ },
+ "LEGACY_IDS": {}
+}
