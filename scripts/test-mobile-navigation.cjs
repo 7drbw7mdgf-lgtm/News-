@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const test = require('node:test');
 const vm = require('node:vm');
 
-function boot(width) {
+function boot(width, search = '') {
   const events = {};
   const embeds = {};
   const classList = { add() {}, remove() {}, toggle() {} };
@@ -26,9 +26,10 @@ function boot(width) {
   const window = {
     innerWidth: width, innerHeight: 800,
     matchMedia: () => ({matches: width < 681}),
-    addEventListener() {}
+    addEventListener(name, listener) { if (name === 'popstate') events.popstate = listener; }
   };
   const document = {
+    title: '',
     documentElement: {scrollHeight: 2000, style: {setProperty() {}}},
     body: {classList},
     addEventListener() {},
@@ -41,8 +42,13 @@ function boot(width) {
       };
     }
   };
-  const location = {search: '', pathname: '/'};
-  const history = {replaceState(_state, _title, url) { location.search = new URL(url, 'https://pheme24.online').search; }};
+  const location = {search, pathname: '/', hash: ''};
+  const entries = [];
+  const go = url => { location.search = new URL(url, 'https://pheme24.online').search; };
+  const history = {
+    replaceState(_state, _title, url) { go(url); },
+    pushState(_state, _title, url) { go(url); entries.push(location.search); }
+  };
   const context = vm.createContext({
     window, document, location, history, URL, URLSearchParams,
     setInterval() {}, fetch: () => new Promise(() => {})
@@ -51,6 +57,8 @@ function boot(width) {
     vm.runInContext(fs.readFileSync(file, 'utf8'), context, {filename: file});
   }
   return {
+    location, entries, document,
+    back(url) { go(url); events.popstate(); },
     html: () => app.innerHTML,
     click(attributes) {
       const target = {closest: () => ({getAttribute: key => attributes[key] || null})};
@@ -107,4 +115,47 @@ test('Trading embeds request the same datasets and controls on phone and desktop
   const [phone, desktop] = layouts.map(ui => ui.config('#ws-company-chart'));
   assert.deepEqual(phone, desktop);
   assert.equal(phone.hide_side_toolbar, false);
+});
+
+test('each view has its own address', () => {
+  const ui = boot(1440);
+  assert.equal(ui.location.search, '');
+  ui.click({'data-act': 'view', 'data-view': 'papers'});
+  assert.equal(ui.location.search, '?view=newspapers');
+  assert.equal(ui.document.title, 'Newspapers — Pheme');
+  ui.click({'data-act': 'view', 'data-view': 'saved'});
+  assert.equal(ui.location.search, '?view=saved');
+  ui.click({'data-act': 'view', 'data-view': 'trading'});
+  assert.equal(ui.location.search, '?view=trading');
+  ui.click({'data-act': 'wstab', 'data-id': 'news'});
+  assert.equal(ui.location.search, '?view=trading&workspace=news');
+  assert.equal(ui.document.title, 'Trading: News — Pheme');
+  ui.click({'data-act': 'topic', 'data-id': 'uk'});
+  assert.equal(ui.location.search, '?topic=uk');
+  ui.click({'data-act': 'home'});
+  assert.equal(ui.location.search, '');
+  assert.deepEqual(ui.entries, ['?view=newspapers', '?view=saved', '?view=trading', '?view=trading&workspace=news', '?topic=uk', '']);
+});
+
+test('addresses open the matching view and back/forward restores it', () => {
+  assert.match(boot(1440, '?view=trading&workspace=calendar').html(), /<option value="calendar" selected>/);
+  assert.match(boot(1440, '?workspace=octal').html(), /<option value="octal" selected>/);
+  assert.match(boot(1440, '?view=saved').html(), /aria-current="page"><svg[^]*?<span>Saved stories<\/span>/);
+  const ui = boot(1440, '?topic=uk');
+  assert.match(ui.html(), /class="sidebar-topic active" href="\?topic=uk"/);
+  ui.click({'data-act': 'view', 'data-view': 'trading'});
+  ui.back('?topic=uk');
+  assert.equal(ui.location.search, '?topic=uk');
+  assert.match(ui.html(), /class="sidebar-topic active" href="\?topic=uk"/);
+  assert.equal(ui.entries.length, 1, 'restoring an address must not add a history entry');
+  assert.equal(boot(1440, '?topic=nonsense').location.search, '', 'unknown topics fall back to home');
+});
+
+test('navigation items are links to their views', () => {
+  const html = boot(1440).html();
+  const nav = html.match(/<nav class="sidebar-nav"[^>]*>(.*?)<\/nav>/s)[1];
+  assert.match(nav, /href="\?view=newspapers"/);
+  assert.match(nav, /href="\?view=saved"/);
+  assert.match(nav, /href="\?view=trading"/);
+  assert.match(html, /<a class="sidebar-topic[^"]*" href="\?topic=world"/);
 });

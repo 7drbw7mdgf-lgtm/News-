@@ -40,6 +40,20 @@ The daily GitHub Actions workflow collects candidate articles from 35 RSS/Atom f
 
 Stories can be shared using `?story=EVENT-ID`. Keep old edition files so those links and bookmarks continue to resolve.
 
+Every view has its own address, so it can be bookmarked, shared, reloaded or opened in a new tab, and the browser's back and forward buttons move between views:
+
+| Address | View |
+| --- | --- |
+| `/` | Home (all topics) |
+| `?topic=uk` (`world`, `science`, `tech`, `business`, `finance`) | A topic desk; add `&q=…` for a search |
+| `?view=newspapers` | Newspaper directory |
+| `?publisher=NAME` | One newspaper |
+| `?view=saved` | Saved stories |
+| `?view=trading` | Trading; add `&workspace=TAB` for a tab (e.g. `news`, `calendar`, `octal`) and `&company=SYMBOL` on the company tab |
+| `?story=EVENT-ID` | A story |
+
+`render()` in `assets/app.js` keeps the address in step with what is on screen. The page title follows the view too. The older `?workspace=octal` links still work.
+
 ## Header and native reader
 
 The dashboard includes a responsive sidebar, followed-newspaper tiles, compact headlines and image cards. Existing local topic illustrations are used when a story has no image and are labelled “Topic image”. All current stories remain available through the dashboard, topic filters and search.

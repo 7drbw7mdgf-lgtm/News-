@@ -24,7 +24,6 @@
   var clockPartsFormats = Object.create(null);
   var marketData = null;
   var marketLoadFailed = false;
-  var route = new URLSearchParams(location.search);
   var SEG_ORDER = ['L', 'LL', 'C', 'LR', 'R', 'S'];
   var labelOf = {};
   D.TOPICS.forEach(function (t) { labelOf[t.id] = t.label; });
@@ -184,39 +183,14 @@
   var byId = Object.create(null);
   STORIES.forEach(function (s) { byId[s.id] = s; });
 
-  state.reading = byId[route.get('story')] ? route.get('story') : null;
-  state.readingSource = sourceForStory(state.reading, route.get('source'));
-  var routePublisher = route.get('publisher');
-  var routeArticle = safeExternalUrl(route.get('article'));
-  if (!routePublisher && !state.reading && route.get('workspace') === 'octal') {
-    state.view = 'trading';
-    state.marketWorkspaceTab = 'octal';
-  }
-  if (routePublisher) {
-    state.view = 'papers';
-    state.paper = routePublisher;
-  }
-  if (routePublisher && routeArticle) {
-    state.publisherArticle = {
-      name: routePublisher, url: routeArticle, title: route.get('title') || '',
-      summary: route.get('excerpt') || '', published: route.get('published') || ''
-    };
-  }
-  if (route.has('q')) {
-    state.query = route.get('q');
-    if (state.query.trim()) state.searchOpen = true;
-  }
-
   function storyHref(id) { return '?story=' + encodeURIComponent(id); }
   function sourceForStory(id, name) {
     var story = byId[id];
     return story && name && story.cov.rows.some(function (r) { return r.name === name; }) ? name : null;
   }
   function sourceHref(id, name) { return storyHref(id) + '&source=' + encodeURIComponent(name); }
-  function leavePublisherArticle(href) {
-    if (!state.publisherArticle) return;
+  function leavePublisherArticle() {
     state.publisherArticle = null;
-    history.pushState(null, '', href || location.pathname);
   }
   function safeExternalUrl(u) {
     if (!u || typeof u !== 'string' || !/^https:\/\//i.test(u)) return '';
@@ -467,28 +441,114 @@
     state.aaOpen = false;
     state.copiedId = null;
     if (!id) state.readerFocus = false;
-    history.pushState(null, '', id ? (state.readingSource ? sourceHref(id, state.readingSource) : storyHref(id)) : location.pathname);
   }
-  window.addEventListener('popstate', function () {
-    stopSpeech();
-    var params = new URLSearchParams(location.search);
+  /* ---------- addresses: every view has its own URL ----------
+     /                         home (all topics)
+     ?topic=uk                 a topic desk;  &q=…  a search
+     ?view=newspapers          newspaper directory;  ?publisher=NAME  one newspaper
+     ?view=saved               saved stories
+     ?view=trading             Trading;  &workspace=TAB  a Trading tab;  &company=SYMBOL
+     ?story=ID[&source=NAME]   a story (unchanged)
+     ?publisher=NAME&article=… a publisher article (unchanged)
+     render() keeps the address in step with what is on screen. */
+  var urlMode = 'replace';
+  function topicExists(id) { return D.TOPICS.some(function (t) { return t.id === id; }); }
+  function cleanSymbol(v) {
+    v = String(v || '').trim().toUpperCase();
+    return v && v.length <= 24 && /^[A-Z0-9._:-]+$/.test(v) ? v : '';
+  }
+  function viewHref(view, opts) {
+    opts = opts || {};
+    var p = new URLSearchParams();
+    if (view === 'papers') {
+      if (opts.paper) p.set('publisher', opts.paper); else p.set('view', 'newspapers');
+    } else if (view === 'saved') {
+      p.set('view', 'saved');
+    } else if (view === 'trading') {
+      p.set('view', 'trading');
+      if (opts.workspace && opts.workspace !== 'overview') p.set('workspace', opts.workspace);
+      if (opts.workspace === 'company' && opts.company) p.set('company', opts.company);
+    } else {
+      if (opts.topic && opts.topic !== 'all') p.set('topic', opts.topic);
+      if (opts.query && opts.query.trim()) p.set('q', opts.query.trim());
+    }
+    var qs = p.toString();
+    return qs ? '?' + qs : location.pathname;
+  }
+  function currentHref() {
+    if (state.publisherArticle) return publisherArticleHref(state.publisherArticle, state.publisherArticle.name);
+    if (state.reading) return state.readingSource ? sourceHref(state.reading, state.readingSource) : storyHref(state.reading);
+    return viewHref(state.view, {
+      paper: state.paper, workspace: state.marketWorkspaceTab, company: state.marketSelectedCompany,
+      topic: state.topic, query: state.query
+    });
+  }
+  function syncUrl() {
+    var target = currentHref();
+    var search = target.charAt(0) === '?' ? target : '';
+    var mode = urlMode;
+    urlMode = 'push';
+    if (new URLSearchParams(location.search).toString() === new URLSearchParams(search).toString()) return;
+    if (mode === 'replace') history.replaceState(null, '', target + (location.hash || ''));
+    else history.pushState(null, '', target);
+  }
+  function syncTitle() {
+    var reading = state.reading && byId[state.reading];
+    var title = 'Pheme — your news briefing';
+    if (state.publisherArticle) title = (state.publisherArticle.title || state.publisherArticle.name) + ' — Pheme';
+    else if (reading) title = reading.headline + ' — Pheme';
+    else if (state.view === 'papers') title = (state.paper || 'Newspapers') + ' — Pheme';
+    else if (state.view === 'saved') title = 'Saved stories — Pheme';
+    else if (state.view === 'trading') {
+      var ws = MARKET_WORKSPACES.find(function (w) { return w.id === state.marketWorkspaceTab; });
+      title = 'Trading' + (ws && ws.id !== 'overview' ? ': ' + ws.label : '') + ' — Pheme';
+    } else if (state.topic !== 'all' && labelOf[state.topic]) title = labelOf[state.topic] + ' — Pheme';
+    if (document.title !== title) document.title = title;
+  }
+  function applyRoute(params) {
     var id = params.get('story');
     var publisher = params.get('publisher');
     var articleUrl = safeExternalUrl(params.get('article'));
+    var view = params.get('view');
+    var workspace = params.get('workspace');
     state.publisherArticle = publisher && articleUrl ? {
       name: publisher, url: articleUrl, title: params.get('title') || '',
       summary: params.get('excerpt') || '', published: params.get('published') || ''
     } : null;
-    if (publisher) { state.view = 'papers'; state.paper = publisher; }
-    state.reading = byId[id] ? id : null;
-    if (state.reading && !publisher) state.view = 'briefing';
-    if (!publisher && !state.reading && params.get('workspace') === 'octal') {
-      state.view = 'trading';
-      state.marketWorkspaceTab = 'octal';
-    }
+    state.reading = !state.publisherArticle && byId[id] ? id : null;
     state.readingSource = sourceForStory(state.reading, params.get('source'));
+    if (publisher) {
+      state.view = 'papers'; state.paper = publisher;
+    } else if (state.reading) {
+      state.view = 'briefing';
+    } else if (view === 'newspapers') {
+      state.view = 'papers'; state.paper = null;
+    } else if (view === 'saved') {
+      state.view = 'saved';
+    } else if (view === 'trading' || isMarketWorkspace(workspace)) {
+      state.view = 'trading';
+      state.marketWorkspaceTab = isMarketWorkspace(workspace) ? workspace : 'overview';
+      var company = cleanSymbol(params.get('company'));
+      if (company && state.marketWorkspaceTab === 'company') state.marketSelectedCompany = company;
+    } else {
+      state.view = 'briefing';
+    }
+    var topic = params.get('topic');
+    state.topic = state.view === 'briefing' && topic && topicExists(topic) ? topic : 'all';
+    state.query = state.view === 'briefing' ? (params.get('q') || '') : '';
+    state.searchOpen = !!state.query.trim();
     if (!state.reading) state.readerFocus = false;
     state.aaOpen = false;
+  }
+  function followInApp(e) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return false;
+    if (e.preventDefault) e.preventDefault();
+    return true;
+  }
+  window.addEventListener('popstate', function () {
+    stopSpeech();
+    applyRoute(new URLSearchParams(location.search));
+    urlMode = 'replace';
     render();
   });
 
@@ -746,7 +806,7 @@
   function renderMainNavigation(className) {
     var savedCount = STORIES.filter(function (s) { return state.saved[s.id]; }).length;
     var destinations = [
-      { label: 'Home', action: 'home', active: state.view === 'briefing' && state.topic === 'all', icon: navIcon('M3 10 12 3l9 7v11h-6v-7H9v7H3z') },
+      { label: 'Home', action: 'home', href: location.pathname, active: state.view === 'briefing' && state.topic === 'all', icon: navIcon('M3 10 12 3l9 7v11h-6v-7H9v7H3z') },
       { label: 'Newspapers', view: 'papers', icon: navIcon('M4 3h16v18H4zM8 7h8M8 11h8M8 15h3m3 0h2') },
       { label: 'Saved stories', view: 'saved', icon: ICON.bookmarkLg },
       { label: 'Trading', view: 'trading', icon: navIcon('M3 18h3l4-7 4 4 6-10m-1 0h1v1') }
@@ -754,9 +814,10 @@
     return '<nav class="' + className + '" aria-label="Main">' + destinations.map(function (item) {
       var active = !state.reading && !state.publisherArticle && (item.active || item.view === state.view);
       var count = item.view === 'saved' && savedCount ? '<span class="sidebar-count">' + savedCount + '</span>' : '';
-      return '<button type="button" class="sidebar-link' + (active ? ' active' : '') +
+      var href = item.href || viewHref(item.view, item.view === 'trading' ? {} : { paper: null });
+      return '<a class="sidebar-link' + (active ? ' active' : '') + '" href="' + esc(href) +
         '" data-act="' + (item.action || 'view') + '"' + (item.view ? ' data-view="' + item.view + '"' : '') +
-        (active ? ' aria-current="page"' : '') + '>' + item.icon + '<span>' + item.label + '</span>' + count + '</button>';
+        (active ? ' aria-current="page"' : '') + '>' + item.icon + '<span>' + item.label + '</span>' + count + '</a>';
     }).join('') + '</nav>';
   }
 
@@ -764,9 +825,9 @@
     var topicFilters = [{ id: 'all', label: 'All' }].concat(D.TOPICS).map(function (topic) {
       var count = topic.id === 'all' ? CURRENT.length : CURRENT.filter(function (story) { return story.topic === topic.id; }).length;
       var on = state.view === 'briefing' && state.topic === topic.id;
-      return '<button class="sidebar-topic' + (on ? ' active' : '') + '" data-act="topic" data-id="' + esc(topic.id) + '" aria-pressed="' + on + '"><span>' + esc(topic.label) + '</span><span class="sidebar-topic-count">' + count + '</span></button>';
+      return '<a class="sidebar-topic' + (on ? ' active' : '') + '" href="' + esc(viewHref('briefing', { topic: topic.id })) + '" data-act="topic" data-id="' + esc(topic.id) + '"' + (on ? ' aria-current="page"' : '') + '><span>' + esc(topic.label) + '</span><span class="sidebar-topic-count">' + count + '</span></a>';
     }).join('');
-    return '<aside class="dashboard-sidebar" aria-label="Main navigation"><button class="sidebar-brand" data-act="home" aria-label="Pheme home"><img src="assets/images/pheme-logo.png" width="56" height="56" alt=""></button>' +
+    return '<aside class="dashboard-sidebar" aria-label="Main navigation"><a class="sidebar-brand" href="' + esc(location.pathname) + '" data-act="home" aria-label="Pheme home"><img src="assets/images/pheme-logo.png" width="56" height="56" alt=""></a>' +
       renderMainNavigation('sidebar-nav') +
       '<nav class="sidebar-topic-nav" aria-label="Filter stories by topic"><span class="sidebar-topic-heading">Topics</span>' + topicFilters + '</nav></aside>';
   }
@@ -817,9 +878,9 @@
 
     return '<div class="masthead-wrap">' +
       '<div class="wrap"><header class="topbar">' +
-      '<button class="brand" data-act="home" aria-label="Pheme home">' +
+      '<a class="brand" href="' + esc(location.pathname) + '" data-act="home" aria-label="Pheme home">' +
       '<img class="brand-logo" src="assets/images/pheme-logo.png" alt="" width="44" height="44" decoding="async">' +
-      '</button>' +
+      '</a>' +
       '<div class="masthead-status"><div class="topbar-date">' + esc(displayDate()) + '</div>' + renderWorldClocks() + '</div>' +
       '<div class="topbar-actions">' +
       '<button class="search-toggle search-launch' + (state.searchOpen ? ' on' : '') + '" data-act="togglesearch" aria-label="Search stories" aria-expanded="' + state.searchOpen + '">' + ICON.search + '<span>Search anything…</span></button>' +
@@ -2570,6 +2631,8 @@
       return;
     }
     state.paper = name;
+    syncUrl();
+    syncTitle();
     var meta = papers.find(function (p) { return p.name === name; }) || {};
     var stories = storiesForPaper(name);
     title.textContent = name;
@@ -3137,14 +3200,8 @@
   }
 
   function render(opts) {
-    var params = new URLSearchParams(location.search);
-    var onOctal = state.view === 'trading' && state.marketWorkspaceTab === 'octal' && !state.reading && !state.publisherArticle;
-    var octalUrl = params.get('workspace') === 'octal';
-    if (onOctal !== octalUrl) {
-      if (onOctal) params.set('workspace', 'octal');
-      else params.delete('workspace');
-      history.replaceState(null, '', location.pathname + (params.size ? '?' + params.toString() : '') + (location.hash || ''));
-    }
+    syncUrl();
+    syncTitle();
     document.body.classList.toggle('market-chart-open', !!state.marketOpen);
     var previousMarkets = document.getElementById('market-widgets');
     var previousTicker = document.getElementById('ws-ticker-tape');
@@ -3397,12 +3454,14 @@
         state.utilityOpen = state.utilityOpen === id ? null : id;
         render({ focus: state.utilityOpen ? 'menu-' + id : 'menu-toggle-' + id }); break;
       case 'home':
-        leavePublisherArticle(location.pathname);
+        if (t.tagName === 'A' && !followInApp(e)) return;
+        leavePublisherArticle();
         state.view = 'briefing'; state.topic = 'all'; state.query = ''; state.searchOpen = false;
         if (state.reading) changeStory(null);
         render(); break;
       case 'topic':
-        leavePublisherArticle(location.pathname);
+        if (t.tagName === 'A' && !followInApp(e)) return;
+        leavePublisherArticle();
         state.view = 'briefing'; state.topic = id;
         if (state.reading) changeStory(null);
         render(); break;
@@ -3462,7 +3521,8 @@
         }
         break;
       case 'view':
-        leavePublisherArticle(location.pathname);
+        if (t.tagName === 'A' && !followInApp(e)) return;
+        leavePublisherArticle();
         state.view = t.getAttribute('data-view');
         if (state.reading) changeStory(null);
         if (state.view === 'briefing') state.topic = state.topic || 'all';
@@ -3480,7 +3540,7 @@
         if (providerTrack) providerTrack.scrollBy({ left: (Number(t.getAttribute('data-dir')) || 1) * Math.max(240, providerTrack.clientWidth * 0.72), behavior: 'smooth' });
         break;
       case 'paper':
-        if (state.publisherArticle) leavePublisherArticle('?publisher=' + encodeURIComponent(t.getAttribute('data-name') || ''));
+        if (state.publisherArticle) leavePublisherArticle();
         if (state.view === 'papers' && !state.reading && !state.publisherArticle) {
           selectPaperInPlace(t.getAttribute('data-name'));
         } else {
@@ -3510,11 +3570,9 @@
         };
         state.view = 'papers'; state.paper = state.publisherArticle.name;
         state.reading = null; state.readingSource = null; state.settingsOpen = false;
-        history.pushState(null, '', publisherArticleHref(state.publisherArticle, state.publisherArticle.name));
         render({ scrollReader: true }); break;
       case 'closesourcearticle':
         state.publisherArticle = null; state.view = 'papers'; state.paper = t.getAttribute('data-name') || state.paper;
-        history.pushState(null, '', '?publisher=' + encodeURIComponent(state.paper || ''));
         render({ scrollReader: true }); break;
       case 'back':
         changeStory(state.readingSource ? state.reading : null); render({ scrollReader: true }); break;
@@ -3654,8 +3712,9 @@
       var box = document.getElementById('src-list');
       if (box) box.innerHTML = sourceListHtml();
     } else if (e.target.id === 'q') {
-      leavePublisherArticle(location.pathname);
+      leavePublisherArticle();
       state.query = e.target.value;
+      urlMode = 'replace';
       if (state.reading) changeStory(null);
       if (state.view === 'papers') state.view = 'briefing';
       render({ focus: 'q' });
@@ -3747,7 +3806,7 @@
       else if (state.aaOpen) { state.aaOpen = false; render(); }
       else if (state.readerFocus) { state.readerFocus = false; render(); }
       else if (state.searchOpen) { state.searchOpen = false; state.query = ''; render(); }
-      else if (state.publisherArticle) { leavePublisherArticle('?publisher=' + encodeURIComponent(state.publisherArticle.name || '')); state.view = 'papers'; render(); }
+      else if (state.publisherArticle) { leavePublisherArticle(); state.view = 'papers'; render(); }
       else if (state.reading) { changeStory(null); render(); }
     } else if (!typing && state.reading && !state.settingsOpen && !state.marketOpen) {
       if (e.key === ' ' && state.audioOpen && tag !== 'BUTTON' && tag !== 'A') {
@@ -3777,6 +3836,8 @@
     mountPublisherMap();
     mountExchangeMap();
   });
+  applyRoute(new URLSearchParams(location.search));
+  urlMode = 'replace';
   render();
   loadMarketData();
   loadServerReaderCache();
