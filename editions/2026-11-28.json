@@ -1,0 +1,2186 @@
+{
+ "TOPICS": [
+  {
+   "id": "uk",
+   "label": "UK"
+  },
+  {
+   "id": "world",
+   "label": "World"
+  },
+  {
+   "id": "science",
+   "label": "Science"
+  },
+  {
+   "id": "tech",
+   "label": "Tech"
+  },
+  {
+   "id": "business",
+   "label": "Business"
+  },
+  {
+   "id": "finance",
+   "label": "Finance"
+  }
+ ],
+ "CATS": {
+  "uk": {
+   "label": "UK news",
+   "topic": "uk"
+  },
+  "world": {
+   "label": "World news",
+   "topic": "world"
+  },
+  "science": {
+   "label": "Science",
+   "topic": "science"
+  },
+  "tech": {
+   "label": "Tech",
+   "topic": "tech"
+  },
+  "business": {
+   "label": "Business",
+   "topic": "business"
+  }
+ },
+ "CATALOG": [
+  [
+   "telegraph",
+   "The Telegraph",
+   "uk",
+   true
+  ],
+  [
+   "bbc",
+   "BBC News",
+   "uk",
+   false
+  ],
+  [
+   "guardian",
+   "The Guardian",
+   "uk",
+   false
+  ],
+  [
+   "times",
+   "The Times",
+   "uk",
+   true
+  ],
+  [
+   "independent",
+   "The Independent",
+   "uk",
+   false
+  ],
+  [
+   "sky",
+   "Sky News",
+   "uk",
+   false
+  ],
+  [
+   "reuters",
+   "Reuters",
+   "world",
+   false
+  ],
+  [
+   "ap",
+   "Associated Press",
+   "world",
+   false
+  ],
+  [
+   "nyt",
+   "The New York Times",
+   "world",
+   true
+  ],
+  [
+   "politico",
+   "Politico Europe",
+   "world",
+   false
+  ],
+  [
+   "economist",
+   "The Economist",
+   "business",
+   true
+  ],
+  [
+   "ft",
+   "Financial Times",
+   "business",
+   true
+  ],
+  [
+   "bloomberg",
+   "Bloomberg",
+   "business",
+   true
+  ],
+  [
+   "wsj",
+   "The Wall Street Journal",
+   "business",
+   true
+  ],
+  [
+   "newscientist",
+   "New Scientist",
+   "science",
+   true
+  ],
+  [
+   "naturenews",
+   "Nature News",
+   "science",
+   false
+  ],
+  [
+   "stat",
+   "STAT",
+   "science",
+   false
+  ],
+  [
+   "ars",
+   "Ars Technica",
+   "tech",
+   false
+  ],
+  [
+   "verge",
+   "The Verge",
+   "tech",
+   false
+  ],
+  [
+   "wired",
+   "Wired",
+   "tech",
+   true
+  ]
+ ],
+ "LEAN": {
+  "L": [
+   "Left",
+   "Left"
+  ],
+  "LL": [
+   "Lean left",
+   "Left-Center"
+  ],
+  "C": [
+   "Centre",
+   "Least Biased"
+  ],
+  "LR": [
+   "Lean right",
+   "Right-Center"
+  ],
+  "R": [
+   "Right",
+   "Right"
+  ],
+  "S": [
+   "Science",
+   "Pro-Science (not rated left–right)"
+  ],
+  "P": [
+   "Primary",
+   "Primary source, not a news outlet"
+  ],
+  "NR": [
+   "Unrated",
+   "No Media Bias/Fact Check rating found"
+  ],
+  "NC": [
+   "Unchecked",
+   "Rating not looked up yet"
+  ]
+ },
+ "FOLLOWED": [
+  {
+   "name": "BBC News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Guardian",
+   "topic": "uk"
+  },
+  {
+   "name": "Sky News",
+   "topic": "uk"
+  },
+  {
+   "name": "The Telegraph",
+   "topic": "uk"
+  },
+  {
+   "name": "Daily Mail",
+   "topic": "uk"
+  },
+  {
+   "name": "ITV News",
+   "topic": "uk"
+  },
+  {
+   "name": "RTÉ News",
+   "topic": "uk"
+  },
+  {
+   "name": "Financial Times",
+   "topic": "finance"
+  },
+  {
+   "name": "The Economist",
+   "topic": "finance"
+  },
+  {
+   "name": "CNBC",
+   "topic": "finance"
+  },
+  {
+   "name": "City AM",
+   "topic": "finance"
+  },
+  {
+   "name": "The New York Times",
+   "topic": "world"
+  },
+  {
+   "name": "NPR",
+   "topic": "world"
+  },
+  {
+   "name": "Fox News",
+   "topic": "world"
+  },
+  {
+   "name": "Al Jazeera English",
+   "topic": "world"
+  },
+  {
+   "name": "France 24",
+   "topic": "world"
+  },
+  {
+   "name": "DW News",
+   "topic": "world"
+  },
+  {
+   "name": "Politico Europe",
+   "topic": "world"
+  },
+  {
+   "name": "Euronews",
+   "topic": "world"
+  },
+  {
+   "name": "South China Morning Post",
+   "topic": "world"
+  },
+  {
+   "name": "Nature News",
+   "topic": "science"
+  },
+  {
+   "name": "New Scientist",
+   "topic": "science"
+  },
+  {
+   "name": "ScienceDaily",
+   "topic": "science"
+  },
+  {
+   "name": "TechCrunch",
+   "topic": "tech"
+  },
+  {
+   "name": "The Verge",
+   "topic": "tech"
+  },
+  {
+   "name": "Ars Technica",
+   "topic": "tech"
+  }
+ ],
+ "STORIES": [
+  {
+   "id": "hackers-breach-air-force-flagship-cloud-computing",
+   "topic": "world",
+   "source": "The Express Tribune",
+   "time": "27 Nov",
+   "url": "https://tribune.com.pk/story/2642653/hackers-breach-us-air-force-flagship-cloud-one-computing-platform",
+   "headline": "Hackers breach US Air Force's flagship Cloud One cloud computing platform",
+   "summary": "The breach in Cloud One was discovered recently during system upgrades, with two sources saying it has caused widespread disruption across the platform.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "The breach in Cloud One was discovered recently during system upgrades, with two sources saying it has caused widespread disruption across the platform. Reuters could not confirm the hackers' identity, the full extent of the intrusion, or whether any data was compromised.",
+    "A reported breach of the US Air Force’s Cloud One platform could compromise sensitive tactical, personnel, and logistics data, following days of reports about a CIA database access. Reuters reported on Friday that a breach of the USAF’s Cloud One platform poses risks to the security of sensitive data including tactical, personnel, and logistics information."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T07:53:25+00:00",
+   "articleSources": [
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642653/hackers-breach-us-air-force-flagship-cloud-one-computing-platform"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/technology/2026/nov/27/hackers-breach-us-air-force-cloud-computing"
+    }
+   ],
+   "location": {
+    "label": "Washington, D.C., USA",
+    "shortLabel": "Washington, D.C.",
+    "lat": 38.9072,
+    "lng": -77.0369
+   },
+   "image": "https://i.guim.co.uk/img/media/b78bd09c92d89960e79cab8a33338868663794eb/171_0_1706_1365/master/1706.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=0540f9b74f59c65d1f65a63e5e9ef2f6",
+   "imageAlt": "Hackers breach US Air Force flagship Cloud One computing platform",
+   "imageCredit": "The Guardian"
+  },
+  {
+   "id": "military-disables-tanker-ship-attempting-slip-through",
+   "topic": "world",
+   "source": "Fox News",
+   "time": "27 Nov",
+   "url": "https://www.foxnews.com/world/us-military-disables-tanker-ship-attempting-slip-through-iran-blockade-thanksgiving-day",
+   "headline": "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day",
+   "summary": "The Palau-flagged M/V Pacific Archer attempted to leave Bandar Abbas, Iran, and was intercepted by U.S. forces on Thanksgiving Day.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "The Palau-flagged M/V Pacific Archer attempted to leave Bandar Abbas, Iran, and was intercepted by U.S. forces on Thanksgiving Day. A video released by CENTCOM shows a projectile striking the ship's rear, causing an explosion that destroyed its engine. The civilian crew survived unharmed, and U.S. forces have previously redirected 158 vessels and disabled six that defied the blockade.",
+    "The U.S. military struck a commercial vessel attempting to exit Iranian ports in the Gulf of Oman, escalating tensions amid Iran's threats to maintain the Strait of Hormuz closed. The crew remained unharmed, and tracking data indicates the vessel was headed for Singapore. Iranian officials reiterated warnings against the U.S. naval blockade, which has been in place since April and resumed in July."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T07:58:38+00:00",
+   "articleSources": [
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/world/us-military-disables-tanker-ship-attempting-slip-through-iran-blockade-thanksgiving-day"
+    },
+    {
+     "name": "The Express Tribune",
+     "url": "https://tribune.com.pk/story/2642725/us-iran-tensions-flare-over-maritime-blockade"
+    }
+   ],
+   "location": {
+    "label": "Tehran, Iran",
+    "shortLabel": "Iran",
+    "lat": 35.6892,
+    "lng": 51.389
+   },
+   "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/08/hormuz_ship.jpg",
+   "imageAlt": "US military disables commercial vessel in Gulf of Oman over blockade",
+   "imageCredit": "Fox News"
+  },
+  {
+   "id": "canadas-supreme-court-upholds-quebecs-ban-religious",
+   "topic": "world",
+   "source": "Washington Examiner",
+   "time": "27 Nov",
+   "url": "https://www.washingtonexaminer.com/news/world/4816704/canada-supreme-court-upholds-quebec-ban-religious-symbols-public-workers/",
+   "headline": "Canada’s Supreme Court upholds Quebec’s ban on religious symbols for public sector workers",
+   "summary": "Bill 21, passed in 2019, prohibits public school teachers, police officers, judges, and other officials from wearing visible religious symbols like headscarves, turbans, kippahs, or crosses during work.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Bill 21, passed in 2019, prohibits public school teachers, police officers, judges, and other officials from wearing visible religious symbols like headscarves, turbans, kippahs, or crosses during work. The decision was not unanimous; the court ruled that a requirement for National Assembly members to cover their faces violates Section 3 of the Charter, infringing on democratic rights.",
+    "The Supreme Court’s closely watched ruling supports Quebec’s secular law banning religious symbols in public sector jobs, highlighting ongoing tensions between minority rights and government authority to override them. In a 6-1 decision released Friday, the court allowed Quebec to shield Bill 21 from Charter challenges, affirming the province’s right to enforce the law despite potential rights violations."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:06:58+00:00",
+   "articleSources": [
+    {
+     "name": "Washington Examiner",
+     "url": "https://www.washingtonexaminer.com/news/world/4816704/canada-supreme-court-upholds-quebec-ban-religious-symbols-public-workers/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/world/2026/nov/27/canadas-top-court-upholds-quebec-law-barring-public-sector-workers-from-wearing-religious-symbols"
+    }
+   ],
+   "location": {
+    "label": "Ottawa, Canada",
+    "shortLabel": "Canada",
+    "lat": 45.4215,
+    "lng": -75.6972
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b5e9/live/7ddd01c0-ea82-11f1-a739-457c2295eaba.jpg",
+   "imageAlt": "The Supreme Court of Canada building in Ottawa",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "york-mayor-zohran-mamdani-undergoes-successful-surgery",
+   "topic": "world",
+   "source": "MyNorthwest",
+   "time": "27 Nov",
+   "url": "https://mynorthwest.com/national/new-york-mayor-zohran-mamdani-has-surgery-for-torn-achilles-tendon-from-soccer-match-injury/4305268",
+   "headline": "New York Mayor Zohran Mamdani undergoes successful surgery for torn Achilles tendon from soccer match",
+   "summary": "The 70-minute surgery went smoothly, and the 35-year-old mayor was resting at Gracie Mansion Friday evening, according to press secretary Joe Calvello.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "The 70-minute surgery went smoothly, and the 35-year-old mayor was resting at Gracie Mansion Friday evening, according to press secretary Joe Calvello. City Hall confirmed the mayor will make a full recovery, thanking healthcare workers, though no details were given about the surgery location. Mamdani, a Democrat and soccer enthusiast, participated in a friendly match with the press corps in November, resulting in the injury.",
+    "The 70-minute procedure, completed Friday, was reported by spokesman Joe Calvello, who confirmed the mayor was discharged and resting at Gracie Mansion."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:09:07+00:00",
+   "articleSources": [
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/national/new-york-mayor-zohran-mamdani-has-surgery-for-torn-achilles-tendon-from-soccer-match-injury/4305268"
+    },
+    {
+     "name": "Washington Examiner",
+     "url": "https://www.washingtonexaminer.com/news/4816785/mamdani-successful-surgery-skip-macys-thanksgiving-day-parade/"
+    }
+   ],
+   "location": {
+    "label": "San Francisco Bay Area, USA",
+    "shortLabel": "California",
+    "lat": 37.4419,
+    "lng": -122.143
+   },
+   "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261127-zohran-achilles-surgery-jg-a0b96a.jpg",
+   "imageAlt": "New York Mayor Zohran Mamdani undergoes successful surgery for torn Achilles tendon from soccer match",
+   "imageCredit": "NBC News"
+  },
+  {
+   "id": "airline-norse-atlantic-files-bankruptcy-succumbing-aviation",
+   "topic": "business",
+   "source": "DW News",
+   "time": "27 Nov",
+   "url": "https://www.dw.com/en/airline-norse-atlantic-files-for-bankruptcy-succumbing-to-aviation-fuel-costs/a-80076728?maca=en-rss-en-world-4025-xml-mrss",
+   "headline": "Airline Norse Atlantic files for bankruptcy, succumbing to aviation fuel costs",
+   "summary": "The war in Iran has caused a surge in aviation fuel prices, pushing Norway's Norse Atlantic into bankruptcy.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "The war in Iran has caused a surge in aviation fuel prices, pushing Norway's Norse Atlantic into bankruptcy.",
+    "Norse Atlantic suspended all its flights Thursday, with the board warning it may file for bankruptcy without urgent short-term financing. The company stated it plans to file for bankruptcy if a short-term financing solution isn't secured quickly. Norse Atlantic, which operates long-haul U.S.-Europe routes, is exploring a potential investor-led takeover to secure financing. To offset losses, Norse Atlantic began leasing its Boeing 787 jets to other airlines amid rising fuel costs from the Iran conflict."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T07:55:32+00:00",
+   "articleSources": [
+    {
+     "name": "DW News",
+     "url": "https://www.dw.com/en/airline-norse-atlantic-files-for-bankruptcy-succumbing-to-aviation-fuel-costs/a-80076728?maca=en-rss-en-world-4025-xml-mrss"
+    },
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/world/norse-atlantic-airlines-suspends-all-flights-brink-bankruptcy-amid-rising-fuel-costs"
+    }
+   ],
+   "location": {
+    "label": "Tehran, Iran",
+    "shortLabel": "Iran",
+    "lat": 35.6892,
+    "lng": 51.389
+   },
+   "image": "https://static.dw.com/image/80077540_6.jpg",
+   "imageAlt": "A Norse Atlantic Airways Boeing 787-9 Dreamliner pictured at London's Gatwick Airport. July 17, 2025.",
+   "imageCredit": "DW News"
+  },
+  {
+   "id": "mexico-files-formal-complaint-dea-tip-line",
+   "topic": "world",
+   "source": "MyNorthwest",
+   "time": "27 Nov",
+   "url": "https://mynorthwest.com/world/mexico-files-formal-complaint-to-us-over-dea-tip-line/4305181",
+   "headline": "Mexico files formal complaint to US over DEA tip line",
+   "summary": "Mexico has filed a formal complaint with the U.S. government, accusing the DEA of foreign interference through its anonymous tip line for criminal and corruption reports.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Mexico has filed a formal complaint with the U.S. government, accusing the DEA of foreign interference through its anonymous tip line for criminal and corruption reports. The complaint comes amid U.S. pressure on Mexico to strengthen its anti-cartel efforts under President Donald Trump’s administration.",
+    "Mexico’s government is criticizing the DEA’s anonymous reporting line, calling it an act of foreign interference in domestic affairs. In Sinaloa, journalist Juan Manuel Partida Valdez reported to a WhatsApp tip line just one day after DEA chief Terry Cole promoted anonymous reporting on social media. The DEA’s tip line has intensified tensions between U.S. and Mexican governments over jurisdiction in combating cartels. Partida Valdez, head of the Sinaloa Journalists Association, shared allegations of political ties with criminal groups due to persistent violence and corruption in the region."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:12:24+00:00",
+   "articleSources": [
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/world/mexico-files-formal-complaint-to-us-over-dea-tip-line/4305181"
+    },
+    {
+     "name": "CityNews Kitchener",
+     "url": "https://kitchener.citynews.ca/2026/11/27/mexico-files-formal-complaint-to-us-over-dea-tip-line/"
+    }
+   ],
+   "location": {
+    "label": "Guasave, Sinaloa, Mexico",
+    "shortLabel": "Sinaloa",
+    "lat": 25.5747,
+    "lng": -108.4718
+   },
+   "image": "https://www.aljazeera.com/wp-content/uploads/2026/11/reuters_6b09bc8a-1795800202.jpg?resize=1920%2C1440",
+   "imageAlt": "Mexico files complaint with US over DEA tip line on alleged drug dealers",
+   "imageCredit": "Al Jazeera English"
+  },
+  {
+   "id": "u-encouraged-iraq-venezuela-leave-opec-sources",
+   "topic": "world",
+   "source": "Times of India",
+   "time": "27 Nov",
+   "url": "https://timesofindia.indiatimes.com/world/us/us-pushed-venezuela-iraq-to-quit-opec-to-boost-oil-output-report/articleshow/136235653.cms",
+   "headline": "U.S. reportedly encouraged Iraq and Venezuela to leave OPEC to increase oil production",
+   "summary": "The United States reportedly influenced Venezuela and Iraq to consider exiting OPEC earlier this year to boost oil output.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "The United States reportedly influenced Venezuela and Iraq to consider exiting OPEC earlier this year to boost oil output. Iraq's Prime Minister Ali Faleh al-Zaidi considered leaving OPEC amid U.S. investment discussions, but the oil ministry persuaded him to remain and instead seek higher production limits.",
+    "U.S. officials early this year urged Iraq and Venezuela, two of OPEC’s founding members, to exit the cartel, according to Reuters citing multiple sources. Iraq and Venezuela have so far dismissed the U.S. push from the Trump administration, with no confirmed exits. The U.S. administration sought to increase oil output in both countries, fearing that OPEC and OPEC+ production quotas would restrict growth."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:12:58+00:00",
+   "articleSources": [
+    {
+     "name": "Times of India",
+     "url": "https://timesofindia.indiatimes.com/world/us/us-pushed-venezuela-iraq-to-quit-opec-to-boost-oil-output-report/articleshow/136235653.cms"
+    },
+    {
+     "name": "Oilprice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Pushed-Iraq-and-Venezuela-to-Consider-Quitting-OPEC-Sources-Say.html"
+    }
+   ],
+   "location": {
+    "label": "Caracas, Venezuela",
+    "shortLabel": "Caracas",
+    "lat": 10.4806,
+    "lng": -66.9036
+   },
+   "image": "https://img.etimg.com/thumb/msid-136222262,width-1200,height-900,imgsize-57438,overlay-etmarkets/articleshow.jpg",
+   "imageAlt": "U.S. Encouraged Iraq and Venezuela to Leave OPEC, Sources Say",
+   "imageCredit": "Economic Times"
+  },
+  {
+   "id": "iran-accuses-ukraine-false-flag-drone-attack",
+   "topic": "world",
+   "source": "American Wire News",
+   "time": "27 Nov",
+   "url": "https://americanwirenews.com/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump/",
+   "headline": "Iran accuses Ukraine of false flag drone attack in Kuwait, claiming it was a move to draw Trump's attention",
+   "summary": "Iran's former nuclear negotiator Mohammad Marandi stated that Ukrainian forces are active in northern Iraq and Syria, supporting claims that the Kuwait attack was a false flag operation.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Iran's former nuclear negotiator Mohammad Marandi stated that Ukrainian forces are active in northern Iraq and Syria, supporting claims that the Kuwait attack was a false flag operation.",
+    "A former Iran nuclear adviser accused Ukraine of staging a drone attack in Kuwait to impress President Trump, asserting it was a false flag operation. Iran denied responsibility for the Kuwait drone strike that killed two Italians and wounded others, accusing Ukraine of conducting a false flag operation to provoke U.S. intervention."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:15:08+00:00",
+   "articleSources": [
+    {
+     "name": "American Wire News",
+     "url": "https://americanwirenews.com/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump/"
+    },
+    {
+     "name": "Fox News",
+     "url": "https://www.foxnews.com/world/iran-accuses-zelenskyy-false-flag-kuwait-drone-strike-op-get-trumps-attention"
+    }
+   ],
+   "location": {
+    "label": "Brussels, Belgium",
+    "shortLabel": "Brussels",
+    "lat": 50.8503,
+    "lng": 4.3517
+   },
+   "image": "https://images.euronews.com/articles/stories/10/00/96/94/1200x675_cmsv2_fa3c62fc-42f2-57a0-9dbc-8a89c9865556-10009694.jpg",
+   "imageAlt": "Passenger flights diverted as Kuwait army intercepts Iranian drone attack",
+   "imageCredit": "Euronews"
+  },
+  {
+   "id": "army-calls-detonation-bomb-chemicals-iowa-success",
+   "topic": "world",
+   "source": "PBS NewsHour",
+   "time": "27 Nov",
+   "url": "https://www.pbs.org/newshour/nation/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification",
+   "headline": "Army declares lead azide detonation successful, but criticism persists over lack of prior notification",
+   "summary": "The EPA confirmed no airborne lead has been detected in the area since the Wednesday controlled explosion.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "The EPA confirmed no airborne lead has been detected in the area since the Wednesday controlled explosion. Residents and officials criticized the Army for insufficient transparency and delayed public notification about the unstable stockpile.",
+    "The U.S. Army has declared the controlled detonation of the nation’s aging lead azide stockpile a success. Concerns remain over the timing and clarity of official communication about the operation. The EPA reported that around 300 people conducted field sampling of schools, parks, churches, and homes after the detonation. Sample results are expected soon, with over 1,500 air, water, soil, and dust samples collected prior to the explosion."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:15:40+00:00",
+   "articleSources": [
+    {
+     "name": "PBS NewsHour",
+     "url": "https://www.pbs.org/newshour/nation/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification"
+    },
+    {
+     "name": "MyNorthwest",
+     "url": "https://mynorthwest.com/national/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification/4305205"
+    }
+   ],
+   "location": {
+    "label": "Chicago, Illinois, USA",
+    "shortLabel": "Chicago",
+    "lat": 41.8781,
+    "lng": -87.6298
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9049/live/be474ac0-e8f9-11f1-b8b0-a95064d74c5f.jpg",
+   "imageAlt": "Debris is seen overtop trees",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "taiwan-holds-local-elections-choose-mayors-other",
+   "topic": "world",
+   "source": "Washington's Top News (WTOP)",
+   "time": "28 Nov",
+   "url": "https://wtop.com/world/2026/11/polls-open-across-taiwan-in-closely-watched-local-elections/",
+   "headline": "Taiwan holds local elections to choose mayors and other leaders amid concerns over Chinese interference",
+   "summary": "Taiwan holds local elections on Saturday to select mayors, council members, and other leaders across 22 cities and counties.",
+   "points": [],
+   "publishedLabel": "28 Nov 2026",
+   "article": [
+    "Taiwan holds local elections on Saturday to select mayors, council members, and other leaders across 22 cities and counties. Polls open at 8 a.m. and close at 4 p.m., with results typically announced the same day. Winners will serve four-year terms, with the vote focusing on local issues like social welfare and daily living concerns. China has been accused by Taiwanese authorities of interfering in the electoral process, though Beijing denies these claims.",
+    "Taiwanese officials warn of Chinese interference in local elections that could impact the ruling DPP’s political standing. The vote on Saturday will determine mayors and council members across 22 districts, with local issues like housing and wealth distribution taking center stage."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:16:57+00:00",
+   "articleSources": [
+    {
+     "name": "Washington's Top News (WTOP)",
+     "url": "https://wtop.com/world/2026/11/polls-open-across-taiwan-in-closely-watched-local-elections/"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/world/2026/nov/27/threat-from-china-looms-large-over-taiwan-local-elections"
+    }
+   ],
+   "location": {
+    "label": "Beijing, China",
+    "shortLabel": "Beijing",
+    "lat": 39.9042,
+    "lng": 116.4074
+   },
+   "image": "https://i.guim.co.uk/img/media/46917c80b05c42e1fe661080ca09495a31ff79a7/387_0_3750_3000/master/3750.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=bce92a74b66945e8a72f37b467612310",
+   "imageAlt": "Taiwan holds local elections to choose mayors and other leaders amid concerns over Chinese interference",
+   "imageCredit": "The Guardian"
+  },
+  {
+   "id": "huw-edwards-appear-channel-4-documentary-addressing",
+   "topic": "uk",
+   "source": "HuffPost UK",
+   "time": "27 Nov",
+   "url": "https://www.huffingtonpost.co.uk/entry/channel-4-huw-edwards-controversy-documentary_uk_6b093d4ee4b01f494a037bbe",
+   "headline": "Huw Edwards to appear in Channel 4 documentary addressing his conviction and fall from grace",
+   "summary": "Channel 4’s documentary on Huw Edwards, titled Huw Edwards – Guilty, has sparked controversy ahead of its release.",
+   "points": [],
+   "publishedLabel": "27 Nov 2026",
+   "article": [
+    "Channel 4’s documentary on Huw Edwards, titled Huw Edwards – Guilty, has sparked controversy ahead of its release. A trailer for the documentary shows Edwards in a confrontational interview about the events leading to his public downfall. Huw Edwards exited court in September 2024, and three former BBC News sources have expressed discomfort with the documentary’s platforming of him.",
+    "Huw Edwards, convicted in 2024 of making indecent images of children, will speak publicly for the first time in a Channel 4 documentary exploring his fall from grace. The documentary, Huw Edwards – Guilty, describes a 'stark exploration' of Edwards’s life following grooming allegations and a 2024 conviction with a six-month prison sentence suspended for two years."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:02:42+00:00",
+   "articleSources": [
+    {
+     "name": "HuffPost UK",
+     "url": "https://www.huffingtonpost.co.uk/entry/channel-4-huw-edwards-controversy-documentary_uk_6b093d4ee4b01f494a037bbe"
+    },
+    {
+     "name": "The Guardian",
+     "url": "https://www.theguardian.com/media/2026/nov/26/huw-edwards-documentary-channel-4-crimes-conviction"
+    }
+   ],
+   "location": {
+    "label": "London, UK",
+    "shortLabel": "London",
+    "lat": 51.5072,
+    "lng": -0.1276
+   },
+   "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d51b/live/6e67b490-ea66-11f1-a828-d384c0290f6b.jpg",
+   "imageAlt": "Huw Edwards in a suit and dark glasses flanked by a police officer and protesters outside a court hearing in 2024",
+   "imageCredit": "BBC News"
+  },
+  {
+   "id": "nbc-pulls-controversial-ad-aired-during-snl",
+   "topic": "world",
+   "source": "Washington Examiner",
+   "time": "28 Nov",
+   "url": "https://www.washingtonexaminer.com/news/entertainment/4816770/nbc-pulls-controversial-ad-backlash-jewish-groups/",
+   "headline": "NBC pulls controversial ad aired during SNL following backlash from Jewish groups",
+   "summary": "NBC has pulled a controversial ad that aired during its Thanksgiving-themed Saturday Night Live special, following criticism from Jewish advocacy groups calling it antisemitic.",
+   "points": [],
+   "publishedLabel": "28 Nov 2026",
+   "article": [
+    "NBC has pulled a controversial ad that aired during its Thanksgiving-themed Saturday Night Live special, following criticism from Jewish advocacy groups calling it antisemitic. The ad aired during NBC’s SNL Thanksgiving special on Wednesday and showed a U.S. girl saving $400 for a bicycle, followed by fake footage of a Palestinian girl in Gaza with a missing leg.",
+    "Deutch accused NBC of using advertising funds to mislead the public by linking Israeli support to the injury of a Palestinian child."
+   ],
+   "articleStatus": "ready",
+   "articleOrigin": "generated",
+   "articleUpdatedAt": "2026-11-28T08:21:33+00:00",
+   "articleSources": [
+    {
+     "name": "Washington Examiner",
+     "url": "https://www.washingtonexaminer.com/news/entertainment/4816770/nbc-pulls-controversial-ad-backlash-jewish-groups/"
+    },
+    {
+     "name": "Jewish News Syndicate",
+     "url": "https://www.jns.org/news/u-s-news/ajc-ceo-slams-nbc-for-allowing-anti-israel-ad-to-run-during-snl"
+    }
+   ],
+   "location": {
+    "label": "Jerusalem, Israel",
+    "shortLabel": "Israel",
+    "lat": 31.7683,
+    "lng": 35.2137
+   },
+   "image": "https://i.dailymail.com/1s/2026/11/28/00/112774655-0-image-m-26_1795824361015.jpg",
+   "imageAlt": "NBC pulls controversial ad aired during SNL following backlash from Jewish groups",
+   "imageCredit": "Daily Mail"
+  }
+ ],
+ "OUTLETS": {
+  "ITV News": "LR",
+  "RTÉ News": "C",
+  "Euronews": "LL",
+  "Times Higher Education": "NR",
+  "ScienceDaily": "S",
+  "EconoTimes": "NC",
+  "LHCb paper (arXiv)": "P",
+  "Bloomberg": "LL",
+  "TechCrunch": "LL",
+  "Latin Times": "LL",
+  "The Tech Portal": "NC",
+  "IBTimes UK": "LL",
+  "ONS (official statistics)": "P",
+  "Al Jazeera English": "LL",
+  "CNN": "LL",
+  "CBC News": "LL",
+  "PBS NewsHour": "LL",
+  "Truthout": "L",
+  "Gizmodo": "L",
+  "Archaeology Magazine": "NC",
+  "Sci.News": "NC",
+  "Axios": "LL",
+  "Reuters": "C",
+  "CBS News": "LR",
+  "CNBC": "LL",
+  "The Daily Beast": "L",
+  "Townhall": "R",
+  "City AM": "NR",
+  "Central Banking": "NC",
+  "Bank of England (speech)": "P",
+  "Ukrainska Pravda": "LL",
+  "TVP World": "NR",
+  "Euromaidan Press": "NC",
+  "Popular Science": "S",
+  "New Atlas": "S",
+  "SciTechDaily": "S",
+  "Quartz": "LL",
+  "Daily Voice": "NC",
+  "Portsmouth News": "NC",
+  "BusinessCloud": "NC",
+  "The Irish News": "LL",
+  "BMA (union statement)": "P",
+  "Phys.org": "S",
+  "Sky & Telescope": "S",
+  "IntoMobile": "NC",
+  "Tesla North": "NC",
+  "NewsBytes": "NC",
+  "Express & Star": "NR",
+  "BBC News": "LL",
+  "The Guardian": "LL",
+  "Sky News": "C",
+  "The Telegraph": "LR",
+  "Daily Mail": "R",
+  "Financial Times": "C",
+  "The Economist": "C",
+  "France 24": "C",
+  "DW News": "LL",
+  "Politico Europe": "LL",
+  "NPR": "LL",
+  "The New York Times": "LL",
+  "Fox News": "R",
+  "South China Morning Post": "LL",
+  "Times of India": "LR",
+  "MercoPress": "LL",
+  "Nature News": "S",
+  "New Scientist": "S",
+  "The Verge": "LL",
+  "Ars Technica": "C",
+  "Wired": "LL",
+  "MarketWatch": "LR",
+  "ABC News Australia": "LL",
+  "Techmeme": "NR",
+  "End Time Headlines": "LR",
+  "Political Wire": "C",
+  "Hindustan Times": "LL",
+  "Investing.com": "C",
+  "7NEWS": "C",
+  "The Hill": "C",
+  "BleepingComputer": "C",
+  "WGN News": "C",
+  "WANE - Fort Wayne News": "C",
+  "WFLA - Tampa Bay": "C",
+  "NewsNation": "LR",
+  "Greek Reporter": "R",
+  "Breitbart": "R",
+  "Middle East Eye": "LL",
+  "KSTP-TV": "C",
+  "MyNorthwest": "LR",
+  "CityNews Toronto": "C",
+  "CityNews Edmonton": "C",
+  "CityNews Halifax": "C",
+  "CityNews Vancouver": "C",
+  "CityNews - Winnipeg": "C",
+  "CityNews Montreal": "C",
+  "CityNews Kitchener": "C",
+  "CityNews Ottawa": "C",
+  "CityNews Calgary": "C",
+  "Dallas Express": "R",
+  "Daily Caller": "R",
+  "WJW - Cleveland News": "C",
+  "Global News": "LL",
+  "KTLA": "C",
+  "Legal Insurrection": "R",
+  "The West Australian": "LR",
+  "NBC News": "LL",
+  "Citizen Free Press": "R",
+  "The Journal": "LL",
+  "Washington Post": "LL",
+  "RedState": "R",
+  "Washington Examiner": "LR",
+  "The Hindu": "LL",
+  "Hot Air": "R",
+  "ABC News (US)": "LL",
+  "Washington's Top News (WTOP)": "C",
+  "Scientific American": "S",
+  "Tom's Hardware": "NR",
+  "Simon Willison": "NR",
+  "Live Science": "S",
+  "The Wall Street Journal": "LR",
+  "SiliconANGLE": "NR",
+  "Decrypt": "NR",
+  "The Information": "C",
+  "Slashdot": "NR",
+  "Japan Times": "C",
+  "GB News": "R",
+  "The Decoder": "NR",
+  "The Globe and Mail": "LR",
+  "Engadget": "LL",
+  "Nottinghamshire Post": "C",
+  "Wales Online": "LL",
+  "Evening Standard": "LR",
+  "The Straits Times": "LR",
+  "Irish Mirror": "LL",
+  "E! News": "C",
+  "India Today": "LR",
+  "Sydney Morning Herald": "LL",
+  "The Age": "LL",
+  "KTTV - Fox 11 - Los Angeles": "C",
+  "KTVU Fox 2": "C",
+  "The Post Millennial": "R",
+  "KABC - Los Angeles News": "C",
+  "American Wire News": "R",
+  "BizPac Review": "R",
+  "Taipei Times": "LL",
+  "Fast Company": "LL",
+  "The Conversation UK": "C",
+  "HuffPost UK": "NR",
+  "Investors Business Daily": "R",
+  "Inc.com": "C",
+  "Slate": "L",
+  "Digital Trends": "C",
+  "Fox Business": "LR",
+  "The Citizen": "LR",
+  "Armstrong Economics": "R",
+  "Yorkshire Post": "C",
+  "Conservative Review": "R",
+  "WFLD - Fox 32 - Chicago": "C",
+  "Channel 4 News": "NR",
+  "Al-Monitor": "LL",
+  "NDTV": "LR",
+  "Military.com": "C",
+  "Euractiv": "LL",
+  "i News": "LL",
+  "CNA": "C",
+  "SOFREP": "LR",
+  "Defense One": "C",
+  "The Sun": "R",
+  "The US Sun": "R",
+  "The Express Tribune": "C",
+  "Irish Independent": "LR",
+  "Rappler": "LL",
+  "KFGO - 790 AM - Fargo": "LR",
+  "Daily Mirror": "LL",
+  "Off The Press": "R",
+  "Livemint": "C",
+  "MoneyWeek": "NR",
+  "Naked Capitalism": "LL",
+  "Jacobin": "L",
+  "Times of Malta": "C",
+  "The Local France": "LL",
+  "Dawn": "LL",
+  "Android Authority": "NR",
+  "9to5Mac": "NR",
+  "ZDNET": "C",
+  "CNET": "C",
+  "The Hacker News": "NR",
+  "Daily Express": "R",
+  "Belfast Live": "C",
+  "Metro": "LL",
+  "Belfast Telegraph": "NR",
+  "The Sun - Nigeria": "LR",
+  "Guido Fawkes": "R",
+  "The Herald": "LL",
+  "Manchester Evening News": "LL",
+  "Hello Magazine": "C",
+  "Birmingham Mail": "LL",
+  "The Week UK": "L",
+  "9to5Google": "NR",
+  "Mother Jones": "LL",
+  "MacRumors": "NR",
+  "The New American": "R",
+  "Inside Climate News": "LL",
+  "New York Observer": "LR",
+  "Space.com": "S",
+  "Eos": "NR",
+  "How-To Geek": "C",
+  "Oilprice.com": "C",
+  "Medical Xpress": "S",
+  "MarketBeat": "C",
+  "The Next Web": "LL",
+  "The Rio Times": "LR",
+  "CoinDesk": "NR",
+  "The Block": "NR",
+  "Nautilus": "S",
+  "Big Think": "C",
+  "Toledo Blade": "LR",
+  "Mexico News Daily": "LL",
+  "New York Post": "LR",
+  "The Jerusalem Post": "LR",
+  "Mongabay": "LL",
+  "RNZ": "C",
+  "US Top News and Analysis": "LL",
+  "Institute for Government": "P",
+  "Toronto Sun": "R",
+  "This is Money": "LR",
+  "Benzinga": "C",
+  "Kiplinger": "C",
+  "Haaretz": "L",
+  "Derbyshire Live": "C",
+  "DublinLive": "C",
+  "WITI - FOX 6 - Milwaukee": "C",
+  "Bristol Post": "C",
+  "WOFL Fox 35 Orlando": "C",
+  "PlymouthLive": "C",
+  "Latest Science News -- ScienceDaily": "S",
+  "ABC7 New York": "C",
+  "Cointelegraph": "NR",
+  "Forbes": "C",
+  "Freightwaves": "NR",
+  "ONS": "P",
+  "Retail Gazette": "NR",
+  "SecurityWeek": "NR",
+  "ABC7chicago.com": "C",
+  "Indian Express": "LL",
+  "Premium Times": "LL",
+  "UnHerd": "LR",
+  "Powerline": "R",
+  "Mashable": "L",
+  "PCWorld": "NR",
+  "Irish Sun": "R",
+  "Seeking Alpha": "LR",
+  "Money Crashers": "C",
+  "SomersetLive": "C",
+  "Liverpool Echo": "C",
+  "Hull Daily Mail": "C",
+  "North Wales Live": "C",
+  "Gloucestershire Live": "C",
+  "Leicester Mercury": "LR",
+  "Spiked Magazine": "R",
+  "Electrek": "LL",
+  "InsideEVs": "LL",
+  "Motley Fool UK": "NR",
+  "Economic Times": "LR",
+  "Business Insider": "LL",
+  "Resolution Foundation": "NR",
+  "VnExpress International": "NR",
+  "Scroll.in": "LL",
+  "Time": "LL",
+  "Grist": "LL",
+  "Daily Maverick": "C",
+  "Environment + Energy – The Conversation": "C",
+  "The Scotsman": "C",
+  "The Register": "C",
+  "Finextra": "C",
+  "Smithsonian Magazine": "S",
+  "Computer Weekly": "NR",
+  "Tech.eu": "NR",
+  "Page Six": "LR",
+  "WTVT - Fox 13 - Tampa Bay": "C",
+  "Interesting Engineering": "S",
+  "Newstalk ZB": "LR",
+  "Iran International": "NR",
+  "LeedsLive": "C",
+  "Pulse": "NR",
+  "Retail Dive": "C",
+  "WNYW - Fox 5 -New York": "C",
+  "Mental Floss": "C",
+  "WPIX 11": "C",
+  "Winnipeg Free Press": "C",
+  "Las Vegas Review Journal": "LR",
+  "Colorado Springs Gazette": "LR",
+  "Manchester Union leader": "LR",
+  "KUSI-TV": "C",
+  "TechRadar": "NR",
+  "WTTG - Fox 5 - DC": "C",
+  "The Federalist": "R",
+  "Twitchy": "R",
+  "Bearing Arms": "R",
+  "Fortune": "LR",
+  "Newsweek": "LR",
+  "GeekWire": "C",
+  "The Guardian US": "LL",
+  "American Council on Science and Health (ACSH)": "LR",
+  "KSAZ - Fox 10 Phoenix": "C",
+  "Stoke-On-Trent Live": "C",
+  "Universe Today": "S",
+  "Irish Examiner": "LL",
+  "The Bulwark": "LR",
+  "The Conversation": "C",
+  "Hacker News": "C",
+  "MakeUseOf": "C",
+  "Newsbusters": "R",
+  "Organiser": "R",
+  "The Record": "NR",
+  "Glasgow Live": "C",
+  "Villages-News": "LR",
+  "KDFW - Fox 4 - Dallas-Fort Worth": "C",
+  "Williamsport Sun-Gazette": "LR",
+  "Jewish News Syndicate": "LR",
+  "Independent Online": "C"
+ },
+ "QUESTIONABLE": [
+  "Breitbart",
+  "Economic Times",
+  "Fox News",
+  "GB News",
+  "Hindustan Times",
+  "NDTV",
+  "The Federalist"
+ ],
+ "COVERAGE": {
+  "airline-norse-atlantic-files-bankruptcy-succumbing-aviation": [
+   [
+    "Euronews",
+    "26 Nov",
+    "https://www.euronews.com/2026/11/26/norwegian-low-cost-carrier-norse-atlantic-suspends-flights-as-bankruptcy-looms",
+    "Norwegian low-cost carrier Norse Atlantic suspends flights as bankruptcy looms"
+   ],
+   [
+    "The Wall Street Journal",
+    "26 Nov",
+    "https://www.wsj.com/business/airlines/the-five-year-old-budget-airliner-that-halted-operations-on-thanksgiving-adca4a2f?mod=pls_whats_news_us_business_f",
+    "The Five-Year-Old Budget Airline That Halted Operations on Thanksgiving"
+   ],
+   [
+    "Fox News",
+    "26 Nov",
+    "https://www.foxnews.com/world/norse-atlantic-airlines-suspends-all-flights-brink-bankruptcy-amid-rising-fuel-costs",
+    "Norse Atlantic airline suspends all flights, on brink of bankruptcy amid rising fuel costs"
+   ],
+   [
+    "BBC News",
+    "26 Nov",
+    "https://www.bbc.co.uk/news/articles/c9kgmd0ldy0lo?at_medium=RSS&at_campaign=rss",
+    "Norse Atlantic suspends all flights as it faces potential collapse"
+   ],
+   [
+    "Sky News",
+    "26 Nov",
+    "https://news.sky.com/story/norse-atlantic-airways-suspends-all-flights-as-carrier-faces-bankruptcy-13616901",
+    "Airline suspends all flights - as carrier faces bankruptcy"
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/budget-airline-norse-atlantic-s-local-unit-files-for-bankruptcy",
+    "Budget Carrier Norse Atlantic Airways Files for Bankruptcy"
+   ],
+   [
+    "Dawn",
+    "27 Nov",
+    "https://www.dawn.com/news/2047462/airline-norse-atlantics-norwegian-operating-unit-declares-bankruptcy",
+    "Airline Norse Atlantic's Norwegian operating unit declares bankruptcy"
+   ],
+   [
+    "Business Insider",
+    "27 Nov",
+    "https://www.businessinsider.com/norse-atlantic-grounds-all-flights-in-its-fight-to-avoid-bankruptcy-2026-11",
+    "Norse Atlantic once offered $99 flights to Europe. Now it's fighting to avoid being the 2nd big airline casualty of 2026."
+   ],
+   [
+    "DW News",
+    "27 Nov",
+    "https://www.dw.com/en/airline-norse-atlantic-files-for-bankruptcy-succumbing-to-aviation-fuel-costs/a-80076728?maca=en-rss-en-world-4025-xml-mrss",
+    "Airline Norse Atlantic files for bankruptcy, succumbing to aviation fuel costs"
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/business/2026/nov/27/norse-atlantic-airways-files-for-bankruptcy-cancels-all-future-flights",
+    "Norse Atlantic Airways files for bankruptcy and cancels all future flights"
+   ],
+   [
+    "CNBC",
+    "27 Nov",
+    "https://www.cnbc.com/2026/11/27/norse-atlantic-bankruptcy-fuel-costs.html",
+    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding"
+   ],
+   [
+    "Independent Online",
+    "28 Nov",
+    "https://iol.co.za/travel/world/2026-11-28-norse-atlantic-airline-files-for-bankruptcy/",
+    "Norse Atlantic airline files for bankruptcy"
+   ]
+  ],
+  "military-disables-tanker-ship-attempting-slip-through": [
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/us-military-says-it-disabled-another-ship-that-tried-to-breach-naval-blockade-on-iranian-ports-101795800931721.html",
+    "US military says it disabled another ship that tried to breach naval blockade on Iranian ports"
+   ],
+   [
+    "The Hill",
+    "27 Nov",
+    "https://thehill.com/policy/defense/6245428-us-naval-blockade-iran-ship-disabled/",
+    "Military says it disabled vessel that ‘attempted to run the U.S. naval blockade’ against Iran"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/middle-east/us-disables-ship-trying-to-leave-iran-as-tehran-vows-to-confront-blockade",
+    "US disables ship trying to leave Iran, as Tehran vows to confront blockade"
+   ],
+   [
+    "Military.com",
+    "27 Nov",
+    "https://www.military.com/us-military-says-it-disabled-another-ship-that-tried-to-breach-naval-blockade-on-iranian-ports",
+    "US Military Says It Disabled Another Ship that Tried to Breach Naval Blockade on Iranian Ports"
+   ],
+   [
+    "Al-Monitor",
+    "27 Nov",
+    "https://www.al-monitor.com/originals/2026/11/us-disables-ship-trying-leave-iran-tehran-vows-confront-blockade",
+    "US disables ship trying to leave Iran, as Tehran vows to confront blockade"
+   ],
+   [
+    "Fox News",
+    "27 Nov",
+    "https://www.foxnews.com/world/us-military-disables-tanker-ship-attempting-slip-through-iran-blockade-thanksgiving-day",
+    "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day"
+   ],
+   [
+    "The Hindu",
+    "27 Nov",
+    "https://www.thehindu.com/news/international/us-military-says-it-disabled-commercial-ship-trying-to-run-iran-blockade/article71752214.ece",
+    "U.S. disables ship trying to leave Iran, as Tehran vows to confront blockade"
+   ],
+   [
+    "PBS NewsHour",
+    "27 Nov",
+    "https://www.pbs.org/newshour/world/u-s-military-says-it-disabled-another-ship-that-tried-to-breach-naval-blockade-on-iranian-ports",
+    "U.S. military says it disabled another ship that tried to breach naval blockade on Iranian ports"
+   ],
+   [
+    "The Express Tribune",
+    "27 Nov",
+    "https://tribune.com.pk/story/2642725/us-iran-tensions-flare-over-maritime-blockade",
+    "US-Iran tensions flare over maritime blockade"
+   ],
+   [
+    "Iran International",
+    "27 Nov",
+    "https://www.iranintl.com/en/202611274132",
+    "US disables first ship since Iran vowed to break blockade"
+   ],
+   [
+    "End Time Headlines",
+    "27 Nov",
+    "https://endtimeheadlines.org/2026/11/u-s-strikes-vessel-attempting-blockade-run-near-iran/",
+    "U.S. Strikes Vessel Attempting Blockade Run Near Iran"
+   ],
+   [
+    "Legal Insurrection",
+    "27 Nov",
+    "https://legalinsurrection.com/2026/11/u-s-military-disables-iranian-ship-trying-to-breach-blockade/?utm_source=rss&utm_medium=rss&utm_campaign=u-s-military-disables-iranian-ship-trying-to-breach-blockade",
+    "U.S. Military Disables Iranian Ship Trying to Breach Blockade"
+   ],
+   [
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/us-disables-ship-attempting-to-breach-naval-blockade-on-iranian-ports-12386970#publisher=newsstand",
+    "US Disables Ship Attempting To Breach Naval Blockade On Iranian Ports"
+   ],
+   [
+    "Breitbart",
+    "27 Nov",
+    "https://www.breitbart.com/middle-east/2026/11/27/watch-u-s-military-strikes-commercial-ship-that-refused-to-comply-with-naval-blockade-near-strait-of-hormuz/",
+    "WATCH: U.S. Military Strikes Commercial Ship that 'Refused to Comply' with Naval Blockade Near Strait of Hormuz"
+   ],
+   [
+    "The West Australian",
+    "27 Nov",
+    "https://thewest.com.au/news/conflict/us-disables-ship-trying-breach-naval-blockade-in-iran-c-23224523",
+    "US disables ship trying to breach blockade in Iran"
+   ],
+   [
+    "Al Jazeera English",
+    "27 Nov",
+    "https://www.aljazeera.com/news/2026/11/27/us-military-says-it-disabled-merchant-ship-trying-to-breach-iran-blockade?traffic_source=rss",
+    "US military says it disabled merchant ship trying to breach Iran blockade"
+   ],
+   [
+    "RTÉ News",
+    "28 Nov",
+    "https://www.rte.ie/news/middle-east/2026/1128/1600973-us-military-iran/",
+    "US military says it fired on ship violating Iran blockade"
+   ],
+   [
+    "Japan Times",
+    "28 Nov",
+    "https://www.japantimes.co.jp/news/2026/11/28/world/us-military-fires-ship-iran-blockade/",
+    "U.S. military fires on ship violating Iran blockade"
+   ],
+   [
+    "CBS News",
+    "28 Nov",
+    "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
+    "U.S. forces disable commercial ship that allegedly tried to breach Iran blockade"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "28 Nov",
+    "https://www.wfla.com/news/international/ap-international/us-military-says-it-disabled-another-ship-that-tried-to-breach-naval-blockade-on-iranian-ports/",
+    "US military says it disabled another ship that tried to breach naval blockade on Iranian ports"
+   ],
+   [
+    "New York Post",
+    "28 Nov",
+    "https://nypost.com/2026/11/27/us-news/us-military-disables-tanker-ship-attempting-to-slip-through-iran-blockade-on-thanksgiving-day/",
+    "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day"
+   ],
+   [
+    "Euronews",
+    "28 Nov",
+    "https://www.euronews.com/2026/11/28/us-military-fires-at-a-ship-that-violated-blockade-of-iranian-ports",
+    "US military fires at a ship that violated blockade of Iranian ports"
+   ]
+  ],
+  "canadas-supreme-court-upholds-quebecs-ban-religious": [
+   [
+    "The Hindu",
+    "27 Nov",
+    "https://www.thehindu.com/news/international/canadas-top-court-rules-on-quebec-secularism-law-in-landmark-case/article71749545.ece",
+    "Canada’s top court rules on Quebec secularism law in landmark case"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/canadas-supreme-court-to-rule-on-quebecs-law-on-religious-symbols-in-test-of-canadian-unity",
+    "Canada's top court upholds Quebec law banning religious symbols in test of unity"
+   ],
+   [
+    "CityNews - Winnipeg",
+    "27 Nov",
+    "https://winnipeg.citynews.ca/2026/11/27/supreme-court-ruling-quebec-secularism-bill-21/",
+    "Supreme Court of Canada upholds most of Quebec’s secularism law in landmark ruling"
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/world/2026/nov/27/canadas-top-court-upholds-quebec-law-barring-public-sector-workers-from-wearing-religious-symbols",
+    "Canada’s top court upholds Quebec law barring public sector workers from wearing religious symbols"
+   ],
+   [
+    "BBC News",
+    "27 Nov",
+    "https://www.bbc.co.uk/news/articles/cq3dgpy9lem3o?at_medium=RSS&at_campaign=rss",
+    "Canada's top court largely upholds Quebec ban on religious symbols for public servants"
+   ],
+   [
+    "The West Australian",
+    "27 Nov",
+    "https://thewest.com.au/news/crime/canadas-top-court-upholds-quebec-religious-symbols-ban-c-23224204",
+    "Canada's top court upholds Quebec religious symbols ban"
+   ],
+   [
+    "Financial Times",
+    "27 Nov",
+    "https://www.ft.com/content/240e1fe6-6c82-4d18-b73d-b0b52e7edae4?syn-25a6b1a6=1",
+    "Canada upholds law barring public sector workers from wearing religious symbols"
+   ],
+   [
+    "DW News",
+    "27 Nov",
+    "https://www.dw.com/en/canada-supreme-court-largely-upholds-quebec-secularism-bill/a-80082571?maca=en-rss-en-world-4025-xml-mrss",
+    "Canada: Supreme Court largely upholds Quebec secularism bill"
+   ],
+   [
+    "PBS NewsHour",
+    "27 Nov",
+    "https://www.pbs.org/newshour/world/canadas-supreme-court-largely-upholds-a-quebec-ban-on-religious-symbols-for-public-servants",
+    "Canada's Supreme Court largely upholds a Quebec ban on religious symbols for public servants"
+   ],
+   [
+    "CityNews Montreal",
+    "27 Nov",
+    "https://montreal.citynews.ca/2026/11/27/quebec-bill-21-lawyer-supreme-court/",
+    "Quebec’s Bill 21: ‘Bottom line nothing changes,’ says lawyer after Supreme Court decision"
+   ],
+   [
+    "The New York Times",
+    "27 Nov",
+    "https://www.nytimes.com/2026/11/27/world/canada/canada-supreme-court-quebec-religion-bill-21.html",
+    "Quebec Can Keep Its Ban on Religious Symbols, Canada’s Top Court Rules"
+   ],
+   [
+    "The Globe and Mail",
+    "27 Nov",
+    "https://www.theglobeandmail.com/canada/article-supreme-court-upholds-quebec-bill-21-charter-of-rights/",
+    "Supreme Court upholds Quebec’s Bill 21 in landmark ruling on Charter of Rights"
+   ],
+   [
+    "CityNews Halifax",
+    "27 Nov",
+    "https://halifax.citynews.ca/2026/11/27/newfoundlands-wakeham-only-atlantic-premier-to-react-to-supreme-court-ruling/",
+    "Newfoundland’s Wakeham only Atlantic premier to react to Supreme Court ruling"
+   ],
+   [
+    "Washington Examiner",
+    "27 Nov",
+    "https://www.washingtonexaminer.com/news/world/4816704/canada-supreme-court-upholds-quebec-ban-religious-symbols-public-workers/",
+    "Canadian Supreme Court largely upholds Quebec’s ban on religious symbols for public sector workers"
+   ],
+   [
+    "Off The Press",
+    "27 Nov",
+    "https://offthepress.com/r/185412?c=rss",
+    "Canadian Supreme Court largely upholds Quebec's ban on religious symbols for public sector workers"
+   ],
+   [
+    "Hindustan Times",
+    "28 Nov",
+    "https://www.hindustantimes.com/world-news/canadas-supreme-court-upholds-quebec-s-religious-symbols-ban-101795809886152.html",
+    "Canada’s Supreme Court upholds Quebec’s religious-symbols ban"
+   ],
+   [
+    "End Time Headlines",
+    "28 Nov",
+    "https://endtimeheadlines.org/2026/11/canada-supreme-court-upholds-ban-on-religious-symbols-for-public-servants/",
+    "Canada Supreme Court upholds ban on religious symbols for public servants"
+   ]
+  ],
+  "york-mayor-zohran-mamdani-undergoes-successful-surgery": [
+   [
+    "The Wall Street Journal",
+    "26 Nov",
+    "https://www.wsj.com/opinion/zohran-mamdani-has-a-nvidia-revelation-1e048235?mod=rss_markets_main",
+    "Opinion | Zohran Mamdani Has a Nvidia Revelation"
+   ],
+   [
+    "The Post Millennial",
+    "26 Nov",
+    "https://thepostmillennial.com/news/mamdani-to-skip-postponed-macy-s-thanksgiving-day-on-doctor-s-orders-after-torn-achilles",
+    "Mamdani to skip postponed Macy's Thanksgiving Day on 'doctor's orders' after torn Achilles"
+   ],
+   [
+    "Citizen Free Press",
+    "26 Nov",
+    "https://citizenfreepress.com/breaking/mamdani-is-getting-surgery-on-torn-achilles/",
+    "Mamdani is getting surgery on torn Achilles."
+   ],
+   [
+    "ABC7 New York",
+    "27 Nov",
+    "https://abc7ny.com/post/mayor-zohran-mamdani-have-surgery-friday-torn-achilles-tendon/20087691/",
+    "Mayor Zohran Mamdani to have surgery for torn Achilles tendon"
+   ],
+   [
+    "The New American",
+    "27 Nov",
+    "https://thenewamerican.com/us/immigration/nyc-mayor-mamdani-vows-to-protect-illegals-from-ice/",
+    "NYC Mayor Mamdani Vows to Protect Illegals From ICE"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/national/new-york-mayor-zohran-mamdani-has-surgery-for-torn-achilles-tendon-from-soccer-match-injury/4305268",
+    "New York Mayor Zohran Mamdani has surgery for torn Achilles tendon from soccer match injury"
+   ],
+   [
+    "NBC News",
+    "27 Nov",
+    "https://www.nbcnews.com/news/us-news/zohran-mamdani-surgery-torn-achilles-successful-ll-make-full-recovery-rcna611501",
+    "Zohran Mamdani has successful surgery for torn Achilles and will make full recovery, staff says"
+   ],
+   [
+    "ABC7chicago.com",
+    "27 Nov",
+    "https://abc7chicago.com/post/new-york-city-mayor-zohran-mamdani-has-surgery-torn-achilles-tendon-soccer-match-injury-returns-gracie-mansion/20091983/",
+    "New York Mayor Zohran Mamdani has surgery for torn Achilles tendon from soccer match injury"
+   ],
+   [
+    "ABC News (US)",
+    "27 Nov",
+    "https://abcnews.com/US/nyc-mayor-mamdani-successful-surgery-torn-achilles-tendon/story?id=138488280",
+    "NYC Mayor Mamdani has 'successful' surgery on torn Achilles tendon"
+   ],
+   [
+    "The Hill",
+    "28 Nov",
+    "https://thehill.com/homenews/state-watch/6245795-nyc-mayor-achilles-surgery-success/",
+    "Mamdani recovering after ‘successful’ Achilles surgery"
+   ],
+   [
+    "Off The Press",
+    "28 Nov",
+    "https://offthepress.com/r/185443?c=rss",
+    "NYC Mayor Mamdani recovering after ‘successful’ Achilles surgery"
+   ],
+   [
+    "Hindustan Times",
+    "28 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/why-new-york-mayor-zohran-mamdani-got-surgery-torn-achilles-tendon-explained-soccer-football-match-injury-101795831903774.html",
+    "New York Mayor Zohran Mamdani has successful surgery after tearing Achilles tendon from football match injury"
+   ],
+   [
+    "Washington Examiner",
+    "28 Nov",
+    "https://www.washingtonexaminer.com/news/4816785/mamdani-successful-surgery-skip-macys-thanksgiving-day-parade/",
+    "Mamdani has successful surgery on torn Achilles but will miss rescheduled Macy’s Thanksgiving Day Parade"
+   ],
+   [
+    "New York Post",
+    "28 Nov",
+    "https://nypost.com/2026/11/28/us-news/nyc-mayor-mamdani-has-surgery-after-tearing-achilles-tendon-playing-soccer/",
+    "Mamdani has surgery for torn Achilles tendon from soccer match injury"
+   ]
+  ],
+  "taiwan-holds-local-elections-choose-mayors-other": [
+   [
+    "Washington Post",
+    "26 Nov",
+    "https://www.washingtonpost.com/world/2026/11/26/taiwan-loves-threads-china-is-targeting-platform-researchers-say/",
+    "Taiwan loves Threads. China is targeting the platform, researchers say."
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/world/2026/nov/27/threat-from-china-looms-large-over-taiwan-local-elections",
+    "Threat from China looms large over Taiwan’s local elections"
+   ],
+   [
+    "Daily Maverick",
+    "27 Nov",
+    "https://www.dailymaverick.co.za/article/2026-11-27-taiwan-candidates-campaign-for-key-local-elections-on-final-day/",
+    "Taiwan candidates campaign for key local elections on final day"
+   ],
+   [
+    "Bloomberg",
+    "28 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-28/taiwan-goes-to-polls-in-tight-local-elections-as-china-watches",
+    "Taiwan Votes in Close Local Elections With China Watching"
+   ],
+   [
+    "Hindustan Times",
+    "28 Nov",
+    "https://www.hindustantimes.com/world-news/taiwan-heads-for-local-elections-ahead-of-2028-presidential-race-china-keeps-a-close-eye-101795827184750.html",
+    "Taiwan heads for local elections ahead of 2028 presidential race, China keeps a close eye"
+   ],
+   [
+    "Japan Times",
+    "28 Nov",
+    "https://www.japantimes.co.jp/news/2026/11/28/asia-pacific/politics/taiwan-local-elections-china/",
+    "Taiwan goes to polls in tight local elections as China watches"
+   ],
+   [
+    "Al Jazeera English",
+    "28 Nov",
+    "https://www.aljazeera.com/news/2026/11/28/taiwan-votes-in-local-elections-to-choose-mayors-other-leaders?traffic_source=rss",
+    "Taiwan votes in local elections to choose mayors, other leaders"
+   ],
+   [
+    "France 24",
+    "28 Nov",
+    "https://www.france24.com/en/asia-pacific/20261128-taiwan-holds-local-elections-under-beijing-s-watchful-gaze",
+    "Taiwan holds local elections under Beijing's watchful gaze"
+   ],
+   [
+    "Washington's Top News (WTOP)",
+    "28 Nov",
+    "https://wtop.com/world/2026/11/polls-open-across-taiwan-in-closely-watched-local-elections/",
+    "Taiwan holds elections to choose mayors and other local leaders as China looks on"
+   ]
+  ],
+  "nbc-pulls-controversial-ad-aired-during-snl": [
+   [
+    "Jewish News Syndicate",
+    "26 Nov",
+    "https://www.jns.org/news/u-s-news/ajc-ceo-slams-nbc-for-allowing-anti-israel-ad-to-run-during-snl",
+    "AJC CEO slams NBC for allowing anti-Israel ad to run during 'SNL'"
+   ],
+   [
+    "Twitchy",
+    "27 Nov",
+    "https://twitchy.com/samj/2026/11/27/nbc-ad-girl-with-bike-gaza-n2434802",
+    "NBC Cashes Check to Air Anti-Israel BLOOD LIBEL During SNL Thanksgiving Special (WATCH); UPDATED"
+   ],
+   [
+    "RedState",
+    "28 Nov",
+    "https://redstate.com/beccalower/2026/11/27/nbc-reportedly-gets-shamed-into-pulling-anti-israel-ad-aired-during-thanksgiving-programming-n2209867",
+    "NBC Reportedly Gets Shamed Into Pulling Anti-Israel Ad Aired During Thanksgiving TV Show"
+   ],
+   [
+    "The New York Times",
+    "28 Nov",
+    "https://www.nytimes.com/2026/11/27/business/media/nbc-ad-snl.html",
+    "NBC Pulls an Ad That Some Described as Antisemitic"
+   ],
+   [
+    "Washington Examiner",
+    "28 Nov",
+    "https://www.washingtonexaminer.com/news/entertainment/4816770/nbc-pulls-controversial-ad-backlash-jewish-groups/",
+    "NBC pulls controversial ad aired during SNL following backlash from Jewish groups"
+   ],
+   [
+    "Daily Mail",
+    "28 Nov",
+    "https://www.dailymail.com/news/article-16327993/nbc-anti-Israel-ad-pulled-snl-saturday-night-live-thanksgiving-palestine.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "Controversial anti-Israel ad showing little girl on bicycle that aired during Saturday Night Live Thanksgiving special is pulled off air by NBC"
+   ],
+   [
+    "Hindustan Times",
+    "28 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/nbc-pulls-advertisement-criticising-us-israel-policy-amid-growing-backlash-101795841747263.html",
+    "NBC pulls advertisement criticising US' Israel policy amid growing backlash"
+   ]
+  ],
+  "hackers-breach-air-force-flagship-cloud-computing": [
+   [
+    "The Express Tribune",
+    "27 Nov",
+    "https://tribune.com.pk/story/2642653/hackers-breach-us-air-force-flagship-cloud-one-computing-platform",
+    "Hackers breach US Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "Citizen Free Press",
+    "27 Nov",
+    "https://citizenfreepress.com/breaking/hackers-breach-u-s-air-force/",
+    "Hackers breach U.S. Air Force."
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/hackers-breached-us-air-force-s-cloud-platform",
+    "Hackers Breached US Air Force’s Cloud Platform, Reuters Says"
+   ],
+   [
+    "End Time Headlines",
+    "27 Nov",
+    "https://endtimeheadlines.org/2026/11/us-air-force-hacked-in-major-security-breach-exposing-one-of-militarys-biggest-data-platforms/",
+    "US Air Force hacked in major security breach exposing one of military’s biggest data platforms"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/united-states/hackers-breach-us-air-force-flagship-cloud-one-computing-platform1",
+    "Hackers breach US Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/us-air-force-flagship-cloud-one-computing-platform-hacked-says-report-101795779139897.html",
+    "US Air Force flagship Cloud One computing platform hacked, says report"
+   ],
+   [
+    "Haaretz",
+    "27 Nov",
+    "https://www.haaretz.com/us-news/2026-11-27/ty-article/hackers-breach-one-of-pentagons-top-systems-access-u-s-air-force-data-radars/000001a2-1ce1-d0a2-afb7-5efbaab20000",
+    "Hackers breach one of Pentagon's top systems, access U.S. Air Force data, radars"
+   ],
+   [
+    "The Post Millennial",
+    "27 Nov",
+    "https://thepostmillennial.com/news/breaking-hackers-break-into-us-air-force-cloud-platform-report",
+    "BREAKING: Hackers break into US Air Force cloud platform: report"
+   ],
+   [
+    "Breitbart",
+    "27 Nov",
+    "https://www.breitbart.com/tech/2026/11/27/report-hackers-breach-air-forces-cloud-one-computing-platform/",
+    "Report: Hackers Breach Air Force's 'Cloud One' Computing Platform"
+   ],
+   [
+    "Digital Trends",
+    "27 Nov",
+    "https://www.digitaltrends.com/computing/hackers-reportedly-cracked-a-major-us-military-cloud-putting-sensitive-systems-at-risk/",
+    "Hackers reportedly cracked a major US military cloud, putting sensitive systems at risk"
+   ],
+   [
+    "The Hill",
+    "27 Nov",
+    "https://thehill.com/policy/defense/6245197-air-force-cloud-one-hack/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "The Guardian",
+    "27 Nov",
+    "https://www.theguardian.com/technology/2026/nov/27/hackers-breach-us-air-force-cloud-computing",
+    "Hackers reportedly breach US air force’s flagship cloud computing platform"
+   ],
+   [
+    "Forbes",
+    "27 Nov",
+    "https://www.forbes.com/sites/saradorn/2026/11/27/air-forces-cloud-one-platform-hacked-report-says/",
+    "Air Force’s Cloud One Platform Hacked, Report Says"
+   ],
+   [
+    "BleepingComputer",
+    "27 Nov",
+    "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+    "US Air Force cloud platform reportedly hacked in latest federal breach"
+   ],
+   [
+    "NBC News",
+    "27 Nov",
+    "https://www.nbcnews.com/news/us-news/hackers-attack-penetrate-air-forces-computing-platform-rcna611559",
+    "Hackers attack and penetrate Air Force’s computing platform"
+   ],
+   [
+    "The Hindu",
+    "27 Nov",
+    "https://www.thehindu.com/news/international/hackers-breach-us-air-force-flagship-cloud-one-computing-platform/article71750783.ece",
+    "Hackers breach U.S. Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "The Decoder",
+    "27 Nov",
+    "https://the-decoder.com/hackers-breached-the-us-air-forces-flagship-cloud-one-platform-report-says/",
+    "Hackers breached the US Air Force's flagship Cloud One platform, report says"
+   ],
+   [
+    "Engadget",
+    "27 Nov",
+    "https://www.engadget.com/2329586/hackers-reportedly-infiltrated-the-air-force-cloud-systems/",
+    "Hackers reportedly infiltrated the Air Force's cloud systems"
+   ],
+   [
+    "Legal Insurrection",
+    "27 Nov",
+    "https://legalinsurrection.com/2026/11/report-hackers-infiltrate-air-force-cloud-system-disrupt-operations/?utm_source=rss&utm_medium=rss&utm_campaign=report-hackers-infiltrate-air-force-cloud-system-disrupt-operations",
+    "Report: Hackers Infiltrate Air Force Cloud System, Disrupt Operations"
+   ],
+   [
+    "MercoPress",
+    "27 Nov",
+    "https://en.mercopress.com/2026/11/27/us-air-force-cloud-platform-hacked-reuters-reports?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+    "US Air Force cloud platform hacked, Reuters reports"
+   ],
+   [
+    "WFLA - Tampa Bay",
+    "27 Nov",
+    "https://www.wfla.com/news/national/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "Political Wire",
+    "27 Nov",
+    "https://politicalwire.com/2026/11/27/hackers-breach-the-air-forces-cloud-computing-program/",
+    "Hackers Breach the Air Force’s Cloud Computing Program"
+   ],
+   [
+    "Conservative Review",
+    "27 Nov",
+    "https://www.conservativereview.com/air-force-gets-hacked-compromising-defense-radar-missile-and-bomb-location-data-2678548499.html",
+    "Air Force gets hacked, compromising defense radar, missile, and bomb location data"
+   ],
+   [
+    "Decrypt",
+    "27 Nov",
+    "https://decrypt.co/384174/us-air-force-hack-cloud-system-air-defense-munitions-data",
+    "Hackers Hit US Air Force Cloud System Running Air-Defense and Munitions Data"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/local/hackers-air-force-military/4305174",
+    "Hackers breach Air Force computing platform used for sensitive military information"
+   ],
+   [
+    "The Information",
+    "27 Nov",
+    "https://www.theinformation.com/briefings/hackers-breach-u-s-air-force-cloud-latest-high-profile-cyberattack",
+    "Hackers Breach U.S. Air Force Cloud in Latest High-Profile Cyberattack"
+   ],
+   [
+    "Dallas Express",
+    "27 Nov",
+    "https://dallasexpress.com/business-markets/reported-air-force-cloud-one-breach-raises-questions-over-454-9-million-modernization-contract/",
+    "Reported Air Force Cloud One Breach Raises Questions Over $454.9 Million Modernization Contract"
+   ],
+   [
+    "Military.com",
+    "27 Nov",
+    "https://www.military.com/us-air-force-computing-platform-breached-by-hackers-report",
+    "Air Force Cloud Platform Breached by Hackers, Putting Sensitive Data at Risk: Report"
+   ],
+   [
+    "KTLA",
+    "27 Nov",
+    "https://ktla.com/news/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "WANE - Fort Wayne News",
+    "27 Nov",
+    "https://www.wane.com/hill-politics/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "Interesting Engineering",
+    "27 Nov",
+    "https://interestingengineering.com/military/us-air-force-cloud-one-cyberattack",
+    "Hackers target US Air Force’s Cloud One platform in major cybersecurity breach"
+   ],
+   [
+    "CNBC",
+    "27 Nov",
+    "https://www.cnbc.com/2026/11/27/hackers-breach-us-air-force-flagship-cloud-one-computing-platform.html",
+    "Hackers breach U.S. Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "WJW - Cleveland News",
+    "27 Nov",
+    "https://fox8.com/news/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "SiliconANGLE",
+    "27 Nov",
+    "https://siliconangle.com/2026/11/27/hackers-reportedly-breach-key-us-air-force-cloud-platform/",
+    "Hackers reportedly breach key US Air Force cloud platform"
+   ],
+   [
+    "WGN News",
+    "27 Nov",
+    "https://wgntv.com/military/hackers-break-into-us-air-force-cloud-computing-platform-report/",
+    "Hackers break into US Air Force cloud computing platform: Report"
+   ],
+   [
+    "NDTV",
+    "27 Nov",
+    "https://www.ndtv.com/world-news/hackers-reportedly-breach-us-air-forces-cloud-computing-platform-report-12387118#publisher=newsstand",
+    "Hackers Reportedly Breach US Air Force's Cloud Computing Platform: Report"
+   ],
+   [
+    "Japan Times",
+    "28 Nov",
+    "https://www.japantimes.co.jp/news/2026/11/28/world/hackers-us-air-force-computing-platform/",
+    "Hackers breach U.S. Air Force flagship Cloud One computing platform"
+   ],
+   [
+    "7NEWS",
+    "28 Nov",
+    "https://7news.com.au/news/conflict/us-air-forces-flagship-cloud-platform-breached-by-hackers-in-major-security-incident-c-23225191",
+    "US Air Force’s flagship cloud platform breached by hackers in major security incident"
+   ]
+  ],
+  "mexico-files-formal-complaint-dea-tip-line": [
+   [
+    "The Hill",
+    "26 Nov",
+    "https://thehill.com/policy/international/6244966-sheinbaum-rebukes-dea-tip-line/",
+    "Mexican leader rebukes US over DEA tip line, claims ‘interference’"
+   ],
+   [
+    "The Straits Times",
+    "27 Nov",
+    "https://www.straitstimes.com/world/mexico-files-complaint-with-us-over-dea-tip-line-on-alleged-drug-traffickers-corrupt-officials",
+    "Mexico files complaint with US over DEA tip line on alleged drug traffickers, corrupt officials"
+   ],
+   [
+    "Mexico News Daily",
+    "27 Nov",
+    "https://mexiconewsdaily.com/politics/mexico-files-formal-complaint-over-deas-sinaloa-tip-lines-fridays-mananera-recapped/",
+    "Mexico files formal complaint over DEA’s Sinaloa tip lines: Friday’s mañanera recapped"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/world/mexico-files-formal-complaint-to-us-over-dea-tip-line/4305181",
+    "Mexico files formal complaint to US over DEA tip line"
+   ],
+   [
+    "CityNews Kitchener",
+    "27 Nov",
+    "https://kitchener.citynews.ca/2026/11/27/mexico-files-formal-complaint-to-us-over-dea-tip-line/",
+    "Mexico’s government is slamming a DEA crime tip line as foreign interference. Others are thrilled."
+   ],
+   [
+    "ABC7chicago.com",
+    "27 Nov",
+    "https://abc7.com/post/mexico-files-formal-complaint-us-dea-tip-line/20091323/",
+    "Mexico files formal complaint to US over DEA tip line for anonymous reports"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/us-news/mexico-files-formal-complaint-with-us-over-dea-tip-line-targeting-cartel-members-and-corrupt-officials-101795805544103.html",
+    "Mexico files formal complaint with US over DEA tip line targeting cartel members and corrupt officials"
+   ],
+   [
+    "CBS News",
+    "27 Nov",
+    "https://www.cbsnews.com/news/us-opens-hotline-tips-cartels-angering-mexico/",
+    "U.S. opens hotline for tips about cartels, angering Mexico"
+   ],
+   [
+    "Breitbart",
+    "27 Nov",
+    "https://www.breitbart.com/border/2026/11/27/mexican-president-tells-dea-to-butt-out-after-opening-secure-tip-line-in-mexico/",
+    "Mexican President Tells DEA to Butt Out After It Opened Secure Tip Line in Mexico"
+   ],
+   [
+    "Washington Post",
+    "27 Nov",
+    "https://www.washingtonpost.com/world/2026/11/27/mexico-condemns-dea-tip-line-asking-people-report-corrupt-officials-sinaloa/",
+    "Mexico condemns DEA tip line asking people to report corrupt officials in Sinaloa"
+   ],
+   [
+    "PBS NewsHour",
+    "27 Nov",
+    "https://www.pbs.org/newshour/world/mexicos-government-is-slamming-a-dea-crime-tip-line-as-foreign-interference-others-are-thrilled",
+    "Mexico's government is slamming a DEA crime tip line as foreign interference. Others are thrilled."
+   ],
+   [
+    "Citizen Free Press",
+    "28 Nov",
+    "https://citizenfreepress.com/breaking/mexico-files-formal-complaint-with-u-s-over-dea-tip-line/",
+    "Mexico files formal complaint with U.S. over DEA tip line."
+   ]
+  ],
+  "u-encouraged-iraq-venezuela-leave-opec-sources": [
+   [
+    "The Wall Street Journal",
+    "26 Nov",
+    "https://www.wsj.com/business/energy-oil/oil-prices-mixed-as-traders-weigh-middle-east-supply-risks-opec-meeting-c234598a?mod=pls_whats_news_us_business_f",
+    "Oil Prices Rise as Traders Weigh Middle East Supply Risks, OPEC+ Meeting"
+   ],
+   [
+    "Daily Maverick",
+    "27 Nov",
+    "https://www.dailymaverick.co.za/article/2026-11-27-us-pushed-venezuela-iraq-to-consider-leaving-opec-sources-say/",
+    "US pushed Venezuela, Iraq to consider leaving OPEC, sources say"
+   ],
+   [
+    "Bloomberg",
+    "27 Nov",
+    "https://www.bloomberg.com/news/articles/2026-11-27/iraq-talking-to-opec-about-its-production-ceiling-minister-says",
+    "Iraq Pushes OPEC for More Leeway as Group Heads Into Meeting"
+   ],
+   [
+    "Benzinga",
+    "27 Nov",
+    "https://www.benzinga.com/trading-ideas/movers/26/11/63669011/whats-going-on-with-chevron-stock-on-friday",
+    "What's Going On With Chevron Stock On Friday?"
+   ],
+   [
+    "Oilprice.com",
+    "27 Nov",
+    "https://oilprice.com/Latest-Energy-News/World-News/US-Pushed-Iraq-and-Venezuela-to-Consider-Quitting-OPEC-Sources-Say.html",
+    "U.S. Encouraged Iraq and Venezuela to Leave OPEC, Sources Say"
+   ],
+   [
+    "Al-Monitor",
+    "27 Nov",
+    "https://www.al-monitor.com/originals/2026/11/opec-expected-hold-q1-2027-output-steady-amid-disputes",
+    "OPEC+ expected to hold Q1 2027 output steady amid disputes"
+   ],
+   [
+    "Hindustan Times",
+    "27 Nov",
+    "https://www.hindustantimes.com/world-news/iraq-seeks-higher-oil-production-limit-from-opec-ahead-of-sunday-meeting-101795811868796.html",
+    "Iraq seeks higher oil production limit from OPEC ahead of Sunday meeting"
+   ],
+   [
+    "Times of India",
+    "27 Nov",
+    "https://timesofindia.indiatimes.com/world/us/us-pushed-venezuela-iraq-to-quit-opec-to-boost-oil-output-report/articleshow/136235653.cms",
+    "US pushed Venezuela, Iraq to quit OPEC to boost oil output: Report"
+   ],
+   [
+    "Iran International",
+    "28 Nov",
+    "https://www.iranintl.com/en/202611280097",
+    "OPEC+ set to keep oil output targets steady amid Iran war uncertainty"
+   ],
+   [
+    "Investing.com",
+    "28 Nov",
+    "https://www.investing.com/news/economy-news/iran-war-intensifies-maritime-risks-as-opec-prepares-for-oil-supply-talks-5054196",
+    "Iran war intensifies maritime risks as OPEC+ prepares for oil supply talks"
+   ]
+  ],
+  "iran-accuses-ukraine-false-flag-drone-attack": [
+   [
+    "Haaretz",
+    "26 Nov",
+    "https://www.haaretz.com/middle-east-news/2026-11-26/ty-article/.premium/kuwait-army-says-four-hurt-in-iranian-attack-on-vital-site/000001a2-17f8-dfd9-a5b7-1ffc56950000",
+    "Two Italians killed in Iranian drone attack on Kuwait's 'vital site'"
+   ],
+   [
+    "Euronews",
+    "26 Nov",
+    "https://www.euronews.com/2026/11/26/civilian-flights-diverted-as-kuwait-army-intercepts-iranian-drone-attack",
+    "Passenger flights diverted as Kuwait army intercepts Iranian drone attack"
+   ],
+   [
+    "Washington Post",
+    "26 Nov",
+    "https://www.washingtonpost.com/world/2026/11/26/two-italians-killed-kuwait-strained-iran-ramps-up-attacks/",
+    "Two Italians killed in Kuwait as a strained Iran ramps up attacks"
+   ],
+   [
+    "Jewish News Syndicate",
+    "26 Nov",
+    "https://www.jns.org/news/world/israeli-fm-expresses-deep-sorrow-over-italians-killed-in-kuwait-drone-attack",
+    "Israeli FM expresses 'deep sorrow' over Italians killed in Kuwait drone attack"
+   ],
+   [
+    "The New York Times",
+    "26 Nov",
+    "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+    "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say"
+   ],
+   [
+    "Iran International",
+    "26 Nov",
+    "https://www.iranintl.com/en/202611267797",
+    "Iran faces global condemnation over Kuwait attack that killed two Italians"
+   ],
+   [
+    "Fox News",
+    "26 Nov",
+    "https://www.foxnews.com/world/iran-accuses-zelenskyy-false-flag-kuwait-drone-strike-op-get-trumps-attention",
+    "Iran accuses Zelenskyy of 'false flag' Kuwait drone strike op to get Trump's attention"
+   ],
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/drone-attack-kuwait-us-iran-war-death-november-27-2026/article71748337.ece",
+    "Two Italians killed in drone attack in Kuwait"
+   ],
+   [
+    "CNBC",
+    "27 Nov",
+    "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
+    "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’"
+   ],
+   [
+    "CBS News",
+    "27 Nov",
+    "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
+    "Iran accused of carrying out drone attack killing 2 Italians in Kuwait"
+   ],
+   [
+    "American Wire News",
+    "27 Nov",
+    "https://americanwirenews.com/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump/",
+    "Iran blames Zelenskyy for Kuwait drone attack, says it was a ‘false flag’ op aimed at Trump"
+   ],
+   [
+    "BizPac Review",
+    "27 Nov",
+    "https://www.bizpacreview.com/2026/11/27/iran-blames-zelenskyy-for-kuwait-drone-attack-says-it-was-a-false-flag-op-aimed-at-trump-1669030/",
+    "Iran blames Zelenskyy for Kuwait drone attack, says it was a ‘false flag’ op aimed at Trump"
+   ],
+   [
+    "Al Jazeera English",
+    "28 Nov",
+    "https://www.aljazeera.com/news/liveblog/2026/11/28/iran-war-live-italy-says-drone-in-deadly-kuwait-attack-was-made-in-iran?traffic_source=rss",
+    "Iran war live: Italy says drone in deadly Kuwait attack was made in Iran"
+   ]
+  ],
+  "army-calls-detonation-bomb-chemicals-iowa-success": [
+   [
+    "The Hindu",
+    "26 Nov",
+    "https://www.thehindu.com/news/international/us-army-declares-success-in-detonation-of-lead-based-explosives-stockpile-in-iowa/article71745045.ece",
+    "U.S. Army declares success in detonation of lead-based explosives stockpile in Iowa"
+   ],
+   [
+    "NPR",
+    "26 Nov",
+    "https://www.npr.org/2026/11/26/nx-s1-6053950/public-health-specialist-discusses-the-aftermath-of-the-munitions-detonation-in-iowa",
+    "Public health specialist discusses the aftermath of the munitions detonation in Iowa"
+   ],
+   [
+    "Legal Insurrection",
+    "26 Nov",
+    "https://legalinsurrection.com/2026/11/armys-iowa-detonation-of-lead-azide-explosives-caved-inward-perfectly/?utm_source=rss&utm_medium=rss&utm_campaign=armys-iowa-detonation-of-lead-azide-explosives-caved-inward-perfectly",
+    "Army’s Iowa Detonation of Lead Azide Explosives ‘Caved Inward Perfectly’"
+   ],
+   [
+    "The Hill",
+    "26 Nov",
+    "https://thehill.com/homenews/administration/6244532-trump-obama-cnn-army-iowa-lead-azide-detonation/",
+    "Trump rips Obama, CNN as he touts ‘perfect’ Iowa detonation"
+   ],
+   [
+    "SOFREP",
+    "26 Nov",
+    "https://sofrep.com/news/why-the-army-had-no-choice-but-to-blow-up-9700-pounds-of-lead-azide-in-iowa/",
+    "Why the Army Had No Choice but to Blow Up 9,700 Pounds of Lead Azide in Iowa"
+   ],
+   [
+    "Political Wire",
+    "26 Nov",
+    "https://politicalwire.com/2026/11/26/trump-blames-obama-for-iowa-lead-azide-buildup/",
+    "Trump Blames Obama for Iowa Lead Azide Buildup"
+   ],
+   [
+    "Military.com",
+    "27 Nov",
+    "https://www.military.com/video/residents-return-home-as-environmental-crews-assess-impact-of-dangerous-chemical-detonation-in-iowa",
+    "Residents Return Home as Environmental Crews Assess Impact of Dangerous Chemical Detonation in Iowa"
+   ],
+   [
+    "MyNorthwest",
+    "27 Nov",
+    "https://mynorthwest.com/national/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification/4305205",
+    "Army deems lead azide detonation a success but criticism lingers over notification"
+   ],
+   [
+    "PBS NewsHour",
+    "27 Nov",
+    "https://www.pbs.org/newshour/nation/army-deems-lead-azide-detonation-a-success-but-criticism-lingers-over-notification",
+    "Army deems lead azide detonation a success but criticism lingers over notification"
+   ],
+   [
+    "WGN News",
+    "27 Nov",
+    "https://wgntv.com/news/iowa/epa-reports-no-airborne-lead-detected-after-iowa-ammunition-plant-detonation/",
+    "EPA reports no airborne lead detected after Iowa ammunition plant detonation"
+   ],
+   [
+    "End Time Headlines",
+    "27 Nov",
+    "https://endtimeheadlines.org/2026/11/doctors-warn-of-lead-exposure-health-risks-after-army-detonation-in-iowa/",
+    "Doctors warn of lead exposure health risks after Army detonation in Iowa"
+   ]
+  ],
+  "huw-edwards-appear-channel-4-documentary-addressing": [
+   [
+    "The Guardian",
+    "26 Nov",
+    "https://www.theguardian.com/media/2026/nov/26/huw-edwards-documentary-channel-4-crimes-conviction",
+    "Huw Edwards discusses his fall from grace for Channel 4 documentary"
+   ],
+   [
+    "Daily Mail",
+    "27 Nov",
+    "https://www.dailymail.com/news/article-16325051/The-Morning-Poll-appropriate-Channel-4-Huw-Edwards-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+    "The Morning Poll: Is it appropriate for Channel 4 to give Huw Edwards a documentary?"
+   ],
+   [
+    "HuffPost UK",
+    "27 Nov",
+    "https://www.huffingtonpost.co.uk/entry/channel-4-huw-edwards-controversy-documentary_uk_6b093d4ee4b01f494a037bbe",
+    "Channel 4's New Huw Edwards Documentary Is Already Sparking Controversy"
+   ],
+   [
+    "Daily Mirror",
+    "27 Nov",
+    "https://www.mirror.co.uk/news/politics/huw-edwards-documentary-channel4-tv-37921041",
+    "Huw Edwards documentary row grows as PM has 'no interest' in hearing from disgraced newsreader"
+   ],
+   [
+    "The Journal",
+    "27 Nov",
+    "https://www.thejournal.ie/huw-edwards-channel-4-documentary-7239831-Nov2026/",
+    "Channel 4 defends Huw Edwards doc amid criticism it could be 'incredibly traumatic' for victims"
+   ],
+   [
+    "BBC News",
+    "27 Nov",
+    "https://www.bbc.co.uk/news/articles/c60mdl2y2w3do?at_medium=RSS&at_campaign=rss",
+    "'We have no interest in hearing from Huw Edwards', Downing Street says"
+   ],
+   [
+    "Evening Standard",
+    "27 Nov",
+    "https://www.standard.co.uk/news/uk/huw-edwards-rosie-duffield-anna-turley-emma-hardy-the-observer-b1306663.html",
+    "Huw Edwards documentary ‘holds him to account’, says Channel 4"
+   ],
+   [
+    "The Sun",
+    "27 Nov",
+    "https://www.thesun.co.uk/news/41176124/huw-edwards-acting-victim-blasts-furious-mum/",
+    "Huw Edwards is abusing us all over again & ‘acting like the victim’, blasts furious mum of teen he shamelessly groomed"
+   ],
+   [
+    "Channel 4 News",
+    "27 Nov",
+    "https://www.channel4.com/news/huw-edwards-campaigners-hit-out-at-planned-documentary-following-disgraced-sex-offender",
+    "Huw Edwards: Campaigners hit out at planned documentary following disgraced sex offender"
+   ],
+   [
+    "Wales Online",
+    "27 Nov",
+    "https://www.walesonline.co.uk/news/wales-news/channel-4-hits-back-after-34979361",
+    "Channel 4 hits back after criticism over Huw Edwards documentary"
+   ]
+  ]
+ },
+ "META": {
+  "editionId": "2026-11-28",
+  "dateLabel": "Saturday 28 November 2026",
+  "range": "26–28 Nov",
+  "rangeLong": "26–28 November 2026",
+  "lastRun": "28 Nov 2026, 08:21",
+  "digest": [
+   "Hackers breach US Air Force's flagship Cloud One cloud computing platform (The Express Tribune)",
+   "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day (Fox News)",
+   "Canada’s Supreme Court upholds Quebec’s ban on religious symbols for public sector workers (Washington Examiner)",
+   "New York Mayor Zohran Mamdani undergoes successful surgery for torn Achilles tendon from soccer match (MyNorthwest)"
+  ],
+  "generated": "automatic",
+  "articlePolicy": "source-based-v1",
+  "writer": "local-qwen"
+ },
+ "LEGACY_IDS": {}
+}
